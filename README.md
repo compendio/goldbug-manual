@@ -114,15 +114,15 @@ Darüber hinaus sind in GoldBug auch eine Reihe an nützlichen Werkzeugen implem
 
 Damit sind die von einem regulären Internet-Nutzer häufig genutzten drei Grundfunktionen im Internet - Kommunikation (Chat/E-Mail), Web-Suche und Datei-Transfer - in einer verschlüsselnden Umgebung sicher und umfänglich abgebildet.
 
-Mit der Nutzung von [GoldBug - kurz GB](http://goldbug.sourceforge.net/) kann der Nutzer daher aufgrund der Verschlüsselung relativ sicher sein, dass kein unerwünschter Dritter die Gespräche belauschen bzw. E-Mails oder Dateiübertragungen öffnen kann. Auch die URL-Suche geschieht auf der lokalen Maschine, so dass Suchanfragen geschützt und sicher bleiben. 
+Mit der Nutzung von [GoldBug - kurz GB -](http://goldbug.sourceforge.net/) kann der Nutzer daher aufgrund der Verschlüsselung relativ sicher sein, dass kein unerwünschter Dritter die Gespräche belauschen bzw. E-Mails oder Dateiübertragungen öffnen kann. Auch die URL-Suche geschieht auf der lokalen Maschine, so dass Suchanfragen geschützt und sicher bleiben. 
 
 Die Nutzer-zu-Nutzer Kommunikation soll mit dieser Anwendung auch über das Internet im privaten, geschützten Raum verbleiben. 
 
-Dafür nutzt GoldBug starke Vielfach-Verschlüsselung, auch [Hybride_Verschlüsselung](https://de.wikipedia.org/wiki/Hybride_Verschl%C3%BCsselung) genannt, mit verschiedenen Ebenen von moderner Verschlüsselungs-Technologie basierend auf etablierten Verschlüsselungs-Bibliotheken - wie libgcrypt (bekannt von OpenPGP bzw. [GnuPG](https://de.wikipedia.org/wiki/GNU_Privacy_Guard) und [OpenSSL](https://de.wikipedia.org/wiki/OpenSSL). 
+Dafür nutzt GoldBug starke Vielfach-Verschlüsselung, auch [Hybride Verschlüsselung](https://de.wikipedia.org/wiki/Hybride_Verschl%C3%BCsselung) genannt, mit verschiedenen Ebenen von moderner Verschlüsselungs-Technologie basierend auf etablierten Verschlüsselungs-Bibliotheken - wie libgcrypt (bekannt von OpenPGP bzw. [GnuPG](https://de.wikipedia.org/wiki/GNU_Privacy_Guard) und [OpenSSL](https://de.wikipedia.org/wiki/OpenSSL). 
 
 Zum Beispiel werden damit für jede Funktion eigene und voneinander verschiedene öffentlich/private Schlüssel zur Verschlüsselung und für die Signaturen erstellt - basierend auf den Verschlüsselungsalgorithmen [RSA](https://de.wikipedia.org/wiki/RSA-Kryptosystem), oder wahlweise auch [Elgamal](https://de.wikipedia.org/wiki/Elgamal-Verschl%C3%BCsselungsverfahren) und [NTRU](https://de.wikipedia.org/wiki/NTRUEncrypt). Neben NTRU ist auch der Verschlüsselungsalgorithmus [McEliece](https://de.wikipedia.org/wiki/McEliece-Kryptosystem) quelloffen implementiert. 
 
-Diese beiden letztgenannten Algorithmen gelten als besonders sicher gegenüber Angriffen, die aus dem Quantum Computing bekannt sind und zukünftig aufgrund von schnellen Quantum-Computern zunehmend relevanter werden. GoldBug ist damit weltweit (einer) der erste(n) Messenger, der diese beiden Algorithmen implementierte und damit die Abkehr bzw. Alternativen vom dem seit 2016 offiziell als gebrochen geltenden RSA-Algorithmus einleitete.
+Diese beiden letztgenannten Algorithmen gelten als besonders sicher gegenüber Angriffen, die aus dem Quantum Computing bekannt sind und zukünftig aufgrund von schnellen Quantum-Computern zunehmend relevanter werden. GoldBug ist damit weltweit (einer) der erste(n) Messenger, der diese beiden Algorithmen implementierte und damit die Abkehr bzw. Alternativen vom dem seit 2016 offiziell als gebrochen geltenden RSA-Algorithmus einleitete (siehe [NIST zit. n. Adams/Maier 2016](https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf)).
 
 Weiterhin bietet die Applikation auch dezentrales und verschlüsseltes E-Mail und auch dezentralen öffentlichen Gruppen-Chat im IRC-Stil an. Schließlich besteht auch die Funktion, eine URL-Websuche in einem dezentralen Repositorium umzusetzen: Nutzer können zu ihren thematischen RSS-Feeds somit URLS und Inhalte der Webseite - wie bislang Booksmarks im Browser - in einer komfortabel durchsuchbaren Datenbank abspeichern bzw. dort importieren, die entweder auf SQL oder PostGres basiert und p2p netzwerkfähig ist.
 
@@ -130,33 +130,33 @@ Beim E-Mail kann [IMAP](https://de.wikipedia.org/wiki/Internet_Message_Access_Pr
 
 Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werden. Der Versand ist per sé immer verschlüsselt. Mit den Werkzeugen "Rosetta CryptoPad" und dem "File-Encryptor" kann der Nutzer auch Text und/oder Dateien nochmals zusätzlich sicher verschlüsseln oder auch zurück konvertieren. Diese Werkzeuge zur Verschlüsselung sind somit auch für andere Übertragungswege (wie unverschlüsselge Wege außerhalb von GoldBug) nutzbar. 
 
-Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - Ein Programm mit zahlreichen Funktionen für die sichere Kommunikation.
+Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - ein Programm mit zahlreichen Funktionen für die sichere Kommunikation.
 
 
+## Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
 
-## Warum ist es wichtig, dass Du Deine Kommunikation verschlüsselst? 
+Heutzutage sind fast alle kabellosen Wifi-Internetzugänge mit einem Passwort geschützt (Freifunk-Aktivitäten versuchen gerade, diese Überregulierung wieder zurückzunehmen durch Passwort- und Account-freie Zugänge zum Internet. In wenigen Jahren werden Klartext-Nachrichten oder E-Mails an Freunde (im Folgenden gelten alle Begriffe immer für alle Geschlechter) über das Internet ebenso verschlüsselt sein - sein müssen. Um dieses Wandel zu festigen, wird manchmal auch con C-Mail (für Crypto-Mail) statt E-Mail als neuem Begriff gesprochen.
 
-Heutzutage sind fast alle kabellosen Wifi-Internetzugänge mit einem Passwort geschützt (Freifunk-Aktivitäten versuchen gerade, diese Überregulierung wieder zurückzunehmen durch Passwort- und Account-Freien Zugang zum Internet - ähnlich der Forderung der Piratenpartei nach Ticket-losen Bahnfahren. Doch was in diesem Bereich über-reglementiert ist (Wifi-Zugang nur mit Passwort) ist bei der Verschlüsselung unterrepräsentiert (E-Mail-Versand nur mit Verschlüsselung)). 
-
-Dennoch, in wenigen Jahren werden Klartext-Nachrichten oder E-Mails an Freunde (im Folgenden immer w/m gemeint) über das Internet ebenso verschlüsselt sein - sein müssen.
-
-Das ist keine Frage, ob man etwas zu verbergen hat oder nicht, es ist die Frage, ob wir selbst unsere Kommunikation kontrollieren - oder sie durch Andere, Dritte kontrolliert wird.
+Verschlüsselung ist keine Frage, ob man etwas zu verbergen hat oder nicht, es ist die Frage, ob wir selbst unsere Kommunikation kontrollieren - oder sie durch Andere, Dritte kontrolliert wird.
 
 Es ist letztlich auch eine Frage des Angriffs auf das freien Denken und eine Frage der Streichung der Annahme einer Unschuldsvermutung ("Im Zweifel für den Angeklagten" - wenn jeder Bürger überhaupt auf eine Anklagebank gehört!).
 
 Demokratie erfordert das Denken und die Diskussion von Alternativen im Privaten wie auch in der Öffentlichkeit. 
 
-Schütze Deine Kommunikation und Datenübertragungen über das Internet, wie Du auch Deine Lieben oder eine Vogel-Mutter ihre Jungen gegenüber Unbekannten schützen würde: Selbst verteidige Deine Datenschutz- und Menschenrechte mit modernen Verschlüsselungsfunktionen.
+Die Kommunikation und Datenübertragungen über das Internet soll so geschüzt werden, wie Eltern auch ihre Lieben oder eine Vogel-Mutter ihre Jungen gegenüber Unbekannten schützen würde: Jeder soll seine Datenschutz- und Menschenrechte mit modernen Verschlüsselungsfunktionen selbstverteidigen.
 
-Starke Multi-Verschlüsselung (sogenannte "hybride Verschlüsselung") sichert also letztlich auch die Erklärungen der Menschenrechte in ihrem breit konstituiertem Konsus und ist eine digitale Selbstverteidigung, die jeder erlernen und nutzen sollte.
+Starke Multi-Verschlüsselung (sogenannte "hybride Verschlüsselung") sichert also letztlich auch die Erklärungen der Menschenrechte in ihrem breit konstituiertem Konsus und ist eine digitale Selbstverteidigung, die jeder erlernen und nutzen sollte - um letztlich auch zur Demokratie beitragen und diese stützen zu können.
  
 Der GoldBug Messenger versucht, ein einfach zu nutzendes Werkzeug für diesen Anspruch zu sein.
-Ähnlich der Sicherheitsentwicklung beim Automobil wird sich auch die E-Mail-Verschlüsselung entwickeln: ist man beim Automobil zunächst ohne Sicherheitsgurt gefahren, fahren wir heute hingegen mit Sicherheitsgurten und zusätzlichen Airbags oder drittens noch ergänzenden elektronischen Sicherheits-Informationssystemen. 
+Ähnlich der Sicherheitsentwicklung beim Automobil wird sich auch die E-Mail- & Chat-Verschlüsselung entwickeln: ist man beim Automobil zunächst ohne Sicherheitsgurt gefahren, fahren wir heute hingegen mit Sicherheitsgurten und zusätzlichen Airbags oder drittens noch ergänzenden elektronischen Sicherheits-Informationssystemen. 
 
-Die unverschlüsselte Plain-Text-Email oder Chat-Nachricht hatte daher ausgedient, nachdem man im Jahr 2013 feststellte, dass private E-Mails [[w:de:Globale_Überwachungs-_und_Spionageaffäre|in großem Umfang von vielen Interessierten]] abgehört und systematisch erfasst, gespeichert und ausgewertet werden.
+GoldBug ist dabei ein einfach zu bedienendes, jedoch in gewissem Umfang zu erlernendes Programm, es erfordert wie beim Auto-Führerschein die Kenntnis der verschiedenen Bedienelemente und Optionen. Es ist somit eine bereits vereinfachte Benutzeroberfläche gegenüber der originalen Benutzeroberfläche, die aus dem "Spot-on"-Projekt kommend auch Spot-on genannt wird. Ähnlich einem Cockpit eines Flugzeuges sind in dieser originalen Benutzeroberfläche noch wesentlich mehr Bedienelemente vorhanden. GoldBug versucht, diese bereits zu reduzieren und somit auch eine Mininal-Ansicht für Einsteiger in Software für kryptographisiche Prozesse anzubieten. Insofern gilt: Lernen, was man nicht versteht und beachten, dass es bereits ein reduzierter Umfang ist. Dieses vorliegende Manual kann dabei helfen, sich die einzelnen Funktionen zu erschliessen. Und Nutzer, die erst lesen und dann ausprobieren, sind wie immer klar im Vorteil.
+
+Die unverschlüsselte Plain-Text-Email oder Chat-Nachricht sollte daher eigentlich ausgedient haben, nachdem man im Jahr 2013 mit den Snowden-Papieren feststellte, dass private E-Mails ["in großem Umfang von vielen Interessierten global abgehört und dabei systematisch erfasst, gespeichert und ausgewertet werden"](https://de.wikipedia.org/wiki/Globale_%C3%9Cberwachungs-_und_Spionageaff%C3%A4re).
 
 Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neuland" geschrieben - ein Font, der im Jahre 1923 vom Schriftkünstler [[w:de:Rudolf_Koch_(Schriftkünstler)#Runde_Schriften|Rudolf Koch]] entwickelt wurde. Der Logo-Schriftzug ist seit dem ersten, zeitgleichen Release des GoldBugs im Jahre 2013 interessanter Weise eine Allusion an den ''Satz des Jahres'' 2013, in dem die deutsche Bundeskanzlerin Angela Merkel - im Zusammenhang mit der [[w:de:Globale_Überwachungs-_und_Spionageaffäre|Überwachungs- und Spionageaffäre 2013]] und dem Abhören ihres Telefons - in einem Gespräch mit dem amerikanischen Präsidenten Barack Obama den Satz prägte: „Das Internet ist für uns alle Neuland."
-- Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt, entscheiden die Lehrenden und Lernenden, in jedem Falle aber Du als Leser dieses Buches mit Deinen Freunden.
+
+- Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt, entscheiden die Lernenden, Lehrenden und die Medien - in jedem Falle aber jeder selbst z.B. als Leser dieses Manuals mit seinen Freunden, mit denen die Verschlüsselungssoftware angewandt wird. 
 
 ## Woher kommt der Name "GoldBug"?
  
