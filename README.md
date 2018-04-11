@@ -1,4 +1,4 @@
-# goldbug-manual
+﻿# goldbug-manual
 Manual of the GoldBug Crypto Messenger
 
 
@@ -9,11 +9,13 @@ Inhaltsverzeichnis
     1 Was ist GoldBug?
         1.1 Warum ist es wichtig, dass Du Deine Kommunikation verschlüsselst?
         1.2 Woher kommt der Name "GoldBug"?
+
     2 Verschlüsselung: GoldBug hat Alternativen zu RSA
-        2.1 RSA, ElGamal und NTRU im Vergleich
+        2.1 RSA, ElGamal und insbesondere NTRU und MC Eliece im Vergleich
         2.2 Anwendung der Block Cipher Modi
         2.3 Hybrides Verschlüsselungs-System
         2.4 Symmetrische Verschlüsselung mit AES
+
     3 Was ist das ECHO Protokoll?
         3.1 Volles ECHO
         3.2 Halbes ECHO
@@ -28,6 +30,8 @@ Inhaltsverzeichnis
         4.2 Generierung von 10 Schlüsseln für die Verschlüsselung
         4.3 Aktivierung des Kernels
         4.4 Einen Nachbarn mit der IP-Adresse verbinden
+
+
     5 Die Chat-Funktion
         5.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
             5.1.1 Besonderheit: Repleo
@@ -43,6 +47,8 @@ Inhaltsverzeichnis
             5.5.1 Forward Secrecy Calling
         5.6 Übersicht der verschiedenen Calling-Arten
         5.7 Emotikons
+
+
     6 Die E-Mail-Funktion
         6.1 POP3
         6.2 IMAP
@@ -98,20 +104,31 @@ Inhaltsverzeichnis
 ```
 
 
-=Was ist GoldBug?=
- 
-'''GoldBug''' ist ein verschlüsselnder E-Mail-Client und sicherer Instant Messenger.
-Mit der Nutzung von [[w:de:GoldBug_%28Instant_Messenger%29|GoldBug (GB)]] kannst Du relativ sicher sein, dass kein unerwünschter Dritter Deine Gespräche belauschen bzw. E-Mails oder Dateiübertragungen öffnen kann. Private Nutzer-zu-Nutzer Kommunikation soll im privaten, geschützten Raum verbleiben. Dafür nutzt GoldBug starke Vielfach-Verschlüsselung, auch [[w:de:Hybride_Verschlüsselung|hybride Verschlüsselung]] genannt, mit verschiedenen Ebenen von moderner Verschlüsselungs-Technologie von etablierten Verschlüsselungs-Bibliotheken - wie libgcrypt (bekannt vom [[w:de:OpenPGP|OpenPGP-Standard]]) und [[w:de:OpenSSL|OpenSSL]].
+###Was ist GoldBug?###
 
-Zum Beispiel werden damit derzeit 10 öffentlich/private Schlüssel zur Verschlüsselung und für die Signaturen erstellt - basierend auf den Verschlüsselungsalgorithmen [[w:de:RSA-Kryptosystem|RSA]], oder wahlweise auch [[w:de:Elgamal-Verschlüsselungsverfahren|ElGamal]] und [[w:de:NTRUEncrypt|NTRU]]. Weiterhin bietet die Applikation auch dezentrales und verschlüsseltes E-Mail und auch dezentralen öffentlichen Gruppen-Chat im IRC-Stil an. Schließlich besteht auch die Funktion, eine URL-Websuche in einem dezentalen Netz umzusetzen. 
+GoldBug ist ein sicherer Instant Chat Messenger und verschlüsselnder E-Mail-Client, der darüber hinaus auch noch weitere Funktionen beinhaltet wie einen Gruppenchat, Dateitransfer sowie auch einer URL-Suche aufgrund einer implementierten URL-Datenbank und weitere Fähigkeiten, z.B. wie proxyfähige Durchleitungen etc..
 
-Beim E-Mail kann [[w:de:Internet_Message_Access_Protocol|IMAP]], [[w:de:Post_Office_Protocol|POP3]] und drittens, [[w:de:Peer-to-Peer|P2P]] Email genutzt werden - GoldBug ist somit auch ein voll funktionsfähiger normaler E-Mail-Klient. Alsbald verschlüsselte E-Mails gesandt werden, ist es erforderlich, dass auch die Gegenstelle diesen Klienten nutzt. Das hat den Vorteil, dass der Verschlüsselungs-Key nur einmalig zu tauschen ist, dann aber nicht mehr bei jedem einzelnen E-Mail angewandt werden muss.
+Damit sind die von Nutzern häufig genutzten drei Grundfunktionen von Internet-Applikationen - Kommunikation (Chat/E-Mail), Web-Suche und Datei-Transfer - umfänglich in einem verschlüsselten Netzwerk zur Stelle des entsprechenden Partners sicher abgebildet.
 
-Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werden. Der Versand ist per sé immer verschlüsselt. Mit den Werkzeugen "Rosetta CryptoPad" und dem "File-Encryptor" kannst Du auch Text und/oder Dateien nochmals zusätzlich sicher verschlüsseln oder auch zurück konvertieren. Die Werkzeuge sind somit auch für andere Übertragungswege nutzbar. 
+Mit der Nutzung von [GoldBug - kurz GB](http://goldbug.sourceforge.net/) kann der Nutzer aufgrund der Verschlüsselung relativ sicher sein, dass kein unerwünschter Dritter die Gespräche belauschen bzw. E-Mails oder Dateiübertragungen öffnen kann. Auch die URL-Suche geschieht auf der lokalen Maschine, so dass Suchanfragen geschützt bleiben. 
+
+Private Nutzer-zu-Nutzer Kommunikation soll mit dieser Anwendung im privaten, geschützten Raum verbleiben. Dafür nutzt GoldBug starke Vielfach-Verschlüsselung, auch [Hybride_Verschlüsselung](https://de.wikipedia.org/wiki/Hybride_Verschl%C3%BCsselung) genannt, mit verschiedenen Ebenen von moderner Verschlüsselungs-Technologie von etablierten Verschlüsselungs-Bibliotheken - wie libgcrypt (bekannt von OpenPGP bzw. [GnuPG](https://de.wikipedia.org/wiki/GNU_Privacy_Guard) und [OpenSSL](https://de.wikipedia.org/wiki/OpenSSL).
+
+Zum Beispiel werden damit für jede Funktion eigene und voneinander verschiedene öffentlich/private Schlüssel zur Verschlüsselung und für die Signaturen erstellt - basierend auf den Verschlüsselungsalgorithmen [RSA](https://de.wikipedia.org/wiki/RSA-Kryptosystem), oder wahlweise auch [Elgamal](https://de.wikipedia.org/wiki/Elgamal-Verschl%C3%BCsselungsverfahren) und [NTRU](https://de.wikipedia.org/wiki/NTRUEncrypt). Neben NTRU ist auch der Verschlüsselungsalgorithmus [McEliece](https://de.wikipedia.org/wiki/McEliece-Kryptosystem) implementiert. 
+
+Diese beiden letztgenannten Algorithmen gelten als besonders sicher gegenüber Angriffen, die aus dem Quantum Computing bekannt sind und zukünftig aufgrund von schnellen Quantum-Computern zunehmend relevanter werden. GoldBug ist damit weltweit (einer) der erste(n) Messenger, der diese beiden Algorithmen implementierte und damit die Abkehr bzw. die Alternative vom seit 2016 offiziell als gebrochen geltenden RSA einleitete.
+
+Weiterhin bietet die Applikation auch dezentrales und verschlüsseltes E-Mail und auch dezentralen öffentlichen Gruppen-Chat im IRC-Stil an. Schließlich besteht auch die Funktion, eine URL-Websuche in einem dezentalen Repositorium umzusetzen. 
+
+Nutzer können zu ihren thematischen RSS-Feeds somit URLS und Inhalte der Webseite - wie bislang Booksmarks im Browser - in einer komfortabel durchsuchbaren Datenbank abspeichern bzw dort importieren, die entweder auf SQL oder PostGres basiert und p2p netzwerkfähig ist.
+
+Beim E-Mail kann [IMAP] (https://de.wikipedia.org/wiki/Internet_Message_Access_Protocol), [POP3](https://de.wikipedia.org/wiki/Post_Office_Protocol) und drittens, [P2P](https://de.wikipedia.org/wiki/Peer-to-Peer) Email genutzt werden - GoldBug ist somit auch ein voll funktionsfähiger E-Mail-Klient. Alsbald verschlüsselte E-Mails gesandt werden, ist es erforderlich, dass auch der Freund diesen Klienten nutzt. Das hat den Vorteil, dass der Verschlüsselungs-Key nur einmalig zu tauschen ist, dann aber nicht mehr bei jedem einzelnen E-Mail angewandt werden muss. Diese Funktion wird Repleo genannt und ist später in anderen Projekten unter der Bezeichnung Autocrypt automatisiert übernommen worden.
+
+Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werden. Der Versand ist per sé immer verschlüsselt. Mit den Werkzeugen "Rosetta CryptoPad" und dem "File-Encryptor" kann der Nutzer auch Text und/oder Dateien nochmals zusätzlich sicher verschlüsseln oder auch zurück konvertieren. Die Werkzeuge zur Verschlüsselung sind somit auch für andere Übertragungswege (wie unverschlüsselge Wege außerhalb von GoldBug) nutzbar. 
 
 Mit all seinen Ausstattungen ist GoldBug daher eine sog. "Communication Suite" - Ein Programm mit zahlreichen Funktionen für die sichere Kommunikation.
 
-__TOC__
+
 
 == Warum ist es wichtig, dass Du Deine Kommunikation verschlüsselst? ==
 
@@ -1835,3 +1852,112 @@ make or mingw32-make<br />
 *'''Vaughan-Nichols,  Steven J.:''' How to recover from Heartbleed, ZDNet, April 9, 2014, http://www.zdnet.com/how-to-recover-from-heartbleed-7000028253 
 
 *'''Weller, Jan:''' Testbericht zu GoldBug für Freeware, Freeware-Blog https://www.freeware.de/download/goldbug/
+
+
+
+
+
+![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
+
+![AbbAbbildung: Abbildung: ildung: Account Firewall](/images/account_firewall.png)	
+
+![Abbildung: Account Passwords](/images/account_passwords.png)	
+
+![Abbildung: Add Friend/Key](/images/add_key.png)	
+
+![Abbildung: Anpassbare Crypto](/images/adjustable_crypto.png)	
+
+![Abbildung: Bluetooth Chat Server] (/images/bluetooth_chatserver.png)	
+
+![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
+
+![Abbildung: Chat im Pop-up Fenster](/images/chat_popupwindow.png)	
+
+![Abbildung: Einrichtung eines Chat-Servers](/images/chat_server.png)	
+
+![Abbildung: Chat Tab](/images/chat_tab.png)	
+
+![Abbildung: Optionen für den Clienten](/images/client_options.png)	
+
+![Abbildung: Nachbar-Server verbinden](/images/connect_neighbor.png)	
+
+![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
+
+![Abbildung: Digitale Signaturen](/images/digital_signatures.png)	
+
+![Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal](/images/e_irc_buzz.png)	
+
+![Abbildung: Format des genutzten Echo-Protokolls](/images/echo_format.png)	
+
+![Abbildung: E-IRC Gruppenchat](/images/e_irc.png)	
+
+![Abbildung: E-Mail mit Forward Secrecy](/images/email_forwardsecrecy.png)	
+
+![Abbildung: P2P-Email aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
+
+![Abbildung: POPTASTIC: Chat über E-Mail-Server](/images/email_poptastic.png)	
+
+![Abbildung: Email - Lesen Anzeige](/images/email_read.png)	
+
+![Abbildung: Email - Schreiben Anzeige](/images/email_write.png)	
+
+![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS.png)	
+
+![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS_keyshare.png)	
+
+![Abbildung: Datei Verschlüsselung](/images/file_encryption.png)	
+
+![Abbildung: Theefish Implementierung](/images/threefish.png)	
+
+![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)	
+
+![Abbildung: Emoticons in GodlBug](/images/goldbug_emoticons.png)	
+
+![Abbildung: Verschlüsselung zwischen Kernel und Gui/Benutzeroberfläche](/images/guikernel_encryption.png)	
+
+![Abbildung: Aktivierung des Kernels](/images/kernel_activation.png)	
+
+![Abbildung: Login in die Applikation mit einem Passwort](/images/login.png)	
+
+![Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing](/images/mceliece.png)	
+
+![Abbildung: Verbindung mit einem Nachbar-Server](/images/neigbor_connect.png)	
+
+![Abbildung: GoldBug als Proxy: Pass-Through](/images/passthrough.png)	
+
+![Abbildung: Statistik Konsole auf einem Raspberry Pi](/images/raspberrypi_console_statistics.png)	
+
+![Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad](/images/rosetta.png)	
+
+![Abbildung: RSS-Feed-Reader zur Importierung von URLs in die URL-Datenbank/Websuche](/images/rss_reader.png)	
+
+![Abbildung: Das SMP-Protokol zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)	
+
+![Abbildung: SMP-Protokoll](/images/SMP_socialist_millionaire.png)	
+
+![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol](/images/SMP_Secret_Streams.png)	
+
+![Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks](/images/starbeam-analyzer.png)	
+
+![Abbildung: Starbeam-Dateitransfer - Eingehende Dateien](/images/starbeam_incomming.png)	
+
+![Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer](/images/starbeam_magnet_links.png)	
+
+![Abbildung: Starbeam-Dateitransfer: Upload von Dateien](/images/starbeam_uploads.png)	
+
+![Abbildung: Anzeige von Statistiken](/images/stats.png)	
+
+![Abbildung: Tear-Off/Hook-Up von Bedienungselementen](/images/tearoff_menu.png)	
+
+![Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)](/images/trends_in_crypto.png)	
+
+![Abbildung: URL Options](/images/URL_options.png)	
+
+![Abbildung: Virtuelles Keyboard](/images/virtual_keyboard.png)	
+
+![Abbildung: Websuche mit GoldBug in der URL-Datenbank](/images/websearch.png)	
+
+![Abbildung: Settings für die URL/Websuche](/images/websearch_settings.png)
+
+
+
