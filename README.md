@@ -108,13 +108,15 @@ Inhaltsverzeichnis
 
 GoldBug ist ein sicherer Instant Chat Messenger und verschlüsselnder E-Mail-Client, der darüber hinaus auch noch weitere Funktionen beinhaltet wie Gruppenchat, Dateitransfer sowie auch eine URL-Suche auf Basis einer implementierten URL-Datenbank. 
 
-Darüber hinaus sind in GoldBug auch eine Reihe an nützlichen Werkzeugen implementiert, z.B. die Server-Funktionalität für verschlüsselten Chat, proxyfähige Durchleitungen, Pads zur Wandlung von Text bzw. Dateien in Ciphertext und umgekehrt, ein Feedreader und ein WebCrwler, oder auch Übersichten für die Freunde von Statistiken und Analysen.
+Darüber hinaus sind in GoldBug auch eine Reihe an nützlichen Werkzeugen implementiert, z.B. die Server-Funktionalität für verschlüsselten Chat, proxyfähige Durchleitungen, Pads zur Wandlung von Text bzw. Dateien in Ciphertext und umgekehrt, ein Feedreader und ein WebCrawler, oder auch Übersichten für die Freunde von Statistiken und Analysen, und einiges mehr.
 
 Damit sind die von einem regulären Internet-Nutzer häufig genutzten drei Grundfunktionen im Internet - Kommunikation (Chat/E-Mail), Web-Suche und Datei-Transfer - in einer verschlüsselnden Umgebung sicher und umfänglich abgebildet.
 
-Mit der Nutzung von [GoldBug - kurz GB](http://goldbug.sourceforge.net/) kann der Nutzer aufgrund der Verschlüsselung relativ sicher sein, dass kein unerwünschter Dritter die Gespräche belauschen bzw. E-Mails oder Dateiübertragungen öffnen kann. Auch die URL-Suche geschieht auf der lokalen Maschine, so dass Suchanfragen geschützt bleiben. 
+Mit der Nutzung von [GoldBug - kurz GB](http://goldbug.sourceforge.net/) kann der Nutzer daher aufgrund der Verschlüsselung relativ sicher sein, dass kein unerwünschter Dritter die Gespräche belauschen bzw. E-Mails oder Dateiübertragungen öffnen kann. Auch die URL-Suche geschieht auf der lokalen Maschine, so dass Suchanfragen geschützt und sicher bleiben. 
 
-Die Nutzer-zu-Nutzer Kommunikation auch über das Internet soll mit dieser Anwendung im privaten, geschützten Raum verbleiben. Dafür nutzt GoldBug starke Vielfach-Verschlüsselung, auch [Hybride_Verschlüsselung](https://de.wikipedia.org/wiki/Hybride_Verschl%C3%BCsselung) genannt, mit verschiedenen Ebenen von moderner Verschlüsselungs-Technologie von etablierten Verschlüsselungs-Bibliotheken - wie libgcrypt (bekannt von OpenPGP bzw. [GnuPG](https://de.wikipedia.org/wiki/GNU_Privacy_Guard) und [OpenSSL](https://de.wikipedia.org/wiki/OpenSSL).
+Die Nutzer-zu-Nutzer Kommunikation auch über das Internet soll mit dieser Anwendung im privaten, geschützten Raum verbleiben. 
+
+Dafür nutzt GoldBug starke Vielfach-Verschlüsselung, auch [Hybride_Verschlüsselung](https://de.wikipedia.org/wiki/Hybride_Verschl%C3%BCsselung) genannt, mit verschiedenen Ebenen von moderner Verschlüsselungs-Technologie von etablierten Verschlüsselungs-Bibliotheken - wie libgcrypt (bekannt von OpenPGP bzw. [GnuPG](https://de.wikipedia.org/wiki/GNU_Privacy_Guard) und [OpenSSL](https://de.wikipedia.org/wiki/OpenSSL).
 
 Zum Beispiel werden damit für jede Funktion eigene und voneinander verschiedene öffentlich/private Schlüssel zur Verschlüsselung und für die Signaturen erstellt - basierend auf den Verschlüsselungsalgorithmen [RSA](https://de.wikipedia.org/wiki/RSA-Kryptosystem), oder wahlweise auch [Elgamal](https://de.wikipedia.org/wiki/Elgamal-Verschl%C3%BCsselungsverfahren) und [NTRU](https://de.wikipedia.org/wiki/NTRUEncrypt). Neben NTRU ist auch der Verschlüsselungsalgorithmus [McEliece](https://de.wikipedia.org/wiki/McEliece-Kryptosystem) implementiert. 
 
