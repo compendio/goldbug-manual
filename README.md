@@ -110,9 +110,9 @@ Inhaltsverzeichnis
 
 GoldBug ist ein sicherer Instant Chat Messenger und verschlüsselnder E-Mail-Client, der darüber hinaus auch noch weitere Funktionen beinhaltet wie Gruppenchat, Dateitransfer sowie auch eine URL-Suche auf Basis einer implementierten URL-Datenbank. 
 
-Darüber hinaus sind in GoldBug auch eine Reihe an nützlichen Werkzeugen implementiert, z.B. die Server-Funktionalität für verschlüsselten Chat, proxyfähige Durchleitungen, Pads zur Wandlung von Text bzw. Dateien in Ciphertext und umgekehrt, ein Feedreader und ein WebCrawler, oder auch Übersichten für Freunde von Statistiken und Analysen, und einiges mehr.
-
 Damit sind die von einem regulären Internet-Nutzer häufig genutzten drei Grundfunktionen im Internet - Kommunikation (Chat/E-Mail), Web-Suche und Datei-Transfer - in einer verschlüsselnden Umgebung sicher und umfänglich abgebildet.
+
+Darüber hinaus sind in GoldBug auch eine Reihe an nützlichen Werkzeugen implementiert, z.B. die Server-Funktionalität für verschlüsselten Chat, proxyfähige Durchleitungen, Pads zur Wandlung von Text bzw. Dateien in Ciphertext und umgekehrt, ein Feedreader und ein WebCrawler, oder auch Übersichten für Freunde von Statistiken und Analysen, und einiges mehr.
 
 Mit der Nutzung von [GoldBug - kurz GB -](http://goldbug.sourceforge.net/) kann der Nutzer daher aufgrund der Verschlüsselung relativ sicher sein, dass kein unerwünschter Dritter die Gespräche belauschen bzw. E-Mails oder Dateiübertragungen öffnen kann. Auch die URL-Suche geschieht auf der lokalen Maschine, so dass Suchanfragen geschützt und sicher bleiben. 
 
@@ -122,7 +122,7 @@ Dafür nutzt GoldBug starke Vielfach-Verschlüsselung, auch [Hybride Verschlüss
 
 Zum Beispiel werden damit für jede Funktion eigene und voneinander verschiedene öffentlich/private Schlüssel zur Verschlüsselung und für die Signaturen erstellt - basierend auf den Verschlüsselungsalgorithmen [RSA](https://de.wikipedia.org/wiki/RSA-Kryptosystem), oder wahlweise auch [Elgamal](https://de.wikipedia.org/wiki/Elgamal-Verschl%C3%BCsselungsverfahren) und [NTRU](https://de.wikipedia.org/wiki/NTRUEncrypt). Neben NTRU ist auch der Verschlüsselungsalgorithmus [McEliece](https://de.wikipedia.org/wiki/McEliece-Kryptosystem) quelloffen implementiert. 
 
-Diese beiden letztgenannten Algorithmen gelten als besonders sicher gegenüber Angriffen, die aus dem Quantum Computing bekannt sind und zukünftig aufgrund von schnellen Quantum-Computern zunehmend relevanter werden. GoldBug ist damit weltweit (einer) der erste(n) Messenger, der diese beiden Algorithmen implementierte und damit die Abkehr bzw. Alternativen vom dem seit 2016 offiziell als gebrochen geltenden RSA-Algorithmus einleitete (siehe [NIST zit. n. Adams/Maier 2016](https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf)).
+Diese beiden letztgenannten Algorithmen gelten als besonders sicher gegenüber Angriffen, die aus dem Quantum Computing bekannt sind und zukünftig aufgrund von schnellen Quantum-Computern zunehmend relevanter werden. GoldBug ist damit weltweit (einer) der erste(n) Messenger, der diese beiden Algorithmen implementierte und damit die Abkehr bzw. Alternativen vom dem seit 2016 offiziell als gebrochen geltenden RSA-Algorithmus einleitete (siehe [NIST zit. n. Adams/Maier 2016](https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf)). 
 
 Weiterhin bietet die Applikation auch dezentrales und verschlüsseltes E-Mail und auch dezentralen öffentlichen Gruppen-Chat im IRC-Stil an. Schließlich besteht auch die Funktion, eine URL-Websuche in einem dezentralen Repositorium umzusetzen: Nutzer können zu ihren thematischen RSS-Feeds somit URLS und Inhalte der Webseite - wie bislang Booksmarks im Browser - in einer komfortabel durchsuchbaren Datenbank abspeichern bzw. dort importieren, die entweder auf SQL oder PostGres basiert und p2p netzwerkfähig ist.
 
@@ -130,7 +130,7 @@ Beim E-Mail kann [IMAP](https://de.wikipedia.org/wiki/Internet_Message_Access_Pr
 
 Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werden. Der Versand ist per sé immer verschlüsselt. Mit den Werkzeugen "Rosetta CryptoPad" und dem "File-Encryptor" kann der Nutzer auch Text und/oder Dateien nochmals zusätzlich sicher verschlüsseln oder auch zurück konvertieren. Diese Werkzeuge zur Verschlüsselung sind somit auch für andere Übertragungswege (wie unverschlüsselge Wege außerhalb von GoldBug) nutzbar. 
 
-Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - ein Programm mit zahlreichen Funktionen für die sichere Kommunikation.
+Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - ein Programm mit zahlreichen Funktionen für die sichere Kommunikation, das die Übertragung der verschlüsselten Pakete mit dem sogenannten Echo-Protokoll realisiert und besonders absichert, wie es weiter unten noch erläutert wird. 
 
 
 ## Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
@@ -152,11 +152,11 @@ Der GoldBug Messenger versucht, ein einfach zu nutzendes Werkzeug für diesen An
 
 GoldBug ist dabei ein einfach zu bedienendes, jedoch in gewissem Umfang zu erlernendes Programm, es erfordert wie beim Auto-Führerschein die Kenntnis der verschiedenen Bedienelemente und Optionen. Es ist somit eine bereits vereinfachte Benutzeroberfläche gegenüber der originalen Benutzeroberfläche, die aus dem "Spot-on"-Projekt kommend auch Spot-on genannt wird. Ähnlich einem Cockpit eines Flugzeuges sind in dieser originalen Benutzeroberfläche noch wesentlich mehr Bedienelemente vorhanden. GoldBug versucht, diese bereits zu reduzieren und somit auch eine Mininal-Ansicht für Einsteiger in Software für kryptographisiche Prozesse anzubieten. Insofern gilt: Lernen, was man nicht versteht und beachten, dass es bereits ein reduzierter Umfang ist. Dieses vorliegende Manual kann dabei helfen, sich die einzelnen Funktionen zu erschliessen. Und Nutzer, die erst lesen und dann ausprobieren, sind wie immer klar im Vorteil.
 
-Die unverschlüsselte Plain-Text-Email oder Chat-Nachricht sollte daher eigentlich ausgedient haben, nachdem man im Jahr 2013 mit den Snowden-Papieren feststellte, dass private E-Mails ["in großem Umfang von vielen Interessierten global abgehört und dabei systematisch erfasst, gespeichert und ausgewertet werden"](https://de.wikipedia.org/wiki/Globale_%C3%9Cberwachungs-_und_Spionageaff%C3%A4re).
+Die unverschlüsselte Plain-Text-Email oder Chat-Nachricht sollte daher eigentlich ausgedient haben, nachdem man im Jahr 2013 mit den [Snowden-Papieren](https://de.wikipedia.org/wiki/Globale_%C3%9Cberwachungs-_und_Spionageaff%C3%A4re) feststellte, dass private E-Mails in großem Umfang von vielen Interessierten global abgehört und dabei systematisch erfasst, gespeichert und ausgewertet werden.
 
-Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neuland" geschrieben - ein Font, der im Jahre 1923 vom Schriftkünstler [[w:de:Rudolf_Koch_(Schriftkünstler)#Runde_Schriften|Rudolf Koch]] entwickelt wurde. Der Logo-Schriftzug ist seit dem ersten, zeitgleichen Release des GoldBugs im Jahre 2013 interessanter Weise eine Allusion an den ''Satz des Jahres'' 2013, in dem die deutsche Bundeskanzlerin Angela Merkel - im Zusammenhang mit der [[w:de:Globale_Überwachungs-_und_Spionageaffäre|Überwachungs- und Spionageaffäre 2013]] und dem Abhören ihres Telefons - in einem Gespräch mit dem amerikanischen Präsidenten Barack Obama den Satz prägte: „Das Internet ist für uns alle Neuland."
+Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neuland" geschrieben - ein Font, der im Jahre 1923 vom Schriftkünstler [[w:de:Rudolf_Koch_(Schriftkünstler)#Runde_Schriften|Rudolf Koch]] entwickelt wurde. Der Logo-Schriftzug ist seit dem ersten, zeitgleichen Release des GoldBugs im Jahre 2013 interessanter Weise eine Allusion an den ''Satz des Jahres'' 2013, in dem die deutsche Bundeskanzlerin Angela Merkel - im Zusammenhang mit der [[w:de:Globale_Überwachungs-_und_Spionageaffäre|Überwachungs- und Spionageaffäre 2013]] und dem Abhören ihres Telefons - in einem Gespräch mit dem amerikanischen Präsidenten Barack Obama den Satz prägte: „Das Internet ist für uns alle Neuland." ..
 
-- Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt, entscheiden die Lernenden, Lehrenden und die Medien - in jedem Falle aber jeder selbst z.B. als Leser dieses Manuals mit seinen Freunden, mit denen die Verschlüsselungssoftware angewandt wird. 
+.. - Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt, entscheiden die Lernenden, Lehrenden und die Medien - in jedem Falle aber jeder selbst z.B. als Leser dieses Manuals mit seinen Freunden, mit denen die Verschlüsselungssoftware angewandt wird. 
 
 ## Woher kommt der Name "GoldBug"?
  
