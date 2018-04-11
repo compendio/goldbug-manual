@@ -104,7 +104,7 @@ Inhaltsverzeichnis
 ```
 
 
-###Was ist GoldBug?###
+## Was ist GoldBug?
 
 GoldBug ist ein sicherer Instant Chat Messenger und verschlüsselnder E-Mail-Client, der darüber hinaus auch noch weitere Funktionen beinhaltet wie einen Gruppenchat, Dateitransfer sowie auch einer URL-Suche aufgrund einer implementierten URL-Datenbank und weitere Fähigkeiten, z.B. wie proxyfähige Durchleitungen etc..
 
