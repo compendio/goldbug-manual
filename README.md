@@ -163,7 +163,7 @@ Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werde
 Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - ein Programm mit zahlreichen Funktionen für die sichere Kommunikation, das die Übertragung der verschlüsselten Pakete mit dem sogenannten [Echo-Protokoll](https://github.com/textbrowser/spot-on/blob/master/branches/trunk/Documentation/Spot-On.pdf ) realisiert und besonders absichert, wie es weiter unten noch erläutert wird. 
 
 
-## Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
+### Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
 
 Heutzutage sind fast alle kabellosen Wifi-Internetzugänge mit einem Passwort geschützt (Freifunk-Aktivitäten versuchen gerade, diese Überregulierung wieder zurückzunehmen durch Passwort- und Account-freie Zugänge zum Internet). In wenigen Jahren werden Klartext-Nachrichten oder E-Mails an Freunde (im Folgenden gelten alle Begriffe immer für alle Geschlechter) über das Internet ebenso verschlüsselt sein - sein müssen. Um diesen Wandel zu festigen, wird manchmal auch von C-Mail (für Crypto-Mail) statt E-Mail als neuem Begriff gesprochen.
 
@@ -189,7 +189,7 @@ Nebenbei bemerkt: Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neulan
 .. - Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt – oder eine Art „Gurtpflicht“ auch E-Mails zu C-Mails wandeln wird, entscheiden die Lernenden, Lehrenden sowie die Medien und Techniker - in jedem Falle aber jeder selbst (z.B. als Leser dieses Manuals) mit den Freunden, mit denen die Verschlüsselungssoftware angewandt wird.
 
 
-## Woher kommt der Name "GoldBug"?
+### Woher kommt der Name "GoldBug"?
  
 Der Gold-Käfer ("[The Gold-Bug](https://de.wikipedia.org/wiki/Der_Goldk%C3%A4fer)") ist eine Kurzgeschichte von [Edgar Allan Poe](https://de.wikipedia.org/wiki/Edgar_Allan_Poe): In der Handlung geht es um William LeGrand, der kürzlich einen gold-farbenen Marienkäfer entdeckte.
 
@@ -207,11 +207,14 @@ Wer gern Neues erkundet, offen an das, was vorgefunden wird, herangeht, wird auc
 Für Lehrpersonen ist die Software daher ein interessantes Lehrinstrument, das Kryptographie in praktischer Implementierung und in Übungen mit spielerischem Austesten vorstellen und erproben kann und an die Anfänge der populären Kryptographie seinerzeit errinnert.
 
 
-## Verschlüsselung: GoldBug hat Alternativen zu RSA
+## Verschlüsselung: GoldBug hat Alternativen zu RSA - Der erste NTRU & McEliece Messenger
 
 Verschlüsselung ist immer nur so gut, wie die mathematischen Berechnungen nicht durch die Automation von Computern in Windeseile berechnet werden können. Daher wird mathematisch gesehen die [Primfaktorzerlegung](https://de.wikipedia.org/wiki/Primfaktorzerlegung) genutzt, da sie zum Teil jahrelangen Rechenaufwand benötigt.
 
-Dennoch ist Verschlüsselung nicht unknackbar und die Prozeduren und Bibliotheken müssen auch gut angewandt werden, damit sie sicher sind. RSA gilt dabei „heute als ein wesentlicher, vielfach untersuchter und noch nicht knackbarer Verschlüsselungsstandard - wenn auch die Weiterentwicklung der schnellen Computer eine andere Zukunft bringen mag“. – So wurde es 2013 in diesem Manual vermerkt. Im Jahr 2016 gab dann das offizielle NIST Institut bekannt, dass RSA als gebrochen gilt im  Zeitalter des Quantum Computings (siehe [NIST zit. n. Adams/Maier 2016](https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf)).
+Es werden grundsätzlich zwei Methoden zur Verschlüsselung unterschieden. Zum einen die symmetrische Verschlüsselung: Beide Nutzer wenden das gleiche Passwort an, z.B ein sogenanntes AES mit 32 Zeichen, was noch weiter unten ausführlicher erläutert wird, oder zum anderen die a-symmetrische Verschlüsselung.
+Bei der a-symmetrischen Verschlüsselung hat jeder Nutzer zwei Schlüssel, einen privaten und einen öffentlichen Schlüssel. Die Nutzer tauschen jeweils den öffentlichen Schlüssel und können dann Daten mit Anwendung des privaten Schlüssels in Kombination mit dem öffentlichen Schlüssel verschlüsseln. Nach Übertragung ist auch die Gegenseite in der Lage, mit dem eigenen privaten Schlüssel die Nachricht zu entziffern. Das asymmetrische Verfahren wird auch PKI genannt: [[Pubic Key Infrastructure]][https://de.wikipedia.org/wiki/Public-Key-Infrastruktur] genannt, die auf verschiedenen Algorithmen für die Schlüsselerzeugung aufbauen kann.
+
+Dennoch ist Verschlüsselung - sei es über AES oder PKI - nicht unknackbar und die Prozeduren und Bibliotheken müssen auch gut angewandt werden, damit sie sicher sind. RSA gilt dabei „heute als ein wesentlicher, vielfach untersuchter und noch nicht knackbarer Verschlüsselungsstandard - wenn auch die Weiterentwicklung der schnellen Computer eine andere Zukunft bringen mag“. – so wurde es noch 2014 in diesem Manual vermerkt. Im Jahr 2016 gab dann das offizielle NIST Institut bekannt, dass RSA als gebrochen gilt im  Zeitalter des Quantum Computings (siehe [NIST zit. n. Adams/Maier 2016](https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf)).
 
 Die Medien haben es kaum aufgegriffen, da wahrscheinlich jeder einstimmen wird, dass man einen Quanten-Computer nicht im nächsten Supermarkt kaufen könne, und das Problem daher nicht relevant sei. Es hat den Charme von Kindern, die sich die Hand vor Augen halten und das Problem oder eine Gefährdung somit nicht an ihre Realitätswahrnehmung heranlassen. 
 Dennoch gilt offiziell als bestätigt: RSA kann – zwar mit speziellen Mitteln – gebrochen werden. Die Sicherheit ist dahin. Das bedeutet auch Auswirkungen auf unsere Internet-Ökonomie und das Online-Banking, denn bislang sind auch die sicheren Verbindungen auf RSA aufbauend und ein TLS zur Absicherung der Verbindung bei Online-Banking oder -Shopping basierend auf McEliece oder NTRU gibt es bislang noch nicht.
@@ -226,7 +229,27 @@ GoldBug nutzt die libgcrypt-, libntru- und McEliece-Bibliotheken für die Erzeug
 Bei den bei Verschlüsselung optional verfügbaren Signaturverfahren besteht ebenso eine umfassende Auswahl: DSA, ECDSA, EdDSA, ElGamal und RSA. Signatur bedeutet, dass der erstelle Schlüssel für die Verschlüsselung nochmals mit einem Schlüssel signiert wird, um nachweisen zu können, dass eine Nachricht auch von einem bestimmten Teilnehmer und niemand anderem kommt.
 Die OAEP und PSS Schemata sind mit der RSA-Verschlüsselung und RSA-Signatur entsprechend verwendet. 
 
-Abbildung: RSA-Alternativen
+
+Abbildung: RSA und seine Alterntiven in GoldBug
+
+|McEliece-Kryptosystem|
+|---|
+|Das [McEliece-Kryptosystem]() ist ein asymmetrischer Verschlüsselungsalgorithmus. Es wurde 1978 vom Kryptographen Robert J. McEliece [vorgestellt](http://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF). Es ist selbst unter Verwendung von Quantencomputern keine effiziente Methode bekannt, mit der das McEliece-Kryptosystem gebrochen werden kann, was es zu einem vielversprechenden Algorithmus für Post-Quanten-Kryptographie macht.|
+
+
+|NTRU|
+|---|
+|NTRU ist ein asymmetrisches Verschlüsselungsverfahren, das 1996 von den Mathematikern Jeffrey Hoffstein, Jill Pipher und Joseph Silverman entwickelt wurde. Es basiert lose auf Gitterproblemen, die selbst mit Quantenrechnern als nicht knackbar gelten. Allerdings ist NTRUEncrypt bisher nicht so umfänglich untersucht wie gebräuchlichere Verfahren (z.B. RSA). NTRUEncrypt ist durch IEEE P1363.1 standardisiert (vgl. [NTRUEncrypt](https://de.wikipedia.org/wiki/NTRUEncrypt).|
+
+ 
+|ElGamal|
+|---|
+|Das ElGamal-Verschlüsselungs-Verfahren oder ElGamal-Kryptosystem ist ein im Jahr 1985 vom Kryptologen Taher Elgamal entwickeltes Public-Key-Verschlüsselungsverfahren, das auf der Idee des Diffie-Hellman-Schlüsselaustauschs aufbaut. Das ElGamal-Verschlüsselungsverfahren beruht, wie auch das Diffie-Hellman-Protokoll, auf Operationen in einer zyklischen Gruppe endlicher Ordnung. Das ElGamal-Verschlüsselungs-Verfahren ist beweisbar IND-CPA-sicher unter der Annahme, dass das Decisional-Diffie-Hellman-Problem in der zugrundeliegenden Gruppe nicht trivial ist. Verwandt mit dem hier beschriebenen Verschlüsselungsverfahren (aber nicht mit diesem identisch) ist das Elgamal-Signaturverfahren (Das ElGamal-Signatur-Verfahren ist in GoldBug bislang nicht implementiert). ElGamal unterliegt keinem Patent (vgl. [Elgamal-Verschlüsselungsverfahren](https://de.wikipedia.org/wiki/Elgamal-Verschl%C3%BCsselungsverfahren)).|
+
+
+|RSA|
+|---|
+|RSA (nach den Personen Rivest, Shamir und Adleman) ist ein asymmetrisches kryptographisches Verfahren, das sowohl zur Verschlüsselung als auch zur digitalen Signatur verwendet werden kann. Es verwendet ein Schlüsselpaar, bestehend aus einem privaten Schlüssel, der zum Entschlüsseln oder Signieren von Daten verwendet wird, und einem öffentlichen Schlüssel, mit dem man verschlüsselt oder Signaturen prüft. Der private Schlüssel wird geheim gehalten und kann nur mit extrem hohem Aufwand aus dem öffentlichen Schlüssel berechnet werden (vgl. [RSA-Kryptosystem](https://de.wikipedia.org/wiki/RSA-Kryptosystem)).|
 
 
 
@@ -242,38 +265,26 @@ Natürlich kann jeder Nutzer in GoldBug seine
 
 Der Vorteil ist, dass jeder Nutzer dieses individuell für sich definieren kann. Andere Applikationen - selbst quell-offene Anwendungen - erlauben es dem Nutzer kaum, diese entscheidenden Werte für das Verschlüsselungsverfahren selbst zu bestimmen.
 
-Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Knoten mit verschiedenen Schlüsseltypen sind somit gut definiert, wenn die Knoten gemeinsame Versionen von libgcrypt und libntru bzw. McEliece Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer chatten und e-mailen, der einen ElGamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Voraussetzung ist lediglich, dass beide Nutzer dieselbe Version der Bibliothek bzw. von GoldBug nutzen. 
+Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Knoten mit verschiedenen Schlüssesten die jeweils aktuellste verfügbare Version.
+
+
+### Anwendung der Block Cipher Modi 
+GoldBug verwendet [CBC mit CTS](https://de.wikipedia.org/wiki/Cipher_Block_Chaining_Mode), um die Vertraulichkeit zu schaffen. Der Dateiverschlüsselungsmechanismus unterstützt den [Galois/Counter Mode (GCM)](https://de.wikipedia.org/wiki/Galois/Counter_Mode)-Algorithmus ohne die Eigenschaft zur Authentizität, die durch den Algorithmus zur Verfügung gestellt wird. Um die Authentizität zu bieten, verwendet die Anwendung den methodischen Ansatz von "Erst verschlüsseln-dann-MAC" ([Encrypt-then-MAC](https://en.wikipedia.org/wiki/Authenticated_encryption#Encrypt-then-MAC), ETM). Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authentifizierten Container enthält dazu weitere teltypen sind somit gut definiert, wenn die Knoten gemeinsame Versionen von libgcrypt und libntru bzw. McEliece Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer chatten und e-mailen, der einen ElGamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Voraussetzung ist lediglich, dass beide Nutzer dieselbe Version der Bibliothek bzw. von GoldBug nutzen. 
 
 Nicht-NTRU private Schlüssel werden auf Richtigkeit durch die gcry_pk_testkey() Funktion ausgewertet. Der öffentliche Schlüssel muss auch einige grundlegende Kriterien erfüllen, wie beispielsweise den Einschluss der Public-Key-Kennung.
 
-
-Wenn ein Nutzer das Programm mit einem Freund testen will, nutzt jeder am besten die jeweils aktuellste verfügbare Version.
-
-Abbildung: RSA, ElGamal, NTRU und McEliece im Vergleich
+Wenn ein Nutzer das Programm mit einem Freund testen will, nutzt jeder am bechnische Details.
 
 
-RSA Alternativen
+### Hybrides Verschlüsselungs-System 
 
-|---|
-|McEliece-Kryptosystem|
-|---|
-|Das McEliece-Kryptosystem ist ein asymmetrischer Verschlüsselungsalgorithmus. Es wurde 1978 vom Kryptographen Robert J. McEliece [vorgestellt](http://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF). Es ist selbst unter Verwendung von Quantencomputern keine effiziente Methode bekannt, mit der das McEliece-Kryptosystem gebrochen werden kann, was es zu einem vielversprechenden Algorithmus für Post-Quanten-Kryptographie macht.|
+GoldBug implementiert ein Hybridsystem für die Verschlüsselung, inklusive Authentizität und Vertraulichkeit. 
+Hybride heisst zunächst einmal beide Varianten sind vorhanden und können mit einander kombiniert werden. So kann eine Nachricht zuerst mit oben dargestellter PKI a-symmetrisch verschküsselt werden und sodann auch symmetrisch mit einem AES nocheinmal. Oder umgekehrt.
+Es ist aber auch noch eine weitere Variante denkbar. Der PKI Übertragungsweg überträgt mit permanenten Schlüsseln nochmals nur temporär eingesetzte Schlüssel, mit denen dann die weitere Kommunikation über diesen temporären Kanal erfolgt. Auch der temporäre Kanal kann dann wiederum eine erneute symmetrische Verschlüsselung mit einem AES vornehmen. Somit bestehen nicht nur im Methodenwechsel von PKI zu AES bzw. von asymmetrische Verschlüsselung zu symmetrischer Verschlüsselung eine Möglichkeit ein Hybridsystem zu bilden, sondern auch in der Anwendung von permanenten PKI Schlüsseln zu Nutzung von temporären PKI Schlüsseln.
 
+Vielfach zu verschlüsseln und zwischen diesen Methoden bzw. zeitlich limitierten Schlüsseln zu wechseln ist die starke kometnez von GoldBug in dieser Multi-, Vielfach und Hybriden Verschlüsselung. Mit diesen Möglichkeiten kann man nun spielen und in verschiedensten Weisen anwenden. Wird nun zuerst der permanente oder der temoräre Schlüssel angewand oder der der symmetrische und dann der asymmetrische nochmals zur zweiten Ebene der Verschlüsselung oder alles umgekehrt?
 
-NTRU ist ein asymmetrisches Verschlüsselungsverfahren, das 1996 von den Mathematikern Jeffrey Hoffstein, Jill Pipher und Joseph Silverman entwickelt wurde. Es basiert lose auf Gitterproblemen, die selbst mit Quantenrechnern als nicht knackbar gelten. Allerdings ist NTRUEncrypt bisher nicht so umfänglich untersucht wie gebräuchlichere Verfahren (z.B. RSA). NTRUEncrypt ist durch IEEE P1363.1 standardisiert (vgl. [NTRUEncrypt]() sowie [NTRU]()).
- 
-RSA (nach den Personen Rivest, Shamir und Adleman) ist ein asymmetrisches kryptographisches Verfahren, das sowohl zur Verschlüsselung als auch zur digitalen Signatur verwendet werden kann. Es verwendet ein Schlüsselpaar, bestehend aus einem privaten Schlüssel, der zum Entschlüsseln oder Signieren von Daten verwendet wird, und einem öffentlichen Schlüssel, mit dem man verschlüsselt oder Signaturen prüft. Der private Schlüssel wird geheim gehalten und kann nur mit extrem hohem Aufwand aus dem öffentlichen Schlüssel berechnet werden (vgl. [[w:RSA-Kryptosystem|RSA-Kryptosystem (de)]] sowie [[w:en:RSA_(cryptosystem)|RSA Cryptosystem (en)]]).
- 
-Das ElGamal-Verschlüsselungs-Verfahren oder ElGamal-Kryptosystem ist ein im Jahr 1985 vom Kryptologen Taher Elgamal entwickeltes Public-Key-Verschlüsselungsverfahren, das auf der Idee des Diffie-Hellman-Schlüsselaustauschs aufbaut. Das ElGamal-Verschlüsselungsverfahren beruht, wie auch das Diffie-Hellman-Protokoll, auf Operationen in einer zyklischen Gruppe endlicher Ordnung. Das ElGamal-Verschlüsselungs-Verfahren ist beweisbar IND-CPA-sicher unter der Annahme, dass das Decisional-Diffie-Hellman-Problem in der zugrundeliegenden Gruppe nicht trivial ist. Verwandt mit dem hier beschriebenen Verschlüsselungsverfahren (aber nicht mit diesem identisch) ist das Elgamal-Signaturverfahren (Das ElGamal-Signatur-Verfahren ist in GoldBug bislang nicht implementiert). ElGamal unterliegt keinem Patent (vgl. [[w:en:ElGamal_encryption|ElGamal encryption]] sowie [[w:Elgamal-Verschlüsselungsverfahren|Elgamal-Verschlüsselungsverfahren]]).
-
-
-
-== Anwendung der Block Cipher Modi ==
-GoldBug verwendet [[w:de:Cipher_Block_Chaining_Mode|CBC mit CTS]], um die Vertraulichkeit zu schaffen. Der Dateiverschlüsselungsmechanismus unterstützt den [[w:de:Galois/Counter_Mode|Galois/Counter Mode (GCM)]]-Algorithmus ohne die Eigenschaft zur Authentizität, die durch den Algorithmus zur Verfügung gestellt wird. Um die Authentizität zu bieten, verwendet die Anwendung den methodischen Ansatz von "Erst verschlüsseln-dann-MAC" ([[w:en:Authenticated_encryption#Encrypt-then-MAC|Encrypt-then-MAC]], ETM). Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authentifizierten Container enthält dazu weitere technische Details.
-
-== Hybrides Verschlüsselungs-System ==
-
-GoldBug implementiert ein Hybridsystem für die Authentizität und Vertraulichkeit. Einem Teil des Systems erzeugt pro Nachricht den Schlüssel für die Authentifizierung und die  Verschlüsselung. Diese beiden Schlüssel werden für die Authentifizierung und das Einkapseln von Daten (der Nachricht) verwendet. Die zwei Schlüssel sind dann über den Public-Key-Teil des Systems eingekapselt. Die Anwendung bietet darüber hinaus auch einen Mechanismus zur Verteilung von Sitzungs-Schlüsseln für diese Datenkapselung (bzw. Verschlüsselung der Nachricht). Wiederum werden die Schlüssel über das Public-Key-System eingekapselt und übertragen: ein zusätzlicher Mechanismus ermöglicht die Verteilung der Sitzungs-Schlüssel über die vorher festgelegten privaten Schlüssel. Digitale Signaturen können wahlweise auf die Daten angewendet werden. 
+Ein Teil des Systems bei GoldBug erzeugt also pro Nachricht den Schlüssel für die Authentifizierung und die Verschlüsselung. Diese beiden Schlüssel werden für die Authentifizierung und das Einkapseln von Daten (also der Nachricht) verwendet. Die zwei Schlüssel (für die Authentifizierung und die Verschlüsselung) sind dann über den Public-Key-Teil des Systems eingekapselt bzw angewandt. Die Anwendung bietet darüber hinaus auch einen Mechanismus zur Verteilung von Sitzungs-Schlüsseln für diese Datenkapselung (bzw. Verschlüsselung der Nachricht) - wie oben beschrieben, die temporären Schüssel. Wiederum werden die Schlüssel über das Public-Key-System eingekapselt und übertragen: ein zusätzlicher Mechanismus ermöglicht die Verteilung der Sitzungs-Schlüssel über die vorher festgelegten Schlüssel. Und digitale Signaturen können ebenso wahlweise auf die Daten angewendet werden. 
 
 Als ein Beispiel, mag dieses Format der folgende Nachrichtenverschlüsselung dienen: 
 
@@ -283,27 +294,29 @@ Wer sich erstmalig mit Verschlüsselung beschäftigt, für den ist obiges Beispi
 
 Die Authentifizierung des privaten Schlüssels und der Verschlüsselungsmechanismus ist identisch mit dem Verfahren, wie er in der Dokumentation beim Quelltext in dem Abschnitt zu den verschlüsselten und authentifizierten Container weitergehend technisch erörtert ist.
 
-== Symmetrische Verschlüsselung mit AES ==
+Stellen wir jedoch noch einen einfacheren Fall dar und gehen nochmal etwas ausführlicher auf die symmetrische Verschlüsselung mit einem AES-Passwort ein, das die PKI Verschlüselung wie folgt ergänzen kann:
 
-Bei der symmetrischen Verschlüsselung wird [[w:de:Advanced_Encryption_Standard|AES]] eingesetzt - ein 32 Zeichen langes Passwort, das durch Zufallsprozesse generiert wird. Da alle Zeichen und Sonderzeichen bei der Generierung eingesetzt werden, ist die Möglichkeitsmenge ebenso ausreichend groß, dass selbst schnelle Maschinen nicht innerhalb kurzer Zeit alle Varianten ausprobieren können. Während die asymmetrische Verschlüsselung ein öffentliches und privates Schlüsselpaar nutzt, ist es bei der symmetrischen Verschlüsselung eine geheime Passphrase, die beide Teilnehmer kennen müssen (daher symmetrisch genannt bzw. wird dieses für GoldBug später auch noch in der Gemini-Funktion (von griechisch "Zwilling" abgeleitet) angesprochen: Beide Seiten müssen die geheime Passphrase austauschen und kennen).
 
-GoldBug nutzt beide Standards: asymmetrische Schlüssel werden durch SSL/TLS verschlüsselte Verbindungen gesandt, aber auch die asymmetrisch verschlüsselte Nachricht kann noch zusätzlich mit einer symmetrischen Verschlüsslung abgesichert werden. Dann nutzt GoldBug sogar drei Ebenen von Verschlüsselung wie dieses Beispiel der Einkapselung nochmals (vereinfacht, da ohne HASH/MAC bzw. Signatur dargestellt) verdeutlicht:
+### Symmetrische Verschlüsselung mit AES 
+
+Bei der symmetrischen Verschlüsselung wird [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) eingesetzt - ein 32 Zeichen langes Passwort, das durch Zufallsprozesse generiert wird. Da alle Zeichen und Sonderzeichen bei der Generierung eingesetzt werden, ist die Möglichkeitsmenge ebenso ausreichend groß, dass selbst schnelle Maschinen nicht innerhalb kurzer Zeit alle Varianten ausprobieren können. Während die asymmetrische Verschlüsselung ein öffentliches und privates Schlüsselpaar nutzt, ist es bei der symmetrischen Verschlüsselung eine geheime Passphrase, die beide Teilnehmer kennen müssen (daher symmetrisch genannt bzw. wird dieses für GoldBug später auch noch in der Gemini-Funktion (von griechisch "Zwilling" abgeleitet) angesprochen: Beide Seiten müssen die geheime Passphrase austauschen und kennen).
+
+GoldBug nutzt somit wie oben beschrieben beide Standards: asymmetrische Schlüssel werden durch SSL/TLS verschlüsselte Verbindungen gesandt, aber auch die asymmetrisch verschlüsselte Nachricht kann noch zusätzlich mit einer symmetrischen Verschlüsslung abgesichert werden. Dann nutzt GoldBug sogar drei Ebenen von Verschlüsselung wie dieses Beispiel der Einkapselung nochmals (vereinfacht, da ohne HASH/MAC bzw. Signatur dargestellt) verdeutlicht:
 
  RSA-SSL (AES (ElGamal (Nachricht)))
 
-Übersetzung dieser Formel: Erst wird die Textnachricht mit dem öffentlichen (asymmetrischen) Schlüssel des Freundes über den ElGamal-Algorithmus verschlüsselt, sodann wird der verschlüsselte Text nochmals mit einem AES-Algorithmus (symmetrisch) verschlüsselt und diese Kapsel wird dann durch die bestehende mit SSL/TLS (unter Nutzung von RSA) verschlüsselte Verbindung zum Freund auf die Reise in das p2p Echo-Netz gesandt.
+Übersetzung dieser Formel: Erst wird die Textnachricht mit dem öffentlichen (asymmetrischen) Schlüssel des Freundes über den ElGamal-Algorithmus verschlüsselt, sodann wird der verschlüsselte Text nochmals mit einem AES-Algorithmus (symmetrisch) (ein zweites Mal) verschlüsselt (und abgesichert) und diese Kapsel wird dann durch die bestehende mit SSL/TLS (unter Nutzung von RSA) verschlüsselte Verbindung zum Freund gesandt.
 
-Auch besteht die Möglichkeit, die symmetrische Passphrase (das AES) mit der Gegenstelle auszutauschen über die etablierte asymmetrische (SSL/TLS-)Verschlüsselung. Die Passphrase kann automatisch generiert oder auch manuell definiert werden, wie wir weiter unten bei der Gemini- bzw. Call-Funktion noch weiter sehen werden. Es gibt kaum andere - zudem quelloffene - Applikationen, die eine (durchgängige) Ende-zu-Ende vom einen Teilnehmer zum anderen Teilnehmer Verschlüsselung zulassen, in der der Nutzer die Passphrase (z.B. ein AES-String) manuell definieren kann.
+Auch besteht die Möglichkeit, die symmetrische Passphrase (das AES) mit der Gegenstelle auszutauschen über die etablierte asymmetrische (SSL/TLS-)Verschlüsselung. Die Passphrase kann automatisch generiert oder auch manuell definiert werden, wie wir weiter unten bei der Gemini- bzw. Call-Funktion noch weiter sehen werden. Es gibt kaum andere - zudem quelloffene - Applikationen, die eine (durchgängige) Ende-zu-Ende vom einen Teilnehmer zum anderen Teilnehmer Verschlüsselung zulassen, in der der Nutzer die Passphrase (z.B. ein AES-String) manuell und individuell definieren kann.
 
-Eine (symmetrische) Ende-zu-Ende Verschlüsselung ist als zu differenzieren von der Punkt-zu-Punkt-Verschlüsselung. Daher wird auch gerne das Wort "durchgängige" Ende-zu-Ende-Verschlüsselung hinzugefügt (besser noch: durchgängige symmetrische Ende-zu-Ende-Verschlüsselung) - denn es geht ja darum, dass nur die Teilnehmerin Alice und der Teilnehmer Bob die geheime Passphrase kennen. Eine Punkt-zu-Punkt-Verschlüsselung läge vor, wenn Alice zum Server und dann der Server zu Bob die Verbindung herstellt. Hierbei kann es sein, dass der Server die Nachricht lesen kann, sie also auspackt und wieder einpackt, insbesondere wenn ein asymmetrischer Schlüssel zwischen den Teilnehmern und dem in der Mitte angesiedelten Server besteht.
+Eine (symmetrische) Ende-zu-Ende Verschlüsselung ist also zu differenzieren von der Punkt-zu-Punkt-Verschlüsselung. Daher wird auch gerne das Wort "durchgängige" Ende-zu-Ende-Verschlüsselung hinzugefügt (besser noch: durchgängige symmetrische Ende-zu-Ende-Verschlüsselung) - denn es geht ja darum, dass nur die Teilnehmerin Alice und der Teilnehmer Bob die geheime Passphrase kennen. Eine Punkt-zu-Punkt-Verschlüsselung läge vor, wenn Alice zum Server und dann der Server zu Bob die Verbindung herstellt. Hierbei kann es sein, dass der Server die Nachricht lesen kann, sie also auspackt und wieder einpackt, insbesondere wenn ein asymmetrischer Schlüssel zwischen den Teilnehmern und dem in der Mitte angesiedelten Server besteht.
 
-GoldBug bietet eine durchgängige symmetrische End-zu-Ende Verschlüsselung an, die nicht nur manuell definiert werden kann, sondern mit einer Automation auch instant, jederzeit erneuert werden kann.
+GoldBug bietet stattdessen eine durchgängige symmetrische End-zu-Ende Verschlüsselung an, die nicht nur manuell definiert werden kann, sondern mit einer Automation auch instant, jederzeit erneuert werden kann.
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
+Diese spezielle Art der Mischung von PKI und AES sowie Transfer über eine SSL/TLS - Verbidnung wird als Echo-Protokoll bezeichnet, das im folgenden Abschnitt nochmals vertieft werden soll, denn es beinhaltet noch eine weitere Komponente beim Versand in das Netzwerk.
 
-=Was ist das ECHO Protokoll?=
+
+## Was ist das ECHO Protokoll?
  
 Mit dem ECHO-Protokoll ist - einfach ausgedrückt - gemeint, dass
  
