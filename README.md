@@ -1,7 +1,9 @@
 ﻿# goldbug-manual
 Manual of the GoldBug Crypto Messenger
 
-https://compendio.github.io/goldbug-manual/
+![Abbildung: GoldBug Smiley](/images/goldbug-neuland.png)
+
+[https://compendio.github.io/goldbug-manual/](https://compendio.github.io/goldbug-manual/)
 
 
 
@@ -1919,6 +1921,9 @@ make or mingw32-make<br />
 
 
 
+![Abbildung: GoldBug Logo](/images/goldbug.png)
+
+![Abbildung: POPTASTIC](/images/poptastic.png)
 
 ![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
 
