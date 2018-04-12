@@ -255,13 +255,9 @@ Abbildung: RSA, ElGamal, NTRU und McEliece im Vergleich
 RSA Alternativen
 
 
-<div class="panel panel-info">
-McEliece-Kryptosystem
-{: .panel-heading} <div class="panel-body">
-
-Das McEliece-Kryptosystem ist ein asymmetrischer Verschlüsselungsalgorithmus. Es wurde 1978 vom Kryptographen Robert J. McEliece [vorgestellt](http://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF). Es ist selbst unter Verwendung von Quantencomputern keine effiziente Methode bekannt, mit der das McEliece-Kryptosystem gebrochen werden kann, was es zu einem vielversprechenden Algorithmus für Post-Quanten-Kryptographie macht.
-
-</div></div>
+| McEliece-Kryptosystem   |
+|---|
+|Das McEliece-Kryptosystem ist ein asymmetrischer Verschlüsselungsalgorithmus. Es wurde 1978 vom Kryptographen Robert J. McEliece [vorgestellt](http://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF). Es ist selbst unter Verwendung von Quantencomputern keine effiziente Methode bekannt, mit der das McEliece-Kryptosystem gebrochen werden kann, was es zu einem vielversprechenden Algorithmus für Post-Quanten-Kryptographie macht.|
 
 
 NTRU ist ein asymmetrisches Verschlüsselungsverfahren, das 1996 von den Mathematikern Jeffrey Hoffstein, Jill Pipher und Joseph Silverman entwickelt wurde. Es basiert lose auf Gitterproblemen, die selbst mit Quantenrechnern als nicht knackbar gelten. Allerdings ist NTRUEncrypt bisher nicht so umfänglich untersucht wie gebräuchlichere Verfahren (z.B. RSA). NTRUEncrypt ist durch IEEE P1363.1 standardisiert (vgl. [NTRUEncrypt]() sowie [NTRU]()).
