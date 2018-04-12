@@ -254,8 +254,8 @@ Abbildung: RSA, ElGamal, NTRU und McEliece im Vergleich
 
 RSA Alternativen
 
-
-| McEliece-Kryptosystem   |
+|---|
+|McEliece-Kryptosystem|
 |---|
 |Das McEliece-Kryptosystem ist ein asymmetrischer Verschlüsselungsalgorithmus. Es wurde 1978 vom Kryptographen Robert J. McEliece [vorgestellt](http://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF). Es ist selbst unter Verwendung von Quantencomputern keine effiziente Methode bekannt, mit der das McEliece-Kryptosystem gebrochen werden kann, was es zu einem vielversprechenden Algorithmus für Post-Quanten-Kryptographie macht.|
 
