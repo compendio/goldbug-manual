@@ -15,20 +15,21 @@ Inhaltsverzeichnis
         1.2 Woher kommt der Name "GoldBug"?
 
     2 Verschlüsselung: GoldBug hat Alternativen zu RSA
-        2.1 RSA, ElGamal und insbesondere NTRU und MC Eliece im Vergleich
+        2.1 Asymmetrische Verschlüsselung mit PKI: RSA, 
+            ElGamal und insbesondere NTRU und McEliece im Vergleich
         2.2 Anwendung der Block Cipher Modi
         2.3 Hybrides Verschlüsselungs-System
         2.4 Symmetrische Verschlüsselung mit AES
 
-    3 Was ist das ECHO Protokoll?
-        3.1 Volles ECHO
-        3.2 Halbes ECHO
-        3.3 ECHO Accounts
-        3.4 Das ECHO-Grid
+    3 Was ist das Echo Protokoll?
+        3.1 Volles Echo
+        3.2 Halbes Echo
+        3.3 Echo Accounts
+        3.4 Das Echo-Grid
             3.4.1 Beispiele des Schlüssel-Austausches von Alice, Bob, Ed und Maria
         3.5 Adaptives Echo (AE) und seine AE-Tokens
             3.5.1 Hänsel und Gretel – ein Beispiel für den Adaptiven Echo Modus
-        3.6 Wie das ECHO Protokoll funktioniert
+        3.6 Wie das Echo Protokoll funktioniert
 
 
     4 Cryptographisches Discovery
@@ -136,7 +137,7 @@ Inhaltsverzeichnis
 ```
 
 
-## Was ist GoldBug?
+## 1 Was ist GoldBug?
 
 GoldBug ist ein sicherer Instant Chat Messenger und verschlüsselnder E-Mail-Client, der darüber hinaus auch noch weitere Funktionen beinhaltet wie Gruppenchat, Dateitransfer sowie auch eine URL-Suche auf Basis einer implementierten URL-Datenbank. 
 
@@ -163,7 +164,7 @@ Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werde
 Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - ein Programm mit zahlreichen Funktionen für die sichere Kommunikation, das die Übertragung der verschlüsselten Pakete mit dem sogenannten [Echo-Protokoll](https://github.com/textbrowser/spot-on/blob/master/branches/trunk/Documentation/Spot-On.pdf ) realisiert und besonders absichert, wie es weiter unten noch erläutert wird. 
 
 
-### Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
+### 1.1 Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
 
 Heutzutage sind fast alle kabellosen Wifi-Internetzugänge mit einem Passwort geschützt (Freifunk-Aktivitäten versuchen gerade, diese Überregulierung wieder zurückzunehmen durch Passwort- und Account-freie Zugänge zum Internet). In wenigen Jahren werden Klartext-Nachrichten oder E-Mails an Freunde (im Folgenden gelten alle Begriffe immer für alle Geschlechter) über das Internet ebenso verschlüsselt sein - sein müssen. Um diesen Wandel zu festigen, wird manchmal auch von C-Mail (für Crypto-Mail) statt E-Mail als neuem Begriff gesprochen.
 
@@ -189,7 +190,7 @@ Nebenbei bemerkt: Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neulan
 .. - Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt – oder eine Art „Gurtpflicht“ auch E-Mails zu C-Mails wandeln wird, entscheiden die Lernenden, Lehrenden sowie die Medien und Techniker - in jedem Falle aber jeder selbst (z.B. als Leser dieses Manuals) mit den Freunden, mit denen die Verschlüsselungssoftware angewandt wird.
 
 
-### Woher kommt der Name "GoldBug"?
+### 1.2 Woher kommt der Name "GoldBug"?
  
 Der Gold-Käfer ("[The Gold-Bug](https://de.wikipedia.org/wiki/Der_Goldk%C3%A4fer)") ist eine Kurzgeschichte von [Edgar Allan Poe](https://de.wikipedia.org/wiki/Edgar_Allan_Poe): In der Handlung geht es um William LeGrand, der kürzlich einen gold-farbenen Marienkäfer entdeckte.
 
@@ -207,7 +208,7 @@ Wer gern Neues erkundet, offen an das, was vorgefunden wird, herangeht, wird auc
 Für Lehrpersonen ist die Software daher ein interessantes Lehrinstrument, das Kryptographie in praktischer Implementierung und in Übungen mit spielerischem Austesten vorstellen und erproben kann und an die Anfänge der populären Kryptographie seinerzeit errinnert.
 
 
-## Verschlüsselung: GoldBug hat Alternativen zu RSA - Der erste NTRU & McEliece Messenger
+## 2 Verschlüsselung: GoldBug hat Alternativen zu RSA - Der erste NTRU & McEliece Messenger
 
 Verschlüsselung ist immer nur so gut, wie die mathematischen Berechnungen nicht durch die Automation von Computern in Windeseile berechnet werden können. Daher wird mathematisch gesehen die [Primfaktorzerlegung](https://de.wikipedia.org/wiki/Primfaktorzerlegung) genutzt, da sie zum Teil jahrelangen Rechenaufwand benötigt.
 
@@ -219,6 +220,7 @@ Dennoch ist Verschlüsselung - sei es über AES oder PKI - nicht unknackbar und 
 Die Medien haben es kaum aufgegriffen, da wahrscheinlich jeder einstimmen wird, dass man einen Quanten-Computer nicht im nächsten Supermarkt kaufen könne, und das Problem daher nicht relevant sei. Es hat den Charme von Kindern, die sich die Hand vor Augen halten und das Problem oder eine Gefährdung somit nicht an ihre Realitätswahrnehmung heranlassen. 
 Dennoch gilt offiziell als bestätigt: RSA kann – zwar mit speziellen Mitteln – gebrochen werden. Die Sicherheit ist dahin. Das bedeutet auch Auswirkungen auf unsere Internet-Ökonomie und das Online-Banking, denn bislang sind auch die sicheren Verbindungen auf RSA aufbauend und ein TLS zur Absicherung der Verbindung bei Online-Banking oder -Shopping basierend auf McEliece oder NTRU gibt es bislang noch nicht.
 
+### 2.1 Asymmetrische Verschlüsselung mit PKI: RSA, ElGamal und insbesondere NTRU und McEliece im Vergleich
 
 GoldBug Messenger hat daher schon frühzeitig ergänzend verschiedene Alternativen zu RSA eingebaut - falls dieser Verschlüsselungs-Algorithmus-Standard einmal unsicher würde: Ggf. kann RSA mit entsprechend großer Größe des Schlüssels (mind. 3072 Bytes) von nicht spezialisierten technischen Administrationskräften noch als zeitliche Hürde betrachtet werden, zumal GoldBug auch mit der Mehrfach-Verschlüsselung weitergehende Absicherungen vorhält.
 
@@ -268,7 +270,7 @@ Der Vorteil ist, dass jeder Nutzer dieses individuell für sich definieren kann.
 Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Knoten mit verschiedenen Schlüssesten die jeweils aktuellste verfügbare Version.
 
 
-### Anwendung der Block Cipher Modi 
+### 2.2 Anwendung der Block Cipher Modi 
 GoldBug verwendet [CBC mit CTS](https://de.wikipedia.org/wiki/Cipher_Block_Chaining_Mode), um die Vertraulichkeit zu schaffen. Der Dateiverschlüsselungsmechanismus unterstützt den [Galois/Counter Mode (GCM)](https://de.wikipedia.org/wiki/Galois/Counter_Mode)-Algorithmus ohne die Eigenschaft zur Authentizität, die durch den Algorithmus zur Verfügung gestellt wird. Um die Authentizität zu bieten, verwendet die Anwendung den methodischen Ansatz von "Erst verschlüsseln-dann-MAC" ([Encrypt-then-MAC](https://en.wikipedia.org/wiki/Authenticated_encryption#Encrypt-then-MAC), ETM). Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authentifizierten Container enthält dazu weitere teltypen sind somit gut definiert, wenn die Knoten gemeinsame Versionen von libgcrypt und libntru bzw. McEliece Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer chatten und e-mailen, der einen ElGamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Voraussetzung ist lediglich, dass beide Nutzer dieselbe Version der Bibliothek bzw. von GoldBug nutzen. 
 
 Nicht-NTRU private Schlüssel werden auf Richtigkeit durch die gcry_pk_testkey() Funktion ausgewertet. Der öffentliche Schlüssel muss auch einige grundlegende Kriterien erfüllen, wie beispielsweise den Einschluss der Public-Key-Kennung.
@@ -276,7 +278,7 @@ Nicht-NTRU private Schlüssel werden auf Richtigkeit durch die gcry_pk_testkey()
 Wenn ein Nutzer das Programm mit einem Freund testen will, nutzt jeder am bechnische Details.
 
 
-### Hybrides Verschlüsselungs-System 
+### 2.3 Hybrides Verschlüsselungs-System 
 
 GoldBug implementiert ein Hybridsystem für die Verschlüsselung, inklusive Authentizität und Vertraulichkeit. 
 Hybride heisst zunächst einmal beide Varianten sind vorhanden und können mit einander kombiniert werden. So kann eine Nachricht zuerst mit oben dargestellter PKI a-symmetrisch verschküsselt werden und sodann auch symmetrisch mit einem AES nocheinmal. Oder umgekehrt.
@@ -286,9 +288,13 @@ Vielfach zu verschlüsseln und zwischen diesen Methoden bzw. zeitlich limitierte
 
 Ein Teil des Systems bei GoldBug erzeugt also pro Nachricht den Schlüssel für die Authentifizierung und die Verschlüsselung. Diese beiden Schlüssel werden für die Authentifizierung und das Einkapseln von Daten (also der Nachricht) verwendet. Die zwei Schlüssel (für die Authentifizierung und die Verschlüsselung) sind dann über den Public-Key-Teil des Systems eingekapselt bzw angewandt. Die Anwendung bietet darüber hinaus auch einen Mechanismus zur Verteilung von Sitzungs-Schlüsseln für diese Datenkapselung (bzw. Verschlüsselung der Nachricht) - wie oben beschrieben, die temporären Schüssel. Wiederum werden die Schlüssel über das Public-Key-System eingekapselt und übertragen: ein zusätzlicher Mechanismus ermöglicht die Verteilung der Sitzungs-Schlüssel über die vorher festgelegten Schlüssel. Und digitale Signaturen können ebenso wahlweise auf die Daten angewendet werden. 
 
+
 Als ein Beispiel, mag dieses Format der folgende Nachrichtenverschlüsselung dienen: 
 
+```
  EPUBLIK Key (Chiffrierschlüssel || Hash Key) || EEncryption Key (Data) || HHash Key (EEncryption Key (Data)). 
+
+```
 
 Wer sich erstmalig mit Verschlüsselung beschäftigt, für den ist obiges Beispiel der Einkapselung ein erstes Beispiel, um weitergehend zu lernen und um die Methoden zu verstehen - in jedem Fall aber sieht man, wie der Chiffrierschlüssel noch um den Hash-Key (vgl. MAC) ergänzt ist und auch die Daten in verschiedenen Verschlüsselungs-Ebenen eingebettet werden.
 
@@ -297,13 +303,15 @@ Die Authentifizierung des privaten Schlüssels und der Verschlüsselungsmechanis
 Stellen wir jedoch noch einen einfacheren Fall dar und gehen nochmal etwas ausführlicher auf die symmetrische Verschlüsselung mit einem AES-Passwort ein, das die PKI Verschlüselung wie folgt ergänzen kann:
 
 
-### Symmetrische Verschlüsselung mit AES 
+### 2.4 Symmetrische Verschlüsselung mit AES 
 
 Bei der symmetrischen Verschlüsselung wird [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) eingesetzt - ein 32 Zeichen langes Passwort, das durch Zufallsprozesse generiert wird. Da alle Zeichen und Sonderzeichen bei der Generierung eingesetzt werden, ist die Möglichkeitsmenge ebenso ausreichend groß, dass selbst schnelle Maschinen nicht innerhalb kurzer Zeit alle Varianten ausprobieren können. Während die asymmetrische Verschlüsselung ein öffentliches und privates Schlüsselpaar nutzt, ist es bei der symmetrischen Verschlüsselung eine geheime Passphrase, die beide Teilnehmer kennen müssen (daher symmetrisch genannt bzw. wird dieses für GoldBug später auch noch in der Gemini-Funktion (von griechisch "Zwilling" abgeleitet) angesprochen: Beide Seiten müssen die geheime Passphrase austauschen und kennen).
 
 GoldBug nutzt somit wie oben beschrieben beide Standards: asymmetrische Schlüssel werden durch SSL/TLS verschlüsselte Verbindungen gesandt, aber auch die asymmetrisch verschlüsselte Nachricht kann noch zusätzlich mit einer symmetrischen Verschlüsslung abgesichert werden. Dann nutzt GoldBug sogar drei Ebenen von Verschlüsselung wie dieses Beispiel der Einkapselung nochmals (vereinfacht, da ohne HASH/MAC bzw. Signatur dargestellt) verdeutlicht:
 
+```
  RSA-SSL (AES (ElGamal (Nachricht)))
+```
 
 Übersetzung dieser Formel: Erst wird die Textnachricht mit dem öffentlichen (asymmetrischen) Schlüssel des Freundes über den ElGamal-Algorithmus verschlüsselt, sodann wird der verschlüsselte Text nochmals mit einem AES-Algorithmus (symmetrisch) (ein zweites Mal) verschlüsselt (und abgesichert) und diese Kapsel wird dann durch die bestehende mit SSL/TLS (unter Nutzung von RSA) verschlüsselte Verbindung zum Freund gesandt.
 
@@ -316,28 +324,29 @@ GoldBug bietet stattdessen eine durchgängige symmetrische End-zu-Ende Verschlü
 Diese spezielle Art der Mischung von PKI und AES sowie Transfer über eine SSL/TLS - Verbidnung wird als Echo-Protokoll bezeichnet, das im folgenden Abschnitt nochmals vertieft werden soll, denn es beinhaltet noch eine weitere Komponente beim Versand in das Netzwerk.
 
 
-## Was ist das ECHO Protokoll?
+
+## 3 Was ist das Echo Protokoll?
  
-Mit dem ECHO-Protokoll ist - einfach ausgedrückt - gemeint, dass
+Mit dem Echo-Protokoll ist - einfach ausgedrückt - gemeint, dass
  
 erstens jede Nachrichten-Übertragung verschlüsselt ist...
  
  Beispiel: 
  SSL ( AES ( RSA* (Nachricht)))
   
- *) anstelle von RSA kann ebenso ElGamal oder NTRU genutzt werden,
+ *) anstelle von RSA kann ebenso ElGamal oder NTRU oder McEliece genutzt werden,
   
-... und zweitens im ECHO-Netzwerk jeder Verbindungsknoten jede Nachricht an jeden verbundenen Nachbarn sendet. Punkt. So einfach ist die Welt.
+... und zweitens im Echo-Netzwerk jeder Verbindungsknoten jede Nachricht an jeden verbundenen Nachbarn sendet. Punkt. So einfach ist die Welt.
  
-Zugrunde liegt das sogenannte "[[w:de:Kleine-Welt-Phänomen|Kleine-Welt-Phänomen]]": Jeder kann jeden über sieben Ecken in einem peer-to-peer oder friend-to-friend Netzwerk irgendwie erreichen - oder aber einfach über einen im Freundeskreis installierten gemeinsamen ECHO-Chat-Server die Nachricht verteilen.
+Zugrunde liegt das sogenannte "[[w:de:Kleine-Welt-Phänomen|Kleine-Welt-Phänomen]]": Jeder kann jeden über sieben Ecken in einem peer-to-peer oder friend-to-friend Netzwerk irgendwie erreichen - oder aber einfach über einen im Freundeskreis installierten gemeinsamen Echo-Chat-Server die Nachricht verteilen.
  
-Der Modus des "Halben ECHOs" sendet eine Nachricht nur einen Hop, d.h. z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht mehr weiter (wie es beim vollen ECHO der Standard ist).
+Der Modus des "Halben Echos" sendet eine Nachricht nur einen Hop, d.h. z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht mehr weiter (wie es beim vollen Echo der Standard ist).
  
-Neben Vollem ECHO, Halben ECHO gibt es drittens noch das Adaptive ECHO (AE). Hier wird die Nachricht nur an Nachbarn oder Freunde versandt, wenn diese einen Verschlüsselungs-Token kennen, also zuvor gespeichert haben. Wer den Token nicht kennt, an den wird die Nachricht nicht weitergeleitet.
+Neben Vollem Echo, Halben Echo gibt es drittens noch das Adaptive Echo (AE). Hier wird die Nachricht nur an Nachbarn oder Freunde versandt, wenn diese einen Verschlüsselungs-Token kennen, also zuvor gespeichert haben. Wer den Token nicht kennt, an den wird die Nachricht nicht weitergeleitet.
  
-Schließlich kennt das ECHO noch ECHO Accounts. Eine Art Firewall. Hiermit kann sichergestellt werden, dass nur Freunde, die den Account-Zugang kennen, sich verbinden können. So kann ein Web-of-Trust erstellt werden, also ein Netzwerk ausschließlich unter Freunden. Es basiert nicht auf dem Schlüssel für die Verschlüsselung, sondern ist davon unabhängig. D.h. Du musst nicht Deinen öffentlichen Schlüssel auch noch mit Deiner IP-Adresse verknüpfen oder gar im Netzwerk bekannt geben.
+Schließlich kennt das Echo noch Echo Accounts. Eine Art Firewall. Hiermit kann sichergestellt werden, dass nur Freunde, die den Account-Zugang kennen, sich verbinden können. So kann ein Web-of-Trust erstellt werden, also ein Netzwerk ausschließlich unter Freunden. Es basiert nicht auf dem Schlüssel für die Verschlüsselung, sondern ist davon unabhängig. D.h. Du musst nicht Deinen öffentlichen Schlüssel auch noch mit Deiner IP-Adresse verknüpfen oder gar im Netzwerk bekannt geben.
  
-Grundsätzlich sendet im ECHO jeder Knoten die Nachricht an jeden Knoten: Wenn Du also eine Nachricht ein zweites Mal erhalten solltest, so wird sie in einem temporären Zwischenspeicher verglichen (anhand des Hashwertes für diese Nachricht) und ggf. bei Bekanntsein des Hashes wieder verworfen ("Congestion Control").
+Grundsätzlich sendet im Echo jeder Knoten die Nachricht an jeden Knoten: Wenn Du also eine Nachricht ein zweites Mal erhalten solltest, so wird sie in einem temporären Zwischenspeicher verglichen (anhand des Hashwertes für diese Nachricht) und ggf. bei Bekanntsein des Hashes wieder verworfen ("Congestion Control").
 
  Eine kleine Analogie:
  Die Kryptographie des Echo-Protokolls kann verglichen werden mit dem Geben und Nehmen von  
@@ -362,22 +371,22 @@ Schließlich: Man kann ebenso mit der GoldBug Applikation unechte Nachrichten ("
 
 ; Simulacra: Diese Funktion sendet bei Aktivierung der Check-Box eine "simulierte" Chat-Nachricht ins Echo Netzwerk. Diese „Fake“-Nachricht besteht aus reinen Zufallsziffern und macht es Analysten schwerer, verschlüsselte Nachrichten mit echten und zufälligen Nachrichten zu unterscheiden. [[w:de:Simulacrum#Medientheorie|Simulacra]] ist ein Begriff, der sowohl aus dem Film "[[w:de:Matrix_(Film)#Varia|Die Matrix]]" als auch in der Philosophie Baudrillards nicht unbekannt ist (Neos Aufbewahrungsort für Software in seiner Wohnung ist das Buch ''Simulacres et Simulation'' des französischen Medienphilosophen Jean Baudrillard, das das Verhältnis von Realität, Symbolen und Gesellschaft untersucht).
 ; Impersonator: Neben zufälligen Fake-Nachrichten kann mit dem GoldBug-Programm auch ein Chat simuliert werden, als wenn eine echte Person von Zeit zu Zeit chattet und Antworten aussendet. Auch diese Nachrichten sind mit reinen Zufallsdaten gefüllt, variieren jedoch - simuliert an einer echten Chat-Unterhaltung.
-: So kann die Analyse von Nachrichten erschwert werden, wenn dritte Aufzeichner ("Recorder") Deine sämtliche Kommunikation zwischen-speichern und aufzeichnen sollten, was ggf. anzunehmen ist. Aber mehr noch: Auch das Ausbleiben von Meta-Daten (vgl. [[w:de:Vorratsdatenspeicherung|Vorratsdatenspeicherung]]) gibt keinen Anlass zu vermuten, dass eine Nachricht für Dich gewesen ist. Wer eine Nachricht erfolgreich auspacken konnte, der sendet sie normalweise nicht erneut ins Echo-Netz. Ein Auszeichner in von Metadaten könnte gesteigertes Interesse an den nicht weitergeleiteten Nachrichten haben, in der Annahme, dass diese Nachricht von Dir erfolgreich dekodiert worden sein kann. Für diesen Fall gibt es auch die Option des Superechos:
-; Superecho: Diese Funktion leitet auch erfolgreich dekodierte und damit lesbare Nachrichten wieder eingepackt weiter an alle Freunde. 
+: So kann die Analyse von Nachrichten erschwert werden, wenn dritte Aufzeichner ("Recorder") Deine sämtliche Kommunikation zwischen-speichern und aufzeichnen sollten, was ggf. anzunehmen ist. Aber mehr noch: Auch das Ausbleiben von Meta-Daten (vgl. [[w:de:Vorratsdatenspeicherung|Vorratsdatenspeicherung]]) gibt keinen Anlass zu vermuten, dass eine Nachricht für Dich gewesen ist. Wer eine Nachricht erfolgreich auspacken konnte, der sendet sie normalweise nicht erneut ins Echo-Netz. Ein Auszeichner in von Metadaten könnte gesteigertes Interesse an den nicht weitergeleiteten Nachrichten haben, in der Annahme, dass diese Nachricht von Dir erfolgreich dekodiert worden sein kann. Für diesen Fall gibt es auch die Option des SuperEchos:
+; SuperEcho: Diese Funktion leitet auch erfolgreich dekodierte und damit lesbare Nachrichten wieder eingepackt weiter an alle Freunde. 
 
-Superecho, Simulacra und Impersonation sind somit drei Optionen des Programms, die es Angreifern schwerer machen sollen, in der Vielzahl der Nachrichten die für Dich (und anscheinend auch für Andere) interessanten Nachrichten nachzuvollziehen.
+SuperEcho, Simulacra und Impersonation sind somit drei Optionen des Programms, die es Angreifern schwerer machen sollen, in der Vielzahl der Nachrichten die für Dich (und anscheinend auch für Andere) interessanten Nachrichten nachzuvollziehen.
 
-Schauen wir uns nun die einzelnen ECHO-Modi einmal genauer an:
+Schauen wir uns nun die einzelnen Echo-Modi einmal genauer an:
  
-==Volles ECHO==
-[[File:Echosimulation.gif|thumb|Abbildung 3: ECHO-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt]]
-Das volle ECHO ("Full ECHO") legt die Annahme zugrunde, wie sie auch beim sogenannten "Kleine-Welt-Phänomen" getroffen wird: über wenige Freunde kann jeder jedem eine Nachricht zukommen lassen. Irgendwie kennt jeder jeden über maximal sieben Ecken. Dieses wird auch in einem peer-to-peer bzw. friend-to-friend Netzwerk angenommen. Daher kann man jeden erreichen, wenn jeder Knotenpunkt jede Nachricht an alle weiteren bekannten Knotenpunkte sendet (vgl. '''Abbildung 3''').
+==Volles Echo==
+[[File:Echosimulation.gif|thumb|Abbildung 3: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt]]
+Das volle Echo ("Full Echo") legt die Annahme zugrunde, wie sie auch beim sogenannten "Kleine-Welt-Phänomen" getroffen wird: über wenige Freunde kann jeder jedem eine Nachricht zukommen lassen. Irgendwie kennt jeder jeden über maximal sieben Ecken. Dieses wird auch in einem peer-to-peer bzw. friend-to-friend Netzwerk angenommen. Daher kann man jeden erreichen, wenn jeder Knotenpunkt jede Nachricht an alle weiteren bekannten Knotenpunkte sendet (vgl. '''Abbildung 3''').
 
-Alternativ kann man diesen dezentralen Anspruch auch abkürzen bzw. unterstützen, indem man für eine Freunde einen Chat-Server basierend auf dem ECHO-Kernel installiert, so dass sich alle verschlüsselten Nachrichten darüber an die Teilnehmer versenden lassen und er auch als E-Mail-Postfach dienen kann.
+Alternativ kann man diesen dezentralen Anspruch auch abkürzen bzw. unterstützen, indem man für eine Freunde einen Chat-Server basierend auf dem Echo-Kernel installiert, so dass sich alle verschlüsselten Nachrichten darüber an die Teilnehmer versenden lassen und er auch als E-Mail-Postfach dienen kann.
 
 Die linke Abbildung simuliert das Versenden der Nachricht von einem Ausgangspunkt an alle Netzknoten über alle verbundenen Netzknoten.
  
-Grundlegend ist also, dass im ECHO jeder Knotenpunkt jede Nachricht an jeden Knotenpunkt weitersendet. Dieses klingt einfach dahingesagt, ist es einerseits auch: Das ECHO Protokoll ist ein sehr simples Protokoll, hat aber auch weitergehende Implikationen, sprich: Es gibt beim ECHO keine Routing Informationen und auch Metadaten können aus dem Netzwerk kaum aufgezeichnet werden. Die Nodes leiten die Nachricht auch nicht weiter, der Begriff des "Forwarding" ist unzutreffend, denn jeder Knotenpunkt sendet aktiv erneut die Nachricht an die verbundenen Freunde.
+Grundlegend ist also, dass im Echo jeder Knotenpunkt jede Nachricht an jeden Knotenpunkt weitersendet. Dieses klingt einfach dahingesagt, ist es einerseits auch: Das Echo Protokoll ist ein sehr simples Protokoll, hat aber auch weitergehende Implikationen, sprich: Es gibt beim Echo keine Routing Informationen und auch Metadaten können aus dem Netzwerk kaum aufgezeichnet werden. Die Nodes leiten die Nachricht auch nicht weiter, der Begriff des "Forwarding" ist unzutreffend, denn jeder Knotenpunkt sendet aktiv erneut die Nachricht an die verbundenen Freunde.
 
 Damit kann es vorkommen, dass man eine Nachricht (von mehreren verbundenen Knotenpunkten) mehrfach erhält - damit dieses jedoch nicht passiert und effizient gehalten wird, wird der Hash der Nachricht in einem Cache zwischengespeichert und möglicherweise für eine Weitersendung zurückgewiesen, wenn sie als Doublette identifiziert wurde. Dieses nennt man "Congestion Control".
 
@@ -401,21 +410,21 @@ Sodann: Diese verschlüsselte Kapsel wird wiederum über einen verschlüsselten 
 
 Niemand im Netz kann sehen, welche Nachricht Du erfolgreich auspacken konntest, da alles auf Deiner lokalen Maschine passierte.
 
-==Halbes ECHO==
+==Halbes Echo==
 
-Der Modus des Halben ECHOs ("Half ECHO") sendet Deine Nachricht nur einen Hop zum nächsten Knotenpunkt, z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht weiter auf den Weg ihrer verbundenen Freunde (wie es für das Volle ECHO üblich ist). Der Echo Modus wird technisch über die Verbindung zu einem anderen Listener definiert: Bob`s Node teilt mit, wenn er sich zu dem Node von Alice verbindet, dass Alice die Nachricht nicht weiter an ihre Freunde senden soll. So können zwei Freunde über eine direkte Verbindung ausschließen, dass die Nachricht in das weitere Netz über die anderen, weiteren Verbindungen, die jeder Knotenpunkt hat, getragen wird.
+Der Modus des Halben Echos ("Half Echo") sendet Deine Nachricht nur einen Hop zum nächsten Knotenpunkt, z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht weiter auf den Weg ihrer verbundenen Freunde (wie es für das Volle Echo üblich ist). Der Echo Modus wird technisch über die Verbindung zu einem anderen Listener definiert: Bob`s Node teilt mit, wenn er sich zu dem Node von Alice verbindet, dass Alice die Nachricht nicht weiter an ihre Freunde senden soll. So können zwei Freunde über eine direkte Verbindung ausschließen, dass die Nachricht in das weitere Netz über die anderen, weiteren Verbindungen, die jeder Knotenpunkt hat, getragen wird.
 
 Neben dem Vollen und Halben Echo gibt es drittens noch das Adaptive Echo (AE). Hier wird, wie weiter unten noch beschrieben, die Nachricht nur dann an verbundene Nachbarn oder Freunde weiter gesandt, wenn der Knotenpunkt einen bestimmten kryptographischen Token kennt - also ähnlich einer geheimen Passphrase. Diese Passphrase muss natürlich vorher definiert, geteilt und in den jeweiligen Knotenpunkten eingespeichert sein. 
 
-So können definierte Wege einer Nachricht in einer Netzwerkkonfiguration genutzt werden. Beispiel: Wenn alle deutschen Knotenpunkte eine gemeinsame Passphrase für das Adaptive ECHO nutzen, wird die Nachricht niemals in den Knotenpunkten anderer Nationen erscheinen, wenn diese die Passphrase nicht kennen. So kann ein Routing definiert werden, dass nicht innerhalb der Nachricht verortet ist, sondern in den Knotenpunkten.
+So können definierte Wege einer Nachricht in einer Netzwerkkonfiguration genutzt werden. Beispiel: Wenn alle deutschen Knotenpunkte eine gemeinsame Passphrase für das Adaptive Echo nutzen, wird die Nachricht niemals in den Knotenpunkten anderer Nationen erscheinen, wenn diese die Passphrase nicht kennen. So kann ein Routing definiert werden, dass nicht innerhalb der Nachricht verortet ist, sondern in den Knotenpunkten.
 
-Wer die Passphrase somit nicht kennt, bekommt die Nachricht auch nicht weitergeleitet! Mit dem Adaptiven ECHO werden Nachrichten, die nicht geöffnet werden können, zu Nachrichten, die gar nicht bekannt oder existent sind (was in einem derzeitigen Routing der Normalfall wäre, dass nicht jeder jede Nachricht für einen Öffnungsversuch erhält).
+Wer die Passphrase somit nicht kennt, bekommt die Nachricht auch nicht weitergeleitet! Mit dem Adaptiven Echo werden Nachrichten, die nicht geöffnet werden können, zu Nachrichten, die gar nicht bekannt oder existent sind (was in einem derzeitigen Routing der Normalfall wäre, dass nicht jeder jede Nachricht für einen Öffnungsversuch erhält).
 
-Der Abschnitt weiter unten über das Adaptive ECHO (AE) wird daher noch ausführlicher über diese Option berichten.
+Der Abschnitt weiter unten über das Adaptive Echo (AE) wird daher noch ausführlicher über diese Option berichten.
 
-==ECHO Accounts==
+==Echo Accounts==
 
-Und mehr noch: das Echo kennt auch ECHO Accunts. Ein Konto oder eine Art von Firewall. Es kann genutzt werden, um sicherzustellen, dass nur Freunde sich verbinden, die die Zugangsdaten zu dem Konto kennen. Somit wird ein sogenanntes [[w:de:Web_of_Trust|Web of Trust]], ein Netzwerk, das auf Vertrauen beruht, gebildet. Es basiert nicht wie in anderen Applikationen auf dem Schlüssel für die Verschlüsselung, es ist davon unabhängig. Das hat den Vorteil, dass Dein öffentlicher Schlüssel für die Verschlüsselung nicht mit Deiner IP-Adresse assoziiert werden muss; oder Du Deine IP-Adresse im Netzwerk der Freunde bekannt geben musst, beispielsweise in einem DHT, in dem Nutzer darin suchen können. Die Echo-Accouts stellen eine [[w:de:Peer-to-Peer|Peer-to-Peer]]-(P2P)-Verbindung auf ein [[w:de:Friend-to-friend|Friend-to-Friend]] (F2F) Netzwerk um bzw. erlauben beide Verbindungsarten. Damit ist GoldBug für beide Paradigma ausgelegt.
+Und mehr noch: das Echo kennt auch Echo Accunts. Ein Konto oder eine Art von Firewall. Es kann genutzt werden, um sicherzustellen, dass nur Freunde sich verbinden, die die Zugangsdaten zu dem Konto kennen. Somit wird ein sogenanntes [[w:de:Web_of_Trust|Web of Trust]], ein Netzwerk, das auf Vertrauen beruht, gebildet. Es basiert nicht wie in anderen Applikationen auf dem Schlüssel für die Verschlüsselung, es ist davon unabhängig. Das hat den Vorteil, dass Dein öffentlicher Schlüssel für die Verschlüsselung nicht mit Deiner IP-Adresse assoziiert werden muss; oder Du Deine IP-Adresse im Netzwerk der Freunde bekannt geben musst, beispielsweise in einem DHT, in dem Nutzer darin suchen können. Die Echo-Accouts stellen eine [[w:de:Peer-to-Peer|Peer-to-Peer]]-(P2P)-Verbindung auf ein [[w:de:Friend-to-friend|Friend-to-Friend]] (F2F) Netzwerk um bzw. erlauben beide Verbindungsarten. Damit ist GoldBug für beide Paradigma ausgelegt.
 
 Die Echo-Accounts funktionieren wie folgt:
 
@@ -427,9 +436,9 @@ Die Echo-Accounts funktionieren wie folgt:
 
 Wenn SSL/TLS während dieser Aushandlung nicht verfügbar ist, mag das Protokoll wir folgt angreifbar werden: Eine Zwischenstation mag die Werte aus dem dritten Schritt aufzeichnen und folgerichtig zum bindenden Endpunkt senden. Sodann könnte der bindende Endpunkt auch einer unbekannten Verbindung Zugang zum Account gewähren. Das aufzeichnende Gerät könnte dann die Antwort des bindenden Endpunktes, also die Werte des vierten Schritts, an sich reißen und die Informationen an den Peer weiterleiten. Wenn die Informationen akkurat sind, wird der Peer die Antwort dieses neuen bindenden Endpunktes dann akzeptieren.
 
-==Das ECHO-Grid==
-[[File:Echogrid.gif|thumb|300px|Abbildung 4: Das ECHO Grid: Wenn wir über das ECHO-Protokoll unterrichten, werden einfach die Buchstaben E_C_H_O gezeichnet und somit ein einfaches ECHO-Grid-Template erstellt.]]  
-Wenn Studierende über das ECHO-Protokoll reden und unterrichten, dann zeichnen wir einfach ein ECHO-Grid mit den Buchstaben E-C-H-O und nummerieren die Knotenpunkte von E1 bis O4 und verbinden die Buchstaben mit einer Verbindungslinie am Boden (vgl. '''Abbildung 4''').
+==Das Echo-Grid==
+[[File:Echogrid.gif|thumb|300px|Abbildung 4: Das Echo Grid: Wenn wir über das Echo-Protokoll unterrichten, werden einfach die Buchstaben E_C_H_O gezeichnet und somit ein einfaches Echo-Grid-Template erstellt.]]  
+Wenn Studierende über das Echo-Protokoll reden und unterrichten, dann zeichnen wir einfach ein Echo-Grid mit den Buchstaben E-C-H-O und nummerieren die Knotenpunkte von E1 bis O4 und verbinden die Buchstaben mit einer Verbindungslinie am Boden (vgl. '''Abbildung 4''').
 
 Beispielsweise bezeichnet dann die Verbindung E1-E2 eine IP-Verbindung zu einem Nachbarn.
  
@@ -448,7 +457,7 @@ Im Echo ist der Knotenpunkt mehr ein "Souverän" oder "Gebender und Nehmender vo
 Das Echo-Grid als einfache Netzwerkdarstellung dient nicht nur zur Analyse von "Routing" (besser: "Travel")-Wegen, zur Darstellung von Echo-Modi und Verschlüsselungs-Stationen, sondern kann letztlich insbesondere auch in der [[w:de:Graphentheorie|Graphentheorie]] Anwendung finden: Welchen Weg eine Nachricht nimmt, ist abhängig von der Struktur des Netzwerkes, aber auch von der Nutzung von Echo-Accounts, halbem bzw. vollem Echo sowie dem Adaptiven Echo, wie folgende Beispiele der Graphen zwischen Alice, Bob, Ed und Maria verdeutlichen.
 
 ===Beispiele des Schlüssel-Austausches von Alice, Bob, Ed und Maria ===
-[[File:Echo_Grid_Example.png|thumb|300px|Abbildung 5: Alice, Bob, Ed und Mary im ECHO-Grid - Ein Beispiel für das ECHO.]]
+[[File:Echo_Grid_Example.png|thumb|300px|Abbildung 5: Alice, Bob, Ed und Mary im Echo-Grid - Ein Beispiel für das Echo.]]
 
 Folgende Beispiele der '''Abbildung 5''' können weitergehend diskutiert werden - sie nutzen ein paar Vokabeln und Prozesse der Funktionen des GoldBug-Klienten, so dass mit dem Programm unerfahrene Leser diesen Abschnitt auch überspringen können und sich erst einmal mit den Grundfunktionen (Installation, Chat, Email) vertraut machen sollten und diese technischen Beispiele dann zu einem späteren Zeitpunkt wieder aufgreifen und nachvollziehen können):
  
@@ -457,14 +466,14 @@ Folgende Beispiele der '''Abbildung 5''' können weitergehend diskutiert werden 
 * Schließlich, Maria (O4) ist eine Freundin von Ed (H1). Sie kommunizieren entweder über den Weg: O4-O3-H6-H4-H3-H1 oder sie nutzen den Pfad von: O4-O2-O1-O3-H6-H4-H3-H1. Da im Echo Protokoll ja jeder IP-Nachbar jede Nachricht an jeden verbundenen IP-Nachbarn sendet, wird der Pfad erfolgreich sein, der die Nachricht am schnellsten übermittelt.
 * Direkte IP-Verbindungen von Nachbarn wie z.B. E1-E3 können durch die Erstellung eines sog. "Echo-Accounts" abgesichert werden: Keine andere IP-Adresse als E1 kann zu dem sogenannten "Listener" des Nachbarn E3 verbinden. Über diese Methode kann ein Web-of-Trust erstellt werden - ohne von Schlüsseln zur Verschlüsselung abhängig zu sein - noch brauchst Du einen Freund, mit dem Du Deinen Chat oder E-Mail-Schlüssel tauschst.
 * Sogenanntes „[[w:en:Turtle_F2F|Turtle Hopping]]“ wird im Echo-Netzwerk wesentlich effizienter: Wenn Ed und Alice einen sogenannten "Starbeam-Magneten" zur Dateiübertragung tauschen, dann transportiert das Echo Protokoll die Pakete über den Weg H1-H3-H5-C4-C3-E6-E5-E3-E1. Maria ist nicht in der Route, aber sie wird die Pakete ebenso über das volle Echo erhalten, wenn sie den StarBeam-Magnet kennt. Vorteil ist, dass das Hopping nicht über die Schlüssel geht, sondern über die IP-Verbindungen (z.B. das Web-of-Trust). Grundsätzlich ist alles immer verschlüsselt, also warum nicht den kürzesten Weg nehmen?
-* Ein sogenannter "Buzz" bzw. "ge-echo-ter IRC Channel" (e*IRC) - Raum kann z.B. durch den Knotenpunkte O2 erstell oder "gehostet" werden. Da nur der Nutzer Ed den Buzz Raum Namen kennt, bleiben alle anderen Nachbarn und Freunde außen vor. Vorteil: Du kannst mit unbekannten Freunden in einem Raum sprechen, ohne mit diesen einen öffentlichen z.B. RSA - Schlüssel jemals getauscht zu haben. Stattdessen nutzt Du einfach einen Einmal-Magnet ("one-time-magnet") für einen "buzz" / "e*IRC" Raum.
+* Ein sogenannter "Buzz" bzw. "ge-Echo-ter IRC Channel" (e*IRC) - Raum kann z.B. durch den Knotenpunkte O2 erstell oder "gehostet" werden. Da nur der Nutzer Ed den Buzz Raum Namen kennt, bleiben alle anderen Nachbarn und Freunde außen vor. Vorteil: Du kannst mit unbekannten Freunden in einem Raum sprechen, ohne mit diesen einen öffentlichen z.B. RSA - Schlüssel jemals getauscht zu haben. Stattdessen nutzt Du einfach einen Einmal-Magnet ("one-time-magnet") für einen "buzz" / "e*IRC" Raum.
 * Maria ist eine gemeinsame Freundin von Ed und Bob und sie aktiviert die C/O (care of)-Funktion für Emails: Das erlaubt Ed, E-Mails an Bob zu senden, obwohl er offline ist, denn: Maria speichert die E-Mails zwischen, bis Bob dann online kommt.
 * Weiterhin: Alice erstellte eine sogenannte virtuelle "E-Mail Institution". Das ist nicht vergleichbar mit einem POP3 oder IMAP Server, da die E-Mails nur zwischengespeichert werden: Ed sendet dazu seinen öffentlichen E-Mail-Schlüssel an Alice - und Ed fügt den Magneten der "Email Institution" von Alice bei sich in seinem Programm ein. Nun werden auch die E-Mails von Bob and  Ed bei Alice zwischengespeichert (in der E-Mail-Institution), selbst wenn Maria  offline sein sollte.
  
 Es ist hilfreich, die Beispiele auf obiger Grafik nachzuvollziehen.
 
 ==Adaptives Echo (AE) und seine AE-Tokens==
-[[File:Adaptive echo.jpg|500px|thumb|Abbildung 6: Adaptives ECHO (AE): Das „Hänsel und Gretel“-Beispiel des Adaptiven ECHOs]] 
+[[File:Adaptive Echo.jpg|500px|thumb|Abbildung 6: Adaptives Echo (AE): Das „Hänsel und Gretel“-Beispiel des Adaptiven Echos]] 
 Für die Erklärung des "Adaptiven Echos" kann ein weiteres Echo-Grid mit den verbundenen Buchstaben A und E gezeichnet werden (siehe '''Abbildung 6''').
 
 Wenn Du, Dein Chat-Freund und ein eingerichteter dritter Kontenpunkt als Chat-Server denselben AE-Token ("Adaptive-Echo Token") in das Programm einfügen, dann wird der Chat-Server Deine Nachricht nur zu Deinem Freund senden - und nicht zu allen anderen verbundenen Nachbarn oder Nutzern wie es normalerweise bei dem Vollen Echo Modus der Fall wäre. 
@@ -502,8 +511,8 @@ Für einen Test des Adaptiven Echos nutze einfach ein Netzwerk mit drei oder meh
  
 Dieses Beispiel sollte einfach replizierbar sein.
 
-==Wie das ECHO Protokoll funktioniert==
-[[File:Howtheechoprotocolworks.png|thumb|500px|Abbildung 7: Wie das ECHO PROTOCOL funktioniert]]
+==Wie das Echo Protokoll funktioniert==
+[[File:HowtheEchoprotocolworks.png|thumb|500px|Abbildung 7: Wie das Echo PROTOCOL funktioniert]]
 
 Nimmt man nun die verschiedenen Methoden und Optionen zusammen, kann die nebenstehende '''Abbildung 7''' einen komplexeren Überblick bieten.
 
@@ -658,7 +667,7 @@ MELODICA steht für “Multi Encryted LOng DIstance Calling” – ins Deutsche 
  
 Es bezeichnet, einen Freund wie mit einem Telefon anzurufen – nur, dass damit eine sichere Ende-zu-Ende Verschlüsselung aufgebaut wird.
  
-Die Ende-zu-Ende Passphrase – auch Gemini genannt – wird über einen AES-String abgebildet und sollte zwischen beiden Teilnehmern geheim bleiben. Daher gilt es, die elektronische Übertragung immer gut über weitere Verschlüsselungs-Ebenen abzusichern (wie hier im ECHO-Protokoll mit dem asymmetrischen Chat-Key und der TLS/SSL-Verbindung), wenn die Übertragung potentiell abgehört werden kann. 
+Die Ende-zu-Ende Passphrase – auch Gemini genannt – wird über einen AES-String abgebildet und sollte zwischen beiden Teilnehmern geheim bleiben. Daher gilt es, die elektronische Übertragung immer gut über weitere Verschlüsselungs-Ebenen abzusichern (wie hier im Echo-Protokoll mit dem asymmetrischen Chat-Key und der TLS/SSL-Verbindung), wenn die Übertragung potentiell abgehört werden kann. 
 
 === Asymmetrisches Calling ===
 
@@ -1131,7 +1140,7 @@ Der GoldBug Messenger verfügt neben E-Mail und Chat auch über eine Gruppen-Cha
 
 [[File:Eirc.png|thumb|right|400px|Abbildung 22: Gruppenchat im Echoed IRC = e*IRC]]
  
-Es wird daher von ge-echo-tem IRC oder auch kurz e*IRC gesprochen, dass dem IRC-Chat neue Optionen eröffnet, da die Transportwege des e*IRC-Chats ebenso verschlüsselt sind. Wie heute normale POP3- oder IMAP-E-Mails auch zumindest eine Transportverschlüsslung z.B. mit TLS 1.3 aufweisen, kann sich IRC auch als ein verschlüsselter Gruppenchat verstehen. Auch der althergebrachte IRC-Chat kann daher von solchen Sicherheitsmodellen Verbesserungen erfahren: Der e*IRC Chat kann dazu das Modell einer neuen IRC-Generation darstellen.
+Es wird daher von ge-Echo-tem IRC oder auch kurz e*IRC gesprochen, dass dem IRC-Chat neue Optionen eröffnet, da die Transportwege des e*IRC-Chats ebenso verschlüsselt sind. Wie heute normale POP3- oder IMAP-E-Mails auch zumindest eine Transportverschlüsslung z.B. mit TLS 1.3 aufweisen, kann sich IRC auch als ein verschlüsselter Gruppenchat verstehen. Auch der althergebrachte IRC-Chat kann daher von solchen Sicherheitsmodellen Verbesserungen erfahren: Der e*IRC Chat kann dazu das Modell einer neuen IRC-Generation darstellen.
 
 Die Verschlüsselungs-Details des Gruppenchats werden wieder über einen Magnet-URI-Link (vgl. unten) definiert (definiert im Link mit Endung &URN=buzz). Buzz ist also die technische Bezeichnung im Quellcode für den Gruppenchat.
  
@@ -1971,7 +1980,7 @@ make or mingw32-make<br />
 
 ![Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal](/images/e_irc_buzz.png)	
 
-![Abbildung: Format des genutzten Echo-Protokolls](/images/echo_format.png)	
+![Abbildung: Format des genutzten Echo-Protokolls](/images/Echo_format.png)	
 
 ![Abbildung: E-IRC Gruppenchat](/images/e_irc.png)	
 
