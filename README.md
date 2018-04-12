@@ -9,7 +9,7 @@ https://compendio.github.io/goldbug-manual/
 Inhaltsverzeichnis
 
     1 Was ist GoldBug?
-        1.1 Warum ist es wichtig, dass Du Deine Kommunikation verschlüsselst?
+        1.1 Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
         1.2 Woher kommt der Name "GoldBug"?
 
     2 Verschlüsselung: GoldBug hat Alternativen zu RSA
@@ -27,6 +27,11 @@ Inhaltsverzeichnis
         3.5 Adaptives Echo (AE) und seine AE-Tokens
             3.5.1 Hänsel und Gretel – ein Beispiel für den Adaptiven Echo Modus
         3.6 Wie das ECHO Protokoll funktioniert
+
+
+    4 Cryptographisches Discovery
+
+
     4 Einen ersten Setup einrichten
         4.1 Zwei Login-Methoden
         4.2 Generierung von 10 Schlüsseln für die Verschlüsselung
@@ -60,48 +65,71 @@ Inhaltsverzeichnis
             6.4.2 Virtuelle E-Mail Institution ("VEMI") - Methode
         6.5 Zusätzliche Verschlüsselung: Ein „GoldBug“ auf ein E-Mail setzen
         6.6 Forward Secrecy
-        6.7 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
-            6.7.1 Chat über POPTASTIC
-            6.7.2 E-Mail über POPTASTIC
-            6.7.3 Einrichtung von POPTASTIC
-    7 Gruppen-Chat im IRC-Stil
-    8 FileSharing: mit StarBeam
-        8.1 StarBeam-Magneten mit Verschlüsselungswerten
-        8.2 SB-Upload: Eine Datei übertragen
-        8.3 StarBeam-Downloads
+
+
+
+        7 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
+            7.1 Chat über POPTASTIC
+            7.2 E-Mail über POPTASTIC
+            7.3 Einrichtung von POPTASTIC
+            7.3 Weiterentwicklung von POPTASTIC
+
+
+    8 Gruppen-Chat im IRC-Stil
+
+
+
+    9 FileSharing: mit StarBeam
+        9.1 StarBeam-Magneten mit Verschlüsselungswerten
+        9.2 SB-Upload: Eine Datei übertragen
+        9.3 StarBeam-Downloads
             8.3.1 Werkzeug: Star-Beam Analyzer
             8.3.2 Ausblick auf Crypto-Torrents
-    9 Web-Suchmaschine mit URL-Datenbank
-        9.1 Datenbank Setup
-            9.1.1 SQLite
-            9.1.2 PostgreSQL
-        9.2 URL-Filter
-        9.3 URL-Community
-        9.4 Pandamonium Webcrawler
-        9.5 RSS-Reader und URL-Import
-    10 Chat/E-Mail-Server einrichten
-        10.1 Chat-/E-Mail-Server über einen Listener einrichten
-        10.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
-        10.3 Nutzung von GoldBug im TOR-Netzwerk
-    11 Werkzeuge
-        11.1 Werkzeug: Verschlüsselung von Dateien
-        11.2 Werkzeug: Das Rosetta CryptoPad
-        11.3 Werkzeug: Echo Public Key Share (EPKS)
-    12 BIG SEVEN Crypto-Messenger-Audit
-    13 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von…
-        13.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
-        13.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
-        13.3 European Convention on Human Rights, 1950 (Art. 8)
-        13.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
-        13.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1)
-        13.6 Art. 10 - Privacy of correspondence, posts and telecommunications
-        13.7 § 206 - Verletzung des Post- oder Fernmeldegeheimnisses
-        13.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
-    14 Historie der Veröffentlichungen
+
+
+    10 Web-Suchmaschine mit URL-Datenbank
+        10.1 Datenbank Setup
+            10.1.1 SQLite
+            10.1.2 PostgreSQL
+        10.2 URL-Filter
+        10.3 URL-Community
+        10.4 Pandamonium Webcrawler
+        10.5 RSS-Reader und URL-Import
+
+
+
+    11 Chat/E-Mail-Server einrichten
+        11.1 Chat-/E-Mail-Server über einen Listener einrichten
+        11.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
+        11.3 Nutzung von GoldBug im TOR-Netzwerk
+
+
+    12 Werkzeuge
+        12.1 Werkzeug: Verschlüsselung von Dateien
+        12.2 Werkzeug: Das Rosetta CryptoPad
+        12.3 Werkzeug: Echo Public Key Share (EPKS)
+        12.3 Pass-Through-Funktionalität
+
+
+    13 BIG SEVEN Crypto-Messenger-Audit
+
+
+    14 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von…
+        14.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
+        14.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
+        14.3 European Convention on Human Rights, 1950 (Art. 8)
+        14.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
+        14.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1)
+        14.6 Art. 10 - Privacy of correspondence, posts and telecommunications
+        14.7 § 206 - Verletzung des Post- oder Fernmeldegeheimnisses
+        14.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
+
+
     15 Webseite
     16 Offener Quellcode
         16.1 Informationen zur Kompilierung
-    17 Schriftenverzeichnis
+
+    17 Historie an Veröffentlichungen
 
 ```
 
@@ -148,61 +176,92 @@ Die Kommunikation und Datenübertragungen über das Internet soll so geschüzt w
 Starke Multi-Verschlüsselung (sogenannte "hybride Verschlüsselung") sichert also letztlich auch die Erklärungen der Menschenrechte in ihrem breit konstituiertem Konsus und ist eine digitale Selbstverteidigung, die jeder erlernen und nutzen sollte - um letztlich auch zur Demokratie beitragen und diese stützen zu können.
  
 Der GoldBug Messenger versucht, ein einfach zu nutzendes Werkzeug für diesen Anspruch zu sein.
-Ähnlich der Sicherheitsentwicklung beim Automobil wird sich auch die E-Mail- & Chat-Verschlüsselung entwickeln: ist man beim Automobil zunächst ohne Sicherheitsgurt gefahren, fahren wir heute hingegen mit Sicherheitsgurten und zusätzlichen Airbags oder drittens noch ergänzenden elektronischen Sicherheits-Informationssystemen. 
+Ähnlich der Sicherheitsentwicklung beim Automobil wird sich auch die E-Mail- & Chat-Verschlüsselung entwickeln: ist man beim Automobil zunächst ohne Sicherheitsgurt gefahren, fahren wir heute hingegen mit verpflichtenden Sicherheitsgurten (seit 1975 in Deutschland) und zusätzlichen Airbags oder drittens noch ergänzenden elektronischen Sicherheits-Informationssystemen.
 
-GoldBug ist dabei ein einfach zu bedienendes, jedoch in gewissem Umfang zu erlernendes Programm, es erfordert wie beim Auto-Führerschein die Kenntnis der verschiedenen Bedienelemente und Optionen. Es ist somit eine bereits vereinfachte Benutzeroberfläche gegenüber der originalen Benutzeroberfläche, die aus dem "Spot-on"-Projekt kommend auch Spot-on genannt wird. Ähnlich einem Cockpit eines Flugzeuges sind in dieser originalen Benutzeroberfläche noch wesentlich mehr Bedienelemente vorhanden. GoldBug versucht, diese bereits zu reduzieren und somit auch eine Mininal-Ansicht für Einsteiger in Software für kryptographisiche Prozesse anzubieten. Insofern gilt: Lernen, was man nicht versteht und beachten, dass es bereits ein reduzierter Umfang ist. Dieses vorliegende Manual kann dabei helfen, sich die einzelnen Funktionen zu erschliessen. Und Nutzer, die erst lesen und dann ausprobieren, sind wie immer klar im Vorteil.
+GoldBug ist dabei ein einfach zu bedienendes, jedoch in gewissem Umfang auch zu erlernendes Programm, es erfordert - wie beim Auto-Führerschein - die Kenntnis der verschiedenen Bedienelemente und Optionen. Es ist somit eine bereits vereinfachte Benutzeroberfläche gegenüber der originalen Benutzeroberfläche, die aus dem "Spot-on"-Projekt kommend auch Spot-on genannt wird. Ähnlich einem Cockpit eines Flugzeuges sind in dieser originalen Benutzeroberfläche noch wesentlich mehr Bedienelemente vorhanden. In GoldBug sind diese bereits reduziert und auch eine weitere Mininal-Ansicht wird für Einsteiger in Software für kryptographische Prozesse angeboten. Insofern gilt: Erlernen, was noch unbekannt ist und beachten, dass es bereits ein reduzierter Umfang ist. Dieses vorliegende Manual kann dabei helfen, sich die einzelnen Funktionen zu erschließen. Und Nutzer, die erst lesen und dann ausprobieren, sind wie immer klar im Vorteil.
 
 Die unverschlüsselte Plain-Text-Email oder Chat-Nachricht sollte daher eigentlich ausgedient haben, nachdem man im Jahr 2013 mit den [Snowden-Papieren](https://de.wikipedia.org/wiki/Globale_%C3%9Cberwachungs-_und_Spionageaff%C3%A4re) feststellte, dass private E-Mails in großem Umfang von vielen Interessierten global abgehört und dabei systematisch erfasst, gespeichert und ausgewertet werden.
 
-Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neuland" geschrieben - ein Font, der im Jahre 1923 vom Schriftkünstler [[w:de:Rudolf_Koch_(Schriftkünstler)#Runde_Schriften|Rudolf Koch]] entwickelt wurde. Der Logo-Schriftzug ist seit dem ersten, zeitgleichen Release des GoldBugs im Jahre 2013 interessanter Weise eine Allusion an den ''Satz des Jahres'' 2013, in dem die deutsche Bundeskanzlerin Angela Merkel - im Zusammenhang mit der [[w:de:Globale_Überwachungs-_und_Spionageaffäre|Überwachungs- und Spionageaffäre 2013]] und dem Abhören ihres Telefons - in einem Gespräch mit dem amerikanischen Präsidenten Barack Obama den Satz prägte: „Das Internet ist für uns alle Neuland." ..
+Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neuland" geschrieben - ein Font, der im Jahre 1923 vom Schriftkünstler [Rudolf Koch](https://de.wikipedia.org/wiki/Rudolf_Koch_(Schriftk%C3%BCnstler)) entwickelt wurde. Der Logo-Schriftzug ist seit dem ersten, zeitgleichen Release des GoldBugs im Jahre 2013 interessanter Weise eine Allusion an den ''Satz des Jahres'' 2013, in dem die deutsche Bundeskanzlerin Angela Merkel - im Zusammenhang mit der [Überwachungs- und Spionageaffäre 2013](https://de.wikipedia.org/wiki/Globale_%C3%9Cberwachungs-_und_Spionageaff%C3%A4re) und dem Abhören ihres Telefons - in einem Gespräch mit dem amerikanischen Präsidenten Barack Obama den Satz prägte: „Das Internet ist für uns alle Neuland." ..
 
-.. - Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt, entscheiden die Lernenden, Lehrenden und die Medien - in jedem Falle aber jeder selbst z.B. als Leser dieses Manuals mit seinen Freunden, mit denen die Verschlüsselungssoftware angewandt wird. 
+.. - Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt – oder eine Art „Gurtpflicht“ auch E-Mails zu C-Mails wandeln wird, entscheiden die Lernenden, Lehrenden sowie die Medien und Techniker - in jedem Falle aber jeder selbst (z.B. als Leser dieses Manuals) mit den Freunden, mit denen die Verschlüsselungssoftware angewandt wird.
+
 
 ## Woher kommt der Name "GoldBug"?
  
-Der Gold-Käfer ("[[w:en:The_Gold-Bug|The Gold-Bug]]") ist eine Kurzgeschichte von [[w:de:Edgar_Allan_Poe|Edgar Allan Poe]]: In der Handlung geht es um William LeGrand, der kürzlich einen gold-farbenen Marienkäfer entdeckte. 
+Der Gold-Käfer ("[[w:en:The_Gold-Bug|The Gold-Bug]]") ist eine Kurzgeschichte von [Edgar Allan Poe](): In der Handlung geht es um William LeGrand, der kürzlich einen gold-farbenen Marienkäfer entdeckte.
 
-Sein Kumpel, Jupiter, erwartete nun, dass LeGrand sich weiterentwickeln wird in seiner Suche nach Erkenntnis, Reichtum und Weisheit, nachdem er mit dem Goldkäfer in Kontakt gewesen ist - und geht daher zu einem weiteren Freund von LeGrand, ein mit Namen nicht weiter benannter Erzähler, der zustimmt, seinen alten Freund mal wieder zu besuchen. Nachdem LeGrand sodann auf eine geheime Botschaft gestoßen ist und diese erfolgreich entschlüsseln konnte, starten die drei ein Abenteuer als Team.
+Sein Kumpel, Jupiter, erwartete nun, dass LeGrand sich weiterentwickeln wird in seiner Suche nach Erkenntnis, Reichtum und Weisheit, nachdem er mit dem Goldkäfer in Kontakt gewesen ist - und geht daher zu einem weiteren Freund von LeGrand, ein mit Namen nicht weiter benannter Erzähler, der es für eine gute Idee hält, seinen alten Freund mal wieder zu besuchen. Nachdem LeGrand sodann auf eine geheime Botschaft gestoßen ist und diese erfolgreich entschlüsseln konnte, starten die drei ein Abenteuer als Team.
 
 Der Gold-Käfer - als eine der wenigen Stücke in der Literatur - integriert Verschlüsselungstexte als Element der Geschichte. Poe war damit der Popularität von Verschlüsselungstexten seiner Zeit weit voraus als er im Jahre 1843 "The Gold-Bug" schrieb, in dem der Erfolg der Geschichte sich z.B. um ein solches Kryptogramm und metaphorisch um die Suche nach der Erkenntnis aus dem Stein der Weisen drehte.
 
-Der Gold-Käfer war eine viel gelesene Geschichte, äußerst populär und von den Literaten das meist untersuchte Werk von Poe während seiner Lebenszeit. Seine Ideen halfen ebenso das Schreiben verschlüsselter Texte und so genannter [[w:de:Kryptogramm|Kryptogramme]] weiter bekannt zu machen (vgl. auch engl. Wikipedia). 
+Der Gold-Käfer war eine viel gelesene Geschichte, äußerst populär und von den Literaten das meist untersuchte Werk von Poe während seiner Lebenszeit. Seine Ideen halfen ebenso das Schreiben verschlüsselter Texte und so genannter [Kryptogramme]() weiter bekannt zu machen (vgl. auch Wikipedia).
 
-Über 170 Jahre später hat Verschlüsselung mehr Gewicht denn je. Verschlüsselung sollte ein Standard sein, wenn wir Kommunikation über das unsichere Internet senden - Grund genug daher, mit dem Namen der Applikation an die Ursprünge des verschlüsselten Schreibens zu erinnern.
+Über 170 Jahre später hat Verschlüsselung im Internet-Zeitalter mehr Gewicht denn je. Verschlüsselung sollte ein Standard sein, wenn wir Kommunikation über das unsichere Internet senden - Grund genug daher, mit dem Namen der Applikation an die Ursprünge des verschlüsselten Schreibens zu erinnern.
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
+GoldBug ist somit eine historische Hommage. Die ggf. eine Gewöhnung an den Begriff erfordert, denn unter „Bug“ wird in der IT-Sprache oftmals eine Fehlerkorrektur verstanden. Die Auffassung, einen Goldkäfer genauso Wertzuschätzen wie ein anderes Kuscheltier, erfordert daher – je nach Mensch – ggf. eine starke kognitive Reorganisation eines bislang geprägten Weltbildes oder die routinierte Ausweitung der Wertschätzung von Bug-Funden als interessante Forschungsfunde. 
 
-= Verschlüsselung: GoldBug hat Alternativen zu RSA=
- 
-Verschlüsselung ist immer nur so gut, wie die mathematischen Berechnungen nicht durch die Automation von Computern in Windeseile berechnet werden können. Daher wird mathematisch gesehen die [[w:de:Primfaktorzerlegung#Kryptographie| Primfaktorzerlegung]] genutzt, da sie zum Teil jahrelangen Rechenaufwand benötigt. 
+Wer gern Neues erkundet, offen an das, was vorgefunden wird, herangeht, wird auch bei kryptographischen Prozessen mit der Applikation GoldBug viele Dinge lernen und vertiefen können, wenn bislang noch kein Zugang zu diesem Neuland ermöglicht wurde.
+Für Lehrpersonen ist die Software daher ein interessantes Lehrinstrument, das Kryptographie in praktischer Implementierung und in Übungen mit spielerischem Austesten vorstellen und erproben kann.
 
-Dennoch ist Verschlüsselung nicht unknackbar und die Prozeduren und Bibliotheken müssen auch gut angewandt werden, damit sie sicher sind. RSA gilt dabei heute als ein wesentlicher, vielfach untersuchter und noch nicht knackbarer Verschlüsselungsstandard - wenn auch die Weiterentwicklung der schnellen Computer eine andere Zukunft bringen mag.
 
-GoldBug Messenger hat daher ergänzend verschiedene Alternativen zu RSA eingebaut - falls dieser Verschlüsselungs-Algorithmus-Standard einmal unsicher würde (z.B. durch Quantum Computer). Bislang gilt RSA aber mit entsprechend großer Größe des Schlüssels (mind. 3072 Bytes) weiterhin als sicher. Neben RSA hat GoldBug die Verschlüsselungsalgorithmen ElGamal und auch NTRU implementiert, McEliece ist ebenso auf der Agenda für eine Implementierung. Die letzten beiden gelten auch als [[w:de:Quantencomputer|Quantum Computing]] resistent.
+## Verschlüsselung: GoldBug hat Alternativen zu RSA
 
-GoldBug nutzt die libgcrypt und libntru Bibliotheken für die Erzeugung der dauerhaften privaten und öffentlichen Schlüsselpaare. Derzeit generiert die Anwendung zehn Schlüsselpaare während der Initialisierung. Die Schlüsselerzeugung ist optional. Folglich erfordert GoldBug zwingend keine Public Key-Infrastruktur. 
+Verschlüsselung ist immer nur so gut, wie die mathematischen Berechnungen nicht durch die Automation von Computern in Windeseile berechnet werden können. Daher wird mathematisch gesehen die [Primfaktorzerlegung](https://de.wikipedia.org/wiki/Primfaktorzerlegung) genutzt, da sie zum Teil jahrelangen Rechenaufwand benötigt.
 
-Bei den bei Verschlüsselung ebenso optional verfügbaren Signaturverfahren besteht ebenso eine umfassende Auswahl: DSA, ECDSA, EdDSA, ElGamal und RSA (vgl. '''Abbildung 2'''). Signatur bedeutet, dass der erstelle Schlüssel für die Verschlüsselung nochmals mit einem Schlüssel signiert wird, um nachweisen zu können, dass eine Nachricht auch von einem bestimmten Teilnehmer kommt.
+Dennoch ist Verschlüsselung nicht unknackbar und die Prozeduren und Bibliotheken müssen auch gut angewandt werden, damit sie sicher sind. RSA gilt dabei „heute als ein wesentlicher, vielfach untersuchter und noch nicht knackbarer Verschlüsselungsstandard - wenn auch die Weiterentwicklung der schnellen Computer eine andere Zukunft bringen mag“. – So wurde es 2013 in diesem Manual vermerkt. Im Jahr 2016 gab dann das offizielle NIST Institut bekannt, dass RSA als gebrochen gilt im  Zeitalter des Quantum Computings (siehe [NIST zit. n. Adams/Maier 2016](https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf)).
 
-Die OAEP und PSS Schemata sind mit der RSA-Verschlüsselung und RSA-Signatur verwendet. 
+Die Medien haben es kaum aufgegriffen, da wahrscheinlich jeder einstimmen wird, dass man einen Quanten-Computer nicht im nächsten Supermarkt kaufen könne, und das Problem daher nicht relevant sei. Es hat den Charme von Kindern, die sich die Hand vor Augen halten und das Problem oder eine Gefährdung somit nicht an ihre Realitätswahrnehmung heranlassen. 
+Dennoch gilt offiziell als bestätigt: RSA kann – zwar mit speziellen Mitteln – gebrochen werden. Die Sicherheit ist dahin. Das bedeutet auch Auswirkungen auf unsere Internet-Ökonomie und das Online-Banking, denn bislang sind auch die sicheren Verbindungen auf RSA aufbauend und ein TLS zur Absicherung der Verbindung bei Online-Banking oder Shopping basierend auf McEliece oder NTRU gibt es bislang noch nicht.
 
-Natürlich kann jeder Nutzer in GoldBug seine individuelle Schlüsselgröße einstellen, die "[[w:en:Cipher|Cipher]]", den "[[w:en:Cryptographic_hash_function|Hashtype]]", ferner "[[w:en:Iterated_function|Iteration Count]]", und die [[w:de:Salt_(Kryptologie)|kryptographische Salz-Länge ("Salt Length")]] - es sind für die Erstellung der Schlüssel und für die Verschlüsselung oftmals typische Parameter.
+
+GoldBug Messenger hat daher schon frühzeitig ergänzend verschiedene Alternativen zu RSA eingebaut - falls dieser Verschlüsselungs-Algorithmus-Standard einmal unsicher würde: Ggf. kann RSA mit entsprechend großer Größe des Schlüssels (mind. 3072 Bytes) von nicht spezialisierten technischen Administrationskräften noch als zeitliche Hürde betrachtet werden, zumal GoldBug auch mit der Mehrfach-Verschlüsselung weitergehende Absicherungen vorhält.
+
+Neben RSA hat GoldBug dennoch die Verschlüsselungsalgorithmen ElGamal und auch NTRU und McEliece implementiert. Die beiden letzt-genannten gelten auch als besonders resistent gegen die Angriffe, die aus dem[Quantum Computing]( https://de.wikipedia.org/wiki/Quantencomputer) bekannt sind.
+
+GoldBug nutzt die libgcrypt, libntru und McEliece Bibliotheken für die Erzeugung der dauerhaften privaten und öffentlichen Schlüsselpaare. Derzeit generiert die Anwendung Schlüsselpaare für jede der einzelnen zehn Funktionen während der Initialisierung. Die Schlüsselerzeugung ist optional. Folglich erfordert GoldBug zwingend keine Public Key-Infrastruktur. Auch nachgelagert können die gewünschten Algorithmen ausgewählt werden und Schlüssel generiert werden.
+
+Bei den bei Verschlüsselung ebenso optional verfügbaren Signaturverfahren besteht ebenso eine umfassende Auswahl: DSA, ECDSA, EdDSA, ElGamal und RSA. Signatur bedeutet, dass der erstelle Schlüssel für die Verschlüsselung nochmals mit einem Schlüssel signiert wird, um nachweisen zu können, dass eine Nachricht auch von einem bestimmten Teilnehmer und niemand anderem kommt.
+Die OAEP und PSS Schemata sind mit der RSA-Verschlüsselung und RSA-Signatur entsprechend verwendet. 
+
+Abbildung: RSA-Alternativen
+
+
+
+Natürlich kann jeder Nutzer in GoldBug seine 
+
+*individuelle Schlüsselgröße einstellen, 
+*die "[Cipher]( https://de.wikipedia.org/wiki/Cipher_Suite)",
+*den "[Hashtype]( https://de.wikipedia.org/wiki/Kryptographische_Hashfunktion)",
+*ferner "[Iteration Count]( https://de.wikipedia.org/wiki/Iteration)", 
+*und die [kryptographische Salz-Länge](https://de.wikipedia.org/wiki/Salt_(Kryptologie))
+
+- es sind für die Erstellung der Schlüssel und für die Verschlüsselung oftmals typische Parameter.
+
 Der Vorteil ist, dass jeder Nutzer dieses individuell für sich definieren kann. Andere Applikationen - selbst quell-offene Anwendungen - erlauben es dem Nutzer kaum, diese entscheidenden Werte für das Verschlüsselungsverfahren selbst zu bestimmen.
 
-Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Knoten mit verschiedenen Schlüsseltypen sind somit gut definiert, wenn die Knoten gemeinsame Versionen von libgcrypt und libntru Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer chatten und e-mailen, der einen ElGamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Voraussetzung ist lediglich, dass beide Nutzer dieselbe Version der Bibliothek bzw. von GoldBug nutzen. Wenn Du das Programm mit einem Freund testen willst, nutzt am besten die jeweils aktuellste verfügbare Version.
+Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Knoten mit verschiedenen Schlüsseltypen sind somit gut definiert, wenn die Knoten gemeinsame Versionen von libgcrypt und libntru bzw. McEliece Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer chatten und e-mailen, der einen ElGamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Voraussetzung ist lediglich, dass beide Nutzer dieselbe Version der Bibliothek bzw. von GoldBug nutzen. 
 
 Nicht-NTRU private Schlüssel werden auf Richtigkeit durch die gcry_pk_testkey() Funktion ausgewertet. Der öffentliche Schlüssel muss auch einige grundlegende Kriterien erfüllen, wie beispielsweise den Einschluss der Public-Key-Kennung.
- 
-==RSA, ElGamal und NTRU im Vergleich==
-[[File:Rsaalternatives.jpg|thumb|Abbildung 2: RSA Alternativen]]
- 
+
+
+Wenn ein Nutzer das Programm mit einem Freund testen will, nutzt jeder am besten die jeweils aktuellste verfügbare Version.
+
+Abbildung: RSA, ElGamal, NTRU und McEliece im Vergleich
+
+
+RSA Alternativen
+
+Das McEliece-Kryptosystem ist ein asymmetrischer Verschlüsselungsalgorithmus. Es wurde 1978 vom Kryptographen Robert J. McEliece [vorgestellt](http://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF). Es ist selbst unter Verwendung von Quantencomputern keine effiziente Methode bekannt, mit der das McEliece-Kryptosystem gebrochen werden kann, was es zu einem vielversprechenden Algorithmus für Post-Quanten-Kryptographie macht.
+
+
 NTRU ist ein asymmetrisches Verschlüsselungsverfahren, das 1996 von den Mathematikern Jeffrey Hoffstein, Jill Pipher und Joseph Silverman entwickelt wurde. Es basiert lose auf Gitterproblemen, die selbst mit Quantenrechnern als nicht knackbar gelten. Allerdings ist NTRUEncrypt bisher nicht so umfänglich untersucht wie gebräuchlichere Verfahren (z.B. RSA). NTRUEncrypt ist durch IEEE P1363.1 standardisiert (vgl. [[w:en:NTRUEncrypt|NTRUEncrypt]] sowie [[w:en:NTRU|NTRU]]).
  
 RSA (nach den Personen Rivest, Shamir und Adleman) ist ein asymmetrisches kryptographisches Verfahren, das sowohl zur Verschlüsselung als auch zur digitalen Signatur verwendet werden kann. Es verwendet ein Schlüsselpaar, bestehend aus einem privaten Schlüssel, der zum Entschlüsseln oder Signieren von Daten verwendet wird, und einem öffentlichen Schlüssel, mit dem man verschlüsselt oder Signaturen prüft. Der private Schlüssel wird geheim gehalten und kann nur mit extrem hohem Aufwand aus dem öffentlichen Schlüssel berechnet werden (vgl. [[w:RSA-Kryptosystem|RSA-Kryptosystem (de)]] sowie [[w:en:RSA_(cryptosystem)|RSA Cryptosystem (en)]]).
  
 Das ElGamal-Verschlüsselungs-Verfahren oder ElGamal-Kryptosystem ist ein im Jahr 1985 vom Kryptologen Taher Elgamal entwickeltes Public-Key-Verschlüsselungsverfahren, das auf der Idee des Diffie-Hellman-Schlüsselaustauschs aufbaut. Das ElGamal-Verschlüsselungsverfahren beruht, wie auch das Diffie-Hellman-Protokoll, auf Operationen in einer zyklischen Gruppe endlicher Ordnung. Das ElGamal-Verschlüsselungs-Verfahren ist beweisbar IND-CPA-sicher unter der Annahme, dass das Decisional-Diffie-Hellman-Problem in der zugrundeliegenden Gruppe nicht trivial ist. Verwandt mit dem hier beschriebenen Verschlüsselungsverfahren (aber nicht mit diesem identisch) ist das Elgamal-Signaturverfahren (Das ElGamal-Signatur-Verfahren ist in GoldBug bislang nicht implementiert). ElGamal unterliegt keinem Patent (vgl. [[w:en:ElGamal_encryption|ElGamal encryption]] sowie [[w:Elgamal-Verschlüsselungsverfahren|Elgamal-Verschlüsselungsverfahren]]).
+
+
 
 == Anwendung der Block Cipher Modi ==
 GoldBug verwendet [[w:de:Cipher_Block_Chaining_Mode|CBC mit CTS]], um die Vertraulichkeit zu schaffen. Der Dateiverschlüsselungsmechanismus unterstützt den [[w:de:Galois/Counter_Mode|Galois/Counter Mode (GCM)]]-Algorithmus ohne die Eigenschaft zur Authentizität, die durch den Algorithmus zur Verfügung gestellt wird. Um die Authentizität zu bieten, verwendet die Anwendung den methodischen Ansatz von "Erst verschlüsseln-dann-MAC" ([[w:en:Authenticated_encryption#Encrypt-then-MAC|Encrypt-then-MAC]], ETM). Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authentifizierten Container enthält dazu weitere technische Details.
