@@ -254,9 +254,7 @@ Abbildung: RSA und seine Alterntiven in GoldBug
 |RSA (nach den Personen Rivest, Shamir und Adleman) ist ein asymmetrisches kryptographisches Verfahren, das sowohl zur Verschlüsselung als auch zur digitalen Signatur verwendet werden kann. Es verwendet ein Schlüsselpaar, bestehend aus einem privaten Schlüssel, der zum Entschlüsseln oder Signieren von Daten verwendet wird, und einem öffentlichen Schlüssel, mit dem man verschlüsselt oder Signaturen prüft. Der private Schlüssel wird geheim gehalten und kann nur mit extrem hohem Aufwand aus dem öffentlichen Schlüssel berechnet werden (vgl. [RSA-Kryptosystem](https://de.wikipedia.org/wiki/RSA-Kryptosystem)).|
 
 
-Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Knoten mit verschiedenen Schlüssesten 
-
-Kommunikation zwischen den Nutzern mit verschiedenen Schlüsseltypen ist somit gut definiert, wenn die Knoten gemeinsame Versionen von libgcrypt und libntru Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer chatten und e-mailen, der einen ElGamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Wer das Programm mit einem Freund testen will, nutzt am besten die jeweils aktuellste verfügbare Version.
+Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Nutzern mit verschiedenen Schlüsseltypen ist somit gut definiert, wenn die Knoten gemeinsame Versionen der libgcrypt und libntru Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer chatten und e-mailen, der einen ElGamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Wer das Programm mit einem Freund testen will, nutzt am besten die jeweils aktuellste verfügbare Version von GoldBug.
 
 
 Natürlich kann jeder Nutzer in GoldBug seine 
