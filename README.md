@@ -344,19 +344,19 @@ Mit dem Echo-Protokoll ist - einfach ausgedrückt - gemeint, dass
  
 Zugrunde liegt das sogenannte "[Kleine-Welt-Phänomen](https://de.wikipedia.org/wiki/Kleine-Welt-Ph%C3%A4nomen)": Jeder kann jeden über sieben Ecken in einem peer-to-peer oder friend-to-friend Netzwerk irgendwie erreichen - oder aber einfach über einen im Freundeskreis installierten gemeinsamen Echo-Chat-Server die Nachricht verteilen.
 
-* Als drittes Kriterium für das Echo Protokoll lässt sich anfügen, dass eine Besonderheit beim Auspacken der verschlüsselten Kapsel besteht: Die Kapseln haben weder - und hier unterscheiden sie sich von TCP-Paketen - einen Empänger noch einen Absender. Die Nachricht wird über den Hash der unverschlüsselten Nachricht identifiziert, ob sie für den Empfänger lesbar werden soll oder nicht. Doch dazu weiter unten noch ausführlich. 
+* Als drittes Kriterium für das Echo-Protokoll lässt sich anfügen, dass eine Besonderheit beim Auspacken der verschlüsselten Kapseln besteht: Die Kapseln haben weder - und hier unterscheiden sie sich von TCP-Paketen - einen Empänger noch einen Absender. Die Nachricht wird über den Hash der unverschlüsselten Nachricht identifiziert, ob sie für den Empfänger lesbar werden soll oder nicht. Doch dazu weiter unten noch ausführlich. 
 
  
 Der Modus des "Halben Echos" sendet eine Nachricht nur einen Hop, d.h. z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht mehr weiter (wie es beim vollen Echo der Standard ist).
  
-Neben Vollem Echo, Halben Echo gibt es drittens noch das Adaptive Echo (AE). Hier wird die Nachricht nur an Nachbarn oder Freunde versandt, wenn diese einen Verschlüsselungs-Token kennen, also zuvor gespeichert haben. Wer den Token nicht kennt, an den wird die Nachricht nicht weitergeleitet.
+Neben Vollem Echo, Halben Echo gibt es drittens noch das Adaptive Echo (AE). Hier wird die Nachricht nur an Nachbarn oder Freunde versandt, wenn diese einen Verschlüsselungs-Token kennen, diesen also zuvor eingespeichert haben. Wer den Token nicht kennt, an den wird die Nachricht nicht weitergeleitet.
  
-Schließlich kennt das Echo noch Echo Accounts. Eine Art Firewall. Hiermit kann sichergestellt werden, dass nur Freunde, die den Account-Zugang kennen, sich verbinden können. So kann ein Web-of-Trust erstellt werden, also ein Netzwerk ausschließlich unter Freunden. Es basiert nicht auf dem Schlüssel für die Verschlüsselung, sondern ist davon unabhängig. D.h. Du musst nicht Deinen öffentlichen Schlüssel auch noch mit Deiner IP-Adresse verknüpfen oder gar im Netzwerk bekannt geben.
+Schließlich kennt das Echo noch Echo Accounts. Eine Art Firewall. Hiermit kann sichergestellt werden, dass nur Freunde, die den Account-Zugang kennen, sich verbinden können. So kann ein Web-of-Trust erstellt werden, also ein Netzwerk ausschließlich unter Freunden. Es basiert nicht auf dem Schlüssel für die Verschlüsselung, sondern ist davon unabhängig. D.h. der Nutzer muss nicht seinen öffentlichen Schlüssel auch noch mit seiner IP-Adresse verknüpfen oder gar im Netzwerk bekannt geben.
  
-Grundsätzlich sendet im Echo jeder Knoten die Nachricht an jeden Knoten: Wenn Du also eine Nachricht ein zweites Mal erhalten solltest, so wird sie in einem temporären Zwischenspeicher verglichen (anhand des Hashwertes für diese Nachricht) und ggf. bei Bekanntsein des Hashes wieder verworfen ("Congestion Control").
+Grundsätzlich sendet im Echo also jeder Knoten eine Nachricht an jeden verbundenen Knoten: Wenn ein Nutzer also eine Nachricht ein zweites Mal erhalten sollte, so wird sie in einem temporären Zwischenspeicher verglichen (anhand des Hashwertes für diese Nachricht) und ggf. bei Bekanntsein des Hashes wieder verworfen ("Congestion Control") und somit nicht weitergeleitet.
 
  Eine kleine Analogie:
- Die Kryptographie des Echo-Protokolls kann verglichen werden mit dem Geben und Nehmen von  
+ Die Kryptographie des Echo-Protokolls kann verglichen werden mit dem Geben und Nehmen von 
  Überraschungseiern. Bob gibt ein Überraschungsei an Alice, Alice öffnet es und verzehrt die Schokolade 
  und stößt auf die Plastik-Kapsel im Inneren des Überraschungsei und versucht, diese zu öffnen 
  und die darin befindlichen Teile zu einem Spielzeug, einem Schlumpf, zusammen zu bauen. 
@@ -376,16 +376,18 @@ Grundsätzlich sendet im Echo jeder Knoten die Nachricht an jeden Knoten: Wenn D
 
 Schließlich: Man kann ebenso mit der GoldBug Applikation unechte Nachrichten ("Fakes" aus der Simulacra-Funktion) und simulierte Kommunikationsnachrichten ("Impersonated Messages") aussenden. Einmal ist die Verschlüsselung keine Verschlüsselung, sondern stellt pure Zufallszeichen dar, die von Zeit zu Zeit ausgesandt werden, und das andere Mal wird eine menschliche Unterhaltung simuliert, die ebenso nur auf durcheinander-gewürfelte Zufallszeichen beruht: 
 
-; Simulacra: Diese Funktion sendet bei Aktivierung der Check-Box eine "simulierte" Chat-Nachricht ins Echo Netzwerk. Diese „Fake“-Nachricht besteht aus reinen Zufallsziffern und macht es Analysten schwerer, verschlüsselte Nachrichten mit echten und zufälligen Nachrichten zu unterscheiden. [[w:de:Simulacrum#Medientheorie|Simulacra]] ist ein Begriff, der sowohl aus dem Film "[[w:de:Matrix_(Film)#Varia|Die Matrix]]" als auch in der Philosophie Baudrillards nicht unbekannt ist (Neos Aufbewahrungsort für Software in seiner Wohnung ist das Buch ''Simulacres et Simulation'' des französischen Medienphilosophen Jean Baudrillard, das das Verhältnis von Realität, Symbolen und Gesellschaft untersucht).
-; Impersonator: Neben zufälligen Fake-Nachrichten kann mit dem GoldBug-Programm auch ein Chat simuliert werden, als wenn eine echte Person von Zeit zu Zeit chattet und Antworten aussendet. Auch diese Nachrichten sind mit reinen Zufallsdaten gefüllt, variieren jedoch - simuliert an einer echten Chat-Unterhaltung.
+Simulacra: Diese Funktion sendet bei Aktivierung der Check-Box eine "simulierte" Chat-Nachricht ins Echo Netzwerk. Diese „Fake“-Nachricht besteht aus reinen Zufallsziffern und macht es Analysten schwerer, verschlüsselte Nachrichten mit echten und zufälligen Nachrichten zu unterscheiden. [[w:de:Simulacrum#Medientheorie|Simulacra]] ist ein Begriff, der sowohl aus dem Film "[[w:de:Matrix_(Film)#Varia|Die Matrix]]" als auch in der Philosophie Baudrillards nicht unbekannt ist (Neos Aufbewahrungsort für Software in seiner Wohnung ist das Buch ''Simulacres et Simulation'' des französischen Medienphilosophen Jean Baudrillard, das das Verhältnis von Realität, Symbolen und Gesellschaft untersucht).
+
+Impersonator: Neben zufälligen Fake-Nachrichten kann mit dem GoldBug-Programm auch ein Chat simuliert werden, als wenn eine echte Person von Zeit zu Zeit chattet und Antworten aussendet. Auch diese Nachrichten sind mit reinen Zufallsdaten gefüllt, variieren jedoch - simuliert an einer echten Chat-Unterhaltung.
 : So kann die Analyse von Nachrichten erschwert werden, wenn dritte Aufzeichner ("Recorder") Deine sämtliche Kommunikation zwischen-speichern und aufzeichnen sollten, was ggf. anzunehmen ist. Aber mehr noch: Auch das Ausbleiben von Meta-Daten (vgl. [[w:de:Vorratsdatenspeicherung|Vorratsdatenspeicherung]]) gibt keinen Anlass zu vermuten, dass eine Nachricht für Dich gewesen ist. Wer eine Nachricht erfolgreich auspacken konnte, der sendet sie normalweise nicht erneut ins Echo-Netz. Ein Auszeichner in von Metadaten könnte gesteigertes Interesse an den nicht weitergeleiteten Nachrichten haben, in der Annahme, dass diese Nachricht von Dir erfolgreich dekodiert worden sein kann. Für diesen Fall gibt es auch die Option des SuperEchos:
 ; SuperEcho: Diese Funktion leitet auch erfolgreich dekodierte und damit lesbare Nachrichten wieder eingepackt weiter an alle Freunde. 
 
 SuperEcho, Simulacra und Impersonation sind somit drei Optionen des Programms, die es Angreifern schwerer machen sollen, in der Vielzahl der Nachrichten die für Dich (und anscheinend auch für Andere) interessanten Nachrichten nachzuvollziehen.
 
 Schauen wir uns nun die einzelnen Echo-Modi einmal genauer an:
+
  
-==Volles Echo==
+### 3.1 Volles Echo==
 [[File:Echosimulation.gif|thumb|Abbildung 3: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt]]
 Das volle Echo ("Full Echo") legt die Annahme zugrunde, wie sie auch beim sogenannten "Kleine-Welt-Phänomen" getroffen wird: über wenige Freunde kann jeder jedem eine Nachricht zukommen lassen. Irgendwie kennt jeder jeden über maximal sieben Ecken. Dieses wird auch in einem peer-to-peer bzw. friend-to-friend Netzwerk angenommen. Daher kann man jeden erreichen, wenn jeder Knotenpunkt jede Nachricht an alle weiteren bekannten Knotenpunkte sendet (vgl. '''Abbildung 3''').
 
@@ -417,7 +419,7 @@ Sodann: Diese verschlüsselte Kapsel wird wiederum über einen verschlüsselten 
 
 Niemand im Netz kann sehen, welche Nachricht Du erfolgreich auspacken konntest, da alles auf Deiner lokalen Maschine passierte.
 
-==Halbes Echo==
+### 3.2 Halbes Echo
 
 Der Modus des Halben Echos ("Half Echo") sendet Deine Nachricht nur einen Hop zum nächsten Knotenpunkt, z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht weiter auf den Weg ihrer verbundenen Freunde (wie es für das Volle Echo üblich ist). Der Echo Modus wird technisch über die Verbindung zu einem anderen Listener definiert: Bob`s Node teilt mit, wenn er sich zu dem Node von Alice verbindet, dass Alice die Nachricht nicht weiter an ihre Freunde senden soll. So können zwei Freunde über eine direkte Verbindung ausschließen, dass die Nachricht in das weitere Netz über die anderen, weiteren Verbindungen, die jeder Knotenpunkt hat, getragen wird.
 
@@ -429,22 +431,24 @@ Wer die Passphrase somit nicht kennt, bekommt die Nachricht auch nicht weitergel
 
 Der Abschnitt weiter unten über das Adaptive Echo (AE) wird daher noch ausführlicher über diese Option berichten.
 
-==Echo Accounts==
+### 3.3 Echo Accounts
 
 Und mehr noch: das Echo kennt auch Echo Accunts. Ein Konto oder eine Art von Firewall. Es kann genutzt werden, um sicherzustellen, dass nur Freunde sich verbinden, die die Zugangsdaten zu dem Konto kennen. Somit wird ein sogenanntes [[w:de:Web_of_Trust|Web of Trust]], ein Netzwerk, das auf Vertrauen beruht, gebildet. Es basiert nicht wie in anderen Applikationen auf dem Schlüssel für die Verschlüsselung, es ist davon unabhängig. Das hat den Vorteil, dass Dein öffentlicher Schlüssel für die Verschlüsselung nicht mit Deiner IP-Adresse assoziiert werden muss; oder Du Deine IP-Adresse im Netzwerk der Freunde bekannt geben musst, beispielsweise in einem DHT, in dem Nutzer darin suchen können. Die Echo-Accouts stellen eine [[w:de:Peer-to-Peer|Peer-to-Peer]]-(P2P)-Verbindung auf ein [[w:de:Friend-to-friend|Friend-to-Friend]] (F2F) Netzwerk um bzw. erlauben beide Verbindungsarten. Damit ist GoldBug für beide Paradigma ausgelegt.
 
 Die Echo-Accounts funktionieren wie folgt:
 
-# Bindende Endpunkte sind verantwortlich für die Definition der Konto-Informationen. Während des Erstellungsprozesses für ein Konto kann dieses für eine einmalige Nutzung definiert werden (One-Time-Account oder One-Time-Use). Konto-Name und auch die Passphrase für das Konto erfordern wenigstens 32 Bytes an Zeichen. Ein langes Passwort ist also erforderlich.
-# Nachdem eine Netzwerkverbindung erstellt worden ist, informiert der bindenden Endpunkt den anfragenden Knotenpunkt mit einer Anfrage zur Authentifizierung. Der bindenden Endpunkt wird die Verbindung abwerfen, wenn der Peer sich nicht innerhalb eines Zeitfensters von fünfzehn Sekunden identifiziert hat.
-# Nachdem die Anfrage zur Authentifizierung erhalten worden ist, antwortet der Peer zu dem bindenden Endpunkt. Der Peer überträgt dann die folgenden Informationen: HHash Key(Salt || Time) || Salt, wobei der Hash Key eine konzertierte Zusammenfassung aus dem Konto-Namen und auch dem Konto-Passwort ist. Derzeit wird der SHA-512 Hash Algorithmus genutzt, um dieses Hash-Ergebnis zu generieren. Die Zeit-Variable hat eine Auflösung von wenigen Minuten. Der Peer behält den Wert für das kryptographische Salz.
-# Der bindenden Endpunkt erhält die Informationen des Peers. Folgerichtig prozessiert dieser dann HHash Key(Salt || Time) für alle Koten, die er eingerichtet hat. Wenn der Endpunkt kein Konto identifizieren kann, wartet er eine Minute und führt eine weitere Suche durch. Wenn ein auf diesen Hash-Key passendes Konto gefunden wurde, erstellt der bindende Endpunkt eine Nachricht ähnlich zu der, die der Peer im vorherigen Schritt erstellt hat und sendet die Informationen an den Peer. Die authentifizierte Information wird gespeichert. Nach einer Dauer von etwa 120 Sekunden wird die Information wieder gelöscht.
-# Der Peer erhält die Information des bindenden Endpunktes und führt einen ähnlichen Validierungsprozess durch - dieses mal jedoch unter Einschluss der Analyse des kryptographischen Salz-Wertes des bindenden Endpunktes. Die beiden Salz-Werte müssen dann eindeutig übereinstimmend sein. Der Peer wird die Verbindung abwerfen, wenn der Endpunkt sich nicht selbst innerhalb eines fünfzehn-Sekunden-Zeitfensters identifiziert hat. Bitte beachte nebenbei bemerkt, dass das Account-System noch weiter ausgestaltet werden kann, indem ein Schlüssel zur Verschlüsselung einbezogen wird. Der zusätzliche Schlüssel erlaubt dann, noch genauere Zeitfenster zu definieren. 
+- Bindende Endpunkte sind verantwortlich für die Definition der Konto-Informationen. Während des Erstellungsprozesses für ein Konto kann dieses für eine einmalige Nutzung definiert werden (One-Time-Account oder One-Time-Use). Konto-Name und auch die Passphrase für das Konto erfordern wenigstens 32 Bytes an Zeichen. Ein langes Passwort ist also erforderlich.
+- Nachdem eine Netzwerkverbindung erstellt worden ist, informiert der bindenden Endpunkt den anfragenden Knotenpunkt mit einer Anfrage zur Authentifizierung. Der bindenden Endpunkt wird die Verbindung abwerfen, wenn der Peer sich nicht innerhalb eines Zeitfensters von fünfzehn Sekunden identifiziert hat.
+- Nachdem die Anfrage zur Authentifizierung erhalten worden ist, antwortet der Peer zu dem bindenden Endpunkt. Der Peer überträgt dann die folgenden Informationen: HHash Key(Salt || Time) || Salt, wobei der Hash Key eine konzertierte Zusammenfassung aus dem Konto-Namen und auch dem Konto-Passwort ist. Derzeit wird der SHA-512 Hash Algorithmus genutzt, um dieses Hash-Ergebnis zu generieren. Die Zeit-Variable hat eine Auflösung von wenigen Minuten. Der Peer behält den Wert für das kryptographische Salz.
+- Der bindenden Endpunkt erhält die Informationen des Peers. Folgerichtig prozessiert dieser dann HHash Key(Salt || Time) für alle Koten, die er eingerichtet hat. Wenn der Endpunkt kein Konto identifizieren kann, wartet er eine Minute und führt eine weitere Suche durch. Wenn ein auf diesen Hash-Key passendes Konto gefunden wurde, erstellt der bindende Endpunkt eine Nachricht ähnlich zu der, die der Peer im vorherigen Schritt erstellt hat und sendet die Informationen an den Peer. Die authentifizierte Information wird gespeichert. Nach einer Dauer von etwa 120 Sekunden wird die Information wieder gelöscht.
+- Der Peer erhält die Information des bindenden Endpunktes und führt einen ähnlichen Validierungsprozess durch - dieses mal jedoch unter Einschluss der Analyse des kryptographischen Salz-Wertes des bindenden Endpunktes. Die beiden Salz-Werte müssen dann eindeutig übereinstimmend sein. Der Peer wird die Verbindung abwerfen, wenn der Endpunkt sich nicht selbst innerhalb eines fünfzehn-Sekunden-Zeitfensters identifiziert hat. Bitte beachte nebenbei bemerkt, dass das Account-System noch weiter ausgestaltet werden kann, indem ein Schlüssel zur Verschlüsselung einbezogen wird. Der zusätzliche Schlüssel erlaubt dann, noch genauere Zeitfenster zu definieren. 
 
 Wenn SSL/TLS während dieser Aushandlung nicht verfügbar ist, mag das Protokoll wir folgt angreifbar werden: Eine Zwischenstation mag die Werte aus dem dritten Schritt aufzeichnen und folgerichtig zum bindenden Endpunkt senden. Sodann könnte der bindende Endpunkt auch einer unbekannten Verbindung Zugang zum Account gewähren. Das aufzeichnende Gerät könnte dann die Antwort des bindenden Endpunktes, also die Werte des vierten Schritts, an sich reißen und die Informationen an den Peer weiterleiten. Wenn die Informationen akkurat sind, wird der Peer die Antwort dieses neuen bindenden Endpunktes dann akzeptieren.
 
-==Das Echo-Grid==
-[[File:Echogrid.gif|thumb|300px|Abbildung 4: Das Echo Grid: Wenn wir über das Echo-Protokoll unterrichten, werden einfach die Buchstaben E_C_H_O gezeichnet und somit ein einfaches Echo-Grid-Template erstellt.]]  
+### 3.4 Das Echo-Grid
+
+[[File:Echogrid.gif|thumb|300px|Abbildung 4: Das Echo Grid: Wenn wir über das Echo-Protokoll unterrichten, werden einfach die Buchstaben E_C_H_O gezeichnet und somit ein einfaches Echo-Grid-Template erstellt.]]
+
 Wenn Studierende über das Echo-Protokoll reden und unterrichten, dann zeichnen wir einfach ein Echo-Grid mit den Buchstaben E-C-H-O und nummerieren die Knotenpunkte von E1 bis O4 und verbinden die Buchstaben mit einer Verbindungslinie am Boden (vgl. '''Abbildung 4''').
 
 Beispielsweise bezeichnet dann die Verbindung E1-E2 eine IP-Verbindung zu einem Nachbarn.
@@ -479,7 +483,9 @@ Folgende Beispiele der '''Abbildung 5''' können weitergehend diskutiert werden 
  
 Es ist hilfreich, die Beispiele auf obiger Grafik nachzuvollziehen.
 
-==Adaptives Echo (AE) und seine AE-Tokens==
+
+## 3.5 Adaptives Echo (AE) und seine AE-Tokens
+
 [[File:Adaptive Echo.jpg|500px|thumb|Abbildung 6: Adaptives Echo (AE): Das „Hänsel und Gretel“-Beispiel des Adaptiven Echos]] 
 Für die Erklärung des "Adaptiven Echos" kann ein weiteres Echo-Grid mit den verbundenen Buchstaben A und E gezeichnet werden (siehe '''Abbildung 6''').
 
@@ -506,19 +512,21 @@ Chat-Server Administratoren können ihre Token mit anderen Server-Administratore
  
 Für einen Test des Adaptiven Echos nutze einfach ein Netzwerk mit drei oder mehreren Computern (oder nutze "SPOTON_HOME" als (endungslose) Datei im Binärverzeichnis, um mehrere Programminstanzen auf einer einzigen Maschine zu launchen und zu verbinden) und setze sodann diesen beispielhaften Ablauf um:
  
-# Erstelle einen Knotenpunkt als Chat Server.
-# Erstelle zwei Knotenpunkte als Klient.
-# Verbinde die beiden Klienten zum Chat Server.
-# Tausche Schlüssel zwischen den Klienten.
-# Teste die normale Kommunikationsfähigkeit beider Klienten.
-# Setze einen AE-Token auf dem Server.
-# Teste die normale Kommunikationsfähigkeit beider Klienten.
-# Setze denselben AE-Token nun auch in einem Klienten.
-# Notiere das Ergebnis: Der Server-Knotenpunkt sendet die Nachricht nicht mehr an andere Knotenpunkte aus, die den AE-Token nicht haben bzw. kennen.
+- Erstelle einen Knotenpunkt als Chat Server.
+- Erstelle zwei Knotenpunkte als Klient.
+- Verbinde die beiden Klienten zum Chat Server.
+- Tausche Schlüssel zwischen den Klienten.
+- Teste die normale Kommunikationsfähigkeit beider Klienten.
+- Setze einen AE-Token auf dem Server.
+- Teste die normale Kommunikationsfähigkeit beider Klienten.
+- Setze denselben AE-Token nun auch in einem Klienten.
+- Notiere das Ergebnis: Der Server-Knotenpunkt sendet die Nachricht nicht mehr an andere Knotenpunkte aus, die den AE-Token nicht haben bzw. kennen.
  
 Dieses Beispiel sollte einfach replizierbar sein.
 
-==Wie das Echo Protokoll funktioniert==
+
+##3.6 Wie das Echo Protokoll funktioniert
+
 [[File:HowtheEchoprotocolworks.png|thumb|500px|Abbildung 7: Wie das Echo PROTOCOL funktioniert]]
 
 Nimmt man nun die verschiedenen Methoden und Optionen zusammen, kann die nebenstehende '''Abbildung 7''' einen komplexeren Überblick bieten.
@@ -536,18 +544,18 @@ Beispiele:
 * d. Nutzer O1 und O4 chatten miteinander und kennen nur ihren öffentlichen Schlüssel für die Verschlüsselung.
 * e. Nutzer H3 und C5 chatten über einen URI-Magneten im gleichen Gruppen-Chat-Raum (auch Buzz oder e*IRC genannt).
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-=Einen ersten Setup einrichten=
+
+
+
+## 4 Einen ersten Setup einrichten=
 
 Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach, 
-# Entpacke das Programm und starte (unter Windows) Goldbug.exe
-# Generiere mit dem Login-Passwort die kryptographischen Schlüssel
-# Aktiviere den Kernel
-# Verbinde zu einem Nachbarn mit der IP
-# Tausche mit einem Freund den Schlüssel und die verschlüsselte Kommunikation per Chat oder E-Mail kann beginnen...
+- Entpacke das Programm und starte (unter Windows) Goldbug.exe
+- Generiere mit dem Login-Passwort die kryptographischen Schlüssel
+- Aktiviere den Kernel
+- Verbinde zu einem Nachbarn mit der IP
+- Tausche mit einem Freund den Schlüssel und die verschlüsselte Kommunikation per Chat oder E-Mail kann beginnen...
 
 Der GoldBug Messenger hat eine Benutzeroberfläche (auch Interface oder Graphical User Interface (GUI) genannt) und einen Kernel.  Beide sind als Binärdatei gegeben (also unter Windows als GoldBug.exe und Spot-On-Kernel.exe bezeichnet). 
 
