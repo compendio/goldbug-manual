@@ -382,8 +382,7 @@ So zum Beispiel: kann man ebenso mit der GoldBug Applikation unechte Nachrichten
 
 **Simulacra:** Diese Funktion sendet bei Aktivierung der Check-Box eine "simulierte" Chat-Nachricht ins Echo Netzwerk. Diese „Fake“-Nachricht besteht aus reinen Zufallsziffern und macht es Analysten schwerer, verschlüsselte Nachrichten mit echten und zufälligen Nachrichten zu unterscheiden. [Simulacrum#Medientheorie]() ist ein Begriff, der sowohl aus dem Film "[Matrix_(Film]"() als auch in der Philosophie Baudrillards nicht unbekannt ist (Neos Aufbewahrungsort für Software in seiner Wohnung ist das Buch ''Simulacres et Simulation'' des französischen Medienphilosophen Jean Baudrillard, das das Verhältnis von Realität, Symbolen und Gesellschaft untersucht).
 
-**Impersonator:** Neben zufälligen Fake-Nachrichten kann mit dem GoldBug-Programm auch ein Chat simuliert werden, als wenn eine echte Person von Zeit zu Zeit chattet und Antworten aussendet. Auch diese Nachrichten sind mit reinen Zufallsdaten gefüllt, variieren jedoch - simuliert an einer echten Chat-Unterhaltung.
-: So kann die Analyse von Nachrichten erschwert werden, wenn dritte Aufzeichner ("Recorder") Deine sämtliche Kommunikation zwischen-speichern und aufzeichnen sollten, was ggf. anzunehmen ist. Aber mehr noch: Auch das Ausbleiben von Meta-Daten (vgl. [Vorratsdatenspeicherung]()) gibt keinen Anlass zu vermuten, dass eine Nachricht für Dich gewesen ist. Wer eine Nachricht erfolgreich auspacken konnte, der sendet sie normalweise nicht erneut ins Echo-Netz. Ein Auszeichner in von Metadaten könnte gesteigertes Interesse an den nicht weitergeleiteten Nachrichten haben, in der Annahme, dass diese Nachricht von Dir erfolgreich dekodiert worden sein kann. Für diesen Fall gibt es auch die Option des SuperEchos:
+**Impersonator:** Neben zufälligen Fake-Nachrichten kann mit dem GoldBug-Programm auch ein Chat simuliert werden, als wenn eine echte Person von Zeit zu Zeit chattet und Antworten aussendet. Auch diese Nachrichten sind mit reinen Zufallsdaten gefüllt, variieren jedoch - simuliert an einer echten Chat-Unterhaltung. So kann die Analyse von Nachrichten erschwert werden, wenn dritte Aufzeichner ("Recorder") Deine sämtliche Kommunikation zwischen-speichern und aufzeichnen sollten, was ggf. anzunehmen ist. Aber mehr noch: Auch das Ausbleiben von Meta-Daten (vgl. [Vorratsdatenspeicherung]()) gibt keinen Anlass zu vermuten, dass eine Nachricht für Dich gewesen ist. Wer eine Nachricht erfolgreich auspacken konnte, der sendet sie normalweise nicht erneut ins Echo-Netz. Ein Auszeichner in von Metadaten könnte gesteigertes Interesse an den nicht weitergeleiteten Nachrichten haben, in der Annahme, dass diese Nachricht von Dir erfolgreich dekodiert worden sein kann. Für diesen Fall gibt es auch die Option des SuperEchos:
 
 **SuperEcho:** Diese Funktion leitet auch erfolgreich dekodierte und damit lesbare Nachrichten wieder eingepackt weiter an alle Freunde. 
 
@@ -392,8 +391,13 @@ SuperEcho, Simulacra und Impersonation sind somit drei Optionen des Programms, d
 Schauen wir uns nun die einzelnen Echo-Modi einmal genauer an:
 
  
-### 3.1 Volles Echo==
-[[File:Echosimulation.gif|thumb|Abbildung 3: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt]]
+### 3.1 Volles Echo
+
+
+Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt
+![Abbildung: Simulation des Echos](/images/echo-simulation.gif)
+
+
 Das volle Echo ("Full Echo") legt die Annahme zugrunde, wie sie auch beim sogenannten "Kleine-Welt-Phänomen" getroffen wird: über wenige Freunde kann jeder jedem eine Nachricht zukommen lassen. Irgendwie kennt jeder jeden über maximal sieben Ecken. Dieses wird auch in einem peer-to-peer bzw. friend-to-friend Netzwerk angenommen. Daher kann man jeden erreichen, wenn jeder Knotenpunkt jede Nachricht an alle weiteren bekannten Knotenpunkte sendet (vgl. '''Abbildung 3''').
 
 Alternativ kann man diesen dezentralen Anspruch auch abkürzen bzw. unterstützen, indem man für eine Freunde einen Chat-Server basierend auf dem Echo-Kernel installiert, so dass sich alle verschlüsselten Nachrichten darüber an die Teilnehmer versenden lassen und er auch als E-Mail-Postfach dienen kann.
@@ -2091,7 +2095,7 @@ make or mingw32-make<br />
 
 ![Abbildung: Das Chat-Tab ](/images/chat_tab.jpg)
 
-![Abbildung: Simulation des Echos](/images/echo-simulation.gif)
+
 
 ![Abbildung: Grid des Adapiven Echos](/images/echo_AE_grid.png)
 
