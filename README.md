@@ -380,10 +380,10 @@ Um im Internet bzw. Echo-Netzwerk Zeit- und Häufigkeitsanalysen auszuschliessen
 
 So zum Beispiel: kann man ebenso mit der GoldBug Applikation unechte Nachrichten ("Fakes" aus der Simulacra-Funktion) und simulierte Kommunikationsnachrichten ("Impersonated Messages") aussenden. Einmal ist die Verschlüsselung keine Verschlüsselung, sondern stellt pure Zufallszeichen dar, die von Zeit zu Zeit ausgesandt werden, und das andere Mal wird eine menschliche Unterhaltung simuliert, die ebenso nur auf durcheinander-gewürfelte Zufallszeichen beruht: 
 
-**Simulacra:** Diese Funktion sendet bei Aktivierung der Check-Box eine "simulierte" Chat-Nachricht ins Echo Netzwerk. Diese „Fake“-Nachricht besteht aus reinen Zufallsziffern und macht es Analysten schwerer, verschlüsselte Nachrichten mit echten und zufälligen Nachrichten zu unterscheiden. [[w:de:Simulacrum#Medientheorie|Simulacra]] ist ein Begriff, der sowohl aus dem Film "[[w:de:Matrix_(Film)#Varia|Die Matrix]]" als auch in der Philosophie Baudrillards nicht unbekannt ist (Neos Aufbewahrungsort für Software in seiner Wohnung ist das Buch ''Simulacres et Simulation'' des französischen Medienphilosophen Jean Baudrillard, das das Verhältnis von Realität, Symbolen und Gesellschaft untersucht).
+**Simulacra:** Diese Funktion sendet bei Aktivierung der Check-Box eine "simulierte" Chat-Nachricht ins Echo Netzwerk. Diese „Fake“-Nachricht besteht aus reinen Zufallsziffern und macht es Analysten schwerer, verschlüsselte Nachrichten mit echten und zufälligen Nachrichten zu unterscheiden. [Simulacrum#Medientheorie]() ist ein Begriff, der sowohl aus dem Film "[Matrix_(Film]"() als auch in der Philosophie Baudrillards nicht unbekannt ist (Neos Aufbewahrungsort für Software in seiner Wohnung ist das Buch ''Simulacres et Simulation'' des französischen Medienphilosophen Jean Baudrillard, das das Verhältnis von Realität, Symbolen und Gesellschaft untersucht).
 
 **Impersonator:** Neben zufälligen Fake-Nachrichten kann mit dem GoldBug-Programm auch ein Chat simuliert werden, als wenn eine echte Person von Zeit zu Zeit chattet und Antworten aussendet. Auch diese Nachrichten sind mit reinen Zufallsdaten gefüllt, variieren jedoch - simuliert an einer echten Chat-Unterhaltung.
-: So kann die Analyse von Nachrichten erschwert werden, wenn dritte Aufzeichner ("Recorder") Deine sämtliche Kommunikation zwischen-speichern und aufzeichnen sollten, was ggf. anzunehmen ist. Aber mehr noch: Auch das Ausbleiben von Meta-Daten (vgl. [[w:de:Vorratsdatenspeicherung|Vorratsdatenspeicherung]]) gibt keinen Anlass zu vermuten, dass eine Nachricht für Dich gewesen ist. Wer eine Nachricht erfolgreich auspacken konnte, der sendet sie normalweise nicht erneut ins Echo-Netz. Ein Auszeichner in von Metadaten könnte gesteigertes Interesse an den nicht weitergeleiteten Nachrichten haben, in der Annahme, dass diese Nachricht von Dir erfolgreich dekodiert worden sein kann. Für diesen Fall gibt es auch die Option des SuperEchos:
+: So kann die Analyse von Nachrichten erschwert werden, wenn dritte Aufzeichner ("Recorder") Deine sämtliche Kommunikation zwischen-speichern und aufzeichnen sollten, was ggf. anzunehmen ist. Aber mehr noch: Auch das Ausbleiben von Meta-Daten (vgl. [Vorratsdatenspeicherung]()) gibt keinen Anlass zu vermuten, dass eine Nachricht für Dich gewesen ist. Wer eine Nachricht erfolgreich auspacken konnte, der sendet sie normalweise nicht erneut ins Echo-Netz. Ein Auszeichner in von Metadaten könnte gesteigertes Interesse an den nicht weitergeleiteten Nachrichten haben, in der Annahme, dass diese Nachricht von Dir erfolgreich dekodiert worden sein kann. Für diesen Fall gibt es auch die Option des SuperEchos:
 
 **SuperEcho:** Diese Funktion leitet auch erfolgreich dekodierte und damit lesbare Nachrichten wieder eingepackt weiter an alle Freunde. 
 
@@ -2071,6 +2071,45 @@ make or mingw32-make<br />
 ![Abbildung: Websuche mit GoldBug in der URL-Datenbank](/images/websearch.png)	
 
 ![Abbildung: Settings für die URL/Websuche](/images/websearch_settings.png)
+
+
+![Abbildung: Das Echo Grid](/images/Echo-grid.png)
+
+![Abbildung: Das Echo Grid in einem Beispiel](/images/Echo_Chat_Grid_Example.png)
+
+![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
+
+![Abbildung: Füge einen Nachbarn/Server hinzu](/images/add_neighbor.gif)
+
+![Abbildung: der Gruppenchat ](/images/buzz_tab.gif)
+
+![Abbildung: 1:1-Chat im Pop-up Fenster ](/images/chat_pop_up.jpg)
+
+![Abbildung: Chat-Server einrichten](/images/chat_server_create.gif)
+
+![Abbildung: Chat-Server Optionen](/images/chat_server_options.gif)
+
+![Abbildung: Das Chat-Tab ](/images/chat_tab.jpg)
+
+![Abbildung: Simulation des Echos](/images/echo-simulation.gif)
+
+![Abbildung: Grid des Adapiven Echos](/images/echo_AE_grid.png)
+
+![Abbildung: Echo Grid Template](/images/echo_grid_template.png)
+
+![Abbildung: Email Tab] (/images/email_tab.gif)
+
+![Abbildung: MELODICA-Symbol](/images/melodica.gif)
+
+![Abbildung: Nachbar verbinden](/images/neighbor_connect.gif)
+
+![Abbildung: POPTASTIC Settings ](/images/poptasticsettings.png)
+
+![Abbildung: ROSETTA Crypto Pad 2](/images/rosetta_pad_2.jpg)
+
+![Abbildung: Setze Passwort](/images/set_password.jpg)
+
+![Abbildung: Starbeam ](/images/starbeam_tab.gif) 
 
 
 
