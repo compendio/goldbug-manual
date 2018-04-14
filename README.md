@@ -323,9 +323,9 @@ Auch besteht die Möglichkeit, die symmetrische Passphrase (das AES) mit der Geg
 
 Eine (symmetrische) Ende-zu-Ende Verschlüsselung ist also zu differenzieren von der Punkt-zu-Punkt-Verschlüsselung. Daher wird auch gerne das Wort "durchgängige" Ende-zu-Ende-Verschlüsselung hinzugefügt (besser noch: durchgängige symmetrische Ende-zu-Ende-Verschlüsselung) - denn es geht ja darum, dass nur die Teilnehmerin Alice und der Teilnehmer Bob die geheime Passphrase kennen. Eine Punkt-zu-Punkt-Verschlüsselung läge vor, wenn Alice zum Server und dann der Server zu Bob die Verbindung herstellt. Hierbei kann es sein, dass der Server die Nachricht lesen kann, sie also auspackt und wieder einpackt, insbesondere wenn ein asymmetrischer Schlüssel zwischen den Teilnehmern und dem in der Mitte angesiedelten Server besteht.
 
-GoldBug bietet stattdessen eine durchgängige symmetrische End-zu-Ende Verschlüsselung an, die nicht nur manuell definiert werden kann, sondern mit einer Automation auch instant, jederzeit erneuert werden kann.
+GoldBug bietet stattdessen eine durchgängige symmetrische End-zu-Ende Verschlüsselung an, die nicht nur manuell definiert werden kann, sondern mit einer Automation auch instant, jederzeit erneuert werden kann ("Cryptographisches Calling", siehe unten).
 
-Diese spezielle Art der Mischung von PKI und AES sowie Transfer über eine SSL/TLS - Verbidnung wird als Echo-Protokoll bezeichnet, das im folgenden Abschnitt nochmals vertieft werden soll, denn es beinhaltet noch eine weitere Charakteristik beim Versand in das Netzwerk.
+Diese spezielle Art der Mischung von PKI und AES sowie Transfer über eine SSL/TLS-Verbidnung - bzw. eine Besonderheit beim Auspacken der verschlüsselten Kapsel - wird als Echo-Protokoll bezeichnet, das im folgenden Abschnitt nochmals vertieft werden soll, denn es beinhaltet noch eine weitere Charakteristik beim Versand in das Netzwerk. Was ist also das genau spezifische am Echo-Protokoll?
 
 
 
@@ -333,16 +333,19 @@ Diese spezielle Art der Mischung von PKI und AES sowie Transfer über eine SSL/T
  
 Mit dem Echo-Protokoll ist - einfach ausgedrückt - gemeint, dass
  
-erstens jede Nachrichten-Übertragung verschlüsselt ist...
+* erstens jede Nachrichten-Übertragung verschlüsselt ist...
  
  Beispiel: 
  SSL ( AES ( RSA* (Nachricht)))
   
  *) anstelle von RSA kann ebenso Elgamal oder NTRU oder McEliece genutzt werden,
   
-... und zweitens im Echo-Netzwerk jeder Verbindungsknoten jede Nachricht an jeden verbundenen Nachbarn sendet. Punkt. So einfach ist die Welt.
+* ... und zweitens im Echo-Netzwerk jeder Verbindungsknoten jede Nachricht an jeden verbundenen Nachbarn sendet. Punkt. So einfach ist die Welt.
  
-Zugrunde liegt das sogenannte "[[w:de:Kleine-Welt-Phänomen|Kleine-Welt-Phänomen]]": Jeder kann jeden über sieben Ecken in einem peer-to-peer oder friend-to-friend Netzwerk irgendwie erreichen - oder aber einfach über einen im Freundeskreis installierten gemeinsamen Echo-Chat-Server die Nachricht verteilen.
+Zugrunde liegt das sogenannte "[Kleine-Welt-Phänomen](https://de.wikipedia.org/wiki/Kleine-Welt-Ph%C3%A4nomen)": Jeder kann jeden über sieben Ecken in einem peer-to-peer oder friend-to-friend Netzwerk irgendwie erreichen - oder aber einfach über einen im Freundeskreis installierten gemeinsamen Echo-Chat-Server die Nachricht verteilen.
+
+* Als drittes Kriterium für das Echo Protokoll lässt sich anfügen, dass eine Besonderheit beim Auspacken der verschlüsselten Kapsel besteht: Die Kapseln haben weder - und hier unterscheiden sie sich von TCP-Paketen - einen Empänger noch einen Absender. Die Nachricht wird über den Hash der unverschlüsselten Nachricht identifiziert, ob sie für den Empfänger lesbar werden soll oder nicht. Doch dazu weiter unten noch ausführlich. 
+
  
 Der Modus des "Halben Echos" sendet eine Nachricht nur einen Hop, d.h. z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht mehr weiter (wie es beim vollen Echo der Standard ist).
  
