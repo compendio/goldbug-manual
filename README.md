@@ -353,26 +353,28 @@ Neben Vollem Echo, Halben Echo gibt es drittens noch das Adaptive Echo (AE). Hie
  
 Schließlich kennt das Echo noch Echo Accounts. Eine Art Firewall. Hiermit kann sichergestellt werden, dass nur Freunde, die den Account-Zugang kennen, sich verbinden können. So kann ein Web-of-Trust erstellt werden, also ein Netzwerk ausschließlich unter Freunden. Es basiert nicht auf dem Schlüssel für die Verschlüsselung, sondern ist davon unabhängig. D.h. der Nutzer muss nicht seinen öffentlichen Schlüssel auch noch mit seiner IP-Adresse verknüpfen oder gar im Netzwerk bekannt geben.
  
-Grundsätzlich sendet im Echo also jeder Knoten eine Nachricht an jeden verbundenen Knoten: Wenn ein Nutzer also eine Nachricht ein zweites Mal erhalten sollte, so wird sie in einem temporären Zwischenspeicher verglichen (anhand des Hashwertes für diese Nachricht) und ggf. bei Bekanntsein des Hashes wieder verworfen ("Congestion Control") und somit nicht weitergeleitet.
+Grundsätzlich sendet im Echo also jeder Knoten eine Nachricht an jeden verbundenen Knoten: Wenn ein Nutzer also eine Nachricht ein zweites Mal erhalten sollte, so wird sie in einem temporären Zwischenspeicher verglichen (anhand des Hashwertes für diese Nachricht) und ggf. bei Bekanntsein des Hashes wieder verworfen (das nennt sich ["Congestion Control"](https://de.wikipedia.org/wiki/%C3%9Cberlastkontrolle)) und somit nicht weitergeleitet.
 
- Eine kleine Analogie:
- Die Kryptographie des Echo-Protokolls kann verglichen werden mit dem Geben und Nehmen von 
- Überraschungseiern. Bob gibt ein Überraschungsei an Alice, Alice öffnet es und verzehrt die Schokolade 
- und stößt auf die Plastik-Kapsel im Inneren des Überraschungsei und versucht, diese zu öffnen 
- und die darin befindlichen Teile zu einem Spielzeug, einem Schlumpf, zusammen zu bauen. 
- Der Zusammenbau gelingt ihr aber nicht, der Schlumpf lässt sich nicht bilden und daher packt sie 
- die Einzelteile wieder in die Plastik-Kapsel, gießt neue Schokolade drum rum 
- und gibt das Ei an den Nachbarn weiter, der ebenso versucht, einen Schlumpf aus den Teilen zu basteln. 
- Alice weiß nicht, wer das Überraschungsei bzw. den Schlumpf erfolgreich zusammenbauen kann, 
- daher kopiert sie es (- welch ein Wunder, Alice hat eine Ü-Ei-Kopiermaschine - ) 
- und gibt jeweils eine Kopie an *alle* ihre Freunde weiter. 
- (Auspacken, basteln, anschauen, einpacken, verschenken und wieder auspacken, basteln, anschauen, 
- einpacken, verschenken, und so fort ..
- - Aus Sicht der im Netzwerk vertretenen Instanzen (Kernels) wäre in diesem Bild das Netz zum 
- Ü-Ei-Paradies geworden, wenn nicht mit Congestion Control die Bastelvorgänge wieder
- reduziert würden. Einmal bekannte Bastel-Teile werden nicht ein zweites Mal zusammen gebaut).
- Alice bastelt so lange, bis sie einen Schlumpf mit roter Mütze erkennen kann, 
- sie hat die für sie bestimmte Figur des Papa-Schlumpfs bzw. ihre Nachricht erhalten.
+> Eine kleine Analogie:
+> Die Kryptographie des Echo-Protokolls kann verglichen werden mit dem Geben und Nehmen von 
+> [Überraschungseiern](https://de.wikipedia.org/wiki/Kinder_%C3%9Cberraschung). Bob gibt ein Überraschungsei an Alice, Alice öffnet es und verzehrt die Schokolade 
+> und stößt auf die Plastik-Kapsel im Inneren des Überraschungsei und versucht, diese zu öffnen 
+> und die darin befindlichen Teile zu einem Spielzeug, einem Schlumpf, zusammen zu bauen. 
+> Der Zusammenbau gelingt ihr aber nicht, der Schlumpf lässt sich nicht bilden und daher packt sie 
+> die Einzelteile wieder in die Plastik-Kapsel, gießt neue Schokolade drum rum 
+> und gibt das Ei an den Nachbarn weiter, der ebenso versucht, einen Schlumpf aus den Teilen zu basteln. 
+> Alice weiß nicht, wer das Überraschungsei bzw. den Schlumpf erfolgreich zusammenbauen kann, 
+> daher kopiert sie es (- welch ein Wunder, Alice hat eine Ü-Ei-Kopiermaschine - ) 
+> und gibt jeweils eine Kopie an *alle* ihre Freunde weiter. 
+> (Auspacken, basteln, anschauen, einpacken, verschenken und wieder auspacken, basteln, anschauen, 
+> einpacken, verschenken, und so fort ..
+> 
+> Aus Sicht der im Netzwerk vertretenen Instanzen (Kernels) wäre in diesem Bild das Netz zum 
+> Ü-Ei-Paradies geworden, wenn nicht mit Congestion Control die Bastelvorgänge wieder
+> reduziert würden. Einmal bekannte Bastel-Teile werden nicht ein zweites Mal zusammen gebaut).
+> Alice bastelt so lange, bis sie einen Schlumpf mit roter Mütze erkennen kann, 
+> sie hat die für sie bestimmte Figur des Papa-Schlumpfs bzw. ihre Nachricht erhalten.
+
 
 Schließlich: Man kann ebenso mit der GoldBug Applikation unechte Nachrichten ("Fakes" aus der Simulacra-Funktion) und simulierte Kommunikationsnachrichten ("Impersonated Messages") aussenden. Einmal ist die Verschlüsselung keine Verschlüsselung, sondern stellt pure Zufallszeichen dar, die von Zeit zu Zeit ausgesandt werden, und das andere Mal wird eine menschliche Unterhaltung simuliert, die ebenso nur auf durcheinander-gewürfelte Zufallszeichen beruht: 
 
