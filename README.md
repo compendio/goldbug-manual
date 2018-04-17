@@ -534,7 +534,7 @@ Mit einem AE-Token wird kein anderer Kontenpunkt, der die Passphrase nicht kennt
 Um den Graphen, die Reiseroute, für das Adaptive Echo bestimmen zu können, müssen sich mehrere Knotenpunkte untereinander absprechen und die Passphrase auf dem Wegespfad lückenlos vermerken. Im Falle des Adaptiven Echos kann von einem Routing gesprochen werden.
 
 
-####Hänsel und Gretel – ein Beispiel für den Adaptiven Echo Modus
+#### Hänsel und Gretel – ein Beispiel für den Adaptiven Echo Modus
 
 Zur Erläuterung des Adaptiven Echos dient als klassisches Beispiel das Märchen von [Hänsel und Gretel](https://de.wikipedia.org/wiki/Hänsel_und_Gretel). 
 
@@ -564,7 +564,7 @@ Für einen Test des Adaptiven Echos nutzt man einfach ein Netzwerk mit drei oder
 Dieses Beispiel sollte einfach replizierbar sein.
 
 
-‚##3.6 Wie das Echo Protokoll funktioniert
+### 3.6 Wie das Echo Protokoll funktioniert
 
 Abbildung: Wie das Echo PROTOCOL funktioniert
 
