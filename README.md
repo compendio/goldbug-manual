@@ -449,17 +449,17 @@ Und ergänzend: das Echo kennt auch **Echo-Accounts**. Ein Konto oder eine Art F
 Die Echo-Accounts funktionieren wie folgt:
 
 - Bindende Endpunkte sind verantwortlich für die Definition der Konto-Informationen. Während des Erstellungsprozesses für ein Konto kann dieses für eine einmalige Nutzung definiert werden (One-Time-Account oder One-Time-Use). Konto-Name und auch die Passphrase für das Konto erfordern wenigstens 32 Bytes an Zeichen. Ein langes Passwort ist also erforderlich.
-- Nachdem eine Netzwerkverbindung erstellt worden ist, informiert der bindenden Endpunkt den anfragenden Knotenpunkt mit einer Anfrage zur Authentifizierung. Der bindende Endpunkt wird die Verbindung abwerfen, wenn der Peer sich nicht innerhalb eines Zeitfensters von fünfzehn Sekunden identifiziert hat.
+- Nachdem eine Netzwerkverbindung erstellt worden ist, informiert der bindende Endpunkt den anfragenden Knotenpunkt mit einer Anfrage zur Authentifizierung. Der bindende Endpunkt wird die Verbindung abwerfen, wenn der Peer sich nicht innerhalb eines Zeitfensters von fünfzehn Sekunden identifiziert hat.
 - Nachdem die Anfrage zur Authentifizierung erhalten worden ist, antwortet der Peer zu dem bindenden Endpunkt. Der Peer überträgt dann die folgenden Informationen: HHash Key (Salt / Time) // Salt, wobei der Hash Key eine konzertierte Zusammenfassung aus dem Konto-Namen und auch dem Konto-Passwort ist. Derzeit wird der SHA-512 Hash Algorithmus genutzt, um dieses Hash-Ergebnis zu generieren. Die Zeit-Variable hat eine Auflösung von wenigen Minuten. Der Peer behält den Wert für das kryptographische Salz.
-- Der bindenden Endpunkt erhält die Informationen des Peers. Folgerichtig prozessiert dieser dann HHash Key (Salt // Time) für alle Koten, die er eingerichtet hat. Wenn der Endpunkt kein Konto identifizieren kann, wartet er eine Minute und führt eine weitere Suche durch. Wenn ein auf diesen Hash-Key passendes Konto gefunden wurde, erstellt der bindende Endpunkt eine Nachricht ähnlich zu der, die der Peer im vorherigen Schritt erstellt hat und sendet die Informationen an den Peer. Die authentifizierte Information wird gespeichert. Nach einer Dauer von etwa 120 Sekunden wird die Information wieder gelöscht.
+- Der bindende Endpunkt erhält die Informationen des Peers. Folgerichtig prozessiert dieser dann HHash Key (Salt // Time) für alle Konten, die er eingerichtet hat. Wenn der Endpunkt kein Konto identifizieren kann, wartet er eine Minute und führt eine weitere Suche durch. Wenn ein auf diesen Hash-Key passendes Konto gefunden wurde, erstellt der bindende Endpunkt eine Nachricht ähnlich zu der, die der Peer im vorherigen Schritt erstellt hat und sendet die Informationen an den Peer. Die authentifizierte Information wird gespeichert. Nach einer Dauer von etwa 120 Sekunden wird die Information wieder gelöscht.
 - Der Peer erhält die Information des bindenden Endpunktes und führt einen ähnlichen Validierungsprozess durch - dieses mal jedoch unter Einschluss der Analyse des kryptographischen Salz-Wertes des bindenden Endpunktes. Die beiden Salz-Werte müssen dann eindeutig übereinstimmend sein. Der Peer wird die Verbindung abwerfen, wenn der Endpunkt sich nicht selbst innerhalb eines fünfzehn-Sekunden-Zeitfensters identifiziert hat. Zu beachten ist, nebenbei bemerkt, dass das Account-System noch weiter ausgestaltet werden kann, indem ein Schlüssel zur Verschlüsselung einbezogen wird. Der zusätzliche Schlüssel erlaubt dann, noch genauere Zeitfenster zu definieren. 
 
-Wenn SSL/TLS während dieser Aushandlung nicht verfügbar ist, mag das Protokoll wie folgt angreifbar werden: Eine Zwischenstation mag die Werte aus dem dritten Schritt aufzeichnen und folgerichtig zum bindenden Endpunkt senden. Sodann könnte der bindende Endpunkt auch einer unbekannten Verbindung Zugang zum Account gewähren. Das aufzeichnende Gerät könnte dann die Antwort des bindenden Endpunktes, also die Werte des vierten Schritts, an sich reißen und die Informationen an den Peer weiterleiten. Wenn die Account Informationen bzw. das erforderliche Passwort dann akkurat vorgehalten werden, würde der Peer die Antwort dieses neuen bindenden Endpunktes dann akzeptieren. Darum heißt es wie immer: Passworte schützen.
+Wenn SSL/TLS während dieser Aushandlung nicht verfügbar ist, mag das Protokoll wie folgt angreifbar werden: Eine Zwischenstation mag die Werte aus dem dritten Schritt aufzeichnen und folgerichtig zum bindenden Endpunkt senden. Sodann könnte der bindende Endpunkt auch einer unbekannten Verbindung Zugang zum Account gewähren. Das aufzeichnende Gerät könnte dann die Antwort des bindenden Endpunktes, also die Werte des vierten Schritts, an sich reißen und die Informationen an den Peer weiterleiten. Wenn die Account-Informationen bzw. das erforderliche Passwort dann akkurat vorgehalten werden, würde der Peer die Antwort dieses neuen bindenden Endpunktes dann akzeptieren. Darum heißt es wie immer: Passworte schützen.
 
 
 ### 3.4 Das Echo-Grid
 
-Wenn Studierende über das Echo-Protokoll reden und unterrichten oder unterrichtet werden, dann lässt sich einfach ein Echo-Grid mit den Buchstaben E_C_H_O zeichnen. Die Knotenpunkte von E1 bis O4 werden nummeriert und verbinden die Buchstaben mit einer Verbindungslinie am Boden (vgl. Abbildung).
+Wenn Studierende oder Schüler über das Echo-Protokoll reden und unterrichten oder unterrichtet werden, dann lässt sich einfach ein Echo-Grid mit den Buchstaben E_C_H_O zeichnen. Die Knotenpunkte von E1 bis O4 werden nummeriert und verbinden die Buchstaben mit einer Verbindungslinie am Boden (vgl. Abbildung).
 
 
 Abbildung: Das Echo Grid Template
@@ -468,11 +468,11 @@ Abbildung: Das Echo Grid Template
 
 Beispielsweise bezeichnet dann die Verbindung E1-E2 eine IP-Verbindung zu einem Nachbarn.
 
-Wenn die einzelnen Kontenpunkte nun Schlüssel tauschen, so entstehen Verbindungen, die als neue Ebene auf der Ebene der IP-Verbindungen des P2P/F2F-Netzwerkes entstehen.
+Wenn die einzelnen Knotenpunkte nun Schlüssel tauschen, so entstehen Verbindungen, die als neue Ebene auf der Ebene der IP-Verbindungen des P2P/F2F-Netzwerkes entstehen.
 
-Mit der GoldBug zugrunde liegenden Architektur wurde nicht nur das kryptographische Routing in einem Kernel-Programm elaboriert etabliert, sondern wie oben dargelegt, dem Begriff des "kryptographische Routings" wurde mit dem Echo-Protokoll auch das Routing paradoxerweise entzogen. Es muss daher genauerweise von dem „kryptographischen Echo“ statt einem „kryptographischen Echo“ gesprochen werden. Ein davon zu differenzierendes Protokoll ist das des „Cryptographic Discovery“ auf das weiter unten noch in einem Extra-Abschnitt eingegangen wird.
+Mit der GoldBug zugrunde liegenden Architektur wurde nicht nur das kryptographische Routing in einem Kernel-Programm elaboriert etabliert, sondern wie oben dargelegt, dem Begriff des "kryptographischen Routings" wurde mit dem Echo-Protokoll auch das Routing paradoxerweise entzogen. Es muss daher genauerweise von dem „kryptographischen Echo“ statt einem „kryptographischen Routing“ gesprochen werden. Ein davon zu differenzierendes Protokoll ist das des „Cryptographic Discovery“ auf das weiter unten noch in einem Extra-Abschnitt eingegangen wird.
 
-Echo ist somit "beyond" Routing: Erstens, die Nachrichten-Pakete enthalten keine Routing Informationen (Adressaten) und die Knotenpunkte nutzen auch kein "Forwarding" im eigentlichen Sinne, denn sie senden einfach alles an alle Verbindungen. Und zweitens: Auch der kryptographische Schlüssel, der die Nachricht zu dekodieren versucht, ist keine Adresse (die gar dem Nachrichten-Packet beigefügt wäre), sondern nur eine polarisierende Bille: sie lässt uns Texte anders sehen und ggf. verstehen. Im Echo-Protokoll wird daher auch mehr der Begriff des "Traveling" anstelle des Begriffes "Routing" benutzt. Oder halt eben: „kryptographisches Echo).
+Echo ist somit "beyond" Routing: Erstens, die Nachrichten-Pakete enthalten keine Routing Informationen (Adressaten) und die Knotenpunkte nutzen auch kein "Forwarding" im eigentlichen Sinne, denn sie senden einfach alles an alle Verbindungen. Und zweitens: Auch der kryptographische Schlüssel, der die Nachricht zu dekodieren versucht, ist keine Adresse (die gar dem Nachrichten-Packet beigefügt wäre), sondern nur eine polarisierende Bille: sie lässt uns Texte anders sehen und ggf. verstehen. Im Echo-Protokoll wird daher auch mehr der Begriff des "Traveling" anstelle des Begriffes "Routing" benutzt. Oder halt eben: „kryptographisches Echo".
 
 Auch rechtlich gesehen ist sodann hier eine andere Bewertung vorzunehmen, da ein Knotenpunkt nicht im Namen für einen Adressaten als Mittelsmann weiterleitet, sondern jeder die Nachbarn eigenständig informiert (vgl. ergänzend z.B. die Weiterleitungen in anderen Routing-Modellen wie [AntsP2P](http://antsp2p.sourceforge.net) mit seinem [Ameisenalgorithmus](https://de.wikipedia.org/wiki/Ameisenalgorithmus), [Mute](https://de.wikipedia.org/wiki/MUTE), [AllianceP2P]( https://sourceforge.net/projects/alliancep2p/), [RetroShare]( https://de.wikipedia.org/wiki/RetroShare), [Onion-Routing](https://de.wikipedia.org/wiki/Onion-Routing) oder [I2P]( https://de.wikipedia.org/wiki/I2P). 
 
@@ -486,15 +486,13 @@ Das Echo-Grid als einfache Netzwerkdarstellung dient nicht nur zur Analyse von "
 
 
 
-###Beispiele des Schlüssel-Austausches von Alice, Bob, Ed und Maria
-
-Folgende Beispiele der '''Abbildung''' können weitergehend diskutiert werden - sie nutzen ein paar Vokabeln und Prozesse der Funktionen des GoldBug-Klienten, so dass mit dem Programm unerfahrene Leser diesen Abschnitt auch überspringen können und sich erst einmal mit den Grundfunktionen (Installation, Chat, Email, Dateitransfer oder URL-Suche) vertraut machen und diese technischen Beispiele dann zu einem späteren Zeitpunkt wieder aufgreifen und nachvollziehen können):
-
+### Beispiele des Schlüssel-Austausches von Alice, Bob, Ed und Maria
 
 Abbildung: Alice, Bob, Ed und Mary im Echo-Grid - Ein Beispiel für das Echo.
-
 ![Abbildung: Das Echo Grid in einem Beispiel](/images/Echo_Chat_Grid_Example.png)
 
+
+Folgende Beispiele der Abbildung können weitergehend diskutiert werden - sie nutzen ein paar Vokabeln und Prozesse der Funktionen des GoldBug-Klienten, so dass mit dem Programm unerfahrene Leser diesen Abschnitt auch überspringen können und sich erst einmal mit den Grundfunktionen (Installation, Chat, Email, Dateitransfer oder URL-Suche) vertraut machen und diese technischen Beispiele dann zu einem späteren Zeitpunkt wieder aufgreifen und nachvollziehen können):
 
 - Alice (IP=E1) und Bob (IP=C3) haben ihren öffentlichen Schlüssel getauscht und sind über die folgenden IP-Nachbarn verbunden: E1-E3-E5-E6-C3.
 
@@ -502,11 +500,11 @@ Abbildung: Alice, Bob, Ed und Mary im Echo-Grid - Ein Beispiel für das Echo.
 
 - Schließlich: Maria (O4) ist eine Freundin von Ed (H1). Sie kommunizieren entweder über den Weg: O4-O3-H6-H4-H3-H1 oder sie nutzen den Pfad von: O4-O2-O1-O3-H6-H4-H3-H1. Da im Echo Protokoll ja jeder IP-Nachbar jede Nachricht an jeden verbundenen IP-Nachbarn sendet, wird derjenige Pfad erfolgreich sein, der die Nachricht am schnellsten übermittelt. (Die zweite eingehende Nachricht wird sodann von Congestion Control herausgefiltert).
 
-- Direkte IP-Verbindungen von Nachbarn wie z.B. E1-E3 können durch die Erstellung eines sog. "Echo-Accounts" abgesichert werden: Keine andere IP-Adresse als E1 kann dann zu dem sogenannten "Listener" des Nachbarn E3 verbinden. Über diese Methode kann ein Web-of-Trust erstellt werden - ohne von Schlüsseln zur Verschlüsselung abhängig zu sein - noch braucht der Nutzer einen Freund als Nachbarn, mit dem er seinen Chat oder E-Mail-Schlüssel tauscht.
+- Direkte IP-Verbindungen von Nachbarn wie z.B. E1-E3 können durch die Erstellung eines sog. "Echo-Accounts" weiter abgesichert werden: Keine andere IP-Adresse als E1 kann dann zu dem sogenannten "Listener" des Nachbarn E3 verbinden. Über diese Methode kann ein Web-of-Trust erstellt werden - ohne von Schlüsseln zur Verschlüsselung abhängig zu sein - noch braucht der Nutzer einen Freund als Nachbarn, mit dem er seinen Chat oder E-Mail-Schlüssel tauscht.
 
 - Sogenanntes „[Turtle Hopping](https://de.wikipedia.org/wiki/Turtle_F2F)“ wird im Echo-Netzwerk wesentlich effizienter: Wenn Ed und Alice eine Dateiübertragung starten (über die StarBeam-Funktion mittels eines Magnet-URI-Links), dann transportiert das Echo-Protokoll die Pakete über den Weg H1-H3-H5-C4-C3-E6-E5-E3-E1. Maria ist nicht in der Route, aber sie wird die Pakete ebenso über das volle Echo erhalten, wenn sie den StarBeam-Magneten kennt. Vorteil ist, dass das Hopping nicht über die Schlüssel geht, sondern über die IP-Verbindungen (z.B. das Web-of-Trust). Grundsätzlich ist alles immer verschlüsselt, also warum nicht den kürzesten Weg im Netz nehmen?
 
-- Ein sogenannter "Buzz" bzw. "ge-Echo-ter IRC Channel" (daher auch kurz: e*IRC)-Raum kann z.B. durch den Knotenpunkte O2 erstellt oder "gehostet" werden. Da nur der Nutzer Ed den Buzz-Raum-Namen kennt, bleiben alle anderen Nachbarn und Freunde außen vor. Vorteil: Der Nutzer kann mit unbekannten Freunden in einem Raum sprechen, ohne mit diesen einen öffentlichen z.B. RSA-Schlüssel jemals getauscht zu haben. Stattdessen wird einfach ein Einmal-Magnet ("one-time-magnet") für diesen "buzz"/"e*IRC" Raum genutzt.
+- Ein sogenannter "Buzz" bzw. "ge-Echo-ter IRC Channel" (daher auch kurz: e'IRC) Raum kann z.B. durch den Knotenpunkte O2 erstellt oder "gehostet" werden. Da nur der Nutzer Ed den Buzz-Raum-Namen kennt, bleiben alle anderen Nachbarn und Freunde außen vor. Vorteil: Der Nutzer kann mit unbekannten Freunden in einem Raum sprechen, ohne mit diesen einen öffentlichen z.B. RSA-Schlüssel jemals getauscht zu haben. Stattdessen wird einfach ein Einmal-Magnet ("one-time-magnet") für diesen "buzz"/"e*IRC" Raum genutzt.
 
 - Maria ist eine gemeinsame Freundin von Ed und Bob und sie aktiviert die C/O (care of)-Funktion für E-Mails: Das erlaubt Ed, E-Mails an Bob zu senden, obwohl er offline ist, denn: Maria speichert die E-Mails zwischen, bis Bob dann online kommt.
 
@@ -518,7 +516,7 @@ Es ist hilfreich, die Beispiele auf obiger Grafik nachzuvollziehen.
 
 ### 3.5 Adaptives Echo (AE) und seine AE-Tokens
 
-Für die Erklärung des "Adaptiven Echos" kann ein weiteres Echo-Grid mit den verbundenen Buchstaben A und E gezeichnet werden (siehe folgende '''Abbildung''').
+Für die Erklärung des "Adaptiven Echos" kann ein weiteres Echo-Grid mit den verbundenen Buchstaben A und E gezeichnet werden (siehe folgende Abbildung).
 
 Abbildung: Adaptives Echo (AE): Das „Hänsel und Gretel“-Beispiel des Adaptiven Echos]] 
 
@@ -527,7 +525,7 @@ Abbildung: Adaptives Echo (AE): Das „Hänsel und Gretel“-Beispiel des Adapti
 
 Wenn ein Nutzer, sein Chat-Freund und ein eingerichteter dritter Kontenpunkt als Chat-Server denselben AE-Token ("Adaptive-Echo Token") in das Programm einfügen, dann wird der Chat-Server die Nachricht des Nutzers nur zu seinem Freund senden - und nicht zu allen anderen verbundenen Nachbarn oder Nutzern wie es normalerweise bei dem Vollen Echo Modus der Fall wäre.
 
-Der AE-Token ist wie eine Passphrase von mindestens 96 Zeichen. Beim Adaptiven Echo wird die Information vom aussendenden Knotenpunkt der verschlüsselten Kapsel beigefügt - und alle weiteren Knotenpunkte lernen, dass Sie die Nachrichte nur an Knotenpunkte bzw. Verbindungspartner weitersenden, die diesen AE-Token ebenso kennen.
+Der AE-Token besteht wie eine Passphrase aus mindestens 96 Zeichen. Beim Adaptiven Echo wird die Information vom aussendenden Knotenpunkt der verschlüsselten Kapsel beigefügt - und alle weiteren Knotenpunkte lernen, dass Sie die Nachricht nur an Knotenpunkte bzw. Verbindungspartner weitersenden, die diesen AE-Token ebenso kennen.
 
 Mit einem AE-Token wird kein anderer Kontenpunkt, der die Passphrase nicht kennt, die Nachricht des Nutzers erhalten oder einsehen können. Damit können potentielle "Recorder" ausgenommen werden, also mögliche Nachbarn, die möglicher- und anzunehmender Weise den gesamten Nachrichtenverkehr aufzeichnen und sodann versuchen wollen, die mehrfache Verschlüsselung aufzubrechen, um an den Nachrichten-Kern der Kapsel zu kommen.
 
@@ -544,10 +542,10 @@ Diese Märcheninhalte können nun auch in obigem Grid-Muster das Adaptiven Echo 
 
 Wenn Knotenpunkt A2, E5 und E2 denselben AE-Token einsetzen, dann wird Knotenpunkt E6 keine Nachricht erhalten, die der Knotenpunkt A2 (Hänsel) und der Knotenpunkt E2 (Gretel) austauschen werden. Denn, der Knotenpunkt E5 lernt über den bekannten Token "Weisse Kieselsteine" ("white_pebbles"), die Nachrichten nicht an den Kontenpunkt E6, die "Böse Hexe" ("Wicked Witch"), zu senden. Ein lernendes, sich anpassendes ("adaptives") Netzwerk.
  
-Ein **"Adaptives Echo"-Netzwerk** enthüllt dabei keine Ziel-Informationen (vergleiche auch nochmals oben: "Ants Routing"). Denn - zur Erinnerung: Der Modus des "Halben Echos" sendet nur einen Hop zum verbundenen Nachbarn und das "Volle Echo" sendet die verschlüsselte Nachricht zu allen verbundenen Knotenpunkten über eine nicht weiter spezifizierte Hop-Anzahl.
+Ein **"Adaptives Echo"-Netzwerk** enthüllt dabei keine Ziel-Informationen (vergleiche auch nochmals oben: "Ants Routing"). Denn - zur Erinnerung: Der Modus des "Halben Echos" sendet nur einen Hop zum verbundenen Nachbarn und das "Volle Echo" sendet die verschlüsselte Nachricht zu allen verbundenen Knotenpunkte über eine nicht weiter spezifizierte Hop-Anzahl.
 Während "Echo Accounts" andere Nutzer quasi als Firewall oder Berechtigungskonzept beim Verbinden fördern oder behindern, halten hingegen "AE-Tokens" Graphen- oder Pfad-Exklusivität vor - und zwar für Nachrichten, die über Verbindungsknoten gesandt werden, die den AE-Token kennen.
 
-Chat-Server Administratoren können ihre Token mit anderen Server-Administratoren tauschen, wenn Sie sich untereinander vertrauen ("Ultra-Peering for Trust") und ein Web-of-Trust definieren. In Netzwerk-Laboren oder zuhause mit drei, vier Rechnern kann man das das Adaptive Echo einfach austesten und seine Ergebnisse dokumentieren:
+Chat-Server Administratoren können ihre Token mit anderen Server-Administratoren tauschen, wenn Sie sich untereinander vertrauen (sogenanntes "Ultra-Peering for Trust") und ein Web-of-Trust definieren. In Netzwerk-Laboren oder zuhause mit drei, vier Rechnern kann man das Adaptive Echo einfach austesten und seine Ergebnisse dokumentieren:
 
 Für einen Test des Adaptiven Echos nutzt man einfach ein Netzwerk mit drei oder mehreren Computern (oder "SPOTON_HOME" als (endungslose) Datei im Binärverzeichnis, um mehrere Programminstanzen auf einer einzigen Maschine zu launchen und zu verbinden) und setzt sodann diesen beispielhaften Ablauf um:
  
@@ -566,16 +564,19 @@ Dieses Beispiel sollte einfach replizierbar sein.
 
 ### 3.6 Wie das Echo Protokoll funktioniert
 
-Abbildung: Wie das Echo PROTOCOL funktioniert
+Nimmt man nun die verschiedenen Methoden und Optionen zusammen, wird die Abbildung "Wie das Echo-Protkoll funktioniert" einen komplexeren Überblick bieten.
 
-Nimmt man nun die verschiedenen Methoden und Optionen zusammen, kann die nebenstehende '''Abbildung: Wie das Echo-Protkoll funktioniert''' einen komplexeren Überblick bieten.
+Abbildung: Wie das Echo PROTOCOL funktioniert
+![Abbildung: Das Echo Grid](/images/Echo-grid.png)
+
 
 - In der Graphik abgebildet sind die unterschiedlichen Nutzungsbeispiele von "Full Echo", "Half Echo", Adaptive Echo" sowie "Echo Accounts".
 
 - Unterschieden wird zwischen physischen IP-Verbindungen und virtuellen Verbindungen zu Schlüsseln. Schlüssel sind daher nicht zwingend einer IP-Verbindung zugeordnet.
+
 - Nutzer können darin asymmetrische öffentliche Schlüssel, aber auch Magnet-URIs mit symmetrischen Verschlüsselungsdetails sowie Tokens und Account-Credentials tauschen.
 
-- Verbindungsknoten können Verbindungen erlauben und verbieten ebenso wie Nachrichten dediziert adressiert oder auslassend adressiert senden.
+- Verbindungsknoten können Verbindungen erlauben und verbieten - ebenso wie Nachrichten dediziert adressiert (oder auslassend adressiert) senden.
 
 - Dementsprechend entstehen unterschiedliche Kommunikations-Szenarien.
 
@@ -594,7 +595,7 @@ Nimmt man nun die verschiedenen Methoden und Optionen zusammen, kann die nebenst
 - e. Nutzer H3 und C5 chatten über einen URI-Magneten im gleichen Gruppen-Chat-Raum (auch Buzz oder e*IRC genannt).
 
 
-Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden kann, obschon es eine simple Struktur hat. Mit den einzelnen Optionen und Begriffen können Nutzer in der Praxis sich viel erschließen und ausprobieren. Ein ideales Instrument für die Lehre, die Heranführung an kryptographische Prozesse und eine praktische Nutzererfahrung in der Gruppe. Z.B. für ein Dreier-Team wie in der GoldBug-Geschichte von Edgar Alan Poe.
+Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden kann, obschon es eine simple Struktur hat. Mit den einzelnen Optionen und Begriffen können Nutzer in der Praxis sich viel Netzwerk- und Krypto-Theorie erschließen und diese praktisch ausprobieren. Ein ideales Instrument für die Lehre, die Heranführung an kryptographische Prozesse und eine praktische Nutzererfahrung in der Gruppe. Zum Beispiel für ein Dreier-Team wie in der GoldBug-Geschichte von Edgar Alan Poe.
 
 
 
@@ -2119,7 +2120,7 @@ make or mingw32-make<br />
 ![Abbildung: Settings für die URL/Websuche](/images/websearch_settings.png)
 
 
-![Abbildung: Das Echo Grid](/images/Echo-grid.png)
+
 
 
 ![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
