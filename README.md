@@ -603,98 +603,136 @@ Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden 
 ## 4 Einen ersten Setup einrichten
 
 Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach, 
-- Entpacke das Programm und starte (unter Windows) Goldbug.exe
-- Generiere mit dem Login-Passwort die kryptographischen Schlüssel
-- Aktiviere den Kernel
-- Verbinde zu einem Nachbarn mit der IP
-- Tausche mit einem Freund den Schlüssel und die verschlüsselte Kommunikation per Chat oder E-Mail kann beginnen...
 
-Der GoldBug Messenger hat eine Benutzeroberfläche (auch Interface oder Graphical User Interface (GUI) genannt) und einen Kernel.  Beide sind als Binärdatei gegeben (also unter Windows als GoldBug.exe und Spot-On-Kernel.exe bezeichnet). 
+- Entpacke das Programm aus dem Zip und starte (unter Windows) die GoldBug.exe aus dem Pfad, in den das Programm entpackt wurde, z.B. C:/GoldBug/goldbug.exe oder C:/Programme/GoldBug/goldbug.exe.
 
-Starte die GoldBug.exe aus dem Pfad, in den Du das Programm entpackt hast, z.B. C:/GoldBug/goldbug.exe oder C:/Programme/GoldBug/goldbug.exe.
+- Es erscheint die Benutzeroberfläche und ein Wizard, mit dem Einstellungen Schritt für Schritt umgesetzt werden können. Alternativ kann man den Wizard auch schließen und die Einstellungen manuell im Tab für die Einstellungen bzw. der Kernel-Aktivierung vornehmen. Es empfiehlt sich, den Wizard zu nutzen.
 
-Wenn Du das Programm das erste Mal startest, definiere ein 16-Zeichen umfassendes Login-Passwort und einen Nicknamen. Sodann werden Deine Schüssel für die Verschlüsselung erstellt.
+- Im Wizard werden sodann mit dem Nutzernamen  und einer zweifach einzugebenden Passphrase die notwendigen kryptographischen Schlüssel generiert. 
 
-Ansonsten muss in diesem Tabulator nach jedem Start von goldbug.exe nur der Kernel über den Knopf "Aktiviere" aktiviert werden, der dann die Verbindungen zu Freunden oder zu einem Chat-Server koordiniert. Die Kernel-Datei Spot-on-Kernel.exe wird also aus dem Programm von GoldBug an oder abgeschaltet. GoldBug ist somit eine Benutzeroberfläche für diesen Kernel, sie ist einfach gehalten und neben dem Desktop-Computer auch für mobile Gerate optimiert.
+- Nach Abschluss des Wizards ist noch der Kernel zu aktivieren. Der GoldBug Messenger hat also eine Benutzeroberfläche (auch Interface oder Graphical User Interface (GUI) genannt) und einen Kernel.  Beide sind als Binärdatei gegeben (also unter Windows als GoldBug.exe und Spot-On-Kernel.exe bezeichnet). Spot-On ist das Original-Projekt für die Echo-Applikation und GoldBug stellt lediglich eine vereinfachte Benutzeroberfläche zur Verfügung.
 
-== Zwei Login-Methoden ==
-[[File:Passwordgeneration.png|thumb|Abbildung 8: Setze Passwort, generiere Schlüssel und aktivere den Kernel: Erstelle ein Passwort für den GoldBug Messenger]] 
-Wenn Du GoldBug das erste Mal startest, gebe in dem blauen Kasten einen Nicknamen ein und definiere eine Passphrase (vgl. '''Abbildung 8'''). Dazu gibt es zwei Methoden: die Passphrase-Methode oder die Frage-Antwort (Question/Answer) Methode.
+- Wenn der Kernel läuft, ist eine Verbinde zu einem Nachbarn oder Server mit der entsprechenden IP im Tab Nachbarn vorzunehmen.
 
-Das Passwort muss mindestens 16 Zeichen lang sein. Wem das zu lang ist, der kann ein kürzeres Passwort auch dreimal wiederholen wie z.B. "passwort_passwort_passwort", jedoch ist das Passwort dann nicht so sicher wie eines mit zufälliger Zeichenkette. Die zwei Methoden lassen sich wie folgt unterscheiden:
+- Sodann tauscht der Nutzer mit einem Freund den Schlüssel und die verschlüsselte Kommunikation per Chat oder E-Mail kann beginnen...
+
+
+Ansonsten muss in diesem Tabulator für Einstellungen bzw. für die Kernel-Aktivierung nach jedem Start von goldbug.exe der Kernel über den Knopf "Aktiviere" aktiviert werden, der dann die Verbindungen zu Freunden oder zu einem Chat-Server koordiniert. Die Kernel-Datei Spot-on-Kernel.exe wird also aus dem Programm von GoldBug an oder abgeschaltet.
+
+### Zwei Login-Methoden
+
+Abbildung: Passwort-Generation 
+![Abbildung: Setze Passwort](/images/set_password.jpg)
+
+
+
+Wenn der Nutzer GoldBug das erste Mal startet, ist in dem entsprechenden Kasten einen Nicknamen einzugeben und eine Passphrase für den Login in die Applikation zu definieren (vgl. Abbildung). 
+
+Dazu gibt es zwei Methoden: die Passphrase-Methode oder die Frage-Antwort (Question/Answer) Methode.
+
+Das Passwort muss mindestens 16 Zeichen lang sein. Wem das zu lang ist, der kann ein kürzeres Passwort auch dreimal wiederholen wie z.B. "passwort_passwort_passwort", jedoch ist das Passwort dann nicht so sicher wie eines mit zufälliger Zeichenkette. 
+
+Die zwei Methoden lassen sich wie folgt unterscheiden:
  
-; Passphrase-Methode: Hash (Passphrase + Salt), das bedeutet, ein "salted Hash" wird genutzt. Bei der Erstellung des Passwortes wird dieses nicht lokal gespeichert, sondern nur der Hash der Eingabe.
-; Q/A-Methode: Hash (Question, Answer), das bedeutet, ein "[[w:de:Keyed-Hash_Message_Authentication_Code|HMAC]]" (Keyed-Hash Message Authentication Code) wird genutzt. Und: Weder die Frage, noch die Antwort, wird auf Deiner Maschine gespeichert und kein kryptographisches Salz wird durch die Maschine per Zufall generiert. Anstelle einer Frage kannst Du natürlich auch zwei Passworte ohne das Fragezeichen eingeben. Bitte beachte, dass hier die Frage und die Antwort bei späteren Logins exakt eingeben werden müssen, wie sie definiert wurden und hier bei der erstmaligen Definition kein zweiter Eingabecheck ("Confirmation") (auf Tippfehler) wie bei der Passwort-Methode erfolgt.
+**Passphrase-Methode:** Bei der Erstellung des Passwortes wird dieses nicht lokal gespeichert, sondern nur der Hash der Eingabe. Der Hash wird um eine ergänzende Zeichenfolge ergänzt, das sogenannte kryptologische Salz. Dieses ergänzt den Hash und macht ihn daher sicherer. Der „Salted Hash“ definiert sich also wie folgt: Hash (Passphrase + Salt). 
+Damit das Passwort auch beim Nutzer eingeübt wird und Tippfehler ausgeschlossen werden, muss es ein zweites Mail eingegeben werden.
 
-Da der Hash, der aus Deiner Login-Passphrase generiert wird, die verschlüsselten Container freischaltet, in denen auch der private Schlüssel für die Verschlüsselung gespeichert wird, ist es besonders wichtig, den Login-Prozess und das Login-Passwort zu schützen. Daher wurden o.g. zwei Methoden berücksichtigt, um es Angreifern schwerer zu machen: Diese wissen somit nicht, a) welche Methode Du gewählt hast und b) die Frage-Antwort-Methode ist insofern wie oben schon beschrieben zusätzlich sicherer, weil hier weder die Frage, noch die Antwort irgendwo gespeichert wird. Nur Du kennst Frage und Antwort und nur der Match aus beidem kann den Container öffnen.
 
-Um auch Tastatur-Loggern die Eingaben nicht Preis zu geben, besteht bei der Login-Eingabe die Möglichkeit, eine virtuelle Tastatur zu nutzen (siehe '''Abbildung 9'''). Diese startest Du mit einem Doppelklick auf die Eingabezeile für das Passwort. Allenfalls können hier nur Mausklicks aufgezeichnet werden, aber keine Tastatureingaben.
+**Frage/Antwort-Methode:** Bei dieser Methode wird nicht ein Passwort zweimal eingegeben, sondere es wird eine Zeichenkette als Frage definiert und eine Zeichenkette als Antwort. Beide Strings werden nicht ein zweites Mal überprüft. Technisch wird diese Login-Methode über eine HMAC umgesetzt wie folgt: Hash (Question, Answer), weisst darauf hin, dass ein "[HMAC](https://de.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code)" (Keyed-Hash Message Authentication Code) genutzt wird. 
+Und: Weder die Frage, noch die Antwort, werden auf der Maschine des Nutzers gespeichert und kein kryptographisches Salz wird durch die Maschine per Zufall generiert. Anstelle der Frage kann der Nutzer natürlich auch zwei Passworte ohne ein Fragezeichen eingeben. 
+Es ist zu beachten, dass hier die Frage und die Antwort bei späteren Logins exakt eingeben werden müssen, wie sie definiert wurden und hier bei der erstmaligen Definition kein zweiter Eingabecheck ("Confirmation") hinsichtlich Tippfehler wie bei der Passwort-Methode erfolgt.
 
-[[File:GoldBug virtual keyboard.png|thumb|Abbildung 9: GoldBug Virtuelle Tastatur]]
 
-Grundsätzlich ist es wichtig, dass Dein privater Schlüssel in einem ausreichend gesicherten Container verschlüsselt aufbewahrt wird. Es liegt die Vermutung nahe, dass insbesondere der Zugriff von Anbieterfirmen auf mobile Betriebssysteme es andernfalls leicht machen würde, den privaten Schlüssel abzugreifen. Dieses ist insbesondere auch bei Web-Mail-Angeboten kritisch zu hinterfragen, die Verschlüsselung im Browser oder mit beim Mail-Anbieter online hinterlegten Schlüsseln anbieten. Verschlüsselung sollte immer auf Deiner Maschine stattfinden und dazu ist ein quell-offener Klient und keine Online-Web Anwendung im Browser zu nutzen, in der Du ggf. - auch selbst generierte -  Schlüssel online hinterlegen musst. Die Gefahr des Abgreifens Deines ggf. nicht ausreichend verschlüsselten privaten Schlüssels ist zu groß. Auch Programm-Audits sollten auf das ''Auf-greifen'' der Passworte für den verschlüsselten Container, in denen sich der private Schlüssel befindet, sowie auf das ''Ab-Greifen'' durch Remote-initiiertes Hochladen des privaten Schlüssels besonderes Augenmerk legen. Selbst die wenigen quell-offenen Messenger mit Verschlüsselung, die man an einer Hand abzählen kann, die ein Security-Audit durchlaufen haben, sind kaum ausreichend hinsichtlich der Sicherheit der verschlüsselten Speicherung vom - und gesicherter Zugangsprozesse zum - privaten Schlüssel analysiert.
 
-== Generierung von 10 Schlüsseln für die Verschlüsselung ==
+Da der Hash, der aus der Login-Passphrase generiert wird, die verschlüsselten Container freischaltet, in denen auch der private Schlüssel für die Verschlüsselung gespeichert wird, ist es besonders wichtig, den Login-Prozess und das Login-Passwort zu schützen. Daher wurden oben genannte zwei Methoden berücksichtigt, um es Angreifern schwerer zu machen: Diese wissen somit nicht, a) welche Methode ein Nutzer gewählt hat und b) die Frage-Antwort-Methode ist insofern wie oben schon beschrieben zusätzlich sicherer, weil hier weder die Frage, noch die Antwort irgendwo gespeichert werden und ein HMAC ggf. aufwendiger ist als ein Passwort als „nur“ gesalzener Hash. Nur der Nutzer kennt Frage und zusätzlich die Antwort und nur der Match aus beidem kann den Container öffnen.
 
-Wenn Du das erste Mal den GoldBug Messenger startest, fragt Dich ein Pop-up Fenster, ob Du die Schlüssel für die Verschlüsselung generieren willst. Für die Schlüssel-Erstellung solltest Du einen Schlüssel von 3072 Bit (Voreinstellung) oder größer wählen und kannst auch weitere Optionen wie Algorithmus, Hashtype, Cipher, Salz-Länge oder Iteration Count selbst wählen, wenn Du Schlüssel neu (re-)generierst.
+Um auch Tastatur-Loggern die Eingaben nicht Preis zu geben, besteht bei der Login-Eingabe die Möglichkeit, eine virtuelle Tastatur zu nutzen (siehe Abbildung). Diese startet der Nutzer mit einem Doppelklick auf die Eingabezeile für das Passwort. Allenfalls können hier nur Mausklicks aufgezeichnet werden, aber keine Tastatureingaben.
 
-Deine generierten Schlüssel sind im Unterpfad „/.spot-on“ gespeichert. Wenn Du einen neuen Login mit neuen Schlüsseln aufsetzen willst und alle Nutzerdaten gelöscht werden sollen, dann lösche diesen Pfad einfach und starte die GoldBug.exe neu. Gleiches kann im Hauptmenü mit "!!!_Total_Database Erase_!!!" erreicht werden.
+[[File:GoldBug virtual keyboard.png|thumb|Abbildung: GoldBug Virtuelle Tastatur]]
+
+Grundsätzlich ist es wichtig, dass der private Schlüssel in einem ausreichend gesicherten Container verschlüsselt aufbewahrt wird. Es liegt die Vermutung nahe, dass insbesondere der Zugriff von Anbieterfirmen auf mobile Betriebssysteme es andernfalls leicht machen würde, den privaten Schlüssel abzugreifen. 
+
+Dieses ist insbesondere auch bei Web-Mail-Angeboten kritisch zu hinterfragen, die Verschlüsselung im Browser oder mit Schlüsseln anbieten, die beim Mail-Anbieter online hinterlegt sind. Verschlüsselung sollte immer auf der Maschine des Nutzers stattfinden und dazu ist ein quell-offener Klient und keine Online-Web Anwendung im Browser zu nutzen, in der der Nutzer ggf. - auch selbst generierte -  Schlüssel online hinterlegen soll. 
+
+Die Gefahr des Abgreifens des ggf. nicht ausreichend verschlüsselten privaten Schlüssels ist viel zu groß. Auch Programm-Audits sollten auf das Auf-greifen der Passworte für den verschlüsselten Container, in denen sich der private Schlüssel befindet, sowie auf das Ab-Greifen durch Remote-initiiertes Hochladen des privaten Schlüssels besonderes Augenmerk legen. 
+
+Selbst die wenigen quell-offenen Messenger mit Verschlüsselung, die man für den Desktop wie auch für mobile Geräte an einer Hand abzählen kann, die ein Security-Audit durchlaufen haben, sind kaum ausreichend hinsichtlich der Sicherheit der verschlüsselten Speicherung vom - und gesicherter Zugangsprozesse zum - privaten Schlüssel analysiert.
+
+
+### Generierung von 10 Schlüsseln für die Verschlüsselung
+
+Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt der Wizard, ob der Nutzer die Schlüssel für die Verschlüsselung generieren möchte. Für die Schlüssel-Erstellung sollte man einen Schlüssel von mindestens 3072 Bit (Voreinstellung) oder größer wählen. Der Nutzer kann auch weitere Optionen wie Algorithmus, Hashtype, Cipher, Salz-Länge oder Iteration Count selbst wählen, wenn er den Schlüssel z.B. neu (re-)generiert.
+
+Die generierten Schlüssel sind im Unterpfad „/.spot-on“ gespeichert. Wenn der Nutzer einen neuen Login mit neuen Schlüsseln aufsetzen will und alle Nutzerdaten gelöscht werden sollen, dann wird am besten dieser Pfad einfach gelöscht und die GoldBug.exe neu gestartet. Für Linux und die weiteren Betriebssysteme gelten deren adäquaten Pfadangaben. Gleiches kann im Hauptmenü mit "!!!_Total_Database Erase_!!!" erreicht werden.
 
 Für Folgende Funktionen werden asymmetrische Schlüssel generiert (jeweils ein Schlüssel für die Verschlüsselung und ebenso ein Schlüssel für die (optionale) Signatur):
 
-* Chat
-* E-Mail
-* Poptastic
-* URLs
-* Rosetta
+- Chat: Hierbei geht es um den 1:1 Chat
+- E-Mail: hierbei geht es um E-Mail zu anderen Nutzern von GoldBug oder Spot-on
+- Poptastic: Hierbei geht es um den Chat über E-Mail-Server
+- URLs: Hierbei geht es um die Suche von URLs in der URL-Datenbank (Websuche)
+- Rosetta: Mit dem Rosetta Verschlüsselungs-Pad können Texte mit asymmetrischen Schlüsseln von Plaintext zu Ciphertext und umgekehrt hin und her konvertiert werden, bevor sie versandt werden. Dieses empfiehlt sich, wenn andere unsichere Messenger oder E-Mail genutzt werden oder der Ciphertext irgendwo im Web gepostet werden soll oder der Plaintext, bevor er in GoldBug versandt wird, nochmals eine Verschlüsselungsebene erhalten soll.
 
-Dass jede Funktion ein eigenes Schlüsselpaar nutzt ist wiederum ein Sicherheitsmerkmal. Wenn der Chat-Schlüssel kompromittiert wäre, ist somit die E-Mail-Verschlüsselung davon nicht betroffen. Ferner kannst Du auch Freunden nur Deinen Chat-Schlüssel übergeben und nicht den E-Mail-Schlüssel. Somit kannst Du entscheiden, wem Du es erlaubst, mit Dir zu chatten oder nur zu e-mailen oder ggf. auch URLs auszutauschen für die Funktion der p2p Websuche in der integrierten URL-Datenbank.
+Dass jede Funktion ein eigenes Schlüsselpaar nutzt, ist wiederum ein Sicherheitsmerkmal. Wenn der Chat-Schlüssel kompromittiert wäre, ist somit die E-Mail-Verschlüsselung davon nicht betroffen. Ferner kann der Nutzer auch Freunden nur seinen Chat-Schlüssel übergeben und nicht den E-Mail-Schlüssel. Somit kann der Nutzer entscheiden, wem er es erlaubt, mit ihm zu chatten oder nur zu e-mailen oder ggf. auch URLs auszutauschen für die Funktion der p2p Websuche in der integrierten URL-Datenbank.
 
-Beschrieben ist bislang die minimale Sicht auf die Benutzeroberfläche: Über das Hauptmenü kann man zwischen „voller Ansicht“ oder „minimaler Ansicht“ wählen. Wer sich mit Computern nicht so gut auskennt, sollte die minimale Ansicht wählen, da es die ggf. nicht benötigte Optionsvielfalt ausblendet. Keep it simple. Beim ersten Setup ist die Option der maximalen Ansicht nicht verfügbar, sie wird erst bei den weiteren Logins eingeblendet und einstellbar. Die Möglichkeit, noch mehr Details in der Benutzeroberfläche anzusehen, soll daher nur deshalb an dieser Stelle kurz angesprochen werden, da sich viele Details auch auf den unten zuletzt genannten Punkt der kryptographischen Werte beziehen, die auch in dem Tabulator der Kernel-Aktivierung und Schlüssel-Generierung zu finden sind (eben in der Einstellung der maximalen Ansicht). Die Werte können bei einer erneuten Schlüssel-Generation aus der erweiterten Benutzeransicht individuell eingestellt werden. Wer jedoch den Klienten zum ersten Mal benutzt, hat die typischen Einstellungswerte automatisch parat, d.h. z.B. der Schlüssel hat eine (vordefinierte) Größe von 3072 Bit.
- 
+Beschrieben ist bislang die minimale Sicht auf die Benutzeroberfläche: Über das Hauptmenü kann man zwischen „voller Ansicht“ oder „minimaler Ansicht“ wählen. Wer sich mit Computern nicht so gut auskennt, sollte die minimale Ansicht wählen, da es die ggf. nicht benötigte Optionsvielfalt ausblendet. Keep it simple! Qt-Entwickler, und solche die ein Übungs-Projekt dafür suchen, können die Benutzeroberfläche auch ggf. noch minimaler ausgestalten.
+
+Beim ersten Setup ist die Option der maximalen Ansicht nicht verfügbar, sie wird erst bei den weiteren Logins eingeblendet und einstellbar. Die Möglichkeit, noch mehr Details in der Benutzeroberfläche anzusehen, soll daher nur deshalb an dieser Stelle kurz angesprochen werden, da sich viele Details auch auf den unten zuletzt genannten Punkt der kryptographischen Werte beziehen, die auch in dem Tabulator der Kernel-Aktivierung und Schlüssel-Generierung zu finden sind (eben in der Einstellung der maximalen Ansicht). Die Werte können bei einer erneuten Schlüssel-Generation (ohne Wizard) aus der erweiterten Benutzeransicht individuell eingestellt werden. Wer jedoch den Klienten zum ersten Mal benutzt, hat die typischen Einstellungswerte automatisch parat, d.h. z.B. der Schlüssel hat eine (vordefinierte) Größe von 3072 Bit im RSA-Algorithmus.
+
 Bei nicht-minimaler Ansicht zeigen sich im Tabulator "Activate Kernel" somit z.B. noch folgende Elemente in der Benutzeroberfläche:
-; Pfad zum Kernel: Hier kannst Du den Pfad zum Kernel eingeben. Ist der Kernel mit der "spot-on-kernel.exe" im Pfad richtig angegeben, dann ist der Pfad grün hinterlegt. Andernfalls schaue, wo die ausführbare Datei des Kernels liegt oder kopiere sie ebenso zur ausführbaren Datei der GUI (goldbug.exe) bzw. passe den Pfad entsprechend an.
-; PID: Die PID Nummer kennzeichnet die Prozess-ID, mit der in Windows die ausführbare Datei gekennzeichnet ist. Du findest auch im Windows Task-Manager die Prozess-IDs.
-; "Key-Regeneration"-Funktion: Mit der "Regeneration"-Funktion kannst Du einzelne Schlüssel auch neu generieren - mit neuen Werten und Optionen. Checke dazu die Check-Box, setze die Werte und re-generiere den jeweiligen Schlüssel. Dann musst Du Deinen ''neuen'' Schlüssel jedoch wieder Deinen Freunden zur Verfügung stellen, denn der Schlüssel ist Deine Kommunikations-ID.
 
-Eine weitere Vielzahl an Optionen findet sich auch unter dem Hauptmenü/Optionen in einem Pop-Up-Fenster, die später noch erläutert werden.
+- Pfad zum Kernel: Hier kann der Nutzer den Pfad zum Kernel eingeben. Ist der Kernel mit der "spot-on-kernel.exe" im Pfad richtig angegeben, dann ist der Pfad grün hinterlegt. Andernfalls ist zu schauen, wo die ausführbare Datei des Kernels liegt oder man kopiere sie ebenso zur ausführbaren Datei der GUI (goldbug.exe) bzw. passt den Pfad entsprechend an.
+
+- PID: Die PID Nummer kennzeichnet die Prozess-ID, mit der in Windows die ausführbare Datei gekennzeichnet ist. Der Nutzer findet auch im Windows Task-Manager die Prozess-IDs.
+
+- "Key-Regeneration"-Funktion: Mit der "Regeneration"-Funktion kann der Nutzer einzelne Schlüssel auch neu generieren - mit neuen Werten und Optionen. Dazu ist die Check-Box zu aktivieren, sind die Werte zu setzen und er jeweilige Schlüssel zu re-generieren. Dann muss der Nutzer seinen neuen Schlüssel jedoch wieder seinen Freunden zur Verfügung stellen, denn der Schlüssel ist ja die Kommunikations-ID.
+
+Eine weitere Vielzahl an Optionen findet sich auch unter dem Hauptmenü/Optionen in einem Pop-Up-Fenster, die später noch erläutert werden. Dieses ist das eigentliche Options-Fenster.
+
 
 == Aktivierung des Kernels ==
 
-Wenn Du das erste Mal den GoldBug Messenger startest, fragt Dich ein Pop-Up Fenster, ob Du den Kernel aktivieren willst. Ansonsten bei allen weiteren Starts musst Du nach dem Login den roten "Aktiviere Kernel" Knopf in diesem Tab drücken, sodann kann es losgehen: Wenn der Knopf grün ist, läuft der Kernel.
+Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt ein Pop-Up Fenster am Ende des Wizards, ob der Kernel aktiviert werden soll. Ansonsten ist bei allen weiteren Starts nach dem Login im Einstellungs-Tab der rote "Aktiviere Kernel"-Knopf zu drücken, sodann kann es losgehen: Wenn der Knopf grün ist, läuft der Kernel.
  
-Wenn Du die Programmoberfläche schließt, wird der Kernel noch weiterlaufen. Es empfiehlt sich also, erst den Kernel zu deaktivieren und dann die GUI von GodBug zu schließen. Ein weiteres Pop-up Fenster wird Dich dann aber in jedem Falle fragen, ob beides (Kernel und GUI) geschlossen werden soll. Ansonsten betreibst Du den Kernel ohne GUI, was ja manchmal auf einem Webserver gewünscht ist, damit niemand sich in die offene Benutzeroberfläche einschalten kann.
+Wenn der Nutzer die Programmoberfläche schließt, wird ebenso in einem Pop-up Fenster gefragt, ob der Kernel noch weiterlaufen soll. Es empfiehlt sich also, erst den Kernel zu deaktivieren und dann die GUI von GoldBug zu schließen, wenn man das Programm komplett schließen will. 
 
-Wenn Du die GUI bestehen lassen willst, aber niemand während Deiner Abwesenheit Eingaben oder Veränderungen vornehmen soll, besteht auch die Möglichkeit links in der unteren Statuszeile den Knopf "Lock" zu klicken, die Benutzeroberfläche schließt dann und kehrt zum Login-Tab für die Eingabe des Passwortes zurück, so dass die laufenden Prozesse und Eingaben der anderen Tabulatoren nicht sichtbar sind. Um die Oberfläche wieder zu ent-lock-en, drücke erneut den Lock-Knopf in der Statuszeile und gebe die Passphrase(n) dann in einem Pop-Up-Fenster ein.
+Ansonsten betreibt der Nutzer den Kernel ohne GUI, was ja manchmal auf einem Webserver gewünscht ist, damit niemand sich in die offene Benutzeroberfläche einschalten kann. Neben dem Spot-on-Kernel gibt es für diesen Dämon-Webserver-Zweck aber auch noch den Spot-on-Lite-Kernel, der beim Repositorium des Source Codes als eigenständiges Repositorium zu finden ist.
 
-Du kannst den Kernel auch aktivieren/deaktivieren, indem in der Status-Zeile unten links die erste LED gedrückt wird. Wenn sie grün leuchtet, ist der Kernel aktiv, wenn sie rot leuchtet, ist der Kernel ausgeschaltet.
-Die mittlere LED zeigt an, ob Du einen Listener/Chat-Server eingerichtet hast und die dritte LED zeigt an, ob Du eine aktive und erfolgreiche Verbindung zu einem Nachbarn/Server bestehen hast.
+Wenn der Nutzer die GUI bestehen lassen will, aber niemand während der Abwesenheit Eingaben oder Veränderungen vornehmen können soll, besteht auch die Möglichkeit links in der unteren Statuszeile den Knopf "Lock" zu klicken, die Benutzeroberfläche schließt dann und kehrt zum Login-Tab für die Eingabe des Passwortes zurück, so dass die laufenden Prozesse und Eingaben der anderen Tabulatoren nicht sichtbar sind. Um die Oberfläche wieder zu ent-lock-en, ist der Lock-Knopf in der Statuszeile erneut zu drücken und der Nutzer gibt die Passphrase(n) dann in einem Pop-Up-Fenster wieder ein.
+
+Der Nutzer kann den Kernel auch aktivieren/deaktivieren, indem in der Status-Zeile unten links die erste LED gedrückt wird. Wenn sie grün leuchtet, ist der Kernel aktiv, wenn sie rot leuchtet, ist der Kernel ausgeschaltet.
+Die mittlere LED zeigt an, ob der Nutzer einen Listener/Chat-Server eingerichtet hat und die dritte LED zeigt an, ob der Nutzer eine aktive und erfolgreiche Verbindung zu einem Nachbarn/Server bestehen hat.
+
+
 
 == Einen Nachbarn mit der IP-Adresse verbinden ==
-[[File:Add neighbor IP (simple view).png|thumb|300px|Abbildung 10: Einen Nachbarn mit IP-Adresse hinzufügen (einfache Ansicht)]] 
-Bei der erstmaligen Aktivierung wird die IP-Adresse des Projekt-Chat Server automatisch als Nachbar hinzugefügt und dieser dient als temporärer Chat-Server, über den Du mit Deinen Freunden test-weise chatten kannst, bis ihr Euch einen eigenen Verbindungsknoten auf einem Webserver oder Zuhause erstellt habt oder direkt miteinander verbindet. Bitte den Test-Server des Projektes nur für wiss. Testversuche benutzen.
- 
-Somit bist Du direkt nach der Aktivierung des Kernels mit einem Chat-Server verbunden, wenn Du einen weiteren hinzufügen möchtest, gehe also auf den Tabulator: "Nachbar verbinden". Hier zeigt sich ein Eingabefeld für die IP-Adresse des Nachbarn bzw. des Webservers, auf dem ein Spot-On-Kernel läuft bzw. ein Freund ebenso einen GoldBug Messenger nutzt (siehe '''Abbildung 10''').
- 
-Gebe in das Feld die IP-Adresse des Nachbarknoten ein. Mit den Punkten sind jeweils drei Stellen der IP Adresse (nach IP-V4) getrennt. Umfasst ein Block nur zwei Stellen, z.B. in 37.100.100.100, dann kann die 37 in dem ersten Block beliebig platziert werden oder als 37 auf den ersten beiden Positionen eingegeben werden. Sodann drücke den „Verbinden“-Knopf. Die IP-Adresse ist sodann auf dem voreingestellten Port 4710 hinterlegt und erscheint als Verbindung in der Tabelle. 
 
-Wenn eine Fehlermeldung erscheint, dann ist diese IP-Adresse schon eingegeben. Um alle Nachbarn zu löschen, kannst Du dann den Knopf „Alle Nachbarn löschen“ drücken  (über den Kontext-Menü-Knopf oder über rechte Maustaste in der Tabelle, in der der Nachbar erscheint) und die IP-Adresse erneut eingeben. Wahlweise kann im Installations-Pfad ./spot-on auf der Festplatte auch die Datei „neighbors.db“ gelöscht werden. Sie bildet sich sofort neu und ist dann leer.
+[[File:Add neighbor IP (simple view).png|thumb|300px|Abbildung 10: Einen Nachbarn mit IP-Adresse hinzufügen (einfache Ansicht)]] 
+
+
+Bei der erstmaligen Aktivierung wird die IP-Adresse des Projekt-Chat Server automatisch als Nachbar hinzugefügt. Dieser dient als temporärer Chat-Server, über den der Nutzer mit seinen Freunden test-weise chatten kann, bis ein eigener Verbindungsknoten auf einem Webserver oder Zuhause erstellt wurde (oder zwei Nutzer direkt miteinander verbinden). 
+Der Test-Server wird nicht dauerhaft bestehen, insofern werden Nutzer ab einem gewissen Zeitpunkt zunächst selbst erst einen Server aufsetzen müssen, bevor sie zwei Klienten daran verbinden können.
+
+
+
+Durch den bisherigen Test-Server ist der Nutzer bislang direkt nach der Aktivierung des Kernels mit einem Chat-Server verbunden, wenn der Nutzer einen weiteren hinzufügen möchte, ist der Tabulator "Nachbar verbinden" zu nutzen. Hier zeigt sich ein Eingabefeld für die IP-Adresse des Nachbarn bzw. des Webservers, auf dem ein Spot-On-Kernel läuft bzw. ein Freund ebenso einen GoldBug Messenger nutzt (siehe Abbildung).
  
+In das Feld ist die IP-Adresse des Nachbarknoten einzugeben. Mit den Punkten sind jeweils drei Stellen der IP Adresse (nach IP-V4) getrennt. Umfasst ein Block nur zwei Stellen, z.B. in 37.100.100.100, dann kann die 37 in dem ersten Block beliebig platziert werden oder als 37 auf den ersten beiden Positionen eingegeben werden. Sodann ist der Knopf „Verbinden“ bzw. „Hinzufügen“ zu drücken. Die IP-Adresse ist sodann auf dem voreingestellten Port 4710 hinterlegt und erscheint als Verbindung in der Tabelle der Nachbarn.
+
+Wenn eine Fehlermeldung erscheint, dann ist diese IP-Adresse schon eingegeben. Um alle Nachbarn zu löschen, kannst dann der Knopf „Alle Nachbarn löschen“ gedrückt werden (über den Kontext-Menü-Knopf oder über rechte Maustaste in der Tabelle, in der der Nachbar erscheint) und die IP-Adresse kann erneut eingeben werden. Wahlweise kann im Installations-Pfad „./spot-on“ auf der Festplatte auch die Datei „neighbors.db“ gelöscht werden. Sie bildet sich sofort neu und ist dann leer.
+
 Wenn der Kernel aktiviert ist (linke, erste LED in der Statuszeile leuchtet grün) und der Nachbar verbunden ist (mittlere LED leuchtet grün), ist alles erfolgreich installiert und online. Eine IP-Adresse einzugeben und den Verbindungsknopf zu drücke, sollte insofern ganz einfach gelingen. 
 
-Wenn ihr ohne Server direkt verbinden wollt, muss einer von beiden einen sogenannten Listener im Tabulatur Chat-Server erstellen (und für den Port die Firewall freigeben und ggf. den Port im Router zusätzlich an seine Maschine weiterleiten, s.u. ausführlicher).
+Wenn der Nutzer ohne Server direkt mit einem anderen Nutzer verbinden will, muss einer von beiden einen sogenannten Listener im Tabulatur Chat-Server erstellen (und für den Port die Firewall freigeben und ggf. den Port im Router zusätzlich an seine Maschine weiterleiten, s.u. ausführlicher). Oder falls sich beide Nutzer in demselben Windows-Netzwerk befinden, kann der bereits vorhandene Nachbar „239..“ aktiviert werden, dann wird der GoldBug Messenger zum Lan-Messenger umgewandelt und findet alle anderen GoldBugs im lokalen LAN automatisch und verbindet sie als Nachbar. Tauschen nun die Nutzer noch die Schlüssel, kann die Kommunikation starten.
 
-Wer mehr Details sehen will, kann die minimale Ansicht auch in die volle Ansicht wechseln: In dieser Ansicht wird deutlich, dass neben der IP-Adresse auch der Port der IP-Adresse individuell konfiguriert werden kann. Standardmässig nutzt GoldBug den Port 4710. Ferner kann das Programm auch über IPv6 betrieben werden sowie einen Listener/Server ansteuern, der über das Dynamische DNS verlinkt ist. Bei DNS gibt man dann keine Nummernfolge bei der IP ein, sondern einen Domain-Namen. In der darunter liegenden Box können weitere Sicherheitsoptionen definiert werden oder auch der Verbindungsserver über einen Proxy angesprochen werden kann (z.B. wenn man GoldBug hinter dem TOR-Netzwerk nutzen möchte).
+Wer mehr Details sehen will, kann die minimale Ansicht auch in die volle Ansicht wechseln: In dieser Ansicht wird deutlich, dass neben der IP-Adresse auch der Port der IP-Adresse individuell konfiguriert werden kann. Standardmäßig nutzt GoldBug den Port 4710. Ferner kann das Programm auch über IPv6 betrieben werden sowie einen Listener/Server ansteuern, der über das Dynamische DNS verlinkt ist. Bei DNS gibt man dann keine Nummernfolge bei der IP ein, sondern einen Domain-Namen. In der darunter liegenden Box können weitere Sicherheitsoptionen definiert werden oder auch der Verbindungsserver über einen Proxy angesprochen werden (z.B. wenn man GoldBug über das TOR-Netzwerk nutzen möchte).
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-=Die Chat-Funktion=
+## Die Chat-Funktion
 [[File:Goldbugchattab.png|thumb|300px|Abbildung 11: Chat-Tab des GoldBug-Messengers]]
 Wenn nun Login-Passwort definiert, Schlüssel generiert, Kernel aktiviert und ein Nachbar/Server verbunden ist, also in der Statuszeile zwei LED grün leuchten, dann kannst Du mit einem Freund einen Schlüssel tauschen und die Kommunikation kann im Chat-Tab (siehe '''Abbildung 11''') oder Pop-Up-Fenster für einen definierten Teilnehmer beginnen. Der Schlüsseltausch lässt sich wie folgt beschreiben:
 
-==Freund hinzufügen durch Tausch und Einfügen der Schlüssel==
+## Freund hinzufügen durch Tausch und Einfügen der Schlüssel
 [[File:Addkeyorrepleo.png|thumb|300px|Abbildung 12: Tabulator "Key": Schlüssel, Repleo oder E-Mail-Adresse einfügen bzw. auskopieren]]
 GoldBug nutzt eine öffentliche/private Schlüssel-Infrastruktur, wie es halt bekannter Standard ist: Der öffentliche Schlüssel kann mit Freunden getauscht werden und der private Schlüssel bleibt verschlüsselt auf Deiner Festplatte.
 
@@ -708,7 +746,7 @@ Ebenso macht es Dein Freund und Du fügst den Schlüssel des Freundes in das Tex
 
 '''Weitere Option nur zur Kenntnis:''' Neben dem Online-Versand des Schlüssels über die direkte Verbindung zu einem Freund kann auch das weiter unten beschriebene Werkzeug des Echo Public Key Sharing (EPKS) genutzt werden. Dieses wird angewandt, wenn der Freund nicht mit einer direkten Verbindung verbunden ist (z.B. beide Partner einen gemeinsamen Chat-Server bzw. Knotenpunkt in der Mitte nutzen). Beide Partner geben dann in EPKS ein gemeinsames Passwort-Geheimnis ein und senden ihre öffentlichen Schlüssel über dieses Passwort ins Echo-Netz. Siehe dazu weiter die ausführlicheren Details im Abschnitt diesem Tool, das ggf. eine gute Alternative zu den oftmals unkomfortablen und unsicheren üblichen Key-Servern darstellen kann.
  
-===Besonderheit: Repleo===
+### Besonderheit: Repleo
 Wenn Du schon einen Schlüssel Deines Freundes erhalten hast (z.B. für Chat) und diesen eingefügt hast, nunmehr aber Deinen öffentlichen (Chat-)Schlüssel nicht preisgeben willst, ihn nicht bei einem E-Mail-Programm gespeichert und transferiert wissen willst (obschon der öffentliche Schlüssel ja eigentlich öffentlich sein darf), dann kannst Du auch mit dem erhaltenen Schlüssel Deines Freundes Deinen eigenen öffentlichen Schlüssel verschlüsseln. Das nennt man dann REPLEO.
  
 Beim Repleo wird also Dein öffentlicher Schlüssel mit dem öffentlichen Schlüssel Deines Freundes bereits verschlüsselt. Dieses ist sodann für jede Funktion bzw. Schlüssel durchzuführen, d.h. Du kannst jeweils das Chat-Repleo, E-Mail-Repleo und URL-Repleo zurücksenden.
@@ -716,7 +754,7 @@ Auch ein Repleo kann dann Dein Freund in den Kasten des Tabulators "Add Friend/K
 
 Der Text eines Schlüssels startet immer mit einem Buchstaben "K" oder "k" und ein Repleo startet mit einem "R" oder "r".
 
-== Einen ersten sicheren Chat beginnen ==
+### Einen ersten sicheren Chat beginnen 
 [[File:Goldbugchatpopup.png|thumb|300px|Abbildung 13: GoldBug Messenger Chat Pop-Up Window]]  
 Du findest nach erfolgreichem Key-Tausch Deinen Chat-Freund im Tabulator "Chat". Damit der Chat funktioniert, sollten beide Teilnehmer idealerweise die gleiche und aktuellste Version des Programmes nutzen, ihre Schlüssel generiert und ausgetauscht haben und zum einem Netzwerk-Knoten oder Chat-Server im Web verbunden sein. Wenn die ersten beiden LEDs in der Status-Zeile unten grün leuchten und der Name des Freundes im Chat-Tab auftaucht, sieht es schon gut aus.
 
@@ -2151,7 +2189,6 @@ make or mingw32-make<br />
 
 ![Abbildung: ROSETTA Crypto Pad 2](/images/rosetta_pad_2.jpg)
 
-![Abbildung: Setze Passwort](/images/set_password.jpg)
 
 ![Abbildung: Starbeam ](/images/starbeam_tab.gif) 
 
