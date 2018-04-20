@@ -6,6 +6,12 @@ Manual of the GoldBug Crypto Messenger
 [https://compendio.github.io/goldbug-manual/](https://compendio.github.io/goldbug-manual/)
 
 
+[Manual-Dateien: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
+[Manual Deutsch/German: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
+[Website: http://goldbug.sourceforge.net/](http://goldbug.sourceforge.net/)
+[Download: https://sourceforge.net/projects/goldbug/files/](https://sourceforge.net/projects/goldbug/files/)
+[Source: https://github.com/textbrowser/spot-on](https://github.com/textbrowser/spot-on)
+
 
 ```
 Inhaltsverzeichnis
@@ -369,9 +375,7 @@ Zugrunde liegt das sogenannte "[Kleine-Welt-Phänomen](https://de.wikipedia.org/
 * Als drittes Kriterium für das Echo-Protokoll lässt sich anfügen, dass eine Besonderheit beim Auspacken der verschlüsselten Kapseln besteht: Die Kapseln haben weder - und hier unterscheiden sie sich von TCP-Paketen - einen Empänger noch einen Absender. Die Nachricht wird über den Hash der unverschlüsselten Nachricht identifiziert, ob sie für den Empfänger in der Benutzeroberfläche angezeigt und lesbar werden soll oder nicht. Doch zu diesem sog. **Echo-Match** noch weiter unten ausführlicher. 
 
  
-
-
-![Abbildung: Format des genutzten Echo-Protokolls](/images/Echo_format.png)	
+![Abbildung: Format des genutzten Echo-Protokolls](/images/echo_format.png)	
 
 
 Der **Modus des "Halben Echos"** sendet eine Nachricht nur einen Hop, d.h. z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht mehr weiter (wie es beim vollen Echo der Standard ist).
