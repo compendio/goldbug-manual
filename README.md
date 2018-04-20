@@ -35,104 +35,113 @@ Inhaltsverzeichnis
     4 Cryptographisches Discovery
 
 
-    4 Einen ersten Setup einrichten
-        4.1 Zwei Login-Methoden
-        4.2 Generierung von 10 Schlüsseln für die Verschlüsselung
-        4.3 Aktivierung des Kernels
-        4.4 Einen Nachbarn mit der IP-Adresse verbinden
+    5 Einen ersten Setup einrichten
+        5.1 Zwei Login-Methoden
+        5.2 Generierung von 10 Schlüsseln für die Verschlüsselung
+        5.3 Aktivierung des Kernels
+        5.4 Einen Nachbarn mit der IP-Adresse verbinden
 
 
-    5 Die Chat-Funktion
-        5.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
-            5.1.1 Besonderheit: Repleo
-        5.2 Einen ersten sicheren Chat beginnen
-        5.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit Gemini (Instant Perfect Forward Secrecy, IPFS)
-            5.3.1 Asymmetrisches Calling
-            5.3.2 Instant Perfect Forward Secrecy (IPFS)
-            5.3.3 Symmetrisches Calling
-            5.3.4 2-Wege-Calling
-        5.4 Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol
-            5.4.1 SMP-Calling
-        5.5 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
-            5.5.1 Forward Secrecy Calling
-        5.6 Übersicht der verschiedenen Calling-Arten
-        5.7 Emotikons
+    6 Die Chat-Funktion
+        6.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
+            6.1.1 Besonderheit: Repleo
+        6.2 Einen ersten sicheren Chat beginnen
+        6.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit Gemini (Instant Perfect Forward Secrecy, IPFS)
+            6.3.1 Asymmetrisches Calling
+            6.3.2 Instant Perfect Forward Secrecy (IPFS)
+            6.3.3 Symmetrisches Calling
+            6.3.4 2-Wege-Calling
+        6.4 Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol
+            6.4.1 SMP-Calling
+        6.5 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
+            6.5.1 Forward Secrecy Calling
+        6.6 Übersicht der verschiedenen Calling-Arten
+        6.7 Emotikons
 
 
-    6 Die E-Mail-Funktion
-        6.1 POP3
-        6.2 IMAP
-        6.3 P2P E-Mail: ohne Vorratsdatenspeicherung
-        6.4 C/O und E-Mail Institutionen einrichten
-            6.4.1 Care-Of-Methode (c/o)
-            6.4.2 Virtuelle E-Mail Institution ("VEMI") - Methode
-        6.5 Zusätzliche Verschlüsselung: Ein „GoldBug“ auf ein E-Mail setzen
-        6.6 Forward Secrecy
+    7 Gruppen-Chat im IRC-Stil
+
+    8 Smoke Mobiler Chat Client
+		8.1. Smoke Android Client
+		8.2. Fire To Buzz Chat
 
 
 
-        7 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
-            7.1 Chat über POPTASTIC
-            7.2 E-Mail über POPTASTIC
-            7.3 Einrichtung von POPTASTIC
-            7.3 Weiterentwicklung von POPTASTIC
+    9 Die E-Mail-Funktion
+        9.1 POP3
+        9.2 IMAP
+        9.3 P2P E-Mail: ohne Vorratsdatenspeicherung
+        9.4 C/O und E-Mail Institutionen einrichten
+            9.4.1 Care-Of-Methode (c/o)
+            9.4.2 Virtuelle E-Mail Institution ("VEMI") - Methode
+        9.5 Zusätzliche Verschlüsselung: Ein „GoldBug“ auf ein E-Mail setzen
+        9.6 Forward Secrecy
 
 
-    8 Gruppen-Chat im IRC-Stil
+        10 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
+            10.1 Chat über POPTASTIC
+            10.2 E-Mail über POPTASTIC
+            10.3 Einrichtung von POPTASTIC
+            10.4 Weiterentwicklung von POPTASTIC
+
+
+    11 FileSharing: mit StarBeam
+        11.1 StarBeam-Magneten mit Verschlüsselungswerten
+        11.2 SB-Upload: Eine Datei übertragen
+        11.3 StarBeam-Downloads
+            11.3.1 Werkzeug: Star-Beam Analyzer
+            11.3.2 Ausblick auf Crypto-Torrents
+
+
+    12 Web-Suchmaschine mit URL-Datenbank
+        12.1 Datenbank Setup
+            12.1.1 SQLite
+            12.1.2 PostgreSQL
+        12.2 URL-Filter
+        12.3 URL-Community
+        12.4 Pandamonium Webcrawler
+        12.5 RSS-Reader und URL-Import
 
 
 
-    9 FileSharing: mit StarBeam
-        9.1 StarBeam-Magneten mit Verschlüsselungswerten
-        9.2 SB-Upload: Eine Datei übertragen
-        9.3 StarBeam-Downloads
-            8.3.1 Werkzeug: Star-Beam Analyzer
-            8.3.2 Ausblick auf Crypto-Torrents
-
-
-    10 Web-Suchmaschine mit URL-Datenbank
-        10.1 Datenbank Setup
-            10.1.1 SQLite
-            10.1.2 PostgreSQL
-        10.2 URL-Filter
-        10.3 URL-Community
-        10.4 Pandamonium Webcrawler
-        10.5 RSS-Reader und URL-Import
+    13 Chat/E-Mail-Server einrichten
+        13.1 Chat-/E-Mail-Server über einen Listener einrichten
+        13.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
+        13.3 Nutzung von GoldBug im TOR-Netzwerk
+        13.4 Spot-On Server
+        13.5 Spot-On Lite Server als Deamon
+        13.6 SmokeStack Server unter Android
 
 
 
-    11 Chat/E-Mail-Server einrichten
-        11.1 Chat-/E-Mail-Server über einen Listener einrichten
-        11.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
-        11.3 Nutzung von GoldBug im TOR-Netzwerk
+
+    14 Werkzeuge
+        14.1 Werkzeug: Verschlüsselung von Dateien
+        14.2 Werkzeug: Das Rosetta CryptoPad
+        14.3 Werkzeug: Echo Public Key Share (EPKS)
+        14.4 Pass-Through-Funktionalität
+        14.5 Anzeige Analysen und Statistiken
 
 
-    12 Werkzeuge
-        12.1 Werkzeug: Verschlüsselung von Dateien
-        12.2 Werkzeug: Das Rosetta CryptoPad
-        12.3 Werkzeug: Echo Public Key Share (EPKS)
-        12.3 Pass-Through-Funktionalität
+    15 BIG SEVEN Crypto-Messenger-Audit
 
 
-    13 BIG SEVEN Crypto-Messenger-Audit
+    16 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von…
+        16.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
+        16.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
+        16.3 European Convention on Human Rights, 1950 (Art. 8)
+        16.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
+        16.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1)
+        16.6 Art. 10 - Privacy of correspondence, posts and telecommunications
+        16.7 § 206 - Verletzung des Post- oder Fernmeldegeheimnisses
+        16.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
 
 
-    14 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von…
-        14.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
-        14.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
-        14.3 European Convention on Human Rights, 1950 (Art. 8)
-        14.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
-        14.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1)
-        14.6 Art. 10 - Privacy of correspondence, posts and telecommunications
-        14.7 § 206 - Verletzung des Post- oder Fernmeldegeheimnisses
-        14.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
+    17 Webseite
+    18 Offener Quellcode
+        18.1 Informationen zur Kompilierung
 
-
-    15 Webseite
-    16 Offener Quellcode
-        16.1 Informationen zur Kompilierung
-
-    17 Historie an Veröffentlichungen
+    19 Historie an Veröffentlichungen
 
 ```
 
@@ -155,6 +164,9 @@ Zum Beispiel werden damit für jede Funktion eigene und voneinander verschiedene
 
 Diese beiden letztgenannten Algorithmen gelten als besonders sicher gegenüber Angriffen, die aus dem Quantum Computing bekannt sind und zukünftig aufgrund von schnellen Quantum-Computern zunehmend relevanter werden. GoldBug ist damit weltweit (einer) der erste(n) Messenger, der diese beiden Algorithmen implementierte und damit die Abkehr bzw. Alternativen vom dem seit 2016 offiziell als gebrochen geltenden RSA-Algorithmus einleitete (siehe [NIST zit. n. Adams/Maier 2016](https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf )). 
 
+
+
+
 Weiterhin bietet die Applikation auch dezentrales und verschlüsseltes E-Mail und auch dezentralen öffentlichen Gruppen-Chat im IRC-Stil an. Schließlich besteht auch die Funktion, eine URL-Websuche in einem dezentralen Repositorium umzusetzen: Nutzer können zu ihren thematischen RSS-Feeds somit URLS und Inhalte der Webseite - wie bislang Booksmarks im Browser - in einer komfortabel durchsuchbaren Datenbank abspeichern bzw. dort importieren, die entweder auf SQL oder PostGres basiert und p2p netzwerkfähig ist.
 
 Beim E-Mail kann [IMAP](https://de.wikipedia.org/wiki/Internet_Message_Access_Protocol ), [POP3](https://de.wikipedia.org/wiki/Post_Office_Protocol ) und drittens, [P2P](https://de.wikipedia.org/wiki/Peer-to-Peer ) Email genutzt werden - GoldBug ist somit auch ein voll funktionsfähiger E-Mail-Klient. Alsbald verschlüsselte E-Mails gesandt werden, ist es erforderlich, dass auch der Freund diesen Klienten nutzt. Das hat den Vorteil, dass der Verschlüsselungs-Key nur einmalig zu tauschen ist, dann aber nicht mehr bei jedem einzelnen E-Mail angewandt werden muss. Diese Funktion wird Repleo genannt und ist später dann auch in eingigen anderen Projekten unter der Bezeichnung Autocrypt bzw. KeySync automatisiert übernommen worden.
@@ -162,6 +174,12 @@ Beim E-Mail kann [IMAP](https://de.wikipedia.org/wiki/Internet_Message_Access_Pr
 Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werden. Der Versand ist per sé immer verschlüsselt. Mit den Werkzeugen "Rosetta CryptoPad" und dem "File-Encryptor" kann der Nutzer auch Text und/oder Dateien nochmals zusätzlich sicher verschlüsseln oder auch zurück konvertieren. Diese Werkzeuge zur Verschlüsselung sind somit auch für andere Übertragungswege (wie unverschlüsselge Wege außerhalb von GoldBug) nutzbar. 
 
 Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - ein Programm mit zahlreichen Funktionen für die sichere Kommunikation, das die Übertragung der verschlüsselten Pakete mit dem sogenannten [Echo-Protokoll](https://github.com/textbrowser/spot-on/blob/master/branches/trunk/Documentation/Spot-On.pdf ) realisiert und besonders absichert, wie es weiter unten noch erläutert wird. 
+
+
+
+![Abbildung: GoldBug Logo](/images/goldbug.png)
+
+
 
 
 ### 1.1 Warum ist es wichtig, dass ein Internet-Nutzer die Kommunikation verschlüsselt? 
@@ -257,6 +275,15 @@ Abbildung: RSA und seine Alterntiven in GoldBug
 Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Nutzern mit verschiedenen Schlüsseltypen ist somit gut definiert, wenn die Knoten gemeinsame Versionen der libgcrypt und libntru Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer verschlüsselt chatten und e-mailen, der einen Elgamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Wer das Programm mit einem Freund testen will, nutzt am besten die jeweils aktuellste Version von GoldBug.
 
 
+![Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing](/images/mceliece.png)	
+
+
+
+![Abbildung: Anpassbare Crypto](/images/adjustable_crypto.png)	
+
+
+
+
 Natürlich kann jeder Nutzer in GoldBug seine 
 
 * individuelle Schlüsselgröße einstellen, 
@@ -275,6 +302,14 @@ Der Vorteil ist, dass jeder Nutzer dieses individuell für sich definieren kann.
 GoldBug verwendet [CBC mit CTS](https://de.wikipedia.org/wiki/Cipher_Block_Chaining_Mode), um die Vertraulichkeit zu schaffen. Der Dateiverschlüsselungsmechanismus unterstützt den [Galois/Counter Mode (GCM)](https://de.wikipedia.org/wiki/Galois/Counter_Mode)-Algorithmus ohne die Eigenschaft zur Authentizität, die durch den Algorithmus zur Verfügung gestellt wird. Um die Authentizität zu bieten, verwendet die Anwendung den methodischen Ansatz von "Erst verschlüsseln-dann-MAC" ([Encrypt-then-MAC](https://en.wikipedia.org/wiki/Authenticated_encryption#Encrypt-then-MAC), ETM). MAC steht für [Message Authentication Code](https://de.wikipedia.org/wiki/Message_Authentication_Code) - und bedeutet, dass die Reihenfolge determiniert ist: erst verschlüsseln, dann die Nachricht mit einem Code authentifizieren. 
 Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authentifizierten Container enthält dazu weitere technische Details.
 
+![Abbildung: Theefish Implementierung](/images/threefish.png)	
+
+
+![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
+
+
+![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
+
 
 
 ### 2.3 Hybrides Verschlüsselungs-System 
@@ -288,7 +323,7 @@ Vielfach zu verschlüsseln und zwischen diesen Methoden bzw. zeitlich limitierte
 Ein Teil des Systems bei GoldBug erzeugt also pro Nachricht den Schlüssel für die Authentifizierung und die Verschlüsselung. Diese beiden Schlüssel werden für die Authentifizierung und das Einkapseln von Daten (also der Nachricht) verwendet. Die zwei Schlüssel (für die Authentifizierung und die Verschlüsselung) sind dann über den Public-Key-Teil des Systems eingekapselt bzw. angewandt. Die Anwendung bietet darüber hinaus auch einen Mechanismus zur Verteilung von Sitzungs-Schlüsseln für diese Datenkapselung (bzw. Verschlüsselung der Nachricht) - wie oben beschrieben, die temporären Schüssel. Wiederum werden die Schlüssel über das Public-Key-System eingekapselt und übertragen: ein zusätzlicher Mechanismus ermöglicht die Verteilung der Sitzungs-Schlüssel über die vorher festgelegten Schlüssel. Und digitale Signaturen können ebenso wahlweise auf die Daten angewendet werden. 
 
 
-Als ein Beispiel, mag dieses Format der folgende Nachrichtenverschlüsselung dienen: 
+Als ein Beispiel, mag dieses Format der folgenden Nachrichtenverschlüsselung dienen: 
 
 ```
 EPUBLIK Key 
@@ -302,7 +337,12 @@ Wer sich erstmalig mit Verschlüsselung beschäftigt, für den ist obiges Beispi
 
 Nicht-NTRU private Schlüssel werden auf Richtigkeit durch die gcry_pk_testkey() Funktion ausgewertet. Der öffentliche Schlüssel muss auch einige grundlegende Kriterien erfüllen, wie beispielsweise den Einschluss der Public-Key-Kennung.
 
-Die Authentifizierung des privaten Schlüssels und der Verschlüsselungsmechanismus ist identisch mit dem Verfahren, wie er in der Dokumentation beim Quelltext in dem Abschnitt zu den verschlüsselten und authentifizierten Container weitergehend technisch erörtert ist.
+Die Authentifizierung des privaten Schlüssels und der Verschlüsselungsmechanismus ist identisch mit dem Verfahren, wie er in der Dokumentation beim Quelltext in dem Abschnitt zum verschlüsselten und authentifizierten Container weitergehend technisch erörtert ist.
+
+![Abbildung: Digitale Signaturen](/images/digital_signatures.png)	
+
+
+
 
 Stellen wir jedoch noch einen einfacheren Fall dar und gehen nochmal etwas ausführlicher auf die symmetrische Verschlüsselung mit einem AES-Passwort ein, das die PKI Verschlüselung wie folgt ergänzen kann:
 
@@ -347,6 +387,11 @@ Zugrunde liegt das sogenannte "[Kleine-Welt-Phänomen](https://de.wikipedia.org/
 * Als drittes Kriterium für das Echo-Protokoll lässt sich anfügen, dass eine Besonderheit beim Auspacken der verschlüsselten Kapseln besteht: Die Kapseln haben weder - und hier unterscheiden sie sich von TCP-Paketen - einen Empänger noch einen Absender. Die Nachricht wird über den Hash der unverschlüsselten Nachricht identifiziert, ob sie für den Empfänger in der Benutzeroberfläche angezeigt und lesbar werden soll oder nicht. Doch zu diesem sog. **Echo-Match** noch weiter unten ausführlicher. 
 
  
+
+
+![Abbildung: Format des genutzten Echo-Protokolls](/images/Echo_format.png)	
+
+
 Der **Modus des "Halben Echos"** sendet eine Nachricht nur einen Hop, d.h. z.B. von Bob zu Alice. Alice sendet die Nachricht dann nicht mehr weiter (wie es beim vollen Echo der Standard ist).
  
 Neben **Vollem Echo**, Halben Echo gibt es drittens noch das **Adaptive Echo (AE)**. Hier wird die Nachricht nur an Nachbarn oder Freunde versandt, wenn diese einen Verschlüsselungs-Token kennen, diesen also zuvor eingespeichert haben. Wer den Token nicht kennt, an den wird die Nachricht nicht weitergeleitet.
@@ -446,6 +491,9 @@ Der Abschnitt weiter unten über das Adaptive Echo (AE) wird daher noch ausführ
 
 Und ergänzend: das Echo kennt auch **Echo-Accounts**. Ein Konto oder eine Art Firewall. Es kann genutzt werden, um sicherzustellen, dass nur Freunde sich verbinden, die die Zugangsdaten zu dem Konto kennen. Somit wird ein sogenanntes [Web of Trust](https://de.wikipedia.org/wiki/Web_of_Trust), ein Netzwerk, das auf Vertrauen beruht, gebildet. Es basiert nicht wie in anderen Applikationen auf dem Schlüssel für die Verschlüsselung, es ist davon unabhängig. Das hat den Vorteil, dass der öffentliche Schlüssel für die Verschlüsselung nicht mit der IP-Adresse assoziiert werden muss; oder der Nutzer seine IP-Adresse im Netzwerk der Freunde bekannt geben muß, beispielsweise in einem DHT, in dem Nutzer danach suchen können. Die Echo-Accounts stellen eine [Peer-to-Peer](https://de.wikipedia.org/wiki/Peer-to-Peer)-(P2P)-Verbindung auf ein [Friend-to-Friend](https://de.wikipedia.org/wiki/Friend-to-friend) (F2F) Netzwerk um bzw. erlauben beide Verbindungsarten. Damit ist GoldBug für beide Paradigma ausgelegt.
 
+![Abbildung: Abbildung: Account Firewall](/images/account_firewall.png)	
+
+
 Die Echo-Accounts funktionieren wie folgt:
 
 - Bindende Endpunkte sind verantwortlich für die Definition der Konto-Informationen. Während des Erstellungsprozesses für ein Konto kann dieses für eine einmalige Nutzung definiert werden (One-Time-Account oder One-Time-Use). Konto-Name und auch die Passphrase für das Konto erfordern wenigstens 32 Bytes an Zeichen. Ein langes Passwort ist also erforderlich.
@@ -455,6 +503,8 @@ Die Echo-Accounts funktionieren wie folgt:
 - Der Peer erhält die Information des bindenden Endpunktes und führt einen ähnlichen Validierungsprozess durch - dieses mal jedoch unter Einschluss der Analyse des kryptographischen Salz-Wertes des bindenden Endpunktes. Die beiden Salz-Werte müssen dann eindeutig übereinstimmend sein. Der Peer wird die Verbindung abwerfen, wenn der Endpunkt sich nicht selbst innerhalb eines fünfzehn-Sekunden-Zeitfensters identifiziert hat. Zu beachten ist, nebenbei bemerkt, dass das Account-System noch weiter ausgestaltet werden kann, indem ein Schlüssel zur Verschlüsselung einbezogen wird. Der zusätzliche Schlüssel erlaubt dann, noch genauere Zeitfenster zu definieren. 
 
 Wenn SSL/TLS während dieser Aushandlung nicht verfügbar ist, mag das Protokoll wie folgt angreifbar werden: Eine Zwischenstation mag die Werte aus dem dritten Schritt aufzeichnen und folgerichtig zum bindenden Endpunkt senden. Sodann könnte der bindende Endpunkt auch einer unbekannten Verbindung Zugang zum Account gewähren. Das aufzeichnende Gerät könnte dann die Antwort des bindenden Endpunktes, also die Werte des vierten Schritts, an sich reißen und die Informationen an den Peer weiterleiten. Wenn die Account-Informationen bzw. das erforderliche Passwort dann akkurat vorgehalten werden, würde der Peer die Antwort dieses neuen bindenden Endpunktes dann akzeptieren. Darum heißt es wie immer: Passworte schützen.
+
+![Abbildung: Account Passwords](/images/account_passwords.png)	
 
 
 ### 3.4 Das Echo-Grid
@@ -486,7 +536,7 @@ Das Echo-Grid als einfache Netzwerkdarstellung dient nicht nur zur Analyse von "
 
 
 
-### Beispiele des Schlüssel-Austausches von Alice, Bob, Ed und Maria
+### 3.4.1 Beispiele des Schlüssel-Austausches von Alice, Bob, Ed und Maria
 
 Abbildung: Alice, Bob, Ed und Mary im Echo-Grid - Ein Beispiel für das Echo.
 ![Abbildung: Das Echo Grid in einem Beispiel](/images/Echo_Chat_Grid_Example.png)
@@ -532,7 +582,7 @@ Mit einem AE-Token wird kein anderer Kontenpunkt, der die Passphrase nicht kennt
 Um den Graphen, die Reiseroute, für das Adaptive Echo bestimmen zu können, müssen sich mehrere Knotenpunkte untereinander absprechen und die Passphrase auf dem Wegespfad lückenlos vermerken. Im Falle des Adaptiven Echos kann von einem Routing gesprochen werden.
 
 
-#### Hänsel und Gretel – ein Beispiel für den Adaptiven Echo Modus
+#### 3.5.1 Hänsel und Gretel – ein Beispiel für den Adaptiven Echo Modus
 
 Zur Erläuterung des Adaptiven Echos dient als klassisches Beispiel das Märchen von [Hänsel und Gretel](https://de.wikipedia.org/wiki/Hänsel_und_Gretel). 
 
@@ -598,6 +648,9 @@ Abbildung: Wie das Echo PROTOCOL funktioniert
 Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden kann, obschon es eine simple Struktur hat. Mit den einzelnen Optionen und Begriffen können Nutzer in der Praxis sich viel Netzwerk- und Krypto-Theorie erschließen und diese praktisch ausprobieren. Ein ideales Instrument für die Lehre, die Heranführung an kryptographische Prozesse und eine praktische Nutzererfahrung in der Gruppe. Zum Beispiel für ein Dreier-Team wie in der GoldBug-Geschichte von Edgar Alan Poe.
 
 
+![Abbildung: Optionen für den Clienten](/images/client_options.png)	
+
+
 
 
 ## 4 Einen ersten Setup einrichten
@@ -619,11 +672,10 @@ Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach,
 
 Ansonsten muss in diesem Tabulator für Einstellungen bzw. für die Kernel-Aktivierung nach jedem Start von goldbug.exe der Kernel über den Knopf "Aktiviere" aktiviert werden, der dann die Verbindungen zu Freunden oder zu einem Chat-Server koordiniert. Die Kernel-Datei Spot-on-Kernel.exe wird also aus dem Programm von GoldBug an oder abgeschaltet.
 
-### Zwei Login-Methoden
+### 4.1 Zwei Login-Methoden
 
 Abbildung: Passwort-Generation 
 ![Abbildung: Setze Passwort](/images/set_password.jpg)
-
 
 
 Wenn der Nutzer GoldBug das erste Mal startet, ist in dem entsprechenden Kasten einen Nicknamen einzugeben und eine Passphrase für den Login in die Applikation zu definieren (vgl. Abbildung). 
@@ -642,6 +694,8 @@ Damit das Passwort auch beim Nutzer eingeübt wird und Tippfehler ausgeschlossen
 Und: Weder die Frage, noch die Antwort, werden auf der Maschine des Nutzers gespeichert und kein kryptographisches Salz wird durch die Maschine per Zufall generiert. Anstelle der Frage kann der Nutzer natürlich auch zwei Passworte ohne ein Fragezeichen eingeben. 
 Es ist zu beachten, dass hier die Frage und die Antwort bei späteren Logins exakt eingeben werden müssen, wie sie definiert wurden und hier bei der erstmaligen Definition kein zweiter Eingabecheck ("Confirmation") hinsichtlich Tippfehler wie bei der Passwort-Methode erfolgt.
 
+![Abbildung: Login in die Applikation mit einem Passwort](/images/login.png)	
+
 
 
 Da der Hash, der aus der Login-Passphrase generiert wird, die verschlüsselten Container freischaltet, in denen auch der private Schlüssel für die Verschlüsselung gespeichert wird, ist es besonders wichtig, den Login-Prozess und das Login-Passwort zu schützen. Daher wurden oben genannte zwei Methoden berücksichtigt, um es Angreifern schwerer zu machen: Diese wissen somit nicht, a) welche Methode ein Nutzer gewählt hat und b) die Frage-Antwort-Methode ist insofern wie oben schon beschrieben zusätzlich sicherer, weil hier weder die Frage, noch die Antwort irgendwo gespeichert werden und ein HMAC ggf. aufwendiger ist als ein Passwort als „nur“ gesalzener Hash. Nur der Nutzer kennt Frage und zusätzlich die Antwort und nur der Match aus beidem kann den Container öffnen.
@@ -649,6 +703,12 @@ Da der Hash, der aus der Login-Passphrase generiert wird, die verschlüsselten C
 Um auch Tastatur-Loggern die Eingaben nicht Preis zu geben, besteht bei der Login-Eingabe die Möglichkeit, eine virtuelle Tastatur zu nutzen (siehe Abbildung). Diese startet der Nutzer mit einem Doppelklick auf die Eingabezeile für das Passwort. Allenfalls können hier nur Mausklicks aufgezeichnet werden, aber keine Tastatureingaben.
 
 [[File:GoldBug virtual keyboard.png|thumb|Abbildung: GoldBug Virtuelle Tastatur]]
+
+
+![Abbildung: Virtuelles Keyboard](/images/virtual_keyboard.png)	
+
+
+
 
 Grundsätzlich ist es wichtig, dass der private Schlüssel in einem ausreichend gesicherten Container verschlüsselt aufbewahrt wird. Es liegt die Vermutung nahe, dass insbesondere der Zugriff von Anbieterfirmen auf mobile Betriebssysteme es andernfalls leicht machen würde, den privaten Schlüssel abzugreifen. 
 
@@ -659,7 +719,7 @@ Die Gefahr des Abgreifens des ggf. nicht ausreichend verschlüsselten privaten S
 Selbst die wenigen quell-offenen Messenger mit Verschlüsselung, die man für den Desktop wie auch für mobile Geräte an einer Hand abzählen kann, die ein Security-Audit durchlaufen haben, sind kaum ausreichend hinsichtlich der Sicherheit der verschlüsselten Speicherung vom - und gesicherter Zugangsprozesse zum - privaten Schlüssel analysiert.
 
 
-### Generierung von 10 Schlüsseln für die Verschlüsselung
+### 4.2 Generierung von 10 Schlüsseln für die Verschlüsselung
 
 Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt der Wizard, ob der Nutzer die Schlüssel für die Verschlüsselung generieren möchte. Für die Schlüssel-Erstellung sollte man einen Schlüssel von mindestens 3072 Bit (Voreinstellung) oder größer wählen. Der Nutzer kann auch weitere Optionen wie Algorithmus, Hashtype, Cipher, Salz-Länge oder Iteration Count selbst wählen, wenn er den Schlüssel z.B. neu (re-)generiert.
 
@@ -690,7 +750,7 @@ Bei nicht-minimaler Ansicht zeigen sich im Tabulator "Activate Kernel" somit z.B
 Eine weitere Vielzahl an Optionen findet sich auch unter dem Hauptmenü/Optionen in einem Pop-Up-Fenster, die später noch erläutert werden. Dieses ist das eigentliche Options-Fenster.
 
 
-== Aktivierung des Kernels ==
+### 4.3 Aktivierung des Kernels 
 
 Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt ein Pop-Up Fenster am Ende des Wizards, ob der Kernel aktiviert werden soll. Ansonsten ist bei allen weiteren Starts nach dem Login im Einstellungs-Tab der rote "Aktiviere Kernel"-Knopf zu drücken, sodann kann es losgehen: Wenn der Knopf grün ist, läuft der Kernel.
  
@@ -698,16 +758,35 @@ Wenn der Nutzer die Programmoberfläche schließt, wird ebenso in einem Pop-up F
 
 Ansonsten betreibt der Nutzer den Kernel ohne GUI, was ja manchmal auf einem Webserver gewünscht ist, damit niemand sich in die offene Benutzeroberfläche einschalten kann. Neben dem Spot-on-Kernel gibt es für diesen Dämon-Webserver-Zweck aber auch noch den Spot-on-Lite-Kernel, der beim Repositorium des Source Codes als eigenständiges Repositorium zu finden ist.
 
+![Abbildung: Aktivierung des Kernels](/images/kernel_activation.png)	
+
+
+
 Wenn der Nutzer die GUI bestehen lassen will, aber niemand während der Abwesenheit Eingaben oder Veränderungen vornehmen können soll, besteht auch die Möglichkeit links in der unteren Statuszeile den Knopf "Lock" zu klicken, die Benutzeroberfläche schließt dann und kehrt zum Login-Tab für die Eingabe des Passwortes zurück, so dass die laufenden Prozesse und Eingaben der anderen Tabulatoren nicht sichtbar sind. Um die Oberfläche wieder zu ent-lock-en, ist der Lock-Knopf in der Statuszeile erneut zu drücken und der Nutzer gibt die Passphrase(n) dann in einem Pop-Up-Fenster wieder ein.
+
+![Abbildung: Verschlüsselung zwischen Kernel und Gui/Benutzeroberfläche](/images/guikernel_encryption.png)	
+
+
+
 
 Der Nutzer kann den Kernel auch aktivieren/deaktivieren, indem in der Status-Zeile unten links die erste LED gedrückt wird. Wenn sie grün leuchtet, ist der Kernel aktiv, wenn sie rot leuchtet, ist der Kernel ausgeschaltet.
 Die mittlere LED zeigt an, ob der Nutzer einen Listener/Chat-Server eingerichtet hat und die dritte LED zeigt an, ob der Nutzer eine aktive und erfolgreiche Verbindung zu einem Nachbarn/Server bestehen hat.
 
 
 
-== Einen Nachbarn mit der IP-Adresse verbinden ==
+### 4.4 Einen Nachbarn mit der IP-Adresse verbinden
 
 [[File:Add neighbor IP (simple view).png|thumb|300px|Abbildung 10: Einen Nachbarn mit IP-Adresse hinzufügen (einfache Ansicht)]] 
+
+
+![Abbildung: Nachbar verbinden](/images/neighbor_connect.gif)
+
+![Abbildung: Nachbar-Server verbinden](/images/connect_neighbor.png)	
+
+![Abbildung: Füge einen Nachbarn/Server hinzu](/images/add_neighbor.gif)
+
+![Abbildung: Verbindung mit einem Nachbar-Server](/images/neigbor_connect.png)	
+
 
 
 Bei der erstmaligen Aktivierung wird die IP-Adresse des Projekt-Chat Server automatisch als Nachbar hinzugefügt. Dieser dient als temporärer Chat-Server, über den der Nutzer mit seinen Freunden test-weise chatten kann, bis ein eigener Verbindungsknoten auf einem Webserver oder Zuhause erstellt wurde (oder zwei Nutzer direkt miteinander verbinden). 
@@ -728,12 +807,27 @@ Wenn der Nutzer ohne Server direkt mit einem anderen Nutzer verbinden will, muss
 Wer mehr Details sehen will, kann die minimale Ansicht auch in die volle Ansicht wechseln: In dieser Ansicht wird deutlich, dass neben der IP-Adresse auch der Port der IP-Adresse individuell konfiguriert werden kann. Standardmäßig nutzt GoldBug den Port 4710. Ferner kann das Programm auch über IPv6 betrieben werden sowie einen Listener/Server ansteuern, der über das Dynamische DNS verlinkt ist. Bei DNS gibt man dann keine Nummernfolge bei der IP ein, sondern einen Domain-Namen. In der darunter liegenden Box können weitere Sicherheitsoptionen definiert werden oder auch der Verbindungsserver über einen Proxy angesprochen werden (z.B. wenn man GoldBug über das TOR-Netzwerk nutzen möchte).
 
 
-## Die Chat-Funktion
+## 5 Die Chat-Funktion
 [[File:Goldbugchattab.png|thumb|300px|Abbildung 11: Chat-Tab des GoldBug-Messengers]]
+
+
+![Abbildung: Das Chat-Tab ](/images/chat_tab.jpg)
+
+![Abbildung: Chat Tab](/images/chat_tab.png)	
+
+
 Wenn nun Login-Passwort definiert, Schlüssel generiert, Kernel aktiviert und ein Nachbar/Server verbunden ist, also in der Statuszeile zwei LED grün leuchten, dann kannst Du mit einem Freund einen Schlüssel tauschen und die Kommunikation kann im Chat-Tab (siehe '''Abbildung 11''') oder Pop-Up-Fenster für einen definierten Teilnehmer beginnen. Der Schlüsseltausch lässt sich wie folgt beschreiben:
 
-## Freund hinzufügen durch Tausch und Einfügen der Schlüssel
+### 5.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
 [[File:Addkeyorrepleo.png|thumb|300px|Abbildung 12: Tabulator "Key": Schlüssel, Repleo oder E-Mail-Adresse einfügen bzw. auskopieren]]
+
+![Abbildung: Add Friend/Key](/images/add_key.png)	
+
+
+![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
+
+
+
 GoldBug nutzt eine öffentliche/private Schlüssel-Infrastruktur, wie es halt bekannter Standard ist: Der öffentliche Schlüssel kann mit Freunden getauscht werden und der private Schlüssel bleibt verschlüsselt auf Deiner Festplatte.
 
 Du und Dein Partner, beide Freunde, müssen zuvor einmalig jeweils ihren öffentlichen Schlüssel tauschen, d.h. auskopieren und sodann den Schlüssel des Freundes im Tabulator: „Freund hinzufügen“ („Add Friend/Key“) einfügen und bestätigen (vgl. '''Abbildung 12'''). Dein Freund kann seinen Schlüssel per E-Mail senden. Kopiere diesen dann in diesem Tabulator ein und drücke den „Hinzufügen“-Knopf am unteren Rand.
@@ -746,7 +840,7 @@ Ebenso macht es Dein Freund und Du fügst den Schlüssel des Freundes in das Tex
 
 '''Weitere Option nur zur Kenntnis:''' Neben dem Online-Versand des Schlüssels über die direkte Verbindung zu einem Freund kann auch das weiter unten beschriebene Werkzeug des Echo Public Key Sharing (EPKS) genutzt werden. Dieses wird angewandt, wenn der Freund nicht mit einer direkten Verbindung verbunden ist (z.B. beide Partner einen gemeinsamen Chat-Server bzw. Knotenpunkt in der Mitte nutzen). Beide Partner geben dann in EPKS ein gemeinsames Passwort-Geheimnis ein und senden ihre öffentlichen Schlüssel über dieses Passwort ins Echo-Netz. Siehe dazu weiter die ausführlicheren Details im Abschnitt diesem Tool, das ggf. eine gute Alternative zu den oftmals unkomfortablen und unsicheren üblichen Key-Servern darstellen kann.
  
-### Besonderheit: Repleo
+#### 5.1.1 Besonderheit: Repleo
 Wenn Du schon einen Schlüssel Deines Freundes erhalten hast (z.B. für Chat) und diesen eingefügt hast, nunmehr aber Deinen öffentlichen (Chat-)Schlüssel nicht preisgeben willst, ihn nicht bei einem E-Mail-Programm gespeichert und transferiert wissen willst (obschon der öffentliche Schlüssel ja eigentlich öffentlich sein darf), dann kannst Du auch mit dem erhaltenen Schlüssel Deines Freundes Deinen eigenen öffentlichen Schlüssel verschlüsseln. Das nennt man dann REPLEO.
  
 Beim Repleo wird also Dein öffentlicher Schlüssel mit dem öffentlichen Schlüssel Deines Freundes bereits verschlüsselt. Dieses ist sodann für jede Funktion bzw. Schlüssel durchzuführen, d.h. Du kannst jeweils das Chat-Repleo, E-Mail-Repleo und URL-Repleo zurücksenden.
@@ -754,8 +848,15 @@ Auch ein Repleo kann dann Dein Freund in den Kasten des Tabulators "Add Friend/K
 
 Der Text eines Schlüssels startet immer mit einem Buchstaben "K" oder "k" und ein Repleo startet mit einem "R" oder "r".
 
-### Einen ersten sicheren Chat beginnen 
+### 5.2 Einen ersten sicheren Chat beginnen 
 [[File:Goldbugchatpopup.png|thumb|300px|Abbildung 13: GoldBug Messenger Chat Pop-Up Window]]  
+
+![Abbildung: 1:1-Chat im Pop-up Fenster ](/images/chat_pop_up.jpg)
+
+![Abbildung: Chat im Pop-up Fenster](/images/chat_popupwindow.png)	
+
+
+
 Du findest nach erfolgreichem Key-Tausch Deinen Chat-Freund im Tabulator "Chat". Damit der Chat funktioniert, sollten beide Teilnehmer idealerweise die gleiche und aktuellste Version des Programmes nutzen, ihre Schlüssel generiert und ausgetauscht haben und zum einem Netzwerk-Knoten oder Chat-Server im Web verbunden sein. Wenn die ersten beiden LEDs in der Status-Zeile unten grün leuchten und der Name des Freundes im Chat-Tab auftaucht, sieht es schon gut aus.
 
 Wenn der Online-Status des Freundes blau (abwesend), rot (beschäftigt) oder grün (gesprächsbereit) aufleuchtet, kann der Chat beginnen. Entweder markiere den Freund in der Tabelle und chatte aus dem Tab heraus, oder doppelklicke mit der Maus auf den Freund und ein Pop-Up Chat Fenster für diesen Freund öffnet sich.
@@ -766,15 +867,18 @@ Und: Im Pop-Up-Chat hast Du den Options-Knopf "Share StarBeam", mit dem Du eine 
 
 In der Status-Zeile oben am Fenster kannst Du den Nicknamen und den Online-Status einsehen und z.B. auch das Socialist- Millionaire-Protokoll starten, um einen Freund zu authentifizieren und zu testen, ob er (ein weiteres) gemeinsames Geheimnis kennt und richtig eingibt, wie es weiter unten beschrieben wird.
 
-==Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit Gemini (Instant Perfect Forward Secrecy, IPFS)==
+### 5.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit Gemini (Instant Perfect Forward Secrecy, IPFS)
  
 MELODICA steht für “Multi Encryted LOng DIstance Calling” – ins Deutsche übersetzt in etwa: „Vielfach-verschlüsseltes Anrufen über eine lange Distanz“
  
+![Abbildung: MELODICA-Symbol](/images/melodica.gif)
+
+
 Es bezeichnet, einen Freund wie mit einem Telefon anzurufen – nur, dass damit eine sichere Ende-zu-Ende Verschlüsselung aufgebaut wird.
  
 Die Ende-zu-Ende Passphrase – auch Gemini genannt – wird über einen AES-String abgebildet und sollte zwischen beiden Teilnehmern geheim bleiben. Daher gilt es, die elektronische Übertragung immer gut über weitere Verschlüsselungs-Ebenen abzusichern (wie hier im Echo-Protokoll mit dem asymmetrischen Chat-Key und der TLS/SSL-Verbindung), wenn die Übertragung potentiell abgehört werden kann. 
 
-=== Asymmetrisches Calling ===
+### 5.4 Asymmetrisches Calling 
 
 GoldBug hat diese Übertragungsfrage des Passworts für die Ende-zu-Ende Verschlüsselung gelöst, indem das Gemini (Zeichenfolge für die dann zu bildende symmetrische Verschlüsselung) asymmetrisch verschlüsselt wird (mit dem Schlüssel für Chat) und dann durch einen nochmals (asymmetrischen) verschlüsselten SSL/TLS-Kanal übertragen wird.
 
@@ -782,7 +886,7 @@ Gemini ist der griechische Begriff für Zwilling, d.h. es bezieht sich auf beide
   
 Diese Funktion erzeugt somit einen „Call“, einen Anruf, bei dem das Passwort übertragen wird, das dann später die Ende-zu-Ende Verschlüsselung gestaltet. Genau genommen besteht das Gemini aus zwei Schlüsseln bzw Komponenten, denn das Gemini wird durch einen weiteren Prozess authentifiziert: Diese weitere Komponente wird auch MAC-Hash genannt.
 
-===Instant Perfect Forward Secrecy (IPFS)===
+### 5.5 Instant Perfect Forward Secrecy (IPFS)
  
 Du kannst somit die (symmetrische) Verschlüsselung bzw. das Gemini jederzeit erneuern. D.h. das Paradigma des „Perfect Forward Secrecy“ ist um zwei Komponenten erweitert worden: Einerseits kann man die Ende-zu-Ende Passphrase (das Gemini) manuell oder automatisiert definieren und sie andererseits auch sofortig, also „instant“ jederzeit erneuern. Daher wird von „Instant Perfect Forward Secrecy“ (IPFS) gesprochen.
  
@@ -790,7 +894,7 @@ Im Vergleich bieten viele andere Tools nur einen Key pro Online-Sitzung an und m
 
 Das hier angesprochene Instant Perfect Forward Secrecy (IPFS) nutzt die asymmetrische Verschlüsselung (des Chat-Keys), wobei der temporäre Schlüssel ein symmetrischer Schlüssel (eben das Gemini) ist. 
  
-===Symmetrisches Calling ===
+### 5.6 Symmetrisches Calling
 
 Als weiteren Clou besteht bei GoldBug nunmehr auch die bislang einzigartige Möglichkeit, ein neues Gemini durch den Kanal eines bestehenden Gemini zu senden. Hier wird der Ende-zu-Ende Schlüssel (also das symmetrisch verschlüsselnde Gemini) durch eine andere Ende-zu-Ende Gemini-Verbindung gesandt (der neue symmetrische Schlüssel wird durch einen Kanal eines bestehenden symmetrischen Schlüssels mitgeteilt). Die symmetrische Verschlüsselungsphrase (das Gemini bzw. das AES-Passwort) wird also nicht mit einer asymmetrischen Verschlüsselung (dem Chat-Key) verschlüsselt (z.B. mit RSA, Elgamal oder NTRU) und dann durch einen sicheren Kanal (SSL/TLS) von Punkt-zu-Punkt gesandt, sondern wird selbst mit dem bestehenden Gemini verschlüsselt und sodann erst durch die beschriebene Methode (wieder über SSL/TLS) gesandt.
 
@@ -799,31 +903,41 @@ Auch bei einem Call über ein bestehendes Gemini kann das gesandte Gemini jederz
 
 Sichere Ende-zu-Ende-Multi-Verschlüsselung entsteht, wenn ein Messenger einen manuell definierten symmetrischen Schlüssel mit einem bestehenden symmetrischen Schlüssel encodiert und dann mit einem asymmetrischen Schlüssel zusätzlich verschlüsselt. Und dieses Paket sodann durch eine sichere Verbindung gesandt wird.
 
-=== 2-Wege-Calling=== 
+### 5.7  2-Wege-Calling
 Schließlich ist im Kontext-Menü (gehe mit rechter Maustaste auf einen Freund in der Freundesliste) noch eine dritte Methode für einen sogenannten "Call" hinzugefügt: Das 2-Wege-Calling. Hierbei wird von Dir aus ein AES-256 als Passphrase für die zukünftige Ende-zu-Ende-Verschlüsselung an den Freund gesandt und Dein Freund sendet als Antwort ebenso ein AES-256 an Dich. Nun wird jeweils von Deinem AES die erste Hälfte und von Deinem Freund die zweite Hälfte genommen, und zu einem gemeinsamen AES-256 zusammengesetzt. Das nennt sich die Methode der 2-Wege-Sicherheit. Damit ist gewährleistet, dass kein Dritter - wenn es ihm gelänge, die Maschine des Freundes zu kompromittieren, ein Gemini (oder ein altes Gemini) in seinem Namen von einer dritten, fremden Maschine sendet (was eigentlich nicht möglich ist, da es die unbemerkte Übernahme einer Maschine oder das Brechen der bestehenden TLS und RSA (bzw. NTRU- oder Elgamal-) Verschlüsselung bedeuten würde). Durch das Ping-Pong-Spiel beider Parteien im Zwei-Wege-Calling wird sichergestellt, dass beide Teilnehmer aktuell ihren Teil jeweils dazu beitragen, sich gegenseitig auf ein sicheres Ende-zu-Ende-Passwort zu einigen - und zwar Fifty-Fifty. 
  
 Die Möglichkeit, das Passwort
-* erstens manuell zu edieren,
-* zweitens sekundlich oder für jeden - oder innerhalb eines jeden - Anruf(es) erneuern zu können,
-* drittens das Passwort durch eine bestehende Ende-zu-Ende Verschlüsselung zu versenden,
-* und schließlich viertens, das Ende-zu-Ende-Passwort in einem zwei-Wege-Verfahren generieren zu können,
+- erstens manuell zu edieren,
+- zweitens sekundlich oder für jeden - oder innerhalb eines jeden - Anruf(es) erneuern zu können,
+- drittens das Passwort durch eine bestehende Ende-zu-Ende Verschlüsselung zu versenden,
+- und schließlich viertens, das Ende-zu-Ende-Passwort in einem zwei-Wege-Verfahren generieren zu können,
 macht es Angreifern somit sehr schwer, die Ende-zu-Ende-Verschlüsselung der GoldBug Calling-Funktion aufbrechen zu können.
 
 Aus "Perfect Forward Secrecy" (PFS) ist nicht nur "Instant Perfect Forward Secrey" (IPFS) geworden, sondern ein "2-Way Instant Perfect Forward Secrecy": 2WIPFS. Diese Funktion hat damit FS und PFS und das wichtige Element der Ende-zu-Ende Verschlüsselung mit dieser Prozessimplementierung entscheidend weiterentwickelt. Die Verschlüsselung selbst ist dabei nicht neu, sondern lediglich der Verfahrensprozess ist ausgeklügelt implementiert, um mehr Sicherheit zu bieten.
  
 Ende-zu-Ende Verschlüsselung wird im GoldBug durch einfaches Knopf-Drücken so einfach wie telefonieren: Einfach den Hörer aufnehmen oder wieder auflegen. Zu jeder Zeit bleibt die Kommunikation asymmetrisch verschlüsselt und die symmetrische End-zu-Ende Verschlüsselung kann einfach hinzugeschaltet werden - und auch durch asymmetrische oder symmetrische Verschlüsselung (innerhalb eines SSL-Kanals) erneuert werden. Das ist eine neuer architektonischer Implementierungs-Standard, den diese Methode des Callings etabliert.
 
-==Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol==
+### 5.8 Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol
 
 Während GoldBug die Nachrichten dreimal verschlüsselt - 
 
-* zum einen wird die Nachricht ja in einem sicheren TLS/SSL-Kanal gesendet, 
-* zweitens wird jede Nachricht asymmetrisch verschlüsselt (z.B. mit RSA, NTRU oder Elgamal, mit dem Chat-Key), 
-* und drittens besteht ja die die Möglichkeit, mit der "Call" bzw. "Anruf"-Funktion ein Gemini zu senden, um eine symmetrische Ende-zu-Ende Verschlüsselungs-Passphrase zu setzen (mit verschiedenen Methoden zur Durchführung des "Calls" innerhalb einer bereits bestehenden symmetrischen Verschlüsselung oder über die Zwei-Wege-Aufruf-Funktion, bei der jeder die Hälfte des Ende-zu-Ende Passwortes definiert) - 
+- zum einen wird die Nachricht ja in einem sicheren TLS/SSL-Kanal gesendet, 
+- zweitens wird jede Nachricht asymmetrisch verschlüsselt (z.B. mit RSA, NTRU oder Elgamal, mit dem Chat-Key), 
+- und drittens besteht ja die die Möglichkeit, mit der "Call" bzw. "Anruf"-Funktion ein Gemini zu senden, um eine symmetrische Ende-zu-Ende Verschlüsselungs-Passphrase zu setzen (mit verschiedenen Methoden zur Durchführung des "Calls" innerhalb einer bereits bestehenden symmetrischen Verschlüsselung oder über die Zwei-Wege-Aufruf-Funktion, bei der jeder die Hälfte des Ende-zu-Ende Passwortes definiert) - 
 
 gibt es viertens zusätzlich ein weiteres Verfahren zur Erhöhung der Sicherheit: es ist das "SMP"-Protokoll: [[w:en:Socialist_millionaire|Socialist Millionaire Protocoll]]  (eine Methode, die auch für [[w:de:Off-the-Record_Messaging|Off-the-Record-Messaging (OTR)]] hier beschrieben wird: https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html).
 
 [[File:GoldBug Messenger - Sociallist-Millionaire-Protocol.png|thumb|Abbildung 14: GoldBug: Socialist-Millionaire-Protocol (SMP) im Chat Fenster]]
+
+
+![Abbildung: SMP-Protokoll](/images/SMP_socialist_millionaire.png)	
+
+
+![Abbildung: Das SMP-Protokol zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)
+
+![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol](/images/SMP_Secret_Streams.png)	
+
+
 
 Die Idee dahinter ist, im Chat an Deinen Freund eine Frage zu stellen wie: "Was ist der Name der Stadt, die wir gemeinsam im letzten Jahr besucht haben?", oder eine Frage zu stellen wie: "Was ist der Name des Restaurants, in dem wir uns das erste Mal getroffen haben?" usw. (vgl. '''Abbildung 14'''). 
 
@@ -872,10 +986,10 @@ Wenn alles korrekt abgelaufen ist, dann sollte Rab den Wert erhalten von (Pa / P
 
 GoldBug beschreibt während der verschiedenen Daten-Austausch-Vorgänge für SMP keine sogenannte "Zero-Knowledge-Beweise". Ferner nutzt GoldBug den SHA-512 der jeweils eingegebenen geheimen Passphrase als die x- und y-Komponenten.
 
-=== SMP-Calling ===
+### 5.9 SMP-Calling
 Oben haben wir die Call-Funktion beschrieben, wie ein Gemini generiert und übertragen wird. Nun kann man das Gemini nicht nur manuell oder durch die AES-Funktion definieren, sondern auch aus dem Passwort abgeleitet werden, das im SMP-Prozess wie oben dargelegt hinterlegt ist. Somit wird die Passwort-Eingabe aus dem SMP-Prozesses genutzt (nicht der SMP-Prozess selbst). Es ist eine weitere Art des Anrufens und seinem Gegenüber ein Ende-zu-Ende-Passwort sicher zu übertragen, das dieses mal nicht aus einem AES-Generator entspringt.
 
-==Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)==
+### 5.10 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
 
 Seit Version 2.7 unterstützt Goldbug Messenger [[w:Perfect Forward Secrecy|Perfect Forward Secrecy]] auch für seine Funktion als E-Mail-Klient, und war damit der erste E-Mail-Klient, der Forward Secrecy für E-Mail sowohl mit symmetrischer als auch asymmetrischer Weise anbot (vgl. weiter unten).
 
@@ -889,7 +1003,7 @@ Ein Tooltip auf dem Bildschirm zeigt an, wenn der Chat-Partner im Chat ein Forwa
 Schaue dazu unten in der Status-Zeile nach dem neu auftauchenden Symbol, klicke es und Du kannst in dem erscheinenden Pop-Up-Fenster den Forward-Secrecy-Prozess bestätigen.
 Sodann wird nicht mehr der (permanente) Chat-Schlüssel benutzt, sondern die neuen-temporären asymmetrischen Schlüssel. Der permanente Chat-Schlüssel wird also praktisch ergänzt durch den temporären Chat-Schlüssel.
 
-=== Forward Secrecy Calling ===
+### 5.11 Forward Secrecy Calling 
 Somit lässt sich also auch das Calling erweitern: Das symmetrische Gemini wird beim FS-Calling (Forward-Secrecy-Calling) nicht wie oben beschrieben durch den permanenten (asymmetrischen) Chat-Key oder durch ein bestehendes (symmetrisches) Gemini gesandt, sondern durch den ephemeralen, temporären - und asymmetrischen - Chat-Key.
 
 Während der Versand eines Geminis über ein bestehendes Gemini ein ''symmetrisches'' "Instant Perfect Forward Secrecy" definiert, kann der Versand eines Geminis über die ephemeralen Schlüssel des initiierten "Forward Secrecy" in der Chat-Funktion als ein ''asymmetrisches'' "Instant Perfect Forward Secrecy" bezeichnet werden.
@@ -897,9 +1011,13 @@ Während der Versand eines Geminis über ein bestehendes Gemini ein ''symmetrisc
 
 Während beim "Forward Secrecy Calling" und "dem Call durch ein Gemini" das bestehende "Forward Secrecy" schon besteht und sodann die jederzeitige Erneuerbarkeit des Ende-zu-Ende Schlüssels definiert (Instant Perfect Forward Secrecy) ist bei den anderen Calling-Arten kein Forward Secrecy vorab gegeben, sondern Instant Perfect Forward Secrecy wird hier durch einen Call als Ergebnis des Calls erzeugt.
 
-== Übersicht der verschiedenen Calling-Arten==
+## 5.12 Übersicht der verschiedenen Calling-Arten
 
 Aus den beschriebenen Methoden (vgl. auch '''Abbildung 16'''), einen Ende-zu-Ende Schlüssel an den Freund zu übertragen, lässt sich folgende Übersicht gestalten, die die verschiedenen Methoden mit ihren jeweils spezifischen Merkmalen herausstellt. 
+
+![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)	
+
+
 
 '''Übersicht der verschiedenen Calling-Arten mit jeweiligen Kriterien:'''
 
@@ -943,19 +1061,37 @@ Die Nachrichtenformate mit den Verschlüsselungsebenen sehen dann vereinfacht - 
  * SMP-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein String, der aus dem SMP gebildet wird)))
  * 2-Wege-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String der zu 50% mit dem AES des Freundes modifiziert wird)))
 
-==Emotikons==
-[[File:Goldbug emoticons.png|thumb|400px|Abbildung 17: Liste der Emotikons im GoldBug Messenger]] 
+## 5.12 Datei-Transfer im Chat-pop-up-Fenster
+
+
+
+
+
+![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
+
+
+![Abbildung: Tear-Off/Hook-Up von Bedienungselementen](/images/tearoff_menu.png)	
+
+
+
+###Emotikons
+
+Abbildung: Liste der Emotikons im GoldBug Messenger
+
+![Abbildung: Emoticons in GodlBug](/images/goldbug_emoticons.png)	
+
+
+
+
 GoldBug bietet eine Vielzahl an verschiedenen [[w:de:Emoticon|Emoticons]] - auch Smileys genannt - für den Chat an (siehe '''Abbildung 17'''). 
 
 Um diese zu nutzen, doppelklicke auf einen Freund, so dass sich ein Pop-Up Chat-Fenster für den privaten Chat öffnet. Nun gehe mit der Maus über den Senden-Knopf. In einem dann erscheinenden Tooltip werden die Smileys angezeigt und mit der Eingabe des ASCI-Codes werden die Emoticons im Chat dargestellt. 
 
 Im Chat-Tab besteht in den Optionen des rechten Seiten-Splitters auch die Möglichkeit, die graphische Darstellung von Smileys auszuschalten.
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-= Die E-Mail-Funktion=
+## 6 Die E-Mail-Funktion
+
 GoldBug ist ein voll funktionsfähiger E-Mail-Client. 
 
 Nicht vollumfänglich - wie seit Jahrzehnten bestehende E-Mail-Applikationen -, hier benötigt er noch weitere Programmierung aus der Community, aber dennoch voll funktionsfähig in einem vollwertigen E-Mail-Klienten. Der Vorteil: das Lesen und Schreiben von E-Mails wird in der Benutzeroberfläche sehr effizient auf einer Seite bzw. in einem Tab dargestellt (vgl. '''Abbildung 18'''). 
@@ -964,11 +1100,20 @@ Technisch nutzt GoldBug die Bibliothek [[w:de:CURL#libcurl|libcurl]] und unterst
 
 [[file:goldbugemailtab.png|thumb|right|400px|Abbildung 18: Die Nutzung von GoldBug als E-Mail-Klient]]
 
+
+![Abbildung: Email Tab] (/images/email_tab.gif)
+
+
+![Abbildung: Email - Lesen Anzeige](/images/email_read.png)	
+
+![Abbildung: Email - Schreiben Anzeige](/images/email_write.png)	
+
+
 Perspektivistisch ist dieses auch die Zukunft, dass die Nutzer des Internets sich das Internet wieder stärker selbst organisieren und neu, mit Kryptographie ausgestalten und zwar mit ihren selbst angelegten nunmehr verschlüsselten Mail-Postfächern, die nicht bei zentralen Hostern hinterlegt sind, sondern im eigenen Teilnehmernetz.
 
 Wie folgt lässt sich die Einrichtung der drei Arten, seine E-Mails zu laden, beschreiben:
   
-== POP3 ==
+### 6.1 POP3
 
 Das Post Office Protocol ([[w:de:Post_Office_Protocol|POP3]]) ist ein Übertragungsprotokoll, über das ein Klient E-Mails von einem E-Mail-Server abholen kann. 
 
@@ -977,10 +1122,19 @@ POP3 erlaubt das Auflisten, Abholen und Löschen von E-Mails am E-Mail-Server. F
 Das POP3-Protokoll ist somit in allen verbreiteten E-Mail-Programmen integriert, so auch in GoldBug.
 Wie es - neben IMAP - eingerichtet wird, wird folgend und weiter ergänzend unten in der Beschreibung des Fensters von POPTASTIC erläutert (vgl. '''Abbildung 19''').
 
-== IMAP ==
+### 6.2 IMAP 
 [[File:Poptasticsettings.png|thumb|right|400px|Abbildung 19: Poptastic Settings für POP3 und IMAP]] 
 
-Das Internet Message Access Protocol ([[w:de:Internet_Message_Access_Protocol|IMAP]]) wurde in den 1980er Jahren mit dem Aufkommen von Personal Computern entworfen, um bei der Mail-Kommunikation die Speicherung der E-Mails auf einzelnen Klient-Rechnern aufzulösen.
+![Abbildung: POPTASTIC: Chat über E-Mail-Server](/images/email_poptastic.png)	
+
+
+![Abbildung: POPTASTIC](/images/poptastic.png)
+
+![Abbildung: POPTASTIC Settings ](/images/poptasticsettings.png)
+
+
+
+Das Internet Message Access Protocol ([IMAP]()) wurde in den 1980er Jahren mit dem Aufkommen von Personal Computern entworfen, um bei der Mail-Kommunikation die Speicherung der E-Mails auf einzelnen Klient-Rechnern aufzulösen.
 
 Die (PC-)Clients greifen stattdessen online auf den Servern auf die Informationen zu und erhalten allenfalls Kopien davon.  Während ein Benutzer von POP3 nach Verlust seines PC alle E-Mails verloren hat, stellt ein Mail-Klient bei IMAP die Anfragen an den Server nur nach aktuell benötigten Informationen als Kopie. Möchte ein Nutzer z.B. den Inhalt seines Eingangordners sehen, holt sich der Client eine aktuelle Kopie der Nachrichtenliste vom Server. Soll der Inhalt einer Mail angezeigt werden, wird dieser vom Server als Kopie geladen. Da alle Daten weiterhin auf dem Server verbleiben, wird somit eine ''lokale Speicherung der Daten'' unnötig und erweiterte Möglichkeiten wie das Durchsuchen von Mails werden ebenso nur server-seitig durchgeführt. Damit wird auch auch die ''lokale Sicherung der Daten'' - indem sie von Server weggenommen werden - insofern meist unmöglich, als dass die Konfiguration von IMAP in der Voreinstellung nicht darauf ausgerichtet ist. Zugleich rückt bei unverschlüsselten Mails die Frage der Vertraulichkeit und Sicherheit bei Daten, die auf IMAP-Servern ausgelagert blieben in den Vordergrund. Es stellt sich die Frage, ob der Empfänger einer E-Mail selbst die Hoheit über die Vertraulichkeit der E-Mail, und z.B. das Recht hat, diese niemandem zu zeigen oder im Geheimen zu löschen, oder ob er lediglich eine Kopie, ein "Ansichtsrecht" seiner Post erhält.
 
@@ -1011,7 +1165,7 @@ Nach Sicherheitsüberlegungen solltest Du Deine E-Mails immer gleich vom Server 
 
 Generell gehören E-Mails in diesem Lichte also nicht auf einen Remote-Server, nicht in die Cloud, nicht in einen browser-basierten Web-Service - sondern sie gehören auf Deine Maschine gespeichert - oder aber sie sind zu verschlüsseln. Interessant wird also nun die Möglichkeit, die E-Mails in GoldBug über POP3 oder IMAP verschlüsselt zu versenden.
 
-==P2P E-Mail: ohne Vorratsdatenspeicherung==
+### 6.3 P2P E-Mail: ohne Vorratsdatenspeicherung
 
 Hinsichtlich der Verschlüsselung wurde schon dargestellt, dass die E-Mail-Funktion einen anderen Schlüssel zur Verschlüsselung nutzt als die Chat-Funktion. So kannst Du also einen Freund zum Chat hinzufügen, ihm aber das E-Mail verweigern oder umgekehrt. Sinnvoll ist es jedoch, immer alle Schlüssel als Ganzes auszukopieren, dann hat man seinen Freund auch in allen Funktionen präsent (weiterhin also noch der  URL-Schlüssel und der Rosetta-Schlüssel - zwei Funktionen, die später noch beschrieben werden).
 
@@ -1035,20 +1189,25 @@ GoldBug ermöglicht weiterhin, E-Mails auch im Teilnehmernetzwerk oder auf einen
 Der E-Mail-Klient enthält somit auch eine peer-to-peer basierte Komponente, d.h. die Emails werden über das Netzwerk der verschlüsselten Verbindungen gesandt und in den Knotenpunkten von Freunden zwischengespeichert. Dieses Netzwerk wird durch die integrierte Architektur des Spot-on-Kernels bereitgestellt.
 Der Vorteil von P2P-Email liegt darin, dass das E-Mail-Postfach nicht bei einem zentralen Hoster und öffentlichen Anbieter von E-Mail liegt, sondern im dezentralen Netzwerk von Dienen Freunden eingerichtet wird. 
 
+
+
 Mit GoldBug ist jeder in der Lage, für seine Freunde unkompliziert ein E-Mail-Postfach einzurichten. Niemand kann dann mit-loggen kann, wann und wie oft Du Deine E-Mails abrufst. Das Echo-Protokoll trägt ebenso dazu bei, dass kaum Metadaten anfallen, die offenbaren, wer welche E-Mail gelesen hat und wer für wen eine E-Mail zwischenspeichert (da die Öffnung der verschlüsselten Nachrichten ausschließlich auf Deiner Maschine erfolgt und jeder jede Nachricht an jeden sendet).
 
 Wie es geht, ein Postfach für Deine Freunde einzurichten, zeigt der folgende Abschnitt:
 
-==C/O und E-Mail Institutionen einrichten==
+### 6.4 C/O und E-Mail Institutionen einrichten==
 
 Das interessante an der GoldBug E-Mail-Funktion – und hier unterscheidet es sich ggf. von anderen p2p E-Mail Implementierungen - ist, dass es möglich ist, Email auch zu Freunden zu senden, die offline sind.
  
 Hierzu bestehen zwei verschiedene Methoden:
 
-===Care-Of-Methode (c/o)===
+#### 6.4.1 Care-Of-Methode (c/o)
  
 Die eine Methode ist, dass ein dritter, gemeinsamer Freund genutzt wird, um die Emails dort zwischen zu speichern.
 Wenn Alice und Bob also einen Chat-Server im Web auf ihrem Webserver einrichten, und alle drei Ihre Schlüssel getauscht haben, fungiert der Webserver wie ein E-Mail-Postfach, wie wir es von POP3 oder IMAP her kennen.
+
+![Abbildung: P2P-Email aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
+
  
 Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auch ein dritter Freund oder ein kleiner [[w:de:Raspberry_Pi|Raspberry-Pi]]-Computer zuhause sein, der kontinuierlich online bleibt. Es macht daher Sinn, mehr als einen Freund in seiner Liste zu haben und gemeinsame Freunde mit anderen Freunden zu vernetzen, die als Zwischenspeicher fungieren können. Da alle E-Mails verschlüsselt sind, können die Freunde, die eine Cache-Funktion zur Verfügung stellen, Deine E-Mail auch nicht lesen.
  
@@ -1059,7 +1218,7 @@ Du hast bei GoldBugauch im p2p-E-Mail die Wahl, ob die E-Mails authentifiziert o
  
 Die zweite Methode ist die Einrichtung einer virtuellen E-Mail Institution.
 
-===Virtuelle E-Mail Institution ("VEMI") - Methode===
+####6.4.2 Virtuelle E-Mail Institution ("VEMI") - Methode
  
 Hierzu ist es ebenso notwendig, die C/O-Funktion mit der Check-Box wie oben geschildert zu aktivieren.
 Sodann kannst Du eine virtuelle E-Mail-Institution erstellen. Für die Eingabe- bzw- Definitions-Felder "Name" und "Adresse" der Institution kannst Du frei kreativ werden und beliebige Bezeichnungen wählen.
@@ -1086,7 +1245,7 @@ Du erkennst einen E-Mail-Magnet an seiner Endung: URN=institution. Dann weißt D
 Du (als Ersteller einer E-Mail-Institution) brauchst Deinen eigenen E-Mail-Schlüssel nicht mit den Freunden bzw. "Subscribern" Deiner Institution zu tauschen. Du kannst Deinen E-Mail Schlüssel auch in einem Gruppen-Chat Raum mit dem Ersteller einer E-Mail-Institution tauschen. 
 Der Austausch-Prozess von Key & E-Mail-Magnet muss also keine weiteren Identitäten vermitteln.
 
-== Zusätzliche Verschlüsselung: Ein „GoldBug“ auf ein E-Mail setzen ==
+### 6.5 Zusätzliche Verschlüsselung: Ein „GoldBug“ auf ein E-Mail setzen
 
 Gleichgültig, welche Übertragungsmethode Du wählst, ob POP3, IMAP oder P2P, die E-Mails sind über den öffentlichen (asymmetrischen) E-Mail-Schlüssel sowie das Echo-Protokoll für die Übertragung ja immer verschlüsselt.
 Dieses ist auch der Fall, wenn sie in einer Zwischenstation wie einem Provider-Postfach oder einer Virtuellen Institution oder einem Zwischenknoten zwischengespeichert werden. Transportverschlüsselung und Ende-zu-Ende-Verschlüsslung gehen hier durchgängig ineinander auf.
@@ -1102,7 +1261,7 @@ Auch hier wie beim Chat mit dem Gemini ist es ein wichtiges Merkmal der symmetri
 
 Das GoldBug auf einem E-Mail ist somit auch ein zentraler Anknüpfungspunkt, warum der E-Mail-Klient GoldBug - neben der Erinnerung an die Kurzgeschichte von Ergar Allen Poe über ein Kryptogramm - diesen Namen hat: Die einfache Handhabung, E-Mails symmetrisch einfach mit einem Passwort manuell zu verschlüsseln, ohne zusätzliche Verschlüsselungssoftware als Plugin installieren zu müssen.
 
-==Forward Secrecy ==
+### 6.6 Forward Secrecy 
 
 GoldBug ist mit Nutzung der einbezogenen Architektur des Spot-on-Kernels weltweit das erste E-Mail-Programm, dass Forward Secrecy Verschlüsselung anbietet, die sowohl asymmetrisch ''als auch'' symmetrisch ''für E-Mail'' umgesetzt werden kann - also beide Verfahren innerhalb eines E-Mail-Programms unterstützt.
 
@@ -1112,6 +1271,11 @@ Du sendest also Deinem E-Mail-Partner über die übliche asymmetrische Verschlü
 Diese Methode der asymmetrischen Ende-zu-Ende Sicherung wurde im übrigen nicht nur für E-Mail integriert, sondern auch auf die Chat-Funktion (siehe oben: FS-Calling). 
 
 [[File:Forward Secrecy - Instant Perfect forward Secrecy.png|thumb|400px|Abbildung 20: Erster E-Mail Client mit Forward Secrecy]]
+
+
+![Abbildung: E-Mail mit Forward Secrecy](/images/email_forwardsecrecy.png)	
+
+
 
 Der permanente öffentliche Schlüssel wird für den Transport genutzt. Das bedeutet, der ephemerale (temporäre) Schlüssel wird über den permanenten öffentlichen Schlüssel mit dem Partner geteilt. Wenn dann der ephemerale öffentliche Schlüssel von einem Empfänger korrekt akzeptiert wurde, generiert dieser besagte Empfänger ebenso einen ephemeralen Sitzungsschlüssel (symmetrisch), der dann über Deinen öffentlichen Schlüssel ebenso Dir wieder zugesandt wird.
 
@@ -1197,17 +1361,17 @@ Ever. Web article. Retrieved February 2, 2015, from
 https://www.eff.org/deeplinks/2014/04/why-web-needs-perfect-forward-secrecy
 </ref>
 
-==POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP==
+## 7 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
  
 POPTASTIC ist eine Innovation in der Nachrichtenübermittlung - Verschlüsselter Chat und E-Mail über POP3.
  
 Mit der POPTASTIC-Funktion können alle E-Mail Konten z.B. vom Gmail, Outlook.com oder Yahoo!-Mail mit GoldBug Ende-zu-Ende asymmetrisch - und hybride ergänzend symmetrisch - verschlüsselt werden. Der Clou: Jeder POP3 oder IMAP Server kann nun auch für verschlüsselten Chat genutzt werden.
 
-===Chat über POPTASTIC===
+### 7.1 Chat über POPTASTIC
  
 Warum sollte man also noch einen dedizierten Chat-Server nutzen oder Chat-Protokolle mit Plugins für eine Verschlüsselung absichern, wenn man einfach seine E-Mail-Adresse für E-Mail und zugleich den Chat nutzen kann? Das mehrere Jahrzehnte alte POP3-Protokoll und zahlreiche Email-Servern können nun für verschlüsselten Chat mit GoldBug genutzt werden. Der E-Mail-Server wird einfach als Chat-Server umfunktioniert.
  
-Dazu wird die Chat-Nachticht in ein verschlüsseltes E-Mail gewandelt, über POP3 oder IMAP versandt, und vom Empfänger wird zurück in eine Chat Nachricht gewandelt. Da der GoldBug Messenger zugleich auch ein E-Mail-Client ist, funktioniert der verschlüsselte Nachrichtenaustausch auch über E-Mail. Das Programm erkennt automatisch, ob es sich um eine E-Mail über POP3 handelt oder um eine Chat-Nachricht.
+Dazu wird die Chat-Nachricht in ein verschlüsseltes E-Mail gewandelt, über POP3 oder IMAP versandt, und vom Empfänger wird zurück in eine Chat Nachricht gewandelt. Da der GoldBug Messenger zugleich auch ein E-Mail-Client ist, funktioniert der verschlüsselte Nachrichtenaustausch auch über E-Mail. Das Programm erkennt automatisch, ob es sich um eine E-Mail über POP3 handelt oder um eine Chat-Nachricht.
  
 Der Chat und das E-Mail über POPTASTIC sind proxy-fähig und können daher auch vom Arbeitsplatz, der Universität oder hinter einer Firewall betrieben werden, auch über das Netzwerk Tor. Logged man sich mit einem Web-Browser in seinen E-Mail-Account ein, sieht man, wie die verschlüsselte Nachricht aussieht.
  
@@ -1215,7 +1379,8 @@ Die ergänzend symmetrische Ende-zu-Ende Verschlüsselung über POP3 kann - wie 
 
 Für Anwender sicherlich eine interessante und einfache Methode, über dieses E-Mail-Protokoll verschlüsselt zu chatten.
 
-===E-Mail über POPTASTIC===
+### 7.2 E-Mail über POPTASTIC
+
 Ebenso wie es den Chat über POPTASTIC gibt, besteht auch die Möglichkeit über POPTASTIC zu e-mailen. Da POPTASTIC ein Schlüssel ist, mit dem der Freund eingegeben wird (über das Freund-Hinzufügen Tab), ist der POPTASTIC Kontakt bzw. die E-Mail-Adresse mit einem Schloss-Symbol versehen und zusätzlich auch mit einer Hintergrundfarbe markiert, um anzuzeigen, dass der Nachrichtenaustausch immer nur verschlüsselt geschieht.
 
 Wenn man im Freund-Hinzufügen-Tab eine E-Mail-Adresse einfügt, wird dieser Kontakt ebenso in die Kontaktliste beim E-Mail hinzugefügt - jedoch ohne Locked-Symbol und ohne Hintergrundfarbe. Dieses zeigt an, dass hier mit diesem Kontakt die E-Mail-Nachrichten unverschlüsselt erfolgen. Dieses ist insofern der Fall, wenn jemand nicht den GoldBug-Klienten nutzt.
@@ -1224,7 +1389,7 @@ Wenn der Kontakt jedoch auch GoldBug nutzt, können beide dauerhaft verschlüsse
 
 E-Mail über POPTASTIC ist also einfaches dauerhaftes verschlüsseltes e-mailen, indem einfach einmal zu Beginn der POPTASTIC-Schlüssel getauscht wird.
 
-=== Einrichtung von POPTASTIC ===
+### 7.3 Einrichtung von POPTASTIC
 [[File:Poptasticsettings.png|thumb|right|400px| Abbildung 21: Poptastic Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP]] 
 Eine detaillierte Beschreibung der Einrichtungsoptionen des E-Mail-Servers findest Du weiter oben im Abschnitt zu POP3 und IMAP (vgl. '''Abbildung 21'''). 
 
@@ -1235,16 +1400,23 @@ Eine detaillierte Beschreibung der Einrichtungsoptionen des E-Mail-Servers finde
  
 Es empfiehlt sich, für einen ersten Test und die weitere Nutzung ggf. einen Extra-E-Mail Account einzurichten. Bitte beachte, dass neue E-Mail-Accounts z.B. bei Gmail ggf. für die ersten 30 Tage limitiert sind für die Aussendung von E-Mails (z.B. bei Gmail für 500 Chat-Messages oder Emails pro Tag). Das sollte für eine Test oder normalen Bedarf erstmal ausreichen.
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-=Gruppen-Chat im IRC-Stil=
+## 8 Gruppen-Chat im IRC-Stil=
  
 Der GoldBug Messenger verfügt neben E-Mail und Chat auch über eine Gruppen-Chat-Funktion. Diese funktioniert ähnlich einem [[w:de:Internet_Relay_Chat|IRC]]-Chat. Die Übermittlung der Nachrichten an alle Gruppen-Teilnehmer erfolgt auch hier wieder vollständig verschlüsselt über das Echo-Protokoll. Die Verschlüsselung ist symmetrisch, also ähnlich einem Passwort-String. Letztlich können in dem p2p-Netzwerk alle Teilnehmer eines Gruppenchats mitlesen, die einen bestimmten symmetrischen Ende-zu-Ende-Schlüssel kennen, der den Chat-Raum definiert. Der Gruppen-Chat basiert ebenso auf dem Echo-Protokoll (vgl. '''Abbildung 22''').
 
 [[File:Eirc.png|thumb|right|400px|Abbildung 22: Gruppenchat im Echoed IRC = e*IRC]]
- 
+
+
+![Abbildung: E-IRC Gruppenchat](/images/e_irc.png)	
+
+![Abbildung: der Gruppenchat ](/images/buzz_tab.gif)
+
+![Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal](/images/e_irc_buzz.png)	
+
+
+
+
 Es wird daher von ge-Echo-tem IRC oder auch kurz e*IRC gesprochen, dass dem IRC-Chat neue Optionen eröffnet, da die Transportwege des e*IRC-Chats ebenso verschlüsselt sind. Wie heute normale POP3- oder IMAP-E-Mails auch zumindest eine Transportverschlüsslung z.B. mit TLS 1.3 aufweisen, kann sich IRC auch als ein verschlüsselter Gruppenchat verstehen. Auch der althergebrachte IRC-Chat kann daher von solchen Sicherheitsmodellen Verbesserungen erfahren: Der e*IRC Chat kann dazu das Modell einer neuen IRC-Generation darstellen.
 
 Die Verschlüsselungs-Details des Gruppenchats werden wieder über einen Magnet-URI-Link (vgl. unten) definiert (definiert im Link mit Endung &URN=buzz). Buzz ist also die technische Bezeichnung im Quellcode für den Gruppenchat.
@@ -1277,11 +1449,8 @@ Wenn Du den Chat-Raum als privaten Raum nutzen willst, kannst Du den Magnet-URI 
  
 GoldBug ermöglicht mit dem Repleo und dem Schlüsseltausch über einen One-Time-Magneten (OTM) für einen privaten Chatraum einen gesicherten Schlüsseltransfer und somit müssen öffentliche Schlüssel nicht mehr öffentlich sein.
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-=FileSharing: mit StarBeam=
+## 9 FileSharing: mit StarBeam
 
 Wie in jedem Messenger kann auch in GoldBug Filesharing zwischen mehrerer Personen oder ein File-Transfer zwischen zwei definierten Freunden vertraulich und sicher verschlüsselt umgesetzt werden. Dieses geschieht im Tabulator "StarBeam". Der Begriff StarBeam (SB) impliziert, dass Filesharing so einfach sei sollte, wie sich das Licht der Sterne durch die Galaxien projeziert oder "beamed".
 
@@ -1304,7 +1473,7 @@ Aufgrund des Echo-Protokolls werden die Einzelpakete auch "geswarmed", d.h. die 
 
 Der Tabulator “StarBeam” für das File Sharing besteht aus drei Sub-Tabulatoren: einen für das Hochladen, einen für das Herunterladen und einen für das Erstellen oder Hinzufügen von SB-Magneten.
 
-== StarBeam-Magneten mit Verschlüsselungswerten ==
+### 9.1 StarBeam-Magneten mit Verschlüsselungswerten ==
  
 Ein Magnet-URI ist ein Standard, der aus vielen File-Sharing Programmen bekannt ist (vielfach im Gnutella Netzwerk) und ebenso eDonkey/Emule ed2k-Links oder auch Torrent-Links entspricht.
  
@@ -1339,6 +1508,21 @@ Das Nova baut auch auf dem Ende-zu-Ende Verschlüsselungsstandard AES auf (wenn 
 
 '''Abbildung 24: SB-Magent-URIs & Novas'''
 [[File:SB-Magnets.png|thumb|Abbildung 24: Magnet and Novas for StarBeam File Sharing ]]
+
+
+![Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks](/images/starbeam-analyzer.png)	
+
+![Abbildung: Starbeam-Dateitransfer - Eingehende Dateien](/images/starbeam_incomming.png)	
+
+![Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer](/images/starbeam_magnet_links.png)	
+
+![Abbildung: Starbeam-Dateitransfer: Upload von Dateien](/images/starbeam_uploads.png)
+
+![Abbildung: Starbeam ](/images/starbeam_tab.gif) 
+
+
+
+
 
 Um eine Datei zu senden, muss ein verschlüsselter Kanal erstellt werden. Dieses funktioniert wieder mit der Erstellung eines Magneten (am Ende gekennzeichnet durch URN=SB-StarBeam).
  
@@ -1400,7 +1584,7 @@ Das Echo-Protokoll erstellt den Fluss im Netzwerk der Knotenpunkte automatisch (
 Das Turtle-Hopping Protokoll ist erstens nur mit Knotenpunkten verbunden, die sich als Freunde definiert haben und in dieser Verkettung von Freunden kann ein Freund dabei sein, der nur eine geringe Bandbreite umsetzt. Dieser wirkt dann als Flaschenhals und Sender und Empfänger der Datei müssen zwingend durch diesen Flaschenhals.
 Beim Datei-Versand über das Echo-Protokoll können in den Zwischenstationen auch andere Knotenpunkte wie Peers oder Wege über andere Graphenoptionen einbezogen werden, so dass das Datenpaket nicht zwingend an dem Flaschenhals vorbei muss, wenn irgendwo ein schnellerer Weg besteht.
 
-==SB-Upload: Eine Datei übertragen==
+### 9.2 SB-Upload: Eine Datei übertragen==
  
 Wie oben beschrieben ist der Versand einer Datei aus dem Chat-Fenster an einen einzelnen Freund sehr einfach: Mit dem Share-StarBeam-Knopf eine Datei wählen und schon wird sie an den Freund übertragen.
 
@@ -1427,7 +1611,7 @@ Technischer Hinweis: Da das Echo als HTTPS-Post oder HTTPS-Get übertragen wird,
   
 Schließlich kopiere den Magnet-URI aus und senden diesen Deinem Freund. Wenn er ihn einkopiert hat, kannst Du den Transfer mit der Deaktivierung der Pause-Funktion starten (Check-Box "Pause" in der Tabelle). Den Magnet-URI kann man über den Kontext-Menü-Knopf auskopieren.
 
-==StarBeam-Downloads==
+### 9.3 StarBeam-Downloads
  
 Um mit StarBeam eine Datei zu laden, benötigst Du den StarBeam-Magnet der Datei. 
 Diesen erhälst Du von einem Freund, der Dir eine Datei senden will. Grundsätzlich können die Magneten auch in Blogs und auf Webseiten verlinkt werden. 
@@ -1448,7 +1632,7 @@ Die erfolgreich heruntergeladen Teile werden beim StarBeam "Mosaics" genannt . �
 Die noch zu übertragenden Datei-Teile werden bei Star-Beam Links genannt (vgl. auch den Begriff von "Chunks" im alten Edonkey-Netzwerk oder den Begriff der "Blöcke" im Gnutella-Netzwerk, der durch die Verwendung des Tiger-Tree-Hashes geprägt wurde).
  
 
-=== Werkzeug: Star-Beam Analyzer===
+### 9.4 Werkzeug: Star-Beam Analyzer
 
 Sollte eine Datei mal nicht erfolgreich übertragen worden sein, kann dieses mit dem StarBeam-Analyser Werkzeug überprüft werden.
 Dieses stellt fest, ob alle Mosaik-Teile vorhanden sind oder ob noch zu übertragende Links fehlen.
@@ -1458,7 +1642,7 @@ Die Datei würde sich auch vervollständigen, wenn der Sender sie dreimal am Tag
  
 Beachte, dass ein Magnet ein Kanal ist, und vorhandene Dateien in Deinem Mosaik-Pfad sodann erneuert werden, wenn kein One-Time-Magnet genutzt wurde und sie nochmals im gleichen Kanal gesendet werden. Ein erneuter Versand der Datei durch den Uploader wird Deine erhaltene Datei somit wieder überschreiben, wenn Du in der Übertragungstabelle keine Lock-Option festlegst. Mit der Check-Box Lock wird die Datei, die Du erhalten hast, nicht gelöscht.
  
-=== Ausblick auf Crypto-Torrents===
+### 9.5  Ausblick auf Crypto-Torrents
 
 Aufgrund der Verschlüsselung ist für niemanden einsehbar, welche Datei Du herunterlädst, da niemand weiß, ob Du das Paket erfolgreich entschlüsseln konntest und selbst wenn, ob Du Dir daraus die Datei erstellt und abgespeichert hast. Beim Upload gilt ähnliches. Der Upload ist nur von einer Nachbar-IP einsehbar. wenn dieser Nachbar den Magneten der Datei kennt. Es empfiehlt sich in diesem Fall, wenn man öffentliche Starbeam-Magneten laden möchte, nur zu Nachbarn- bzw. Chat-Servern zu verbinden, denen man vertraut bzw. die man über einen Account-Zugang definiert.
 
@@ -1466,17 +1650,24 @@ Auch die oben angesprochene Variante der Setzung eines Nova-Passwortes auf die D
 
 Dann können StarBeam-Magnet-URIs über das Echo-Protokoll eine Rolle bei neuen Wegen des Denkens zum Thema der Entwicklung und Nutzung der in der File-Sharing Community diskutierten "Crypto-Torrents" spielen.
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-=Web-Suchmaschine mit URL-Datenbank=
+## 10 Web-Suchmaschine mit URL-Datenbank
 
 In der Funktion der Websuche ist GoldBug durch seine genutzte Architektur des Kernels auch eine quelloffene p2p Web-Suchmaschine. GoldBug ist dabei die (bisherig) einzige und erste unter den wenigen handvollen p2p verteilten Suchmaschinen wie [[w:de:YaCy|YaCy]], Faroo.com, Arado.sf.net oder [[w:en:Grub_(search_engine)|Grub]] (die von [[w:de:Wikia#Wikia_Search|Wikia-Search]] bekannt war), die in der Lage ist, den Transfer der URLs über verschlüsselte Verbindungen in ein verteiltes F2F- bzw. P2P-Netzwerk zu gestalten. 
 Der Anspruch der Web-Suchfunktion in GoldBug ist, nicht nur eine quell-offene Programmierung der Suchmaschine anzubieten, sondern auch den URL-Datenbestand quell-offen zu handhaben, so dass jeder Teilnehmer die URLs herunterladen kann. Drittens schließlich geht es darum, dass Transfers und Datenbank-Speicherungen in einer verschlüsselten Umgebung stattfinden.
 
 '''Abbildung 27: Der Tabulator für die Websuche in GoldBug: Durchsuche die URL-Datenbank und erhalte Ergebnisse.'''
 [[File:URL-Search Results - p2p Websearch.png |thumb|Abbildung 27: Der Tabulator für die Websuche in GoldBug: Durchsuche die URL-Datenbank und erhalte Ergebnisse.]]
+
+
+![Abbildung: Websuche mit GoldBug in der URL-Datenbank](/images/websearch.png)	
+
+
+
+
+![Abbildung: Settings für die URL/Websuche](/images/websearch_settings.png)
+
+
 
 Bilde Deine eigene Suchmaschine: z.B. mit 15 GB an URLs in der Datenbank auf Deiner Maschine kannst Du durchaus interessante Suchergebnisse erzielen hinsichtlich neuer Webseiten, die Deine Freunde interessant finden und in das p2p Netzwerk eingegeben haben.
 
@@ -1500,14 +1691,14 @@ Um eine URL der Webseite, die Du gerade ließt, aus dem Web Browser Dooble in De
 Eine dritte Import-Möglichkeit ist, den Cawler "Pandamonium" zu nutzen. Der Web-Crawler durchsucht eine Domain nach allen verlinkten URLs und kann dann auch auf den so entdeckten Webseiten neue URL indizieren und dem Crawl bzw Index hinzufügen. Pandamonium funktioniert ebenso wie der Import aus dem Dooble Web Browser über die zwischengeschaltete Shared.db. Der Web-Crawler Pandamonium ist ebenso quelloffen und kann unter dieser URL heruntergeladen werden:
 https://github.com/textbrowser/pandamonium
 
-== Datenbank Setup ==
+### 10.1 Datenbank Setup 
 Die URLs können wahlweise in einer [[w:de:SQLite|SQLite]]- oder 
 [[w:de:PostgreSQL|PostgreSQL]]-Datenbank gespeichert werden. SQLite ist die automatisch konfigurierte Datenbank, die auch Nutzern mit weniger Erfahrung in der Einrichtung von Datenbanken empfohlen wird. Fortgeschrittenere Nutzer können sich auch an eine PostgreSQL-Datenbank-Einrichtung herangeben. Diese hat Vorteile im Netzwerkzugriff, der Verwaltung von Nutzerrechten und dem Handling großer URL-Datenbestände.
 GoldBug eignet sich daher mit der Funktion, eine eigene Websuche zu gestalten, auch für den Unterricht, um Lernende für die Einrichtung von Datenbanken zu interessieren. 
 
 Die URLs werden in 26x26 bzw. 36x36 Datenbanken (2(16^2) = 512 Tabellen) deponiert, die verschlüsselt sind. D.h. die Suche findet in einer verschlüsselten Datenbank (URLs.db) statt. Die Suche in verschlüsselten Datenbanken ist ein bislang noch wenig bearbeitetes Forschungsfeld.
 
-=== SQLite ===
+#### 10.1.1 SQLite ===
 SQLite ist eine Programmbibliothek, die ein relationales Datenbanksystem enthält. Die gesamte Datenbank befindet sich in einer einzigen Datei. Eine Client-Server-Architektur ist somit nicht vorhanden.
 
 '''Abbildung 30: Installiere die URL-Datenbank entweder mit SQLite oder PostgreSQL'''
@@ -1525,7 +1716,7 @@ Die Einrichtung der SQLite Datenbank für die URLs ist in wenigen Schritten erfo
 # Sodann verfiziere alle Eingaben und starte den Import aus shared.db, in die Du zuvor mit Hilfe des Webbrowsers eine URL abgelegt hast: Drücke im Web Browser Dooble in der URL-Zeile das erste Symbol und die URL wird in Shared.db abgelegt. Der Importprozess holt sich dann die URLs aus dieser Datei ab und fügt sie dem URL-Datenbestand im GoldBug hinzu (URLs.db).
 # Alle so importierten URLs werden mit Deinen Freunden online p2p geteilt. Gebe dazu den URL-Schüssel Deines Freundes im Tabulator URL-Filter ein, oder nutze die URL-Sharing-Community wie unten weiter beschrieben, im die URL-Schlüssel zu tauschen.
 
-=== PostgreSQL ===
+#### 10.1.2. PostgreSQL
 
 PostgreSQL - auch bekannt unter dem Namen Postgres - ist ein freies, objektrelationales Datenbankmanagementsystem (ORDBMS). 
 Seine Entwicklung entstand in den 1980er Jahren aus einer Datenbankentwicklung der University of California in Berkeley, seit 1997 wird die Software von einer Open-Source-Community weiterentwickelt.
@@ -1533,12 +1724,17 @@ PostgreSQL ist weitgehend konform mit dem SQL-Standard ANSI-SQL 2008. PostgreSQL
 In den meisten Linux-Distributionen ist PostgreSQL enthalten - auch Windows und Mac OS X werden unterstützt.
 Da er Einrichtungsprozess der PostgreSQL Datenbank umfangreicher ist, soll hier nur auf die Handbücher dieser Datenbank verwiesen werden.
 
-== URL-Filter ==
+### 10.2 URL-Filter
 
 Wenn Du nun am dem p2p Prozess des URL-Austausches teilnimmst, erhälst Du alle URLs, die andere dem System hinzugefügt haben. Um maliziöse URLs auszuschließen, kannst Du in der Websuche URLs auch mit einem Klick wieder löschen - oder aber Du nutzt von Beginn an den URL-Filter, der sich in einem eigenen Tabulator präsentiert.
 
 '''Abbildung 31: Import- und Export-Filter: URL-Distiller'''
 [[File:URL-Distillers - Filter incomming and outgoing URLs.png|thumb|Abbildung 31: Import- und Export-Filter: URL-Distiller. Das URL-Tab erlaubt eingehende, ausgehende und zu importierende URLs zu filtern]]
+
+![Abbildung: URL Options](/images/URL_options.png)	
+
+
+
 
 URL-Filter - sogenannte Distiller - können eingehende, ausgehende und zu importierende Datenbestände mit einer Blacklist oder Whitelist filtern. So kannst Du z.B. definieren, nur URLs von der Domain www.wikipedia.org zuzulassen oder dass Dein Upload an URLs zu Freunden nur von der Domain Deiner Universität erfolgt. Auch kannst Du festlegen, dass Du URLs einer bestimmten Länder-Domäne nicht erhalten willst.
 
@@ -1546,13 +1742,13 @@ In dem Fall, dass Du keine URLs erhalten willst, setzt Du für die Downloads den
 
 Ganz wichtig: damit der Filter aktiv ist, setze diesen oben in der Check-Box auf "Aktiv".
 
-== URL-Community ==
+### 10.3 URL-Community
 Damit Du mit Freuden URLs tauschen kannst und Dein Datenbestand für die Websuche wächst, kannst Du den URL-Key entweder manuell im Tabulator URL-Filter in die Teilnehmer-Tabelle einkopieren; oder aber: als zweite Möglichkeit besteht auch die Option, seinen URL-Key an eine Community zu senden. 
 
 Wenn Dein Freund ebenso online ist, und du über das Werkzeug "EPKS" - Echo Public Key Share - Deinen URL-Key an die dort definierte Community "Spot-On URL Community" sendest, erhält Dein Freund Deinen URL-Key automatisch online transferiert.
 Dieser Transfer ist verschlüsselt über das Echo-Protokoll und nutzt als symmetrische Verschlüsselung den Namen der URL-Community. Es ist ähnliche einem Gruppenchat-Raum (Buzz-Funktion), in dem die URL-Schlüssel dann hingesandt und automatisch integriert werden. Wie EPKS funktioniert, ist weiter unten noch ausführlicher beschrieben.
 
-== Pandamonium Webcrawler ==
+### 10.4 Pandamonium Webcrawler
 
 Die Veröffentlichung v. 2.8 (Christmas-Release 2015) trägt den Namen "Pandamonium Webcrawler Release" und bezieht sich auf den Webcrawler namens Pandamonium, der als Werkzeug der URL-Datenbankfunktion hinzugefügt wurde. 
 
@@ -1566,11 +1762,15 @@ Es ist quasi eine neue Art und weiterentwickelte Idee des Anonymisierungsnetzwer
 
 Verschiedene Revisionen von Webseiten zu verschiedenen Aufrufzeiten der Webseite (Memento) werden ebenso unterstützt - sowohl beim Crawler als auch bei der Websuche im GoldBug Klienten. Der Page-Viewer der Websuche in GoldBug zeigt verschiedene Revisonen der Webseite an, wenn diese vorhanden sind.
 
-== RSS-Reader und URL-Import ==
+### 10.5 RSS-Reader und URL-Import 
 
 Die RSS Funktion erweitert den GoldBug Klienten zu einem RSS-Reader. RSS 2.0 Feeds werden unterstützt. Die News-URLs werden in einer Timeline angezeigt, so dass die neueste Nachricht immer obenauf ist.
 Zusätzlich werden die News-URLs indexiert, d.h. für die lokale Websuche in GoldBug aufbereitet. Der Import von der verschlüsselten RSS-Datenbank in die verschlüsselte URL-Datenbank kann automatisch periodisch erfolgen, oder auch über einen manuellen Import-Knopf nur auf Aktion des Nutzers. 
 Die RSS Funktion ermöglicht nicht nur, seine ausgewählten Nachrichtenportale komfortabel auf einer Nachrichtenseite zu lesen, sondern die Nachrichten-URLs auch in seine lokalen URL-Datenbank manuell oder automatisiert zu importieren.
+
+
+![Abbildung: RSS-Feed-Reader zur Importierung von URLs in die URL-Datenbank/Websuche](/images/rss_reader.png)	
+
 
 Die Indexierung der Webseite nutzt die 50 (oder nach Einstellung des Nutzers auch mehr) längsten Wörter der Nachricht, um sie für den Suchindex der URL-Datenbank beim Import aufzubereiten.
 
@@ -1579,15 +1779,13 @@ Für die Timeline werden die Titel der Nachrichten mit einem Hyperlink erst dann
 Das Lesen der Nachrichten erfolgt in einem Page-Viewer, der die Nachrichten nicht in einem Browser darstellt, sondern aus Sicherheitsgründen nur in Textform darstellt. Damit sind auch Javascripte, Bilder und Werbung aus den Seiten entfernt, es werden nur die ASCII-Zeichen der Webseite dargestellt sowie die Hyperlinks zu weiteren Webseiten. Mit dem Kontext-Menü können URLs und Hyperlinks manuell auskopiert werden für eine Ansicht im Browser.
 
 Der RSS-Reader ist proxy-fähig und kann daher auch hinter restriktiven Umgebungen die Nachrichten erhalten.
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-= Chat/E-Mail-Server einrichten =
+
+## 11 Chat/E-Mail-Server einrichten 
  
 Wenn Du Dich in der minimalen Ansicht befindest, ist ein Chat- & E-Mail-Server bzw. Listener ebenso schnell eingerichtet wie im oben beschriebenen Tabulator eine IP-Verbindung zu einem Nachbarn hergestellt ist. Du benötigst keine erweiterten Server-Administrations-Kenntnise um einen GoldBug-Knotenpunkt auf Deinem Webserver laufen zu lassen, einen Chat-Server aufzusetzen oder gar ein E-Mail Postfach für Dich und Deine Freunde einzurichten. In GoldBug muss dazu lediglich ein sogenannter Listener an einem definierten Port bestätigt werden.
 
-== Chat-/E-Mail-Server über einen Listener einrichten ==
+### 11.1 Chat-/E-Mail-Server über einen Listener einrichten
 
 Nochmal zur Erinnering: Im Tabulator "Verbindung herstellen", verbindest Du Deinen GoldBug mit einem anderen Knoten oder Nachbarn, und mit dem Tab "Chat-Server" erstellst Du einen Server bzw. Listener, so dass andere zu Dir verbinden können. Egal welche Methode, Nachrichten kannst Du immer senden, wenn die zweite oder dritte LED in der Statuszeile leuchtet und ein Nachbar verbunden ist.
  
@@ -1606,6 +1804,17 @@ So einfach kann ein Chat-Server erstellt werden.
  
 '''Abbildung 32: Einen Chat-Server erstellen (Minimale Ansicht)'''
 [[File:Create Chat Server (Simple view).png| thumb|400px|Abbildung 32: Einen Chat-Server erstellen (Minimale Ansicht)]]
+
+![Abbildung: Einrichtung eines Chat-Servers](/images/chat_server.png)	
+![Abbildung: Bluetooth Chat Server] (/images/bluetooth_chatserver.png)	
+
+![Abbildung: Chat-Server einrichten](/images/chat_server_create.gif)
+
+![Abbildung: Chat-Server Optionen](/images/chat_server_options.gif)
+
+
+
+
 
 
 Einen Chat-Server oder Spot-on-Kernel einzurichten bedeutet, einen sogenannten „Listener“ einzurichten, so der technische Begriff.
@@ -1655,8 +1864,8 @@ Ebenso kannst Du auch wieder zwischen IPV4 und IPV6 wählen, wenn Du einen Liste
 Echo Accounts definieren, ob Du ein F2F-Netzwerk oder ein P2P-Netzwerk aufbaust, denn mit den Account Credentials erstellst Du ein Web-of-Trust, mit dem nur Deine vertrauen Freunde mit dem Login-Passwort verbinden können.
 Wenn Du einen Peer betreibst, kannst Du z.B. auch auf einer LAN-Party eines geschlossen Netzwerkes mit dem Go-Live Knopf allen Teilnehmern mitteilen, dass Dein Knotenpunkt einen Listener für die Gäste eröffnet hat. Dank des UDP Protokolls funktioniert der GoldBug Messenger aber auch direkt wie ein Lan-Messenger innerhalb einer geschlossenen Benutzergruppe des LANs.
 
-==Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat ==
- 
+### 11.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
+
 Wenn Du keinen Webserver hast oder keinen allgemeinen Nachbarn im Web findest, kannst du auch einen Chat-Server zuhause hinter Deinem Router einrichten. Dein Freund kann dann direkt als Klient zu Deinem Listener verbinden. Einer von beiden jedoch muss einen Listener erstellen, wenn beide hinter einer Firewall sitzen oder keinen Chat-Server im Web nutzen. Wenn Du also einen Server hinter Deinem Router/Nat zuhause erstellen willst, nimm wie genannt die lokale IP-Adresse der Maschine für den Listener z.B. 192.168.121.1.. Sodann muss Du in Deinem Router auch den Port weiterleiten, d.h. Port 4710 muss vom Router weitergeleitet werden an 192.168.121.1: 4710. Sodann muss der Kernel - Spot-on-Kernel.exe - sowie auch die GoldBug.exe in Deiner Windows Firewall erlaubt sein.
 Wenn Du alles korrekt weitergeleitet hast, kann der Freund an Deiner (externen) IP-Adresse des Routers (siehe z.B. unter www.whatismyip.com) und dem Port 4710 seinen Klienten verbinden.
 
@@ -1665,19 +1874,16 @@ Dieses ist ein übliches und sicheres Verfahren und öffnet keinen beliebigen Zu
 
 Du kannst und musst dieses alles selbst definieren und GoldBug enthält keinen Code, der automatisch Ports im Router weiterleitet, oder öffnet oder gar automatisch einen Listener einrichtet. Somit ist es sicherer und bedarfsgerechter als andere Applikationen, die im Sinne der Nutzerfreundlichkeit sich selbst konfigurieren und diese Mühe zwar abnehmen, jedoch auch vielen Nutzern, die die technischen Details der Portweiterleitung vom Router und Listener-Definiton kennen, eine Automation im Hintergrund anbieten. 
 
-== Nutzung von GoldBug im TOR-Netzwerk ==
+### 11.3 Nutzung von GoldBug im TOR-Netzwerk
 
 Wenn Du Deinen GoldBug-Chat über das Tor-Netzwerk betreiben willst, geht dieses ebenso sehr komfortabel, so dass ein Tor-Exit Node nur den Verschlüsselungstext von GoldBug sehen wird. Hierbei liegt der Chat-Server wieder im normalen Web außerhalb des Tor-Netzwerkes.
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-= Werkzeuge =
+## 12 Werkzeuge 
 
 Neben den regulären Funktionen bestehen im GoldBug Messenger auch verschiedene Werkzeuge, die nützliche Funktionen anbieten. Zu nennen sind hier im Wesentlichen die Funktionen der Verschlüsselung von Dateien, einem weiteren Werkzeug zum Umwandeln von normalen Text und Cipher-Text (Rosetta-CryptoPad) sowie dem EPKS-Werkzeug, mit dem online die öffentlichen Schlüssel zur Verschlüsselung übertragen werden können.
 
-==Werkzeug: Verschlüsselung von Dateien==
+### 12.1 Werkzeug: Verschlüsselung von Dateien
  
 GoldBug verfügt über zusätzliche Werkzeuge für die Verschlüsselung. Im Hauptmenü unter Werkzeuge findest Du das Werkzeug für die Verschlüsselung von Dateien auf Deiner Festplatte ("File Encryption Tool")
 
@@ -1686,12 +1892,16 @@ GoldBug verfügt über zusätzliche Werkzeuge für die Verschlüsselung. Im Haup
 [[File:Encrypt files.png|thumb|left|800px|Abbildung 34: File-Encryptor - Werkzeug zur Datei-Verschlüsselung]]
  
  
+![Abbildung: Datei Verschlüsselung](/images/file_encryption.png)	
+
+
+
 Damit kannst Du eine Datei von der Festplatte bestimmen, sodann den gleichen Pfad angeben und eine beliebige Endung bzw. Änderung des Dateinamens wählen - sodann Passwort und Pin eingeben (beides natürlich wieder mindestens 16 Zeichen) und mit den Radio-Auswahl-Knöpfen definieren, ob die Datei ver- oder ent-schlüsselt werden soll. Cipher-  und Hash-Type sind ebenso definierbar wie auch eine Signatur in die Verschlüsselung optional eingebaut werden kann, damit sichergestellt wird, dass die Verschlüsselung auch durch Dich erfolgte (und niemanden anderes).
  
 Das Werkzeug zur Dateiverschlüsselung ist ein Angebot, um z.B. potentiell unsichere Truecrypt Container zu ersetzen bzw. ergänzend zu verschlüsseln oder um einzelne Dateien zu sichern, bevor Du sie transferierst - sei es als E-Mail in GoldBug, über StarBeam in GoldBug oder auch über konventionelle, unsichere Wege - oder einfach, um sie auf Deiner Festplatte oder bei Speicherung in Online-Speichern wie Dropbox oder Megaupload zuvor zu verschlüsseln.
 
-==Werkzeug: Das Rosetta CryptoPad==
- 
+### 12.2 Werkzeug: Das Rosetta CryptoPad
+
 Das Werkzeug Rosetta CryptoPad hat seinem Namen vom [[w:de:Stein_von_Rosette|Stein von Rosett]], der in London im Museum steht. Er gilt als Übersetzungshilfe für ägyptische Hyroglyphen in weitere Sprachen.
 Das in GoldBug enthaltene Rosetta CryptoPad besteht aus zwei Schüsseln - wie auch Chat und E-Mail und alle anderen Funktionen derartig ihre eigenen Schlüssel haben. Tausche auch hier mit einem Freund den Rosetta-Schlüssel, gebe Text in das CryptoPad ein, wähle den Freund und, ob es sich um Ver- oder Entschlüsselung handelt, - und drücke den Knopf "konverieren".
 Sodann wird unten der Output als chiffrierter Text angezeigt und diesen kannst Du einfach mit der Kopierfunktion auskopieren und über konventionelle Online-Kommunikationswege wie @-E-Mail oder einen anderen Chat versenden. 
@@ -1701,16 +1911,29 @@ Es ist Slow-Chat durch Deine manuelle Verschlüsselung Deines Chat-Textes (wobei
 Abbildung 35: Das Rosetta-CryptoPad
 [[File:Rosetta crypto pad.png|thumb|right|600px| Abbildung 35: Das Rosetta-CryptoPad]]
 
+
+![Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad](/images/rosetta.png)	
+
+![Abbildung: ROSETTA Crypto Pad 2](/images/rosetta_pad_2.jpg)
+
+
+
 Das Rosetta CryptoPad ist eine Alternative zu GnuPG (bzw. basiert es ja ebenso auf der GnuPG zugrunde liegenden Bibliothek libgcrypt).
 Diese Methode des Slow-Chats zeigt aber auf, dass Applikationen, die darauf setzten, jedes einzelne Email zu verschlüsseln, eine unbequeme Methode sind. Wer will schon bei jedem E-Mail und jeder Chat-Nachricht den Empfänger auswählen, die Nachricht verschlüsseln, entscheiden, ob der Signatur-Schlüssel noch angefügt werden soll oder nicht, bevor die Nachricht versandt wird. Bei GoldBug ist der generelle Vorteil gegeben, dass man einmal mit dem Freund beim Setup den Schlüssel tauscht und sodann ist alles jederzeit verschlüsselt und die gesamte Kommunikation bewegt sich innerhalb der gewählten Verschlüsselung, die mit temporären Schlüsseln und Ende-zu-Ende Passphrasen (Geminis der Calling Funktion) jederzeit instant erneuert werden kann.
 
-== Werkzeug: Echo Public Key Share (EPKS) ==
+### 12.3 Werkzeug: Echo Public Key Share (EPKS)
 
 Wenn es um Verschlüsselung geht, besteht immer die zentrale Fragestellung, wie man den Schlüssel sicher zum Freund transportieren kann.
 Manche Architekturen nutzen dazu Key-Server, in denen der Nutzer seine öffentliche Schlüssel einstellen kann. Dieses scheint logisch, schließlich ist es ein öffentlicher Schlüssel. Dennoch haben die Key-Server auch massive Nachteile, so weiss man nicht, ob man den richtigen Schlüssel darin gefunden hat bzw. ob dieser gar noch aktuell ist. Mit der Echo Public Key Share Funktion können im GoldBug Messenger Schlüssel sehr einfach übertragen werden.
 
 '''Abbildung 36: Echo Public Key Share (EPKS)'''
 [[File:Epks.png|800px|Abbildung 36: Echo Public Key Share (EPKS)]]
+
+![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS.png)	
+
+![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS_keyshare.png)	
+
+
 
 Dazu wird mit einem Community Namen im p2p-Netzwerk des Echo-Protokolls ein symmetrischer Schlüssel definiert, über den alle Teilnehmer, die den Community-namen kennen, sodann die öffentlichen Schlüssel getauscht werden können.
 Das Werkzeug ist über das Hauptmenü verlinkt und öffnet ein neues Pop-Up-Fenster.
@@ -1719,13 +1942,28 @@ Sende Deinen URL-Schlüssel an diese Community und alle weiteren Teilnehmer, die
 Es ist ein Schlüsselaustausch über einen symmetrisch verschlüsselten Kanal, wobei das ende-zu-ende Passwort der Name der Community ist.
 Alle Nutzer, die den Namen der Community kennen, werden dann die Schlüssel, die Du in den Kanal gibst, erhalten und ihrem Programm hinzufügen.
 
+12.4 Pass Through Funktionalität
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
+![Abbildung: GoldBug als Proxy: Pass-Through](/images/passthrough.png)	
 
-=BIG SEVEN Crypto-Messenger-Audit=
+
+
+
+12.5 Anzeige Analysen und Statistiken
+
+![Abbildung: Anzeige von Statistiken](/images/stats.png)	
+
+![Abbildung: Statistik Konsole auf einem Raspberry Pi](/images/raspberrypi_console_statistics.png)	
+
+
+## 13 BIG SEVEN Crypto-Messenger-Audit
 GoldBug wurde in dem Audit von David Adams und Ann-Kathrin Maier über sieben quell-offene Messenger als einer der BIG SEVEN Crypto-Messenger betrachtet, der in einem an internationalen IT-Audit Manualen orientierten Audit sich in mehr als 20 Dimensionen als sehr audit-konform und vertrauenswürdig herausstelle. Auch die zahlreichen Code-Reviews gaben Hinweise auf eine exzellente Programmierung. Die über alle sieben Messenger identifizierten '''10 Trends in Crypto-Messaging''' (vgl. Adams / Maier 2016) betreffen insbesondere die Möglichkeit in GoldBug, dezentrale Chat-Server einzurichten, sowie auch manuelle Definitionen von Ende-zu-Ende verschlüsselnden symmetrischen Passworten zu treffen.
+
+
+
+![Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)](/images/trends_in_crypto.png)	
+
+
 
 '''Liste an möglichen weiteren Kriterien für weitergehende, vergleichende Evaluationen'''
 0.          Is the Application open source?
@@ -1777,35 +2015,32 @@ GoldBug wurde in dem Audit von David Adams und Ann-Kathrin Maier über sieben qu
 
  
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-=Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von… =
+## 14 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von… 
 
 Dieses Benutzerhandbuch soll nicht nur technisch die Handhabung von Verschlüsselungen, ihren Prozessen oder die Nutzung der einzelnen Tabs und Knöpfe darstellen, sondern auch den Sinn der Verschlüsselung darstellen, wie er sich im Lichte verschiedener Grundgesetze zum Schutz der privaten Freiheit und Kommunikation darstellt.
 Auf folgende grundlegende Gesetze soll daher hingewiesen werden, die in ihren Originaltexten einbezogen werden.  
  
-== Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12) ==
- 
+### 14.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
+
 No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.
 http://www.un.org/en/documents/udhr/index.shtml#a12
 [[w:en:Universal Declaration of Human Rights|Universal Declaration of Human Rights]]
  
-== International Covenant on Civil and Political Rights, 1966 (Art. 17) ==
+### 14.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
 1. No one shall be subjected to arbitrary or unlawful interference with his privacy, family, home or correspondence, nor to unlawful attacks on his honour and reputation.
 2. Everyone has the right to the protection of the law against such interference or attacks.
 http://www.ohchr.org/EN/ProfessionalInterest/Pages/CCPR.aspx
 [[w:en:International Covenant on Civil and Political Rights|International Covenant on Civil and Political Rights]]
  
-== European Convention on Human Rights, 1950 (Art. 8) ==
+### 14.3 European Convention on Human Rights, 1950 (Art. 8)
 1.Everyone has the right to respect for his private and family life, his home and his correspondence.
 2.There shall be no interference by a public authority with the exercise of this right except such as is in accordance with the law and is necessary in a democratic society in the interests of national security, public safety or the economic well-being of the country, for the prevention of disorder or crime, for the protection of health or morals, or for the protection of the rights and freedoms of others.
 http://conventions.coe.int/treaty/en/Treaties/Html/005.htm
 [[w:en:European Convention on Human Rights|European Convention on Human Rights]]
  
  
-== Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8) ==
+### 14.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
 
 '''Article 7 - Respect for private and family life'''
 Everyone has the right to respect for his or her private and family life, home and communications.
@@ -1818,7 +2053,7 @@ Everyone has the right to respect for his or her private and family life, home a
 [[w:en:Charter of Fundamental Rights of the European Union|Charter of Fundamental Rights of the European Union]]
 
 
-== Basic Law e.g. for the Federal Republic of Germany, 1949  (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1) ==
+### 14.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1)
  
 '''Article 2 - Personal freedoms'''
 (1) Every person shall have the right to free development of his personality insofar as he does not violate the rights of others or offend against the constitutional order or the moral law.
@@ -1834,7 +2069,7 @@ Art. 1 Human dignity – Human rights: Legally binding force of basic rights
 (2) The German people therefore acknowledge inviolable and inalienable human rights as the basis of every community, of peace and of justice in the world.
 (3) The following basic rights shall bind the legislature, the executive and the judiciary as directly applicable law
 
-== Art. 10 - Privacy of correspondence, posts and telecommunications ==  
+### 14.6 Art. 10 - Privacy of correspondence, posts and telecommunications
 
 Secrecy of correspondence - Fernmeldegeheimnis (Art. 10 Abs. 1 Grundgesetz)
 § 88 Abs. 1 Fernmeldegeheimnis - Telekommunikationsgesetz:
@@ -1844,7 +2079,7 @@ Secrecy of correspondence - Fernmeldegeheimnis (Art. 10 Abs. 1 Grundgesetz)
 (4) Befindet sich die Telekommunikationsanlage an Bord eines Wasser- oder Luftfahrzeugs, so besteht die Pflicht zur Wahrung des Geheimnisses nicht gegenüber der Person, die das Fahrzeug führt oder gegenüber ihrer Stellvertretung.
  
  
-== § 206 - Verletzung des Post- oder Fernmeldegeheimnisses ==
+### 14.7 § 206 - Verletzung des Post- oder Fernmeldegeheimnisses 
 (1) Wer unbefugt einer anderen Person eine Mitteilung über Tatsachen macht, die dem Post- oder Fernmeldegeheimnis unterliegen und die ihm als Inhaber oder Beschäftigtem eines Unternehmens bekanntgeworden sind, das geschäftsmäßig Post- oder Telekommunikationsdienste erbringt, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft.
 (2) Ebenso wird bestraft, wer als Inhaber oder Beschäftigter eines in Absatz 1 bezeichneten Unternehmens unbefugt 1.
 eine Sendung, die einem solchen Unternehmen zur Übermittlung anvertraut worden und verschlossen ist, öffnet oder sich von ihrem Inhalt ohne Öffnung des Verschlusses unter Anwendung technischer Mittel Kenntnis verschafft, 2. eine einem solchen Unternehmen zur Übermittlung anvertraute Sendung unterdrückt oder 3. eine der in Absatz 1 oder in Nummer 1 oder 2 bezeichneten Handlungen gestattet oder fördert.
@@ -1859,16 +2094,13 @@ http://www.gesetze-im-internet.de/gg/art_10.html
 http://www.gesetze-im-internet.de/tkg_2004/__88.html
 http://www.gesetze-im-internet.de/stgb/__206.html
  
-== United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court) ==
- 
+### 14.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
+
 The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.
 http://www.usconstitution.net/const.html
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-= Historie der Veröffentlichungen =
+## 15 Historie der Veröffentlichungen =
 
 Die Liste der Veröffentlichungen zeigt über mehrere Jahre hinweg kontinuierliche Veröffentlichungen der Applikation. Die erste Veröffentlichung geht auf das Jahr 2013 zurück, zuvor sind zudem in einem anderen Projekt ebenso mehrere Jahre Forschungsarbeit eingeflossen. Die Veröffentlichungsdaten der Versionen zeigt im Durchschnitt fast monatlich eine Release-Veröffentlichung. Die entsprechende Anmerkung verdeutlicht, welche Funktion im Wesentlichen hinzugefügt, verbessert oder neu veröffentlicht wurde.
 
@@ -1935,24 +2167,23 @@ Die Liste der Veröffentlichungen zeigt über mehrere Jahre hinweg kontinuierlic
 | 0.1 || |2013|07|27 || based on the release of the same day of the Echo/Chat-Kernel-Servers and Application http://spot-on.sf.net, going back on another previous research project."/>
 |}
 
-=Webseite=
+## 16 Webseite
  
 Weitere Informationen finden sich auf der Webseite:
 
 * http://goldbug.sf.net
 
-<!-- CHAPTER-BOX-START -->
-<div style="border:1px solid #AAAAAA; background-color:#CBD7F9; text-align:center; padding:0.2em 0; margin:0; font-size: 110%; font-weight:bold; text-indent:0.5em;">~</div>
-<!-- CHAPTER-BOX-ENDE -->
 
-=Offener Quellcode=
+
+
+## 17 Offener Quellcode=
 
 Der offene Quellcode findet sich bei GitHub:
 
 * https://github.com/textbrowser/spot-on
 
 
-== Informationen zur Kompilierung ==
+### 17.1 Informationen zur Kompilierung 
 
 Wer auf der Webseite von GoldBug schaut, findet hier jeweils die aktuelle Veröffentlichung, insbesondere für Windows. Wer jedoch fortgeschrittenere Computer-Kenntnisse hat, ein Programm auch selbst vom Quellcode kompilieren kann oder es an diesem Beispiel erlernen möchte, findet hier die Hinweise, wie dabei vorzugehen ist für das Betriebssystem Windows.
 
@@ -2020,7 +2251,7 @@ make<br />
 qmake -o Makefile spot-on.win.pro<br />
 make or mingw32-make<br />
 
-= Schriftenverzeichnis =
+## 18 Schriftenverzeichnis
 
 *'''Adams, David / Maier, Ann-Kathrin (2016):''' BIG SEVEN Study, open source crypto-messengers to be compared - or: Comprehensive Confidentiality Review & Audit of GoldBug, Encrypting E-Mail-Client & Secure Instant Messenger, Descriptions, tests and analysis reviews of 20 functions of the application GoldBug based on the essential fields and methods of evaluation of the 8 major international audit manuals for IT security investigations including 38 figures and 87 tables., URL: https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf - English / German Language, Version 1.1, 305 pages, June 2016
 
@@ -2047,150 +2278,4 @@ make or mingw32-make<br />
 *'''Vaughan-Nichols,  Steven J.:''' How to recover from Heartbleed, ZDNet, April 9, 2014, http://www.zdnet.com/how-to-recover-from-heartbleed-7000028253 
 
 *'''Weller, Jan:''' Testbericht zu GoldBug für Freeware, Freeware-Blog https://www.freeware.de/download/goldbug/
-
-
-
-
-![Abbildung: GoldBug Logo](/images/goldbug.png)
-
-![Abbildung: POPTASTIC](/images/poptastic.png)
-
-![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
-
-![Abbildung: Abbildung: Account Firewall](/images/account_firewall.png)	
-
-![Abbildung: Account Passwords](/images/account_passwords.png)	
-
-![Abbildung: Add Friend/Key](/images/add_key.png)	
-
-![Abbildung: Anpassbare Crypto](/images/adjustable_crypto.png)	
-
-![Abbildung: Bluetooth Chat Server] (/images/bluetooth_chatserver.png)	
-
-![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
-
-![Abbildung: Chat im Pop-up Fenster](/images/chat_popupwindow.png)	
-
-![Abbildung: Einrichtung eines Chat-Servers](/images/chat_server.png)	
-
-![Abbildung: Chat Tab](/images/chat_tab.png)	
-
-![Abbildung: Optionen für den Clienten](/images/client_options.png)	
-
-![Abbildung: Nachbar-Server verbinden](/images/connect_neighbor.png)	
-
-![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
-
-![Abbildung: Digitale Signaturen](/images/digital_signatures.png)	
-
-![Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal](/images/e_irc_buzz.png)	
-
-![Abbildung: Format des genutzten Echo-Protokolls](/images/Echo_format.png)	
-
-![Abbildung: E-IRC Gruppenchat](/images/e_irc.png)	
-
-![Abbildung: E-Mail mit Forward Secrecy](/images/email_forwardsecrecy.png)	
-
-![Abbildung: P2P-Email aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
-
-![Abbildung: POPTASTIC: Chat über E-Mail-Server](/images/email_poptastic.png)	
-
-![Abbildung: Email - Lesen Anzeige](/images/email_read.png)	
-
-![Abbildung: Email - Schreiben Anzeige](/images/email_write.png)	
-
-![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS.png)	
-
-![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS_keyshare.png)	
-
-![Abbildung: Datei Verschlüsselung](/images/file_encryption.png)	
-
-![Abbildung: Theefish Implementierung](/images/threefish.png)	
-
-![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)	
-
-![Abbildung: Emoticons in GodlBug](/images/goldbug_emoticons.png)	
-
-![Abbildung: Verschlüsselung zwischen Kernel und Gui/Benutzeroberfläche](/images/guikernel_encryption.png)	
-
-![Abbildung: Aktivierung des Kernels](/images/kernel_activation.png)	
-
-![Abbildung: Login in die Applikation mit einem Passwort](/images/login.png)	
-
-![Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing](/images/mceliece.png)	
-
-![Abbildung: Verbindung mit einem Nachbar-Server](/images/neigbor_connect.png)	
-
-![Abbildung: GoldBug als Proxy: Pass-Through](/images/passthrough.png)	
-
-![Abbildung: Statistik Konsole auf einem Raspberry Pi](/images/raspberrypi_console_statistics.png)	
-
-![Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad](/images/rosetta.png)	
-
-![Abbildung: RSS-Feed-Reader zur Importierung von URLs in die URL-Datenbank/Websuche](/images/rss_reader.png)	
-
-![Abbildung: Das SMP-Protokol zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)	
-
-![Abbildung: SMP-Protokoll](/images/SMP_socialist_millionaire.png)	
-
-![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol](/images/SMP_Secret_Streams.png)	
-
-![Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks](/images/starbeam-analyzer.png)	
-
-![Abbildung: Starbeam-Dateitransfer - Eingehende Dateien](/images/starbeam_incomming.png)	
-
-![Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer](/images/starbeam_magnet_links.png)	
-
-![Abbildung: Starbeam-Dateitransfer: Upload von Dateien](/images/starbeam_uploads.png)	
-
-![Abbildung: Anzeige von Statistiken](/images/stats.png)	
-
-![Abbildung: Tear-Off/Hook-Up von Bedienungselementen](/images/tearoff_menu.png)	
-
-![Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)](/images/trends_in_crypto.png)	
-
-![Abbildung: URL Options](/images/URL_options.png)	
-
-![Abbildung: Virtuelles Keyboard](/images/virtual_keyboard.png)	
-
-![Abbildung: Websuche mit GoldBug in der URL-Datenbank](/images/websearch.png)	
-
-![Abbildung: Settings für die URL/Websuche](/images/websearch_settings.png)
-
-
-
-
-
-![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
-
-![Abbildung: Füge einen Nachbarn/Server hinzu](/images/add_neighbor.gif)
-
-![Abbildung: der Gruppenchat ](/images/buzz_tab.gif)
-
-![Abbildung: 1:1-Chat im Pop-up Fenster ](/images/chat_pop_up.jpg)
-
-![Abbildung: Chat-Server einrichten](/images/chat_server_create.gif)
-
-![Abbildung: Chat-Server Optionen](/images/chat_server_options.gif)
-
-![Abbildung: Das Chat-Tab ](/images/chat_tab.jpg)
-
-
-
-
-
-![Abbildung: Email Tab] (/images/email_tab.gif)
-
-![Abbildung: MELODICA-Symbol](/images/melodica.gif)
-
-![Abbildung: Nachbar verbinden](/images/neighbor_connect.gif)
-
-![Abbildung: POPTASTIC Settings ](/images/poptasticsettings.png)
-
-![Abbildung: ROSETTA Crypto Pad 2](/images/rosetta_pad_2.jpg)
-
-
-![Abbildung: Starbeam ](/images/starbeam_tab.gif) 
-
-
 
