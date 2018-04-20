@@ -2,19 +2,19 @@
 Manual of the GoldBug Crypto Messenger
 
 Abbildung: GoldBug Logo
-![Abbildung: GoldBug Smiley](/images/GoldBug-neuland.png)
+![Abbildung: GoldBug Smiley](/images/goldbug-neuland.png)
 
-[https://compendio.github.io/GoldBug-manual/](https://compendio.github.io/GoldBug-manual/)
+[https://compendio.github.io/goldbug-manual/](https://compendio.github.io/goldbug-manual/)
 
 
 
-[Manual-Dateien: https://github.com/compendio/GoldBug-manual](https://github.com/compendio/GoldBug-manual)
+[Manual-Dateien: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
 
-[Manual Deutsch/German: https://github.com/compendio/GoldBug-manual](https://github.com/compendio/GoldBug-manual)
+[Manual Deutsch/German: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
 
-[Website: http://GoldBug.sourceforge.net/](http://GoldBug.sourceforge.net/)
+[Website: http://goldbug.sourceforge.net/](http://goldbug.sourceforge.net/)
 
-[Download: https://sourceforge.net/projects/GoldBug/files/](https://sourceforge.net/projects/GoldBug/files/)
+[Download: https://sourceforge.net/projects/goldbug/files/](https://sourceforge.net/projects/goldbug/files/)
 
 [Source: https://github.com/textbrowser/spot-on](https://github.com/textbrowser/spot-on)
 
@@ -181,7 +181,7 @@ Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Su
 
 
 Abbildung: GoldBug Logo (Smiley)
-![Abbildung: GoldBug Logo Smiley](/images/GoldBug.png)
+![Abbildung: GoldBug Logo Smiley](/images/goldbug.png)
 
 
 
@@ -308,7 +308,7 @@ Abbildung: Theefish Implementierung
 
 
 Abbildung: Ciphertext
-![Abbildung: Ciphertext](/images/ciphertext_scan_GoldBug.png)	
+![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
 
 
 
@@ -1095,7 +1095,7 @@ Die Nachrichtenformate mit den Verschlüsselungsebenen sehen dann vereinfacht - 
 
 Abbildung: Liste der Emotikons im GoldBug Messenger
 
-![Abbildung: Liste der Emotikons im GoldBug Messenger](/images/GoldBug_emoticons.png)	
+![Abbildung: Liste der Emotikons im GoldBug Messenger](/images/goldbug_emoticons.png)	
 
 
 GoldBug bietet eine Vielzahl an verschiedenen [[w:de:Emoticon|Emoticons]] - auch Smileys genannt - für den Chat an (siehe Abbildung). 
@@ -1194,11 +1194,11 @@ Abbildung: E-Mail Tab: Nutzung von GoldBug als E-Mail-Klient
 
 
 Abbildung: E-Mail - Lesen Anzeige
-![Abbildung: E-Mail - Lesen Anzeige](/images/E-Mail_read.png)	
+![Abbildung: E-Mail - Lesen Anzeige](/images/email_read.png)	
 
 
 Abbildung: E-Mail - Schreiben Anzeige
-![Abbildung: E-Mail - Schreiben Anzeige](/images/E-Mail_write.png)	
+![Abbildung: E-Mail - Schreiben Anzeige](/images/email_write.png)	
 
 
 Perspektivistisch ist dieses auch die Zukunft, dass die Nutzer des Internets sich das Internet wieder stärker selbst organisieren und neu, mit Kryptographie ausgestalten und zwar mit ihren selbst angelegten nunmehr verschlüsselten Mail-Postfächern, die nicht bei zentralen Hostern hinterlegt sind, sondern im eigenen Teilnehmernetz.
@@ -1300,7 +1300,7 @@ Hierzu bestehen zwei verschiedene Methoden:
 Die eine Methode ist, dass ein dritter, gemeinsamer Freund genutzt wird, um die E-Mails dort zwischen zu speichern.
 Wenn Alice und Bob also einen Chat-Server im Web auf ihrem Webserver einrichten, und alle drei Ihre Schlüssel getauscht haben, fungiert der Webserver wie ein E-Mail-Postfach, wie wir es von POP3 oder IMAP her kennen.
 
-![Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion](/images/E-Mail_co.png)	
+![Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
 
  
 Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auch ein dritter Freund oder ein kleiner [[w:de:Raspberry_Pi|Raspberry-Pi]]-Computer zuhause sein, der kontinuierlich online bleibt. Es macht daher Sinn, mehr als einen Freund in seiner Liste zu haben und gemeinsame Freunde mit anderen Freunden zu vernetzen, die als Zwischenspeicher fungieren können. Da alle E-Mails verschlüsselt sind, können die Freunde, die eine Cache-Funktion zur Verfügung stellen, Deine E-Mail auch nicht lesen.
@@ -1372,7 +1372,7 @@ Diese Methode der asymmetrischen Ende-zu-Ende Sicherung wurde im übrigen nicht 
 
 
 Abbildung: E-Mail mit Forward Secrecy
-![Abbildung: E-Mail mit Forward Secrecy](/images/E-Mail_forwardsecrecy.png)	
+![Abbildung: E-Mail mit Forward Secrecy](/images/email_forwardsecrecy.png)	
 
 
 
@@ -1497,7 +1497,7 @@ E-Mail über POPTASTIC ist also einfaches dauerhaftes verschlüsseltes e-mailen,
 
 
 Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP
-![Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP ](/images/POPTASTICsettings.png)
+![Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP ](/images/poptasticsettings.png)
 
 
 Eine detaillierte Beschreibung der Einrichtungsoptionen des E-Mail-Servers findest Du weiter oben im Abschnitt zu POP3 und IMAP (vgl. Abbildung). 
@@ -2365,31 +2365,31 @@ make or mingw32-make<br />
 
 ## 20 Schriftenverzeichnis
 
-*'''Adams, David / Maier, Ann-Kathrin (2016):''' BIG SEVEN Study, open source crypto-messengers to be compared - or: Comprehensive Confidentiality Review & Audit of GoldBug, Encrypting E-Mail-Client & Secure Instant Messenger, Descriptions, tests and analysis reviews of 20 functions of the application GoldBug based on the essential fields and methods of evaluation of the 8 major international audit manuals for IT security investigations including 38 figures and 87 tables., URL: https://sf.net/projects/GoldBug/files/bigseven-crypto-audit.pdf - English / German Language, Version 1.1, 305 pages, June 2016
+- Adams, David / Maier, Ann-Kathrin (2016): BIG SEVEN Study, open source crypto-messengers to be compared - or: Comprehensive Confidentiality Review & Audit of GoldBug, Encrypting E-Mail-Client & Secure Instant Messenger, Descriptions, tests and analysis reviews of 20 functions of the application GoldBug based on the essential fields and methods of evaluation of the 8 major international audit manuals for IT security investigations including 38 figures and 87 tables., URL: https://sf.net/projects/GoldBug/files/bigseven-crypto-audit.pdf - English / German Language, Version 1.1, 305 pages, June 2016
 
-*'''Banerjee, Sanchari:'''  EFYTIMES News Network: 25 Best Open Source Projects Of 2014: Efytimes ranked GoldBug Messenger # 4 on the overall Top 25 Best Open Source Projects Of 2014, http://www.efytimes.com/e1/fullnews.asp?edid=148831
+- Banerjee, Sanchari:  EFYTIMES News Network: 25 Best Open Source Projects Of 2014: Efytimes ranked GoldBug Messenger # 4 on the overall Top 25 Best Open Source Projects Of 2014, http://www.efytimes.com/e1/fullnews.asp?edid=148831
 
-*'''Cakra, Deden:''' Review of GoldBug Instant Messenger, Blogspot, 13 Desember 2014, http://bengkelcakra.blogspot.de/2014/12/free-download-GoldBug-instant-messenger.html
+- Cakra, Deden: Review of GoldBug Instant Messenger, Blogspot, 13 Desember 2014, http://bengkelcakra.blogspot.de/2014/12/free-download-GoldBug-instant-messenger.html
 
-*'''Constantinos / OsArena:''' GoldBug: ΜΙΑ ΣΟΥΙΤΑ ΓΙΑ CHATING ΜΕ ΠΟΛΛΑΠΛΗ ΚΡΥΠΤΟΓΡΑΦΗΣΗ, Latest Articles, 25 March 2014, http://osarena.net/logismiko/applications/GoldBug-mia-souita-gia-chating-me-pollapli-kriptografisi.html
+- Constantinos / OsArena: GoldBug: ΜΙΑ ΣΟΥΙΤΑ ΓΙΑ CHATING ΜΕ ΠΟΛΛΑΠΛΗ ΚΡΥΠΤΟΓΡΑΦΗΣΗ, Latest Articles, 25 March 2014, http://osarena.net/logismiko/applications/GoldBug-mia-souita-gia-chating-me-pollapli-kriptografisi.html
 
-*'''Demir, Yigit Ekim:''' Güvenli ve Hizli Anlik Mesajlasma Programi: GoldBug Instant Messenger programi, bu sorunun üstesinden gelmek isteyen kullanicilar için en iyi çözümlerden birisi haline geliyor ve en güvenli sekilde anlik mesajlar gönderebilmenize imkan taniyor (Translated: "GoldBug Instant Messenger Application is the best solution for users, who want to use one of the most secure ways to send instant messages"), News Portal Tamindir http://www.tamindir.com/GoldBug-instant-messenger/
+- Demir, Yigit Ekim: Güvenli ve Hizli Anlik Mesajlasma Programi: GoldBug Instant Messenger programi, bu sorunun üstesinden gelmek isteyen kullanicilar için en iyi çözümlerden birisi haline geliyor ve en güvenli sekilde anlik mesajlar gönderebilmenize imkan taniyor (Translated: "GoldBug Instant Messenger Application is the best solution for users, who want to use one of the most secure ways to send instant messages"), News Portal Tamindir http://www.tamindir.com/GoldBug-instant-messenger/
 
-*'''Dragomir, Mircea:''' GoldBug Instant Messenger - Softpedia Review: This is a secure P2P Instant Messenger that ensures private communication based on a multi encryption technology constituted of several security layers, http://www.softpedia.com/get/Internet/Chat/Instant-Messaging/GoldBug-Instant-Messenger.shtml, Softpedia Review, January 31st, 2016
+- Dragomir, Mircea: GoldBug Instant Messenger - Softpedia Review: This is a secure P2P Instant Messenger that ensures private communication based on a multi encryption technology constituted of several security layers, http://www.softpedia.com/get/Internet/Chat/Instant-Messaging/GoldBug-Instant-Messenger.shtml, Softpedia Review, January 31st, 2016
 
-*'''Hartshorn, Sarah:''' 3 New Open Source Secure Communication Projects, May 28, 2015, http://blog.vuze.com/2015/05/28/3-new-open-source-secure-communication-projects/
+- Hartshorn, Sarah: 3 New Open Source Secure Communication Projects, May 28, 2015, http://blog.vuze.com/2015/05/28/3-new-open-source-secure-communication-projects/
 
-*'''Harvey, Cynthia:''' Datamation: 50 Noteworthy Open Source Projects - Chapter Secure Communication: GoldBug Messenger ranked on first # 1 position, Posted September 19, 2014, http://www.datamation.com/open-source/50-noteworthy-new-open-source-projects-3.html
+- Harvey, Cynthia: Datamation: 50 Noteworthy Open Source Projects - Chapter Secure Communication: GoldBug Messenger ranked on first # 1 position, Posted September 19, 2014, http://www.datamation.com/open-source/50-noteworthy-new-open-source-projects-3.html
 
-*'''Joos, Thomas:''' Sicheres Messaging im Web, PCWelt Magazin, Mittwoch den 01.10.2014, http://www.pcwelt.de/ratgeber/Tor__I2p__Gnunet__RetroShare__Freenet__GoldBug__Spurlos_im_Web-Anonymisierungsnetzwerke-8921663.html 
+- Joos, Thomas: Sicheres Messaging im Web, PCWelt Magazin, Mittwoch den 01.10.2014, http://www.pcwelt.de/ratgeber/Tor__I2p__Gnunet__RetroShare__Freenet__GoldBug__Spurlos_im_Web-Anonymisierungsnetzwerke-8921663.html 
 
-*'''Lindner,  Mirko:''' POPTASTIC: Verschlüsselter Chat über POP3 mit dem GoldBug Messenger, Pro-Linux, 9. Dezember 2014, http://www.pro-linux.de/news/1/21822/POPTASTIC-verschluesselter-chat-ueber-pop3.html
+- Lindner,  Mirko: POPTASTIC: Verschlüsselter Chat über POP3 mit dem GoldBug Messenger, Pro-Linux, 9. Dezember 2014, http://www.pro-linux.de/news/1/21822/POPTASTIC-verschluesselter-chat-ueber-pop3.html
 
-Momedo: Open Source Mobiler Messenger für kommunale und schulische Zwecke mit Verschlüsselung, Github, URL: https://momedo.github.io/momedo/ & https://github.com/momedo/momedo/blob/master/README.md , 2018
+- Momedo: Open Source Mobiler Messenger für kommunale und schulische Zwecke mit Verschlüsselung, Github, URL: https://momedo.github.io/momedo/ & https://github.com/momedo/momedo/blob/master/README.md , 2018
 
-*'''Security Blog:''' Secure chat communications suite GoldBug. Security Blog, 25. März 2014, http://www.hacker10.com/other-computing/secure-chat-communications-suite-GoldBug/
+- Security Blog: Secure chat communications suite GoldBug. Security Blog, 25. März 2014, http://www.hacker10.com/other-computing/secure-chat-communications-suite-GoldBug/
 
-*'''Vaughan-Nichols,  Steven J.:''' How to recover from Heartbleed, ZDNet, April 9, 2014, http://www.zdnet.com/how-to-recover-from-heartbleed-7000028253 
+-  Vaughan-Nichols, Steven J.: How to recover from Heartbleed, ZDNet, April 9, 2014, http://www.zdnet.com/how-to-recover-from-heartbleed-7000028253 
 
-*'''Weller, Jan:''' Testbericht zu GoldBug für Freeware, Freeware-Blog https://www.freeware.de/download/GoldBug/
+- Weller, Jan: Testbericht zu GoldBug für Freeware, Freeware-Blog https://www.freeware.de/download/GoldBug/
 
