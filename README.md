@@ -31,16 +31,13 @@ Inhaltsverzeichnis
             3.5.1 Hänsel und Gretel – ein Beispiel für den Adaptiven Echo Modus
         3.6 Wie das Echo Protokoll funktioniert
 
-
     4 Cryptographisches Discovery
-
 
     5 Einen ersten Setup einrichten
         5.1 Zwei Login-Methoden
         5.2 Generierung von 10 Schlüsseln für die Verschlüsselung
         5.3 Aktivierung des Kernels
         5.4 Einen Nachbarn mit der IP-Adresse verbinden
-
 
     6 Die Chat-Funktion
         6.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
@@ -57,15 +54,13 @@ Inhaltsverzeichnis
             6.5.1 Forward Secrecy Calling
         6.6 Übersicht der verschiedenen Calling-Arten
         6.7 Emotikons
-
+        6.11 Datei-Transfer im Chat-pop-up-Fenster
 
     7 Gruppen-Chat im IRC-Stil
 
     8 Smoke Mobiler Chat Client
 		8.1. Smoke Android Client
 		8.2. Fire To Buzz Chat
-
-
 
     9 Die E-Mail-Funktion
         9.1 POP3
@@ -77,13 +72,11 @@ Inhaltsverzeichnis
         9.5 Zusätzliche Verschlüsselung: Ein „GoldBug“ auf ein E-Mail setzen
         9.6 Forward Secrecy
 
-
-        10 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
-            10.1 Chat über POPTASTIC
-            10.2 E-Mail über POPTASTIC
-            10.3 Einrichtung von POPTASTIC
-            10.4 Weiterentwicklung von POPTASTIC
-
+    10 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
+        10.1 Chat über POPTASTIC
+        10.2 E-Mail über POPTASTIC
+        10.3 Einrichtung von POPTASTIC
+        10.4 Weiterentwicklung von POPTASTIC
 
     11 FileSharing: mit StarBeam
         11.1 StarBeam-Magneten mit Verschlüsselungswerten
@@ -91,7 +84,6 @@ Inhaltsverzeichnis
         11.3 StarBeam-Downloads
             11.3.1 Werkzeug: Star-Beam Analyzer
             11.3.2 Ausblick auf Crypto-Torrents
-
 
     12 Web-Suchmaschine mit URL-Datenbank
         12.1 Datenbank Setup
@@ -102,8 +94,6 @@ Inhaltsverzeichnis
         12.4 Pandamonium Webcrawler
         12.5 RSS-Reader und URL-Import
 
-
-
     13 Chat/E-Mail-Server einrichten
         13.1 Chat-/E-Mail-Server über einen Listener einrichten
         13.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
@@ -111,9 +101,9 @@ Inhaltsverzeichnis
         13.4 Spot-On Server
         13.5 Spot-On Lite Server als Deamon
         13.6 SmokeStack Server unter Android
-
-
-
+        13.7 Bluetooth Server
+        13.8 UDP Server
+        13.9.SCTP Server
 
     14 Werkzeuge
         14.1 Werkzeug: Verschlüsselung von Dateien
@@ -122,22 +112,21 @@ Inhaltsverzeichnis
         14.4 Pass-Through-Funktionalität
         14.5 Anzeige Analysen und Statistiken
 
-
     15 BIG SEVEN Crypto-Messenger-Audit
 
-
-    16 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von…
-        16.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
+    16 Die digitale Verschlüsselung der privaten Kommunikation im Kontext von ...
+        16.1 Principles of the protection of private speech, communication and life: 
+             Universal Declaration of Human Rights, 1948 (Art. 12)
         16.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
         16.3 European Convention on Human Rights, 1950 (Art. 8)
         16.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
-        16.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1)
+        16.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art.2 Abs.1 i.V.m. Art.1 Abs.1)
         16.6 Art. 10 - Privacy of correspondence, posts and telecommunications
         16.7 § 206 - Verletzung des Post- oder Fernmeldegeheimnisses
-        16.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
-
+        16.8 United Status Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
 
     17 Webseite
+
     18 Offener Quellcode
         18.1 Informationen zur Kompilierung
 
@@ -244,6 +233,8 @@ GoldBug Messenger hat daher schon frühzeitig ergänzend verschiedene Alternativ
 
 Neben RSA hat GoldBug dennoch die Verschlüsselungsalgorithmen Elgamal und auch NTRU und McEliece implementiert. Die beiden letzt-genannten gelten auch als besonders resistent gegen die Angriffe, die aus dem [Quantum Computing]( https://de.wikipedia.org/wiki/Quantencomputer) bekannt sind.
 
+![Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing](/images/mceliece.png)	
+
 GoldBug nutzt die libgcrypt-, libntru- und McEliece-Bibliotheken für die Erzeugung der dauerhaften privaten und öffentlichen Schlüsselpaare. Derzeit generiert die Anwendung Schlüsselpaare für jede der einzelnen zehn Funktionen während der Initialisierung. Die Schlüsselerzeugung ist optional. Folglich erfordert GoldBug zwingend keine Public Key-Infrastruktur. Auch nachgelagert können die gewünschten Algorithmen ausgewählt werden und Schlüssel generiert werden.
 
 Bei den bei Verschlüsselung optional verfügbaren Signaturverfahren besteht ebenso eine umfassende Auswahl: DSA, ECDSA, EdDSA, Elgamal und RSA. Signatur bedeutet, dass der erstellte Schlüssel für die Verschlüsselung nochmals mit einem Schlüssel signiert wird, um nachweisen zu können, dass eine Nachricht auch von einem bestimmten Teilnehmer und niemand anderem kommt.
@@ -275,12 +266,7 @@ Abbildung: RSA und seine Alterntiven in GoldBug
 Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Nutzern mit verschiedenen Schlüsseltypen ist somit gut definiert, wenn die Knoten gemeinsame Versionen der libgcrypt und libntru Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer verschlüsselt chatten und e-mailen, der einen Elgamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Wer das Programm mit einem Freund testen will, nutzt am besten die jeweils aktuellste Version von GoldBug.
 
 
-![Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing](/images/mceliece.png)	
-
-
-
 ![Abbildung: Anpassbare Crypto](/images/adjustable_crypto.png)	
-
 
 
 
@@ -308,7 +294,7 @@ Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authen
 ![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
 
 
-![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
+
 
 
 
@@ -338,10 +324,6 @@ Wer sich erstmalig mit Verschlüsselung beschäftigt, für den ist obiges Beispi
 Nicht-NTRU private Schlüssel werden auf Richtigkeit durch die gcry_pk_testkey() Funktion ausgewertet. Der öffentliche Schlüssel muss auch einige grundlegende Kriterien erfüllen, wie beispielsweise den Einschluss der Public-Key-Kennung.
 
 Die Authentifizierung des privaten Schlüssels und der Verschlüsselungsmechanismus ist identisch mit dem Verfahren, wie er in der Dokumentation beim Quelltext in dem Abschnitt zum verschlüsselten und authentifizierten Container weitergehend technisch erörtert ist.
-
-![Abbildung: Digitale Signaturen](/images/digital_signatures.png)	
-
-
 
 
 Stellen wir jedoch noch einen einfacheren Fall dar und gehen nochmal etwas ausführlicher auf die symmetrische Verschlüsselung mit einem AES-Passwort ein, das die PKI Verschlüselung wie folgt ergänzen kann:
@@ -648,12 +630,12 @@ Abbildung: Wie das Echo PROTOCOL funktioniert
 Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden kann, obschon es eine simple Struktur hat. Mit den einzelnen Optionen und Begriffen können Nutzer in der Praxis sich viel Netzwerk- und Krypto-Theorie erschließen und diese praktisch ausprobieren. Ein ideales Instrument für die Lehre, die Heranführung an kryptographische Prozesse und eine praktische Nutzererfahrung in der Gruppe. Zum Beispiel für ein Dreier-Team wie in der GoldBug-Geschichte von Edgar Alan Poe.
 
 
-![Abbildung: Optionen für den Clienten](/images/client_options.png)	
+## 4 Cryptographisches Discovery
 
 
 
 
-## 4 Einen ersten Setup einrichten
+## 5 Einen ersten Setup einrichten
 
 Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach, 
 
@@ -672,7 +654,7 @@ Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach,
 
 Ansonsten muss in diesem Tabulator für Einstellungen bzw. für die Kernel-Aktivierung nach jedem Start von goldbug.exe der Kernel über den Knopf "Aktiviere" aktiviert werden, der dann die Verbindungen zu Freunden oder zu einem Chat-Server koordiniert. Die Kernel-Datei Spot-on-Kernel.exe wird also aus dem Programm von GoldBug an oder abgeschaltet.
 
-### 4.1 Zwei Login-Methoden
+### 5.1 Zwei Login-Methoden
 
 Abbildung: Passwort-Generation 
 ![Abbildung: Setze Passwort](/images/set_password.jpg)
@@ -719,7 +701,7 @@ Die Gefahr des Abgreifens des ggf. nicht ausreichend verschlüsselten privaten S
 Selbst die wenigen quell-offenen Messenger mit Verschlüsselung, die man für den Desktop wie auch für mobile Geräte an einer Hand abzählen kann, die ein Security-Audit durchlaufen haben, sind kaum ausreichend hinsichtlich der Sicherheit der verschlüsselten Speicherung vom - und gesicherter Zugangsprozesse zum - privaten Schlüssel analysiert.
 
 
-### 4.2 Generierung von 10 Schlüsseln für die Verschlüsselung
+### 5.2 Generierung von 10 Schlüsseln für die Verschlüsselung
 
 Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt der Wizard, ob der Nutzer die Schlüssel für die Verschlüsselung generieren möchte. Für die Schlüssel-Erstellung sollte man einen Schlüssel von mindestens 3072 Bit (Voreinstellung) oder größer wählen. Der Nutzer kann auch weitere Optionen wie Algorithmus, Hashtype, Cipher, Salz-Länge oder Iteration Count selbst wählen, wenn er den Schlüssel z.B. neu (re-)generiert.
 
@@ -749,8 +731,11 @@ Bei nicht-minimaler Ansicht zeigen sich im Tabulator "Activate Kernel" somit z.B
 
 Eine weitere Vielzahl an Optionen findet sich auch unter dem Hauptmenü/Optionen in einem Pop-Up-Fenster, die später noch erläutert werden. Dieses ist das eigentliche Options-Fenster.
 
+![Abbildung: Digitale Signaturen](/images/digital_signatures.png)	
+![Abbildung: Optionen für den Clienten](/images/client_options.png)	
 
-### 4.3 Aktivierung des Kernels 
+
+### 5.3 Aktivierung des Kernels 
 
 Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt ein Pop-Up Fenster am Ende des Wizards, ob der Kernel aktiviert werden soll. Ansonsten ist bei allen weiteren Starts nach dem Login im Einstellungs-Tab der rote "Aktiviere Kernel"-Knopf zu drücken, sodann kann es losgehen: Wenn der Knopf grün ist, läuft der Kernel.
  
@@ -774,7 +759,7 @@ Die mittlere LED zeigt an, ob der Nutzer einen Listener/Chat-Server eingerichtet
 
 
 
-### 4.4 Einen Nachbarn mit der IP-Adresse verbinden
+### 5.4 Einen Nachbarn mit der IP-Adresse verbinden
 
 [[File:Add neighbor IP (simple view).png|thumb|300px|Abbildung 10: Einen Nachbarn mit IP-Adresse hinzufügen (einfache Ansicht)]] 
 
@@ -807,7 +792,7 @@ Wenn der Nutzer ohne Server direkt mit einem anderen Nutzer verbinden will, muss
 Wer mehr Details sehen will, kann die minimale Ansicht auch in die volle Ansicht wechseln: In dieser Ansicht wird deutlich, dass neben der IP-Adresse auch der Port der IP-Adresse individuell konfiguriert werden kann. Standardmäßig nutzt GoldBug den Port 4710. Ferner kann das Programm auch über IPv6 betrieben werden sowie einen Listener/Server ansteuern, der über das Dynamische DNS verlinkt ist. Bei DNS gibt man dann keine Nummernfolge bei der IP ein, sondern einen Domain-Namen. In der darunter liegenden Box können weitere Sicherheitsoptionen definiert werden oder auch der Verbindungsserver über einen Proxy angesprochen werden (z.B. wenn man GoldBug über das TOR-Netzwerk nutzen möchte).
 
 
-## 5 Die Chat-Funktion
+## 6 Die Chat-Funktion
 [[File:Goldbugchattab.png|thumb|300px|Abbildung 11: Chat-Tab des GoldBug-Messengers]]
 
 
@@ -818,14 +803,13 @@ Wer mehr Details sehen will, kann die minimale Ansicht auch in die volle Ansicht
 
 Wenn nun Login-Passwort definiert, Schlüssel generiert, Kernel aktiviert und ein Nachbar/Server verbunden ist, also in der Statuszeile zwei LED grün leuchten, dann kannst Du mit einem Freund einen Schlüssel tauschen und die Kommunikation kann im Chat-Tab (siehe '''Abbildung 11''') oder Pop-Up-Fenster für einen definierten Teilnehmer beginnen. Der Schlüsseltausch lässt sich wie folgt beschreiben:
 
-### 5.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
+### 6.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
 [[File:Addkeyorrepleo.png|thumb|300px|Abbildung 12: Tabulator "Key": Schlüssel, Repleo oder E-Mail-Adresse einfügen bzw. auskopieren]]
 
 ![Abbildung: Add Friend/Key](/images/add_key.png)	
 
 
 ![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
-
 
 
 GoldBug nutzt eine öffentliche/private Schlüssel-Infrastruktur, wie es halt bekannter Standard ist: Der öffentliche Schlüssel kann mit Freunden getauscht werden und der private Schlüssel bleibt verschlüsselt auf Deiner Festplatte.
@@ -840,7 +824,7 @@ Ebenso macht es Dein Freund und Du fügst den Schlüssel des Freundes in das Tex
 
 '''Weitere Option nur zur Kenntnis:''' Neben dem Online-Versand des Schlüssels über die direkte Verbindung zu einem Freund kann auch das weiter unten beschriebene Werkzeug des Echo Public Key Sharing (EPKS) genutzt werden. Dieses wird angewandt, wenn der Freund nicht mit einer direkten Verbindung verbunden ist (z.B. beide Partner einen gemeinsamen Chat-Server bzw. Knotenpunkt in der Mitte nutzen). Beide Partner geben dann in EPKS ein gemeinsames Passwort-Geheimnis ein und senden ihre öffentlichen Schlüssel über dieses Passwort ins Echo-Netz. Siehe dazu weiter die ausführlicheren Details im Abschnitt diesem Tool, das ggf. eine gute Alternative zu den oftmals unkomfortablen und unsicheren üblichen Key-Servern darstellen kann.
  
-#### 5.1.1 Besonderheit: Repleo
+#### 6.1.1 Besonderheit: Repleo
 Wenn Du schon einen Schlüssel Deines Freundes erhalten hast (z.B. für Chat) und diesen eingefügt hast, nunmehr aber Deinen öffentlichen (Chat-)Schlüssel nicht preisgeben willst, ihn nicht bei einem E-Mail-Programm gespeichert und transferiert wissen willst (obschon der öffentliche Schlüssel ja eigentlich öffentlich sein darf), dann kannst Du auch mit dem erhaltenen Schlüssel Deines Freundes Deinen eigenen öffentlichen Schlüssel verschlüsseln. Das nennt man dann REPLEO.
  
 Beim Repleo wird also Dein öffentlicher Schlüssel mit dem öffentlichen Schlüssel Deines Freundes bereits verschlüsselt. Dieses ist sodann für jede Funktion bzw. Schlüssel durchzuführen, d.h. Du kannst jeweils das Chat-Repleo, E-Mail-Repleo und URL-Repleo zurücksenden.
@@ -848,7 +832,7 @@ Auch ein Repleo kann dann Dein Freund in den Kasten des Tabulators "Add Friend/K
 
 Der Text eines Schlüssels startet immer mit einem Buchstaben "K" oder "k" und ein Repleo startet mit einem "R" oder "r".
 
-### 5.2 Einen ersten sicheren Chat beginnen 
+### 6.2 Einen ersten sicheren Chat beginnen 
 [[File:Goldbugchatpopup.png|thumb|300px|Abbildung 13: GoldBug Messenger Chat Pop-Up Window]]  
 
 ![Abbildung: 1:1-Chat im Pop-up Fenster ](/images/chat_pop_up.jpg)
@@ -867,7 +851,7 @@ Und: Im Pop-Up-Chat hast Du den Options-Knopf "Share StarBeam", mit dem Du eine 
 
 In der Status-Zeile oben am Fenster kannst Du den Nicknamen und den Online-Status einsehen und z.B. auch das Socialist- Millionaire-Protokoll starten, um einen Freund zu authentifizieren und zu testen, ob er (ein weiteres) gemeinsames Geheimnis kennt und richtig eingibt, wie es weiter unten beschrieben wird.
 
-### 5.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit Gemini (Instant Perfect Forward Secrecy, IPFS)
+### 6.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit Gemini (Instant Perfect Forward Secrecy, IPFS)
  
 MELODICA steht für “Multi Encryted LOng DIstance Calling” – ins Deutsche übersetzt in etwa: „Vielfach-verschlüsseltes Anrufen über eine lange Distanz“
  
@@ -878,7 +862,7 @@ Es bezeichnet, einen Freund wie mit einem Telefon anzurufen – nur, dass damit 
  
 Die Ende-zu-Ende Passphrase – auch Gemini genannt – wird über einen AES-String abgebildet und sollte zwischen beiden Teilnehmern geheim bleiben. Daher gilt es, die elektronische Übertragung immer gut über weitere Verschlüsselungs-Ebenen abzusichern (wie hier im Echo-Protokoll mit dem asymmetrischen Chat-Key und der TLS/SSL-Verbindung), wenn die Übertragung potentiell abgehört werden kann. 
 
-### 5.4 Asymmetrisches Calling 
+### 6.4 Asymmetrisches Calling 
 
 GoldBug hat diese Übertragungsfrage des Passworts für die Ende-zu-Ende Verschlüsselung gelöst, indem das Gemini (Zeichenfolge für die dann zu bildende symmetrische Verschlüsselung) asymmetrisch verschlüsselt wird (mit dem Schlüssel für Chat) und dann durch einen nochmals (asymmetrischen) verschlüsselten SSL/TLS-Kanal übertragen wird.
 
@@ -886,7 +870,7 @@ Gemini ist der griechische Begriff für Zwilling, d.h. es bezieht sich auf beide
   
 Diese Funktion erzeugt somit einen „Call“, einen Anruf, bei dem das Passwort übertragen wird, das dann später die Ende-zu-Ende Verschlüsselung gestaltet. Genau genommen besteht das Gemini aus zwei Schlüsseln bzw Komponenten, denn das Gemini wird durch einen weiteren Prozess authentifiziert: Diese weitere Komponente wird auch MAC-Hash genannt.
 
-### 5.5 Instant Perfect Forward Secrecy (IPFS)
+### 6.5 Instant Perfect Forward Secrecy (IPFS)
  
 Du kannst somit die (symmetrische) Verschlüsselung bzw. das Gemini jederzeit erneuern. D.h. das Paradigma des „Perfect Forward Secrecy“ ist um zwei Komponenten erweitert worden: Einerseits kann man die Ende-zu-Ende Passphrase (das Gemini) manuell oder automatisiert definieren und sie andererseits auch sofortig, also „instant“ jederzeit erneuern. Daher wird von „Instant Perfect Forward Secrecy“ (IPFS) gesprochen.
  
@@ -894,7 +878,7 @@ Im Vergleich bieten viele andere Tools nur einen Key pro Online-Sitzung an und m
 
 Das hier angesprochene Instant Perfect Forward Secrecy (IPFS) nutzt die asymmetrische Verschlüsselung (des Chat-Keys), wobei der temporäre Schlüssel ein symmetrischer Schlüssel (eben das Gemini) ist. 
  
-### 5.6 Symmetrisches Calling
+### 6.6 Symmetrisches Calling
 
 Als weiteren Clou besteht bei GoldBug nunmehr auch die bislang einzigartige Möglichkeit, ein neues Gemini durch den Kanal eines bestehenden Gemini zu senden. Hier wird der Ende-zu-Ende Schlüssel (also das symmetrisch verschlüsselnde Gemini) durch eine andere Ende-zu-Ende Gemini-Verbindung gesandt (der neue symmetrische Schlüssel wird durch einen Kanal eines bestehenden symmetrischen Schlüssels mitgeteilt). Die symmetrische Verschlüsselungsphrase (das Gemini bzw. das AES-Passwort) wird also nicht mit einer asymmetrischen Verschlüsselung (dem Chat-Key) verschlüsselt (z.B. mit RSA, Elgamal oder NTRU) und dann durch einen sicheren Kanal (SSL/TLS) von Punkt-zu-Punkt gesandt, sondern wird selbst mit dem bestehenden Gemini verschlüsselt und sodann erst durch die beschriebene Methode (wieder über SSL/TLS) gesandt.
 
@@ -903,7 +887,7 @@ Auch bei einem Call über ein bestehendes Gemini kann das gesandte Gemini jederz
 
 Sichere Ende-zu-Ende-Multi-Verschlüsselung entsteht, wenn ein Messenger einen manuell definierten symmetrischen Schlüssel mit einem bestehenden symmetrischen Schlüssel encodiert und dann mit einem asymmetrischen Schlüssel zusätzlich verschlüsselt. Und dieses Paket sodann durch eine sichere Verbindung gesandt wird.
 
-### 5.7  2-Wege-Calling
+### 6.7  2-Wege-Calling
 Schließlich ist im Kontext-Menü (gehe mit rechter Maustaste auf einen Freund in der Freundesliste) noch eine dritte Methode für einen sogenannten "Call" hinzugefügt: Das 2-Wege-Calling. Hierbei wird von Dir aus ein AES-256 als Passphrase für die zukünftige Ende-zu-Ende-Verschlüsselung an den Freund gesandt und Dein Freund sendet als Antwort ebenso ein AES-256 an Dich. Nun wird jeweils von Deinem AES die erste Hälfte und von Deinem Freund die zweite Hälfte genommen, und zu einem gemeinsamen AES-256 zusammengesetzt. Das nennt sich die Methode der 2-Wege-Sicherheit. Damit ist gewährleistet, dass kein Dritter - wenn es ihm gelänge, die Maschine des Freundes zu kompromittieren, ein Gemini (oder ein altes Gemini) in seinem Namen von einer dritten, fremden Maschine sendet (was eigentlich nicht möglich ist, da es die unbemerkte Übernahme einer Maschine oder das Brechen der bestehenden TLS und RSA (bzw. NTRU- oder Elgamal-) Verschlüsselung bedeuten würde). Durch das Ping-Pong-Spiel beider Parteien im Zwei-Wege-Calling wird sichergestellt, dass beide Teilnehmer aktuell ihren Teil jeweils dazu beitragen, sich gegenseitig auf ein sicheres Ende-zu-Ende-Passwort zu einigen - und zwar Fifty-Fifty. 
  
 Die Möglichkeit, das Passwort
@@ -917,7 +901,7 @@ Aus "Perfect Forward Secrecy" (PFS) ist nicht nur "Instant Perfect Forward Secre
  
 Ende-zu-Ende Verschlüsselung wird im GoldBug durch einfaches Knopf-Drücken so einfach wie telefonieren: Einfach den Hörer aufnehmen oder wieder auflegen. Zu jeder Zeit bleibt die Kommunikation asymmetrisch verschlüsselt und die symmetrische End-zu-Ende Verschlüsselung kann einfach hinzugeschaltet werden - und auch durch asymmetrische oder symmetrische Verschlüsselung (innerhalb eines SSL-Kanals) erneuert werden. Das ist eine neuer architektonischer Implementierungs-Standard, den diese Methode des Callings etabliert.
 
-### 5.8 Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol
+### 6.8 Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol
 
 Während GoldBug die Nachrichten dreimal verschlüsselt - 
 
@@ -986,10 +970,10 @@ Wenn alles korrekt abgelaufen ist, dann sollte Rab den Wert erhalten von (Pa / P
 
 GoldBug beschreibt während der verschiedenen Daten-Austausch-Vorgänge für SMP keine sogenannte "Zero-Knowledge-Beweise". Ferner nutzt GoldBug den SHA-512 der jeweils eingegebenen geheimen Passphrase als die x- und y-Komponenten.
 
-### 5.9 SMP-Calling
+#### 6.8.1 SMP-Calling
 Oben haben wir die Call-Funktion beschrieben, wie ein Gemini generiert und übertragen wird. Nun kann man das Gemini nicht nur manuell oder durch die AES-Funktion definieren, sondern auch aus dem Passwort abgeleitet werden, das im SMP-Prozess wie oben dargelegt hinterlegt ist. Somit wird die Passwort-Eingabe aus dem SMP-Prozesses genutzt (nicht der SMP-Prozess selbst). Es ist eine weitere Art des Anrufens und seinem Gegenüber ein Ende-zu-Ende-Passwort sicher zu übertragen, das dieses mal nicht aus einem AES-Generator entspringt.
 
-### 5.10 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
+### 6.9 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
 
 Seit Version 2.7 unterstützt Goldbug Messenger [[w:Perfect Forward Secrecy|Perfect Forward Secrecy]] auch für seine Funktion als E-Mail-Klient, und war damit der erste E-Mail-Klient, der Forward Secrecy für E-Mail sowohl mit symmetrischer als auch asymmetrischer Weise anbot (vgl. weiter unten).
 
@@ -1003,7 +987,7 @@ Ein Tooltip auf dem Bildschirm zeigt an, wenn der Chat-Partner im Chat ein Forwa
 Schaue dazu unten in der Status-Zeile nach dem neu auftauchenden Symbol, klicke es und Du kannst in dem erscheinenden Pop-Up-Fenster den Forward-Secrecy-Prozess bestätigen.
 Sodann wird nicht mehr der (permanente) Chat-Schlüssel benutzt, sondern die neuen-temporären asymmetrischen Schlüssel. Der permanente Chat-Schlüssel wird also praktisch ergänzt durch den temporären Chat-Schlüssel.
 
-### 5.11 Forward Secrecy Calling 
+#### 6.9.1 Forward Secrecy Calling 
 Somit lässt sich also auch das Calling erweitern: Das symmetrische Gemini wird beim FS-Calling (Forward-Secrecy-Calling) nicht wie oben beschrieben durch den permanenten (asymmetrischen) Chat-Key oder durch ein bestehendes (symmetrisches) Gemini gesandt, sondern durch den ephemeralen, temporären - und asymmetrischen - Chat-Key.
 
 Während der Versand eines Geminis über ein bestehendes Gemini ein ''symmetrisches'' "Instant Perfect Forward Secrecy" definiert, kann der Versand eines Geminis über die ephemeralen Schlüssel des initiierten "Forward Secrecy" in der Chat-Funktion als ein ''asymmetrisches'' "Instant Perfect Forward Secrecy" bezeichnet werden.
@@ -1011,7 +995,7 @@ Während der Versand eines Geminis über ein bestehendes Gemini ein ''symmetrisc
 
 Während beim "Forward Secrecy Calling" und "dem Call durch ein Gemini" das bestehende "Forward Secrecy" schon besteht und sodann die jederzeitige Erneuerbarkeit des Ende-zu-Ende Schlüssels definiert (Instant Perfect Forward Secrecy) ist bei den anderen Calling-Arten kein Forward Secrecy vorab gegeben, sondern Instant Perfect Forward Secrecy wird hier durch einen Call als Ergebnis des Calls erzeugt.
 
-## 5.12 Übersicht der verschiedenen Calling-Arten
+## 6.10 Übersicht der verschiedenen Calling-Arten
 
 Aus den beschriebenen Methoden (vgl. auch '''Abbildung 16'''), einen Ende-zu-Ende Schlüssel an den Freund zu übertragen, lässt sich folgende Übersicht gestalten, die die verschiedenen Methoden mit ihren jeweils spezifischen Merkmalen herausstellt. 
 
@@ -1061,7 +1045,7 @@ Die Nachrichtenformate mit den Verschlüsselungsebenen sehen dann vereinfacht - 
  * SMP-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein String, der aus dem SMP gebildet wird)))
  * 2-Wege-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String der zu 50% mit dem AES des Freundes modifiziert wird)))
 
-## 5.12 Datei-Transfer im Chat-pop-up-Fenster
+### 6.11 Datei-Transfer im Chat-pop-up-Fenster
 
 
 
@@ -1074,7 +1058,7 @@ Die Nachrichtenformate mit den Verschlüsselungsebenen sehen dann vereinfacht - 
 
 
 
-###Emotikons
+### 6.12 Emotikons
 
 Abbildung: Liste der Emotikons im GoldBug Messenger
 
@@ -1210,6 +1194,9 @@ Wenn Alice und Bob also einen Chat-Server im Web auf ihrem Webserver einrichten,
 
  
 Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auch ein dritter Freund oder ein kleiner [[w:de:Raspberry_Pi|Raspberry-Pi]]-Computer zuhause sein, der kontinuierlich online bleibt. Es macht daher Sinn, mehr als einen Freund in seiner Liste zu haben und gemeinsame Freunde mit anderen Freunden zu vernetzen, die als Zwischenspeicher fungieren können. Da alle E-Mails verschlüsselt sind, können die Freunde, die eine Cache-Funktion zur Verfügung stellen, Deine E-Mail auch nicht lesen.
+
+![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
+
  
 Um diese [[w:de:Zustellanweisung|Care-Of]] (c/o) Caching-Funktion zu aktivieren, muss in dem Sub-Tabulator “Email-Settings” die Check-Box “Care-Of” aktiviert sein, wenn man als dritter Freund zwei anderen Freunden das Zwischenspeichern der E-Mails im eigenen Klienten ermöglichen will und sie beide auch in der E-Mail-Kontaktliste einfügt.
 
