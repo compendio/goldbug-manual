@@ -981,7 +981,7 @@ Während GoldBug die Nachrichten dreimal verschlüsselt -
 - zweitens wird jede Nachricht asymmetrisch verschlüsselt (z.B. mit RSA, NTRU oder Elgamal, mit dem Chat-Key), 
 - und drittens besteht ja die die Möglichkeit, mit der "Call" bzw. "Anruf"-Funktion ein Gemini zu senden, um eine symmetrische Ende-zu-Ende Verschlüsselungs-Passphrase zu setzen (mit verschiedenen Methoden zur Durchführung des "Calls" innerhalb einer bereits bestehenden symmetrischen Verschlüsselung oder über die Zwei-Wege-Aufruf-Funktion, bei der jeder die Hälfte des Ende-zu-Ende Passwortes definiert) - 
 
-gibt es viertens zusätzlich ein weiteres Verfahren zur Erhöhung der Sicherheit: es ist das "SMP"-Protokoll: [[w:en:Socialist_millionaire|Socialist Millionaire Protocoll]]  (eine Methode, die auch für [[w:de:Off-the-Record_Messaging|Off-the-Record-Messaging (OTR)]] hier beschrieben wird: https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html).
+gibt es viertens zusätzlich ein weiteres Verfahren zur Erhöhung der Sicherheit: es ist das "SMP"-Protokoll: [Socialist Millionaire Protocoll]()  (eine Methode, die auch für [Off-the-Record-Messaging (OTR)]() hier beschrieben wird: [https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html](https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html)).
 
 
 
@@ -990,9 +990,9 @@ Abbildung: SMP-Protokoll
 ![Abbildung: SMP-Protokoll](/images/SMP_socialist_millionaire.png)	
 
 
-Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster] zur Authentifizierung des Chat-Partners
+Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster zur Authentifizierung des Chat-Partners
 
-![Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster] zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)
+![Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)
 
 
 Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol
@@ -1052,13 +1052,13 @@ Oben haben wir die Call-Funktion beschrieben, wie ein Gemini generiert und über
 
 ### 6.5 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
 
-Seit Version 2.7 unterstützt GoldBug Messenger [[w:Perfect Forward Secrecy|Perfect Forward Secrecy]] auch für seine Funktion als E-Mail-Klient, und war damit der erste E-Mail-Klient, der Forward Secrecy für E-Mail sowohl mit symmetrischer als auch asymmetrischer Weise anbot (vgl. weiter unten).
+Seit Version 2.7 unterstützt GoldBug Messenger [Perfect Forward Secrecy]() auch für seine Funktion als E-Mail-Klient, und war damit der erste E-Mail-Klient, der Forward Secrecy für E-Mail sowohl mit symmetrischer als auch asymmetrischer Weise anbot (vgl. weiter unten).
 
 Während oben für die Chat-Funktion das Calling mit einem Gemini das "Instant Perfect Forward Secrecy" prägte und sich auf einen ''symmetrischen'' Schlüssel (eben das Gemini bzw. den AES-String) bezog, ist das Perfect Forward Secrecy beim E-Mail mit temporären, ''asymmetrischen'' Schlüssel definiert. 
 
 Diese Variante der Nutzung von temporären asymmetrischen Schlüsseln kann natürlich auch wiederum auf die Chat-Funktion übertragen werden. 
 
-Während der Chat mit dem permanenten Chat-Key ja immer (asymmetrisch) verschlüsselt ist, wird nun noch ein temporärer asymmetrischer Schlüssel mit dieser neuen Schicht von Ende-zu Ende-Verschlüsselung eingesetzt. Dieser temporäre asymmetrische Key wird [[w:en:Ephemeral_key|ephemeraler Schlüssel]] genannt. Dieser Schlüssel entsteht durch die Forward-Secrecy Funktion im Chat, die über das Kontext-Menü (rechter Mausklick) oder über den Menü-Knopf dargestellt wird.
+Während der Chat mit dem permanenten Chat-Key ja immer (asymmetrisch) verschlüsselt ist, wird nun noch ein temporärer asymmetrischer Schlüssel mit dieser neuen Schicht von Ende-zu Ende-Verschlüsselung eingesetzt. Dieser temporäre asymmetrische Key wird [ephemeraler Schlüssel]() genannt. Dieser Schlüssel entsteht durch die Forward-Secrecy Funktion im Chat, die über das Kontext-Menü (rechter Mausklick) oder über den Menü-Knopf dargestellt wird.
 
 Ein Tooltip auf dem Bildschirm zeigt an, wenn der Chat-Partner im Chat ein Forward-Secrecy mit temporären (ephemeralen) asymmetrischen Schlüsseln erzeugt hat, so dass Du als Nutzer dieses in Deinem Klienten in einem Pop-Up-Fenster bestätigen kannst. 
 Schaue dazu unten in der Status-Zeile nach dem neu auftauchenden Symbol, klicke es und Du kannst in dem erscheinenden Pop-Up-Fenster den Forward-Secrecy-Prozess bestätigen.
@@ -1111,19 +1111,19 @@ Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto
 Die Call-Informationen - sprich die ende-zu-ende verschlüsselnde Passphrase - kann natürlich auch manuell, z.B. mündlich oder fernmündlich, übertragen werden. Nimmt man noch die oben genannten bestehenden fünf Call-Arten hinzu, kommt man dann insgesamt auf sechs verschiedene Arten, einen Call umsetzen zu können. Die Spot-on Architektur hat erstmals im Bereich von Crypto von "Calling" zur Übermittlung von Ende-Zu-Ende Passworten gesprochen und spätere Konzepte haben diesen Begriff in Anlehnung übernommen.
 
 Bitte beachte folgende Erläuterungen:
-* Jeder der dargestellten Methoden hat Instant Perfect Forward Secrecy (IPFS) zum Ergebnis.
-* Nur das symmetrische und asymmetrische Calling erfordert keine Aktion auf Seiten des Gegenübers.
-* Das ''Forward Secrecy Calling'' und das ''Symmetrische Calling'' setzten einen vorhandenen Status von Forward Secrecy voraus.
-* ''Symmetrisches Calling'' und ''Forward Secrecy Calling'' haben dreifache Verschlüsselungs-Schichten (TLS/SSL, Permanenter Chat Key, sowie temporärer symmetrischer bzw. asymmetrischer Schlüssel, durch den das neue Gemini sodann gesandt wird).
-* ''SMP-Calling'' und ''2-Wege-Calling'' durchbrechen die AES-Generierung, indem sie Teile der AES-Phrase ersetzen bzw. einen neuen Passwortstring bilden.
+- Jeder der dargestellten Methoden hat Instant Perfect Forward Secrecy (IPFS) zum Ergebnis.
+- Nur das symmetrische und asymmetrische Calling erfordert keine Aktion auf Seiten des Gegenübers.
+- Das ''Forward Secrecy Calling'' und das ''Symmetrische Calling'' setzten einen vorhandenen Status von Forward Secrecy voraus.
+- ''Symmetrisches Calling'' und ''Forward Secrecy Calling'' haben dreifache Verschlüsselungs-Schichten (TLS/SSL, Permanenter Chat Key, sowie temporärer symmetrischer bzw. asymmetrischer Schlüssel, durch den das neue Gemini sodann gesandt wird).
+- ''SMP-Calling'' und ''2-Wege-Calling'' durchbrechen die AES-Generierung, indem sie Teile der AES-Phrase ersetzen bzw. einen neuen Passwortstring bilden.
 
 Die Nachrichtenformate mit den Verschlüsselungsebenen sehen dann vereinfacht - da Signaturen, HMACs und Hashes nicht einbezogen sind - wie folgt aus:
 
- * Asymmetrisches Calling:  (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String)))
- * Symmetrisches Calling:  (TLS/SSL (AES (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String)))
- * Forward-Secrecy-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (ephemerale Keys RSA (Nachricht ist ein AES-String))))
- * SMP-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein String, der aus dem SMP gebildet wird)))
- * 2-Wege-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String der zu 50% mit dem AES des Freundes modifiziert wird)))
+ - Asymmetrisches Calling:  (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String)))
+ - Symmetrisches Calling:  (TLS/SSL (AES (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String)))
+ - Forward-Secrecy-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (ephemerale Keys RSA (Nachricht ist ein AES-String))))
+ - SMP-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein String, der aus dem SMP gebildet wird)))
+ - 2-Wege-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String der zu 50% mit dem AES des Freundes modifiziert wird)))
 
 
 ### 6.7 Emotikons
@@ -1133,7 +1133,7 @@ Abbildung: Liste der Emotikons im GoldBug Messenger
 ![Abbildung: Liste der Emotikons im GoldBug Messenger](/images/goldbug_emoticons.png)	
 
 
-GoldBug bietet eine Vielzahl an verschiedenen [[w:de:Emoticon|Emoticons]] - auch Smileys genannt - für den Chat an (siehe Abbildung). 
+GoldBug bietet eine Vielzahl an verschiedenen [Emoticons]() - auch Smileys genannt - für den Chat an (siehe Abbildung). 
 
 Um diese zu nutzen, doppelklicke auf einen Freund, so dass sich ein Pop-Up Chat-Fenster für den privaten Chat öffnet. Nun gehe mit der Maus über den Senden-Knopf. In einem dann erscheinenden Tooltip werden die Smileys angezeigt und mit der Eingabe des ASCI-Codes werden die Emoticons im Chat dargestellt. 
 
@@ -1157,7 +1157,7 @@ Abbildung: Tear-Off/Hook-Up von Bedienungselementen
 ## 7 Gruppen-Chat im IRC-Stil
 
  
-Der GoldBug Messenger verfügt neben E-Mail und Chat auch über eine Gruppen-Chat-Funktion. Diese funktioniert ähnlich einem [[w:de:Internet_Relay_Chat|IRC]]-Chat. Die Übermittlung der Nachrichten an alle Gruppen-Teilnehmer erfolgt auch hier wieder vollständig verschlüsselt über das Echo-Protokoll. Die Verschlüsselung ist symmetrisch, also ähnlich einem Passwort-String. Letztlich können in dem p2p-Netzwerk alle Teilnehmer eines Gruppenchats mitlesen, die einen bestimmten symmetrischen Ende-zu-Ende-Schlüssel kennen, der den Chat-Raum definiert. Der Gruppen-Chat basiert ebenso auf dem Echo-Protokoll (vgl. Abbildung).
+Der GoldBug Messenger verfügt neben E-Mail und Chat auch über eine Gruppen-Chat-Funktion. Diese funktioniert ähnlich einem [IRC]()-Chat. Die Übermittlung der Nachrichten an alle Gruppen-Teilnehmer erfolgt auch hier wieder vollständig verschlüsselt über das Echo-Protokoll. Die Verschlüsselung ist symmetrisch, also ähnlich einem Passwort-String. Letztlich können in dem p2p-Netzwerk alle Teilnehmer eines Gruppenchats mitlesen, die einen bestimmten symmetrischen Ende-zu-Ende-Schlüssel kennen, der den Chat-Raum definiert. Der Gruppen-Chat basiert ebenso auf dem Echo-Protokoll (vgl. Abbildung).
 
 
 Abbildung: E-IRC Gruppenchat
@@ -1224,7 +1224,7 @@ GoldBug ist ein voll funktionsfähiger E-Mail-Client.
 
 Nicht vollumfänglich - wie seit Jahrzehnten bestehende E-Mail-Applikationen -, hier benötigt er noch weitere Programmierung aus der Community, aber dennoch voll funktionsfähig in einem vollwertigen E-Mail-Klienten. Der Vorteil: das Lesen und Schreiben von E-Mails wird in der Benutzeroberfläche sehr effizient auf einer Seite bzw. in einem Tab dargestellt (vgl. Abbildung 18). 
 
-Technisch nutzt GoldBug die Bibliothek [[w:de:CURL#libcurl|libcurl]] und unterstützt POP3 mit SMTP sowie IMAP. Schließlich ist es die besondere Funktion in GoldBug, dass er drittens auch p2p E-Mail unterstützt. Hierbei wird die E-Mail im distribuierten Netzwerk der Teilnehmer gespeichert und nicht bei einem zentralen Provider.
+Technisch nutzt GoldBug die Bibliothek [CURL#libcurl]() und unterstützt POP3 mit SMTP sowie IMAP. Schließlich ist es die besondere Funktion in GoldBug, dass er drittens auch p2p E-Mail unterstützt. Hierbei wird die E-Mail im distribuierten Netzwerk der Teilnehmer gespeichert und nicht bei einem zentralen Provider.
 
 
 
@@ -1250,7 +1250,7 @@ Wie folgt lässt sich die Einrichtung der drei Arten, seine E-Mails zu laden, be
   
 ### 9.1 POP3
 
-Das Post Office Protocol ([[w:de:Post_Office_Protocol|POP3]]) ist ein Übertragungsprotokoll, über das ein Klient E-Mails von einem E-Mail-Server abholen kann. 
+Das Post Office Protocol (POP3]() ist ein Übertragungsprotokoll, über das ein Klient E-Mails von einem E-Mail-Server abholen kann. 
 
 POP3 erlaubt das Auflisten, Abholen und Löschen von E-Mails am E-Mail-Server. Für das Versenden von E-Mails ist komplementär zu POP3 üblicherweise  das Simple Mail Transfer Protocol (SMTP) in Clients und Servern implementiert.
 
@@ -1277,7 +1277,7 @@ Das Internet Message Access Protocol ([IMAP]()) wurde in den 1980er Jahren mit d
 
 Die (PC-)Clients greifen stattdessen online auf den Servern auf die Informationen zu und erhalten allenfalls Kopien davon.  Während ein Benutzer von POP3 nach Verlust seines PC alle E-Mails verloren hat, stellt ein Mail-Klient bei IMAP die Anfragen an den Server nur nach aktuell benötigten Informationen als Kopie. Möchte ein Nutzer z.B. den Inhalt seines Eingangordners sehen, holt sich der Client eine aktuelle Kopie der Nachrichtenliste vom Server. Soll der Inhalt einer Mail angezeigt werden, wird dieser vom Server als Kopie geladen. Da alle Daten weiterhin auf dem Server verbleiben, wird somit eine ''lokale Speicherung der Daten'' unnötig und erweiterte Möglichkeiten wie das Durchsuchen von Mails werden ebenso nur server-seitig durchgeführt. Damit wird auch auch die ''lokale Sicherung der Daten'' - indem sie von Server weggenommen werden - insofern meist unmöglich, als dass die Konfiguration von IMAP in der Voreinstellung nicht darauf ausgerichtet ist. Zugleich rückt bei unverschlüsselten Mails die Frage der Vertraulichkeit und Sicherheit bei Daten, die auf IMAP-Servern ausgelagert blieben in den Vordergrund. Es stellt sich die Frage, ob der Empfänger einer E-Mail selbst die Hoheit über die Vertraulichkeit der E-Mail, und z.B. das Recht hat, diese niemandem zu zeigen oder im Geheimen zu löschen, oder ob er lediglich eine Kopie, ein "Ansichtsrecht" seiner Post erhält.
 
-Hinsichtlich der Erkenntnisse aus dem Jahr 2013 - E-Mails besser grundlegend zu verschlüsseln - ist IMAP in diesem Lichte besonders kritisch zu beurteilen: Die Speicherung der E-Mails wird bei IMAP nicht wie bei POP3 in dem Mail-Klienten auf der Maschine des Nutzers vorgenommen, sondern die persönlichen Daten liegen unverschlüsselt weiterhin auf dem Server des Providers. Mit IMAP wurde somit die heute vielfach genutzte [[w:de:Cloud_Computing|Cloud]] schon in den 80er Jahren im Bereich E-Mail erfunden. POP3 ermöglich eher eine [[w:de:On_Premise|On-Premis]]-Handhabung der Speicherung der E-Mails auf der lokalen Maschine.
+Hinsichtlich der Erkenntnisse aus dem Jahr 2013 - E-Mails besser grundlegend zu verschlüsseln - ist IMAP in diesem Lichte besonders kritisch zu beurteilen: Die Speicherung der E-Mails wird bei IMAP nicht wie bei POP3 in dem Mail-Klienten auf der Maschine des Nutzers vorgenommen, sondern die persönlichen Daten liegen unverschlüsselt weiterhin auf dem Server des Providers. Mit IMAP wurde somit die heute vielfach genutzte [Cloud]() schon in den 80er Jahren im Bereich E-Mail erfunden. POP3 ermöglich eher eine [On-Premis]()-Handhabung der Speicherung der E-Mails auf der lokalen Maschine.
 
 GoldBug unterstützt diesen Standard ebenso wie POP3 und ermöglicht es, Plaintext-Nachrichten über IMAP zu erhalten und zu senden.  Wie folgt lassen sich die Einstellungen für Deinen E-Mail-Account in GoldBug eingeben.
 
@@ -1322,8 +1322,8 @@ Daher können zwei GoldBug-Nutzer mit normalem @Mail wie z.B. über die großen 
 
 E-Mail-Anlagen können ebenso einer E-Mail als Datei angehangen werden und werden unabhängig, welche E-Mail-Methode gewählt wird, automatisch verschlüsselt.
 
-Neben der Verschlüsselung der E-Mails werden in vielen Ländern weiterhin auch die [[w:de:Vorratsdatenspeicherung|Meta-Daten]] gespeichert, also wann und wie oft Du die Nachrichten aus Deinem Postfach abrufst. Hier wird nun die weitere Methode der p2p E-Mails interessant:
-GoldBug ermöglicht weiterhin, E-Mails auch im Teilnehmernetzwerk oder auf einen Servern zu speichern und entsprechende E-Mail-Postfächer dezentral einzurichten, die darüber hinaus auch ausschließlich und automatisch den Standard der verschlüsselten E-Mails handhaben.  
+Neben der Verschlüsselung der E-Mails werden in vielen Ländern weiterhin auch die [Meta-Daten](vds) gespeichert, also wann und wie oft Du die Nachrichten aus Deinem Postfach abrufst. Hier wird nun die weitere Methode der p2p E-Mails interessant:
+GoldBug ermöglicht weiterhin, E-Mails auch im Teilnehmernetzwerk oder auf einen Servern zu speichern und entsprechende E-Mail-Postfächer dezentral einzurichten, die darüber hinaus auch ausschließlich und automatisch den Standard der verschlüsselten E-Mails handhaben.
  
 Der E-Mail-Klient enthält somit auch eine peer-to-peer basierte Komponente, d.h. die E-Mails werden über das Netzwerk der verschlüsselten Verbindungen gesandt und in den Knotenpunkten von Freunden zwischengespeichert. Dieses Netzwerk wird durch die integrierte Architektur des Spot-on-Kernels bereitgestellt.
 Der Vorteil von P2P-E-Mail liegt darin, dass das E-Mail-Postfach nicht bei einem zentralen Hoster und öffentlichen Anbieter von E-Mail liegt, sondern im dezentralen Netzwerk von Dienen Freunden eingerichtet wird. 
@@ -1350,7 +1350,7 @@ Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion
 ![Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
 
  
-Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auch ein dritter Freund oder ein kleiner [[w:de:Raspberry_Pi|Raspberry-Pi]]-Computer zuhause sein, der kontinuierlich online bleibt. Es macht daher Sinn, mehr als einen Freund in seiner Liste zu haben und gemeinsame Freunde mit anderen Freunden zu vernetzen, die als Zwischenspeicher fungieren können. Da alle E-Mails verschlüsselt sind, können die Freunde, die eine Cache-Funktion zur Verfügung stellen, Deine E-Mail auch nicht lesen.
+Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auch ein dritter Freund oder ein kleiner [Raspberry-Pi]()-Computer zuhause sein, der kontinuierlich online bleibt. Es macht daher Sinn, mehr als einen Freund in seiner Liste zu haben und gemeinsame Freunde mit anderen Freunden zu vernetzen, die als Zwischenspeicher fungieren können. Da alle E-Mails verschlüsselt sind, können die Freunde, die eine Cache-Funktion zur Verfügung stellen, Deine E-Mail auch nicht lesen.
 
 
 Abbildung: Datenbank Verschlüsselung
@@ -1358,7 +1358,7 @@ Abbildung: Datenbank Verschlüsselung
 ![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
 
  
-Um diese [[w:de:Zustellanweisung|Care-Of]] (c/o) Caching-Funktion zu aktivieren, muss in dem Sub-Tabulator “E-Mail-Settings” die Check-Box “Care-Of” aktiviert sein, wenn man als dritter Freund zwei anderen Freunden das Zwischenspeichern der E-Mails im eigenen Klienten ermöglichen will und sie beide auch in der E-Mail-Kontaktliste einfügt.
+Um diese [Zustellanweisung Care-Of]() (c/o) Caching-Funktion zu aktivieren, muss in dem Sub-Tabulator “E-Mail-Settings” die Check-Box “Care-Of” aktiviert sein, wenn man als dritter Freund zwei anderen Freunden das Zwischenspeichern der E-Mails im eigenen Klienten ermöglichen will und sie beide auch in der E-Mail-Kontaktliste einfügt.
 
 
 Du hast bei GoldBugauch im p2p-E-Mail die Wahl, ob die E-Mails authentifiziert oder nicht authentifiziert, also einfach nur verschlüsselt, ohne Nachweis, dass der Schlüssel auch zu Dir gehört, gesandt werden.
@@ -1371,7 +1371,7 @@ Hierzu ist es ebenso notwendig, die C/O-Funktion mit der Check-Box wie oben gesc
 Sodann kannst Du eine virtuelle E-Mail-Institution erstellen. Für die Eingabe- bzw- Definitions-Felder "Name" und "Adresse" der Institution kannst Du frei kreativ werden und beliebige Bezeichnungen wählen.
 Sodann sind noch die öffentlichen E-Mail-Schlüssel der Freunde, die in Deiner Institution speichern wollen, in Deinen Node einzukopieren. 
 
-Schließlich kannst Du dann den so erstellten [[w:de:GoldBug_(Instant_Messenger)#Magnet_URI_Verschl.C3.BCsselungs_Standard|Magnet-URI]]-Link (zum Standard und was das ist, vgl. auch unten im Abschnitt "Star-Beam") auskopieren und Freunden zur Verfügung zu stellen, die in diesem Postfach dann zwischen-speichern. Zusätzlich muss der Node, der die E-Mail-Institution einrichtet, immer auch den öffentlichen E-Mail-Schlüssel desjenigen hinzufügen, für den er Speichern soll.
+Schließlich kannst Du dann den so erstellten [Magnet-URI]()-Link (zum Standard und was das ist, vgl. auch unten im Abschnitt "Star-Beam") auskopieren und Freunden zur Verfügung zu stellen, die in diesem Postfach dann zwischen-speichern. Zusätzlich muss der Node, der die E-Mail-Institution einrichtet, immer auch den öffentlichen E-Mail-Schlüssel desjenigen hinzufügen, für den er Speichern soll.
 
 Der Vorteil gegenüber der ersten Methode ist somit, dass der öffentliche E-Mail-Schlüssel des Knotenpunktes, der die Institution einrichtet, niemandem bekannt gegeben werden muss. Bei der c/o-Methode ist der öffentliche E-Mail-Schlüssel auszustauschen. Daher kann man vereinfacht sagen, dass im kleinen Freundesnetzwerk ein gemeinsamer Knotenpunkt mit der c/o-Funktion ideal ist und die VEMI-Methode der Einrichtung von Virtuellen-E-Mail-Institutionen eher auf Anbieter fokussiert, die für eine größere Teilnehmeranzahl Postfächer einrichten will.
 
@@ -1438,15 +1438,15 @@ Für den Fall, dass die die Check-Box-Option "Plain" neben dem E-Mail-Text marki
 
 Also nochmal zum Verständnis: durch den permanenten (asymmetrischen) Schlüssel (für E-Mail (oder auch so bei Chat) werden ephemerale (ebenso asymmetrische Schlüssel) getauscht, die dann die Grundlage für die Nutzung von Ende-zu-Ende verschlüsselnden (symetrischen) Schlüsseln dienen. Somit können die ephemeralen Schlüssel wieder gelöscht werden. 
 
-Hier sollte man sich nicht verwirren lassen, denn auch die Ende-zu-Ende verschlüsselnden symmetrischen Passphrasen sind im eigentlichen Sinne ephemerale Schlüssel, aber es wird deutlicher, wenn nur die asymmetrischen temporären Schlüssel, die durch die permanenten E-Mail-Schlüssel geschoben werden, zunächst als ephemerale Schlüssel bezeichnet werden (damit es Personen, die sich das erste Mal mit dem FS-Prozess bzw. der Vokabel "[[w:en:Ephemeral_key|ephemeral]]" beschäftigen, nicht verwirrt sind). 
+Hier sollte man sich nicht verwirren lassen, denn auch die Ende-zu-Ende verschlüsselnden symmetrischen Passphrasen sind im eigentlichen Sinne ephemerale Schlüssel, aber es wird deutlicher, wenn nur die asymmetrischen temporären Schlüssel, die durch die permanenten E-Mail-Schlüssel geschoben werden, zunächst als ephemerale Schlüssel bezeichnet werden (damit es Personen, die sich das erste Mal mit dem FS-Prozess bzw. der Vokabel "[Ephemeral_key]()" beschäftigen, nicht verwirrt sind). 
 
 Die Verschlüsselungsebenen bei Forward Secrecy im E-Mail-Program GoldBug können wie folgt vereinfacht beschrieben werden:
 
-* Äußere Verschlüsselungsebene: SSL /TSL Verbindung
-* Mögliche, weitere Verschlüsselungsebene: permaneter asymmetrischer E-Mail-Schlüssel (nicht bei "Pure FS" - ansonsten gilt: First-Ephemeral-then-Permanent)
-* Weitere, später gelöschte Ebene: Ephemeraler, temporärer asymmetrischer Schlüssel (dient nur zur Übertragung der symmetrischen Schlüssel) 
-* erste Verschlüsselungs-Ebene über Forward Secrecy: Symmetrischer Schlüssel
-* Alternative erste Verschlüsselungsebene über ein GoldBug: Symmetrischer Schlüssel über ein manuell definiertes GoldBug auf dem E-Mail. Das Nachrichtenformat ist also (TLS/SSL (Permanenter E-Mail-Key (AES-GoldBug (Nachricht))). Entsprechend Encrypt-then-Mac kann man hier von "GoldBug-then-Permanent" sprechen. Das GoldBug auf einem E-Mail verschlüsselt den Text im Briefumschlag. 
+- Äußere Verschlüsselungsebene: SSL /TSL Verbindung
+- Mögliche, weitere Verschlüsselungsebene: permaneter asymmetrischer E-Mail-Schlüssel (nicht bei "Pure FS" - ansonsten gilt: First-Ephemeral-then-Permanent)
+- Weitere, später gelöschte Ebene: Ephemeraler, temporärer asymmetrischer Schlüssel (dient nur zur Übertragung der symmetrischen Schlüssel) 
+- erste Verschlüsselungs-Ebene über Forward Secrecy: Symmetrischer Schlüssel
+- Alternative erste Verschlüsselungsebene über ein GoldBug: Symmetrischer Schlüssel über ein manuell definiertes GoldBug auf dem E-Mail. Das Nachrichtenformat ist also (TLS/SSL (Permanenter E-Mail-Key (AES-GoldBug (Nachricht))). Entsprechend Encrypt-then-Mac kann man hier von "GoldBug-then-Permanent" sprechen. Das GoldBug auf einem E-Mail verschlüsselt den Text im Briefumschlag. 
 
 Temporäre Schlüssel werden nicht aus permanenten Schlüsseln abgeleitet und stehen auch in der Generierung in keiner Beziehung zu diesen. Sitzungsperioden werden manuell vom Nutzer definiert. D.h. nicht wie bei anderen Programmen ist die Sitzung durch das Online-Kommen und wieder Offline-Gehen automatisch definiert, sondern Du selbst bestimmst, wann Du neue sitzungsbasierte Schlüssel nutzen willst. Auch dieses kann wieder jederzeit und "Instant" sein (siehe oben: IPFS).
 
@@ -1568,11 +1568,11 @@ Es empfiehlt sich, für einen ersten Test und die weitere Nutzung ggf. einen Ext
 
 Wie in jedem Messenger kann auch in GoldBug Filesharing zwischen mehrerer Personen oder ein File-Transfer zwischen zwei definierten Freunden vertraulich und sicher verschlüsselt umgesetzt werden. Dieses geschieht im Tabulator "StarBeam". Der Begriff StarBeam (SB) impliziert, dass Filesharing so einfach sei sollte, wie sich das Licht der Sterne durch die Galaxien projeziert oder "beamed".
 
-Während althergebrachte File-Sharing Programme wie [[w:de:EMule|EMule]] oder 
-[[w:de:BitTorrent|BitTorrent]] zunächst auf spezifische Links wie den ed2k-Link oder den Torrent-Link gesetzt haben, hat sich inzwischen für Datei-Übertragungen sowohl bei Torrents, also auch bei fast allen fortschrittlicheren [[w:de:Gnutella|Gnutella]]-Klienten sowie auch für das Edonkey-Netzwerk im 
-[[w:de:Shareaza|Shareaza]]-Klienten die Verlinkung von Dateien über den [[w:de:Magnet_URI_scheme|Magnet-URI-Standard]] etabliert.
+Während althergebrachte File-Sharing Programme wie [EMule]() oder 
+[BitTorrent]() zunächst auf spezifische Links wie den ed2k-Link oder den Torrent-Link gesetzt haben, hat sich inzwischen für Datei-Übertragungen sowohl bei Torrents, also auch bei fast allen fortschrittlicheren [Gnutella]()-Klienten sowie auch für das Edonkey-Netzwerk im 
+[Shareaza]()-Klienten die Verlinkung von Dateien über den [Magnet-URI-Standard]() etabliert.
 
-Die zu GoldBug gehörige Architektur hat diesen [[w:de:GoldBug_(Instant_Messenger)#Magnet_URI_Verschl.C3.BCsselungs_Standard|Magnet-URI-Standard]] weiterentwickelt und um kryptographische Werte ergänzt.
+Die zu GoldBug gehörige Architektur hat diesen Magnet-URI-Standard weiterentwickelt und um kryptographische Werte ergänzt.
  
 Wenn Du nun eine Datei über GoldBug von anderen herunterladen willst, musst Du also einen Magnet-URI-Link in das Programm einkopieren. Und entsprechend: Wenn Du einen Upload einer Datei vorbereiten willst, ist ein Magnet-URI für diese Datei zu erstellen.
 
@@ -1598,7 +1598,7 @@ Magneten werden also genutzt, um ein Bündel an kryptologischen Informationen zu
 
 Zwischen den Knotenpunkten im Echo-Netzwerk wird somit eine Ende-zu-Ende verschlüsselter Kanal geschaffen, durch den eine Datei dann gesendet werden kann. Es kann aber auch jede andere Datei gesandt werden. Der Magnet ist somit keiner bestimmten Datei zugeordnet.  Der SB-Magnet ist wie ein Channel zu versehen, durch die eine Instanz laufend und Dauerhaft Dateien senden kann - oder aber es wird ein One-Time-Magnet erstellt, der nach der einmaligen Nutzung gleich wieder gelöscht wird.
  
-Durch diesen Dual-Use-Effekt kann ein Magnet nicht einer einzelnen Datei oder einer bestimmten IP-Adresse zugeordnet werden. Auch ein Dateiname taucht in dem SB-Magneten nicht auf (- wie es selbst bei den - gegenüber Gnutella, Emule und Torrent-Links - fortschrittlicheren Verlinkungen beispielsweise von [[w:de:OFFSystem|OFFSystem]] oder [[w:de:RetroShare|RetroShare]] noch der Fall ist).
+Durch diesen Dual-Use-Effekt kann ein Magnet nicht einer einzelnen Datei oder einer bestimmten IP-Adresse zugeordnet werden. Auch ein Dateiname taucht in dem SB-Magneten nicht auf (- wie es selbst bei den - gegenüber Gnutella, Emule und Torrent-Links - fortschrittlicheren Verlinkungen beispielsweise von [OFFSystem]() oder [RetroShare]() noch der Fall ist).
 Somit wird deutlich, dass in StarBeam keine bestimmte Datei getauscht wird, sondern es werden grundsätzlich nur verschlüsselte Kanäle getauscht. Sozusagen ein „Wurmloch“, um bei dem Begriff der „Stars“ zu bleiben. Und dieser Kanal wird durch einen Magnet-URI-Link definiert.
  
 Während hingegen zahlreiche Meinungen das Verlinken von Gnutella, Edonkey und Torrent-Links kritisch sehen, besteht bei einer Kollektion aus Verschlüsselungswerten sodann keine Veranlassung dazu, diese Werte zu hinterfragen. Deine Homepage bzw. unabhängige Portale finden mit StarBeam ein fortschrittliches Konzept vor.
@@ -1659,17 +1659,17 @@ Abbildung: Starbeam
 
 Um eine Datei zu senden, muss ein verschlüsselter Kanal erstellt werden. Dieses funktioniert wieder mit der Erstellung eines Magneten (am Ende gekennzeichnet durch URN=SB-StarBeam).
  
-Sodann wird Datei-Packet für Datei-Packet über diesen Kanal verschlüsselt übertragen mittels des HTTPS-Protokolls (das auf [[w:de:Transmission_Control_Protocol|TCP]]-, [[w:de:User_Datagram_Protocol|UDP]]- und auch [[w:de:Stream_Control_Transmission_Protocol|SCTP]]-Verbindungen aufsetzen kann). Es ist daher eine interessante Fragestellung, ob ein Transfer einer großen, verschlüsselten Datei mittels StarBeam über das SCTP, TCP oder UDP Protokoll ceteris paribus fehlerfrei und am schnellsten übertragen wird.
+Sodann wird Datei-Packet für Datei-Packet über diesen Kanal verschlüsselt übertragen mittels des HTTPS-Protokolls (das auf [TCP]()-, [UDP]()- und auch [SCTP]()-Verbindungen aufsetzen kann). Es ist daher eine interessante Fragestellung, ob ein Transfer einer großen, verschlüsselten Datei mittels StarBeam über das SCTP, TCP oder UDP Protokoll ceteris paribus fehlerfrei und am schnellsten übertragen wird.
  
 '''Nutzung eines One-Time-Magnten'''
  
-Idealerweise hast Du für jede Datei einen eigenen Magnet-URI. Das wäre sodann ein One-Time-Magnet (OTM), ein Magnet, der nur einmal genutzt wird für eine Datei. (OTM entspricht also dem Gedanken eines OTP - einem [[w:de:One-Time-Pad|One-Time-Pad]]: eine Zeichenfolge, die nur einmalig genutzt wird. OTP wird oftmals in kryptologischen Prozessen als entscheidend angesehen, um Sicherheit herzustellen).
+Idealerweise hast Du für jede Datei einen eigenen Magnet-URI. Das wäre sodann ein One-Time-Magnet (OTM), ein Magnet, der nur einmal genutzt wird für eine Datei. (OTM entspricht also dem Gedanken eines OTP - einem [One-Time-Pad](): eine Zeichenfolge, die nur einmalig genutzt wird. OTP wird oftmals in kryptologischen Prozessen als entscheidend angesehen, um Sicherheit herzustellen).
  
 Du kannst einen Magneten auch dauerhaft nutzen, dann ist das wie ein abonnierter Video-Kanal, in dem z.B. jeden Montag eine Datei versandt wird.
  
 Das eröffnet z.B. auch Torrent-Portalen ganz neue Möglichkeiten: es muss gar kein Web-Portal mehr existieren, in dem tausende an Links verlinkt sind! Das Portal selbst braucht nur einen einzigen Magneten im dezentralen Echo-Protokoll, um sodann konsekutiv, nach und nach, eine Datei nach der anderen durch das Wurmloch zu senden. 
   
-Alsbald Du eine Datei über den Magneten transferiert hast, kannst Du den Magnet-URI also löschen oder beibehalten. Erstellst Du den Magneten als OTM und aktivierst die Check-Box für OTM, dann löscht er sich nach Dateitransfer von selbst. Das ist dann vergleichbar wie im Film Mission Impossible oder Apps für Bilder, wo sich Nachrichten und Bilder nach Ansicht selbst zerstören - der Magnet ist sozusagen ein StarBeam-[[w:de:Wurmloch|Wurmloch]], dass sich nach einmaliger Nutzung wieder schließt.
+Alsbald Du eine Datei über den Magneten transferiert hast, kannst Du den Magnet-URI also löschen oder beibehalten. Erstellst Du den Magneten als OTM und aktivierst die Check-Box für OTM, dann löscht er sich nach Dateitransfer von selbst. Das ist dann vergleichbar wie im Film Mission Impossible oder Apps für Bilder, wo sich Nachrichten und Bilder nach Ansicht selbst zerstören - der Magnet ist sozusagen ein StarBeam-[Wurmloch](), dass sich nach einmaliger Nutzung wieder schließt.
 
 '''Übersicht der Magnet-URI-Standards für kryptographische Werte'''
 
@@ -1709,7 +1709,7 @@ Wenn ein Empfänger ein Datei-Packet, ein Chunk oder Link, empfangen hat, ist er
  
 '''Vergleich mit Turtle-Hopping'''
 
-Die Übertragung einer Datei in der StarBeam-Funktion über das Echo-Protokoll ist effektiver, als sie über ein Protokoll ähnlich dem „[[w:en:Turtle_F2F|Turtle Hopping]]
+Die Übertragung einer Datei in der StarBeam-Funktion über das Echo-Protokoll ist effektiver, als sie über ein Protokoll ähnlich dem „[Turtle Hopping]()
 “ (derzeit nur im Programm RetroShare implementiert) laufen zu lassen, da hier je nach Ausgestaltung des Echo-Netzwerkes (Volles Echo, halbes Echo, Adaptives Echo) und der grundsätzlichen Verschlüsselung Knotenpunkte mit nur geringer Bandbreite nicht als Flaschenhals wirken müssen, sondern über weitere Echo-Wege die gewünschten Download-Geschwindigkeit optimieren.
 
 Das Echo-Protokoll erstellt den Fluss im Netzwerk der Knotenpunkte automatisch (einfach indem jeder Knotenpunkt zu jedem verbundenen Knotenpunkt Datei-Pakete verschlüsselt senden kann) und wählt daher auch den schnellsten Weg aller möglichen Graphen zu Deinem Knotenpunkt.
@@ -1787,7 +1787,7 @@ Dann können StarBeam-Magnet-URIs über das Echo-Protokoll eine Rolle bei neuen 
 
 ## 12 Web-Suchmaschine mit URL-Datenbank
 
-In der Funktion der Websuche ist GoldBug durch seine genutzte Architektur des Kernels auch eine quelloffene p2p Web-Suchmaschine. GoldBug ist dabei die (bisherig) einzige und erste unter den wenigen handvollen p2p verteilten Suchmaschinen wie [[w:de:YaCy|YaCy]], Faroo.com, Arado.sf.net oder [[w:en:Grub_(search_engine)|Grub]] (die von [[w:de:Wikia#Wikia_Search|Wikia-Search]] bekannt war), die in der Lage ist, den Transfer der URLs über verschlüsselte Verbindungen in ein verteiltes F2F- bzw. P2P-Netzwerk zu gestalten. 
+In der Funktion der Websuche ist GoldBug durch seine genutzte Architektur des Kernels auch eine quelloffene p2p Web-Suchmaschine. GoldBug ist dabei die (bisherig) einzige und erste unter den wenigen handvollen p2p verteilten Suchmaschinen wie [YaCy](), Faroo.com, Arado.sf.net oder [Grub_(search_engine)]() (die von [Wikia-Search]() bekannt war), die in der Lage ist, den Transfer der URLs über verschlüsselte Verbindungen in ein verteiltes F2F- bzw. P2P-Netzwerk zu gestalten. 
 Der Anspruch der Web-Suchfunktion in GoldBug ist, nicht nur eine quell-offene Programmierung der Suchmaschine anzubieten, sondern auch den URL-Datenbestand quell-offen zu handhaben, so dass jeder Teilnehmer die URLs herunterladen kann. Drittens schließlich geht es darum, dass Transfers und Datenbank-Speicherungen in einer verschlüsselten Umgebung stattfinden.
 
 
@@ -1813,7 +1813,7 @@ Die Distribuierung von Webseiten-URLs geschieht nicht über zentrale Server, son
 
 
 
-Weiterhin besteht auch die Möglichkeit, neue URLs in Deine lokale Datenbank manuell zu importieren. Hierzu wird der [[w:en:Dooble|Web Browser Dooble.sf.net]] benötigt. Das erste Symbol in der URL-Zeile des Browsers ermöglicht, eine einzelne URL in eine Zwischen-Datenbank zu speichern: Shared.db. Diese wird dann von GoldBug mit nur einem Klick importiert.
+Weiterhin besteht auch die Möglichkeit, neue URLs in Deine lokale Datenbank manuell zu importieren. Hierzu wird der [Web Browser Dooble.sf.net]() benötigt. Das erste Symbol in der URL-Zeile des Browsers ermöglicht, eine einzelne URL in eine Zwischen-Datenbank zu speichern: Shared.db. Diese wird dann von GoldBug mit nur einem Klick importiert.
 Die Shared.db muss im Installationspfad von GoldBug liegen und beide Programme, GoldBug und Dooble, müssen in den Einstellungen den Pfad dieser Datei definieren.
 
 Um eine URL der Webseite, die Du gerade ließt, aus dem Web Browser Dooble in Deine URL-Datenbank von GoldBug zu importieren, klicke einfach das erste Icon in der URL-Zeile des Browser, um die URL erstmal in der Shared.db abzulegen. Sodann Klicke in GoldBug im Tabulator der Web-Suche den Knopf "Importieren".
@@ -1826,8 +1826,8 @@ Eine dritte Import-Möglichkeit ist, den Cawler "Pandamonium" zu nutzen. Der Web
 https://github.com/textbrowser/pandamonium
 
 ### 12.1 Datenbank Setup 
-Die URLs können wahlweise in einer [[w:de:SQLite|SQLite]]- oder 
-[[w:de:PostgreSQL|PostgreSQL]]-Datenbank gespeichert werden. SQLite ist die automatisch konfigurierte Datenbank, die auch Nutzern mit weniger Erfahrung in der Einrichtung von Datenbanken empfohlen wird. Fortgeschrittenere Nutzer können sich auch an eine PostgreSQL-Datenbank-Einrichtung herangeben. Diese hat Vorteile im Netzwerkzugriff, der Verwaltung von Nutzerrechten und dem Handling großer URL-Datenbestände.
+Die URLs können wahlweise in einer [SQLite]()- oder 
+[PostgreSQL]()-Datenbank gespeichert werden. SQLite ist die automatisch konfigurierte Datenbank, die auch Nutzern mit weniger Erfahrung in der Einrichtung von Datenbanken empfohlen wird. Fortgeschrittenere Nutzer können sich auch an eine PostgreSQL-Datenbank-Einrichtung herangeben. Diese hat Vorteile im Netzwerkzugriff, der Verwaltung von Nutzerrechten und dem Handling großer URL-Datenbestände.
 GoldBug eignet sich daher mit der Funktion, eine eigene Websuche zu gestalten, auch für den Unterricht, um Lernende für die Einrichtung von Datenbanken zu interessieren. 
 
 Die URLs werden in 26x26 bzw. 36x36 Datenbanken (2(16^2) = 512 Tabellen) deponiert, die verschlüsselt sind. D.h. die Suche findet in einer verschlüsselten Datenbank (URLs.db) statt. Die Suche in verschlüsselten Datenbanken ist ein bislang noch wenig bearbeitetes Forschungsfeld.
@@ -1852,7 +1852,7 @@ Die Einrichtung der SQLite Datenbank für die URLs ist in wenigen Schritten erfo
 
 #### 12.1.2. PostgreSQL
 
-PostgreSQL - auch bekannt unter dem Namen Postgres - ist ein freies, objektrelationales Datenbankmanagementsystem (ORDBMS). 
+PostgreSQL - auch bekannt unter dem Namen [Postgres]() - ist ein freies, objektrelationales Datenbankmanagementsystem (ORDBMS). 
 Seine Entwicklung entstand in den 1980er Jahren aus einer Datenbankentwicklung der University of California in Berkeley, seit 1997 wird die Software von einer Open-Source-Community weiterentwickelt.
 PostgreSQL ist weitgehend konform mit dem SQL-Standard ANSI-SQL 2008. PostgreSQL ist vollständig ACID-konform, und unterstützt erweiterbare Datentypen, Operatoren, Funktionen und Aggregate.
 In den meisten Linux-Distributionen ist PostgreSQL enthalten - auch Windows und Mac OS X werden unterstützt.
@@ -2067,7 +2067,7 @@ Das Werkzeug zur Dateiverschlüsselung ist ein Angebot, um z.B. potentiell unsic
 
 ### 14.2 Werkzeug: Das Rosetta CryptoPad
 
-Das Werkzeug Rosetta CryptoPad hat seinem Namen vom [[w:de:Stein_von_Rosette|Stein von Rosett]], der in London im Museum steht. Er gilt als Übersetzungshilfe für ägyptische Hyroglyphen in weitere Sprachen.
+Das Werkzeug Rosetta CryptoPad hat seinem Namen vom [Stein von Rosett](), der in London im Museum steht. Er gilt als Übersetzungshilfe für ägyptische Hyroglyphen in weitere Sprachen.
 Das in GoldBug enthaltene Rosetta CryptoPad besteht aus zwei Schüsseln - wie auch Chat und E-Mail und alle anderen Funktionen derartig ihre eigenen Schlüssel haben. Tausche auch hier mit einem Freund den Rosetta-Schlüssel, gebe Text in das CryptoPad ein, wähle den Freund und, ob es sich um Ver- oder Entschlüsselung handelt, - und drücke den Knopf "konverieren".
 Sodann wird unten der Output als chiffrierter Text angezeigt und diesen kannst Du einfach mit der Kopierfunktion auskopieren und über konventionelle Online-Kommunikationswege wie @-E-Mail oder einen anderen Chat versenden. 
 Auch Web-Boards oder Paste-Bins kannst Du so als verschlüsselten Ort für Deine Kommunikation nutzen.
@@ -2201,25 +2201,25 @@ Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)
 ## 16 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von… 
 
 Dieses Benutzerhandbuch soll nicht nur technisch die Handhabung von Verschlüsselungen, ihren Prozessen oder die Nutzung der einzelnen Tabs und Knöpfe darstellen, sondern auch den Sinn der Verschlüsselung darstellen, wie er sich im Lichte verschiedener Grundgesetze zum Schutz der privaten Freiheit und Kommunikation darstellt.
-Auf folgende grundlegende Gesetze soll daher hingewiesen werden, die in ihren Originaltexten einbezogen werden.  
+Auf folgende grundlegende Gesetze soll daher hingewiesen werden, die in ihren Originaltexten einbezogen werden.
  
 ### 16.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
 
 No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.
 http://www.un.org/en/documents/udhr/index.shtml#a12
-[[w:en:Universal Declaration of Human Rights|Universal Declaration of Human Rights]]
+[Universal Declaration of Human Rights Universal Declaration of Human Rights]()
  
 ### 16.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
 1. No one shall be subjected to arbitrary or unlawful interference with his privacy, family, home or correspondence, nor to unlawful attacks on his honour and reputation.
 2. Everyone has the right to the protection of the law against such interference or attacks.
 http://www.ohchr.org/EN/ProfessionalInterest/Pages/CCPR.aspx
-[[w:en:International Covenant on Civil and Political Rights|International Covenant on Civil and Political Rights]]
+[International Covenant on Civil and Political Rights - International Covenant on Civil and Political Rights]()
  
 ### 16.3 European Convention on Human Rights, 1950 (Art. 8)
 1.Everyone has the right to respect for his private and family life, his home and his correspondence.
 2.There shall be no interference by a public authority with the exercise of this right except such as is in accordance with the law and is necessary in a democratic society in the interests of national security, public safety or the economic well-being of the country, for the prevention of disorder or crime, for the protection of health or morals, or for the protection of the rights and freedoms of others.
 http://conventions.coe.int/treaty/en/Treaties/Html/005.htm
-[[w:en:European Convention on Human Rights|European Convention on Human Rights]]
+[European Convention on Human Rights - European Convention on Human Rights]()
  
  
 ### 16.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
@@ -2231,8 +2231,8 @@ Everyone has the right to respect for his or her private and family life, home a
 1.Everyone has the right to the protection of personal data concerning him or her.
 2.Such data must be processed fairly for specified purposes and on the basis of the consent of the person concerned or some other legitimate basis laid down by law. Everyone has the right of access to data which has been collected concerning him or her, and the right to have it rectified.
 3.Compliance with these rules shall be subject to control by an independent authority.
-[[s:en:Charter of Fundamental Rights of the European Union|Charter of Fundamental Rights of the European Union (Wikisource)]]
-[[w:en:Charter of Fundamental Rights of the European Union|Charter of Fundamental Rights of the European Union]]
+[Charter of Fundamental Rights of the European Union - Charter of Fundamental Rights of the European Union (Wikisource)]()
+[Charter of Fundamental Rights of the European Union - Charter of Fundamental Rights of the European Union]()
 
 
 ### 16.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art. 2 Abs. 1 i. V. m. Art. 1 Abs. 1)
@@ -2242,7 +2242,7 @@ Everyone has the right to respect for his or her private and family life, home a
 Article 1 [Human dignity – Human rights – Legally binding force of basic rights]
 (1) Human dignity shall be inviolable. To respect and protect it shall be the duty of all state authority.
 https://www.btg-bestellservice.de/pdf/80201000.pdf
-[[w:en:Basic Law for the Federal Republic of Germany|Basic Law for the Federal Republic of Germany]]
+[Basic Law for the Federal Republic of Germany - Basic Law for the Federal Republic of Germany]()
 
 '''Further: Article 1 and Article 10:'''
 
@@ -2268,13 +2268,14 @@ eine Sendung, die einem solchen Unternehmen zur Übermittlung anvertraut worden 
 (3) Die Absätze 1 und 2 gelten auch für Personen, die 1. Aufgaben der Aufsicht über ein in Absatz 1 bezeichnetes Unternehmen wahrnehmen, 2. von einem solchen Unternehmen oder mit dessen Ermächtigung mit dem Erbringen von Post- oder Telekommunikationsdiensten betraut sind oder 3. mit der Herstellung einer dem Betrieb eines solchen Unternehmens dienenden Anlage oder mit Arbeiten daran betraut sind.
 (4) Wer unbefugt einer anderen Person eine Mitteilung über Tatsachen macht, die ihm als außerhalb des Post- oder Telekommunikationsbereichs tätigem Amtsträger auf Grund eines befugten oder unbefugten Eingriffs in das Post- oder Fernmeldegeheimnis bekanntgeworden sind, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft.
 (5) Dem Postgeheimnis unterliegen die näheren Umstände des Postverkehrs bestimmter Personen sowie der Inhalt von Postsendungen. Dem Fernmeldegeheimnis unterliegen der Inhalt der Telekommunikation und ihre näheren Umstände, insbesondere die Tatsache, ob jemand an einem Telekommunikationsvorgang beteiligt ist oder war. Das Fernmeldegeheimnis erstreckt sich auch auf die näheren Umstände erfolgloser Verbindungsversuche.
-http://www.gesetze-im-internet.de/gg/art_10.html
-[[w:en:Secrecy of correspondence|Secrecy of correspondence]]
-[[w:Briefgeheimnis|Briefgeheimnis]]
-[[w:Fernmeldegeheimnis|Fernmeldegeheimnis]]
-[[w:Postgeheimnis|Postgeheimnis]]
-http://www.gesetze-im-internet.de/tkg_2004/__88.html
-http://www.gesetze-im-internet.de/stgb/__206.html
+
+- http://www.gesetze-im-internet.de/gg/art_10.html
+- [Secrecy of correspondence - Secrecy of correspondence]()
+- [Briefgeheimnis - Briefgeheimnis]()
+- (Fernmeldegeheimnis - Fernmeldegeheimnis]()
+- [Postgeheimnis - Postgeheimnis]()
+- http://www.gesetze-im-internet.de/tkg_2004/__88.html
+- http://www.gesetze-im-internet.de/stgb/__206.html
  
 ### 16.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
 
