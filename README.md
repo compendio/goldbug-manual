@@ -182,6 +182,7 @@ Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Su
 
 
 Abbildung: GoldBug Logo (Smiley)
+
 ![Abbildung: GoldBug Logo Smiley](/images/goldbug.png)
 
 
@@ -249,6 +250,7 @@ GoldBug Messenger hat daher schon frühzeitig ergänzend verschiedene Alternativ
 Neben RSA hat GoldBug dennoch die Verschlüsselungsalgorithmen Elgamal und auch NTRU und McEliece implementiert. Die beiden letzt-genannten gelten auch als besonders resistent gegen die Angriffe, die aus dem [Quantum Computing]( https://de.wikipedia.org/wiki/Quantencomputer) bekannt sind.
 
 Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing
+
 ![Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing](/images/mceliece.png)	
 
 GoldBug nutzt die libgcrypt-, libntru- und McEliece-Bibliotheken für die Erzeugung der dauerhaften privaten und öffentlichen Schlüsselpaare. Derzeit generiert die Anwendung Schlüsselpaare für jede der einzelnen zehn Funktionen während der Initialisierung. Die Schlüsselerzeugung ist optional. Folglich erfordert GoldBug zwingend keine Public Key-Infrastruktur. Auch nachgelagert können die gewünschten Algorithmen ausgewählt werden und Schlüssel generiert werden.
@@ -282,6 +284,7 @@ Abbildung: RSA und seine Alterntiven in GoldBug
 Die Verschlüsselung von GoldBug ist derart gestaltet, dass jeder Nutzer mit jedem Nutzer kommunizieren kann, egal, welchen Verschlüsselungsalgorithmus ein Nutzer gewählt hat. Kommunikation zwischen den Nutzern mit verschiedenen Schlüsseltypen ist somit gut definiert, wenn die Knoten gemeinsame Versionen der libgcrypt und libntru Bibliotheken nutzen: Wer einen RSA-Schlüssel gewählt hat, kann also auch mit einem Nutzer verschlüsselt chatten und e-mailen, der einen Elgamal-Schlüssel gewählt hat. Dieses liegt daran, dass jeder jeden Algorithmus unterstützt und die Bibliothek dieses unterstützt. Wer das Programm mit einem Freund testen will, nutzt am besten die jeweils aktuellste Version von GoldBug.
 
 Abbildung: Anpassbare Crypto
+
 ![Abbildung: Anpassbare Crypto](/images/adjustable_crypto.png)	
 
 
@@ -305,10 +308,12 @@ GoldBug verwendet [CBC mit CTS](https://de.wikipedia.org/wiki/Cipher_Block_Chain
 Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authentifizierten Container enthält dazu weitere technische Details.
 
 Abbildung: Theefish Implementierung
+
 ![Abbildung: Theefish Implementierung](/images/threefish.png)	
 
 
 Abbildung: Ciphertext
+
 ![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
 
 
@@ -388,6 +393,7 @@ Zugrunde liegt das sogenannte "[Kleine-Welt-Phänomen](https://de.wikipedia.org/
 
 
 Abbildung: Format des genutzten Echo-Protokolls
+
 ![Abbildung: Format des genutzten Echo-Protokolls](/images/echo_format.png)	
 
 Die Abbildung zeigt von innen nach außen den Prozess, wie die verschlüsselte Kapsel im Rahmen des Echo-Protokolls gebildet wird:
@@ -455,6 +461,7 @@ Alternativ kann man diesen dezentralen Anspruch unterstützen bzw. die Nachricht
 Die Abbildung simuliert das Versenden der Nachricht von einem Ausgangspunkt an alle Netzknoten über alle verbundenen Netzknoten.
  
 Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt
+
 ![Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt](/images/echo-simulation.gif)
 
 Grundlegend ist also, dass im Echo jeder Knotenpunkt jede Nachricht an jeden Knotenpunkt weitersendet. Dieses klingt einfach dahingesagt, ist es einerseits auch: Das Echo-Protokoll ist ein sehr simples Protokoll, hat aber auch weitergehende Implikationen, sprich: Es gibt beim Echo keine Routing Informationen und auch Metadaten können aus dem Netzwerk kaum aufgezeichnet werden. Die Nodes leiten die Nachricht auch nicht weiter, der Begriff des "Forwarding" ist unzutreffend, denn jeder Knotenpunkt sendet aktiv erneut die Nachricht an die (seine) verbundenen Freunde.
@@ -500,6 +507,7 @@ Der Abschnitt weiter unten über das Adaptive Echo (AE) wird daher noch ausführ
 Und ergänzend: das Echo kennt auch **Echo-Accounts**. Ein Konto oder eine Art Firewall. Es kann genutzt werden, um sicherzustellen, dass nur Freunde sich verbinden, die die Zugangsdaten zu dem Konto kennen. Somit wird ein sogenanntes [Web of Trust](https://de.wikipedia.org/wiki/Web_of_Trust), ein Netzwerk, das auf Vertrauen beruht, gebildet. Es basiert nicht wie in anderen Applikationen auf dem Schlüssel für die Verschlüsselung, es ist davon unabhängig. Das hat den Vorteil, dass der öffentliche Schlüssel für die Verschlüsselung nicht mit der IP-Adresse assoziiert werden muss; oder der Nutzer seine IP-Adresse im Netzwerk der Freunde bekannt geben muß, beispielsweise in einem DHT, in dem Nutzer danach suchen können. Die Echo-Accounts stellen eine [Peer-to-Peer](https://de.wikipedia.org/wiki/Peer-to-Peer)-(P2P)-Verbindung auf ein [Friend-to-Friend](https://de.wikipedia.org/wiki/Friend-to-friend) (F2F) Netzwerk um bzw. erlauben beide Verbindungsarten. Damit ist GoldBug für beide Paradigma ausgelegt.
 
 Abbildung: Abbildung: Account Firewall
+
 ![Abbildung: Abbildung: Account Firewall](/images/account_firewall.png)	
 
 
@@ -514,6 +522,7 @@ Die Echo-Accounts funktionieren wie folgt:
 Wenn SSL/TLS während dieser Aushandlung nicht verfügbar ist, mag das Protokoll wie folgt angreifbar werden: Eine Zwischenstation mag die Werte aus dem dritten Schritt aufzeichnen und folgerichtig zum bindenden Endpunkt senden. Sodann könnte der bindende Endpunkt auch einer unbekannten Verbindung Zugang zum Account gewähren. Das aufzeichnende Gerät könnte dann die Antwort des bindenden Endpunktes, also die Werte des vierten Schritts, an sich reißen und die Informationen an den Peer weiterleiten. Wenn die Account-Informationen bzw. das erforderliche Passwort dann akkurat vorgehalten werden, würde der Peer die Antwort dieses neuen bindenden Endpunktes dann akzeptieren. Darum heißt es wie immer: Passworte schützen.
 
 Abbildung: Account Passwords
+
 ![Abbildung: Account Passwords](/images/account_passwords.png)	
 
 
@@ -523,6 +532,7 @@ Wenn Studierende oder Schüler über das Echo-Protokoll reden und unterrichten o
 
 
 Abbildung: Das Echo Grid Template
+
 ![Abbildung: Echo Grid Template](/images/echo_grid_template.png)
 
 
@@ -549,6 +559,7 @@ Das Echo-Grid als einfache Netzwerkdarstellung dient nicht nur zur Analyse von "
 ### 3.4.1 Beispiele des Schlüssel-Austausches von Alice, Bob, Ed & Maria
 
 Abbildung: Alice, Bob, Ed und Mary im Echo-Grid - Ein Beispiel für das Echo
+
 ![Abbildung: Alice, Bob, Ed und Mary im Echo-Grid - Ein Beispiel für das Echo](/images/Echo_Chat_Grid_Example.png)
 
 
@@ -627,6 +638,7 @@ Dieses Beispiel sollte einfach replizierbar sein.
 Nimmt man nun die verschiedenen Methoden und Optionen zusammen, wird die Abbildung "Wie das Echo-Protkoll funktioniert" einen komplexeren Überblick bieten.
 
 Abbildung: Wie das Echo PROTOCOL funktioniert
+
 ![Abbildung: Wie das Echo PROTOCOL funktioniert](/images/Echo-grid.png)
 
 
@@ -685,6 +697,7 @@ Ansonsten muss in diesem Tabulator für Einstellungen bzw. für die Kernel-Aktiv
 ### 5.1 Zwei Login-Methoden
 
 Abbildung: Setze Passwort
+
 ![Abbildung: Setze Passwort](/images/set_password.jpg)
 
 
@@ -705,6 +718,7 @@ Und: Weder die Frage, noch die Antwort, werden auf der Maschine des Nutzers gesp
 Es ist zu beachten, dass hier die Frage und die Antwort bei späteren Logins exakt eingeben werden müssen, wie sie definiert wurden und hier bei der erstmaligen Definition kein zweiter Eingabecheck ("Confirmation") hinsichtlich Tippfehler wie bei der Passwort-Methode erfolgt.
 
 Abbildung: Login in die Applikation mit einem Passwort
+
 ![Abbildung: Login in die Applikation mit einem Passwort](/images/login.png)	
 
 
@@ -715,6 +729,7 @@ Um auch Tastatur-Loggern die Eingaben nicht Preis zu geben, besteht bei der Logi
 
 
 Abbildung: Virtuelles Keyboard
+
 ![Abbildung: Virtuelles Keyboard](/images/virtual_keyboard.png)	
 
 
@@ -760,9 +775,11 @@ Bei nicht-minimaler Ansicht zeigen sich im Tabulator "Activate Kernel" somit z.B
 Eine weitere Vielzahl an Optionen findet sich auch unter dem Hauptmenü/Optionen in einem Pop-Up-Fenster, die später noch erläutert werden. Dieses ist das eigentliche Options-Fenster.
 
 Abbildung: Digitale Signaturen
+
 ![Abbildung: Digitale Signaturen](/images/digital_signatures.png)	
 
 Abbildung: Optionen für den Clienten
+
 ![Abbildung: Optionen für den Clienten](/images/client_options.png)	
 
 
@@ -776,6 +793,7 @@ Ansonsten betreibt der Nutzer den Kernel ohne GUI, was ja manchmal auf einem Web
 
 
 Abbildung: Aktivierung des Kernels
+
 ![Abbildung: Aktivierung des Kernels](/images/kernel_activation.png)	
 
 
@@ -783,6 +801,7 @@ Abbildung: Aktivierung des Kernels
 Wenn der Nutzer die GUI bestehen lassen will, aber niemand während der Abwesenheit Eingaben oder Veränderungen vornehmen können soll, besteht auch die Möglichkeit links in der unteren Statuszeile den Knopf "Lock" zu klicken, die Benutzeroberfläche schließt dann und kehrt zum Login-Tab für die Eingabe des Passwortes zurück, so dass die laufenden Prozesse und Eingaben der anderen Tabulatoren nicht sichtbar sind. Um die Oberfläche wieder zu ent-lock-en, ist der Lock-Knopf in der Statuszeile erneut zu drücken und der Nutzer gibt die Passphrase(n) dann in einem Pop-Up-Fenster wieder ein.
 
 Abbildung: Verschlüsselung zwischen Kernel und Gui/Benutzeroberfläche
+
 ![Abbildung: Verschlüsselung zwischen Kernel und Gui/Benutzeroberfläche](/images/guikernel_encryption.png)	
 
 
@@ -798,15 +817,19 @@ Die mittlere LED zeigt an, ob der Nutzer einen Listener/Chat-Server eingerichtet
 
 
 Abbildung: Einen Nachbarn mit IP-Adresse hinzufügen (einfache Ansicht
+
 ![Abbildung: Einen Nachbarn mit IP-Adresse hinzufügen (einfache Ansicht)](/images/neighbor_connect.gif)
 
 Abbildung: Nachbar-Server verbinden
+
 ![Abbildung: Nachbar-Server verbinden](/images/connect_neighbor.png)	
 
 Abbildung: Füge einen Nachbarn/Server hinzu
+
 ![Abbildung: Füge einen Nachbarn/Server hinzu](/images/add_neighbor.gif)
 
 Abbildung: Verbindung mit einem Nachbar-Server
+
 ![Abbildung: Verbindung mit einem Nachbar-Server](/images/neigbor_connect.png)	
 
 
@@ -833,21 +856,25 @@ Wer mehr Details sehen will, kann die minimale Ansicht auch in die volle Ansicht
 
 
 Abbildung: Chat-Tab des GoldBug-Messengers
+
 ![Abbildung: Chat-Tab des GoldBug-Messengers](/images/chat_tab.jpg)
 
 Abbildung: Chat Tab
+
 ![Abbildung: Chat Tab](/images/chat_tab.png)	
 
 
-Wenn nun Login-Passwort definiert, Schlüssel generiert, Kernel aktiviert und ein Nachbar/Server verbunden ist, also in der Statuszeile zwei LED grün leuchten, dann kannst Du mit einem Freund einen Schlüssel tauschen und die Kommunikation kann im Chat-Tab (siehe '''Abbildung 11''') oder Pop-Up-Fenster für einen definierten Teilnehmer beginnen. Der Schlüsseltausch lässt sich wie folgt beschreiben:
+Wenn nun Login-Passwort definiert, Schlüssel generiert, Kernel aktiviert und ein Nachbar/Server verbunden ist, also in der Statuszeile zwei LED grün leuchten, dann kannst Du mit einem Freund einen Schlüssel tauschen und die Kommunikation kann im Chat-Tab (siehe Abbildung) oder Pop-Up-Fenster für einen definierten Teilnehmer beginnen. Der Schlüsseltausch lässt sich wie folgt beschreiben:
 
 ### 6.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
 
 
 Abbildung: Add Friend/Key
+
 ![Abbildung: Add Friend/Key](/images/add_key.png)	
 
 Abbildung: Füge Schlüssel/Freund hinzu
+
 ![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
 
 
@@ -874,10 +901,12 @@ Der Text eines Schlüssels startet immer mit einem Buchstaben "K" oder "k" und e
 ### 6.2 Einen ersten sicheren Chat beginnen 
 
 Abbildung: 1:1-Chat im Pop-up Fenster
+
 ![Abbildung: 1:1-Chat im Pop-up Fenster ](/images/chat_pop_up.jpg)
 
 
 Abbildung: Chat im Pop-up Fenster
+
 ![Abbildung: Chat im Pop-up Fenster](/images/chat_popupwindow.png)	
 
 
@@ -897,6 +926,7 @@ In der Status-Zeile oben am Fenster kannst Du den Nicknamen und den Online-Statu
 MELODICA steht für “Multi Encryted LOng DIstance Calling” – ins Deutsche übersetzt in etwa: „Vielfach-verschlüsseltes Anrufen über eine lange Distanz“
 
 Abbildung: MELODICA-Symbol
+
 ![Abbildung: MELODICA-Symbol](/images/melodica.gif)
 
 
@@ -956,14 +986,17 @@ gibt es viertens zusätzlich ein weiteres Verfahren zur Erhöhung der Sicherheit
 
 
 Abbildung: SMP-Protokoll
+
 ![Abbildung: SMP-Protokoll](/images/SMP_socialist_millionaire.png)	
 
 
 Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster] zur Authentifizierung des Chat-Partners
+
 ![Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster] zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)
 
 
 Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol
+
 ![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol](/images/SMP_Secret_Streams.png)	
 
 
@@ -1045,6 +1078,7 @@ Aus den beschriebenen Methoden (vgl. auch Abbildung), einen Ende-zu-Ende Schlüs
 
 
 Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto
+
 ![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)	
 
 
@@ -1110,11 +1144,13 @@ Im Chat-Tab besteht in den Optionen des rechten Seiten-Splitters auch die Mögli
 
 
 Abbildung: File Transfer im Chat Fenster
+
 ![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
 
 
 
 Abbildung: Tear-Off/Hook-Up von Bedienungselementen
+
 ![Abbildung: Tear-Off/Hook-Up von Bedienungselementen](/images/tearoff_menu.png)	
 
 
@@ -1125,14 +1161,17 @@ Der GoldBug Messenger verfügt neben E-Mail und Chat auch über eine Gruppen-Cha
 
 
 Abbildung: E-IRC Gruppenchat
+
 ![Abbildung: E-IRC Gruppenchat](/images/e_irc.png)	
 
 
 Abbildung: der Gruppenchat
+
 ![Abbildung: der Gruppenchat ](/images/buzz_tab.gif)
 
 
 Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal
+
 ![Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal](/images/e_irc_buzz.png)	
 
 
@@ -1190,15 +1229,18 @@ Technisch nutzt GoldBug die Bibliothek [[w:de:CURL#libcurl|libcurl]] und unterst
 
 
 Abbildung: E-Mail Tab: Nutzung von GoldBug als E-Mail-Klient
-![Abbildung: E-Mail Tab: Nutzung von GoldBug als E-Mail-Klient] (/images/E-Mail_tab.gif)
+
+![Abbildung: E-Mail Tab: Nutzung von GoldBug als E-Mail-Klient] (/images/email_tab.gif)
 
 
 
 Abbildung: E-Mail - Lesen Anzeige
+
 ![Abbildung: E-Mail - Lesen Anzeige](/images/email_read.png)	
 
 
 Abbildung: E-Mail - Schreiben Anzeige
+
 ![Abbildung: E-Mail - Schreiben Anzeige](/images/email_write.png)	
 
 
@@ -1213,16 +1255,18 @@ Das Post Office Protocol ([[w:de:Post_Office_Protocol|POP3]]) ist ein Übertragu
 POP3 erlaubt das Auflisten, Abholen und Löschen von E-Mails am E-Mail-Server. Für das Versenden von E-Mails ist komplementär zu POP3 üblicherweise  das Simple Mail Transfer Protocol (SMTP) in Clients und Servern implementiert.
 
 Das POP3-Protokoll ist somit in allen verbreiteten E-Mail-Programmen integriert, so auch in GoldBug.
-Wie es - neben IMAP - eingerichtet wird, wird folgend und weiter ergänzend unten in der Beschreibung des Fensters von POPTASTIC erläutert (vgl. '''Abbildung 19''').
+Wie es - neben IMAP - eingerichtet wird, wird folgend und weiter ergänzend unten in der Beschreibung des Fensters von POPTASTIC erläutert (vgl. Abbildung).
 
 ### 9.2 IMAP 
 
 Abbildung: POPTASTIC: Chat über E-Mail-Server
-![Abbildung: POPTASTIC: Chat über E-Mail-Server](/images/E-Mail_POPTASTIC.png)	
+
+![Abbildung: POPTASTIC: Chat über E-Mail-Server](/images/email_poptastic.png)	
 
 
 Abbildung: POPTASTIC
-![Abbildung: POPTASTIC](/images/POPTASTIC.png)
+
+![Abbildung: POPTASTIC](/images/poptastic.png)
 
 
 
@@ -1301,6 +1345,8 @@ Hierzu bestehen zwei verschiedene Methoden:
 Die eine Methode ist, dass ein dritter, gemeinsamer Freund genutzt wird, um die E-Mails dort zwischen zu speichern.
 Wenn Alice und Bob also einen Chat-Server im Web auf ihrem Webserver einrichten, und alle drei Ihre Schlüssel getauscht haben, fungiert der Webserver wie ein E-Mail-Postfach, wie wir es von POP3 oder IMAP her kennen.
 
+Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion
+
 ![Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
 
  
@@ -1308,6 +1354,7 @@ Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auc
 
 
 Abbildung: Datenbank Verschlüsselung
+
 ![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
 
  
@@ -1367,12 +1414,13 @@ GoldBug ist mit Nutzung der einbezogenen Architektur des Spot-on-Kernels weltwei
 
 Forward Secrecy heisst ja, dass temporäre Schlüssel eingesetzt werden, um das Ende-zu-Ende verschlüsselnde Passwort zu übertragen, so dass, wenn zu einem späteren Zeitpunkt Analysen zur Kommunikation und deren Verschlüsselung gemacht werden sollten, nicht der reguläre (permanente) Schlüssel für die Kommunikation betroffen ist.
 
-Du sendest also Deinem E-Mail-Partner über die übliche asymmetrische Verschlüsselung des E-Mail-Schlüssels nun einen sitzungsbasierten, symmetrischen (Forward Secrecy) Schlüssel (vgl. Abbildung 20). Wenn Dein Partner die Anfrage bestätigt und seinen temporären Schlüssel zurücksendet, dann können beide Teilnehmer sitzungsbasierte asymmetrische Schlüssel nutzen, um die E-Mail-Kommunikation weitergehend zu sichern. 
+Du sendest also Deinem E-Mail-Partner über die übliche asymmetrische Verschlüsselung des E-Mail-Schlüssels nun einen sitzungsbasierten, symmetrischen (Forward Secrecy) Schlüssel (vgl. Abbildung). Wenn Dein Partner die Anfrage bestätigt und seinen temporären Schlüssel zurücksendet, dann können beide Teilnehmer sitzungsbasierte asymmetrische Schlüssel nutzen, um die E-Mail-Kommunikation weitergehend zu sichern. 
 Diese Methode der asymmetrischen Ende-zu-Ende Sicherung wurde im übrigen nicht nur für E-Mail integriert, sondern auch auf die Chat-Funktion (siehe oben: FS-Calling). 
 
 
 
 Abbildung: E-Mail mit Forward Secrecy
+
 ![Abbildung: E-Mail mit Forward Secrecy](/images/email_forwardsecrecy.png)	
 
 
@@ -1498,6 +1546,7 @@ E-Mail über POPTASTIC ist also einfaches dauerhaftes verschlüsseltes e-mailen,
 
 
 Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP
+
 ![Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP ](/images/poptasticsettings.png)
 
 
@@ -1579,24 +1628,29 @@ Abbildung: Magnet and Novas for StarBeam File Sharing
 
 
 Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks
+
 ![Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks](/images/starbeam-analyzer.png)	
 
 
 
 Abbildung: Starbeam-Dateitransfer - Eingehende Dateien
+
 ![Abbildung: Starbeam-Dateitransfer - Eingehende Dateien](/images/starbeam_incomming.png)	
 
 
 Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer
+
 ![Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer](/images/starbeam_magnet_links.png)	
 
 
 Abbildung: Starbeam-Dateitransfer: Upload von Dateien
+
 ![Abbildung: Starbeam-Dateitransfer: Upload von Dateien](/images/starbeam_uploads.png)
 
 
 
 Abbildung: Starbeam 
+
 ![Abbildung: Starbeam ](/images/starbeam_tab.gif) 
 
 
@@ -1737,14 +1791,14 @@ In der Funktion der Websuche ist GoldBug durch seine genutzte Architektur des Ke
 Der Anspruch der Web-Suchfunktion in GoldBug ist, nicht nur eine quell-offene Programmierung der Suchmaschine anzubieten, sondern auch den URL-Datenbestand quell-offen zu handhaben, so dass jeder Teilnehmer die URLs herunterladen kann. Drittens schließlich geht es darum, dass Transfers und Datenbank-Speicherungen in einer verschlüsselten Umgebung stattfinden.
 
 
-Abbildung 27: Der Tabulator für die Websuche in GoldBug: Durchsuche die URL-Datenbank und erhalte Ergebnisse.'''
-
 
 Abbildung: Websuche mit GoldBug in der URL-Datenbank
+
 ![Abbildung: Websuche mit GoldBug in der URL-Datenbank](/images/websearch.png)	
 
 
 Abbildung: Settings für die URL/Websuche
+
 ![Abbildung: Settings für die URL/Websuche](/images/websearch_settings.png)
 
 
@@ -1808,10 +1862,11 @@ Da er Einrichtungsprozess der PostgreSQL Datenbank umfangreicher ist, soll hier 
 
 Wenn Du nun am dem p2p Prozess des URL-Austausches teilnimmst, erhälst Du alle URLs, die andere dem System hinzugefügt haben. Um maliziöse URLs auszuschließen, kannst Du in der Websuche URLs auch mit einem Klick wieder löschen - oder aber Du nutzt von Beginn an den URL-Filter, der sich in einem eigenen Tabulator präsentiert.
 
-Abbildung 31: Import- und Export-Filter: URL-Distiller'''
+Abbildung 31: Import- und Export-Filter: URL-Distiller
 
 
 Abbildung: URL Options
+
 ![Abbildung: URL Options](/images/URL_options.png)	
 
 
@@ -1850,6 +1905,7 @@ Zusätzlich werden die News-URLs indexiert, d.h. für die lokale Websuche in Gol
 Die RSS Funktion ermöglicht nicht nur, seine ausgewählten Nachrichtenportale komfortabel auf einer Nachrichtenseite zu lesen, sondern die Nachrichten-URLs auch in seine lokalen URL-Datenbank manuell oder automatisiert zu importieren.
 
 Abbildung: RSS-Feed-Reader zur Importierung von URLs in die URL-Datenbank/Websuche
+
 ![Abbildung: RSS-Feed-Reader zur Importierung von URLs in die URL-Datenbank/Websuche](/images/rss_reader.png)	
 
 
@@ -1886,19 +1942,23 @@ So einfach kann ein Chat-Server erstellt werden.
 '''Abbildung 32: Einen Chat-Server erstellen (Minimale Ansicht)'''
 
 Abbildung: Einrichtung eines Chat-Servers
+
 ![Abbildung: Einrichtung eines Chat-Servers](/images/chat_server.png)	
 
 
 Abbildung: Bluetooth Chat Server
+
 ![Abbildung: Bluetooth Chat Server] (/images/bluetooth_chatserver.png)	
 
 
 
 Abbildung: Chat-Server einrichten
+
 ![Abbildung: Chat-Server einrichten](/images/chat_server_create.gif)
 
 
 Abbildung: Chat-Server Optionen
+
 ![Abbildung: Chat-Server Optionen](/images/chat_server_options.gif)
 
 
@@ -1996,6 +2056,7 @@ GoldBug verfügt über zusätzliche Werkzeuge für die Verschlüsselung. Im Haup
 
  
  Abbildung: File-Encryptor - Werkzeug zur Datei-Verschlüsselung
+
 ![Abbildung: File-Encryptor - Werkzeug zur Datei-Verschlüsselung](/images/file_encryption.png)	
 
 
@@ -2015,10 +2076,12 @@ Es ist Slow-Chat durch Deine manuelle Verschlüsselung Deines Chat-Textes (wobei
 
 
 Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad
+
 ![Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad](/images/rosetta.png)	
 
 
 Abbildung: ROSETTA Crypto Pad 2
+
 ![Abbildung: ROSETTA Crypto Pad 2](/images/rosetta_pad_2.jpg)
 
 
@@ -2033,10 +2096,12 @@ Manche Architekturen nutzen dazu Key-Server, in denen der Nutzer seine öffentli
 
 
 Abbildung: EPKS - Echo Public Key Sharing
+
 ![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS.png)	
 
 
 Abbildung: EPKS - Echo Public Key Sharing 2
+
 ![Abbildung: EPKS - Echo Public Key Sharing 2](/images/EPKS_keyshare.png)	
 
 
@@ -2052,6 +2117,7 @@ Alle Nutzer, die den Namen der Community kennen, werden dann die Schlüssel, die
 
 
 Abbildung: GoldBug als Proxy: Pass-Through
+
 ![Abbildung: GoldBug als Proxy: Pass-Through](/images/passthrough.png)	
 
 
@@ -2061,11 +2127,13 @@ Abbildung: GoldBug als Proxy: Pass-Through
 
 
 Abbildung: Anzeige von Statistiken
+
 ![Abbildung: Anzeige von Statistiken](/images/stats.png)	
 
 
 
 Abbildung: Statistik Konsole auf einem Raspberry Pi
+
 ![Abbildung: Statistik Konsole auf einem Raspberry Pi](/images/raspberrypi_console_statistics.png)	
 
 
@@ -2074,6 +2142,7 @@ GoldBug wurde in dem Audit von David Adams und Ann-Kathrin Maier über sieben qu
 
 
 Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)
+
 ![Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)](/images/trends_in_crypto.png)	
 
 
