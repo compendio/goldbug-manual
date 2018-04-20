@@ -1,22 +1,11 @@
 ﻿# GoldBug-manual
 Manual of the GoldBug Crypto Messenger
 
-Abbildung: GoldBug Logo
+
 ![Abbildung: GoldBug Smiley](/images/goldbug-neuland.png)
 
 [https://compendio.github.io/goldbug-manual/](https://compendio.github.io/goldbug-manual/)
 
-
-
-[Manual-Dateien: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
-
-[Manual Deutsch/German: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
-
-[Website: http://goldbug.sourceforge.net/](http://goldbug.sourceforge.net/)
-
-[Download: https://sourceforge.net/projects/goldbug/files/](https://sourceforge.net/projects/goldbug/files/)
-
-[Source: https://github.com/textbrowser/spot-on](https://github.com/textbrowser/spot-on)
 
 
 ```
@@ -148,6 +137,18 @@ Inhaltsverzeichnis
     20 Historie an Veröffentlichungen
 
 ```
+
+[Manual-Dateien: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
+
+[Manual Deutsch/German: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
+
+[Website: http://goldbug.sourceforge.net/](http://goldbug.sourceforge.net/)
+
+[Download: https://sourceforge.net/projects/goldbug/files/](https://sourceforge.net/projects/goldbug/files/)
+
+[Source: https://github.com/textbrowser/spot-on](https://github.com/textbrowser/spot-on)
+
+
 
 
 ## 1 Was ist GoldBug?
