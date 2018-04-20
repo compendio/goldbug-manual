@@ -43,7 +43,7 @@ Inhaltsverzeichnis
         6.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
             6.1.1 Besonderheit: Repleo
         6.2 Einen ersten sicheren Chat beginnen
-        6.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit Gemini (Instant Perfect Forward Secrecy, IPFS)
+        6.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit einem Gemini
             6.3.1 Asymmetrisches Calling
             6.3.2 Instant Perfect Forward Secrecy (IPFS)
             6.3.3 Symmetrisches Calling
@@ -54,7 +54,7 @@ Inhaltsverzeichnis
             6.5.1 Forward Secrecy Calling
         6.6 Übersicht der verschiedenen Calling-Arten
         6.7 Emotikons
-        6.11 Datei-Transfer im Chat-pop-up-Fenster
+        6.8 Datei-Transfer im Chat-pop-up-Fenster
 
     7 Gruppen-Chat im IRC-Stil
 
@@ -120,10 +120,10 @@ Inhaltsverzeichnis
         16.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
         16.3 European Convention on Human Rights, 1950 (Art. 8)
         16.4 Charter of Fundamental Rights of the European Union, 2000 (Art. 7, 8)
-        16.5 Basic Law e.g. for the Federal Republic of Germany, 1949 (Art.2 Abs.1 i.V.m. Art.1 Abs.1)
+        16.5 Basic Law e.g. Federal Republic of Germany, 1949 (Art.2 Abs.1 & Art.1 Abs.1)
         16.6 Art. 10 - Privacy of correspondence, posts and telecommunications
         16.7 § 206 - Verletzung des Post- oder Fernmeldegeheimnisses
-        16.8 United Status Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
+        16.8 U.S. Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
 
     17 Webseite
 
