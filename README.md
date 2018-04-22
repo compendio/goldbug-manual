@@ -181,9 +181,9 @@ Wie in jedem Nachrichtenprogramm können auch Dateien geteilt und versandt werde
 Mit all seinen Ausstattungen ist GoldBug daher eine sogenannte "Communication Suite" - ein Programm mit zahlreichen Funktionen für die sichere Kommunikation, das die Übertragung der verschlüsselten Pakete mit dem sogenannten [Echo-Protokoll](https://github.com/textbrowser/spot-on/blob/master/branches/trunk/Documentation/Spot-On.pdf ) realisiert und besonders absichert, wie es weiter unten noch erläutert wird. 
 
 
-Abbildung: GoldBug Logo (Smiley)
+Abbildung: Erklärung der Tabs in GoldBug Crypto Messenger
 
-![Abbildung: GoldBug Logo Smiley](/images/goldbug.png)
+![Abbildung: Erklärung der Tabs in GoldBug Crypto Messenger](/images/tab_explanation.png)
 
 
 
@@ -211,6 +211,10 @@ Die unverschlüsselte Plain-Text-E-Mail oder Chat-Nachricht sollte daher eigentl
 Nebenbei bemerkt: Der Schriftzug des GoldBug-Logos ist in der Schriftart "Neuland" geschrieben - ein Font, der im Jahre 1923 vom Schriftkünstler [Rudolf Koch](https://de.wikipedia.org/wiki/Rudolf_Koch_(Schriftk%C3%BCnstler)) entwickelt wurde. Der Logo-Schriftzug ist seit dem ersten, zeitgleichen Release von GoldBug im Jahre 2013 interessanter Weise eine Allusion an den ''Satz des Jahres'' 2013, in dem die deutsche Bundeskanzlerin Angela Merkel - im Zusammenhang mit der [Überwachungs- und Spionageaffäre 2013](https://de.wikipedia.org/wiki/Globale_%C3%9Cberwachungs-_und_Spionageaff%C3%A4re) und dem Abhören ihres Telefons - in einem Gespräch mit dem amerikanischen Präsidenten Barack Obama den Satz prägte: „Das Internet ist für uns alle Neuland." ..
 
 .. - Wie lange Verschlüsselung für die nachfolgenden Schülergenerationen ''Neuland'' bzw. eine im wahrsten Sinne des Wortes ''Geheimwissenschaft'' bleibt – oder eine Art „Gurtpflicht“ auch E-Mails zu C-Mails wandeln wird, entscheiden die Lernenden, Lehrenden sowie die Medien und Techniker - in jedem Falle aber jeder selbst (z.B. als Leser dieses Manuals) mit den Freunden, mit denen die Verschlüsselungssoftware angewandt wird.
+
+Abbildung: GoldBug Logo (Smiley)
+
+![Abbildung: GoldBug Logo Smiley](/images/goldbug.png)
 
 
 ### 1.2 Woher kommt der Name "GoldBug"?
