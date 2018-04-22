@@ -476,7 +476,7 @@ Die Abbildung simuliert das Versenden der Nachricht von einem Ausgangspunkt an a
  
 Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt
 
-![Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt](/images/echo-simulation.gif){ width=100% }
+![Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt](/images/echo-simulation.gif)
 
 Grundlegend ist also, dass im Echo jeder Knotenpunkt jede Nachricht an jeden Knotenpunkt weitersendet. Dieses klingt einfach dahingesagt, ist es einerseits auch: Das Echo-Protokoll ist ein sehr simples Protokoll, hat aber auch weitergehende Implikationen, sprich: Es gibt beim Echo keine Routing Informationen und auch Metadaten können aus dem Netzwerk kaum aufgezeichnet werden. Die Nodes leiten die Nachricht auch nicht weiter, der Begriff des "Forwarding" ist unzutreffend, denn jeder Knotenpunkt sendet aktiv erneut die Nachricht an die (seine) verbundenen Freunde.
 
@@ -975,7 +975,11 @@ Sichere Ende-zu-Ende-Multi-Verschlüsselung entsteht, wenn ein Messenger einen m
 
 #### 6.3.4  2-Wege-Calling
 Schließlich ist im Kontext-Menü (gehe mit rechter Maustaste auf einen Freund in der Freundesliste) noch eine dritte Methode für einen sogenannten "Call" hinzugefügt: Das 2-Wege-Calling. Hierbei wird von Dir aus ein AES-256 als Passphrase für die zukünftige Ende-zu-Ende-Verschlüsselung an den Freund gesandt und Dein Freund sendet als Antwort ebenso ein AES-256 an Dich. Nun wird jeweils von Deinem AES die erste Hälfte und von Deinem Freund die zweite Hälfte genommen, und zu einem gemeinsamen AES-256 zusammengesetzt. Das nennt sich die Methode der 2-Wege-Sicherheit. Damit ist gewährleistet, dass kein Dritter - wenn es ihm gelänge, die Maschine des Freundes zu kompromittieren, ein Gemini (oder ein altes Gemini) in seinem Namen von einer dritten, fremden Maschine sendet (was eigentlich nicht möglich ist, da es die unbemerkte Übernahme einer Maschine oder das Brechen der bestehenden TLS und RSA (bzw. NTRU- oder Elgamal-) Verschlüsselung bedeuten würde). Durch das Ping-Pong-Spiel beider Parteien im Zwei-Wege-Calling wird sichergestellt, dass beide Teilnehmer aktuell ihren Teil jeweils dazu beitragen, sich gegenseitig auf ein sicheres Ende-zu-Ende-Passwort zu einigen - und zwar Fifty-Fifty. 
- 
+
+Abbildung: 2-Way-Calling im Kontext-Menü aus der Freundesliste
+
+![Abbildung: 2-Way-Calling im Kontext-Menü aus der Freundesliste](/images/images/2_way_calling.png)	
+
 Die Möglichkeit, das Passwort
 - erstens manuell zu edieren,
 - zweitens sekundlich oder für jeden - oder innerhalb eines jeden - Anruf(es) erneuern zu können,
