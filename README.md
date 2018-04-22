@@ -535,6 +535,8 @@ Die Echo-Accounts funktionieren wie folgt:
 
 Wenn SSL/TLS während dieser Aushandlung nicht verfügbar ist, mag das Protokoll wie folgt angreifbar werden: Eine Zwischenstation mag die Werte aus dem dritten Schritt aufzeichnen und folgerichtig zum bindenden Endpunkt senden. Sodann könnte der bindende Endpunkt auch einer unbekannten Verbindung Zugang zum Account gewähren. Das aufzeichnende Gerät könnte dann die Antwort des bindenden Endpunktes, also die Werte des vierten Schritts, an sich reißen und die Informationen an den Peer weiterleiten. Wenn die Account-Informationen bzw. das erforderliche Passwort dann akkurat vorgehalten werden, würde der Peer die Antwort dieses neuen bindenden Endpunktes dann akzeptieren. Darum heißt es wie immer: Passworte schützen.
 
+In GoldBug ist daher für einen Server Account - sofern er dediziert festgelegt wird - daher auch ein Passwort erforderlich, dass der Länge eines AES-256 entspricht. das ist eine Pass-Phrase von 32 Zeichen.
+
 Abbildung: Account Passwords
 
 ![Abbildung: Account Passwords](/images/account_passwords.png)	
@@ -554,7 +556,7 @@ Beispielsweise bezeichnet dann die Verbindung E1-E2 eine IP-Verbindung zu einem 
 
 Wenn die einzelnen Knotenpunkte nun Schlüssel tauschen, so entstehen Verbindungen, die als neue Ebene auf der Ebene der IP-Verbindungen des P2P/F2F-Netzwerkes entstehen.
 
-Mit der GoldBug zugrunde liegenden Architektur wurde nicht nur das kryptographische Routing in einem Kernel-Programm elaboriert etabliert, sondern wie oben dargelegt, dem Begriff des "kryptographischen Routings" wurde mit dem Echo-Protokoll auch das Routing paradoxerweise entzogen. Es muss daher genauerweise von dem „kryptographischen Echo“ statt einem „kryptographischen Routing“ gesprochen werden. Ein davon zu differenzierendes Protokoll ist das des „Cryptographic Discovery“ auf das weiter unten noch in einem Extra-Abschnitt eingegangen wird.
+Mit der GoldBug zugrunde liegenden Architektur wurde nicht nur das kryptographische Routing in einem Kernel-Programm elaboriert etabliert, sondern - wie oben dargelegt - dem Begriff des "kryptographischen Routings" wurde mit dem Echo-Protokoll auch das Routing paradoxerweise entzogen. Es muss daher genauerweise von dem „kryptographischen Echo“ statt einem „kryptographischen Routing“ gesprochen werden. Ein davon zu differenzierendes Protokoll ist das des „Cryptographic Discovery“ auf das weiter unten noch in einem Extra-Abschnitt eingegangen wird.
 
 Echo ist somit "beyond" Routing: Erstens, die Nachrichten-Pakete enthalten keine Routing Informationen (Adressaten) und die Knotenpunkte nutzen auch kein "Forwarding" im eigentlichen Sinne, denn sie senden einfach alles an alle Verbindungen. Und zweitens: Auch der kryptographische Schlüssel, der die Nachricht zu dekodieren versucht, ist keine Adresse (die gar dem Nachrichten-Packet beigefügt wäre), sondern nur eine polarisierende Bille: sie lässt uns Texte anders sehen und ggf. verstehen. Im Echo-Protokoll wird daher auch mehr der Begriff des "Traveling" anstelle des Begriffes "Routing" benutzt. Oder halt eben: „kryptographisches Echo".
 
@@ -686,7 +688,7 @@ Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden 
 
 ## 4 Cryptographisches Discovery
 
-
+Cryptographic Discovery beschreibt die Methode eines das Echo ergänzenden Protokolls, Nodes in einem Echo-Netzwerk zu finden. Das Echo-Protokoll wird damit um eine weitere sinnvolle Methode ergänzt, wenn sie nicht sogar bedeutender ist, als das Echo selbst. Cryptographic Discovery ist in den bestehenden Clienten wie GoldBug, Spot-on oder auch dem Chat-Server für das Betriebssystem Android, SmokeStack, auf der Code Basis implementiert. Der Source Code und seine Dokumentation legt die Methode entsprechend dar. Cryptographic Discovery kann z.B. einen Distributed Hash Table (DHT) ersetzen, um einen Freund im Netzwerk zu finden. Eine weitergehende Pubkikation speziell zu diesem Thema ist in Vorbereitung. 
 
 
 ## 5 Einen ersten Setup einrichten
@@ -710,12 +712,12 @@ Ansonsten muss in diesem Tabulator für Einstellungen bzw. für die Kernel-Aktiv
 
 ### 5.1 Zwei Login-Methoden
 
+Wenn der Nutzer GoldBug das erste Mal startet, ist in dem entsprechenden Kasten einen Nicknamen einzugeben und eine Passphrase für den Login in die Applikation zu definieren (vgl. Abbildung, blauer Widget-Kasten). 
+
 Abbildung: Setze Passwort
 
 ![Abbildung: Setze Passwort](/images/set_password.jpg)
 
-
-Wenn der Nutzer GoldBug das erste Mal startet, ist in dem entsprechenden Kasten einen Nicknamen einzugeben und eine Passphrase für den Login in die Applikation zu definieren (vgl. Abbildung). 
 
 Dazu gibt es zwei Methoden: die Passphrase-Methode oder die Frage-Antwort (Question/Answer) Methode.
 
