@@ -304,17 +304,23 @@ Der Vorteil ist, dass jeder Nutzer dieses individuell für sich definieren kann.
 
 ### 2.2 Anwendung der Block Cipher Modi & Encrypt-then-MAC
 
+GoldBug hat also nicht nur zukunftsweisende Algorithmen oder zahlreiche Details wie die Umstellung von AES-128 auf AES-256 oder die Nutzung von sehr hohen, weil nötigen, Schlüsselgrössen standardisiert, sondern auch die fachgerechte Integration von etablierten und neuen Verschlüsselungsprozessen umgesetzt.
+
 GoldBug verwendet [CBC mit CTS](https://de.wikipedia.org/wiki/Cipher_Block_Chaining_Mode), um die Vertraulichkeit zu schaffen. Der Dateiverschlüsselungsmechanismus unterstützt den [Galois/Counter Mode (GCM)](https://de.wikipedia.org/wiki/Galois/Counter_Mode)-Algorithmus ohne die Eigenschaft zur Authentizität, die durch den Algorithmus zur Verfügung gestellt wird. Um die Authentizität zu bieten, verwendet die Anwendung den methodischen Ansatz von "Erst verschlüsseln-dann-MAC" ([Encrypt-then-MAC](https://en.wikipedia.org/wiki/Authenticated_encryption#Encrypt-then-MAC), ETM). MAC steht für [Message Authentication Code](https://de.wikipedia.org/wiki/Message_Authentication_Code) - und bedeutet, dass die Reihenfolge determiniert ist: erst verschlüsseln, dann die Nachricht mit einem Code authentifizieren. 
 Die Dokumentation beim source code zum Abschnitt der verschlüsselten und authentifizierten Container enthält dazu weitere technische Details.
+
+Ein weiteres Beispiel für diese Innovation ist die Implementierung des ThreeFish-Hashes, der als Alternative zu SHA-3 zur Auswahl stand, als man erkannte, dass SHA-1 nicht mehr den zukünftigen Anforderungen gewachsen ist. 
+
+[Threefish](https://de.wikipedia.org/wiki/Threefish) ist eine Blockverschlüsselung, die als Teil des Entwurfs der kryptographischen Hashfunktion Skein, welche an dem NIST-Auswahlverfahren zu SHA-3 teilnahm, entwickelt wurde. Threefish verwendet keine S-Boxen oder andere Lookup-Tabellen um zeitliche Seitenkanalattacken (Rechenzeitangriffe) zu erschweren. 
+
 
 Abbildung: Theefish Implementierung
 
 ![Abbildung: Theefish Implementierung](/images/threefish.png)	
 
+Viele weitere Beispiel - insbesondere im Vergleich zu anderen Messengern - lassen sich finden, die belegen, dass die Verschlüsselungsprozesse in GoldBug sehr dem State-of-the-Art entsprechen.
 
-Abbildung: Ciphertext
 
-![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
 
 
 
@@ -363,6 +369,14 @@ GoldBug nutzt somit wie oben beschrieben beide Standards: asymmetrische Schlüss
 ```
 
 Übersetzung dieser Formel: Erst wird die Textnachricht mit dem öffentlichen (asymmetrischen) Schlüssel des Freundes über den Elgamal-Algorithmus verschlüsselt, sodann wird der verschlüsselte Text nochmals mit einem AES-Algorithmus (symmetrisch) (ein zweites Mal) (passwort-)verschlüsselt (und abgesichert) und diese Kapsel wird dann durch die bestehende mit SSL/TLS (unter Nutzung von RSA) verschlüsselte (asymmetrische) Verbindung zum Freund gesandt.
+
+
+Wird ein HTTP-Listener eingerichtet und die verschlüsselte Nachrichtenkapsel also nicht über HTTPS - also der dritten Verschlüsselungsschicht, über eine SSL/TLS-Verbindung gesandt, kann der Ciphertext der Nachrichtenkapsel auch im Browser eingesehen werden. Es zeigt sich, dass selbst bei zwei Verschlüsselungsschichten nur Ciphertest versandt wird (vgl. Abbildung aus der Praxisdemo von Adams/Maier 2016).
+
+Abbildung: Ciphertext
+
+![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
+
 
 Auch besteht die Möglichkeit, die symmetrische Passphrase (das AES) mit der Gegenstelle auszutauschen über die etablierte asymmetrische (SSL/TLS-)Verschlüsselung. Die Passphrase kann automatisch generiert oder auch manuell definiert werden, wie wir weiter unten bei der Gemini- bzw. Call-Funktion ("Cryptographisches Calling", was mit GoldBug (bzw. dem Spot-on Kernel Projekt) eingeführt wurde) noch weiter sehen werden. Es gibt kaum andere - zudem quelloffene - Applikationen, die eine (durchgängige) Ende-zu-Ende Verschlüsselung vom einen Teilnehmer zum anderen Teilnehmer inkludieren, in der der Nutzer die Passphrase (z.B. einen AES-String) manuell und individuell definieren kann.
 
@@ -462,7 +476,7 @@ Die Abbildung simuliert das Versenden der Nachricht von einem Ausgangspunkt an a
  
 Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt
 
-![Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt](/images/echo-simulation.gif)
+![Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt](/images/echo-simulation.gif){ width=100% }
 
 Grundlegend ist also, dass im Echo jeder Knotenpunkt jede Nachricht an jeden Knotenpunkt weitersendet. Dieses klingt einfach dahingesagt, ist es einerseits auch: Das Echo-Protokoll ist ein sehr simples Protokoll, hat aber auch weitergehende Implikationen, sprich: Es gibt beim Echo keine Routing Informationen und auch Metadaten können aus dem Netzwerk kaum aufgezeichnet werden. Die Nodes leiten die Nachricht auch nicht weiter, der Begriff des "Forwarding" ist unzutreffend, denn jeder Knotenpunkt sendet aktiv erneut die Nachricht an die (seine) verbundenen Freunde.
 
