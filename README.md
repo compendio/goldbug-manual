@@ -6,7 +6,7 @@ Manual of the GoldBug Crypto Messenger
 
 [https://compendio.github.io/goldbug-manual/](https://compendio.github.io/goldbug-manual/)
 
-
+Edited by Scott Edwards (2018, Review at Github).
 
 ```
 Inhaltsverzeichnis
@@ -35,7 +35,7 @@ Inhaltsverzeichnis
 
     4 Cryptographisches Discovery
 
-    5 Einen ersten Setup einrichten
+    5 Einen ersten Setup einrichten – z.B. mit dem Wizard
         5.1 Zwei Login-Methoden
         5.2 Generierung von 10 Schlüsseln für die Verschlüsselung
         5.3 Aktivierung des Kernels
@@ -695,7 +695,7 @@ Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden 
 Cryptographic Discovery beschreibt die Methode eines das Echo ergänzenden Protokolls, Nodes in einem Echo-Netzwerk zu finden. Das Echo-Protokoll wird damit um eine weitere sinnvolle Methode ergänzt, wenn sie nicht sogar bedeutender ist, als das Echo selbst. Cryptographic Discovery ist in den bestehenden Clienten wie GoldBug, Spot-on oder auch dem Chat-Server für das Betriebssystem Android, SmokeStack, auf der Code Basis implementiert. Der Source Code und seine Dokumentation legt die Methode entsprechend dar. Cryptographic Discovery kann z.B. einen Distributed Hash Table (DHT) ersetzen, um einen Freund im Netzwerk zu finden. Eine weitergehende Pubkikation speziell zu diesem Thema ist in Vorbereitung. 
 
 
-## 5 Einen ersten Setup einrichten
+## 5 Einen ersten Setup einrichten – z.B. mit dem Wizard
 
 Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach, 
 
@@ -704,6 +704,13 @@ Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach,
 - Es erscheint die Benutzeroberfläche und ein Wizard, mit dem Einstellungen Schritt für Schritt umgesetzt werden können. Alternativ kann man den Wizard auch schließen und die Einstellungen manuell im Tab für die Einstellungen bzw. der Kernel-Aktivierung vornehmen. Es empfiehlt sich, den Wizard zu nutzen.
 
 - Im Wizard werden sodann mit dem Nutzernamen  und einer zweifach einzugebenden Passphrase die notwendigen kryptographischen Schlüssel generiert. 
+
+
+Abbildung: Initialer Wizard 
+
+![Abbildung: Initialer Wizard](/images/wizard.png)
+
+
 
 - Nach Abschluss des Wizards ist noch der Kernel zu aktivieren. Der GoldBug Messenger hat also eine Benutzeroberfläche (auch Interface oder Graphical User Interface (GUI) genannt) und einen Kernel.  Beide sind als Binärdatei gegeben (also unter Windows als GoldBug.exe und Spot-On-Kernel.exe bezeichnet). Spot-On ist das Original-Projekt für die Echo-Applikation und GoldBug stellt lediglich eine vereinfachte Benutzeroberfläche zur Verfügung.
 
@@ -766,21 +773,21 @@ Selbst die wenigen quell-offenen Messenger mit Verschlüsselung, die man für de
 
 ### 5.2 Generierung von 10 Schlüsseln für die Verschlüsselung
 
-Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt der Wizard, ob der Nutzer die Schlüssel für die Verschlüsselung generieren möchte. Für die Schlüssel-Erstellung sollte man einen Schlüssel von mindestens 3072 Bit (Voreinstellung) oder größer wählen. Der Nutzer kann auch weitere Optionen wie Algorithmus, Hashtype, Cipher, Salz-Länge oder Iteration Count selbst wählen, wenn er den Schlüssel z.B. neu (re-)generiert.
+Wenn der Nutzer das erste Mal den GoldBug Messenger startet, fragt der Wizard, ob der Nutzer die Schlüssel für die Verschlüsselung generieren möchte. Für die Schlüssel-Erstellung sollte man einen Schlüssel von mindestens 3072 Bit (Voreinstellung) oder größer wählen. Der Nutzer kann auch weitere Optionen wie Algorithmus, Hashtype, Cipher, Salz-Länge oder Iteration Count selbst wählen, wenn er den Schlüssel z.B. neu (re-)generiert. Der erste Setup hält eine Voreinstellung auf Basis von RSA bereit: Wer also NTUR oder McEliece als Algorithmus austesten will, sollte sodann nach dem ersten Setup nochmals neue Schlüssel mit einem der dann wählbaren Algorithmen generieren.
 
-Die generierten Schlüssel sind im Unterpfad „/.spot-on“ gespeichert. Wenn der Nutzer einen neuen Login mit neuen Schlüsseln aufsetzen will und alle Nutzerdaten gelöscht werden sollen, dann wird am besten dieser Pfad einfach gelöscht und die GoldBug.exe neu gestartet. Für Linux und die weiteren Betriebssysteme gelten deren adäquaten Pfadangaben. Gleiches kann im Hauptmenü mit "!!!_Total_Database Erase_!!!" erreicht werden.
+Die generierten Schlüssel sind im Unterpfad „/.spot-on“ gespeichert. Wenn der Nutzer einen neuen Login mit neuen Schlüsseln aufsetzen will, und alle Nutzerdaten gelöscht werden sollen, dann wird am besten dieser Pfad einfach gelöscht und die GoldBug.exe neu gestartet. Für Linux und die weiteren Betriebssysteme gelten deren adäquaten Pfadangaben. Gleiches kann im Hauptmenü mit "!!!_Total_Database Erase_!!!" erreicht werden.
 
-Für Folgende Funktionen werden asymmetrische Schlüssel generiert (jeweils ein Schlüssel für die Verschlüsselung und ebenso ein Schlüssel für die (optionale) Signatur):
+Für folgende Funktionen werden asymmetrische Schlüssel generiert (jeweils ein Schlüssel für die Verschlüsselung und ebenso ein Schlüssel für die (optionale) Signatur):
 
 - Chat: Hierbei geht es um den 1:1 Chat
 - E-Mail: hierbei geht es um E-Mail zu anderen Nutzern von GoldBug oder Spot-on
 - POPTASTIC: Hierbei geht es um den Chat über E-Mail-Server
 - URLs: Hierbei geht es um die Suche von URLs in der URL-Datenbank (Websuche)
-- Rosetta: Mit dem Rosetta Verschlüsselungs-Pad können Texte mit asymmetrischen Schlüsseln von Plaintext zu Ciphertext und umgekehrt hin und her konvertiert werden, bevor sie versandt werden. Dieses empfiehlt sich, wenn andere unsichere Messenger oder E-Mail genutzt werden oder der Ciphertext irgendwo im Web gepostet werden soll oder der Plaintext, bevor er in GoldBug versandt wird, nochmals eine Verschlüsselungsebene erhalten soll.
+- Rosetta: Mit dem Rosetta Verschlüsselungs-Pad können Texte mit asymmetrischen Schlüsseln von Plaintext zu Ciphertext und umgekehrt hin und her konvertiert werden, bevor sie versandt werden. Dieses empfiehlt sich, wenn andere unsichere Messenger oder E-Mail genutzt werden oder der Ciphertext irgendwo im Web gepostet werden soll - oder der Plaintext, bevor er in GoldBug versandt wird, nochmals eine zusätzliche Verschlüsselungsebene erhalten soll.
 
-Dass jede Funktion ein eigenes Schlüsselpaar nutzt, ist wiederum ein Sicherheitsmerkmal. Wenn der Chat-Schlüssel kompromittiert wäre, ist somit die E-Mail-Verschlüsselung davon nicht betroffen. Ferner kann der Nutzer auch Freunden nur seinen Chat-Schlüssel übergeben und nicht den E-Mail-Schlüssel. Somit kann der Nutzer entscheiden, wem er es erlaubt, mit ihm zu chatten oder nur zu e-mailen oder ggf. auch URLs auszutauschen für die Funktion der p2p Websuche in der integrierten URL-Datenbank.
+Daß jede Funktion ein eigenes Schlüsselpaar nutzt, ist wiederum ein Sicherheitsmerkmal. Wenn der Chat-Schlüssel kompromittiert wäre, ist somit die E-Mail-Verschlüsselung davon nicht betroffen. Ferner kann der Nutzer auch Freunden nur seinen Chat-Schlüssel übergeben und nicht den E-Mail-Schlüssel. Somit kann der Nutzer entscheiden, wem er es erlaubt, mit ihm zu chatten oder nur zu e-mailen oder ggf. auch URLs auszutauschen für die Funktion der p2p Websuche in der integrierten URL-Datenbank.
 
-Beschrieben ist bislang die minimale Sicht auf die Benutzeroberfläche: Über das Hauptmenü kann man zwischen „voller Ansicht“ oder „minimaler Ansicht“ wählen. Wer sich mit Computern nicht so gut auskennt, sollte die minimale Ansicht wählen, da es die ggf. nicht benötigte Optionsvielfalt ausblendet. Keep it simple! Qt-Entwickler, und solche die ein Übungs-Projekt dafür suchen, können die Benutzeroberfläche auch ggf. noch minimaler ausgestalten.
+Beschrieben ist bislang die minimale Sicht auf die Benutzeroberfläche: Über das Hauptmenü kann man zwischen „voller Ansicht“ oder „minimaler Ansicht“ wählen. Wer sich mit Computern nicht so gut auskennt, sollte die minimale Ansicht wählen, da es die ggf. nicht benötigte Optionsvielfalt ausblendet. Keep it simple! Qt-Entwickler, und solche die ein Übungs-Projekt für ein eigenes Qt-Entwicklungsprojekt suchen, können die Benutzeroberfläche auch ggf. noch minimaler ausgestalten (und das GoldBug Projekt gerne „forken“).
 
 Beim ersten Setup ist die Option der maximalen Ansicht nicht verfügbar, sie wird erst bei den weiteren Logins eingeblendet und einstellbar. Die Möglichkeit, noch mehr Details in der Benutzeroberfläche anzusehen, soll daher nur deshalb an dieser Stelle kurz angesprochen werden, da sich viele Details auch auf den unten zuletzt genannten Punkt der kryptographischen Werte beziehen, die auch in dem Tabulator der Kernel-Aktivierung und Schlüssel-Generierung zu finden sind (eben in der Einstellung der maximalen Ansicht). Die Werte können bei einer erneuten Schlüssel-Generation (ohne Wizard) aus der erweiterten Benutzeransicht individuell eingestellt werden. Wer jedoch den Klienten zum ersten Mal benutzt, hat die typischen Einstellungswerte automatisch parat, d.h. z.B. der Schlüssel hat eine (vordefinierte) Größe von 3072 Bit im RSA-Algorithmus.
 
@@ -855,7 +862,7 @@ Abbildung: Verbindung mit einem Nachbar-Server
 
 
 Bei der erstmaligen Aktivierung wird die IP-Adresse des Projekt-Chat Server automatisch als Nachbar hinzugefügt. Dieser dient als temporärer Chat-Server, über den der Nutzer mit seinen Freunden test-weise chatten kann, bis ein eigener Verbindungsknoten auf einem Webserver oder Zuhause erstellt wurde (oder zwei Nutzer direkt miteinander verbinden). 
-Der Test-Server wird nicht dauerhaft bestehen, insofern werden Nutzer ab einem gewissen Zeitpunkt zunächst selbst erst einen Server aufsetzen müssen, bevor sie zwei Klienten daran verbinden können.
+Der Test-Server wird nicht dauerhaft bestehen, insofern werden Nutzer ab einem gewissen Zeitpunkt zunächst erst selbst einen Server aufsetzen müssen, bevor sie zwei Klienten daran verbinden können.
 
 
 
@@ -863,11 +870,11 @@ Durch den bisherigen Test-Server ist der Nutzer bislang direkt nach der Aktivier
  
 In das Feld ist die IP-Adresse des Nachbarknoten einzugeben. Mit den Punkten sind jeweils drei Stellen der IP Adresse (nach IP-V4) getrennt. Umfasst ein Block nur zwei Stellen, z.B. in 37.100.100.100, dann kann die 37 in dem ersten Block beliebig platziert werden oder als 37 auf den ersten beiden Positionen eingegeben werden. Sodann ist der Knopf „Verbinden“ bzw. „Hinzufügen“ zu drücken. Die IP-Adresse ist sodann auf dem voreingestellten Port 4710 hinterlegt und erscheint als Verbindung in der Tabelle der Nachbarn.
 
-Wenn eine Fehlermeldung erscheint, dann ist diese IP-Adresse schon eingegeben. Um alle Nachbarn zu löschen, kannst dann der Knopf „Alle Nachbarn löschen“ gedrückt werden (über den Kontext-Menü-Knopf oder über rechte Maustaste in der Tabelle, in der der Nachbar erscheint) und die IP-Adresse kann erneut eingeben werden. Wahlweise kann im Installations-Pfad „./spot-on“ auf der Festplatte auch die Datei „neighbors.db“ gelöscht werden. Sie bildet sich sofort neu und ist dann leer.
+Wenn eine Fehlermeldung erscheint, dann ist diese IP-Adresse schon eingegeben. Um alle Nachbarn zu löschen, kann dann der Knopf „Alle Nachbarn löschen“ gedrückt werden (über den Kontext-Menü-Knopf oder über rechte Maustaste in der Tabelle, in der der Nachbar erscheint) und die IP-Adresse kann erneut eingeben werden. Wahlweise kann im Installations-Pfad „./spot-on“ auf der Festplatte auch die Datei „neighbors.db“ gelöscht werden. Sie bildet sich sofort neu und ist dann leer.
 
-Wenn der Kernel aktiviert ist (linke, erste LED in der Statuszeile leuchtet grün) und der Nachbar verbunden ist (mittlere LED leuchtet grün), ist alles erfolgreich installiert und online. Eine IP-Adresse einzugeben und den Verbindungsknopf zu drücke, sollte insofern ganz einfach gelingen. 
+Wenn der Kernel aktiviert ist (linke, erste LED in der Statuszeile leuchtet grün) und der Nachbar bzw. Server verbunden ist (mittlere LED leuchtet grün), ist alles erfolgreich installiert und online. Eine IP-Adresse einzugeben und den Verbindungsknopf zu drücke, sollte insofern ganz einfach gelingen.
 
-Wenn der Nutzer ohne Server direkt mit einem anderen Nutzer verbinden will, muss einer von beiden einen sogenannten Listener im Tabulatur Chat-Server erstellen (und für den Port die Firewall freigeben und ggf. den Port im Router zusätzlich an seine Maschine weiterleiten, s.u. ausführlicher). Oder falls sich beide Nutzer in demselben Windows-Netzwerk befinden, kann der bereits vorhandene Nachbar „239..“ aktiviert werden, dann wird der GoldBug Messenger zum Lan-Messenger umgewandelt und findet alle anderen GoldBugs im lokalen LAN automatisch und verbindet sie als Nachbar. Tauschen nun die Nutzer noch die Schlüssel, kann die Kommunikation starten.
+Wenn der Nutzer ohne Server direkt mit einem anderen Nutzer verbinden will, muss einer von beiden einen sogenannten Listener im Tabulatur Chat-Server erstellen (und für den Port die Firewall freigeben und ggf. den Port im Router zusätzlich an seine Maschine weiterleiten, siehe auch unten ausführlicher). Oder falls sich beide Nutzer in demselben Windows-Netzwerk befinden, kann der bereits vorhandene Nachbar „239..“ aktiviert werden, dann wird der GoldBug Messenger zum Lan-Messenger umgewandelt und findet alle anderen GoldBug-Teilnehmer im lokalen LAN automatisch und verbindet sie als Nachbar. Tauschen nun die Nutzer noch die Schlüssel, kann die Kommunikation starten.
 
 Wer mehr Details sehen will, kann die minimale Ansicht auch in die volle Ansicht wechseln: In dieser Ansicht wird deutlich, dass neben der IP-Adresse auch der Port der IP-Adresse individuell konfiguriert werden kann. Standardmäßig nutzt GoldBug den Port 4710. Ferner kann das Programm auch über IPv6 betrieben werden sowie einen Listener/Server ansteuern, der über das Dynamische DNS verlinkt ist. Bei DNS gibt man dann keine Nummernfolge bei der IP ein, sondern einen Domain-Namen. In der darunter liegenden Box können weitere Sicherheitsoptionen definiert werden oder auch der Verbindungsserver über einen Proxy angesprochen werden (z.B. wenn man GoldBug über das TOR-Netzwerk nutzen möchte).
 
@@ -884,9 +891,15 @@ Abbildung: Chat Tab
 ![Abbildung: Chat Tab](/images/chat_tab.png)	
 
 
-Wenn nun Login-Passwort definiert, Schlüssel generiert, Kernel aktiviert und ein Nachbar/Server verbunden ist, also in der Statuszeile zwei LED grün leuchten, dann kannst Du mit einem Freund einen Schlüssel tauschen und die Kommunikation kann im Chat-Tab (siehe Abbildung) oder Pop-Up-Fenster für einen definierten Teilnehmer beginnen. Der Schlüsseltausch lässt sich wie folgt beschreiben:
+Wenn nun Login-Passwort definiert, Schlüssel generiert, Kernel aktiviert und ein Nachbar/Server verbunden ist, also in der Statuszeile zwei LED grün leuchten, dann kann der Nutzer mit einem Freund seinen Schlüssel tauschen und die Kommunikation kann im Chat-Tab (siehe Abbildung) oder Pop-Up-Fenster für einen definierten Teilnehmer beginnen. Der Schlüsseltausch lässt sich wie folgt beschreiben:
 
 ### 6.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
+
+
+
+GoldBug nutzt eine öffentliche/private Schlüssel-Infrastruktur, wie es bei der Verschlüsselung bekannter Standard ist: Der öffentliche Schlüssel kann mit Freunden getauscht werden und der private Schlüssel bleibt auf Festplatte des Nutzers in einem wiederrum verschlüsselten Container, der für die Applikation-Laufzeit mit dem Login-Passwort geöffnet (gemountet) wurde.
+
+Der Nutzer und sein Partner, beide Freunde, müssen zuvor einmalig jeweils ihren öffentlichen Schlüssel tauschen, d.h. auskopieren und sodann den Schlüssel des Freundes im eigenen Tabulator: „Freund hinzufügen“ („Add Friend/Key“) einfügen und bestätigen (vgl. Abbildung). Der Freund kann seinen Schlüssel per E-Mail oder einem anderen Messenger senden. Der Nutzer kopiert den Schlüssel dann in diesen Tabulator ein und drücke den „Hinzufügen“-Knopf am unteren Rand.
 
 
 Abbildung: Add Friend/Key
@@ -897,28 +910,31 @@ Abbildung: Füge Schlüssel/Freund hinzu
 
 ![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
 
+Der Nutzer findest seinen eigenen öffentlichen Schlüssel ebenso im Tabulator „Freunde hinzufügen“ („Add Friend/Key“). Über den großen Knopf ("Kopiere Schlüssel") oben kann der Nutzer alle seine (oder ausgewählte Funktions-)Schlüssel in die Zwischenablage auskopieren.
+Der Nutzer kopiert hier also den vollen Text und sendet diesen zu seinem Freund.
+Ebenso macht es der Freund und der Nutzer fügt den Schlüssel des Freundes in das Textfeld ein.
 
-GoldBug nutzt eine öffentliche/private Schlüssel-Infrastruktur, wie es halt bekannter Standard ist: Der öffentliche Schlüssel kann mit Freunden getauscht werden und der private Schlüssel bleibt verschlüsselt auf Deiner Festplatte.
+'''Optional nur zur Kenntnis:''' Ggf. kann es notwendig sein, mit der rechten Maustauste im Kontext-Menü einen neuen Freund als Freund zu bestätigen (Make-Friend-Funktion). Dieses kommt dann zum Einsatz, wenn ein Freund seinen Schlüssel online in einer direkten IP-Verbindung an den Nutzer sendet. Diese Funktion ist in der Benutzeroberfläche von Spot-on gegeben, in der GoldBug Benutzeroberfläche steht dieses nicht zur Verfügung, so dass beide idealerweise immer den Schlüssel füreinander einfach auskopieren, e-mailen und einfügen. Sollte aber ein Freund z.B. den Spot-on Klienten mit der dortigen Benutzeroberfläche nutzen und eine direkte IP-Verbindung zu einem Nutzer des GoldBug-Klienten aufbauen, dann ist es ebenso möglich, den Schlüssel auch per direkter IP-Verbindung zu transferieren anstelle vom Copy/Paste. Sodann erscheint der Freund mit seinem Nick-Namen im Tabulator Chat oder E-Mail (mit differierenden Icon) und ist mit rechter Maustaste oder aus dem Kontext Menü heraus als Freund zu bestätigen. Dieses ist eine Weiterentwicklung des Repleo, also der Funktion, den eigenen Schlüssel mit dem öffentlichen Schlüssel des Freundes (bei erhalt) ebenso vor der Rück-Übertragung zu verschlüsseln. Hierbei wird der Schlüsselaustausch also automatisiert es  folgt ein Synchronisierungsprozess. Der Nutzer muss zustimmen, dass der Schlüssel nach Synchronisierung über die Nachbar-Verbindung im eigenen Klienten bzw. der eigenen Freundesliste angezeigt wird. 
 
-Du und Dein Partner, beide Freunde, müssen zuvor einmalig jeweils ihren öffentlichen Schlüssel tauschen, d.h. auskopieren und sodann den Schlüssel des Freundes im Tabulator: „Freund hinzufügen“ („Add Friend/Key“) einfügen und bestätigen (vgl. Abbildung). Dein Freund kann seinen Schlüssel per E-Mail senden. Kopiere diesen dann in diesem Tabulator ein und drücke den „Hinzufügen“-Knopf am unteren Rand.
- 
-Du findest Deinen eigenen öffentlichen Schlüssel ebenso im Tabulator „Freunde hinzufügen“ („Add Friend/Key“). Über den großen Knopf ("Kopiere Schlüssel") oben kannst Du alle Deine 10 Schlüssel in die Zwischenablage auskopieren.
-Kopiere hier also den vollen Text und sende diesen zu Deinem Freund.
-Ebenso macht es Dein Freund und Du fügst den Schlüssel des Freundes in das Textfeld ein.
-
-'''Optional nur zur Kenntnis:''' Ggf. kann es notwendig sein, mit der rechten Maustauste im Kontext-Menü einen neuen Freund als Freund zu bestätigen (Make-Friend-Funktion). Dieses kommt dann zum Einsatz, wenn ein Freund seinen Schlüssel online in einer direkten IP-Verbindung an Dich sendet. Diese Funktion ist in der Benutzeroberfläche von Spot-on gegeben, in der GoldBug Benutzeroberfläche steht dieses nicht zur Verfügung, so dass beide idealerweise immer den Schlüssel füreinander einfach auskopieren und einfügen. Sollte aber ein Freund z.B. den Spot-on Klienten mit der dortigen Benutzeroberfläche nutzen und eine direkte IP-Verbindung zu einem Nutzer des GoldBug-Klienten aufbauen, dann ist es ebenso möglich, den Schlüssel auch per direkter IP-Verbindung zu transferieren anstelle vom Copy/Paste. Sodann erscheint der Freund mit seinem Nick-Namen im Tabulator Chat oder E-Mail (mit differierenden Icon) und ist mit rechter Maustaste oder aus dem Kontext Menü heraus als Freund zu bestätigen.
-
-'''Weitere Option nur zur Kenntnis:''' Neben dem Online-Versand des Schlüssels über die direkte Verbindung zu einem Freund kann auch das weiter unten beschriebene Werkzeug des Echo Public Key Sharing (EPKS) genutzt werden. Dieses wird angewandt, wenn der Freund nicht mit einer direkten Verbindung verbunden ist (z.B. beide Partner einen gemeinsamen Chat-Server bzw. Knotenpunkt in der Mitte nutzen). Beide Partner geben dann in EPKS ein gemeinsames Passwort-Geheimnis ein und senden ihre öffentlichen Schlüssel über dieses Passwort ins Echo-Netz. Siehe dazu weiter die ausführlicheren Details im Abschnitt diesem Tool, das ggf. eine gute Alternative zu den oftmals unkomfortablen und unsicheren üblichen Key-Servern darstellen kann.
+'''Weitere Option nur zur Kenntnis:''' Neben dem Online-Versand des Schlüssels über die direkte Verbindung zu einem Freund kann auch das weiter unten beschriebene Werkzeug des Echo Public Key Sharing (EPKS) genutzt werden. Dieses wird angewandt, wenn der Freund nicht mit einer direkten Verbindung verbunden ist (z.B. beide Partner einen gemeinsamen Chat-Server bzw. Knotenpunkt in der Mitte nutzen). Beide Partner geben dann in EPKS ein gemeinsames Passwort-Geheimnis ein und senden ihre öffentlichen Schlüssel über dieses Passwort ins Echo-Netz. Siehe dazu weiter die ausführlicheren Details im Abschnitt diesem Tool, das ggf. eine gute Alternative zu den oftmals unkomfortablen und unsicheren üblichen Key-Servern darstellen kann. Diese Innovation von Repleo und der Synchronisierung der Schlüssel über die sogenannte Echo-Public-Key-Share-Funktion (EPKS) bzw. die bestehende IP-Verbindung ist später von anderen Projekten ebenso aufgegriffen worden unter dem Namen AutoCrypt bzw. KeySync. Diese Funktionen gehen also auf die Repleo, EPKS und den Schlüsseltausch per IP-Verbindung von Echo-Knotenpunkten zurück.
  
 #### 6.1.1 Besonderheit: Repleo
-Wenn Du schon einen Schlüssel Deines Freundes erhalten hast (z.B. für Chat) und diesen eingefügt hast, nunmehr aber Deinen öffentlichen (Chat-)Schlüssel nicht preisgeben willst, ihn nicht bei einem E-Mail-Programm gespeichert und transferiert wissen willst (obschon der öffentliche Schlüssel ja eigentlich öffentlich sein darf), dann kannst Du auch mit dem erhaltenen Schlüssel Deines Freundes Deinen eigenen öffentlichen Schlüssel verschlüsseln. Das nennt man dann REPLEO.
- 
-Beim Repleo wird also Dein öffentlicher Schlüssel mit dem öffentlichen Schlüssel Deines Freundes bereits verschlüsselt. Dieses ist sodann für jede Funktion bzw. Schlüssel durchzuführen, d.h. Du kannst jeweils das Chat-Repleo, E-Mail-Repleo und URL-Repleo zurücksenden.
-Auch ein Repleo kann dann Dein Freund in den Kasten des Tabulators "Add Friend/Key" einfügen. Über dem Einfüge-Kasten ist lediglich der Radio-Auswahl-Knopf zu definieren, ob es sich um einen Key, ein Repleo, oder eine E-Mail-Adresse handelt, die man hinzufügen möchte.
 
-Der Text eines Schlüssels startet immer mit einem Buchstaben "K" oder "k" und ein Repleo startet mit einem "R" oder "r".
+Wenn der Nutzer schon einen Schlüssel seines Freundes erhalten hat (z.B. den Chat-Schlüssel) und diesen in seinen Klienten eingefügt hat, nunmehr aber seinen eigenen öffentlichen (Chat-)Schlüssel nicht der Öffentlichkeit preisgeben will, ihn nicht bei einem E-Mail-Programm gespeichert und transferiert wissen will (obschon der öffentliche Schlüssel ja eigentlich öffentlich sein darf), dann kann der Nutzer auch mit dem erhaltenen Schlüssel seines Freundes seinen eigenen öffentlichen Schlüssel verschlüsseln. Das nennt man dann REPLEO. Der Schlüssel wird verschlüsselt übertagen, alsbald ein Nutzer bereits einen öffentlichen Schlüssel des Gegenübers erhalten hat.
+
+Beim Repleo wird also der öffentliche Schlüssel des Nutzers mit dem öffentlichen Schlüssel des Freundes bereits verschlüsselt. Dieses ist sodann für jede Funktion bzw. jeden Schlüssel durchzuführen, d.h. der Nutzer kann jeweils das Chat-Repleo, E-Mail-Repleo und URL-Repleo etc. zurücksenden.
+Auch ein Repleo kann dann der Freund in den Kasten des Tabulators "Add Friend/Key" einfügen. Über dem Einfüge-Kasten ist lediglich der Radio-Auswahl-Knopf zu definieren, ob es sich um einen Key, ein Repleo, oder eine E-Mail-Adresse handelt, die man hinzufügen möchte. Mittlerweile sind die K- und R- Auswahlknöpfe in GoldBug verschwunden, weil der Klient automatisch erkennt, ob es ein Key oder ein Repleo ist.
+
+Der Text eines Schlüssels startet also immer mit einem Buchstaben "K" oder "k" und ein Repleo startet mit einem "R" oder "r". Daran kann man es noch erkennen.
 
 ### 6.2 Einen ersten sicheren Chat beginnen 
+
+
+Der Nutzer findet nach erfolgreichem Key-Tausch seinen Chat-Freund im Tabulator "Chat". Damit der Chat funktioniert, sollten beide Teilnehmer idealerweise die gleiche und aktuellste Version des Programmes nutzen, ihre Schlüssel generiert und ausgetauscht haben und zum einem Netzwerk-Knoten bzw. Chat-Server (Nachbarn) im Web verbunden sein. Wenn die ersten beiden LEDs in der Status-Zeile unten grün leuchten und der Name des Freundes im Chat-Tab auftaucht, sieht es schon gut aus.
+
+Wenn der Online-Status des Freundes blau (abwesend), rot (beschäftigt) oder grün (gesprächsbereit) aufleuchtet, kann der Chat beginnen. Entweder markiert der Nutzer den Freund in der Tabelle und chattet aus dem Tab heraus, oder doppelklicket mit der Maus auf den Freund und ein Pop-Up Chat Fenster für diesen Freund öffnet sich.
+
+Der Vorteil im Chat-Tab zu chatten ist, dass man gleich mehrere Freunde markieren kann, so dass die Nachricht alle Freunde erreicht. Wenn der Nutzer den Pop-up Chat nutzt (siehe Abbildung), dann musst Du nicht mehr auf die Markierung zur Selektion eines Freundes aus der Freundesliste im Chat-Tab achten. 
 
 Abbildung: 1:1-Chat im Pop-up Fenster
 
@@ -930,29 +946,26 @@ Abbildung: Chat im Pop-up Fenster
 ![Abbildung: Chat im Pop-up Fenster](/images/chat_popupwindow.png)	
 
 
+Und: Im Pop-Up-Chat hat der Nutzer den Options-Knopf "Share StarBeam", mit dem er eine Datei von der Festplatte auswählen kann und diese dann verschlüsselt und sicher an den Freund transferiert wird (vgl. auch den Abschnitt weiter unten über StarBeam-FileSharing). Diese Funktion, dass man einen Chat-Freund per Mausklick einfach eine Datei senden kann und diese zudem vollautomatisch für den Transport von Ende-zu-Ende verschlüsselt ist, ist nicht in vielen Applikationen enthalten. Verschlüsselte Übertragung z.B. eines ZIPs mit Urlaubsbildern zu seinen Geschwistern wird somit ganz einfach und ist ohne die Nutzung einer Hosting-Plattform im Web durchführbar.
 
-Du findest nach erfolgreichem Key-Tausch Deinen Chat-Freund im Tabulator "Chat". Damit der Chat funktioniert, sollten beide Teilnehmer idealerweise die gleiche und aktuellste Version des Programmes nutzen, ihre Schlüssel generiert und ausgetauscht haben und zum einem Netzwerk-Knoten oder Chat-Server im Web verbunden sein. Wenn die ersten beiden LEDs in der Status-Zeile unten grün leuchten und der Name des Freundes im Chat-Tab auftaucht, sieht es schon gut aus.
+In der Status-Zeile oben am Pop-Up-Fenster kann der Nutzer den Nicknamen und den Online-Status einsehen und z.B. auch das Socialist- Millionaire-Protokoll (SMP) starten, um einen Freund zu authentifizieren und zu testen, ob er (ein weiteres) gemeinsames Geheimnis kennt und richtig eingibt, wie es weiter unten beschrieben wird. Beide Nutzer sind dann authentisch, wenn sie das gleiche Passwort bei SMP eingeben.
 
-Wenn der Online-Status des Freundes blau (abwesend), rot (beschäftigt) oder grün (gesprächsbereit) aufleuchtet, kann der Chat beginnen. Entweder markiere den Freund in der Tabelle und chatte aus dem Tab heraus, oder doppelklicke mit der Maus auf den Freund und ein Pop-Up Chat Fenster für diesen Freund öffnet sich.
- 
-Der Vorteil im Chat-Tab zu chatten ist, dass man gleich mehrere Freunde markieren kann, so dass die Nachricht alle Freunde erreicht. Wenn Du den Pop-up Chat nutzt (siehe Abbildung), dann musst Du nicht mehr auf die Markierung zur Selektion eines Freundes aus der Freundesliste im Chat-Tab achten. 
-
-Und: Im Pop-Up-Chat hast Du den Options-Knopf "Share StarBeam", mit dem Du eine Datei von der Festplatte auswählen kannst und diese dann verschlüsselt und sicher an den Freund transferiert wird (vgl. auch den Abschnitt weiter unten über StarBeam-FileSharing). Diese Funktion , dass man einen Chat-Freund per Mausklick einfach eine Datei senden kann und diese zudem vollautomatisch für den Transport von Ende-zu-Ende verschlüsselt ist, ist nicht in vielen Applikationen enthalten. Verschlüsselte Übertragung z.B. eines ZIPs mit Urlaubsbildern zu seinen Geschwistern wird somit ganz einfach und ist ohne die Nutzung einer Hosting-Plattform im Web durchführbar. 
-
-In der Status-Zeile oben am Fenster kannst Du den Nicknamen und den Online-Status einsehen und z.B. auch das Socialist- Millionaire-Protokoll starten, um einen Freund zu authentifizieren und zu testen, ob er (ein weiteres) gemeinsames Geheimnis kennt und richtig eingibt, wie es weiter unten beschrieben wird.
 
 ### 6.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit einem Gemini
  
 MELODICA steht für “Multi Encryted LOng DIstance Calling” – ins Deutsche übersetzt in etwa: „Vielfach-verschlüsseltes Anrufen über eine lange Distanz“
 
+Das MELODICA-Symbol ist daher auch ein Keyboard eines Musikinstrumentes.
+
 Abbildung: MELODICA-Symbol
 
 ![Abbildung: MELODICA-Symbol](/images/melodica.gif)
 
+Der MELODICA-Knopf führt die Calling-Funktion aus. Das „Cryptographische Calling“ ist von dem kernel-Projekt Spot-On entwickelt worden und sichert die Verbindung über eine sofortig erneuerte Ende-zu-Ende Verschlüsselung ab, indem das Passwort über die symmetrische Verbindung des Echo-Protokoll übertagen wird.
+Cryptographisches Calling mit dem MELODICA-Knopf bezeichnet, einen Freund wie mit einem Telefon anzurufen – nur, dass damit eine sichere Ende-zu-Ende Verschlüsselung aufgebaut wird.
 
-Es bezeichnet, einen Freund wie mit einem Telefon anzurufen – nur, dass damit eine sichere Ende-zu-Ende Verschlüsselung aufgebaut wird.
- 
 Die Ende-zu-Ende Passphrase – auch Gemini genannt – wird über einen AES-String abgebildet und sollte zwischen beiden Teilnehmern geheim bleiben. Daher gilt es, die elektronische Übertragung immer gut über weitere Verschlüsselungs-Ebenen abzusichern (wie hier im Echo-Protokoll mit dem asymmetrischen Chat-Key und der TLS/SSL-Verbindung), wenn die Übertragung potentiell abgehört werden kann. 
+
 
 #### 6.3.1 Asymmetrisches Calling 
 
@@ -960,7 +973,10 @@ GoldBug hat diese Übertragungsfrage des Passworts für die Ende-zu-Ende Verschl
 
 Gemini ist der griechische Begriff für Zwilling, d.h. es bezieht sich auf beide Teilnehmer, die die Passphrase sodann kennen sollten.
   
-Diese Funktion erzeugt somit einen „Call“, einen Anruf, bei dem das Passwort übertragen wird, das dann später die Ende-zu-Ende Verschlüsselung gestaltet. Genau genommen besteht das Gemini aus zwei Schlüsseln bzw Komponenten, denn das Gemini wird durch einen weiteren Prozess authentifiziert: Diese weitere Komponente wird auch MAC-Hash genannt.
+Diese Funktion erzeugt somit einen „Call“, einen Anruf, bei dem das Passwort übertragen wird, das dann später die Ende-zu-Ende Verschlüsselung gestaltet. Genau genommen besteht das Gemini aus zwei Schlüsseln bzw. Komponenten, denn das Gemini wird durch einen weiteren Prozess authentifiziert: Diese weitere Komponente wird auch MAC-Hash genannt, wie es oben schon erläutert wurde.
+
+Das „Cryptographische Calling“ als ausführbares Protokoll mit dem MELODICA Knopf erweitert daher das bisherige Paradigma von Forward Secrecy wie folgt:
+
 
 #### 6.3.2 Instant Perfect Forward Secrecy (IPFS)
  
@@ -2462,6 +2478,8 @@ make or mingw32-make<br />
 
 - Adams, David / Maier, Ann-Kathrin (2016): BIG SEVEN Study, open source crypto-messengers to be compared - or: Comprehensive Confidentiality Review & Audit of GoldBug, Encrypting E-Mail-Client & Secure Instant Messenger, Descriptions, tests and analysis reviews of 20 functions of the application GoldBug based on the essential fields and methods of evaluation of the 8 major international audit manuals for IT security investigations including 38 figures and 87 tables., URL: https://sf.net/projects/GoldBug/files/bigseven-crypto-audit.pdf - English / German Language, Version 1.1, 305 pages, June 2016
 
+- Arbeitskreis Vorratsdatenspeicherung (AKV), Bündnis gegen Überwachung et al.: List of Secure Instant Messengers, URL: http://wiki.vorratsdatenspeicherung.de/List_of_Secure_Instant_Messengers, Mai 2014.
+
 - Banerjee, Sanchari:  EFYTIMES News Network: 25 Best Open Source Projects Of 2014: Efytimes ranked GoldBug Messenger # 4 on the overall Top 25 Best Open Source Projects Of 2014, http://www.efytimes.com/e1/fullnews.asp?edid=148831
 
 - Cakra, Deden: Review of GoldBug Instant Messenger, Blogspot, 13 Desember 2014, http://bengkelcakra.blogspot.de/2014/12/free-download-GoldBug-instant-messenger.html
@@ -2471,6 +2489,11 @@ make or mingw32-make<br />
 - Demir, Yigit Ekim: Güvenli ve Hizli Anlik Mesajlasma Programi: GoldBug Instant Messenger programi, bu sorunun üstesinden gelmek isteyen kullanicilar için en iyi çözümlerden birisi haline geliyor ve en güvenli sekilde anlik mesajlar gönderebilmenize imkan taniyor (Translated: "GoldBug Instant Messenger Application is the best solution for users, who want to use one of the most secure ways to send instant messages"), News Portal Tamindir http://www.tamindir.com/GoldBug-instant-messenger/
 
 - Dragomir, Mircea: GoldBug Instant Messenger - Softpedia Review: This is a secure P2P Instant Messenger that ensures private communication based on a multi encryption technology constituted of several security layers, http://www.softpedia.com/get/Internet/Chat/Instant-Messaging/GoldBug-Instant-Messenger.shtml, Softpedia Review, January 31st, 2016
+
+- Filecluster: GoldBug Instant Messenger - Un programme très pratique et fiable, conçu pour créer un pont de communication sécurisé entre deux ou plusieurs utilisateurs, URL: https://www.filecluster.fr/logiciel/GoldBug-Instant-Messenger-174185.html
+
+- Generation NT: Sécuriser ses échanges par messagerie: Apportez encore plus de la confidentialité dans votre messagerie, URL: https://www.generation-nt.com/goldbug-messenger-securiser-echanger-communiquer-discuter-messagerie-securite-echange-communication-telecharger-telechargement-1907585.html
+
 
 - Hartshorn, Sarah: 3 New Open Source Secure Communication Projects, May 28, 2015, http://blog.vuze.com/2015/05/28/3-new-open-source-secure-communication-projects/
 
@@ -2482,7 +2505,25 @@ make or mingw32-make<br />
 
 - Momedo: Open Source Mobiler Messenger für kommunale und schulische Zwecke mit Verschlüsselung, Github, URL: https://momedo.github.io/momedo/ & https://github.com/momedo/momedo/blob/master/README.md , 2018
 
+- Por, Julianna Isabele: Segurança em primeiro lugar, URL: https://www.baixaki.com.br/download/goldbug.htm
+
+- Qt Digia: Qt Digia has awarded GoldBug IM as reference project for Qt implementation in the official Qt-Showroom of Digia: showroom.qt-project.org/goldbug/, 2015
+
+- Sabtu: Free GoldBug Instant Messenger 1.7, URL: http://bengkelcakra.blogspot.de/2014/12/free-download-goldbug-instant-messenger.html, 13 December 2014
+
+- Schneier, Bruce / Seidel, Kathleen / Vijayakumar, Saranya: GOLDBUG Multi-Encrypting Messenger – in: A Worldwide Survey of Encryption Products, URL: https://www.schneier.com/cryptography/paperfiles/worldwide-survey-of-encryptionproducts.pdf, February 11, 2016 Version 1.0.
+
+
 - Security Blog: Secure chat communications suite GoldBug. Security Blog, 25. März 2014, http://www.hacker10.com/other-computing/secure-chat-communications-suite-GoldBug/
+
+
+- Spot-On (2014): Documentation of the Spot-On-Application, URL: https://github.com/textbrowser/spot-on/tree/master/branches/trunk/Documentation, Github 2014.
+
+
+- Spot-On (2011): Documentation of the Spot-On-Application, URL: https://sourceforge.net/p/spoton/code/HEAD/tree/, under this URL since 06/2013, Sourceforge, including the Spot-On: Documentation of the project draft paper of the pre-research project since 2010, Project Ne.R.D.D., Registered 2010-06-27, URL: https://sourceforge.net/projects/nerdd/ has evolved into Spot-On. Please see http://spot-on.sf.net and URL: https://github.com/textbrowser/spoton/blob/master/branches/Documentation/RELEASE-NOTES.archived, 08.08.2011.
+
+- Theisen, Michaela: GoldBug Instant Messenger -  Beliebte Software, Sicherer Instant Messenger, URL: https://www.freeware-base.de/freeware-zeige-details-28142-GoldBug_Instant_Messenger.html, 2015
+
 
 -  Vaughan-Nichols, Steven J.: How to recover from Heartbleed, ZDNet, April 9, 2014, http://www.zdnet.com/how-to-recover-from-heartbleed-7000028253 
 
