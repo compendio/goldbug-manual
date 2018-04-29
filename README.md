@@ -2110,6 +2110,10 @@ Wenn die Nachbargeräte aktiviert wurden und die Kernels angeschalet sind, beste
 Eine schöne [Übung](https://funkywidget.wordpress.com/2018/04/28/ncat-raspberry-pi-spot-on-love/) und ein Netzwerk und Ncat für verschlüsselte Kommunikation auszutesten.
 
 
+Abbildung: Übung Verbindung über NCat
+
+![Abbildung: Übung Verbindung über NCat](/images/ncat.png)
+
 
 ## 14 Werkzeuge 
 
