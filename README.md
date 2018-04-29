@@ -2085,7 +2085,7 @@ Wenn Du Deinen GoldBug-Chat über das Tor-Netzwerk betreiben willst, geht dieses
 
 ### 13.10 Ncat Verbindung
 
-Während andere Applikationen immer einen Server benötigen, der ggf. sogar nur sehr schwer replizierbar oder administrierbar ist, hat GoldBug auch Möglichkeiten, ganz ohne dedizierten Server auszukommen. Dazu kann Ncat benutzt werden wie folgt:
+Während andere Applikationen immer einen Server benötigen, der ggf. sogar nur sehr schwer replizierbar oder administrierbar ist, hat GoldBug auch Möglichkeiten, ganz ohne dedizierte Server-Software auszukommen. Dazu kann Ncat benutzt werden wie folgt:
 
 In einer Übung werden zwei Geräte mit GoldBug durch einen RaspberryPi verbunden, der unter Debian läuft und NCat benutzt.
 Es wird ein funktionierendes Netzwerk benötigt, ein Rasoberry Pi und zwei Geräte mit jeweils GoldBug.
@@ -2103,16 +2103,16 @@ Sodann wird ncat aufgerufen.
 
 >    ncat –broker –ssl –ssl-cert server-cert.pem –ssl-key server-key.pem -k -l 192.168.178.130 4710
 
-Nun besuche den Nachbarn/Server Tabulator in GoldBug und definere unter 192.168.178.130 den remote server. 
+Nun besuche den Nachbarn/Server Tabulator in GoldBug und definere unter 192.168.178.130 den remoten Server. 
 
-Wenn die Nachbargeräte aktiviert wurden und die Kernels angeschalet sind, besteht die Verbindung bereits.
+Wenn die Nachbargeräte aktiviert wurden und die Kernels angeschaltet sind, besteht die Verbindung bereits.
 
 Eine schöne [Übung](https://funkywidget.wordpress.com/2018/04/28/ncat-raspberry-pi-spot-on-love/) und ein Netzwerk und Ncat für verschlüsselte Kommunikation auszutesten.
 
 
-Abbildung: Übung Verbindung über NCat
+Abbildung: Übung Verbindung über Ncat
 
-![Abbildung: Übung Verbindung über NCat](/images/ncat.png)
+![Abbildung: Übung Verbindung über Ncat](/images/netcat.png)
 
 
 ## 14 Werkzeuge 
