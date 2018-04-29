@@ -106,6 +106,7 @@ Inhaltsverzeichnis
         13.7 Bluetooth Server
         13.8 UDP Server
         13.9.SCTP Server
+        13.10 NCat Verbindung
 
     14 Werkzeuge
         14.1 Werkzeug: Verschlüsselung von Dateien
@@ -1000,7 +1001,7 @@ Schließlich ist im Kontext-Menü (gehe mit rechter Maustaste auf einen Freund i
 
 Abbildung: 2-Way-Calling im Kontext-Menü aus der Freundesliste
 
-![Abbildung: 2-Way-Calling im Kontext-Menü aus der Freundesliste](/images/images/2_way_calling.png)	
+![Abbildung: 2-Way-Calling im Kontext-Menü aus der Freundesliste](/images/2_way_calling.png)	
 
 Die Möglichkeit, das Passwort
 - erstens manuell zu edieren,
@@ -2082,6 +2083,32 @@ Wenn Du Deinen GoldBug-Chat über das Tor-Netzwerk betreiben willst, geht dieses
 
 ### 13.9.SCTP Server
 
+### 13.10 Ncat Verbindung
+
+Während andere Applikationen immer einen Server benötigen, der ggf. sogar nur sehr schwer replizierbar oder administrierbar ist, hat GoldBug auch Möglichkeiten, ganz ohne dedizierten Server auszukommen. Dazu kann Ncat benutzt werden wie folgt:
+
+In einer Übung werden zwei Geräte mit GoldBug durch einen RaspberryPi verbunden, der unter Debian läuft und NCat benutzt.
+Es wird ein funktionierendes Netzwerk benötigt, ein Rasoberry Pi und zwei Geräte mit jeweils GoldBug.
+
+
+Zuerst wird ncat auf dem Pi installiert:
+
+>    sudo aptitude install nmap
+
+Sodann wird etwas SSL material generiert:
+
+>    openssl req -new -x509 -keyout server-key.pem -out server-cert.pem
+
+Sodann wird ncat aufgerufen.
+
+>    ncat –broker –ssl –ssl-cert server-cert.pem –ssl-key server-key.pem -k -l 192.168.178.130 4710
+
+Nun besuche den Nachbarn/Server Tabulator in GoldBug und definere unter 192.168.178.130 den remote server. 
+
+Wenn die Nachbargeräte aktiviert wurden und die Kernels angeschalet sind, besteht die Verbindung bereits.
+
+Eine schöne [Übung](https://funkywidget.wordpress.com/2018/04/28/ncat-raspberry-pi-spot-on-love/) und ein Netzwerk und Ncat für verschlüsselte Kommunikation auszutesten.
+
 
 
 ## 14 Werkzeuge 
@@ -2492,6 +2519,8 @@ make or mingw32-make<br />
 
 - Filecluster: GoldBug Instant Messenger - Un programme très pratique et fiable, conçu pour créer un pont de communication sécurisé entre deux ou plusieurs utilisateurs, URL: https://www.filecluster.fr/logiciel/GoldBug-Instant-Messenger-174185.html
 
+- Fousoft: GoldBug Instant Messenger, URL: https://www.fousoft.com/goldbug-instant-messenger.html, March 16, 2017
+
 - Generation NT: Sécuriser ses échanges par messagerie: Apportez encore plus de la confidentialité dans votre messagerie, URL: https://www.generation-nt.com/goldbug-messenger-securiser-echanger-communiquer-discuter-messagerie-securite-echange-communication-telecharger-telechargement-1907585.html
 
 
@@ -2499,9 +2528,13 @@ make or mingw32-make<br />
 
 - Harvey, Cynthia: Datamation: 50 Noteworthy Open Source Projects - Chapter Secure Communication: GoldBug Messenger ranked on first # 1 position, Posted September 19, 2014, http://www.datamation.com/open-source/50-noteworthy-new-open-source-projects-3.html
 
+- Heise:  GoldBug kann Schlüssel selbst encodiert versenden, URL: http://www.heise.de/download/goldbug-1192605.html
+
 - Joos, Thomas: Sicheres Messaging im Web, PCWelt Magazin, Mittwoch den 01.10.2014, http://www.pcwelt.de/ratgeber/Tor__I2p__Gnunet__RetroShare__Freenet__GoldBug__Spurlos_im_Web-Anonymisierungsnetzwerke-8921663.html 
 
 - Lindner,  Mirko: POPTASTIC: Verschlüsselter Chat über POP3 mit dem GoldBug Messenger, Pro-Linux, 9. Dezember 2014, http://www.pro-linux.de/news/1/21822/POPTASTIC-verschluesselter-chat-ueber-pop3.html
+
+- Majorgeeks:GoldBug Secure Email Client & Instant Messenger, URL:http://www.majorgeeks.com/files/details/goldbug_secure_email_client_instant_messenger.html
 
 - Momedo: Open Source Mobiler Messenger für kommunale und schulische Zwecke mit Verschlüsselung, Github, URL: https://momedo.github.io/momedo/ & https://github.com/momedo/momedo/blob/master/README.md , 2018
 
@@ -2524,6 +2557,7 @@ make or mingw32-make<br />
 
 - Theisen, Michaela: GoldBug Instant Messenger -  Beliebte Software, Sicherer Instant Messenger, URL: https://www.freeware-base.de/freeware-zeige-details-28142-GoldBug_Instant_Messenger.html, 2015
 
+- Tur, Henryk / Computerworld: GoldBug Secure Email Client & Instant Messenger, https://www.computerworld.pl/ftp/goldbug-secure-email-client-instant-messenger.html, 11.01.2018
 
 -  Vaughan-Nichols, Steven J.: How to recover from Heartbleed, ZDNet, April 9, 2014, http://www.zdnet.com/how-to-recover-from-heartbleed-7000028253 
 
