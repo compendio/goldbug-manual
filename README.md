@@ -693,18 +693,18 @@ Es zeigt sich, dass das Echo-Protokoll ein durchaus komplexes Netzwerk abbilden 
 
 ## 4 Cryptographisches Discovery
 
-Cryptographic Discovery beschreibt die Methode eines das Echo ergänzenden Protokolls, Nodes in einem Echo-Netzwerk zu finden. Das Echo-Protokoll wird damit um eine weitere sinnvolle Methode ergänzt, wenn sie nicht sogar bedeutender ist, als das Echo selbst. Cryptographic Discovery ist in den bestehenden Clienten wie GoldBug, Spot-on oder auch dem Chat-Server für das Betriebssystem Android, SmokeStack, auf der Code Basis implementiert. Der Source Code und seine Dokumentation legt die Methode entsprechend dar. Cryptographic Discovery kann z.B. einen Distributed Hash Table (DHT) ersetzen, um einen Freund im Netzwerk zu finden. Eine weitergehende Pubkikation speziell zu diesem Thema ist in Vorbereitung. 
+Cryptographic Discovery beschreibt die Methode eines das Echo ergänzenden Protokolls, Nodes in einem Echo-Netzwerk zu finden. Das Echo-Protokoll wird damit um eine weitere sinnvolle Methode ergänzt, wenn sie nicht sogar bedeutender ist, als das Echo selbst. Cryptographic Discovery ist in den bestehenden Clienten wie GoldBug, Spot-on oder auch dem Chat-Server für das Betriebssystem Android, Smokestack, auf der Code Basis implementiert. Der Source Code und seine Dokumentation legt die Methode entsprechend dar. Cryptographic Discovery kann z.B. einen Distributed Hash Table (DHT) ersetzen, um einen Freund im Netzwerk zu finden. Eine weitergehende Publikation speziell zu diesem Thema ist in Vorbereitung. 
 
 
 ## 5 Einen ersten Setup einrichten – z.B. mit dem Wizard
 
 Der erste initiale Setup der Software ist mit wenigen Schritten ganz einfach, 
 
-- Entpacke das Programm aus dem Zip und starte (unter Windows) die GoldBug.exe aus dem Pfad, in den das Programm entpackt wurde, z.B. C:/GoldBug/GoldBug.exe oder C:/Programme/GoldBug/GoldBug.exe.
+- der Nutzer entpackt das Programm aus dem Zip und startet (unter Windows) die GoldBug.exe aus dem Pfad, in den das Programm entpackt wurde, z.B. C:/GoldBug/GoldBug.exe oder C:/Programme/GoldBug/GoldBug.exe.
 
-- Es erscheint die Benutzeroberfläche und ein Wizard, mit dem Einstellungen Schritt für Schritt umgesetzt werden können. Alternativ kann man den Wizard auch schließen und die Einstellungen manuell im Tab für die Einstellungen bzw. der Kernel-Aktivierung vornehmen. Es empfiehlt sich, den Wizard zu nutzen.
+- Es erscheint die Benutzeroberfläche und ein Wizard, mit dem Einstellungen Schritt für Schritt umgesetzt werden können. Alternativ kann man den Wizard auch schließen und die Einstellungen manuell im Tab für die Einstellungen bzw. für die Kernel-Aktivierung vornehmen. Es empfiehlt sich, den Wizard zu nutzen.
 
-- Im Wizard werden sodann mit dem Nutzernamen  und einer zweifach einzugebenden Passphrase die notwendigen kryptographischen Schlüssel generiert. 
+- Im Wizard werden sodann mit dem Nutzernamen und einer zweifach einzugebenden Passphrase die notwendigen kryptographischen Schlüssel generiert.
 
 
 Abbildung: Initialer Wizard 
@@ -715,7 +715,7 @@ Abbildung: Initialer Wizard
 
 - Nach Abschluss des Wizards ist noch der Kernel zu aktivieren. Der GoldBug Messenger hat also eine Benutzeroberfläche (auch Interface oder Graphical User Interface (GUI) genannt) und einen Kernel.  Beide sind als Binärdatei gegeben (also unter Windows als GoldBug.exe und Spot-On-Kernel.exe bezeichnet). Spot-On ist das Original-Projekt für die Echo-Applikation und GoldBug stellt lediglich eine vereinfachte Benutzeroberfläche zur Verfügung.
 
-- Wenn der Kernel läuft, ist eine Verbinde zu einem Nachbarn oder Server mit der entsprechenden IP im Tab Nachbarn vorzunehmen.
+- Wenn der Kernel läuft, ist eine Verbindung zu einem Nachbarn oder Server mit der entsprechenden IP im Tab Nachbarn vorzunehmen.
 
 - Sodann tauscht der Nutzer mit einem Freund den Schlüssel und die verschlüsselte Kommunikation per Chat oder E-Mail kann beginnen...
 
@@ -724,7 +724,7 @@ Ansonsten muss in diesem Tabulator für Einstellungen bzw. für die Kernel-Aktiv
 
 ### 5.1 Zwei Login-Methoden
 
-Wenn der Nutzer GoldBug das erste Mal startet, ist in dem entsprechenden Kasten einen Nicknamen einzugeben und eine Passphrase für den Login in die Applikation zu definieren (vgl. Abbildung, blauer Widget-Kasten). 
+Wenn der Nutzer GoldBug das erste Mal startet, ist in dem entsprechenden Kasten ein Nicknamen einzugeben und eine Passphrase für den Login in die Applikation zu definieren (vgl. Abbildung, blauer Widget-Kasten). 
 
 Abbildung: Setze Passwort
 
@@ -741,9 +741,9 @@ Die zwei Methoden lassen sich wie folgt unterscheiden:
 Damit das Passwort auch beim Nutzer eingeübt wird und Tippfehler ausgeschlossen werden, muss es ein zweites Mail eingegeben werden.
 
 
-**Frage/Antwort-Methode:** Bei dieser Methode wird nicht ein Passwort zweimal eingegeben, sondere es wird eine Zeichenkette als Frage definiert und eine Zeichenkette als Antwort. Beide Strings werden nicht ein zweites Mal überprüft. Technisch wird diese Login-Methode über eine HMAC umgesetzt wie folgt: Hash (Question, Answer), weisst darauf hin, dass ein "[HMAC](https://de.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code)" (Keyed-Hash Message Authentication Code) genutzt wird. 
+**Frage/Antwort-Methode:** Bei dieser Methode wird nicht ein Passwort zweimal eingegeben, sondern es wird eine Zeichenkette als Frage definiert und eine Zeichenkette als Antwort. Beide Strings werden nicht ein zweites Mal überprüft. Technisch wird diese Login-Methode über eine HMAC umgesetzt wie folgt: Hash (Question, Answer), weißt darauf hin, dass ein "[HMAC](https://de.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code)" (Keyed-Hash Message Authentication Code) genutzt wird. 
 Und: Weder die Frage, noch die Antwort, werden auf der Maschine des Nutzers gespeichert und kein kryptographisches Salz wird durch die Maschine per Zufall generiert. Anstelle der Frage kann der Nutzer natürlich auch zwei Passworte ohne ein Fragezeichen eingeben. 
-Es ist zu beachten, dass hier die Frage und die Antwort bei späteren Logins exakt eingeben werden müssen, wie sie definiert wurden und hier bei der erstmaligen Definition kein zweiter Eingabecheck ("Confirmation") hinsichtlich Tippfehler wie bei der Passwort-Methode erfolgt.
+Es ist zu beachten, dass hier die Frage und die Antwort bei späteren Logins exakt so eingeben werden müssen, wie sie definiert wurden und hier bei der erstmaligen Definition kein zweiter Eingabecheck ("Confirmation") hinsichtlich Tippfehler wie bei der Passwort-Methode erfolgt.
 
 Abbildung: Login in die Applikation mit einem Passwort
 
@@ -763,11 +763,11 @@ Abbildung: Virtuelles Keyboard
 
 
 
-Grundsätzlich ist es wichtig, dass der private Schlüssel in einem ausreichend gesicherten Container verschlüsselt aufbewahrt wird. Es liegt die Vermutung nahe, dass insbesondere der Zugriff von Anbieterfirmen auf mobile Betriebssysteme es andernfalls leicht machen würde, den privaten Schlüssel abzugreifen. 
+Grundsätzlich ist es wichtig, dass der private Schlüssel in einem ausreichend gesicherten Container verschlüsselt aufbewahrt wird. Es liegt die Vermutung nahe, dass insbesondere der Zugriff von Anbieterfirmen auf mobile Betriebssysteme es andernfalls leicht machen würde, den privaten Schlüssel abzugreifen.
 
 Dieses ist insbesondere auch bei Web-Mail-Angeboten kritisch zu hinterfragen, die Verschlüsselung im Browser oder mit Schlüsseln anbieten, die beim Mail-Anbieter online hinterlegt sind. Verschlüsselung sollte immer auf der Maschine des Nutzers stattfinden und dazu ist ein quell-offener Klient und keine Online-Web Anwendung im Browser zu nutzen, in der der Nutzer ggf. - auch selbst generierte -  Schlüssel online hinterlegen soll. 
 
-Die Gefahr des Abgreifens des ggf. nicht ausreichend verschlüsselten privaten Schlüssels ist viel zu groß. Auch Programm-Audits sollten auf das Auf-greifen der Passworte für den verschlüsselten Container, in denen sich der private Schlüssel befindet, sowie auf das Ab-Greifen durch Remote-initiiertes Hochladen des privaten Schlüssels besonderes Augenmerk legen. 
+Die Gefahr des Abgreifens des ggf. nicht ausreichend verschlüsselten privaten Schlüssels ist viel zu groß. Auch Programm-Audits sollten auf das Auf-greifen der Passworte für den verschlüsselten Container, in denen sich der private Schlüssel befindet, sowie auf das Ab-Greifen durch remote-initiiertes Hochladen des privaten Schlüssels besonderes Augenmerk legen. 
 
 Selbst die wenigen quell-offenen Messenger mit Verschlüsselung, die man für den Desktop wie auch für mobile Geräte an einer Hand abzählen kann, die ein Security-Audit durchlaufen haben, sind kaum ausreichend hinsichtlich der Sicherheit der verschlüsselten Speicherung vom - und gesicherter Zugangsprozesse zum - privaten Schlüssel analysiert.
 
@@ -786,7 +786,7 @@ Für folgende Funktionen werden asymmetrische Schlüssel generiert (jeweils ein 
 - URLs: Hierbei geht es um die Suche von URLs in der URL-Datenbank (Websuche)
 - Rosetta: Mit dem Rosetta Verschlüsselungs-Pad können Texte mit asymmetrischen Schlüsseln von Plaintext zu Ciphertext und umgekehrt hin und her konvertiert werden, bevor sie versandt werden. Dieses empfiehlt sich, wenn andere unsichere Messenger oder E-Mail genutzt werden oder der Ciphertext irgendwo im Web gepostet werden soll - oder der Plaintext, bevor er in GoldBug versandt wird, nochmals eine zusätzliche Verschlüsselungsebene erhalten soll.
 
-Daß jede Funktion ein eigenes Schlüsselpaar nutzt, ist wiederum ein Sicherheitsmerkmal. Wenn der Chat-Schlüssel kompromittiert wäre, ist somit die E-Mail-Verschlüsselung davon nicht betroffen. Ferner kann der Nutzer auch Freunden nur seinen Chat-Schlüssel übergeben und nicht den E-Mail-Schlüssel. Somit kann der Nutzer entscheiden, wem er es erlaubt, mit ihm zu chatten oder nur zu e-mailen oder ggf. auch URLs auszutauschen für die Funktion der p2p Websuche in der integrierten URL-Datenbank.
+Dass jede Funktion ein eigenes Schlüsselpaar nutzt, ist wiederum ein Sicherheitsmerkmal. Wenn der Chat-Schlüssel kompromittiert wäre, ist somit die E-Mail-Verschlüsselung davon nicht betroffen. Ferner kann der Nutzer auch Freunden nur seinen Chat-Schlüssel übergeben und nicht den E-Mail-Schlüssel. Somit kann der Nutzer entscheiden, wem er es erlaubt, mit ihm zu chatten oder nur zu e-mailen oder ggf. auch URLs auszutauschen für die Funktion der p2p Websuche in der integrierten URL-Datenbank.
 
 Beschrieben ist bislang die minimale Sicht auf die Benutzeroberfläche: Über das Hauptmenü kann man zwischen „voller Ansicht“ oder „minimaler Ansicht“ wählen. Wer sich mit Computern nicht so gut auskennt, sollte die minimale Ansicht wählen, da es die ggf. nicht benötigte Optionsvielfalt ausblendet. Keep it simple! Qt-Entwickler, und solche die ein Übungs-Projekt für ein eigenes Qt-Entwicklungsprojekt suchen, können die Benutzeroberfläche auch ggf. noch minimaler ausgestalten (und das GoldBug Projekt gerne „forken“).
 
@@ -911,20 +911,20 @@ Abbildung: Füge Schlüssel/Freund hinzu
 
 ![Abbildung: Füge Schlüssel/Freund hinzu](/images/add_key.jpg)
 
-Der Nutzer findest seinen eigenen öffentlichen Schlüssel ebenso im Tabulator „Freunde hinzufügen“ („Add Friend/Key“). Über den großen Knopf ("Kopiere Schlüssel") oben kann der Nutzer alle seine (oder ausgewählte Funktions-)Schlüssel in die Zwischenablage auskopieren.
+Der Nutzer findet seinen eigenen öffentlichen Schlüssel ebenso im Tabulator „Freunde hinzufügen“ („Add Friend/Key“). Über den großen Knopf ("Kopiere Schlüssel") oben kann der Nutzer alle seine (oder ausgewählte Funktions-)Schlüssel in die Zwischenablage auskopieren.
 Der Nutzer kopiert hier also den vollen Text und sendet diesen zu seinem Freund.
 Ebenso macht es der Freund und der Nutzer fügt den Schlüssel des Freundes in das Textfeld ein.
 
-'''Optional nur zur Kenntnis:''' Ggf. kann es notwendig sein, mit der rechten Maustauste im Kontext-Menü einen neuen Freund als Freund zu bestätigen (Make-Friend-Funktion). Dieses kommt dann zum Einsatz, wenn ein Freund seinen Schlüssel online in einer direkten IP-Verbindung an den Nutzer sendet. Diese Funktion ist in der Benutzeroberfläche von Spot-on gegeben, in der GoldBug Benutzeroberfläche steht dieses nicht zur Verfügung, so dass beide idealerweise immer den Schlüssel füreinander einfach auskopieren, e-mailen und einfügen. Sollte aber ein Freund z.B. den Spot-on Klienten mit der dortigen Benutzeroberfläche nutzen und eine direkte IP-Verbindung zu einem Nutzer des GoldBug-Klienten aufbauen, dann ist es ebenso möglich, den Schlüssel auch per direkter IP-Verbindung zu transferieren anstelle vom Copy/Paste. Sodann erscheint der Freund mit seinem Nick-Namen im Tabulator Chat oder E-Mail (mit differierenden Icon) und ist mit rechter Maustaste oder aus dem Kontext Menü heraus als Freund zu bestätigen. Dieses ist eine Weiterentwicklung des Repleo, also der Funktion, den eigenen Schlüssel mit dem öffentlichen Schlüssel des Freundes (bei erhalt) ebenso vor der Rück-Übertragung zu verschlüsseln. Hierbei wird der Schlüsselaustausch also automatisiert es  folgt ein Synchronisierungsprozess. Der Nutzer muss zustimmen, dass der Schlüssel nach Synchronisierung über die Nachbar-Verbindung im eigenen Klienten bzw. der eigenen Freundesliste angezeigt wird. 
+'''Optional nur zur Kenntnis:''' Ggf. kann es notwendig sein, mit der rechten Maustauste im Kontext-Menü einen neuen Freund als Freund zu bestätigen (Make-Friend-Funktion). Dieses kommt dann zum Einsatz, wenn ein Freund seinen Schlüssel online in einer direkten IP-Verbindung an den Nutzer sendet. Diese Funktion ist in der Benutzeroberfläche von Spot-on gegeben, in der GoldBug Benutzeroberfläche steht dieses nicht zur Verfügung, so dass beide idealerweise immer den Schlüssel füreinander einfach auskopieren, e-mailen und einfügen. Sollte aber ein Freund z.B. den Spot-on Klienten mit der dortigen Benutzeroberfläche nutzen und eine direkte IP-Verbindung zu einem Nutzer des GoldBug-Klienten aufbauen, dann ist es ebenso möglich, den Schlüssel auch per direkter IP-Verbindung zu transferieren anstelle vom Copy/Paste. Sodann erscheint der Freund mit seinem Nick-Namen im Tabulator Chat oder E-Mail (mit differierenden Icon) und ist mit rechter Maustaste oder aus dem Kontext Menü heraus als Freund zu bestätigen. Dieses ist eine Weiterentwicklung des Repleo, also der Funktion, den eigenen Schlüssel mit dem öffentlichen Schlüssel des Freundes (bei Erhalt) ebenso vor der Rück-Übertragung zu verschlüsseln. Hierbei wird der Schlüsselaustausch also automatisiert: es folgt ein Synchronisierungsprozess. Der Nutzer muss zustimmen, dass der Schlüssel nach Synchronisierung über die Nachbar-Verbindung im eigenen Klienten bzw. der eigenen Freundesliste angezeigt wird. 
 
-'''Weitere Option nur zur Kenntnis:''' Neben dem Online-Versand des Schlüssels über die direkte Verbindung zu einem Freund kann auch das weiter unten beschriebene Werkzeug des Echo Public Key Sharing (EPKS) genutzt werden. Dieses wird angewandt, wenn der Freund nicht mit einer direkten Verbindung verbunden ist (z.B. beide Partner einen gemeinsamen Chat-Server bzw. Knotenpunkt in der Mitte nutzen). Beide Partner geben dann in EPKS ein gemeinsames Passwort-Geheimnis ein und senden ihre öffentlichen Schlüssel über dieses Passwort ins Echo-Netz. Siehe dazu weiter die ausführlicheren Details im Abschnitt diesem Tool, das ggf. eine gute Alternative zu den oftmals unkomfortablen und unsicheren üblichen Key-Servern darstellen kann. Diese Innovation von Repleo und der Synchronisierung der Schlüssel über die sogenannte Echo-Public-Key-Share-Funktion (EPKS) bzw. die bestehende IP-Verbindung ist später von anderen Projekten ebenso aufgegriffen worden unter dem Namen AutoCrypt bzw. KeySync. Diese Funktionen gehen also auf die Repleo, EPKS und den Schlüsseltausch per IP-Verbindung von Echo-Knotenpunkten zurück.
+'''Weitere Option nur zur Kenntnis:''' Neben dem Online-Versand des Schlüssels über die direkte Verbindung zu einem Freund kann auch das weiter unten beschriebene Werkzeug des Echo Public Key Sharing (EPKS) genutzt werden. Dieses wird angewandt, wenn der Freund nicht mit einer direkten Verbindung verbunden ist (z.B. beide Partner einen gemeinsamen Chat-Server bzw. Knotenpunkt in der Mitte nutzen). Beide Partner geben dann in EPKS ein gemeinsames Passwort-Geheimnis ein und senden ihre öffentlichen Schlüssel über dieses Passwort ins Echo-Netz. Siehe dazu weiter die ausführlicheren Details im Abschnitt diesem Tool, das ggf. eine gute Alternative zu den oftmals unkomfortablen und unsicheren üblichen Key-Servern darstellen kann. Diese Innovation von Repleo und der Synchronisierung der Schlüssel über die sogenannte Echo-Public-Key-Share-Funktion (EPKS) bzw. die bestehende IP-Verbindung ist später von anderen Projekten ebenso aufgegriffen (kopiert) worden unter dem Namen AutoCrypt bzw. KeySync. Diese Funktionen gehen also auf die Repleo, EPKS und den Schlüsseltausch per IP-Verbindung von Echo-Knotenpunkten zurück.
  
 #### 6.1.1 Besonderheit: Repleo
 
 Wenn der Nutzer schon einen Schlüssel seines Freundes erhalten hat (z.B. den Chat-Schlüssel) und diesen in seinen Klienten eingefügt hat, nunmehr aber seinen eigenen öffentlichen (Chat-)Schlüssel nicht der Öffentlichkeit preisgeben will, ihn nicht bei einem E-Mail-Programm gespeichert und transferiert wissen will (obschon der öffentliche Schlüssel ja eigentlich öffentlich sein darf), dann kann der Nutzer auch mit dem erhaltenen Schlüssel seines Freundes seinen eigenen öffentlichen Schlüssel verschlüsseln. Das nennt man dann REPLEO. Der Schlüssel wird verschlüsselt übertagen, alsbald ein Nutzer bereits einen öffentlichen Schlüssel des Gegenübers erhalten hat.
 
 Beim Repleo wird also der öffentliche Schlüssel des Nutzers mit dem öffentlichen Schlüssel des Freundes bereits verschlüsselt. Dieses ist sodann für jede Funktion bzw. jeden Schlüssel durchzuführen, d.h. der Nutzer kann jeweils das Chat-Repleo, E-Mail-Repleo und URL-Repleo etc. zurücksenden.
-Auch ein Repleo kann dann der Freund in den Kasten des Tabulators "Add Friend/Key" einfügen. Über dem Einfüge-Kasten ist lediglich der Radio-Auswahl-Knopf zu definieren, ob es sich um einen Key, ein Repleo, oder eine E-Mail-Adresse handelt, die man hinzufügen möchte. Mittlerweile sind die K- und R- Auswahlknöpfe in GoldBug verschwunden, weil der Klient automatisch erkennt, ob es ein Key oder ein Repleo ist.
+Auch ein Repleo kann der Freund dann in den Kasten des Tabulators "Add Friend/Key" einfügen. Über dem Einfüge-Kasten ist lediglich der Radio-Auswahl-Knopf zu definieren, ob es sich um einen Key, ein Repleo, oder eine E-Mail-Adresse handelt, die man hinzufügen möchte. Mittlerweile sind die K- und R- Auswahlknöpfe in GoldBug verschwunden, weil der Klient automatisch erkennt, ob es ein Key oder ein Repleo ist.
 
 Der Text eines Schlüssels startet also immer mit einem Buchstaben "K" oder "k" und ein Repleo startet mit einem "R" oder "r". Daran kann man es noch erkennen.
 
@@ -935,7 +935,7 @@ Der Nutzer findet nach erfolgreichem Key-Tausch seinen Chat-Freund im Tabulator 
 
 Wenn der Online-Status des Freundes blau (abwesend), rot (beschäftigt) oder grün (gesprächsbereit) aufleuchtet, kann der Chat beginnen. Entweder markiert der Nutzer den Freund in der Tabelle und chattet aus dem Tab heraus, oder doppelklicket mit der Maus auf den Freund und ein Pop-Up Chat Fenster für diesen Freund öffnet sich.
 
-Der Vorteil im Chat-Tab zu chatten ist, dass man gleich mehrere Freunde markieren kann, so dass die Nachricht alle Freunde erreicht. Wenn der Nutzer den Pop-up Chat nutzt (siehe Abbildung), dann musst Du nicht mehr auf die Markierung zur Selektion eines Freundes aus der Freundesliste im Chat-Tab achten. 
+Der Vorteil im Chat-Tab zu chatten ist, dass man gleich mehrere Freunde markieren kann, so dass die Nachricht alle Freunde erreicht. Wenn der Nutzer den Pop-up Chat nutzt (siehe Abbildung), dann muss der Nutzer nicht mehr auf die Markierung zur Selektion seines Freundes aus der Freundesliste im Chat-Tab achten.
 
 Abbildung: 1:1-Chat im Pop-up Fenster
 
@@ -947,7 +947,7 @@ Abbildung: Chat im Pop-up Fenster
 ![Abbildung: Chat im Pop-up Fenster](/images/chat_popupwindow.png)	
 
 
-Und: Im Pop-Up-Chat hat der Nutzer den Options-Knopf "Share StarBeam", mit dem er eine Datei von der Festplatte auswählen kann und diese dann verschlüsselt und sicher an den Freund transferiert wird (vgl. auch den Abschnitt weiter unten über StarBeam-FileSharing). Diese Funktion, dass man einen Chat-Freund per Mausklick einfach eine Datei senden kann und diese zudem vollautomatisch für den Transport von Ende-zu-Ende verschlüsselt ist, ist nicht in vielen Applikationen enthalten. Verschlüsselte Übertragung z.B. eines ZIPs mit Urlaubsbildern zu seinen Geschwistern wird somit ganz einfach und ist ohne die Nutzung einer Hosting-Plattform im Web durchführbar.
+Und: Im Pop-Up-Chat hat der Nutzer den Options-Knopf "Share StarBeam", mit dem er eine Datei von der Festplatte auswählen kann und diese dann verschlüsselt und sicher an den Freund transferiert (vgl. auch den Abschnitt weiter unten über StarBeam-FileSharing). Diese Funktion, dass man einen Chat-Freund per Mausklick einfach eine Datei senden kann und diese zudem vollautomatisch für den Transport von Ende-zu-Ende verschlüsselt ist, ist nicht in vielen Applikationen enthalten. Verschlüsselte Übertragung z.B. eines ZIPs mit Urlaubsbildern zu seinen Geschwistern wird somit ganz einfach und ist ohne die Nutzung einer Hosting-Plattform im Web durchführbar.
 
 In der Status-Zeile oben am Pop-Up-Fenster kann der Nutzer den Nicknamen und den Online-Status einsehen und z.B. auch das Socialist- Millionaire-Protokoll (SMP) starten, um einen Freund zu authentifizieren und zu testen, ob er (ein weiteres) gemeinsames Geheimnis kennt und richtig eingibt, wie es weiter unten beschrieben wird. Beide Nutzer sind dann authentisch, wenn sie das gleiche Passwort bei SMP eingeben.
 
@@ -962,7 +962,7 @@ Abbildung: MELODICA-Symbol
 
 ![Abbildung: MELODICA-Symbol](/images/melodica.gif)
 
-Der MELODICA-Knopf führt die Calling-Funktion aus. Das „Cryptographische Calling“ ist von dem kernel-Projekt Spot-On entwickelt worden und sichert die Verbindung über eine sofortig erneuerte Ende-zu-Ende Verschlüsselung ab, indem das Passwort über die symmetrische Verbindung des Echo-Protokoll übertagen wird.
+Der MELODICA-Knopf führt die Calling-Funktion aus. Das „Cryptographische Calling“ ist vom Kernel-Projekt Spot-On entwickelt worden und sichert die Verbindung über eine sofortig erneuerte Ende-zu-Ende Verschlüsselung ab, indem das Passwort über die symmetrische Verbindung des Echo-Protokoll übertagen wird.
 Cryptographisches Calling mit dem MELODICA-Knopf bezeichnet, einen Freund wie mit einem Telefon anzurufen – nur, dass damit eine sichere Ende-zu-Ende Verschlüsselung aufgebaut wird.
 
 Die Ende-zu-Ende Passphrase – auch Gemini genannt – wird über einen AES-String abgebildet und sollte zwischen beiden Teilnehmern geheim bleiben. Daher gilt es, die elektronische Übertragung immer gut über weitere Verschlüsselungs-Ebenen abzusichern (wie hier im Echo-Protokoll mit dem asymmetrischen Chat-Key und der TLS/SSL-Verbindung), wenn die Übertragung potentiell abgehört werden kann. 
@@ -973,23 +973,25 @@ Die Ende-zu-Ende Passphrase – auch Gemini genannt – wird über einen AES-Str
 GoldBug hat diese Übertragungsfrage des Passworts für die Ende-zu-Ende Verschlüsselung gelöst, indem das Gemini (Zeichenfolge für die dann zu bildende symmetrische Verschlüsselung) asymmetrisch verschlüsselt wird (mit dem Schlüssel für Chat) und dann durch einen nochmals (asymmetrischen) verschlüsselten SSL/TLS-Kanal übertragen wird.
 
 Gemini ist der griechische Begriff für Zwilling, d.h. es bezieht sich auf beide Teilnehmer, die die Passphrase sodann kennen sollten.
-  
+
 Diese Funktion erzeugt somit einen „Call“, einen Anruf, bei dem das Passwort übertragen wird, das dann später die Ende-zu-Ende Verschlüsselung gestaltet. Genau genommen besteht das Gemini aus zwei Schlüsseln bzw. Komponenten, denn das Gemini wird durch einen weiteren Prozess authentifiziert: Diese weitere Komponente wird auch MAC-Hash genannt, wie es oben schon erläutert wurde.
 
 Das „Cryptographische Calling“ als ausführbares Protokoll mit dem MELODICA Knopf erweitert daher das bisherige Paradigma von Forward Secrecy wie folgt:
 
 
 #### 6.3.2 Instant Perfect Forward Secrecy (IPFS)
- 
-Du kannst somit die (symmetrische) Verschlüsselung bzw. das Gemini jederzeit erneuern. D.h. das Paradigma des „Perfect Forward Secrecy“ ist um zwei Komponenten erweitert worden: Einerseits kann man die Ende-zu-Ende Passphrase (das Gemini) manuell oder automatisiert definieren und sie andererseits auch sofortig, also „instant“ jederzeit erneuern. Daher wird von „Instant Perfect Forward Secrecy“ (IPFS) gesprochen.
- 
-Im Vergleich bieten viele andere Tools nur einen Key pro Online-Sitzung an und man kann die symmetrische Ende-zu-Ende-Verschlüsselungs-Phrase auch nicht manuell edieren.
 
-Das hier angesprochene Instant Perfect Forward Secrecy (IPFS) nutzt die asymmetrische Verschlüsselung (des Chat-Keys), wobei der temporäre Schlüssel ein symmetrischer Schlüssel (eben das Gemini) ist. 
+Der Nutzer kann somit die (symmetrische) Verschlüsselung bzw. das Gemini jederzeit erneuern. D.h. das Paradigma des „Perfect Forward Secrecy“ ist um zwei Komponenten erweitert worden: Einerseits kann man die Ende-zu-Ende Passphrase (das Gemini) manuell oder automatisiert definieren und sie andererseits auch sofortig, also „instant“ jederzeit erneuern. Daher wird von „Instant Perfect Forward Secrecy“ (IPFS) gesprochen.
  
+Im Vergleich bieten viele andere Applikationen nur einen Key pro Online-Sitzung an und man kann die symmetrische Ende-zu-Ende-Verschlüsselungs-Phrase auch nicht manuell edieren.
+
+Das hier angesprochene Instant Perfect Forward Secrecy (IPFS) nutzt die asymmetrische Verschlüsselung (des Chat-Keys), wobei der temporäre Schlüssel ein symmetrischer Schlüssel (eben das Gemini, ein AES-String) ist.
+
 #### 6.3.3 Symmetrisches Calling
 
-Als weiteren Clou besteht bei GoldBug nunmehr auch die bislang einzigartige Möglichkeit, ein neues Gemini durch den Kanal eines bestehenden Gemini zu senden. Hier wird der Ende-zu-Ende Schlüssel (also das symmetrisch verschlüsselnde Gemini) durch eine andere Ende-zu-Ende Gemini-Verbindung gesandt (der neue symmetrische Schlüssel wird durch einen Kanal eines bestehenden symmetrischen Schlüssels mitgeteilt). Die symmetrische Verschlüsselungsphrase (das Gemini bzw. das AES-Passwort) wird also nicht mit einer asymmetrischen Verschlüsselung (dem Chat-Key) verschlüsselt (z.B. mit RSA, Elgamal oder NTRU) und dann durch einen sicheren Kanal (SSL/TLS) von Punkt-zu-Punkt gesandt, sondern wird selbst mit dem bestehenden Gemini verschlüsselt und sodann erst durch die beschriebene Methode (wieder über SSL/TLS) gesandt.
+Als weiter Option besteht bei GoldBug nunmehr auch die bislang einzigartige Möglichkeit, ein neues Gemini durch den Kanal eines bestehenden Gemini zu senden. Hier wird der Ende-zu-Ende Schlüssel (also das symmetrisch verschlüsselnde Gemini) durch eine andere Ende-zu-Ende Gemini-Verbindung gesandt (der neue symmetrische Schlüssel wird durch einen Kanal eines bestehenden symmetrischen Schlüssels mitgeteilt). Die symmetrische Verschlüsselungsphrase (das Gemini bzw. das AES-Passwort) wird also nicht mit einer asymmetrischen Verschlüsselung (dem Chat-Key) verschlüsselt (z.B. mit RSA, Elgamal oder NTRU) und dann durch einen sicheren Kanal (SSL/TLS) von Punkt-zu-Punkt gesandt, sondern wird selbst mit dem bestehenden Gemini verschlüsselt und sodann erst durch die beschriebene Methode (wieder über SSL/TLS) gesandt.
+
+Das Double-Rachet-Verfahren, bei dem der Schlüssel der folgenden Nachricht in dem verschlüsselten Inhalt des vorangegebenen Paketes ist, mag aus dem Symmetrischen Calling angelehnt oder abgeleitet gewesen sein.
 
 Somit können asymmetrische Calls und symmetrische Calls grundlegend unterschieden werden. Symmetrische Calls nutzen ein bestehendes Gemini. Asymmetrische Calls senden das Gemini über die asymmetrisch verschlüsselte Verbindung (nämlich den permanenten Chat-Key) zum Freund.
 Auch bei einem Call über ein bestehendes Gemini kann das gesandte Gemini jederzeit instant erneuert werden.
