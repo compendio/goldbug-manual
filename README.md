@@ -989,17 +989,18 @@ Das hier angesprochene Instant Perfect Forward Secrecy (IPFS) nutzt die asymmetr
 
 #### 6.3.3 Symmetrisches Calling
 
-Als weiter Option besteht bei GoldBug nunmehr auch die bislang einzigartige Möglichkeit, ein neues Gemini durch den Kanal eines bestehenden Gemini zu senden. Hier wird der Ende-zu-Ende Schlüssel (also das symmetrisch verschlüsselnde Gemini) durch eine andere Ende-zu-Ende Gemini-Verbindung gesandt (der neue symmetrische Schlüssel wird durch einen Kanal eines bestehenden symmetrischen Schlüssels mitgeteilt). Die symmetrische Verschlüsselungsphrase (das Gemini bzw. das AES-Passwort) wird also nicht mit einer asymmetrischen Verschlüsselung (dem Chat-Key) verschlüsselt (z.B. mit RSA, Elgamal oder NTRU) und dann durch einen sicheren Kanal (SSL/TLS) von Punkt-zu-Punkt gesandt, sondern wird selbst mit dem bestehenden Gemini verschlüsselt und sodann erst durch die beschriebene Methode (wieder über SSL/TLS) gesandt.
+Als weitere Option besteht bei GoldBug auch die innovative Möglichkeit, ein neues Gemini durch den Kanal eines bestehenden Gemini zu senden. Hier wird der Ende-zu-Ende Schlüssel (also das symmetrisch verschlüsselnde Gemini) durch eine andere Ende-zu-Ende Gemini-Verbindung gesandt (d.h. der neue symmetrische Schlüssel wird durch einen Kanal eines bestehenden symmetrischen Schlüssels mitgeteilt). Die symmetrische Verschlüsselungsphrase (das Gemini bzw. das AES-Passwort) wird also nicht mit einer asymmetrischen Verschlüsselung (dem Chat-Key) verschlüsselt (z.B. mit RSA, Elgamal. McEliece oder NTRU) und dann durch einen sicheren Kanal (SSL/TLS) von Punkt-zu-Punkt gesandt, sondern wird selbst mit dem bestehenden Gemini verschlüsselt und sodann erst durch die beschriebene Methode (wieder über SSL/TLS) gesandt.
 
-Das Double-Rachet-Verfahren, bei dem der Schlüssel der folgenden Nachricht in dem verschlüsselten Inhalt des vorangegebenen Paketes ist, mag aus dem Symmetrischen Calling angelehnt oder abgeleitet gewesen sein.
+Das Double-Rachet-Verfahren, bei dem der Schlüssel der folgenden Nachricht in dem verschlüsselten Inhalt des vorangegebenen Paketes ist, mag aus dem symmetrischen Calling angelehnt oder abgeleitet gewesen sein.
 
 Somit können asymmetrische Calls und symmetrische Calls grundlegend unterschieden werden. Symmetrische Calls nutzen ein bestehendes Gemini. Asymmetrische Calls senden das Gemini über die asymmetrisch verschlüsselte Verbindung (nämlich den permanenten Chat-Key) zum Freund.
 Auch bei einem Call über ein bestehendes Gemini kann das gesandte Gemini jederzeit instant erneuert werden.
 
 Sichere Ende-zu-Ende-Multi-Verschlüsselung entsteht, wenn ein Messenger einen manuell definierten symmetrischen Schlüssel mit einem bestehenden symmetrischen Schlüssel encodiert und dann mit einem asymmetrischen Schlüssel zusätzlich verschlüsselt. Und dieses Paket sodann durch eine sichere Verbindung gesandt wird.
 
-#### 6.3.4  2-Wege-Calling
-Schließlich ist im Kontext-Menü (gehe mit rechter Maustaste auf einen Freund in der Freundesliste) noch eine dritte Methode für einen sogenannten "Call" hinzugefügt: Das 2-Wege-Calling. Hierbei wird von Dir aus ein AES-256 als Passphrase für die zukünftige Ende-zu-Ende-Verschlüsselung an den Freund gesandt und Dein Freund sendet als Antwort ebenso ein AES-256 an Dich. Nun wird jeweils von Deinem AES die erste Hälfte und von Deinem Freund die zweite Hälfte genommen, und zu einem gemeinsamen AES-256 zusammengesetzt. Das nennt sich die Methode der 2-Wege-Sicherheit. Damit ist gewährleistet, dass kein Dritter - wenn es ihm gelänge, die Maschine des Freundes zu kompromittieren, ein Gemini (oder ein altes Gemini) in seinem Namen von einer dritten, fremden Maschine sendet (was eigentlich nicht möglich ist, da es die unbemerkte Übernahme einer Maschine oder das Brechen der bestehenden TLS und RSA (bzw. NTRU- oder Elgamal-) Verschlüsselung bedeuten würde). Durch das Ping-Pong-Spiel beider Parteien im Zwei-Wege-Calling wird sichergestellt, dass beide Teilnehmer aktuell ihren Teil jeweils dazu beitragen, sich gegenseitig auf ein sicheres Ende-zu-Ende-Passwort zu einigen - und zwar Fifty-Fifty. 
+
+#### 6.3.4  Zwei-Wege-Calling
+Schließlich ist im Kontext-Menü (gehe mit rechter Maustaste auf einen Freund in der Freundesliste) noch eine dritte Methode für einen sogenannten "Call" hinzugefügt: Das Zwei-Wege-Calling. Hierbei wird von dem Nutzer aus ein AES-256 als Passphrase für die zukünftige Ende-zu-Ende-Verschlüsselung an den Freund gesandt und der Freund sendet als Antwort ebenso ein AES-256 an den ersten Nutzer. Nun wird jeweils von dem AES des ersten Nutzers die erste Hälfte und von dem zweiten Nutzer die zweite Hälfte des AES genommen, und zu einem gemeinsamen AES-256 zusammengesetzt. Das benennt die Methode der 2-Wege-Sicherheit. Damit ist gewährleistet, dass kein Dritter - wenn es ihm gelänge, die Maschine des Freundes zu kompromittieren - ein Gemini (oder ein altes Gemini) in seinem Namen von einer dritten, fremden Maschine sendet (was eigentlich nicht möglich ist, da es die unbemerkte Übernahme einer Maschine oder das Brechen der bestehenden TLS und RSA (bzw. NTRU- oder Elgamal-) Verschlüsselung bedeuten würde). Durch das Ping-Pong-Spiel beider Parteien im Zwei-Wege-Calling wird sichergestellt, dass beide Teilnehmer aktuell ihren Teil jeweils dazu beitragen, sich gegenseitig auf ein sicheres Ende-zu-Ende-Passwort zu einigen - und zwar Fifty-Fifty. 
 
 Abbildung: 2-Way-Calling im Kontext-Menü aus der Freundesliste
 
@@ -1007,24 +1008,41 @@ Abbildung: 2-Way-Calling im Kontext-Menü aus der Freundesliste
 
 Die Möglichkeit, das Passwort
 - erstens manuell zu edieren,
-- zweitens sekundlich oder für jeden - oder innerhalb eines jeden - Anruf(es) erneuern zu können,
+- zweitens sekündlich oder für jeden - oder innerhalb eines jeden - Anruf(es) erneuern zu können,
 - drittens das Passwort durch eine bestehende Ende-zu-Ende Verschlüsselung zu versenden,
 - und schließlich viertens, das Ende-zu-Ende-Passwort in einem zwei-Wege-Verfahren generieren zu können,
 macht es Angreifern somit sehr schwer, die Ende-zu-Ende-Verschlüsselung der GoldBug Calling-Funktion aufbrechen zu können.
 
 Aus "Perfect Forward Secrecy" (PFS) ist nicht nur "Instant Perfect Forward Secrey" (IPFS) geworden, sondern ein "2-Way Instant Perfect Forward Secrecy": 2WIPFS. Diese Funktion hat damit FS und PFS und das wichtige Element der Ende-zu-Ende Verschlüsselung mit dieser Prozessimplementierung entscheidend weiterentwickelt. Die Verschlüsselung selbst ist dabei nicht neu, sondern lediglich der Verfahrensprozess ist ausgeklügelt implementiert, um mehr Sicherheit zu bieten.
- 
-Ende-zu-Ende Verschlüsselung wird im GoldBug durch einfaches Knopf-Drücken so einfach wie telefonieren: Einfach den Hörer aufnehmen oder wieder auflegen. Zu jeder Zeit bleibt die Kommunikation asymmetrisch verschlüsselt und die symmetrische End-zu-Ende Verschlüsselung kann einfach hinzugeschaltet werden - und auch durch asymmetrische oder symmetrische Verschlüsselung (innerhalb eines SSL-Kanals) erneuert werden. Das ist eine neuer architektonischer Implementierungs-Standard, den diese Methode des Callings etabliert.
+
+Ende-zu-Ende Verschlüsselung wird im GoldBug durch einfaches Knopf-Drücken so einfach wie telefonieren: Einfach den Hörer aufnehmen oder wieder auflegen. Zu jeder Zeit bleibt die Kommunikation asymmetrisch verschlüsselt und die symmetrische End-zu-Ende Verschlüsselung kann einfach hinzu geschaltet werden - und auch durch asymmetrische oder symmetrische Verschlüsselung (innerhalb eines SSL-Kanals) erneuert werden. Das ist ein neuer architektonischer Implementierungs-Standard, den diese Methode des Crypto-Callings etabliert.
 
 ### 6.4 Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol
 
 Während GoldBug die Nachrichten dreimal verschlüsselt - 
 
 - zum einen wird die Nachricht ja in einem sicheren TLS/SSL-Kanal gesendet, 
-- zweitens wird jede Nachricht asymmetrisch verschlüsselt (z.B. mit RSA, NTRU oder Elgamal, mit dem Chat-Key), 
+- zweitens wird jede Nachricht asymmetrisch verschlüsselt (z.B. mit RSA, NTRU, McEliece oder Elgamal, also mit dem Chat-Key), 
 - und drittens besteht ja die die Möglichkeit, mit der "Call" bzw. "Anruf"-Funktion ein Gemini zu senden, um eine symmetrische Ende-zu-Ende Verschlüsselungs-Passphrase zu setzen (mit verschiedenen Methoden zur Durchführung des "Calls" innerhalb einer bereits bestehenden symmetrischen Verschlüsselung oder über die Zwei-Wege-Aufruf-Funktion, bei der jeder die Hälfte des Ende-zu-Ende Passwortes definiert) - 
 
-gibt es viertens zusätzlich ein weiteres Verfahren zur Erhöhung der Sicherheit: es ist das "SMP"-Protokoll: [Socialist Millionaire Protocoll]()  (eine Methode, die auch für [Off-the-Record-Messaging (OTR)]() hier beschrieben wird: [https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html](https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html)).
+gibt es viertens zusätzlich ein weiteres Verfahren zur Erhöhung der Sicherheit: es ist das "SMP"-Protokoll: [Socialist Millionaire Protocoll]( https://en.wikipedia.org/wiki/Socialist_millionaires) (eine Methode, die auch für [Off-the-Record-Messaging (OTR)]( https://en.wikipedia.org/wiki/ Off-the-Record-Messaging_(OTR)) hier beschrieben wird: [https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html](https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html)).
+
+
+
+Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster zur Authentifizierung des Chat-Partners
+
+![Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)
+
+
+Die Idee dahinter ist, im Chat an den Freund eine Frage zu stellen wie: "Was ist der Name der Stadt, die wir gemeinsam im letzten Jahr besucht haben?", oder eine Frage zu stellen wie: "Was ist der Name des Restaurants, in dem wir uns das erste Mal getroffen haben?" usw. (vgl. Abbildung). 
+
+Beide Teilnehmer signieren normalerweise die Nachrichten mit einem RSA (oder anderen) Algorithmus, um zu überprüfen, dass der verwendete Schlüssel vom ursprünglichen Absender ist. Aber für den (ggf. unwahrscheinlichen) Fall, dass eine Maschine gehackt würde oder falls der Verschlüsselungsalgorithmus gebrochen werden würde, kann mit dem Socialist Millionaire Protocol (SMP)-Prozess ein Freund einfach durch Eingabe des gleichen Passwortes auf beiden Seiten identifiziert werden. Es ist darauf zu achten, dass das Passwort nicht über den Chat zu senden ist, stattdessen sollte man eine Situation beschreiben, die zu dem gleichen Kennwort führt. Wird der SMP-Prozess das erste Mal getestet, kann man beiderseitig auch das Passwort "test" eingeben (kleingeschrieben).
+
+Praktisch angewandt wird es wie folgt (vgl. Abbildung): Der Nutzer eröffne für die Nutzung von SMP ein persönliches Pop-Up-Chat-Fenster und klickt das Fragezeichen-Symbol oben neben dem Benutzernamen des Chat-Freundes. Sodann wird ein Kennwort mit dem Menü definiert. Sodann ist der Chat-Freund zu fragen, das gleiche Passwort einzugeben. Drittens, klickt der erste Nutzer sodann schließlich auf die Schaltfläche "Überprüfen/Verify".
+
+Wenn beide Teilnehmer dasselbe Passwort eingestellt haben - bzw. der gleiche Hash-Wert vom gleichen Passwort generiert wurde - dann ändert sich das Fragezeichen-Symbol zu einem "Schloss"/"Lock"-Symbol. Der Chat-Freund wurde nun authentifiziert und der Chat bleibt weiterhin sicher.
+
+SMP ist somit eine weitere ideale Möglichkeit, den Chat-Freund mit einem gemeinsamen Geheimnis sozusagen im Live-Prozess zu authentifizieren, es ist also keine zusätzliche Verschlüsselung!
 
 
 
@@ -1033,32 +1051,12 @@ Abbildung: SMP-Protokoll
 ![Abbildung: SMP-Protokoll](/images/SMP_socialist_millionaire.png)	
 
 
-Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster zur Authentifizierung des Chat-Partners
 
-![Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)
-
-
-Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol
-
-![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokol](/images/SMP_Secret_Streams.png)	
-
-
-
-Die Idee dahinter ist, im Chat an Deinen Freund eine Frage zu stellen wie: "Was ist der Name der Stadt, die wir gemeinsam im letzten Jahr besucht haben?", oder eine Frage zu stellen wie: "Was ist der Name des Restaurants, in dem wir uns das erste Mal getroffen haben?" usw. (vgl. Abbildung). 
-
-Beide Teilnehmer signieren normalerweise die Nachrichten mit einem RSA (oder anderen) Algorithmus, um zu überprüfen, dass der verwendete Schlüssel vom ursprünglichen Absender ist. Aber für den (ggf. unwahrscheinlichen) Fall, dass eine Maschine gehackt würde oder falls der Verschlüsselungsalgorithmus gebrochen werden würde, kann mit dem Socialist Millionaire Protocol (SMP)-Prozess ein Freund einfach durch Eingabe des gleichen Passwortes auf beiden Seiten identifiziert werden. Bitte achte darauf, das Passwort nicht über den Chat zu senden, stattdessen sollte man eine Situation beschreiben, die zu dem gleichen Kennwort führt. Wird der SMP-Prozess das erste Mal getestet, kann man beiderseitig auch das Passwort "test" eingeben (kleingeschrieben).
-
-Praktisch angewandt wird es wie folgt (vgl. Abbildung): Eröffne für die Nutzung von SMP ein persönliches Pop-Up-Chat-Fenster und klicke das Fragezeichen-Symbol oben neben dem Benutzernamen des Chat-Freundes. Definiere ein Kennwort mit dem Menü. Dann frage den Chat-Freund, das gleiche Passwort einzugeben. Drittens, klicke schließlich auf die Schaltfläche "Überprüfen/Verify".
- 
-Wenn beide Teilnehmer dasselbe Passwort eingestellt haben - bzw. der gleichen Hash-Wert vom gleichen Passwort generiert wurde - dann ändert sich das Fragezeichen-Symbol zu einem "Schloss"/"Lock"-Symbol. Der Chat-Freund wurde nun authentifiziert und der Chat bleibt weiterhin sicher.
- 
-SMP ist somit eine weitere Möglichkeit, den Chat-Freund mit einem gemeinsamen Geheimnis zu authentifizieren, es ist also keine zusätzliche Verschlüsselung!
-
-
+Ein Beispiel verdeutlicht den Rechenprozess dieses Protokolls wie folgt.
 Nehmen wir in einem Beispiel an, Alice beginnt den Austausch:
 
 '''Alice:''' 
-* 1. Nimmt die die zufälligen Exponenten a2 und a3 auf  
+* 1. Nimmt die zufälligen Exponenten a2 und a3 auf  
 * 2. Sendet Bob g2a = g1a2 and g3a = g1a3 
 
 '''Bob:''' 
@@ -1086,43 +1084,55 @@ Nehmen wir in einem Beispiel an, Alice beginnt den Austausch:
 * 1. Berechnet Rab = Rba3 
 * 2. Überprüft, ob Rab == (Pa / Pb)
 
-Wenn alles korrekt abgelaufen ist, dann sollte Rab den Wert erhalten von (Pa / Pb) mal (g2a3b3)(x - y), was bedeutet, dass der Test am Ende des Protokolls nur dann erfolgreich ist, wenn x == y ist. Weiterhin wird keine weitergehende Information enthüllt, als g2a3b3 eine zufällige Nummer ist, die zu keiner Seite bekannt ist, wenn x nicht gleich zu y ist!
+Wenn alles korrekt abgelaufen ist, dann sollte Rab den Wert erhalten von (Pa / Pb) mal (g2a3b3)(x - y), was bedeutet, dass der Test am Ende des Protokolls nur dann erfolgreich ist, wenn x == y ist. Weiterhin wird keine weitergehende Information enthüllt, als dass g2a3b3 eine zufällige Nummer ist, die zu keiner Seite bekannt ist, wenn x nicht gleich zu y ist!
 
 GoldBug beschreibt während der verschiedenen Daten-Austausch-Vorgänge für SMP keine sogenannte "Zero-Knowledge-Beweise". Ferner nutzt GoldBug den SHA-512 der jeweils eingegebenen geheimen Passphrase als die x- und y-Komponenten.
 
+Ist das SMP-Passwort zugegen, kann es auch noch für weitere Funktionen als Grundlage dienen. Die für Forward Secrecy relevanten Secret Streams (vgl. auch bei der E-Mail-Funktion) können daraus abgeleitet werden.
+
+Abbildung: Implementierung von Secret Streams im extendierten SMP Protokoll
+
+![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokoll](/images/SMP_Secret_Streams.png)	
+
+
+SMP erfordert, mit seinem Kommunikationspartner ein gemeinsames Geheimnis zu teilen. Auch die Funktion des Crypto-Callings kann auf dem erfolgreichen SMP-Passwort aufgebaut werden. Dieses wird durch das SMP-Crypto-Calling beschrieben.
+
+
 #### 6.4.1 SMP-Calling
-Oben haben wir die Call-Funktion beschrieben, wie ein Gemini generiert und übertragen wird. Nun kann man das Gemini nicht nur manuell oder durch die AES-Funktion definieren, sondern auch aus dem Passwort abgeleitet werden, das im SMP-Prozess wie oben dargelegt hinterlegt ist. Somit wird die Passwort-Eingabe aus dem SMP-Prozesses genutzt (nicht der SMP-Prozess selbst). Es ist eine weitere Art des Anrufens und seinem Gegenüber ein Ende-zu-Ende-Passwort sicher zu übertragen, das dieses mal nicht aus einem AES-Generator entspringt.
+Oben haben wir die Call-Funktion erläutert, wie ein Gemini generiert und übertragen wird. Nun kann man das Gemini nicht nur manuell oder durch die AES-Funktion definieren, sondern es kann auch aus dem Passwort abgeleitet werden, das im SMP-Prozess wie oben dargelegt hinterlegt wurde. Somit wird die Passwort-Eingabe aus dem SMP-Prozesses genutzt (nicht der SMP-Prozess selbst). Es ist eine weitere Art des „kryptologischen Anrufens“ und damit seinem Gegenüber ein Ende-zu-Ende-Passwort sicher zu übertragen, das dieses Mal nicht aus einem AES-Generator entspringt! – falls jemand die Zufälligkeit eines maschinellen Zahlengenerators anzweifelt. Sind die Grundfunktionen der Verschlüsselung in GoldBug erst einmal deutlich, erkennt man beispielsweise hier nun die Verwobenheit der einzelnen Prozesse in der Architektur, die damit nochmals mehr Sicherheit bietet.
 
 ### 6.5 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
 
-Seit Version 2.7 unterstützt GoldBug Messenger [Perfect Forward Secrecy]() auch für seine Funktion als E-Mail-Klient, und war damit der erste E-Mail-Klient, der Forward Secrecy für E-Mail sowohl mit symmetrischer als auch asymmetrischer Weise anbot (vgl. weiter unten).
+Seit Version 2.7 unterstützt GoldBug Messenger [Perfect Forward Secrecy]( https://en.wikipedia.org/wiki/Forward_secrecy) auch für seine Funktion als E-Mail-Klient, und war damit der erste E-Mail-Klient, der Forward Secrecy für E-Mail sowohl mit symmetrischer als auch asymmetrischer Weise anbot (vgl. auch weiter unten).
 
-Während oben für die Chat-Funktion das Calling mit einem Gemini das "Instant Perfect Forward Secrecy" prägte und sich auf einen ''symmetrischen'' Schlüssel (eben das Gemini bzw. den AES-String) bezog, ist das Perfect Forward Secrecy beim E-Mail mit temporären, ''asymmetrischen'' Schlüssel definiert. 
+Während oben für die Chat-Funktion das Crypto Calling mit einem Gemini das "Instant Perfect Forward Secrecy" prägte und sich auf einen symmetrischen Schlüssel (eben das Gemini bzw. den AES-String) bezog, ist das Perfect Forward Secrecy beim E-Mail mit temporären, a-symmetrischen Schlüsseln definiert. 
 
-Diese Variante der Nutzung von temporären asymmetrischen Schlüsseln kann natürlich auch wiederum auf die Chat-Funktion übertragen werden. 
+Diese Variante der Nutzung von temporären asymmetrischen Schlüsseln kann natürlich auch wiederum auf die Chat-Funktion übertragen werden. Und dieses ist eben seit dem Release 2.7 erfolgt.
 
-Während der Chat mit dem permanenten Chat-Key ja immer (asymmetrisch) verschlüsselt ist, wird nun noch ein temporärer asymmetrischer Schlüssel mit dieser neuen Schicht von Ende-zu Ende-Verschlüsselung eingesetzt. Dieser temporäre asymmetrische Key wird [ephemeraler Schlüssel]() genannt. Dieser Schlüssel entsteht durch die Forward-Secrecy Funktion im Chat, die über das Kontext-Menü (rechter Mausklick) oder über den Menü-Knopf dargestellt wird.
+Während der Chat mit dem permanenten Chat-Key ja immer (asymmetrisch) verschlüsselt ist, wird nun noch ein temporärer asymmetrischer Schlüssel mit dieser neuen Schicht von Ende-zu Ende-Verschlüsselung eingesetzt. Dieser temporäre asymmetrische Key wird [ephemeraler Schlüssel]( https://en.wikipedia.org/wiki/Ephemeral_key) genannt. Dieser Schlüssel entsteht durch die Forward-Secrecy Funktion im Chat, die über das Kontext-Menü (rechter Mausklick) oder über den Menü-Knopf dargestellt wird.
 
-Ein Tooltip auf dem Bildschirm zeigt an, wenn der Chat-Partner im Chat ein Forward-Secrecy mit temporären (ephemeralen) asymmetrischen Schlüsseln erzeugt hat, so dass Du als Nutzer dieses in Deinem Klienten in einem Pop-Up-Fenster bestätigen kannst. 
-Schaue dazu unten in der Status-Zeile nach dem neu auftauchenden Symbol, klicke es und Du kannst in dem erscheinenden Pop-Up-Fenster den Forward-Secrecy-Prozess bestätigen.
-Sodann wird nicht mehr der (permanente) Chat-Schlüssel benutzt, sondern die neuen-temporären asymmetrischen Schlüssel. Der permanente Chat-Schlüssel wird also praktisch ergänzt durch den temporären Chat-Schlüssel.
+Ein Tooltip auf dem Bildschirm (im Systray) zeigt an, wenn der Chat-Partner im Chat ein Forward-Secrecy mit temporären (ephemeralen) asymmetrischen Schlüsseln erzeugt hat, so dass der Nutzer dieses in seinem Klienten in einem Pop-Up-Fenster bestätigen kann. 
+Der Nutzer schaut dazu unten in der Status-Zeile nach dem neu auftauchenden Symbol, klicke es an und kann dann in dem erscheinenden Pop-Up-Fenster den Forward-Secrecy-Prozess bestätigen.
+Sodann wird nicht mehr der (permanente) Chat-Schlüssel benutzt, sondern die neuen-temporären a-symmetrischen Schlüssel. Der permanente Chat-Schlüssel wird also praktisch ergänzt durch den temporären Chat-Schlüssel. 
+
+Nur wenige Software-Anwendungen verstehen Ende zu Ende Verschlüsselung auch asymmetrisch und bauen Forward Secrecy über eine asymmetrische Verschlüsselung darauf auf.
+
 
 #### 6.5.1 Forward Secrecy Calling 
-Somit lässt sich also auch das Calling erweitern: Das symmetrische Gemini wird beim FS-Calling (Forward-Secrecy-Calling) nicht wie oben beschrieben durch den permanenten (asymmetrischen) Chat-Key oder durch ein bestehendes (symmetrisches) Gemini gesandt, sondern durch den ephemeralen, temporären - und asymmetrischen - Chat-Key.
+Somit lässt sich also auch wieder das Calling erweitern: Das symmetrische Gemini wird beim Forward Secrecy Calling (FSC) nicht wie oben beschrieben durch den permanenten (asymmetrischen) Chat-Key oder durch ein bestehendes (symmetrisches) Gemini gesandt, sondern durch den ephemeralen, temporären - und asymmetrischen - Chat-Key.
 
 Während der Versand eines Geminis über ein bestehendes Gemini ein ''symmetrisches'' "Instant Perfect Forward Secrecy" definiert, kann der Versand eines Geminis über die ephemeralen Schlüssel des initiierten "Forward Secrecy" in der Chat-Funktion als ein ''asymmetrisches'' "Instant Perfect Forward Secrecy" bezeichnet werden.
+
 (Aber auch der Versand eines Geminis über die permanenten Chat-Schlüssel ist als asymmetrisches "Instant Perfect Forward Secrecy" zu bezeichnen).
 
-Während beim "Forward Secrecy Calling" und "dem Call durch ein Gemini" das bestehende "Forward Secrecy" schon besteht und sodann die jederzeitige Erneuerbarkeit des Ende-zu-Ende Schlüssels definiert (Instant Perfect Forward Secrecy) ist bei den anderen Calling-Arten kein Forward Secrecy vorab gegeben, sondern Instant Perfect Forward Secrecy wird hier durch einen Call als Ergebnis des Calls erzeugt.
+Während beim "Forward Secrecy Calling" und "dem Call durch ein Gemini" ein "Forward Secrecy" schon besteht und sodann die jederzeitige Erneuerbarkeit des Ende-zu-Ende Schlüssels definiert (Instant Perfect Forward Secrecy), ist bei den anderen Calling-Arten kein Forward Secrecy vorab gegeben, sondern Instant Perfect Forward Secrecy wird hier erst durch einen Call als Ergebnis des Calls erzeugt.
+
+Die Fortsetzung von Forward Secrecy heisst also Forward Secrecy Calling.
+
 
 ### 6.6 Übersicht der verschiedenen Calling-Arten
 
 Aus den beschriebenen Methoden (vgl. auch Abbildung), einen Ende-zu-Ende Schlüssel an den Freund zu übertragen, lässt sich folgende Übersicht gestalten, die die verschiedenen Methoden mit ihren jeweils spezifischen Merkmalen herausstellt. 
-
-
-Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto
-
-![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)	
 
 
 
@@ -1169,38 +1179,52 @@ Die Nachrichtenformate mit den Verschlüsselungsebenen sehen dann vereinfacht - 
  - 2-Wege-Calling: (TLS/SSL (Permanenter Chat Key z.B. RSA (Nachricht ist ein AES-String der zu 50% mit dem AES des Freundes modifiziert wird)))
 
 
+Aus dieser Optionsvielfalt heraus sich in der Ende-zu-Ende Verschlüsselung abzusichern oder gar die Ende-zu-Ende Verschlüsselungs-Passphrase selbst zu definieren und manuell einzugeben, ist der Slogan, Claim oder die Headline für GoldBug entstanden: „Your Instant Definition in Decentralized Crypto“. Die Verschlüsselung ist somit nicht nur eine nutzerspezifische, die jederzeit (instant) erneuert werden kann, sondern auch eine die dezentral am Orte des Nutzers durch diesen Selbst definiert und gestaltet wird.
+
+Ein einfacher Lackmus-Test im Vergleich mit anderen Software-Applikationen besteht in der einfachen Frage, ob der Nutzer das Ende-zu-Ende verschlüsselnde Passwort selbst eingeben kann. Mit GoldBug kann er es (wie auch mit der mobilen Version von GoldBug: Smoke Chat für Android).
+
+Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto
+
+![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)	
+
+
+
 ### 6.7 Emotikons
+
+GoldBug bietet eine Vielzahl an verschiedenen [Emoticons]() - auch Smileys genannt - für den Chat an (siehe Abbildung). 
 
 Abbildung: Liste der Emotikons im GoldBug Messenger
 
 ![Abbildung: Liste der Emotikons im GoldBug Messenger](/images/goldbug_emoticons.png)	
 
+Um diese zu nutzen, klickt der Nutzer zweimal auf einen Freund, so dass sich ein Pop-Up Chat-Fenster für den privaten Chat öffnet. Geht der Nutzer nun mit der Maus über den Senden-Knopf, werden in einem dann erscheinenden Tooltip die Smileys angezeigt. Mit der Eingabe des ASCI-Codes werden die Emoticons dann im Chat dargestellt. 
 
-GoldBug bietet eine Vielzahl an verschiedenen [Emoticons]() - auch Smileys genannt - für den Chat an (siehe Abbildung). 
-
-Um diese zu nutzen, doppelklicke auf einen Freund, so dass sich ein Pop-Up Chat-Fenster für den privaten Chat öffnet. Nun gehe mit der Maus über den Senden-Knopf. In einem dann erscheinenden Tooltip werden die Smileys angezeigt und mit der Eingabe des ASCI-Codes werden die Emoticons im Chat dargestellt. 
-
-Im Chat-Tab besteht in den Optionen des rechten Seiten-Splitters auch die Möglichkeit, die graphische Darstellung von Smileys auszuschalten.
+Im Chat-Tab besteht in den Optionen des rechten Seiten-Splitters auch die Möglichkeit, die graphische Darstellung von Smileys generell auszuschalten.
 
 
-### 6.8 Datei-Transfer im Chat-pop-up-Fenster
+### 6.8 Datei-Transfer im Chat-Pop-up-Fenster
 
-
-Abbildung: File Transfer im Chat Fenster
-
-![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
-
-
+Das Qt Menü erlaubt es, aus der regulären Benutzeroberfläche einzelne Menü-Teile herauszunehmen und als Pop-Up Fenster zu gestalten.
 
 Abbildung: Tear-Off/Hook-Up von Bedienungselementen
 
 ![Abbildung: Tear-Off/Hook-Up von Bedienungselementen](/images/tearoff_menu.png)	
 
 
+Ebenso ist insbesondere die File-Sharing Funktion in einem Pop-up Menü integriert: In dem 1:1 Chat Fenster. Wenn ein Nutzer also einem spezifischen Freund eine Datei senden möchte, kann er dieses einfach über den Knopf im Pop-Up Chat Fenster mit diesem Freund.
+
+
+Abbildung: File Transfer im Chat Fenster
+
+![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
+
+Die Datei wird ebenso wie der Text sicher und verschlüsselt an den Freund übertragen. Die Datei-Transfer-Funktion wird StarBeam genannt und hat auch einen eigenen Tabulator, ist im Chat-Fenster jedoch für eine einfache und direkte Bedienbarkeit bereits integriert.
+
+
 ## 7 Gruppen-Chat im IRC-Stil
 
- 
-Der GoldBug Messenger verfügt neben E-Mail und Chat auch über eine Gruppen-Chat-Funktion. Diese funktioniert ähnlich einem [IRC]()-Chat. Die Übermittlung der Nachrichten an alle Gruppen-Teilnehmer erfolgt auch hier wieder vollständig verschlüsselt über das Echo-Protokoll. Die Verschlüsselung ist symmetrisch, also ähnlich einem Passwort-String. Letztlich können in dem p2p-Netzwerk alle Teilnehmer eines Gruppenchats mitlesen, die einen bestimmten symmetrischen Ende-zu-Ende-Schlüssel kennen, der den Chat-Raum definiert. Der Gruppen-Chat basiert ebenso auf dem Echo-Protokoll (vgl. Abbildung).
+
+Der GoldBug Messenger verfügt neben E-Mail und Chat und Datei-Übertragungen zu seinen Kommunikationspartnern auch über eine Gruppen-Chat-Funktion. Diese funktioniert ähnlich einem [IRC]( https://de.wikipedia.org/wiki/Internet_Relay_Chat)-Chat. Die Übermittlung der Nachrichten an alle Gruppen-Teilnehmer erfolgt auch hier wieder vollständig verschlüsselt über das Echo-Protokoll. Die Verschlüsselung ist symmetrisch, also ähnlich einem Passwort-String. Letztlich können in dem p2p-Netzwerk oder über den Chat-Server alle Teilnehmer einen Gruppenchat mitlesen, die einen bestimmten symmetrischen Ende-zu-Ende-Schlüssel kennen, der den Chat-Raum definiert. Der Gruppen-Chat basiert ebenso auf dem Echo-Protokoll (vgl. Abbildung).
 
 
 Abbildung: E-IRC Gruppenchat
@@ -1208,9 +1232,16 @@ Abbildung: E-IRC Gruppenchat
 ![Abbildung: E-IRC Gruppenchat](/images/e_irc.png)	
 
 
-Abbildung: der Gruppenchat
+Es wird daher von ge-Echo-tem IRC oder auch kurz e*IRC gesprochen, dass dem IRC-Chat neue Optionen eröffnet, da die Transportwege des e*IRC-Chats ebenso verschlüsselt sind. Wie heute normale POP3- oder IMAP-E-Mails auch zumindest eine Transportverschlüsslung z.B. mit TLS 1.3 aufweisen, kann sich IRC auch als ein verschlüsselter Gruppenchat verstehen. Auch der althergebrachte IRC-Chat kann daher von solchen Sicherheitsmodellen Verbesserungen erfahren: Der e*IRC Chat kann dazu das Modell einer neuen Gruppen-Chat-Generation darstellen.
 
-![Abbildung: der Gruppenchat ](/images/buzz_tab.gif)
+
+Abbildung: Der Gruppenchat
+
+![Abbildung: Der Gruppenchat ](/images/buzz_tab.gif)
+
+
+Die Verschlüsselungs-Details des Gruppenchats werden wieder über einen Magnet-URI-Link (vgl. unten) definiert (definiert im Link mit Endung &URN=buzz). Buzz ist also die technische Bezeichnung im Quellcode für den Gruppenchat.
+
 
 
 Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal
@@ -1219,39 +1250,34 @@ Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal
 
 
 
-Es wird daher von ge-Echo-tem IRC oder auch kurz e*IRC gesprochen, dass dem IRC-Chat neue Optionen eröffnet, da die Transportwege des e*IRC-Chats ebenso verschlüsselt sind. Wie heute normale POP3- oder IMAP-E-Mails auch zumindest eine Transportverschlüsslung z.B. mit TLS 1.3 aufweisen, kann sich IRC auch als ein verschlüsselter Gruppenchat verstehen. Auch der althergebrachte IRC-Chat kann daher von solchen Sicherheitsmodellen Verbesserungen erfahren: Der e*IRC Chat kann dazu das Modell einer neuen IRC-Generation darstellen.
+Zum Start des GoldBug-Programms wird der Community-Chat-Raum geöffnet, der als Beispiel dienen kann. Hier kann der Nutzer bei den anwesenden Nutzern auch weitere Anwendungsfragen zum Programm stellen oder diesen Kanal mit einem Freund nutzen.
 
-Die Verschlüsselungs-Details des Gruppenchats werden wieder über einen Magnet-URI-Link (vgl. unten) definiert (definiert im Link mit Endung &URN=buzz). Buzz ist also die technische Bezeichnung im Quellcode für den Gruppenchat.
- 
-Zum Start des GoldBug-Programms wird der Community-Chat-Raum geöffnet, der als Beispiel dienen kann. Hier kannst Du bei den anwesenden Nutzern auch weitere Anwendungsfragen zum Programm stellen.
- 
-Um einem eigenen Kanal beizutreten, gebe einfach den Raum- bzw. Channel-Namen ein oder nutze die oben angesprochene Methode des Magnet-Links. Der Magnet-Link hat neben dem Raum-Namen zusätzliche Werte für die Verschlüsselung eingebettet wie z.B. Schlüssel, Hash oder Cipher für den Verschlüsselungstyp.
+Um einem eigenen Kanal beizutreten, gibt der Nutzer einfach einen Raum- bzw. Channel-Namen ein oder nutze die oben angesprochene Methode des Magnet-Links. Der Magnet-Link hat neben dem Raum-Namen zusätzliche Werte für die Verschlüsselung eingebettet wie z.B. Schlüssel, Hash oder Cipher für den Verschlüsselungstyp.
 
-Wenn Du nur den Raum-Namen eingibst, und keinen Magnet-URI verwendest, werden die zusätzlichen Verschlüsselungsdetails auf den Wert 0000 gesetzt und die Verschlüsselung des Raumes erfolgt auf Basis des Raum-Namens.
-Wenn Du alle Werte bzw. den Raum-Namen oder den Magnet Link eingegeben hast, drücke den Knopf „Join/Beitreten“. 
+Wenn der Nutzer nur den Raum-Namen eingibt, und keinen Magnet-URI verwendet, werden die zusätzlichen Verschlüsselungsdetails auf den Wert 0000 gesetzt und die Verschlüsselung des Raumes erfolgt auf Basis des Raum-Namens.
+Wenn der Nutzer alle Werte bzw. den Raum-Namen oder den Magnet Link eingegeben hat, ist der Knopf „Join/Beitreten“ zu drücken. 
 
-Solltest Du einen Magnet eingefügt haben, dann nutze zuvor im Pull-Down Menü den Befehl „de-magnetize“. Der Magnet wird dann wieder in seine Einzelbestandteile zerlegt und der Raum wird auf Basis der im Magnet-Link eingebundenen Verschlüsselungswerte erstellt und betreten.
+Sollte der Nutzer einen Magnet eingefügt haben, dann ist zuvor im Pull-Down Menü der Befehl „de-magnetize“ zu nutzen. Der Magnet wird dann wieder in seine Einzelbestandteile zerlegt und der Raum wird auf Basis der im Magnet-Link eingebundenen Verschlüsselungswerte erstellt und betreten.
 
-Wenn der Raum geöffnet ist, kann Du den Raum auch als Bookmark abspeichern oder den entsprechenden Magnet-URI auch jederzeit aus Deinen Chat-Raum-Bookmarks auskopieren und an Deine Freunde senden, um sie in einen Raum einzuladen.
+Wenn der Raum geöffnet ist, kann der Nutzer den Raum auch als Bookmark abspeichern oder den entsprechenden Magnet-URI auch jederzeit aus seinen Chat-Raum-Bookmarks auskopieren und an seine Freunde senden, um sie in einen Raum einzuladen.
+
+Um eine Nachricht zu senden, gibt der Nutzer sodann im Chat Raum einen Text ein und drückt den Senden-Knopf.
  
-Um eine Nachricht zu senden, gebe einen Text ein und drücke den Senden-Knopf.
- 
-Der e*IRC Chat-Raum kann öffentlich oder privat sein, das hängt davon ab, wie sehr Du den Magnet bzw. die einzelnen Verschlüsselungswerte bekannt gibst.
-Als öffentlichen e*IRC Chat Raum kannst Du den Magnet-URI auf Deiner Webseite bekannt geben oder verlinken und jeder weiß, wie er in Deinen Chat-Raum kommen kann: mit "de-magnetize".
+Der e*IRC Chat-Raum kann öffentlich oder privat sein, das hängt davon ab, wie sehr der Nutzer den Magnet bzw. die einzelnen Verschlüsselungswerte bekannt gibt.
+Als öffentlichen e*IRC Chat Raum kannst der Nutzer den Magnet-URI auf seiner Webseite bekannt geben oder verlinken und jeder weiß, wie er in diesen Chat-Raum kommen kann: mit "de-magnetize".
   
-Letztlich funktioniert es für den Nachrichtensender wie ein IRC-Chat, nur mit dem Unterschied, dass der Internet-Provider und weitere Rooting-Server nicht in die Kommunikation hineinsehen können, da sie ja verschlüsselt ist - wie Deine Verbindung beim Online-Banking auch.
- 
-Es macht also keinen Unterschied mehr, ob Du mit Freunden sprichst oder Deinem Bank-Berater.
- 
-Wenn Du den Chat-Raum als privaten Raum nutzen willst, kannst Du den Magnet-URI nur mit Deinen Freunden teilen und ihr seid unter Euch. Dieses ist eine bequeme Funktion des GoldBug Programmes: Du kannst einfach verschlüsselt chatten, ohne vorher asymmetrische Schlüssel tauschen zu müssen. Sage deinem Freund einfach mündlich, er solle in GoldBug in den Raum "Bernsteinzimmer" kommen und beide Teilnehmer können dort sehr einfach verschlüsselt chatten.
+Letztlich funktioniert es für den Nachrichtensender wie ein IRC-Chat, nur mit dem Unterschied, dass der Internet-Provider und weitere Rooting-Server nicht in die Kommunikation hineinsehen können, da sie ja verschlüsselt ist - wie eine Verbindung beim Online-Banking auch.
 
- '''Tip:''' Erstelle einen One-Time-Magnet für einen Raum und nutze diesen, 
-
- um Deinen öffentlichen Chat-Schlüssel beim  Tausch zu schützen, 
- indem Du diesen über den (von Dir definierten) IRC-Channel dann nur Deinem Freund bekannt gibst.
+Es macht also keinen Unterschied mehr, ob ein Nutzer mit Freunden spricht oder seinem online Bank-Berater.
  
-GoldBug ermöglicht mit dem Repleo und dem Schlüsseltausch über einen One-Time-Magneten (OTM) für einen privaten Chatraum einen gesicherten Schlüsseltransfer und somit müssen öffentliche Schlüssel nicht mehr öffentlich sein.
+Wenn der Nutzer den Chat-Raum als privaten Raum nutzen will, kann der Nutzer den Magnet-URI auch geheim nur mit seinen Freunden teilen und man bleibt unter sich. Dieses ist eine bequeme Funktion des GoldBug Programmes: Der Nutzer kann einfach verschlüsselt chatten, ohne vorher asymmetrische Schlüssel tauschen zu müssen. Der Nutzer sagt seinem Freund einfach mündlich, er solle in GoldBug in den Raum "Bernsteinzimmer" kommen und beide Teilnehmer können dort sehr einfach sicher und verschlüsselt über einen gemeinsamen Chat-Server chatten.
 
+ Tip: Der Nutzer kann einen One-Time-Magnet für einen Raum erstellen und diesen nutzen, 
+
+ um seinen öffentlichen Chat-Schlüssel beim Tausch zum Kommunikationspartner zu schützen, 
+ indem der Nutzer diesen über den (selbst definierten) IRC-Channel dann nur seinem Freund bekannt gibt.
+ 
+GoldBug ermöglicht mit dem Repleo, mit EPKS und dem Schlüsseltausch über einen One-Time-Magneten (OTM) für einen privaten e*IRC Chatraum also mehrere Methoden für einen gesicherten Schlüsseltransfer. Somit müssen öffentliche Schlüssel nicht mehr öffentlich sein.
 
 
 ## 8 Smoke Mobiler Chat Client
