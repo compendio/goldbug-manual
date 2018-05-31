@@ -45,14 +45,14 @@ Inhaltsverzeichnis
         6.1 Freund hinzufügen durch Tausch und Einfügen der Schlüssel
             6.1.1 Besonderheit: Repleo
         6.2 Einen ersten sicheren Chat beginnen
-        6.3 Zusätzliches Sicherheitsmerkmal: MELODICA: Calling mit einem Gemini
+        6.3 Erg. Sicherheitsmerkmal: MELODICA: Calling mit einem Gemini
             6.3.1 Asymmetrisches Calling
             6.3.2 Instant Perfect Forward Secrecy (IPFS)
             6.3.3 Symmetrisches Calling
             6.3.4 2-Wege-Calling
-        6.4 Zusätzliches Sicherheitsmerkmal: Socialist Millionaire Protocol
+        6.4 Erg. Sicherheitsmerkmal: Socialist Millionaire Protocol
             6.4.1 SMP-Calling
-        6.5 Zusätzliches Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
+        6.5 Erg. Sicherheitsmerkmal: Forward Secrecy (asymmetrisch)
             6.5.1 Forward Secrecy Calling
         6.6 Übersicht der verschiedenen Calling-Arten
         6.7 Emotikons
@@ -81,16 +81,21 @@ Inhaltsverzeichnis
         10.4 Weiterentwicklung von POPTASTIC
 
     11 FileSharing: mit StarBeam
-        11.1 StarBeam-Magneten mit Verschlüsselungswerten
+        11.1 StarBeam-Magneten erstellen mit Verschlüsselungswerten
+             11.1.1 Option „Nova“: Datei vor Versand verschlüsseln?
+             11.1.2 Nutzung eines One-Time-Magneten
+             11.1.3 Magnet-URI-Standards für kryptographische Werte
+             11.1.4 Rewind Funktion
+             11.1.5 Vergleich mit Turtle-Hopping
         11.2 SB-Upload: Eine Datei übertragen
         11.3 StarBeam-Downloads
-            11.3.1 Werkzeug: Star-Beam Analyzer
-            11.3.2 Ausblick auf Crypto-Torrents
+             11.3.1 Werkzeug: Star-Beam Analyzer
+             11.3.2 Ausblick auf Crypto-Torrents
 
     12 Web-Suchmaschine mit URL-Datenbank
         12.1 Datenbank Setup
-            12.1.1 SQLite
-            12.1.2 PostgreSQL
+             12.1.1 SQLite
+             12.1.2 PostgreSQL
         12.2 URL-Filter
         12.3 URL-Community
         12.4 Pandamonium Webcrawler
@@ -1281,31 +1286,42 @@ GoldBug ermöglicht mit dem Repleo, mit EPKS und dem Schlüsseltausch über eine
 
 
 ## 8 Smoke Mobiler Chat Client
-		
+
+Während GoldBug ein Desktop-Klient ist, der auf zahlreichen Betriebssystemen und auch Plattformen wie Raspberry Pi kompiliert und einsatzfähig ist, heißt der mobile Klient des Echo Protokolls in Java-Programmierung für Android „Smoke Chat“.
+
+
 ### 8.1. Smoke Android Client
 
+Smoke bietet direkten 1:1-Chat zu einem Freund sowie auch einen Gruppenchat. Dieser wird FireChat genannt und ist vergleichbar mit dem Buzz/e*IRC-Chat in GoldBug.
+
+Der 1:1 Chat von Smoke auf dem Mobilen Gerät nutzt nicht die Telefonnummer der Teilnehmer als Identifikationsmerkmal, sondern ein kurzer Zeichenkette, ein sogenannter SIP-Hash, wird als Identifier genutzt.
+
+Nutzer von Smoke verbinden also zu einem gemeinsamen Server – dieses kann ein Listener von GoldBug, Spot-On, oder auch Spot-On-Lite sowie Somkestack sein – und tauschen dann ihren öffentlichen Schlüssel über die SIP-Hash-Verbindung. SmokeStack ist dabei ein Chatserver für Android und kann rund 500 Nutzer auf einem Android Gerät bedienen – ideal für eine Workshop-Gruppe, Familie oder Schule.
+
+
 ### 8.2. Fire To Buzz Chat
+
+Da die Java und C++ Programmierung aus den Crypto-Bibliotheken heraus keine gemeinsame Schlüsselformate kennen, ist es normalerweise nicht möglich, mit einem quelloffenen Java-Klienten zu einem C++-Klienten verschlüsselt zu chatten.
+
+Smoke hat jedoch hierzu jedoch eine Möglichkeit innoviert und implementiert, über den sogenannten Fire-Chat in Smoke kann auch ein Nutzer in GoldBug angechattet werden und umgekehrt. Dieses basiert auf einen symmetrisch verschlüsselten Chat (ähnlich einem symmetrischen Crypto Call). 
+
+Andere Applikationen nutzen meistens die Java-Skript Crypto Bibliotheken für den Browser oder stellen eine Verbindung zum zentralen Server her, so dass diese Verfahren allgemein als unsicherer gelten.
+
+Wer also eine Mobile Variante von GoldBug einsetzen möchte, findet diese unter Smoke Chat sowie unter der deutschsprachigen Konzeptbeschreibung MOMEDO (beides bei Github).
 
 
 ## 9 Die E-Mail-Funktion
 
 GoldBug ist ein voll funktionsfähiger E-Mail-Client. 
 
-Nicht vollumfänglich - wie seit Jahrzehnten bestehende E-Mail-Applikationen -, hier benötigt er noch weitere Programmierung aus der Community, aber dennoch voll funktionsfähig in einem vollwertigen E-Mail-Klienten. Der Vorteil: das Lesen und Schreiben von E-Mails wird in der Benutzeroberfläche sehr effizient auf einer Seite bzw. in einem Tab dargestellt (vgl. Abbildung 18). 
-
-Technisch nutzt GoldBug die Bibliothek [CURL#libcurl]() und unterstützt POP3 mit SMTP sowie IMAP. Schließlich ist es die besondere Funktion in GoldBug, dass er drittens auch p2p E-Mail unterstützt. Hierbei wird die E-Mail im distribuierten Netzwerk der Teilnehmer gespeichert und nicht bei einem zentralen Provider.
-
-
+Nicht vollumfänglich - wie seit Jahrzehnten bestehende E-Mail-Applikationen -, hier benötigt er noch weitere Programmierung aus der Community, aber dennoch voll funktionsfähig im Sinne eines vollwertig nutzbaren E-Mail-Klienten. Der Vorteil: das Lesen und Schreiben von E-Mails wird in der Benutzeroberfläche sehr effizient auf einer Seite bzw. in einem Tab dargestellt (vgl. Abbildung). Und: die E-Mails zu anderen GoldBug Nutzern sind immer verschlüsselt.
 
 Abbildung: E-Mail Tab: Nutzung von GoldBug als E-Mail-Klient
 
 ![Abbildung: E-Mail Tab: Nutzung von GoldBug als E-Mail-Klient] (/images/email_tab.gif)
 
 
-
-Abbildung: E-Mail - Lesen Anzeige
-
-![Abbildung: E-Mail - Lesen Anzeige](/images/email_read.png)	
+Technisch nutzt GoldBug die Bibliothek [CURL#libcurl]( https://de.wikipedia.org/wiki/CURL) und unterstützt POP3 mit SMTP sowie IMAP. Schließlich ist es die besondere Funktion in GoldBug, dass er drittens auch p2p E-Mail unterstützt. Hierbei wird die E-Mail im distribuierten Netzwerk der Teilnehmer gespeichert und nicht bei einem zentralen Provider. Nutzer können also mit GoldBug selbst sehr einfach einen E-Mail Server bereitstellen und darüber kommunizieren. Die Infrastruktur ist nicht nur einfach zu installieren, sondern kann (damit) auch aus eigener Hand erstellt werden.
 
 
 Abbildung: E-Mail - Schreiben Anzeige
@@ -1313,46 +1329,48 @@ Abbildung: E-Mail - Schreiben Anzeige
 ![Abbildung: E-Mail - Schreiben Anzeige](/images/email_write.png)	
 
 
-Perspektivistisch ist dieses auch die Zukunft, dass die Nutzer des Internets sich das Internet wieder stärker selbst organisieren und neu, mit Kryptographie ausgestalten und zwar mit ihren selbst angelegten nunmehr verschlüsselten Mail-Postfächern, die nicht bei zentralen Hostern hinterlegt sind, sondern im eigenen Teilnehmernetz.
+Perspektivistisch ist dieses auch die (notwendige) Zukunft, dass die Nutzer des Internets sich das Internet wieder stärker selbst organisieren (müssen) und neu, mit Kryptographie ausgestalten und zwar mit ihren selbst angelegten nunmehr verschlüsselten Mail-Postfächern, die nicht bei zentralen Hostern hinterlegt sind, sondern im eigenen Teilnehmernetz.
+
+Denn: Auf Zentralisierung folgt meistens immer Dezentralisierung, auch wenn die Nutzer, die diese Freiheit erkennen und wert schätzen, erst zukünftig ihr Augenmerk auf Dezentralisierungs-Notwendigkeiten und verbleibende Chancen legen werden.
+
+
+Abbildung: E-Mail - Lesen Anzeige
+
+![Abbildung: E-Mail - Lesen Anzeige](/images/email_read.png)	
+
+
 
 Wie folgt lässt sich die Einrichtung der drei Arten, seine E-Mails zu laden, beschreiben:
-  
+
 ### 9.1 POP3
 
-Das Post Office Protocol (POP3]() ist ein Übertragungsprotokoll, über das ein Klient E-Mails von einem E-Mail-Server abholen kann. 
+Das Post Office Protocol [POP3]( https://de.wikipedia.org/wiki/Post_Office_Protocol) ist ein Übertragungsprotokoll, über das ein Klient E-Mails von einem E-Mail-Server abholen kann.
 
-POP3 erlaubt das Auflisten, Abholen und Löschen von E-Mails am E-Mail-Server. Für das Versenden von E-Mails ist komplementär zu POP3 üblicherweise  das Simple Mail Transfer Protocol (SMTP) in Clients und Servern implementiert.
+POP3 erlaubt das Auflisten, Abholen und Löschen von E-Mails am E-Mail-Server. Für das Versenden von E-Mails ist komplementär zu POP3 üblicherweise das Simple Mail Transfer Protocol [SMTP]( https://de.wikipedia.org/wiki/SMTPS) in Clients und Servern implementiert.
 
 Das POP3-Protokoll ist somit in allen verbreiteten E-Mail-Programmen integriert, so auch in GoldBug.
 Wie es - neben IMAP - eingerichtet wird, wird folgend und weiter ergänzend unten in der Beschreibung des Fensters von POPTASTIC erläutert (vgl. Abbildung).
 
+
 ### 9.2 IMAP 
 
-Abbildung: POPTASTIC: Chat über E-Mail-Server
+Das Internet Message Access Protocol ( [IMAP]( https://de.wikipedia.org/wiki/Internet_Message_Access_Protocol) ) wurde in den 1980er Jahren mit dem Aufkommen von Personal Computern entworfen, um bei der Mail-Kommunikation die Speicherung der E-Mails auf einzelnen Klient-Rechnern aufzulösen.
 
-![Abbildung: POPTASTIC: Chat über E-Mail-Server](/images/email_poptastic.png)	
+D.h., die (PC-)Klienten greifen stattdessen online auf den Servern auf die Informationen zu und erhalten allenfalls Kopien davon.  
 
+Während ein Benutzer von POP3 nach Verlust seines PC alle E-Mails verloren hat, stellt ein Mail-Klient bei IMAP die Anfragen an den Server nur nach aktuell benötigten Informationen als Kopie. 
 
-Abbildung: POPTASTIC
+Möchte ein Nutzer z.B. den Inhalt seines Eingangsordners sehen, holt sich der Klient eine aktuelle Kopie der Nachrichtenliste vom Server. Soll der Inhalt einer Mail angezeigt werden, wird dieser vom Server als Kopie geladen. Da alle Daten weiterhin auf dem Server verbleiben, wird somit eine ''lokale Speicherung der Daten'' unnötig und erweiterte Möglichkeiten wie das Durchsuchen von Mails werden ebenso nur server-seitig durchgeführt. 
 
-![Abbildung: POPTASTIC](/images/poptastic.png)
+Damit wird auch die lokale Sicherung der Daten - indem sie von Server weggenommen werden - insofern meist unmöglich, als dass die Konfiguration von IMAP in der Voreinstellung nicht darauf ausgerichtet ist. Zugleich rückt bei unverschlüsselten Mails die Frage der Vertraulichkeit und Sicherheit bei Daten, die auf IMAP-Servern ausgelagert bleiben, in den Vordergrund. Es stellt sich die Frage, ob der Empfänger einer E-Mail selbst die Hoheit über die Vertraulichkeit und Speicherung der E-Mail hat, und z.B. das Recht hat, diese niemandem zu zeigen oder im Geheimen zu löschen, oder ob er lediglich eine Kopie, ein "Ansichtsrecht" seiner Post erhält.
 
+Hinsichtlich der Erkenntnisse aus dem Jahr 2013 - E-Mails besser grundlegend zu verschlüsseln - ist IMAP in diesem Lichte besonders kritisch zu beurteilen: Die Speicherung der E-Mails wird bei IMAP nicht wie bei POP3 in dem Mail-Klienten auf der Maschine des Nutzers vorgenommen, sondern die persönlichen Daten liegen unverschlüsselt weiterhin auf dem Server des Providers. Mit IMAP wurde somit die heute vielfach genutzte [Cloud](https://de.wikipedia.org/wiki/Cloud_Computing) schon in den 80er Jahren im Bereich E-Mail erfunden. POP3 ermöglich eher eine [On-Premises](https://de.wikipedia.org/wiki/On_Premises) - Handhabung der Speicherung der E-Mails auf der lokalen Maschine.
 
-
-
-
-
-Das Internet Message Access Protocol ([IMAP]()) wurde in den 1980er Jahren mit dem Aufkommen von Personal Computern entworfen, um bei der Mail-Kommunikation die Speicherung der E-Mails auf einzelnen Klient-Rechnern aufzulösen.
-
-Die (PC-)Clients greifen stattdessen online auf den Servern auf die Informationen zu und erhalten allenfalls Kopien davon.  Während ein Benutzer von POP3 nach Verlust seines PC alle E-Mails verloren hat, stellt ein Mail-Klient bei IMAP die Anfragen an den Server nur nach aktuell benötigten Informationen als Kopie. Möchte ein Nutzer z.B. den Inhalt seines Eingangordners sehen, holt sich der Client eine aktuelle Kopie der Nachrichtenliste vom Server. Soll der Inhalt einer Mail angezeigt werden, wird dieser vom Server als Kopie geladen. Da alle Daten weiterhin auf dem Server verbleiben, wird somit eine ''lokale Speicherung der Daten'' unnötig und erweiterte Möglichkeiten wie das Durchsuchen von Mails werden ebenso nur server-seitig durchgeführt. Damit wird auch auch die ''lokale Sicherung der Daten'' - indem sie von Server weggenommen werden - insofern meist unmöglich, als dass die Konfiguration von IMAP in der Voreinstellung nicht darauf ausgerichtet ist. Zugleich rückt bei unverschlüsselten Mails die Frage der Vertraulichkeit und Sicherheit bei Daten, die auf IMAP-Servern ausgelagert blieben in den Vordergrund. Es stellt sich die Frage, ob der Empfänger einer E-Mail selbst die Hoheit über die Vertraulichkeit der E-Mail, und z.B. das Recht hat, diese niemandem zu zeigen oder im Geheimen zu löschen, oder ob er lediglich eine Kopie, ein "Ansichtsrecht" seiner Post erhält.
-
-Hinsichtlich der Erkenntnisse aus dem Jahr 2013 - E-Mails besser grundlegend zu verschlüsseln - ist IMAP in diesem Lichte besonders kritisch zu beurteilen: Die Speicherung der E-Mails wird bei IMAP nicht wie bei POP3 in dem Mail-Klienten auf der Maschine des Nutzers vorgenommen, sondern die persönlichen Daten liegen unverschlüsselt weiterhin auf dem Server des Providers. Mit IMAP wurde somit die heute vielfach genutzte [Cloud]() schon in den 80er Jahren im Bereich E-Mail erfunden. POP3 ermöglich eher eine [On-Premis]()-Handhabung der Speicherung der E-Mails auf der lokalen Maschine.
-
-GoldBug unterstützt diesen Standard ebenso wie POP3 und ermöglicht es, Plaintext-Nachrichten über IMAP zu erhalten und zu senden.  Wie folgt lassen sich die Einstellungen für Deinen E-Mail-Account in GoldBug eingeben.
+GoldBug unterstützt diesen Standard ebenso wie POP3 und ermöglicht es, Plaintext-Nachrichten über IMAP zu erhalten und zu senden.  Wie folgt lassen sich die Einstellungen für einen E-Mail-Account in GoldBug eingeben.
 
 '''Detaillierte Beschreibung der POP3/IMAP Einrichtungsoptionen:'''
 
-Über das Haupt Menü "View/Ansicht" des GoldBug Messengers werden die eigene E-Mail-Adresse und die POP-3 bzw. IMAP-Server Details hinterlegt. Es sind dieselben Angaben, die auch z.B. im Thunderbird E-Mail-Klienten oder Outlook eingegeben werden, beispielsweise:
+Über das Haupt Menü "View/Ansicht" des GoldBug Messenger werden die eigene E-Mail-Adresse und die POP-3 bzw. IMAP-Server Details hinterlegt. Es sind dieselben Angaben, die auch z.B. im Thunderbird E-Mail-Klienten oder Outlook eingegeben werden, beispielsweise:
 
  * '''Incomming Server Server:''' pop.gmail.com 
  * Port: 995 
@@ -1367,161 +1385,199 @@ GoldBug unterstützt diesen Standard ebenso wie POP3 und ermöglicht es, Plainte
  * Username: mygmailname@gmail.com 
  * Password: ********
 
-Bitte drücke jeweils den Test-Knopf, um die Funktionalität der Server-Eingaben zu überprüfen. Mit dem "OK"-Knopf dann die Eingaben speichern. (Wenn im Auswahlmenü statt POP3 oder IMAP der Wert "Disabled" genutzt wird, sendet das Programm keine verschlüsselten E-Mails mehr: Die Mail-Funktion ist komplett abgeschaltet. Dieses wird ggf. für Personen interessant , die über den POP3/IMAP-Server mit der weiter unten beschriebenen Funktion POPTASTIC chatten wollen).
+Der Nutzer kann jeweils den Test-Knopf drücken, um die Funktionalität der Server-Eingaben zu überprüfen. Mit dem "OK"-Knopf werden dann die Eingaben gespeichert. 
 
-Nach Sicherheitsüberlegungen solltest Du Deine E-Mails immer gleich vom Server auf Deine Maschine laden und sie auf dem Server löschen. Somit scheint vieles für die Nutzung von POP3 anstelle vom IMAP zu sprechen, da IMAP mehr auf die Beibehaltung der E-Mails auf dem Server ausgerichtet ist. 
+(Wenn im Auswahlmenü statt POP3 oder IMAP der Wert "Disabled" genutzt wird, sendet das Programm keine E-Mails mehr: Die Mail-Funktion ist komplett abgeschaltet. 
 
-Generell gehören E-Mails in diesem Lichte also nicht auf einen Remote-Server, nicht in die Cloud, nicht in einen browser-basierten Web-Service - sondern sie gehören auf Deine Maschine gespeichert - oder aber sie sind zu verschlüsseln. Interessant wird also nun die Möglichkeit, die E-Mails in GoldBug über POP3 oder IMAP verschlüsselt zu versenden.
+Nutzer, die die weiter unten beschriebene Funktion des Chats über den POP3/IMAP-E-Mail-Server nutzen wollen (POPTASTIC), sollten daher die Mail-Angaben nicht deaktivieren.
+
+
+Abbildung: POPTASTIC: Chat über E-Mail-Server
+
+![Abbildung: POPTASTIC: Chat über E-Mail-Server](/images/email_poptastic.png)	
+
+
+Nach obigen Sicherheitsüberlegungen sollte ein Nutzer seine E-Mails immer gleich vom Server auf seine eigene Maschine laden und sie auf dem Server löschen. Somit scheint vieles für die Nutzung von POP3 anstelle vom IMAP zu sprechen, da IMAP mehr auf die Beibehaltung der E-Mails auf dem Server ausgerichtet ist. 
+
+Generell gehören E-Mails in diesem Lichte also nicht auf einen Remote-Server, nicht in die Cloud, nicht in einen browser-basierten Web-Service - sondern sie gehören auf die eigene Maschine des Nutzers gespeichert - oder aber sie sind in jedem Falle zu verschlüsseln. 
+
+Doch der Trend ist heute genau anders: Zentrale Server, die ohne Verschlüsselung die Nachrichten speichern ohne eigene Infrastruktur in Nutzerhand. Bis der Trend sich wieder umkehrt und Nutzer die eigene Souveränität wieder entdecken.
+
 
 ### 9.3 P2P E-Mail: ohne Vorratsdatenspeicherung
 
-Hinsichtlich der Verschlüsselung wurde schon dargestellt, dass die E-Mail-Funktion einen anderen Schlüssel zur Verschlüsselung nutzt als die Chat-Funktion. So kannst Du also einen Freund zum Chat hinzufügen, ihm aber das E-Mail verweigern oder umgekehrt. Sinnvoll ist es jedoch, immer alle Schlüssel als Ganzes auszukopieren, dann hat man seinen Freund auch in allen Funktionen präsent (weiterhin also noch der  URL-Schlüssel und der Rosetta-Schlüssel - zwei Funktionen, die später noch beschrieben werden).
+Neben IMAP und POP3 besteht drittens in GoldBug die Option der Nutzung von p2p E-Mail. Damit ist gemeint, dass die E-Mails nicht in einem zentralen Server gespeichert werden, sondern im Klienten eines Freundes.
+
+Hinsichtlich der Verschlüsselung wurde schon dargestellt, dass die E-Mail-Funktion einen anderen Schlüssel zur Verschlüsselung nutzt als die Chat-Funktion. So kann der Nutzer also einen Freund zum Chat hinzufügen, ihm aber das E-Mail verweigern oder umgekehrt. Sinnvoll ist es jedoch, immer alle Schlüssel als Ganzes auszukopieren, dann hat der Nutzer seinen Freund auch in allen Funktionen präsent (weiterhin also noch der URL-Schlüssel, POPTASTIC-Schlüssel und der Rosetta-Schlüssel - drei Funktionen, die später noch beschrieben werden).
 
 Natürlich kann bei der Schlüsselübertragung auch für die E-Mail-Funktion wieder die Sicherheit eines Repleos genutzt werden, wenn man seinen eigenen öffentlichen E-Mail-Schlüssel nicht der Öffentlichkeit preisgeben will.
 
-Egal welche E-Mail-Methode Du wählst, ob POP3, IMAP oder P2P, ausgehende E-Mails in GoldBug sind immer verschlüsselt, es gibt nur eine Ausnahme, das ist, wenn Du im Key-Hinzufügen Tab nicht einen Key oder ein Repleo eingibst, sondern die Auswahl: E-Mail-Adresse hinzufügen eingibst.
-Dann sendet das E-Mail Programm unverschlüsselten Text von @-mail zu @-mail.
+Egal welche E-Mail-Methode ein Nutzer wählt, ob POP3, IMAP oder P2P, ausgehende E-Mails in GoldBug sind immer verschlüsselt, es gibt nur eine Ausnahme, das ist, wenn der Nutzer im Key-Hinzufügen Tab nicht einen Key (oder ein Repleo) eingibt, sondern die Auswahl: E-Mail-Adresse hinzufügen eingibt. Dann sendet das E-Mail Programm unverschlüsselten Text von @-mail zu @-mail.
 
- '''Hinweis:''' Wer einen POPTASTIC-Schlüssel eingibt, sieht auch die @-E-Mail-Adresse in der Kontaktliste für E-Mail,
- sie ist jedoch farblich hinterlegt und hat auch ein Schloss-Symbol, d.h. über POPTASTIC-E-Mail-Adressen wird
- ebenso nur verschlüsselt gE-Mailt. Schließlich wird bei POPTASTIC ein Schlüssel eingefügt und keine @-E-Mail-Adresse.
- Nur E-Mails an @-E-Mail-Adressen, die kein Lock-Symbol haben, bleiben unverschlüsselt. 
 
-Daher können zwei GoldBug-Nutzer mit normalem @Mail wie z.B. über die großen E-Mail-Provider wie Ymail, Gmail, GMX, Outlook etc. verschlüsselte E-Mails ohne weitere technischen Kenntnisse austauschen über den POPTASTIC-Schlüssel, der noch weiter unten erläutert wird. Dieses ist insofern sehr komfortabel, als dass es ausreicht, einmal den E-Mail-Schlüssel zu tauschen. Es ist also nicht jedes einzelne Mail, was Du dann schriebst, jedesmal wieder aufs neue zu verschlüsseln. Jeder @-Mail Anbeiter kann nun von der Einsichtnahme in Deine E-Mails ausgenommen werden, indem Du ihnen einfach verschlüsselten Ciphertext zusendest. Was lediglich benötigt wird, ist die Absprache mit Deinem Freund, dass dieser ebenso GoldBug als E-Mail-Klient nutzt, um die Schlüssel tauschen zu können.
+'''Hinweis:''' Wer einen POPTASTIC-Schlüssel eingibt, sieht auch die @-E-Mail-Adresse in der Kontaktliste für E-Mail, sie ist jedoch farblich hinterlegt und hat auch ein Schloss-Symbol, d.h. über POPTASTIC-E-Mail-Adressen wird  ebenso nur verschlüsselt gemailt – und zwar der Chat. Denn schließlich wird bei POPTASTIC ein Schlüssel eingefügt und keine @-E-Mail-Adresse. Nur E-Mails an @-E-Mail-Adressen, die kein Lock-Symbol haben, bleiben unverschlüsselt. 
 
-E-Mail-Anlagen können ebenso einer E-Mail als Datei angehangen werden und werden unabhängig, welche E-Mail-Methode gewählt wird, automatisch verschlüsselt.
+Zur Verdeutlichung nochmal:
 
-Neben der Verschlüsselung der E-Mails werden in vielen Ländern weiterhin auch die [Meta-Daten](vds) gespeichert, also wann und wie oft Du die Nachrichten aus Deinem Postfach abrufst. Hier wird nun die weitere Methode der p2p E-Mails interessant:
-GoldBug ermöglicht weiterhin, E-Mails auch im Teilnehmernetzwerk oder auf einen Servern zu speichern und entsprechende E-Mail-Postfächer dezentral einzurichten, die darüber hinaus auch ausschließlich und automatisch den Standard der verschlüsselten E-Mails handhaben.
- 
+Der Nutzer kann beim E-Mail folgende Wege nutzen
+Der E-Mail-Schlüssel: Dieser kann E-Mails über POP3,IMAP und P2P senden.
+Der POPTASTIC-SCHLÜSSEL: Dieser kann Chat über POP3 und IMAP senden
+Die @-Mail-Adresse: Diese kann unverschlüsselte E-Mails and normale @-Mailadressen senden über POP2 und IMAP.
+
+
+Daher können zwei GoldBug-Nutzer mit normalem @Mail z.B. über die großen E-Mail-Provider wie Ymail, Gmail, GMX, Outlook etc. verschlüsselte E-Mails ohne weitere technische Kenntnisse austauschen: Entweder über @-Mail-Adressen unverschlüsselt, oder verschlüsselt als Chat über den POPTASTIC-Schlüssel, der noch weiter unten erläutert wird. 
+Und drittens kann über den E-Mail-Schlüssel immer verschlüsselt gemailt werden, auch p2p.
+
+Dieses ist insofern sehr komfortabel, als dass es ausreicht, einmal die Schlüssel zu tauschen. Es ist also nicht jedes einzelne Mail, welches der Nutzer schreibt, jedesmal wieder aufs Neue einzeln zu verschlüsseln (wie bislang in anderen Verfahren geübte Praxis). Jeder @-Mail Anbieter kann nun von der Einsichtnahme in die E-Mails des Nutzers ausgenommen werden, indem der Nutzer einfach verschlüsselten Ciphertext über die zentralen Server an seinen Kommunikationspartner schiebt. Was lediglich benötigt wird, ist die Absprache mit dem Freund, dass dieser ebenso GoldBug oder einen der anderen Echo-Klienten als E-Mail-Klient nutzt, um einmalig die Schlüssel tauschen zu können.
+
+E-Mail-Anlagen können ebenso einer E-Mail als Datei angehangen werden und werden unabhängig, welche E-Mail-Methode gewählt wird, automatisch verschlüsselt. Dieses ist auch mit mehreren Anhängen möglich.
+
+Neben der Verschlüsselung der E-Mails werden in vielen Ländern weiterhin auch die [Meta-Daten](https://www.datenschutz-wiki.de/Vorratsdatenspeicherung) gespeichert, also wann und wie oft ein Nutzer die Nachrichten aus seinem Postfach abruft. Hier wird nun die weitere Methode der p2p E-Mails interessant:
+
+GoldBug ermöglicht weiterhin, E-Mails auch im Teilnehmernetzwerk oder auf einem eigenen Server zu speichern und entsprechende E-Mail-Postfächer dezentral einzurichten, die darüber hinaus auch ausschließlich und automatisch den Standard der verschlüsselten E-Mails handhaben.
+
 Der E-Mail-Klient enthält somit auch eine peer-to-peer basierte Komponente, d.h. die E-Mails werden über das Netzwerk der verschlüsselten Verbindungen gesandt und in den Knotenpunkten von Freunden zwischengespeichert. Dieses Netzwerk wird durch die integrierte Architektur des Spot-on-Kernels bereitgestellt.
-Der Vorteil von P2P-E-Mail liegt darin, dass das E-Mail-Postfach nicht bei einem zentralen Hoster und öffentlichen Anbieter von E-Mail liegt, sondern im dezentralen Netzwerk von Dienen Freunden eingerichtet wird. 
+Der Vorteil von P2P-E-Mail liegt darin, dass das E-Mail-Postfach nicht bei einem zentralen Hoster und öffentlichen Anbieter von E-Mail liegt, sondern im dezentralen Netzwerk von eigenen Freunden des Nutzers eingerichtet werden kann. 
 
+Mit GoldBug ist also jeder in der Lage, für seine Freunde unkompliziert ein E-Mail-Postfach einzurichten. Niemand kann dann mit-loggen, wann und wie oft ein Nutzer seine E-Mails abruft. Das Echo-Protokoll trägt ebenso dazu bei, dass kaum Metadaten anfallen, die offenbaren, wer welche E-Mail gelesen hat und wer für wen eine E-Mail zwischenspeichert (da die Öffnung der verschlüsselten Nachrichten ausschließlich auf der Maschine des Nutzers erfolgt und jeder – gemäß dem Echo Protokoll - jede Nachricht an jeden sendet).
 
+Wie es geht, ein Postfach für seine Freunde einzurichten, zeigt der folgende Abschnitt:
 
-Mit GoldBug ist jeder in der Lage, für seine Freunde unkompliziert ein E-Mail-Postfach einzurichten. Niemand kann dann mit-loggen kann, wann und wie oft Du Deine E-Mails abrufst. Das Echo-Protokoll trägt ebenso dazu bei, dass kaum Metadaten anfallen, die offenbaren, wer welche E-Mail gelesen hat und wer für wen eine E-Mail zwischenspeichert (da die Öffnung der verschlüsselten Nachrichten ausschließlich auf Deiner Maschine erfolgt und jeder jede Nachricht an jeden sendet).
-
-Wie es geht, ein Postfach für Deine Freunde einzurichten, zeigt der folgende Abschnitt:
-
-### 9.4 C/O und E-Mail Institutionen einrichten==
+### 9.4 C/O-E-Mail Institutionen einrichten
 
 Das interessante an der GoldBug E-Mail-Funktion – und hier unterscheidet es sich ggf. von anderen p2p E-Mail Implementierungen - ist, dass es möglich ist, E-Mail auch zu Freunden zu senden, die offline sind.
  
 Hierzu bestehen zwei verschiedene Methoden:
 
 #### 9.4.1 Care-Of-Methode (c/o)
- 
-Die eine Methode ist, dass ein dritter, gemeinsamer Freund genutzt wird, um die E-Mails dort zwischen zu speichern.
-Wenn Alice und Bob also einen Chat-Server im Web auf ihrem Webserver einrichten, und alle drei Ihre Schlüssel getauscht haben, fungiert der Webserver wie ein E-Mail-Postfach, wie wir es von POP3 oder IMAP her kennen.
+
+Die eine Methode ist, dass ein dritter, gemeinsamer Freund genutzt wird, um die E-Mails dort bei ihm zwischen zu speichern.
+Wenn Alice und Bob also einen gemeinsamen Chat-Server im Web auf ihrem Webserver einrichten, und alle drei Ihre Schlüssel getauscht haben, fungiert der Webserver wie ein E-Mail-Postfach, wie wir es von POP3 oder IMAP her kennen.
 
 Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion
 
 ![Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
 
- 
-Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auch ein dritter Freund oder ein kleiner [Raspberry-Pi]()-Computer zuhause sein, der kontinuierlich online bleibt. Es macht daher Sinn, mehr als einen Freund in seiner Liste zu haben und gemeinsame Freunde mit anderen Freunden zu vernetzen, die als Zwischenspeicher fungieren können. Da alle E-Mails verschlüsselt sind, können die Freunde, die eine Cache-Funktion zur Verfügung stellen, Deine E-Mail auch nicht lesen.
 
+Grundsätzlich benötigen die E-Mails jedoch keine zentralen Server, es kann auch ein dritter Freund oder ein kleiner [Raspberry-Pi]( https://de.wikipedia.org/wiki/Raspberry_Pi)-Computer zuhause sein, der kontinuierlich online bleibt. Es macht daher Sinn, mehr als einen Freund in seiner Liste zu haben und gemeinsame Freunde mit anderen Freunden zu vernetzen, die als Zwischenspeicher fungieren können. Da alle E-Mails verschlüsselt sind, können die Freunde, die eine Cache-Funktion zur Verfügung stellen, die E-Mail des Nutzers auch nicht lesen.
+
+Auch werden die E-Mails in verschlüsselten Datenbanken abgelegt. Die Abbildung zeigt, dass selbst mit Einsichtnahmen in die Struktur der Datenbank-Datei nur Ciphertext angezeigt wird.
 
 Abbildung: Datenbank Verschlüsselung
 
 ![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
 
- 
-Um diese [Zustellanweisung Care-Of]() (c/o) Caching-Funktion zu aktivieren, muss in dem Sub-Tabulator “E-Mail-Settings” die Check-Box “Care-Of” aktiviert sein, wenn man als dritter Freund zwei anderen Freunden das Zwischenspeichern der E-Mails im eigenen Klienten ermöglichen will und sie beide auch in der E-Mail-Kontaktliste einfügt.
 
+Um diese [Zustellanweisung Care-Of]( https://en.wikipedia.org/wiki/Care_of) (c/o) Caching-Funktion zu aktivieren, muss in dem Sub-Tabulator “E-Mail-Settings” die Check-Box “Care-Of” aktiviert sein, wenn man als dritter Freund zwei anderen Freunden das Zwischenspeichern der E-Mails im eigenen Klienten ermöglichen will und sie beide auch in der E-Mail-Kontaktliste einfügt.
 
-Du hast bei GoldBugauch im p2p-E-Mail die Wahl, ob die E-Mails authentifiziert oder nicht authentifiziert, also einfach nur verschlüsselt, ohne Nachweis, dass der Schlüssel auch zu Dir gehört, gesandt werden.
- 
+Der Nutzer hat bei GoldBug auch im p2p-E-Mail die Wahl, ob die E-Mails authentifiziert oder nicht authentifiziert gesandt werden, also einfach nur verschlüsselt gesandt werden, ohne Nachweis, dass der Schlüssel auch zu einem, bestimmten Nutzer gehört.
+
+Die Care-of-p2p-E-Mail-Funktion ist eine der einfachsten in der Softwarelandschaft für p2p-E-Mail überhaupt. Wenn drei Nutzer einen gemeinsamen Echo-Server nutzen und sich gegenseitig gespeichert haben, muss nur die C/O-Funktion aktiviert werden, und die E-Mails werden in den Klienten der Freunde zwischen gespeichert, für den Fall, dass man mal offline ist. Einfacher als diese Architektur geht es nicht, man benötigt lediglich ein paar Freunde, die an diesem Verfahren für die interne Kommunikation innerhalb einer Gruppe teilnehmen möchten.
+
 Die zweite Methode ist die Einrichtung einer virtuellen E-Mail Institution.
 
 #### 9.4.2 Virtuelle E-Mail Institution ("VEMI") - Methode
  
 Hierzu ist es ebenso notwendig, die C/O-Funktion mit der Check-Box wie oben geschildert zu aktivieren.
-Sodann kannst Du eine virtuelle E-Mail-Institution erstellen. Für die Eingabe- bzw- Definitions-Felder "Name" und "Adresse" der Institution kannst Du frei kreativ werden und beliebige Bezeichnungen wählen.
-Sodann sind noch die öffentlichen E-Mail-Schlüssel der Freunde, die in Deiner Institution speichern wollen, in Deinen Node einzukopieren. 
 
-Schließlich kannst Du dann den so erstellten [Magnet-URI]()-Link (zum Standard und was das ist, vgl. auch unten im Abschnitt "Star-Beam") auskopieren und Freunden zur Verfügung zu stellen, die in diesem Postfach dann zwischen-speichern. Zusätzlich muss der Node, der die E-Mail-Institution einrichtet, immer auch den öffentlichen E-Mail-Schlüssel desjenigen hinzufügen, für den er Speichern soll.
+Sodann kannst der Nutzer eine virtuelle E-Mail-Institution erstellen. 
 
-Der Vorteil gegenüber der ersten Methode ist somit, dass der öffentliche E-Mail-Schlüssel des Knotenpunktes, der die Institution einrichtet, niemandem bekannt gegeben werden muss. Bei der c/o-Methode ist der öffentliche E-Mail-Schlüssel auszustauschen. Daher kann man vereinfacht sagen, dass im kleinen Freundesnetzwerk ein gemeinsamer Knotenpunkt mit der c/o-Funktion ideal ist und die VEMI-Methode der Einrichtung von Virtuellen-E-Mail-Institutionen eher auf Anbieter fokussiert, die für eine größere Teilnehmeranzahl Postfächer einrichten will.
+Für die Eingabe- bzw. Definitions-Felder "Name" und "Adresse" der Institution kann der Nutzer frei kreativ werden und beliebige Bezeichnungen wählen.
+Sodann sind noch die öffentlichen E-Mail-Schlüssel der Freunde, die in dieser Institution speichern wollen, in diesen Knotenpunkt einzukopieren.
+
+Schließlich kann der Nutzer dann den so erstellten [Magnet-URI]( https://de.wikipedia.org/wiki/Magnet-Link)-Link auskopieren und Freunden zur Verfügung zu stellen, die in diesem Postfach dann zwischen-speichern. (Zum Magnet-URI-Standard und was das ist, vgl. auch unten im Abschnitt Dateiübertragung mit "Star-Beam"). Zusätzlich muss der Knotenpunkt, der die E-Mail-Institution einrichtet, immer auch den öffentlichen E-Mail-Schlüssel desjenigen hinzufügen, für den er speichern soll.
+
+Der Vorteil gegenüber der ersten Methode ist somit, dass der öffentliche E-Mail-Schlüssel des Knotenpunktes, der die Institution einrichtet, niemandem bekannt gegeben werden muss. Bei der c/o-Methode ist der öffentliche E-Mail-Schlüssel hingegen auszutauschen. Daher kann man vereinfacht sagen, dass im kleinen Freundesnetzwerk ein gemeinsamer Knotenpunkt mit der c/o-Funktion ideal ist und die VEMI-Methode der Einrichtung von Virtuellen-E-Mail-Institutionen eher auf Anbieter fokussiert, die für eine größere Teilnehmeranzahl Postfächer einrichten wollen.
 
  
 '''Einrichtungsbeispiel:'''
-  
-Hier wird nochmal anhand eines Beispiels beschrieben, wie bei den E-Mails die c/o-Funktion  und die VEMI-Funktion, also die Einrichtung einer Virtuellen-E-Mail-Institution Schritt für Schritt umgesetzt wird.
-  
-- Aktiviere die c/o-Funktion in dem Tabulator für E-Mail-Settings.
-- Erstelle eine Institution und wähle einen Namen und eine Adresse für die Institution.
+
+Hier wird nochmal anhand eines Beispiels beschrieben, wie bei den E-Mails die c/o-Funktion und die VEMI-Funktion, also die Einrichtung einer Virtuellen-E-Mail-Institution, Schritt für Schritt umgesetzt werden:
+
+- Der Nutzer aktiviert die c/o-Funktion in dem Tabulator für E-Mail-Settings.
+- Der Nutzer erstellt eine Institution und wählt einen Namen und eine Adresse für die Institution.
 - Beispiel: Name= “GB-Postfach“ und Adresse = „Dotcom“
-- Füge den E-Mail-Schlüssel eines Freundes in Deinen Klienten ein. Sodann kopiere den dann verfügbaren E-Mail-Magneten von Deiner E-Mail-Institution aus und lasse die Freunde diesen in ihr Programm einfügen. Der Magnet wird ähnlich wie dieser aussehen: 
+- Der Nutzer fügt den E-Mail-Schlüssel eines Freundes in seinen Klienten ein. Sodann kopiert er dann den verfügbaren E-Mail-Magneten von seiner E-Mail-Institution aus und lässt die Freunde diesen in ihr Programm einfügen. Der Magnet wird ähnlich wie dieser aussehen: 
 
  magnet:?in=GB-Postfach&ct=aes256&pa=Dotcom&ht=sha512&xt=urn:institution
 
-Du erkennst einen E-Mail-Magnet an seiner Endung: URN=institution. Dann weißt Du, dass der Magnet kein Buzz-Gruppen-Chat Magnet ist und auch kein Star-Beam-Magnet für den Dateiaustausch – denn diese hätten die Endung „URN=buzz“ bzw. „URN=starbeam“. So dann wird Dein Knotenpunkt die E-Mails Deiner Freunde zwischenspeichern – auch für Adressaten, die ggf. offline sein sollten.
- 
-Du (als Ersteller einer E-Mail-Institution) brauchst Deinen eigenen E-Mail-Schlüssel nicht mit den Freunden bzw. "Subscribern" Deiner Institution zu tauschen. Du kannst Deinen E-Mail Schlüssel auch in einem Gruppen-Chat Raum mit dem Ersteller einer E-Mail-Institution tauschen. 
+Der Nutzer erkennt einen E-Mail-Magnet an seiner Endung: URN=institution. Dann weiß man, dass der Magnet kein Buzz-Gruppen-Chat Magnet ist und auch kein Star-Beam-Magnet für den Dateiaustausch – denn diese hätten die Endung „URN=buzz“ bzw. „URN=starbeam“. So dann wird der eigene Knotenpunkt die E-Mails der Freunde in der eingerichteten Institution zwischenspeichern – auch für Adressaten, die ggf. offline sein sollten.
+
+Der Nutzer (als Ersteller einer E-Mail-Institution) braucht dann wie genannt seinen eigenen E-Mail-Schlüssel nicht mit den Freunden bzw. "Subscribern" seiner Institution zu tauschen. Der Nutzer kann die E-Mail Schlüssel der Freunde auch in einem Gruppen-Chat-Raum über e*IRC/Buzz mit dem Ersteller einer E-Mail-Institution tauschen. 
 Der Austausch-Prozess von Key & E-Mail-Magnet muss also keine weiteren Identitäten vermitteln.
+
 
 ### 9.5 Zusätzliche Verschlüsselung: Ein „GoldBug“ auf ein E-Mail setzen
 
-Gleichgültig, welche Übertragungsmethode Du wählst, ob POP3, IMAP oder P2P, die E-Mails sind über den öffentlichen (asymmetrischen) E-Mail-Schlüssel sowie das Echo-Protokoll für die Übertragung ja immer verschlüsselt.
+Gleichgültig, welche Übertragungsmethode ein Nutzer wählt, ob POP3, IMAP oder P2P, die E-Mails sind über den öffentlichen (asymmetrischen) E-Mail-Schlüssel sowie das Echo-Protokoll für die Übertragung ja immer verschlüsselt.
+
 Dieses ist auch der Fall, wenn sie in einer Zwischenstation wie einem Provider-Postfach oder einer Virtuellen Institution oder einem Zwischenknoten zwischengespeichert werden. Transportverschlüsselung und Ende-zu-Ende-Verschlüsslung gehen hier durchgängig ineinander auf.
  
-Als zusätzliche Sicherheit für die E-Mail-Funktion besteht ähnlich wie im Chat beim sog. ''"Gemini"'', nun für E-Mails ein Passwort auf die E-Mail zu setzen: Nicht nur die Software nennt sich GoldBug, sondern auch die Funktion im E-Mail Klienten, auf das E-Mail ein zusätzliches Passwort zu setzen, nennt sich ''"GoldBug"''.
- 
+Als zusätzliche Sicherheit für die E-Mail-Funktion besteht ähnlich wie im Chat beim sog. ''"Gemini"'', nun für E-Mails die Option, ein Passwort auf die E-Mail zu setzen: Nicht nur die Software nennt sich GoldBug, sondern auch die Funktion im E-Mail-Klienten, auf das E-Mail ein zusätzliches Passwort zu setzen, nennt sich ''"GoldBug"''.
+
 E-Mails, auf die ein „GoldBug“-Passwort gesetzt wurde (vergleiche später unten die Beschreibung der File-Transferfunktion „StarBeam“, hier heißt das zusätzliche Passwort „Nova“) können vom Empfänger nur gelesen werden, wenn sie das entsprechende "GoldBug" – also den Goldenen Schlüssel für das Passwort kennen.
-Du solltest daher Deine Freunde über das einzugebende Passwort informieren, wenn Du ihnen E-Mails sendest, die zur Öffnung noch ein zusätzliches Passwort benötigen.
- 
-Das kann z.B. in den E-Mails zu Deiner Frau sein, dass Du die E-Mails immer mit dem Namen der Stadt zusätzlich verschlüsselt, in der die Hochzeit oder der Hochzeitsurlaub stattfand.
+Der Nutzer sollte daher seine Freunde über das einzugebende Passwort informieren, wenn der Nutzer ihnen E-Mails sendet, die zur Öffnung noch ein zusätzliches Passwort benötigen.
 
-Auch hier wie beim Chat mit dem Gemini ist es ein wichtiges Merkmal der symmetrischen und durchgängigen Ende-zu-Ende-Verschlüsselung, dass der Nutzer das Ende-zu-Ende verschlüsselnde Passwort selbst und manuell erstellen kann. 
+Das kann z.B. in den E-Mails zu der eigenen Frau sein, dass der Nutzer die E-Mails immer mit dem Namen der Stadt zusätzlich verschlüsselt, in der die Hochzeit oder der Hochzeitsurlaub stattfand.
 
-Das GoldBug auf einem E-Mail ist somit auch ein zentraler Anknüpfungspunkt, warum der E-Mail-Klient GoldBug - neben der Erinnerung an die Kurzgeschichte von Ergar Allen Poe über ein Kryptogramm - diesen Namen hat: Die einfache Handhabung, E-Mails symmetrisch einfach mit einem Passwort manuell zu verschlüsseln, ohne zusätzliche Verschlüsselungssoftware als Plugin installieren zu müssen.
+Auch hier wie beim Chat mit dem Gemini ist es ein wichtiges Merkmal der symmetrischen und durchgängigen Ende-zu-Ende-Verschlüsselung, dass der Nutzer das Ende-zu-Ende verschlüsselnde Passwort selbst und manuell erstellen kann.
+
+Neben der Erinnerung an die Kurzgeschichte von Edgar Allen Poe über ein Kryptogramm und sein Wirken für die Kryptographie schon in frühen Jahren der beginnenden Industrialisierung – ist das GoldBug auf einem E-Mail eine neue Idee, E-Mail nicht nur automatisiert durch Schlüsseltausch immer symmetrisch verschlüsselt zu haben, sondern zusätzlich mit einer symmetrischen Verschlüsselung – dem GoldBug auf einem E-Mail – auch noch weitergehend und pro einzelnem E-Mail asymmetrisch zu verschlüsseln, wie es bei PGP bislang der Standard (aber symmetrisch) ist. Dieses erfolgt ohne dass zusätzliche Verschlüsselungssoftware als Plugin installiert werden muss. Das GoldBug auf einem E-Mail ist das symmetrische Sahnehäubchen zu der symmetrischen Verschlüsselung auf einem E-Mail durch PGP – denn die symmetrische Verschlüsselung eines E-Mails ist in GoldBug ja schon standardmäßig automatisiert integriert und mit dem E-Mail-Schlüssel immer zugegen.
+
 
 ### 9.6 Forward Secrecy 
 
 GoldBug ist mit Nutzung der einbezogenen Architektur des Spot-on-Kernels weltweit das erste E-Mail-Programm, dass Forward Secrecy Verschlüsselung anbietet, die sowohl asymmetrisch ''als auch'' symmetrisch ''für E-Mail'' umgesetzt werden kann - also beide Verfahren innerhalb eines E-Mail-Programms unterstützt.
 
-Forward Secrecy heisst ja, dass temporäre Schlüssel eingesetzt werden, um das Ende-zu-Ende verschlüsselnde Passwort zu übertragen, so dass, wenn zu einem späteren Zeitpunkt Analysen zur Kommunikation und deren Verschlüsselung gemacht werden sollten, nicht der reguläre (permanente) Schlüssel für die Kommunikation betroffen ist.
+Forward Secrecy heißt ja, dass temporäre Schlüssel eingesetzt werden, um das Ende-zu-Ende verschlüsselnde Passwort zu übertragen, so dass, wenn zu einem späteren Zeitpunkt Analysen zur Kommunikation und deren Verschlüsselung gemacht werden sollten, nicht der reguläre (permanente) Schlüssel für die Kommunikation betroffen ist.
 
-Du sendest also Deinem E-Mail-Partner über die übliche asymmetrische Verschlüsselung des E-Mail-Schlüssels nun einen sitzungsbasierten, symmetrischen (Forward Secrecy) Schlüssel (vgl. Abbildung). Wenn Dein Partner die Anfrage bestätigt und seinen temporären Schlüssel zurücksendet, dann können beide Teilnehmer sitzungsbasierte asymmetrische Schlüssel nutzen, um die E-Mail-Kommunikation weitergehend zu sichern. 
-Diese Methode der asymmetrischen Ende-zu-Ende Sicherung wurde im übrigen nicht nur für E-Mail integriert, sondern auch auf die Chat-Funktion (siehe oben: FS-Calling). 
-
-
+Der Nutzer sendet also seinem E-Mail-Partner über die übliche asymmetrische Verschlüsselung des E-Mail-Schlüssels nun einen sitzungsbasierten, symmetrischen (Forward Secrecy) Schlüssel (vgl. Abbildung). 
 
 Abbildung: E-Mail mit Forward Secrecy
 
 ![Abbildung: E-Mail mit Forward Secrecy](/images/email_forwardsecrecy.png)	
 
+Wenn der Partner die Anfrage bestätigt und seinen temporären Schlüssel zurücksendet, dann können beide Teilnehmer sitzungsbasierte asymmetrische Schlüssel nutzen, um die E-Mail-Kommunikation weitergehend zu sichern. 
+Diese Methode der asymmetrischen Ende-zu-Ende Sicherung wurde im Übrigen nicht nur für E-Mail integriert, sondern auch auf die Chat-Funktion (siehe oben: FS-Calling). 
 
 
-Der permanente öffentliche Schlüssel wird für den Transport genutzt. Das bedeutet, der ephemerale (temporäre) Schlüssel wird über den permanenten öffentlichen Schlüssel mit dem Partner geteilt. Wenn dann der ephemerale öffentliche Schlüssel von einem Empfänger korrekt akzeptiert wurde, generiert dieser besagte Empfänger ebenso einen ephemeralen Sitzungsschlüssel (symmetrisch), der dann über Deinen öffentlichen Schlüssel ebenso Dir wieder zugesandt wird.
+Der permanente öffentliche Schlüssel wird dann nur für den Transport der sitzungsbasierten Schlüssel genutzt – und nicht mehr für den Transport der Nachricht (bzw. wird der neue Schlüssel zu Nachricht). Das bedeutet, der ephemerale (temporäre) Schlüssel wird über den permanenten öffentlichen Schlüssel mit dem Partner geteilt. Wenn dann der ephemerale, öffentliche Schlüssel von einem Empfänger korrekt akzeptiert wurde, generiert dieser besagte Empfänger ebenso einen ephemeralen Sitzungsschlüssel (symmetrisch), der dann über den öffentlichen Schlüssel des Nutzers ebenso dem Nutzer wieder zugesandt wird.
 
-Der Initiator löscht sodann seine asymmetrischen ephemeralen Schlüssel, alsbald die privaten ende-zu-ende- Schlüssel getauscht wurden. Wenn Du nun ein E-Mail schreibst, stehen in GoldBug vier FS-Modi zur Verfügung, das E-Mail zu verschlüsseln (vgl. Abbildung):
+Der Initiator löscht sodann seine asymmetrischen ephemeralen Schlüssel, alsbald die temporäre Sitzung beendet wurde. 
 
-; Normal-verschlüsselt: Die E-Mail wird wie gehabt innerhalb des verschlüsselten Systems (Echo oder POPTASTIC) versandt, das heißt, der reguläre permanente symmetrische E-Mail-Schlüssel wird genutzt, um die Nachricht zu verschlüsseln. 
-; Forward Secrecy-verschlüsselt: Über die reguläre Verschlüsselung werden sitzungsbasierte Forward-Secrecy-Schlüssel genutzt - das bedeutet, Du sendest Deine Nachricht verschlüsselt mit sitzungsbasierten Schlüsseln über den Kanal des permanenten E-Mail-Schlüssels. Das fügt zu der Nachricht eine weitere asymmetrisch verschlüsselte Ebene zu Deiner bereits bestehenden E-Mail Verschlüsselung hinzu. 
-; Pure Forward Secrecy-verschüsselt ("Pure FS"): Die Nachricht wird nur über Deinen sitzungsbasierten (ephemeralen) E-Mail-Schlüssel verschlüsselt und gesandt. Der permanente E-Mail-Schlüssel kommt somit beim "Pure FS" nicht zum Einsatz: Dieses kann daher auch als die Option bezeichnet werden, innerhalb des p2p E-Mails "instant", also sofortige (im Sinne von flüchtige) und einmalige E-Mail-Adressen und Post-Fächer zu erzeugen - die wieder nach der Sitzung gelöscht werden können. One-Time-E-Mail-Accounts dank Pure Forward Secrecy. 
-; GoldBug verschlüsselt: GoldBug setzte ein Password auf die E-Mail (z.B. mit einem AES, symmetrische Verschlüsselung) und Du musst Deinen E-Mail-Partner über das Passwort idealerweise mündlich informieren. Die so symmetrisch verschlüsselte Nachricht wird sodann ebenso über Deine symmetrische E-Mail-Verschlüsselung gesandt (permanenter E-Mail-Schlüssel). 
 
-Für den Fall, dass die die Check-Box-Option "Plain" neben dem E-Mail-Text markierst, werden alle Verschlüsselungen zu unverschlüsseltem Plaintext zurückgesetzt, so dass Dein E-Mail-Empfänger und alle zwischengeschalteten Knotenpunkte Deine Nachricht jederzeit lesen können.
 
-Also nochmal zum Verständnis: durch den permanenten (asymmetrischen) Schlüssel (für E-Mail (oder auch so bei Chat) werden ephemerale (ebenso asymmetrische Schlüssel) getauscht, die dann die Grundlage für die Nutzung von Ende-zu-Ende verschlüsselnden (symetrischen) Schlüsseln dienen. Somit können die ephemeralen Schlüssel wieder gelöscht werden. 
+Wenn ein Nutzer nun ein E-Mail schreibt, stehen in GoldBug also vier Forward-Secrecy-Modi zur Verfügung, das E-Mail zu verschlüsseln:
 
-Hier sollte man sich nicht verwirren lassen, denn auch die Ende-zu-Ende verschlüsselnden symmetrischen Passphrasen sind im eigentlichen Sinne ephemerale Schlüssel, aber es wird deutlicher, wenn nur die asymmetrischen temporären Schlüssel, die durch die permanenten E-Mail-Schlüssel geschoben werden, zunächst als ephemerale Schlüssel bezeichnet werden (damit es Personen, die sich das erste Mal mit dem FS-Prozess bzw. der Vokabel "[Ephemeral_key]()" beschäftigen, nicht verwirrt sind). 
+- Normal-verschlüsselt: Die E-Mail wird wie gehabt innerhalb des verschlüsselten Systems (Echo oder POPTASTIC) versandt, das heißt, der reguläre permanente symmetrische E-Mail-Schlüssel wird genutzt, um die Nachricht zu verschlüsseln. 
+
+- Forward Secrecy-verschlüsselt: Über die reguläre Verschlüsselung werden sitzungsbasierte Forward-Secrecy-Schlüssel genutzt - das bedeutet, der Nutzer sendest sitzungsbasierte Schlüsseln über den Kanal des permanenten E-Mail-Schlüssels und sodann seine Nachricht verschlüsselt mit den temporären Schlüsseln. Das fügt also zu der Nachricht eine weitere asymmetrisch verschlüsselte Ebene zu der bereits bestehenden E-Mail Verschlüsselung hinzu.
+
+- Pure Forward Secrecy-verschüsselt ("Pure FS"): Die Nachricht wird nur über den sitzungsbasierten (ephemeralen) E-Mail-Schlüssel des Nutzers verschlüsselt und gesandt. Der permanente E-Mail-Schlüssel kommt somit beim "Pure FS" nicht zum Einsatz: Dieses kann daher auch als die Option bezeichnet werden, innerhalb des p2p E-Mails "instant", also sofortige (im Sinne von flüchtige) und einmalige E-Mail-Adressen und Post-Fächer zu erzeugen - die wieder nach der Sitzung gelöscht werden können. So entstehen One-Time-E-Mail-Accounts dank Pure Forward Secrecy. 
+
+- GoldBug verschlüsselt: GoldBug setzt wie oben beschrieben ein Password auf die E-Mail (z.B. mit einem AES, symmetrische Verschlüsselung) und der Nutzer muss seinen E-Mail-Partner über das Passwort idealerweise mündlich informieren. Die so symmetrisch verschlüsselte Nachricht wird sodann ebenso über die asymmetrische E-Mail-Verschlüsselung gesandt (permanenter E-Mail-Schlüssel).
+
+
+Für den Fall, dass der Nutzer die Check-Box-Option "Plain" neben dem E-Mail-Text markiert, werden wird das E-Mail nicht im HTML-Rich-Text-Modus geschrieben, sondern im reinen Text Modus. Das Word Plain hat hier also nichts im Sinne eines Antonym zu Ciphertext zu tun.
+
+
+Also nochmal zum Verständnis: durch den permanenten (asymmetrischen) Schlüssel (für E-Mail (oder auch so bei Chat) werden ephemerale (ebenso asymmetrische Schlüssel) getauscht, die dann die Grundlage für die Nutzung von Ende-zu-Ende verschlüsselnden (symmetrischen) Schlüsseln dienen. Somit können die ephemeralen Schlüssel jederzeit nach Gebrauch wieder gelöscht werden und die Kommunikation ist nicht an die Identitäten gebunden. 
+
+Hier sollte man sich nicht verwirren lassen, denn auch die Ende-zu-Ende verschlüsselnden symmetrischen Passphrasen sind im eigentlichen Sinne ephemerale Schlüssel, aber es wird deutlicher, wenn nur die asymmetrischen temporären Schlüssel, die durch die permanenten asymmetrischen E-Mail-Schlüssel geschoben werden, zunächst als ephemerale Schlüssel bezeichnet werden (damit es Personen, die sich das erste Mal mit dem Forward-Secrecy-Prozess bzw. der Vokabel "[Ephemeral_key](https://en.wikipedia.org/wiki/Ephemeral_key)" beschäftigen, nicht verwirrt sind).
 
 Die Verschlüsselungsebenen bei Forward Secrecy im E-Mail-Program GoldBug können wie folgt vereinfacht beschrieben werden:
 
 - Äußere Verschlüsselungsebene: SSL /TSL Verbindung
-- Mögliche, weitere Verschlüsselungsebene: permaneter asymmetrischer E-Mail-Schlüssel (nicht bei "Pure FS" - ansonsten gilt: First-Ephemeral-then-Permanent)
-- Weitere, später gelöschte Ebene: Ephemeraler, temporärer asymmetrischer Schlüssel (dient nur zur Übertragung der symmetrischen Schlüssel) 
+- Mögliche, weitere Verschlüsselungsebene: permanenter asymmetrischer E-Mail-Schlüssel (nicht bei "Pure FS" - ansonsten gilt: First-Ephemeral-then-Permanent)
+- Weitere, später ggf. gelöschte Ebene: Ephemeraler, temporärer asymmetrischer Schlüssel (dient nur zur Übertragung der symmetrischen Schlüssel) 
 - erste Verschlüsselungs-Ebene über Forward Secrecy: Symmetrischer Schlüssel
-- Alternative erste Verschlüsselungsebene über ein GoldBug: Symmetrischer Schlüssel über ein manuell definiertes GoldBug auf dem E-Mail. Das Nachrichtenformat ist also (TLS/SSL (Permanenter E-Mail-Key (AES-GoldBug (Nachricht))). Entsprechend Encrypt-then-Mac kann man hier von "GoldBug-then-Permanent" sprechen. Das GoldBug auf einem E-Mail verschlüsselt den Text im Briefumschlag. 
+- Alternative erste Verschlüsselungsebene über ein GoldBug: Symmetrischer Schlüssel über ein manuell definiertes GoldBug auf dem E-Mail. Das Nachrichtenformat ist also (TLS/SSL (Permanenter E-Mail-Key (AES-GoldBug (Nachricht))). Entsprechend Encrypt-then-Mac kann man hier von "GoldBug-then-Permanent" sprechen. Das GoldBug auf einem E-Mail verschlüsselt den Text im Briefumschlag.
 
-Temporäre Schlüssel werden nicht aus permanenten Schlüsseln abgeleitet und stehen auch in der Generierung in keiner Beziehung zu diesen. Sitzungsperioden werden manuell vom Nutzer definiert. D.h. nicht wie bei anderen Programmen ist die Sitzung durch das Online-Kommen und wieder Offline-Gehen automatisch definiert, sondern Du selbst bestimmst, wann Du neue sitzungsbasierte Schlüssel nutzen willst. Auch dieses kann wieder jederzeit und "Instant" sein (siehe oben: IPFS).
+Temporäre Schlüssel werden nicht aus permanenten Schlüsseln abgeleitet und stehen auch in der Generierung in keiner Beziehung zu diesen. Sitzungsperioden werden manuell vom Nutzer definiert. D.h. nicht wie bei anderen Programmen ist die Sitzung durch das Online-Kommen und wieder Offline-Gehen automatisch definiert, sondern der Nutzer selbst bestimmt, wann er neue sitzungsbasierte Schlüssel nutzen will. Auch dieses kann wieder jederzeit und "instant" sein (siehe oben: IPFS).
 
- Der Prozess oder das Protokoll für Forward Secrecy kann wie folgt mit diesem Beispiel beschrieben werden:
-  
- 
+Der Prozess oder das Protokoll für Forward Secrecy kann wie folgt mit diesem Beispiel beschrieben werden:
+
+
  1. Ich sende Dir meine Post-Adresse. Diese ist öffentlich.
  2. Du sendest mir auch Deine Post-Adresse. Diese ist öffentlich.
  3. Unsere Adressen sind permanent. Diese Adressen wechseln nur, wenn wir umziehen.
@@ -1529,24 +1585,22 @@ Temporäre Schlüssel werden nicht aus permanenten Schlüsseln abgeleitet und st
  --- Tage später ---
  
  1. Ich erstelle einen einzigartigen Umschlag, einen ephemeralen Umschlag.
- 2. Ich sende Dir, und nur Dir, meinen einzigartigen Umschlag. Ganz klar, Ich nutze Deine Post-Adresse, 
- um Dir diesen zu zusenden. Wir nehmen an, nur Du kannst das Geschriebene lesen. 
+ 2. Ich sende Dir, und nur Dir, meinen einzigartigen Umschlag. Ganz klar, ich nutze Deine Post-Adresse, um Dir diesen zu zusenden. Wir nehmen an, nur Du kannst das Geschriebene lesen. 
  Ich könnte auch das Zugesandte mit meiner Unterschrift signieren.
  
   --- Am selben Tag ---
  
- 1. Du erhälst meinen einzigartigen Umschlag und Du verifizierst dieses auch anhand meiner Unterschrift, 
- wenn Du magst.
+ 1. Du erhältst meinen einzigartigen Umschlag und Du verifizierst dieses auch anhand meiner Unterschrift, wenn Du magst.
  2. Du erstellst einen speziellen Brief.
  3. Du bündelst den speziellen Brief in den einzigartigen Umschlag, den ich Dir gesandt hatte. 
- Wenn Du ihn erstmal versiegelt hast, kann nur ich ihn öffnen. 
+ Wenn Du ihn erst Mal versiegelt hast, kann nur ich ihn öffnen. 
  4. Du sendest den einzigartigen Umschlag wieder an meine Postadresse zurück. 
- Optional kannst Du natürlich das erstellte Bündel auch wieder signieren.  
-  
- --- Immer noch der selbe Tag ---
+ Optional kannst Du natürlich das erstellte Bündel auch wieder signieren.
+ 
+ --- Immer noch derselbe Tag ---
  
  1. Ich erhalte Dein Bündel. Im diesem Bündel ist mein einzigartiger Umschlag.
- 2. In meinem einzigartigen Umschlag, den nur ich öffnen kann, ist dein spezieller Brief.
+ 2. In meinem einzigartigen Umschlag, den nur ich öffnen kann, ist Dein spezieller Brief.
  
  1. Wir nutzen den speziellen Brief so oft wie wir wollen...Einmal, Zweimal. Etc.
  
@@ -1564,30 +1618,34 @@ Temporäre Schlüssel werden nicht aus permanenten Schlüsseln abgeleitet und st
 
 '''Weitere Forschungsperspektiven'''
 
-Behalte in Erinnerung,dass man die permanenten Schlüssel in Transportschlüssel transformiert. Wenn diese kompromittiert werden, wird die Verschlüsselung mit den weiteren Verschlüsselungsinstanzen erkennbar. Dieses Konzept kreiert einen kreativen Forschungsbereich innerhalb der Echo-Protokoll-Umgebung. Hier sind einige Konzepte, die weitergehend einbezogen werden könnten:
+Es ist in Erinnerung zu behalten, dass man die permanenten Schlüssel in Transportschlüssel transformiert. Wenn diese kompromittiert werden, wird die Verschlüsselung mit den weiteren Verschlüsselungsinstanzen erkennbar. Dieses Konzept kreiert einen kreativen Forschungsbereich innerhalb der Echo-Protokoll-Umgebung. Hier sind einige Konzepte-Anregungen, die weitergehend einbezogen werden könnten:
 
-- Teilnehmer könnten konstant ephemerale (asymmetrische) Schlüsselpaare erzeugen und sitzungsbasierte (symmetrische) Schlüssel über die ephemeralen Schlüssel tauschen, Teilnehmer würden benachrichtigt, wenn nicht mehr genügend Schlüssel vorhanden wären. Der erneute Austausch (von ephemeralen Schlüsseln über den permanenten Schlüssel bzw sitzungsbasierte (symmetriche) über die (sitzunsgbasierten) ephemeralen (asymmetrischen) Schlüssel wäre dann automatisch geregelt... ahnlich des Austausches von Status-Nachrichten über den Online-Status im Chat. Nachrichten werden dann nur über sitzungsbasierte Schlüssel im Echo- oder POPTASTIC-Protokoll ausgetauscht. 
+- Teilnehmer könnten konstant ephemerale (asymmetrische) Schlüsselpaare erzeugen und sitzungsbasierte (symmetrische) Schlüssel über die ephemeralen Schlüssel tauschen. Teilnehmer würden benachrichtigt, wenn nicht mehr genügend Schlüssel vorhanden wären. Der erneute Austausch (von ephemeralen Schlüsseln über den permanenten Schlüssel bzw. sitzungsbasierte (symmetrische) über die (sitzungsbasierten) ephemeralen (asymmetrischen) Schlüssel wäre dann automatisch geregelt... ähnlich des Austausches von Status-Nachrichten über den Online-Status im Chat. Nachrichten werden dann nur über sitzungsbasierte Schlüssel im Echo- oder POPTASTIC-Protokoll ausgetauscht. 
 
-- Anstelle des Austausches von einem Set an privaten Sitzungsschlüsseln könnten auch mehrere Sets an privaten Sitzugsschüssel auf Vorrat ausgetauscht werden. Vorratsdatenspeicherung mal anders für eine Vielzahl an anonymen E-Mail-Adressen mit sitzungsbasierten Schlüsseln.
+- Anstelle des Austausches von einem Set an privaten Sitzungsschlüsseln könnten auch mehrere Sets an privaten Sitzungsschüsseln auf Vorrat ausgetauscht werden. Vorratsdatenspeicherung mal anders für eine Vielzahl an anonymen E-Mail-Adressen mit sitzungsbasierten Schlüsseln.
 
-- Das [OTR]()-Konzept (bislang für Chat) könnte innerhalb der permanenten Schlüssel  und auch für E-Mail angewandt werden. POPTASTIC mal anders, wenn Chat über E-Mail geht, dann kann auch die Chat-Verschüsselung OTR über E-Mail gehen.
-
-Chris Schum fast diese Forschungs-Perspektiven wie folgt zusammen: "Forward Secrecy bietet eine substantielle Verbesserung des Schutzes bei verschlüsselte Übertragungen für wenig Aufwand und keinerlei Kosten ab. Durch die Nutzung von einzigartigen Schlüsseln können Informationsübertragungen in einer Sitzung geschützt werden - selbst, wenn die zentrale Infrastruktur wie ein Server in der Zukunft kompromittiert werden sollte." 
+- Das [OTR]( https://de.wikipedia.org/wiki/OTR)-Konzept (bislang für Chat) könnte innerhalb der permanenten Schlüssel und auch für E-Mail angewandt werden. POPTASTIC mal anders, wenn Chat über E-Mail geht, dann kann auch die Chat-Verschüsselung OTR über E-Mail gehen.
 
 
-<ref>'''Schum, Chris''': Correctly Implementing Forward Secrecy, SANS Institute
-InfoSec Reading Room, March 14, 2014, compare also: Bernat, V. (2012, January 1). SSL/TLS & Perfect Forward Secrecy. Web article
-Retrieved March 5, 2015, from http://vincent.bernat.im/en/blog/2011-sslperfect-
-forward-secrecy.html; and: Zhu, Y. (2014, April 8). Why the Web Needs Perfect Forward Secrecy More Than
-Ever. Web article. Retrieved February 2, 2015, from
-https://www.eff.org/deeplinks/2014/04/why-web-needs-perfect-forward-secrecy
-</ref>
+
+Durch die Nutzung von einzigartigen Schlüsseln können Informationsübertragungen in einer Sitzung ideal geschützt werden - selbst, wenn Versuche zu Kompromittierung bestehen sollten.
+
+Forward Secrecy bietet also eine substantielle Verbesserung des Schutzes bei verschlüsselten Übertragungen für wenig Aufwand und keinerlei Kosten an. 
+
+Nachdem E-Mail und seine zahlreichen Optionen zur verbesserten und innovierten Verschlüsselung beschrieben wurden, kommen wir nun zu den schon angekündigten Begriff POPTASTIC – der Funktion von Chat über E-Mail-Server.
 
 ## 10 POPTASTIC - Verschlüsselter Chat und E-Mail über POP3 & IMAP
- 
-POPTASTIC ist eine Innovation in der Nachrichtenübermittlung - Verschlüsselter Chat und E-Mail über POP3.
+
+POPTASTIC ist eine Innovation in der Nachrichtenübermittlung - Verschlüsselter Chat über E-Mailserver.
  
 Mit der POPTASTIC-Funktion können alle E-Mail Konten z.B. vom Gmail, Outlook.com oder Yahoo!-Mail mit GoldBug Ende-zu-Ende asymmetrisch - und hybride ergänzend symmetrisch - verschlüsselt werden. Der Clou: Jeder POP3 oder IMAP Server kann nun auch für verschlüsselten Chat genutzt werden.
+
+Abbildung: POPTASTIC
+
+![Abbildung: POPTASTIC](/images/poptastic.png)
+
+
+Schauen wir uns POPTASTIC hier an dem Desktop-Klienten GoldBug einmal in seien Funktionen näher an.
 
 ### 10.1 Chat über POPTASTIC
  
@@ -1597,15 +1655,21 @@ Dazu wird die Chat-Nachricht in ein verschlüsseltes E-Mail gewandelt, über POP
  
 Der Chat und das E-Mail über POPTASTIC sind proxy-fähig und können daher auch vom Arbeitsplatz, der Universität oder hinter einer Firewall betrieben werden, auch über das Netzwerk Tor. Logged man sich mit einem Web-Browser in seinen E-Mail-Account ein, sieht man, wie die verschlüsselte Nachricht aussieht.
  
-Die ergänzend symmetrische Ende-zu-Ende Verschlüsselung über POP3 kann - wie beim Echo-Protokoll - nicht nur als Forward Secrecy eingesetzt werden, sondern kann ebenso "Instant" jede Sekunde erneuert werden. Daher wird auch hier (wie oben) von Instant Perfect Forward Secrecy (IPFS) gesprochen, das nun über POP3 und IMAP für den Chat ermöglicht wird! Schließlich bestehen auch in POPTASTIC die Option, einen Call für die Übermittlung eines Geminis durchzuführen mit den oben differenziert geschilderten Methoden.
+Die ergänzend symmetrische Ende-zu-Ende Verschlüsselung über POP3 kann - wie beim Echo-Protokoll - nicht nur als Forward Secrecy eingesetzt werden, sondern kann ebenso "instant" jede Sekunde erneuert werden. Daher wird auch hier (wie oben) von Instant Perfect Forward Secrecy (IPFS) gesprochen, das nun über POP3 und IMAP für den Chat ermöglicht wird! Schließlich besteht auch in POPTASTIC die Option, einen Call für die Übermittlung eines Geminis durchzuführen mit den oben differenziert geschilderten Methoden.
 
-Für Anwender sicherlich eine interessante und einfache Methode, über dieses E-Mail-Protokoll verschlüsselt zu chatten.
+Diese Optionsvielfalt der Verschlüsselung bei POPTASTIC ist auch nicht bei den Architektur-Kopien für mobile Endgeräte gegeben.
+
+Wie auch immer, für Anwender sicherlich eine interessante und einfache Methode, über dieses E-Mail-Protokoll verschlüsselt zu chatten.
+
+
 
 ### 10.2 E-Mail über POPTASTIC
 
-Ebenso wie es den Chat über POPTASTIC gibt, besteht auch die Möglichkeit über POPTASTIC zu e-mailen. Da POPTASTIC ein Schlüssel ist, mit dem der Freund eingegeben wird (über das Freund-Hinzufügen Tab), ist der POPTASTIC Kontakt bzw. die E-Mail-Adresse mit einem Schloss-Symbol versehen und zusätzlich auch mit einer Hintergrundfarbe markiert, um anzuzeigen, dass der Nachrichtenaustausch immer nur verschlüsselt geschieht.
+Ebenso wie es E-Mail über den E-Mail-Schlüssel gibt, und wie es den Chat über den POPTASTIC-Schlüssel gibt, besteht auch die Möglichkeit über POPTASTIC zu e-mailen. Da POPTASTIC ein Schlüssel ist, mit dem der Freund eingegeben wird (über das Freund-Hinzufügen Tab), ist der POPTASTIC Kontakt bzw. die E-Mail-Adresse mit einem Schloss-Symbol versehen und zusätzlich auch mit einer Hintergrundfarbe markiert, um anzuzeigen, dass der Nachrichtenaustausch immer nur verschlüsselt geschieht.
 
-Wenn man im Freund-Hinzufügen-Tab eine E-Mail-Adresse einfügt, wird dieser Kontakt ebenso in die Kontaktliste beim E-Mail hinzugefügt - jedoch ohne Locked-Symbol und ohne Hintergrundfarbe. Dieses zeigt an, dass hier mit diesem Kontakt die E-Mail-Nachrichten unverschlüsselt erfolgen. Dieses ist insofern der Fall, wenn jemand nicht den GoldBug-Klienten nutzt.
+Wenn man im Freund-Hinzufügen-Tab eine E-Mail-Adresse einfügt, wird dieser Kontakt ebenso in die Kontaktliste beim E-Mail hinzugefügt - jedoch ohne Locked-Symbol und ohne Hintergrundfarbe. Dieses zeigt an, dass hier mit diesem Kontakt die E-Mail-Nachrichten unverschlüsselt erfolgen. Dieses ist insofern der Fall, wenn jemand nicht den GoldBug-Klienten nutzt. Dann sendet POPTASTIC das E-Mail unverschlüsselt an die @-Mail-Adresse.
+
+Das Programm weiss, wenn man vom POPTASTIC-Schlüssel an einen POPTASITC-Schlüssel mailt, dann ist dieses immer verschlüsselt und kann auch Chat sein. Und wenn man vom POPTASTIC-Schlüssel an eine @-Mail-Adresse mailt, dann ist die Nachricht unverschlüsselt. Dieses ist der einzige und seltene Fall, dass die Nachricht den Klienten unverschlüsselt verlässt, da hier nicht da Echo-Protokoll genutzt wird, sondern das reguläre E-Mail-Protokoll SMTP.
 
 Wenn der Kontakt jedoch auch GoldBug nutzt, können beide dauerhaft verschlüsselt mailen, wenn der POPTASTIC-Schlüssel im Tabulator "Freund-Hinzufügen" eingegeben wird.
 
@@ -1613,109 +1677,53 @@ E-Mail über POPTASTIC ist also einfaches dauerhaftes verschlüsseltes e-mailen,
 
 ### 10.3 Einrichtung von POPTASTIC
 
+Eine detaillierte Beschreibung der Einrichtungsoptionen des E-Mail-Servers findet sich weiter oben im Abschnitt zu POP3 und IMAP (vgl. auch Abbildung). 
 
 Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP
 
 ![Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP ](/images/poptasticsettings.png)
 
 
-Eine detaillierte Beschreibung der Einrichtungsoptionen des E-Mail-Servers findest Du weiter oben im Abschnitt zu POP3 und IMAP (vgl. Abbildung). 
-
 ''Hinweis:'' In Gmail sollte man ggf. im Web die Option setzen, dass abgerufene POP3-Nachrichten aus der INBOX gelöscht werden. Um verbinden zu können, empfiehlt es sich auch, die Sicherheitseinstellung in Gmail so zu definieren, dass mit allen lokalen E-Mail-Klienten zu Gmail verbunden werden kann (Funktion: GMail unbekannte Klienten zulassen):
 
 - Settings / Forward and POP & IMAP / POP Download: Enable POP for all Mail
-- Settings / Accounts & Import / Change Account Settings: Other Settings / [New window] / Security / Access for less secure/unkown Apps: Enabled.
+- Settings / Accounts & Import / Change Account Settings: Other Settings / [New window] / Security / Access for less secure/unknown Apps: Enabled.
  
-Es empfiehlt sich, für einen ersten Test und die weitere Nutzung ggf. einen Extra-E-Mail Account einzurichten. Bitte beachte, dass neue E-Mail-Accounts z.B. bei Gmail ggf. für die ersten 30 Tage limitiert sind für die Aussendung von E-Mails (z.B. bei Gmail für 500 Chat-Messages oder E-Mails pro Tag). Das sollte für eine Test oder normalen Bedarf erstmal ausreichen.
+Es empfiehlt sich, für einen ersten Test und die weitere Nutzung ggf. einen Extra-E-Mail Account einzurichten. Es ist ggf. zu beachten, dass neue E-Mail-Accounts z.B. bei Gmail ggf. für die ersten 30 Tage limitiert sind für die Aussendung von E-Mails (z.B. bei Gmail für 500 Chat-Messages oder E-Mails pro Tag). Das sollte für einen Test oder normalen Bedarf ggf. erst Mal ausreichen. Andernfalls kann man ja auch mit GoldBug seinen eigenen E-Mail-Server einrichten und ist auf die @-Mailkonten der großen Anbieter nicht mehr angewiesen, wenn es sich um kleine interne Nutzerkreise handelt, die das hier vorgestellte Echo-Mail intern mit eigenem Server nutzen.
 
 ### 10.4 Weiterentwicklung von POPTASTIC
 
+Diese Idee der Architektur ist vom Entwicklerteam von GoldBug entwickelt, veröffentlich und in der Studie Big 7 von den Auditoren des Programmes beschrieben worden. 
+
+Sodann ist diese Idee von der mobilen Applikation Delta-Chat übernommen worden, wenn auch dort die Verschlüsselung über PGP und ausschließlich über IMAP-Server läuft. Die ursprünglichen Commits und Veröffentlichungsdaten zeigen den historischen Ursprung, zu dem es Referenzen und Credits herzustellen gilt, um nicht die Nähe einer Bedeutung der Plagiarisierung der Architektur dieser verschlüsselten Kommunikation zu suchen. Ein Fork und eine Weiterentwicklung der POPTASTIC Idee, die zu begrüßen ist in einem mobilen Chat-Klienten mit ansprechender Benutzeroberfläche.
 
 
 
 ## 11 FileSharing: mit StarBeam
 
-Wie in jedem Messenger kann auch in GoldBug Filesharing zwischen mehrerer Personen oder ein File-Transfer zwischen zwei definierten Freunden vertraulich und sicher verschlüsselt umgesetzt werden. Dieses geschieht im Tabulator "StarBeam". Der Begriff StarBeam (SB) impliziert, dass Filesharing so einfach sei sollte, wie sich das Licht der Sterne durch die Galaxien projeziert oder "beamed".
+Wie in jedem Messenger kann auch in GoldBug FileSharing zwischen mehreren Personen oder ein File-Transfer zwischen zwei definierten Freunden vertraulich und sicher verschlüsselt umgesetzt werden. Dieses geschieht im Tabulator "StarBeam". Der Begriff StarBeam (SB) impliziert, dass FileSharing so einfach sei sollte, wie sich das Licht der Sterne durch die Galaxien projeziert oder "beamed".
 
-Während althergebrachte File-Sharing Programme wie [EMule]() oder 
-[BitTorrent]() zunächst auf spezifische Links wie den ed2k-Link oder den Torrent-Link gesetzt haben, hat sich inzwischen für Datei-Übertragungen sowohl bei Torrents, also auch bei fast allen fortschrittlicheren [Gnutella]()-Klienten sowie auch für das Edonkey-Netzwerk im 
-[Shareaza]()-Klienten die Verlinkung von Dateien über den [Magnet-URI-Standard]() etabliert.
+Während althergebrachte File-Sharing Programme wie [EMule]( https://en.wikipedia.org/wiki/EMule) oder [BitTorrent]( https://en.wikipedia.org/wiki/BitTorrent) zunächst auf spezifische Links wie den ed2k-Link oder den Torrent-Link gesetzt haben, hat sich inzwischen für Datei-Übertragungen sowohl bei Torrents, also auch bei fast allen fortschrittlicheren [Gnutella]( https://en.wikipedia.org/wiki/Gnutella)-Klienten sowie auch für das Edonkey-Netzwerk im [Shareaza]( https://en.wikipedia.org/wiki/Shareaza)-Klienten die Verlinkung von Dateien über den [Magnet-URI-Standard]( https://en.wikipedia.org/wiki/Magnet_URI_scheme) etabliert.
 
-Die zu GoldBug gehörige Architektur hat diesen Magnet-URI-Standard weiterentwickelt und um kryptographische Werte ergänzt.
- 
-Wenn Du nun eine Datei über GoldBug von anderen herunterladen willst, musst Du also einen Magnet-URI-Link in das Programm einkopieren. Und entsprechend: Wenn Du einen Upload einer Datei vorbereiten willst, ist ein Magnet-URI für diese Datei zu erstellen.
+Die zu GoldBug und dem Spot-On-Kernel gehörige Elaboration hat die Architektur dieses Magnet-URI-Standards weiterentwickelt und um kryptographische Werte ergänzt.
 
-Dieser Prozess ist als einfach als möglich gehalten: Wenn Du mit einem Freund in einem Pop-Up-Chat-Fenster chattest (vgl. Abbildung 23), ist dort ein Knopf "Share StarBeam". Klicke diesen einfach, wähle die zu sendende Datei aus und schon wird sie sicher verschlüsselt über das Echo-System an Deinen Freund übertragen.
+Wenn der Nutzer nun eine Datei über GoldBug von anderen herunterladen will, muss er also einen Magnet-URI-Link in das Programm einkopieren. Und entsprechend: Wenn der Nutzer einen Upload einer Datei vorbereiten will, ist ein Magnet-URI für diese Datei zu erstellen.
+
+Dieser Prozess ist als einfach als möglich gehalten: Wenn der Nutzer mit einem Freund in einem Pop-Up-Chat-Fenster chattet (vgl. Abbildung oben), ist dort ein Knopf "Share StarBeam". Der Nutzer kann diesen einfach klicken, sodann die zu sendende Datei auswählen und schon wird sie sicher verschlüsselt über die Echo-Verbindung an den Freund übertragen.
 
 
-Abbildung: GoldBug Messenger Chat Pop-Up Window mit File-Transfer]] 
+Abbildung: GoldBug Messenger Chat Pop-Up Window mit File-Transfer 
+
+![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
 
 
-So kannst Du ein ZIP mit Urlaubsbildern einach un sicher zu Familienmitgliedern über den Chat oder das StarBeam-Tab übertragen.
+So kann der Nutzer ein ZIP mit Urlaubsbildern einfach und sicher zu Familienmitgliedern über den Chat oder das StarBeam-Tab übertragen.
 
-Um einer ganzen Gruppe eine Datei zukommen zu lassen, kannst Du Deinen Magneten auch im Gruppenchat posten. Dieser wird dann automatisiert automatisch Deinen Downloads hinzugefügt (vgl. Check-Box im Menü Optionen: Buzz-Chat: akzeptiere geteilte Magneten).
-Aufgrund des Echo-Protokolls werden die Einzelpakete auch "geswarmed", d.h. die verschlüsselten Packete, die bei Dir vorbeikommen, kommen auch bei Deinen Freunden und Nachbarn vorbei.
+Um einer ganzen Gruppe eine Datei zukommen zu lassen, kann der Nutzer seinen Magneten auch im Gruppenchat posten. Dieser wird dann automatisch den Downloads hinzugefügt (vgl. Check-Box im Menü Optionen: Buzz/e*IRC-Chat: akzeptiere geteilte Magneten).
+
+Aufgrund des Echo-Protokolls werden die Einzelpakete auch "geswarmed", d.h. die verschlüsselten Pakete, die bei dem Nutzer vorbeikommen, kommen auch bei seinen Freunden und Nachbarn vorbei.
 
 Der Tabulator “StarBeam” für das File Sharing besteht aus drei Sub-Tabulatoren: einen für das Hochladen, einen für das Herunterladen und einen für das Erstellen oder Hinzufügen von SB-Magneten.
-
-### 11.1 StarBeam-Magneten mit Verschlüsselungswerten ==
- 
-Ein Magnet-URI ist ein Standard, der aus vielen File-Sharing Programmen bekannt ist (vielfach im Gnutella Netzwerk) und ebenso eDonkey/Emule ed2k-Links oder auch Torrent-Links entspricht.
- 
-Die Weiterentwicklung des Magnet-URI Standards durch die dem GoldBug Messenger zugrunde liegende Spot-On Bibliothek liegt in der Ausgestaltung des Magnet-URI mit Verschlüsselungswerten.
-Magneten werden also genutzt, um ein Bündel an kryptologischen Informationen zu erstellen oder zusammen zu halten.
-
-Zwischen den Knotenpunkten im Echo-Netzwerk wird somit eine Ende-zu-Ende verschlüsselter Kanal geschaffen, durch den eine Datei dann gesendet werden kann. Es kann aber auch jede andere Datei gesandt werden. Der Magnet ist somit keiner bestimmten Datei zugeordnet.  Der SB-Magnet ist wie ein Channel zu versehen, durch die eine Instanz laufend und Dauerhaft Dateien senden kann - oder aber es wird ein One-Time-Magnet erstellt, der nach der einmaligen Nutzung gleich wieder gelöscht wird.
- 
-Durch diesen Dual-Use-Effekt kann ein Magnet nicht einer einzelnen Datei oder einer bestimmten IP-Adresse zugeordnet werden. Auch ein Dateiname taucht in dem SB-Magneten nicht auf (- wie es selbst bei den - gegenüber Gnutella, Emule und Torrent-Links - fortschrittlicheren Verlinkungen beispielsweise von [OFFSystem]() oder [RetroShare]() noch der Fall ist).
-Somit wird deutlich, dass in StarBeam keine bestimmte Datei getauscht wird, sondern es werden grundsätzlich nur verschlüsselte Kanäle getauscht. Sozusagen ein „Wurmloch“, um bei dem Begriff der „Stars“ zu bleiben. Und dieser Kanal wird durch einen Magnet-URI-Link definiert.
- 
-Während hingegen zahlreiche Meinungen das Verlinken von Gnutella, Edonkey und Torrent-Links kritisch sehen, besteht bei einer Kollektion aus Verschlüsselungswerten sodann keine Veranlassung dazu, diese Werte zu hinterfragen. Deine Homepage bzw. unabhängige Portale finden mit StarBeam ein fortschrittliches Konzept vor.
-Neben den konzeptionellen Entscheidungen der Auswahl eines Link-Standards geht es bei dem Nutzungsaspekt jedoch auch um die Sicherheit des Dateitransfers zwischen zwei privaten Nutzern.
- 
-Für den Ablauf der privaten Datei-Übertragung von Freund zu Freund einige weitere Hinweise:
-
-'''Option: Datei vor dem Dateiversand verschlüsseln?'''
- 
-Bevor Du eine Datei versendest, kannst Du überlegen, ob Du sie einfach per E-Mail an ein E-Mail innerhalb von GoldBug anhängst. Dieses ist die Variante der Wahl, wenn die Datei kleiner als 10 MB ist.
-Größeren Dateien sollten ausschließlich über die StarBeam-Funktion übertragen werden.
-
-Vor einem Versand kannst Du auch überlegen, die Datei auf der Festplatte zu verschlüsseln. Dazu hält der GoldBug Messenger im Hauptmenü unter Werkzeuge/Tools das Werkzeug für die Dateiverschlüsselung bereit (vergleiche Abschnitt unten). Mit einer doppelten Passphrase wird die Datei darin verschlüsselt.
-Dieses Werkzeug des GoldBug-File-Encryptors kann man natürlich auch nutzen, wenn man eine Datei irgendwo in einen Online-Hoster der Cloud hochladen will. Da diese jedoch die Dateien ggf. kontrollieren und verschlüsselte Dateien mit einem Fragezeichen versehen werden, obwohl es ein Ausrufezeichen sein sollte, macht es Sinn, die verschlüsselte Datei gleich von Punkt zu Punkt, von Freund zu Freund über GoldBug zu transferieren und keinen Zwischenspeicher als Host zu nutzen.
- 
-Manche packen die Dateien auch in ein Zip und verschlüsseln dieses vor dem Versand oder Upload. Die Zip-Verschlüsselung ist jedoch sehr leicht zu knacken mit 96 Bits, insofern sollte man also einen Schlüssel nutzen wie er heute für RSA mit mindestens 2048 Bits, besser 3072 Bits (wie für GoldBug als Standard definiert) empfohlen wird.
- 
-Egal wie Du Deine Datei nun auch vorbereitest - so wie sie ist: als plain-Binärdatei, oder verschlüsselt mit dem GoldBug-Tool über StarBeam oder als Datei, die mit einem Nova-Passwort (s.u.) geschützt ist - wird sie ja wiederum mit dem Echo-Protokoll mehrfach verschlüsselt.
- 
-Genau wie man beim E-Mail ein zusätzliches Passwort auf ein E-Mail setzen kann („GoldBug“ bei der E-Mail-Funktion genannt, siehe oben) kann man auch auf die Datei – genauer auf den verwendeten Magnet-URI zum Dateitransfer ein weiteres Passwort setzen. Dieses wird „Nova“ genannt. Selbst wenn der Dateitransfer erfolgreich geglückt ist oder auch ein dritter Unbekannter die bisherige Vielfach-Verschlüsselung kacken könnte (was nicht anzunehmen ist), wird mit dem Nova-Passwort eine Ende-zu-Ende Verschlüsselung eingeführt, die so lange sicher ist, wie das gemeinsame Passwort ausschließlich bei beiden Partner unter Verschluss ist.
-Denn, wenn die Übermittlung des SB-Magneten abgehört werden sollte – Du musst den Magneten ja irgendwie online an Deinen Freund übertragen – dann kann jeder, der den Magneten kennt, auch die Datei ebenso empfangen. Daher macht es Sinn, die Datei mit einem Nova zu schützen – ein Passwort, das beide Freunde ggf. mündlich, in der Vergangenheit oder über einen zweiten Kanal getauscht haben.
-Das Nova baut auch auf dem Ende-zu-Ende Verschlüsselungsstandard AES auf (wenn Du Dir nicht ein eigene Passphrase ausdenkst). Und: Es muss - bevor - der Dateitransfer beginnt, in dem Node des Empfängers hinterlegt worden sein!
-
-
-Abbildung: Magnet and Novas for StarBeam File Sharing
-
-
-
-Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks
-
-![Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks](/images/starbeam-analyzer.png)	
-
-
-
-Abbildung: Starbeam-Dateitransfer - Eingehende Dateien
-
-![Abbildung: Starbeam-Dateitransfer - Eingehende Dateien](/images/starbeam_incomming.png)	
-
-
-Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer
-
-![Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer](/images/starbeam_magnet_links.png)	
-
-
-Abbildung: Starbeam-Dateitransfer: Upload von Dateien
-
-![Abbildung: Starbeam-Dateitransfer: Upload von Dateien](/images/starbeam_uploads.png)
-
 
 
 Abbildung: Starbeam 
@@ -1724,253 +1732,362 @@ Abbildung: Starbeam
 
 
 
-
-
-Um eine Datei zu senden, muss ein verschlüsselter Kanal erstellt werden. Dieses funktioniert wieder mit der Erstellung eines Magneten (am Ende gekennzeichnet durch URN=SB-StarBeam).
+### 11.1 StarBeam-Magneten erstellen mit Verschlüsselungswerten 
  
-Sodann wird Datei-Packet für Datei-Packet über diesen Kanal verschlüsselt übertragen mittels des HTTPS-Protokolls (das auf [TCP]()-, [UDP]()- und auch [SCTP]()-Verbindungen aufsetzen kann). Es ist daher eine interessante Fragestellung, ob ein Transfer einer großen, verschlüsselten Datei mittels StarBeam über das SCTP, TCP oder UDP Protokoll ceteris paribus fehlerfrei und am schnellsten übertragen wird.
+Ein Magnet-URI ist ein Standard, der aus vielen File-Sharing Programmen bekannt ist (vielfach im Gnutella Netzwerk) und ebenso eDonkey/Emule ed2k-Links oder auch Torrent-Links entspricht.
  
-'''Nutzung eines One-Time-Magnten'''
- 
-Idealerweise hast Du für jede Datei einen eigenen Magnet-URI. Das wäre sodann ein One-Time-Magnet (OTM), ein Magnet, der nur einmal genutzt wird für eine Datei. (OTM entspricht also dem Gedanken eines OTP - einem [One-Time-Pad](): eine Zeichenfolge, die nur einmalig genutzt wird. OTP wird oftmals in kryptologischen Prozessen als entscheidend angesehen, um Sicherheit herzustellen).
- 
-Du kannst einen Magneten auch dauerhaft nutzen, dann ist das wie ein abonnierter Video-Kanal, in dem z.B. jeden Montag eine Datei versandt wird.
- 
-Das eröffnet z.B. auch Torrent-Portalen ganz neue Möglichkeiten: es muss gar kein Web-Portal mehr existieren, in dem tausende an Links verlinkt sind! Das Portal selbst braucht nur einen einzigen Magneten im dezentralen Echo-Protokoll, um sodann konsekutiv, nach und nach, eine Datei nach der anderen durch das Wurmloch zu senden. 
-  
-Alsbald Du eine Datei über den Magneten transferiert hast, kannst Du den Magnet-URI also löschen oder beibehalten. Erstellst Du den Magneten als OTM und aktivierst die Check-Box für OTM, dann löscht er sich nach Dateitransfer von selbst. Das ist dann vergleichbar wie im Film Mission Impossible oder Apps für Bilder, wo sich Nachrichten und Bilder nach Ansicht selbst zerstören - der Magnet ist sozusagen ein StarBeam-[Wurmloch](), dass sich nach einmaliger Nutzung wieder schließt.
+Die Weiterentwicklung des Magnet-URI Standards durch die dem GoldBug Messenger zugrunde liegende Spot-On Bibliothek liegt in der Ausgestaltung des Magnet-URI mit Verschlüsselungswerten.
+Magneten werden also genutzt, um ein Bündel an kryptologischen Informationen zu erstellen oder zusammen zu halten.
 
-'''Übersicht der Magnet-URI-Standards für kryptographische Werte'''
-
-{| class="wikitable"
-|-
-! Kürzel !! Beispiel !! Bezeichnung
-|-
-| rn || &rn=Spot-On_Developer_Channel_Key || Raumname
-|-
-| xf || &xf=10000  || Exact Frequency
-|-
-| xs || &xs=Spot-On_Developer_Channel_Salt || Exact Salt
-|-
-| ct || &ct=aes256 || Cipher Type
-|-
-| hk || &hk=Spot-On_Developer_Channel_Hash_Key || Hash Key
-|-
-| ht || &ht=sha512 || Hash Type
-|-
-| xt=urn:buzz|| &xt=urn:buzz || Magnet zum IRC Chat
-|-
-| xt=urn:starbeam || &xt=urn:starbeam || Magnet zum Dateiversand
-|-
-| xt=urn:institution || &xt=urn:institution || Magnet zum E-Mail-Postfach
-|}
+Zwischen den Knotenpunkten im Echo-Netzwerk wird somit ein Ende-zu-Ende verschlüsselter Kanal geschaffen, durch den eine Datei dann gesendet werden kann. Es kann aber auch jede andere Datei gesandt werden. Der Magnet ist somit keiner bestimmten Datei zugeordnet. Der SB-Magnet ist wie ein Channel zu verstehen, durch die eine Instanz laufend und dauerhaft Dateien senden kann - oder aber es wird ein One-Time-Magnet erstellt, der nach der einmaligen Nutzung gleich wieder gelöscht wird.
+ 
+Durch diesen Dual-Use-Effekt kann ein Magnet nicht einer einzelnen Datei oder einer bestimmten IP-Adresse zugeordnet werden. Auch ein Dateiname taucht in dem SB-Magneten nicht auf (- wie es selbst bei den - gegenüber Gnutella, Emule und Torrent-Links - fortschrittlicheren Verlinkungen beispielsweise von [OFFSystem](https://en.wikipedia.org/wiki/OFFSystem) oder [RetroShare]( https://en.wikipedia.org/wiki/RetroShare) noch der Fall ist).
+Somit wird deutlich, dass in StarBeam keine bestimmte Datei getauscht wird, sondern es werden grundsätzlich nur verschlüsselte Kanäle getauscht. Sozusagen ein „Wurmloch“, um bei dem Begriff der „Stars“ zu bleiben. Und dieser Kanal wird eben durch einen Magnet-URI-Link uns seine kryptologischen Werte definiert.
+ 
+Während hingegen zahlreiche Meinungen das Verlinken von Gnutella, Edonkey und Torrent-Links kritisch sehen, besteht bei einer Kollektion aus Verschlüsselungswerten sodann keine Veranlassung dazu, diese Werte zu hinterfragen. Eine Homepage bzw. unabhängige Portale finden mit StarBeam und den Magnet-URIs ein fortschrittliches Konzept vor.
+Neben den konzeptionellen Entscheidungen der Auswahl eines Link-Standards geht es bei dem Nutzungsaspekt jedoch auch um die Sicherheit des Dateitransfers zwischen zwei privaten Nutzern.
 
 
-Der Magnet-URI-Standard wurde damit weiterentwickelt in ein Format, um Verschlüsselungswerte ähnlich einem Blatt mit Blutwerten weiter geben zu können. Ein Magnet-URI, der in GoldBug, respektive für den Spot-On Entwickler Gruppen-Chat-Kanal genutzt wird, sieht z.B.  wie in diesem Format aus:
+Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer
+
+![Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer](/images/starbeam_magnet_links.png)	
+
+
+Zusammenfassend: Um eine Datei zu senden, muss also ein verschlüsselter Kanal erstellt werden. Dieses funktioniert mit der Erstellung eines Magneten - am Ende gekennzeichnet durch URN=SB-StarBeam.
+
+Sodann wird die Datei Packet für Packet über diesen Kanal verschlüsselt übertragen mittels des HTTPS-Protokolls (das auf [TCP]()-, [UDP]()- und auch [SCTP]()-Verbindungen aufsetzen kann). Es ist daher eine interessante Fragestellung für einen Praxistest, ob ein Transfer einer großen, verschlüsselten Datei mittels StarBeam über das Echo-Protokoll basierend auf SCTP, TCP oder UDP Verbindungen ceteris paribus fehlerfreier und am schnellsten übertragen wird?
+
+
+Für den Ablauf der privaten Datei-Übertragung von Freund zu Freund einige weitere Hinweise:
+
+#### 11.1.1 '''Option „Nova“: Datei vor dem Dateiversand verschlüsseln?'''
+ 
+Bevor der Nutzer eine Datei versendet, kann er überlegen, ob er sie einfach per E-Mail an ein E-Mail innerhalb von GoldBug anhängt. Dieses ist die Variante der Wahl, wenn die Datei kleiner als 10 MB ist.
+Größeren Dateien sollten ausschließlich über die StarBeam-Funktion oder im Chat-Fenster an einen Freund übertragen werden.
+
+Vor einem Versand kann der Nutzer auch überlegen, die Datei auf der Festplatte zu verschlüsseln. Dazu hält der GoldBug Messenger im Hauptmenü unter Werkzeuge/Tools ein Werkzeug für die Dateiverschlüsselung bereit (vergleiche Abschnitt unten: GoldBug-File-Encryptor). Mit einer doppelten Passphrase wird die Datei darin verschlüsselt.
+
+Dieses Werkzeug des GoldBug-File-Encryptors kann man natürlich auch nutzen, wenn man eine Datei irgendwo in einen Online-Hoster der Cloud hochladen will oder sie über einen anderen Weg, einen anderen Messenger oder E-Mail übertragen möchte.
+
+Da diese Online-Hoster wie Dropbox jedoch die Dateien ggf. kontrollieren und verschlüsselte Dateien mit einem Fragezeichen versehen werden, obwohl es ein Ausrufezeichen sein sollte, macht es Sinn, die verschlüsselte Datei gleich von Punkt zu Punkt, von Freund zu Freund über GoldBug zu transferieren und keinen externen bzw. fremden Zwischenspeicher als Host zu nutzen.
+
+Manche packen die Dateien auch in ein Zip und verschlüsseln dieses vor dem Versand oder Upload. Die Zip-Verschlüsselung ist jedoch sehr leicht zu knacken mit 96 Bits, insofern sollte man also einen Schlüssel nutzen wie er heute für RSA mit mindestens 2048 Bits, besser 3072 Bits (wie für GoldBug als Standard definiert) für RSA empfohlen wird. Oder man nutzt gleich den noch sicheren Algorithmus McEliece anstelle von RSA.
+ 
+Egal wie der Nutzer seine Datei nun auch vorbereitet - so wie sie ist: (1) als plain-Binärdatei, oder (2) verschlüsselt mit dem GoldBug-Tool über StarBeam oder (3) als Datei, die mit einem zusätzlichen Nova-Passwort (s.u.) im Star-Beam-Prozess geschützt ist - wird sie ja wiederum mit dem Echo-Protokoll mehrfach verschlüsselt übertragen. Ein Optimum an Verschlüsselung und Optionsvielfalt das zahlreiche Wünsche abdeckt.
+
+Genau wie man beim E-Mail ein zusätzliches Passwort auf ein E-Mail setzen kann („GoldBug“ bei der E-Mail-Funktion genannt, siehe oben) kann man auch auf die Datei – genauer auf den verwendeten Magnet-URI zum Dateitransfer ein weiteres Passwort setzen. Dieses wird „Nova“ genannt. 
+
+Selbst wenn der Dateitransfer erfolgreich geglückt ist oder auch ein dritter Unbekannter die bisherige Vielfach-Verschlüsselung kacken könnte (was erst mal nicht anzunehmen ist), wird mit dem Nova-Passwort eine Ende-zu-Ende Verschlüsselung eingeführt, die so lange sicher ist, wie das gemeinsame Passwort ausschließlich bei beiden Partnern unter Verschluss ist.
+
+Denn, wenn die Übermittlung des SB-Magneten abgehört werden sollte – der Nutzer muss den Magneten ja irgendwie online an seinen Freund übertragen – dann kann jeder, der den Magneten kennt, auch die Datei ebenso empfangen. Daher macht es Sinn, die Datei mit einem „Nova“ zu schützen – ein Passwort, das beide Freunde ggf. mündlich, in der Vergangenheit oder über einen zweiten Kanal getauscht haben.
+
+Das Nova baut auch auf dem Ende-zu-Ende Verschlüsselungsstandard AES auf (wenn der Nutzer sich nicht eine eigene Passphrase ausdenkt). 
+
+Wie genannt, die Möglichkeit, eigene Ende-zu-Ende verschlüsselnde Passworte selbst zu erstellen und selbst manuell einzugeben – in der Fachwelt „Customer Supplied Encryption Keys“ (#CEKS) genannt – wird bislang nur von sehr wenigen Applikationen wie GoldBug Messenger oder Smoke Chat umgesetzt.
+
+Und: Das Nova muss - bevor - der Dateitransfer beginnt, in dem Node des Empfängers hinterlegt worden sein!
+
+
+
+#### 11.1.2 Nutzung eines One-Time-Magneten
+ 
+Idealerweise hat der Nutzer für jede Datei einen eigenen Magnet-URI. Das wäre sodann ein One-Time-Magnet (OTM), ein Magnet, der nur einmal genutzt wird für eine Datei. (OTM entspricht also dem Gedanken eines OTP - einem [One-Time-Pad](https://en.wikipedia.org/wiki/One-time_pad): eine Zeichenfolge, die nur einmalig genutzt wird. OTP wird oftmals in kryptologischen Prozessen als entscheidend angesehen, um Sicherheit herzustellen).
+ 
+Der Nutzer kann einen Magneten auch dauerhaft nutzen, dann ist das wie ein abonnierter Video-Kanal, in dem z.B. jeden Montag eine Datei versandt wird.
+
+Das eröffnet z.B. auch Torrent-Portalen ganz neue Möglichkeiten: es muss gar kein Web-Portal mehr existieren, in dem tausende an Links verlinkt sind! Das Portal selbst braucht nur einen einzigen Magneten im dezentralen Echo-Protokoll, um sodann konsekutiv, nach und nach, eine Datei nach der anderen durch das [Wurmloch](https://de.wikipedia.org/wiki/Wurmloch) zu senden.
+
+Alsbald der Nutzer eine Datei über den Magneten transferiert hat, kann der Nutzer den Magnet-URI also löschen oder beibehalten. Erstellt der Nutzer den Magneten als OTM und aktiviert die Check-Box für OTM, dann löscht er sich nach Dateitransfer von selbst. Das ist dann vergleichbar wie im Film Mission Impossible oder Apps für Bilder, wo sich Nachrichten und Bilder nach Ansicht selbst zerstören - der Magnet ist sozusagen ein StarBeam-Wurmloch, dass sich nach einmaliger Nutzung wieder schließt.
+
+
+#### 11.1.3 Übersicht der Magnet-URI-Standards für kryptographische Werte
+
+
+| Kürzel  | Beispiel  | Bezeichnung  |
+|---|---|---|
+| Kürzel  | Beispiel  | Bezeichnung  |
+| rn  | &rn=Spot-On_Developer_Channel_Key  | Raumname  |
+| xf  | &xf=10000  | Exact Frequency  |
+| xs  | &xs=Spot-On_Developer_Channel_Salt  | Exact Salt  |
+| ct  | &ct=aes256  | Cipher Type  |
+| hk  | &hk=Spot-On_Developer_Channel_Hash_Key  | Hash Key  |
+| ht  | &ht=sha512  | Hash Type  |
+| xt=urn:buzz  | &xt=urn:buzz  | Magnet zum IRC Chat  |
+| xt=urn:starbeam  | &xt=urn:starbeam  | Magnet zum Dateiversand  |
+| xt=urn:institution | &xt=urn:institution | Magnet zum E-Mail-Postfach |
+
+
+
+Ein Magnet-URI, der in GoldBug, respektive für den Spot-On Entwickler Gruppen-Chat-Kanal genutzt wird, sieht z.B. wie in diesem Format aus:
 
  magnet:?rn=Spot-On_Developer_Channel_Key&xf=10000&xs=Spot-On_Developer_Channel_Salt&ct=aes256&hk=Spot-On_Developer_Channel_Hash_Key&ht=sha512&xt=urn:buzz
 
 Dieser Standard wird genutzt, um symmetrische Schlüssel zu tauschen für Gruppenchat oder E-Mail-Institutionen oder auch Dateiübertragungen mit StarBeam.
 
-'''Rewind Funktion''' 
+Der Magnet-URI-Standard wurde damit weiterentwickelt in ein Format, um Verschlüsselungswerte ähnlich einem Blatt mit Blutwerten weiter geben zu können. 
 
-Wenn ein Empfänger ein Datei-Packet, ein Chunk oder Link, empfangen hat, ist er in der Lage, dieses nochmal hochzuladen – auch in andere Magnet-URI-Kanäle – oder es nochmals in den gleichen Kanal zu geben. Dieses ist ähnlich einer Rewind-Funktion: Die Datei wird einfach nochmal wie auf einem Kassetten-Recorder oder MP3-Spieler über das Echo–Netzwerk erneut abgespielt. Die Datei kann auch viele Stunden oder Tage später nochmals versandt werden. Jeder, der eine Kopie über den Magnet-URI-Kanal erhalten hat, wird zu einem Satelliten, und kann die Daten erneut in ein Wurmloch oder besser: über einen StarBeam-Magneten wieder einspielen.
- 
-'''Vergleich mit Turtle-Hopping'''
+Verschlüsslungen mit sehr individuellen DNA-Werte geben größtmögliche Sicherheit.
 
-Die Übertragung einer Datei in der StarBeam-Funktion über das Echo-Protokoll ist effektiver, als sie über ein Protokoll ähnlich dem „[Turtle Hopping]()
-“ (derzeit nur im Programm RetroShare implementiert) laufen zu lassen, da hier je nach Ausgestaltung des Echo-Netzwerkes (Volles Echo, halbes Echo, Adaptives Echo) und der grundsätzlichen Verschlüsselung Knotenpunkte mit nur geringer Bandbreite nicht als Flaschenhals wirken müssen, sondern über weitere Echo-Wege die gewünschten Download-Geschwindigkeit optimieren.
 
-Das Echo-Protokoll erstellt den Fluss im Netzwerk der Knotenpunkte automatisch (einfach indem jeder Knotenpunkt zu jedem verbundenen Knotenpunkt Datei-Pakete verschlüsselt senden kann) und wählt daher auch den schnellsten Weg aller möglichen Graphen zu Deinem Knotenpunkt.
+#### 11.1.4 '''Rewind Funktion''' 
+
+Wenn ein Empfänger ein Datei-Packet, ein Chunk (oder im Spot-On-Kernel auch „Link“ genannt), empfangen hat, ist er in der Lage, dieses nochmal hochzuladen – auch in andere Magnet-URI-Kanäle – oder es nochmals in den gleichen Kanal zu geben. Dieses ist ähnlich einer Rewind-Funktion: Die Datei wird einfach nochmal wie auf einem Kassetten-Recorder oder MP3-Spieler über das Echo–Netzwerk erneut abgespielt. Die Datei kann auch viele Stunden oder Tage später nochmals versandt werden. Jeder, der eine Kopie über den Magnet-URI-Kanal erhalten hat, wird zu einem Satelliten, und kann die Daten erneut in den definierten Kanal oder besser: über den oder einen StarBeam-Magneten wieder einspielen.
+
+
+#### 11.1.5 '''Vergleich mit Turtle-Hopping'''
+
+Beim Turtle Hopping werden die Datei-Pakete von Freund zu Freund weitergeben, bis sie ein definiertes Ziel erreichen. Es ist eine Wandlung eines Peer-to-Peer(P2P)-Netzwerkes in ein Friend-to-Friend(F2F)-Netzwerk.
+Es hat jedoch den Nachteil, dass Freunde mit nur geringer Upload-Geschwindigkeit zum nächsten Freund in der Kette ein Nadelöhr bilden und den Transport verlangsamen: 
 
 Das Turtle-Hopping Protokoll ist erstens nur mit Knotenpunkten verbunden, die sich als Freunde definiert haben und in dieser Verkettung von Freunden kann ein Freund dabei sein, der nur eine geringe Bandbreite umsetzt. Dieser wirkt dann als Flaschenhals und Sender und Empfänger der Datei müssen zwingend durch diesen Flaschenhals.
-Beim Datei-Versand über das Echo-Protokoll können in den Zwischenstationen auch andere Knotenpunkte wie Peers oder Wege über andere Graphenoptionen einbezogen werden, so dass das Datenpaket nicht zwingend an dem Flaschenhals vorbei muss, wenn irgendwo ein schnellerer Weg besteht.
 
-### 11.2 SB-Upload: Eine Datei übertragen==
+Die Übertragung einer Datei in der StarBeam-Funktion über das Echo-Protokoll ist daher auch effektiver, als sie über ein Protokoll ähnlich dem „[Turtle Hopping](https://en.wikipedia.org/wiki/Turtle_F2F)“ (derzeit nur im Programm RetroShare implementiert) laufen zu lassen, da hier je nach Ausgestaltung des Echo-Netzwerkes (volles Echo, halbes Echo, Adaptives Echo) und der grundsätzlichen Verschlüsselung Knotenpunkte mit nur geringer Bandbreite nicht als Flaschenhals wirken müssen, sondern über weitere Echo-Wege die gewünschten Download-Geschwindigkeit optimieren.
+
+Beim Datei-Versand über das Echo-Protokoll können daher in den Zwischenstationen auch andere Knotenpunkte wie Peers oder Wege über andere Graphen-Optionen einbezogen werden, wenn irgendwo ein schnellerer Weg besteht:
+
+Das Echo-Protokoll erstellt den Fluss im Netzwerk der Knotenpunkte automatisch (einfach indem jeder Knotenpunkt zu jedem verbundenen Knotenpunkt Datei-Pakete verschlüsselt senden kann) und wählt daher auch den schnellsten Weg aller möglichen Graphen zu dem gewünschten Knotenpunkt.
+
+### 11.2 SB-Upload: Eine Datei übertragen
  
-Wie oben beschrieben ist der Versand einer Datei aus dem Chat-Fenster an einen einzelnen Freund sehr einfach: Mit dem Share-StarBeam-Knopf eine Datei wählen und schon wird sie an den Freund übertragen.
+Wie oben beschrieben ist der Versand einer Datei aus dem Chat-Fenster an einen einzelnen Freund sehr einfach: Mit dem Share-StarBeam-Knopf ist nur eine Datei wählen und schon wird sie an den Freund übertragen.
 
-Im folgenden schauen wir uns den Upload-Prozess mit seinen technischen Details nun auch im Sub-Tabulator "Uploads" des StarBeam-Tabulators an. 
+Im Folgenden schauen wir uns den Upload-Prozess mit seinen technischen Details nun auch im Sub-Tabulator "Uploads" des StarBeam-Tabulators an. 
+
+Abbildung: Starbeam-Dateitransfer: Upload von Dateien
+
+![Abbildung: Starbeam-Dateitransfer: Upload von Dateien](/images/starbeam_uploads.png)
 
 
-Abbildung: Eine Datei mit StarBeam übertragen Magnetandnova.png
 
 
-Wenn Du einen Magnet-URI definiert und generiert hast, erscheint er nicht nur im Sub-Tab für die Magneten, sondern auch in der Tabelle im Sub-Tab für den Upload/Seed.
+Wenn der Nutzer einen Magnet-URI definiert und generiert hat, erscheint er nicht nur im Sub-Tab für die Magneten, sondern auch in der Tabelle im Sub-Tab für den Upload/Seed.
 
 Auch von hier aus kann der Upload einer Datei gestartet werden. 
-Wähle dazu in diesem Sub-Tab für den Upload in der Check-Box einen SB-Magnet aus. Ebenso wähle die Datei.
+Dazu wählt der Nutzer in diesem Sub-Tab für den Upload in der Check-Box einen SB-Magnet aus. Ebenso wird die Datei ausgewählt.
 
 
 '''Optional: Ein Nova-Passwort für die zusätzliche Verschlüsselung der Datei:'''
+Schließlich kann sich der Nutzer noch entscheiden, ob er auf den Transfer ein zusätzliches Password – wie oben beschrieben „Nova“ genannt – setzen möchte. Die Datei kann der Freund also nur dann öffnen, wenn er das Nova-Passwort eingibt. Es ist eine zusätzliche symmetrische Verschlüsselung, um einen Datei-Transfer abzusichern. 
 
-Schließlich entscheide Dich noch, ob Du auf den Transfer ein zusätzliches Password – Nova genannt – setzen möchtest. 
-Was also GoldBug im E-Mail heisst, das Passwort, das die E-Mail verschlüsselt, heisst beim StarBeam-Upload Nova. Die Datei kann der Freund also nur dann öffnen, wenn er das Nova-Passwort eingibt. Es ist eine zusätzliche symmetrische Verschlüsselung, um einen Datei-Transfer abzusichern. So kann verhindert werden, dass der Freund den Magneten für die Datei anderen Freunden zur Verfügung stellt - er müsste auch das Nova weitergeben - bzw. das Öffnen der Datei zeitlich zu einem späteren Zeitpunkt ermöglicht wird, indem man am ersten Tag den Transfer über den Magneten organisiert aber erst am nächsten Tag das Nova-Passwort, das die Entschlüsselung der Datei ermöglicht, bekannt gibt. Zu einem Zeitpunkt also, wenn der Transfer der Datei längst abgeschlossen ist.
-Für einen ersten Transfer kann man diese differenzierten überlegungen der Setzung eines Nova.Passwortes auf eine Datei aber erst mal außer Acht auslassen.
- 
-Sodann drücke den Knopf „Transmit“/“Übertragen“.
 
-Technischer Hinweis: Da das Echo als HTTPS-Post oder HTTPS-Get übertragen wird, entspricht der Transfer dem einer Webseite. Die Chunk-Grösse (Pulse-Size) kann man so wie vor-definiert belassen, sie ist daher in der minimalen Ansicht ausgeblendet. Wenn die Pulse-Size größer gemacht wird, wird die zu übertragende Webseite sozusagen länger.
-  
-Schließlich kopiere den Magnet-URI aus und senden diesen Deinem Freund. Wenn er ihn einkopiert hat, kannst Du den Transfer mit der Deaktivierung der Pause-Funktion starten (Check-Box "Pause" in der Tabelle). Den Magnet-URI kann man über den Kontext-Menü-Knopf auskopieren.
+Sodann ist der Knopf „Transmit“/“Übertragen“ zu drücken.
+
+Technischer Hinweis: Da das Echo als HTTPS-Post oder HTTPS-Get übertragen wird, entspricht der Transfer dem einer Webseite. Die Chunk-Grösse (Pulse-Size) kann man so wie vor-definiert belassen, sie ist daher in der minimalen Ansicht der Benutzeroberfläche von GoldBug ausgeblendet. Wenn die Pulse-Size größer gemacht wird, wird die zu übertragende Webseite sozusagen länger.
+
+Schließlich kopiert der Nutzer den Magnet-URI aus und senden diesen seinem Freund. Den Magnet-URI kann man über den Kontext-Menü-Knopf auskopieren.
+
+Wenn der Freund den Magneten einkopiert hat, kann der Nutzer den Transfer mit der Deaktivierung der Pause-Funktion starten (Check-Box "Pause" in der Tabelle). 
+
+Sodann wird die Datei an den Freund übertragen.
 
 ### 11.3 StarBeam-Downloads
- 
-Um mit StarBeam eine Datei zu laden, benötigst Du den StarBeam-Magnet der Datei. 
-Diesen erhälst Du von einem Freund, der Dir eine Datei senden will. Grundsätzlich können die Magneten auch in Blogs und auf Webseiten verlinkt werden. 
 
-Kopiere sodann den Magnet-URI im dem Sub-Tab für die Magnet-URIs einfach ein.
-Zuvor solltest Du im Download-Sub-Tab noch die Check-Box „Receiving“ / „Empfang“ aktivieren.
+Um mit StarBeam eine Datei zu laden, benötigt der Nutzer den StarBeam-Magnet der Datei. 
+Diesen erhält der Nutzer von seinem Freund, der eine Datei senden will. Grundsätzlich können die Magneten auch in Blogs und auf Webseiten verlinkt werden.
 
-Teile Deinem Freund mit, dass Du den Magnet-URI eingefügt hast und dann kann er die Übertragung starten.
+Der Nutzer kopiert sodann den Magnet-URI in den Sub-Tab für die Magnet-URIs einfach ein.
+Zuvor sollte der Nutzer im Download-Sub-Tab noch die Check-Box „Receiving“ / „Empfang“ aktivieren. Diese ist per default vorab deaktiviert, damit keine ungewollten Dateien eingehen.
+
+Sodann teilt der Nutzer seinem Freund mit, dass er den Magnet-URI eingefügt hat und dann kann der Freund die Übertragung starten.
 Der Download startet, alsbald ein Sender über das Echo und durch den Crypto-Kanal des Magneten die Datei sendet.
 
 
-Abbildung 26: Download von Dateien im StarBeam-Tabulator für Dateitransfer
+Abbildung: StarBeam-Dateitransfer - Eingehende Dateien
 
-Mit den weiteren Einstellungen auf dieser Tabulator-Seite für den Upload kannst Du noch die Größe und den Pfad für den Download-Bereich definieren.
- 
-Die erfolgreich heruntergeladen Teile werden beim StarBeam "Mosaics" genannt . Ähnlich einem Puzzle werden die Mosaik-Teile zu einem vollen Mosaik zusammengesetzt.
+![Abbildung: Starbeam-Dateitransfer - Eingehende Dateien](/images/starbeam_incomming.png)	
 
-Die noch zu übertragenden Datei-Teile werden bei Star-Beam Links genannt (vgl. auch den Begriff von "Chunks" im alten Edonkey-Netzwerk oder den Begriff der "Blöcke" im Gnutella-Netzwerk, der durch die Verwendung des Tiger-Tree-Hashes geprägt wurde).
- 
+
+Mit den weiteren Einstellungen auf dieser Tabulator-Seite für den Upload kann der Nutzer noch die Größe und den Pfad für den Download-Bereich definieren.
+
+Die erfolgreich heruntergeladen Teile werden beim StarBeam "Mosaics" genannt und in dem gleichnamigen Unterpfad der Installation auf der Festplatte abgelegt. Ähnlich einem Puzzle werden die Mosaik-Teile zu einem vollen Mosaik zusammengesetzt.
+
+Die noch zu übertragenden Datei-Teile werden bei StarBeam „Links“ genannt (vgl. auch den Begriff von "Chunks" im alten EDonkey-Netzwerk oder den Begriff der "Blöcke" im Gnutella-Netzwerk, der durch die Verwendung des damals dort genutzten Tiger-Tree-Hashes geprägt wurde).
+
 
 ### 11.3.1 Werkzeug: Star-Beam Analyzer
 
-Sollte eine Datei mal nicht erfolgreich übertragen worden sein, kann dieses mit dem StarBeam-Analyser Werkzeug überprüft werden.
-Dieses stellt fest, ob alle Mosaik-Teile vorhanden sind oder ob noch zu übertragende Links fehlen.
+Sollte eine Datei mal nicht erfolgreich zu 100 Prozent übertragen worden sein, kann dieses mit dem StarBeam-Analyser Werkzeug überprüft werden.
+Dieses stellt fest, ob alle Mosaik-Teile vorhanden sind oder ob noch zu übertragende Links/Chunks/Blöcke bzw. Pakete fehlen.
 Wenn noch Links fehlen, erstellt der SB-Analyser einen Magnet-URI, den der Freund nochmals in seinen Upload-Tab eingeben kann. Dann werden nur die noch fehlenden Links bzw. Mosaike erneut gesandt.
- 
+
 Die Datei würde sich auch vervollständigen, wenn der Sender sie dreimal am Tag über das Echo mit der „Rewind“ (= „Erneut senden“)-Funktion sendet.
- 
-Beachte, dass ein Magnet ein Kanal ist, und vorhandene Dateien in Deinem Mosaik-Pfad sodann erneuert werden, wenn kein One-Time-Magnet genutzt wurde und sie nochmals im gleichen Kanal gesendet werden. Ein erneuter Versand der Datei durch den Uploader wird Deine erhaltene Datei somit wieder überschreiben, wenn Du in der Übertragungstabelle keine Lock-Option festlegst. Mit der Check-Box Lock wird die Datei, die Du erhalten hast, nicht gelöscht.
- 
+
+Es ist zu beachten, dass ein Magnet ein Kanal ist, und vorhandene Dateien in dem lokalen Mosaik-Pfad sodann erneuert werden, wenn kein One-Time-Magnet genutzt wurde und sie nochmals im gleichen Kanal gesendet werden. Ein erneuter Versand der Datei durch den Uploader wird die erhaltene Datei beim Nutzer somit wieder überschreiben, wenn dieser in der Übertragungstabelle keine Lock-Option fest gelegt hat. Mit der Check-Box „Lock“ wird die Datei, die der Nutzer erhalten hat, also nicht gelöscht.
+
+Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks
+
+![Abbildung: Dateitransfer mittels Starbeam: Analysewerkzeug für die Chunks](/images/starbeam-analyzer.png)	
+
+
 ### 11.3.2  Ausblick auf Crypto-Torrents
 
-Aufgrund der Verschlüsselung ist für niemanden einsehbar, welche Datei Du herunterlädst, da niemand weiß, ob Du das Paket erfolgreich entschlüsseln konntest und selbst wenn, ob Du Dir daraus die Datei erstellt und abgespeichert hast. Beim Upload gilt ähnliches. Der Upload ist nur von einer Nachbar-IP einsehbar. wenn dieser Nachbar den Magneten der Datei kennt. Es empfiehlt sich in diesem Fall, wenn man öffentliche Starbeam-Magneten laden möchte, nur zu Nachbarn- bzw. Chat-Servern zu verbinden, denen man vertraut bzw. die man über einen Account-Zugang definiert.
+Aufgrund der Verschlüsselung ist für niemanden einsehbar, welche Datei ein Nutzer herunterlädt, da niemand weiß, ob der Nutzer das Paket erfolgreich entschlüsseln konnte - Und selbst wenn, es weiß niemand, ob der Nutzer sich daraus die Datei erstellt oder abgespeichert hat. 
 
-Auch die oben angesprochene Variante der Setzung eines Nova-Passwortes auf die Datei und die Distribuierung der physischen Blöcke zeitlich vor der Gewährung der Zugriffsrechte auf das Nova-Passwort in einen zweiten Prozess kann neue Perspektiven in technischen, prozessuralen oder auch juristischen Überlegungen bieten.  
+Beim Upload gilt ähnliches. Der Upload ist nur von einer Nachbar-IP einsehbar, wenn dieser Nachbar den Magneten der Datei kennt. Es empfiehlt sich in diesem Fall, wenn man öffentliche Starbeam-Magneten laden möchte, nur zu Nachbarn- bzw. Chat-Servern zu verbinden, denen man vertraut bzw. die man über einen Account-Zugang als Freund definiert.
+
+Auch die oben angesprochene Variante der Setzung eines Nova-Passwortes auf die Datei und die Distribution der physischen Blöcke zeitlich vor der Gewährung der Zugriffsrechte auf das Nova-Passwort in einen zweiten Prozess kann neue Perspektiven in technischen, prozessualen oder auch juristischen Überlegungen bieten.
+
+D.h. der Transfer der Datei erfolgt in der Vergangenheit und der Transfer der Entschlüsselungsoption erfolgt in einem zukünftigen, davon getrennten und nachgelagerten Prozess.
 
 Dann können StarBeam-Magnet-URIs über das Echo-Protokoll eine Rolle bei neuen Wegen des Denkens zum Thema der Entwicklung und Nutzung der in der File-Sharing Community diskutierten "Crypto-Torrents" spielen.
+
+Verschlüsselung bedeutet grundsätzlich, dass Unbefugte nicht wissen, was in dem verschlüsselten Packet ist und dass der Besitzer des Schlüssels selbst entscheidet, wann er die Entschlüsselung durchführt. 
+D.h. Verschlüsselung ist folgerichtig auf den Datei-Transfer angewandt worden.
 
 
 ## 12 Web-Suchmaschine mit URL-Datenbank
 
-In der Funktion der Websuche ist GoldBug durch seine genutzte Architektur des Kernels auch eine quelloffene p2p Web-Suchmaschine. GoldBug ist dabei die (bisherig) einzige und erste unter den wenigen handvollen p2p verteilten Suchmaschinen wie [YaCy](), Faroo.com, Arado.sf.net oder [Grub_(search_engine)]() (die von [Wikia-Search]() bekannt war), die in der Lage ist, den Transfer der URLs über verschlüsselte Verbindungen in ein verteiltes F2F- bzw. P2P-Netzwerk zu gestalten. 
-Der Anspruch der Web-Suchfunktion in GoldBug ist, nicht nur eine quell-offene Programmierung der Suchmaschine anzubieten, sondern auch den URL-Datenbestand quell-offen zu handhaben, so dass jeder Teilnehmer die URLs herunterladen kann. Drittens schließlich geht es darum, dass Transfers und Datenbank-Speicherungen in einer verschlüsselten Umgebung stattfinden.
+Mit der integrierten Funktion einer Websuche ist GoldBug durch seine genutzte Architektur des Kernels auch eine quelloffene p2p Web-Suchmaschine. 
 
+GoldBug ist dabei die (bisherig) einzige und erste unter den wenigen handvollen p2p verteilten Suchmaschinen wie [YaCy]( https://en.wikipedia.org/wiki/YaCy), Faroo.com, Arado.sf.net oder [Grub_(search_engine)]( https://en.wikipedia.org/wiki/Grub_(search_engine)) (die von [Wikia-Search]() bekannt war), die in der Lage ist, den Transfer der URLs über verschlüsselte Verbindungen in ein verteiltes F2F- bzw. P2P-Netzwerk zu gestalten. 
 
+Der Anspruch der Web-Suchfunktion in GoldBug ist, nicht nur eine quell-offene Programmierung der Suchmaschine anzubieten, sondern auch den URL-Datenbestand quell-offen zu handhaben, so dass jeder Teilnehmer die URLs herunterladen kann. Drittens schließlich geht es darum, dass Transfers und Datenbank-Speicherungen in einer verschlüsselten Umgebung stattfinden. Ein innovatives und exemplarisches Modell, um eine Suche in verschlüsselten Datenbanken durchzuführen.
+
+Titel der Webseite, Stichworte dazu sowie die URL selbst werden verschlüsselt in einer SQLite- oder PostgreSQL-Datenbank abgelegt und über das Echoprotokoll miteinander vernetzt.
+
+Ein Nutzer kann somit mittels eines Crawlers oder RSS Feeds seine Webseiten und URLs in einem durchsuchbaren Repositorium ablegen und mit anderen Knotenpunkten teilen.
 
 Abbildung: Websuche mit GoldBug in der URL-Datenbank
 
 ![Abbildung: Websuche mit GoldBug in der URL-Datenbank](/images/websearch.png)	
 
 
+
+
+Der Nutzer kann seine eigene Suchmaschine gestalten: z.B. mit 15 GB an URLs in der Datenbank auf seiner Maschine kann der Nutzer durchaus interessante Suchergebnisse erzielen hinsichtlich neuer Webseiten, die seine Freunde interessant finden und in das p2p Netzwerk eingegeben haben.
+
+Aber auch als lokale Datenbank für eigene Lesezeichen oder einem eigenen Crawl einer dedizierten Domäne.
+
+Die Websuche in dem URL-Repositorium bleibt anonym, denn die GoldBug URL-Suche erzeugt in anderen Knotenpunkten keine Bekanntgabe der Suchworte, sogenannte Query-Hits.
+
+GoldBug konvertiert die Suchworte in einen Hash und durchsucht die lokalen Datenbanken, ob sie diesen Hash enthalten. Sodann ist dort auch der Hash der URLs verzeichnet, die dieses Suchwort enthalten. Sodann wird die URL-Datenbank nach dem Hash der URL durchsucht. 
+
+Auch die Datenbanken sind verschlüsselt, sodass nach dem Suchprozess auch noch ein Entschlüsselungsvorgang angeschlossen wird. Schließlich werden die Suchergebnisse ausgegeben und den Nutzer angezeigt. Die Benutzeroberfläche sortiert derzeit die Ergebnisse zu einem oder mehrerer Suchworte der Einfachheit halber dergestalt, dass die neuesten URLs ganz oben zuerst angezeigt werden.
+
+Wer einen quelloffenen Such-Algorithmus zur Sortierung von URL-Ergebnissen entwickeln will, findet bei dieser Funktion in GoldBug also die offene Quellcode-Basis, um sein Algorithmus-Modell nicht nur zu etablieren, sondern auch gleich einem Praxistest zu unterziehen.
+
+Die Distribution von Webseiten-URLs geschieht nicht über zentrale Server, sondern wird über das verschlüsselte Echo-Protokoll dezentral zwischen den Teilnehmern organisiert: Zwei oder mehrere Nutzer tauschen dazu ihre URL-Schlüssel und nehmen dann am dem p2p Austausch an Webseiten-URLs, z.B. der eigenen Lesezeichen, mit allen ihren Freunden teil. Die online getauschten URLs werden zunächst im Hauptspeicher gesammelt und sodann alle 10 Sekunden in die lokale Datenbank geschrieben.
+
 Abbildung: Settings für die URL/Websuche
 
 ![Abbildung: Settings für die URL/Websuche](/images/websearch_settings.png)
 
 
-
-Bilde Deine eigene Suchmaschine: z.B. mit 15 GB an URLs in der Datenbank auf Deiner Maschine kannst Du durchaus interessante Suchergebnisse erzielen hinsichtlich neuer Webseiten, die Deine Freunde interessant finden und in das p2p Netzwerk eingegeben haben.
-
-Deine Websuche bleibt anonym, denn die GoldBug URL-Suche erzeugt in anderen Knotenpunkten keine Bekanntgabe Deiner Suchworte, sogennannte Query-Hits. 
-
-GoldBug konvertiert Deine Suchworte in einen Hash und durchsucht die lokalen Datenbanken, ob sie diesen Hash enthalten. Sodann ist dort auch der Hash der URLs verzeichnet, die dieses Suchwort enthalten. Sodann wird die URL-Datenbank nach dem Hash der URL durchsucht. Auch die Datenbanken sind verschlüsselt, sodass nach dem Suchprozess auch noch ein Entschlüsselungsvorgang angeschlossen wird. Schließlich werden die Suchergebnisse ausgegeben und Dir angezeigt. Die Benutzeroberfläche sortiert derzeit die Ergebnisse zu einem oder mehrerer Suchworte der Einfachheit halber dergestalt, dass die neuesten URLs ganz oben zuerst angezeigt werden.
-
-Die Distribuierung von Webseiten-URLs geschieht nicht über zentrale Server, sondern wird über das verschlüsselte Echo-Protokoll dezentral zwischen den Teilnehmern organisiert: Zwei oder mehrere Nutzer tauschen dazu ihre URL-Schlüssel und nehmen dann am dem p2p Austausch an Webseiten-URLs, z.B. der eigenen Lesezeichen, mit allen ihren Freunden teil. Die online getauschten URLs werden zunächst im Hauptspeicher gesammelt und sodann alle 10 Sekunden in Deine lokale Datenbank geschrieben.
-
-
-
-Weiterhin besteht auch die Möglichkeit, neue URLs in Deine lokale Datenbank manuell zu importieren. Hierzu wird der [Web Browser Dooble.sf.net]() benötigt. Das erste Symbol in der URL-Zeile des Browsers ermöglicht, eine einzelne URL in eine Zwischen-Datenbank zu speichern: Shared.db. Diese wird dann von GoldBug mit nur einem Klick importiert.
+Weiterhin besteht auch die Möglichkeit, neue URLs in die eigene lokale Datenbank manuell zu importieren. Hierzu wird der [Web Browser Dooble.sf.net]() benötigt. Das erste Symbol in der URL-Zeile des Browsers ermöglicht, eine einzelne URL in eine Zwischen-Datenbank zu speichern: Shared.db. Diese wird dann von GoldBug mit nur einem Klick importiert.
 Die Shared.db muss im Installationspfad von GoldBug liegen und beide Programme, GoldBug und Dooble, müssen in den Einstellungen den Pfad dieser Datei definieren.
 
-Um eine URL der Webseite, die Du gerade ließt, aus dem Web Browser Dooble in Deine URL-Datenbank von GoldBug zu importieren, klicke einfach das erste Icon in der URL-Zeile des Browser, um die URL erstmal in der Shared.db abzulegen. Sodann Klicke in GoldBug im Tabulator der Web-Suche den Knopf "Importieren".
+Um eine URL der Webseite, die ein Nutzer gerade ließt, aus dem Web Browser Dooble in die eigene URL-Datenbank von GoldBug zu importieren, ist einfach das erste Icon in der URL-Zeile des Browser zu klicken, um die URL erst mal in der Shared.db abzulegen. Sodann ist in GoldBug im Tabulator der Web-Suche den Knopf "importieren" zu klicken.
+
+Die neue Version des Browser Dooble unterstützt diese Importfunktion einer einzelnen URL in GoldBug nun jedoch nicht mehr. Denn die neue Version des Browsers Dooble stellt eine komplette Neu-Programmierung dar und wurde erforderlich aufgrund der Änderung bei Qt hinsichtlich des Webkit-Moduls.
+
+In dem weiterhin verfügbaren Source Code des alten Dooble Browser kann mit eigener Kompilierung diese Möglichkeit jedoch nochmal reaktiviert werden. Diese Möglichkeit soll hier nur kurz benannt bleiben, da ggf. auch andere Entwickler einen Import einer URL aus einem (jeglichen) Browser in eine verschlüsselte Bookmark-Datenbank intendieren und sich dieses Modell anschauen mögen.
+
+Die Idee, mit Freunden geteilte Bookmarks für die eigene Historie durchsuchbar und lokal speicherbar zu machen, bleibt also aktuell.
+
+Effizienter sind hingegen die weiteren Methoden, zahlreiche URLs mittels eines Crawlers oder des RSS-Feeds in GoldBug zu importieren.
+
+Doch zunächst zum Setup der URL-Datenbank in GoldBug.
+
+
+### 12.1 Datenbank Setup 
+
+Die URLs können wahlweise in einer [SQLite]()- oder 
+[PostgreSQL]()-Datenbank gespeichert werden. SQLite ist die automatisch konfigurierte Datenbank, die auch Nutzern mit weniger Erfahrung in der Einrichtung von Datenbanken empfohlen wird. Fortgeschrittenere Nutzer können sich auch an eine PostgreSQL-Datenbank-Einrichtung heran begeben. Diese hat Vorteile im Netzwerkzugriff, der Verwaltung von Nutzerrechten und dem Handling großer URL-Datenbestände.
+GoldBug eignet sich daher mit der Funktion, eine eigene Websuche zu gestalten, auch für den Unterricht, um Lernende für die Einrichtung von Datenbanken zu interessieren. 
+
+Die URLs werden in 26x26 bzw. 36x36 Datenbanken (2(16^2) = 512 Tabellen) deponiert, die verschlüsselt sind. D.h. die Suche findet in einer verschlüsselten Datenbank (URLs.db) statt. Die Suche in verschlüsselten Datenbanken ist ein bislang noch wenig bearbeitetes Forschungsfeld.
+
+
+#### 12.1.1 SQLite
+
+SQLite ist eine Programmbibliothek, die ein relationales Datenbanksystem enthält. Die gesamte Datenbank befindet sich in einer einzigen Datei. Eine Client-Server-Architektur ist somit nicht vorhanden.
+
+Abbildung: Installation der URL-Datenbank entweder mit SQLite oder PostgreSQL
+
+
+Die SQLite-Bibliothek lässt sich direkt in entsprechende Anwendungen integrieren, so dass keine weitere Server-Software benötigt wird. Dieses ist auch der entscheidende Unterschied zu anderen Datenbanksystemen. Durch das Einbinden der Bibliothek wird die Anwendung um Datenbankfunktionen erweitert, ohne auf externe Softwarepakete angewiesen zu sein.
+
+SQLite hat einige Besonderheiten gegenüber anderen Datenbanken: Die Bibliothek ist nur wenige hundert Kilobyte groß. Eine SQLite-Datenbank besteht aus einer einzigen Datei, die alle Tabellen, Indizes, Views, Trigger usw. enthält. Dies vereinfacht den Austausch zwischen verschiedenen Systemen.
+
+#### 12.1.2. PostgreSQL
+
+PostgreSQL - auch bekannt unter dem Namen [Postgres]( https://en.wikipedia.org/wiki/PostgreSQL) - ist ein freies, objektrelationales Datenbankmanagementsystem (ORDBMS). 
+Seine Entwicklung entstand in den 1980er Jahren aus einer Datenbankentwicklung der University of California in Berkeley, seit 1997 wird die Software von einer Open-Source-Community weiterentwickelt.
+
+PostgreSQL ist weitgehend konform mit dem SQL-Standard ANSI-SQL 2008. PostgreSQL ist vollständig ACID-konform, und unterstützt erweiterbare Datentypen, Operatoren, Funktionen und Aggregate.
+
+In den meisten Linux-Distributionen ist PostgreSQL enthalten - auch Windows und Mac OS X werden unterstützt.
+Da er Einrichtungsprozess der PostgreSQL Datenbank umfangreicher ist, soll hier nur auf die Handbücher dieser Datenbank verwiesen werden.
+
+
+### 12.2 URL-Filter
+
+Wenn der Nutzer nun am dem p2p Prozess des URL-Austausches teilnimmt, erhält er alle URLs, die andere dem System hinzugefügt haben. Um maliziöse URLs auszuschließen, kann der Nutzer in der Websuche URLs auch mit einem Klick wieder löschen - oder aber er nutzt von Beginn an den URL-Filter, der sich in einem eigenen Tabulator findet.
+
+Abbildung: URL Options: Import- und Export-Filter: URL-Distiller 
+
+![Abbildung: URL Options](/images/URL_options.png)	
+
+URL-Filter - sogenannte Distiller - können eingehende, ausgehende und zu importierende Datenbestände mit einer Blacklist oder Whitelist filtern. So kann der Nutzer z.B. definieren, nur URLs von der Domain www.wikipedia.org zuzulassen oder dass sein Upload an URLs zu Freunden nur von der Domain seiner Universität erfolgt. Auch kann der Nutzer festlegen, dass er URLs einer bestimmten Länder-Domäne nicht erhalten will.
+
+In dem Fall, dass der Nutzer keine URLs erhalten will, setzt er für die Downloads den Distiller-Filter einfach auf "http://" mit dem Wert "Deny". URLs werden dann nicht angenommen.
+
+Ganz wichtig: damit der Filter aktiv ist, ist oben in der Check-Box der Filter auf auf "Aktiv" zu markieren.
+
+
+### 12.3 URL-Community
+Damit der Nutzer mit Freuden URLs tauschen kann und sein Datenbestand für die Websuche wächst, kann er den URL-Key entweder manuell im Tabulator URL-Filter in die Teilnehmer-Tabelle einkopieren; oder aber: als zweite Möglichkeit besteht auch die Option, seinen URL-Key an eine Community zu senden. 
+
+Wenn der Freund des Nutzers ebenso online ist, und der Nutzer über das Werkzeug "EPKS" - Echo Public Key Share - seinen URL-Key an die dort definierte Community "Spot-On URL Community" sendet, erhält sein Freund den URL-Key des Nutzers automatisch online transferiert.
+
+Dieser Transfer ist verschlüsselt über das Echo-Protokoll und nutzt als symmetrische Verschlüsselung den Namen der URL-Community. Es ist ähnliche einem Gruppenchat-Raum (e*IRC/Buzz-Funktion), in dem die URL-Schlüssel dann hin gesandt und automatisch integriert werden. Wie EPKS funktioniert, ist weiter unten noch ausführlicher beschrieben.
+
+
+
+### 12.4 Pandamonium Webcrawler
+
+
+Eine weitere Import-Möglichkeit ist, den Cawler "Pandamonium" zu nutzen. 
+
+Die Veröffentlichung von GoldBug Version 2.8 (Christmas-Release 2015) trägt den Namen "Pandamonium Webcrawler Release" und bezieht sich auf den Webcrawler namens Pandamonium, der als Werkzeug der URL-Datenbankfunktion hinzugefügt wurde. 
+
+Der Web-Crawler durchsucht eine Domain nach allen verlinkten URLs und kann dann auch auf den so entdeckten Webseiten neue URL indizieren und dem Crawl bzw. Index hinzufügen. Pandamonium funktioniert ebenso wie der Import aus dem Dooble Web Browser über eine zwischengeschaltete Shared.db. Der Web-Crawler Pandamonium ist ebenso quelloffen und kann unter dieser URL heruntergeladen werden:
+
+https://github.com/textbrowser/pandamonium
 
 
 Abbildung: Pandamonium Web Crawler'''
 
 
-Eine dritte Import-Möglichkeit ist, den Cawler "Pandamonium" zu nutzen. Der Web-Crawler durchsucht eine Domain nach allen verlinkten URLs und kann dann auch auf den so entdeckten Webseiten neue URL indizieren und dem Crawl bzw Index hinzufügen. Pandamonium funktioniert ebenso wie der Import aus dem Dooble Web Browser über die zwischengeschaltete Shared.db. Der Web-Crawler Pandamonium ist ebenso quelloffen und kann unter dieser URL heruntergeladen werden:
-https://github.com/textbrowser/pandamonium
+Die so hinzugefügten URLs werden dann ebenso mit den Freunden über verschlüsselte Verbindungen geteilt bzw. in der eigenen, lokalen Datenbank ebenso verschlüsselt abgespeichert. 
 
-### 12.1 Datenbank Setup 
-Die URLs können wahlweise in einer [SQLite]()- oder 
-[PostgreSQL]()-Datenbank gespeichert werden. SQLite ist die automatisch konfigurierte Datenbank, die auch Nutzern mit weniger Erfahrung in der Einrichtung von Datenbanken empfohlen wird. Fortgeschrittenere Nutzer können sich auch an eine PostgreSQL-Datenbank-Einrichtung herangeben. Diese hat Vorteile im Netzwerkzugriff, der Verwaltung von Nutzerrechten und dem Handling großer URL-Datenbestände.
-GoldBug eignet sich daher mit der Funktion, eine eigene Websuche zu gestalten, auch für den Unterricht, um Lernende für die Einrichtung von Datenbanken zu interessieren. 
+So besteht mit dem Crawler Pandamonium die Möglichkeit, große Mengen an Webseiten gewünschter Domains für eine Websuche im Klienten GoldBug zu importieren.
 
-Die URLs werden in 26x26 bzw. 36x36 Datenbanken (2(16^2) = 512 Tabellen) deponiert, die verschlüsselt sind. D.h. die Suche findet in einer verschlüsselten Datenbank (URLs.db) statt. Die Suche in verschlüsselten Datenbanken ist ein bislang noch wenig bearbeitetes Forschungsfeld.
+Neben der URL wird mittels Pandamonium auch die Webseite als Rich-Text (d.h. also ohne Bilder) in der Datenbank mit abgespeichert und dieser Datenbestand kann ebenso mit Freunden geteilt werden. Die Websuche in GoldBug ermöglicht somit das lokale Browsen von Webseiten, ohne das Internet oder die Domain zu kontaktieren und seine IP-Informationen dort bekannt zu geben. 
 
-#### 12.1.1 SQLite
-SQLite ist eine Programmbibliothek, die ein relationales Datenbanksystem enthält. Die gesamte Datenbank befindet sich in einer einzigen Datei. Eine Client-Server-Architektur ist somit nicht vorhanden.
+Es ist quasi eine neue Art und weiterentwickelte Idee des Anonymisierungsnetzwerkes Tor: Nicht mehr die Webseite wird über ein p2p-Proxy-Netzwerk live kontaktiert, sondern die URL wird in einer p2p-Websuche bzw. Datenbank gesucht und die Webseite wird gleich als Rich-Text mitgeliefert und kann lokal geladen, gebrowsed und gelesen werden. 
 
-Abbildung 30: Installiere die URL-Datenbank entweder mit SQLite oder PostgreSQL'''
-
-
-Die SQLite-Bibliothek lässt sich direkt in entsprechende Anwendungen integrieren, so dass keine weitere Server-Software benötigt wird. Letzteres ist dies der entscheidende Unterschied zu anderen Datenbanksystemen. Durch das Einbinden der Bibliothek wird die Anwendung um Datenbankfunktionen erweitert, ohne auf externe Softwarepakete angewiesen zu sein.
-SQLite hat einige Besonderheiten gegenüber anderen Datenbanken: Die Bibliothek ist nur wenige hundert Kilobyte groß. Eine SQLite-Datenbank besteht aus einer einzigen Datei, die alle Tabellen, Indizes, Views, Trigger usw. enthält. Dies vereinfacht den Austausch zwischen verschiedenen Systemen.
-
-Die Einrichtung der SQLite Datenbank für die URLs ist in wenigen Schritten erfolgt:
-- Installiere den Dooble Web Browser. Dieser speichert alle während des Surfens entstehenden Daten wie Webseiten, URLs, Cookies, Lesezeichen etc. ebenso in verschlüsselten Datenbanken ab (Tresor-Funktion). Dazu musst Du in den Einstellungen vom Dooble Web Browser im Tabulator Tresor ein Passwort definieren.
-- Sodann definiere im Web Browser Dooble unter Einstellungen den Pfad zur Datei Shared.db, die sich im Installationspfad von GoldBug befinden muss.
-- Erstelle dann eine SQLite-Datenbank im GoldBug Programm unter Websuche/Einstellungen
-- Hier kannst Du auch den Pfad zur dooble.ini Datei (im Dooble Verzeichnis auf Deiner Festplatte) eingeben und das in Dooble gesetzte Passwort hinterlegen und verifizieren.
-- Gebe nun noch ein Passwort für "Common Credentials" ein. Dieses ist eine Passwort-Funktion für den Fall, dass dritte, weitere Anwendungen URLs für den Import zur Verfügung stellen.
-- Sodann verfiziere alle Eingaben und starte den Import aus shared.db, in die Du zuvor mit Hilfe des Webbrowsers eine URL abgelegt hast: Drücke im Web Browser Dooble in der URL-Zeile das erste Symbol und die URL wird in Shared.db abgelegt. Der Importprozess holt sich dann die URLs aus dieser Datei ab und fügt sie dem URL-Datenbestand im GoldBug hinzu (URLs.db).
-- Alle so importierten URLs werden mit Deinen Freunden online p2p geteilt. Gebe dazu den URL-Schüssel Deines Freundes im Tabulator URL-Filter ein, oder nutze die URL-Sharing-Community wie unten weiter beschrieben, im die URL-Schlüssel zu tauschen.
-
-#### 12.1.2. PostgreSQL
-
-PostgreSQL - auch bekannt unter dem Namen [Postgres]() - ist ein freies, objektrelationales Datenbankmanagementsystem (ORDBMS). 
-Seine Entwicklung entstand in den 1980er Jahren aus einer Datenbankentwicklung der University of California in Berkeley, seit 1997 wird die Software von einer Open-Source-Community weiterentwickelt.
-PostgreSQL ist weitgehend konform mit dem SQL-Standard ANSI-SQL 2008. PostgreSQL ist vollständig ACID-konform, und unterstützt erweiterbare Datentypen, Operatoren, Funktionen und Aggregate.
-In den meisten Linux-Distributionen ist PostgreSQL enthalten - auch Windows und Mac OS X werden unterstützt.
-Da er Einrichtungsprozess der PostgreSQL Datenbank umfangreicher ist, soll hier nur auf die Handbücher dieser Datenbank verwiesen werden.
-
-### 12.2 URL-Filter
-
-Wenn Du nun am dem p2p Prozess des URL-Austausches teilnimmst, erhälst Du alle URLs, die andere dem System hinzugefügt haben. Um maliziöse URLs auszuschließen, kannst Du in der Websuche URLs auch mit einem Klick wieder löschen - oder aber Du nutzt von Beginn an den URL-Filter, der sich in einem eigenen Tabulator präsentiert.
-
-Abbildung 31: Import- und Export-Filter: URL-Distiller
-
-
-Abbildung: URL Options
-
-![Abbildung: URL Options](/images/URL_options.png)	
-
-
-
-
-URL-Filter - sogenannte Distiller - können eingehende, ausgehende und zu importierende Datenbestände mit einer Blacklist oder Whitelist filtern. So kannst Du z.B. definieren, nur URLs von der Domain www.wikipedia.org zuzulassen oder dass Dein Upload an URLs zu Freunden nur von der Domain Deiner Universität erfolgt. Auch kannst Du festlegen, dass Du URLs einer bestimmten Länder-Domäne nicht erhalten willst.
-
-In dem Fall, dass Du keine URLs erhalten willst, setzt Du für die Downloads den Distiller-Filter einfach auf "http://" mit dem Wert "Deny". URLs werden dann nicht angenommen.
-
-Ganz wichtig: damit der Filter aktiv ist, setze diesen oben in der Check-Box auf "Aktiv".
-
-### 12.3 URL-Community
-Damit Du mit Freuden URLs tauschen kannst und Dein Datenbestand für die Websuche wächst, kannst Du den URL-Key entweder manuell im Tabulator URL-Filter in die Teilnehmer-Tabelle einkopieren; oder aber: als zweite Möglichkeit besteht auch die Option, seinen URL-Key an eine Community zu senden. 
-
-Wenn Dein Freund ebenso online ist, und du über das Werkzeug "EPKS" - Echo Public Key Share - Deinen URL-Key an die dort definierte Community "Spot-On URL Community" sendest, erhält Dein Freund Deinen URL-Key automatisch online transferiert.
-Dieser Transfer ist verschlüsselt über das Echo-Protokoll und nutzt als symmetrische Verschlüsselung den Namen der URL-Community. Es ist ähnliche einem Gruppenchat-Raum (Buzz-Funktion), in dem die URL-Schlüssel dann hingesandt und automatisch integriert werden. Wie EPKS funktioniert, ist weiter unten noch ausführlicher beschrieben.
-
-### 12.4 Pandamonium Webcrawler
-
-Die Veröffentlichung v. 2.8 (Christmas-Release 2015) trägt den Namen "Pandamonium Webcrawler Release" und bezieht sich auf den Webcrawler namens Pandamonium, der als Werkzeug der URL-Datenbankfunktion hinzugefügt wurde. 
-
-Mit dem Pandamonium Webcrawler kann jeder gewählte Domains durchsuchen und die URLs in einer Shared.DB-Datenbank speichern und sodann in den GoldBug-Klienten importieren über die Importfunktion. Die so hinzugefügten URLs werden dann ebenso mit den Freunden über verschlüsselte Verbindungen geteilt bzw. in der eigenen, lokalen Datenbank ebenso verschlüsselt abgespeichert. 
-
-Neben dem Webbrowser Dooble und dem p2p-Transfer der Weblinks von Freunden besteht also mit dem Crawler Pandamonium die Möglichkeit, große Mengen an Webseiten gewünschter Domains für eine Websuche im Klienten GoldBug zu importieren. 
-
-Neben der URL wird auch die Webseite als Rich-Text (d.h. also ohne Bilder) in der Datenbank mit abgespeichert und dieser Datenbestand kann ebenso mit Freunden geteilt werden. Die Websuche in GoldBug ermöglicht somit das lokale Browsen von Webseiten, ohne das Internet oder die Domain zu kontaktieren und seine IP-Informationen dort bekannt zu geben. 
-
-Es ist quasi eine neue Art und weiterentwickelte Idee des Anonymisierungsnetzwerkes Tor: Nicht mehr die Webseite wird über ein p2p-Proxy-Netzwerk live kontaktiert, sondern die URL wird in einer p2p-Websuche gesucht und die Webseite wird gleich als Rich-Text mitgeliefert und kann lokal geladen, gebrowsed und gelesen werden. Java-Scripte, Bilder und DeRefer-URLs sowie IP-Informationen werden dabei nicht einbezogen. Der Nutzer ist somit vor der Preisgabe seiner Daten geschützt und kann dennoch die gewünschte Webseite einer URL lesen, wenn sie in seinem oder dem geteilten Datenbestand vorhanden ist. Während Webseiten aufgrund von Javascript beim Anonymisierungstool Tor auch zusätzliche Verbindungen aufrufen können oder Spuren hinterlassen, ist es bei dem Webcrawler Pandamonium ausgeschlossen, dass solche Sicherheitsrisiken bestehen. 
+Java-Scripte, Bilder und Refer-URLs sowie IP-Informationen werden dabei nicht einbezogen. Der Nutzer ist somit vor der Preisgabe seiner Daten geschützt und kann dennoch die gewünschte Webseite einer URL lesen, wenn sie in seinem oder dem geteilten Datenbestand vorhanden ist. Während Webseiten aufgrund von Javascript beim Anonymisierungstool Tor auch zusätzliche Verbindungen aufrufen können oder Spuren hinterlassen, ist es bei dem Webcrawler Pandamonium vorzugsweise ausgeschlossen, dass solche Sicherheitsrisiken bestehen. 
 
 Verschiedene Revisionen von Webseiten zu verschiedenen Aufrufzeiten der Webseite (Memento) werden ebenso unterstützt - sowohl beim Crawler als auch bei der Websuche im GoldBug Klienten. Der Page-Viewer der Websuche in GoldBug zeigt verschiedene Revisonen der Webseite an, wenn diese vorhanden sind.
+
+Die Einrichtung der SQLite Datenbank für den Import der URLs aus dem Pandamonium Webcrawler über die shared.db ist in wenigen Schritten erfolgt:
+
+- Der Nutzer erstellt eine SQLite-Datenbank im GoldBug Programm unter Websuche/Einstellungen.
+
+- Der Nutzer gibt nun noch ein Passwort für "Common Credentials" ein. Dieses ist eine Passwort-Funktion für den Fall, dass dritte, weitere Anwendungen URLs für den Import zur Verfügung stellen.
+
+- Sodann verfiziert der Nutzer alle Eingaben und starte den Import aus shared.db, in die er zuvor die durch den Pandamonium Webcraler gesammelten URLs abgelegt hat: Der Importprozess holt sich die URLs aus dieser Datei ab und fügt sie dem URL-Datenbestand im GoldBug Klienten hinzu (URLs.db).
+
+- Alle so importierten URLs werden gegebenenfalls mit den Freunden des Nutzers online p2p geteilt. Dazu ist der URL-Schüssel des Freundes im Tabulator URL-Filter durch den Nutzer einzugeben, oder er nutzt die URL-Sharing-Community wie oben bereits beschrieben, um den URL-Schlüssel zu tauschen.
+
 
 ### 12.5 RSS-Reader und URL-Import 
 
 Die RSS Funktion erweitert den GoldBug Klienten zu einem RSS-Reader. RSS 2.0 Feeds werden unterstützt. Die News-URLs werden in einer Timeline angezeigt, so dass die neueste Nachricht immer obenauf ist.
+
 Zusätzlich werden die News-URLs indexiert, d.h. für die lokale Websuche in GoldBug aufbereitet. Der Import von der verschlüsselten RSS-Datenbank in die verschlüsselte URL-Datenbank kann automatisch periodisch erfolgen, oder auch über einen manuellen Import-Knopf nur auf Aktion des Nutzers. 
+
 Die RSS Funktion ermöglicht nicht nur, seine ausgewählten Nachrichtenportale komfortabel auf einer Nachrichtenseite zu lesen, sondern die Nachrichten-URLs auch in seine lokalen URL-Datenbank manuell oder automatisiert zu importieren.
 
 Abbildung: RSS-Feed-Reader zur Importierung von URLs in die URL-Datenbank/Websuche
@@ -1982,9 +2099,13 @@ Die Indexierung der Webseite nutzt die 50 (oder nach Einstellung des Nutzers auc
 
 Für die Timeline werden die Titel der Nachrichten mit einem Hyperlink erst dann versehen, wenn die Indexierung erfolgt ist. Die Status-Zeile gibt entsprechend eine Statistik wieder, wie viele RSS-Feeds abonniert sind, wie viele URLs schon indexiert sind, wie viele URLs aus der RSS-Datenbank in die URL-Datenbank für die Websuche importiert wurden – sowie die im RSS-Fenster insgesamt lesbaren Nachrichten bzw. URLs.
 
-Das Lesen der Nachrichten erfolgt in einem Page-Viewer, der die Nachrichten nicht in einem Browser darstellt, sondern aus Sicherheitsgründen nur in Textform darstellt. Damit sind auch Javascripte, Bilder und Werbung aus den Seiten entfernt, es werden nur die ASCII-Zeichen der Webseite dargestellt sowie die Hyperlinks zu weiteren Webseiten. Mit dem Kontext-Menü können URLs und Hyperlinks manuell auskopiert werden für eine Ansicht im Browser.
+Das Lesen der Nachrichten erfolgt in einem Page-Viewer, der die Nachrichten nicht in einem Browser darstellt, sondern aus Sicherheitsgründen nur in Textform darstellt. Damit sind auch Javascripte, Bilder und Werbung aus den Seiten entfernt, es werden nur die ASCII-Zeichen der Webseite dargestellt sowie die Hyperlinks zu weiteren Webseiten. Mit dem Kontext-Menü können URLs und Hyperlinks manuell auskopiert werden für eine Ansicht im (externen) Browser.
 
-Der RSS-Reader ist proxy-fähig und kann daher auch hinter restriktiven Umgebungen die Nachrichten erhalten.
+Der RSS-Reader ist proxy-fähig und kann daher auch hinter restriktiven Umgebungen den Inhalt der Webseiten erhalten und sodann für die Speicherung und Suche in GoldBug zur Verfügung stellen.
+
+Eine Funktion, die heute sicherlich auch einige Browser bieten, Webseiten aus dem Cache des Nutzers heraus aufzurufen oder die URL-Historie durchsuchbar anzubieten.
+
+GoldBug ermöglicht dieses in einer verschlüsselten und p2p Umgebung für die lokale eigene Speicherung in einem dedizierbaren URL-Repositorium.
 
 
 ## 13 Chat/E-Mail-Server einrichten 
@@ -2594,4 +2715,14 @@ make or mingw32-make<br />
 -  Vaughan-Nichols, Steven J.: How to recover from Heartbleed, ZDNet, April 9, 2014, http://www.zdnet.com/how-to-recover-from-heartbleed-7000028253 
 
 - Weller, Jan: Testbericht zu GoldBug für Freeware, Freeware-Blog https://www.freeware.de/download/GoldBug/
+
+
+Weitere bibliographsiche Hinweise:
+
+- Bernat, V. (2012, January 1). SSL/TLS & Perfect Forward Secrecy. Web article retrieved March 5, 2015, from http://vincent.bernat.im/en/blog/2011-sslperfect-
+forward-secrecy.html; 
+
+- Schum, Chris: Correctly Implementing Forward Secrecy, SANS Institute InfoSec Reading Room, March 14, 2014, 
+
+- Zhu, Y. (2014, April 8): Why the Web Needs Perfect Forward Secrecy More Than Ever. Web article. Retrieved February 2, 2015, from https://www.eff.org/deeplinks/2014/04/why-web-needs-perfect-forward-secrecy
 
