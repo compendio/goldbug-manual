@@ -103,7 +103,11 @@ Inhaltsverzeichnis
 
     13 Chat/E-Mail-Server einrichten
         13.1 Chat-/E-Mail-Server über einen Listener einrichten
-        13.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
+             13.1.1. Go-Live-Funktion: Server Broadcast
+             13.1.2. Sicherheitsoptionen
+             13.1.3. Proxy- & Firewall-Anmerkungen: z.B. Betrieb über Tor
+             13.1.4. GoldBug als Lan Messenger
+        13.2 Servers/Listener-Erstellung Zuhause hinter einem Router/Nat
         13.3 Nutzung von GoldBug im TOR-Netzwerk
         13.4 Spot-On Server
         13.5 Spot-On Lite Server als Deamon
@@ -2056,7 +2060,10 @@ Der Web-Crawler durchsucht eine Domain nach allen verlinkten URLs und kann dann 
 https://github.com/textbrowser/pandamonium
 
 
-Abbildung: Pandamonium Web Crawler'''
+Abbildung: Pandamonium Web Crawler
+
+
+![Abbildung: Pandamonium Web Crawler](/images/pandamonium.png)
 
 
 Die so hinzugefügten URLs werden dann ebenso mit den Freunden über verschlüsselte Verbindungen geteilt bzw. in der eigenen, lokalen Datenbank ebenso verschlüsselt abgespeichert. 
@@ -2109,128 +2116,175 @@ GoldBug ermöglicht dieses in einer verschlüsselten und p2p Umgebung für die l
 
 
 ## 13 Chat/E-Mail-Server einrichten 
- 
-Wenn Du Dich in der minimalen Ansicht befindest, ist ein Chat- & E-Mail-Server bzw. Listener ebenso schnell eingerichtet wie im oben beschriebenen Tabulator eine IP-Verbindung zu einem Nachbarn hergestellt ist. Du benötigst keine erweiterten Server-Administrations-Kenntnise um einen GoldBug-Knotenpunkt auf Deinem Webserver laufen zu lassen, einen Chat-Server aufzusetzen oder gar ein E-Mail Postfach für Dich und Deine Freunde einzurichten. In GoldBug muss dazu lediglich ein sogenannter Listener an einem definierten Port bestätigt werden.
+
+Einen Chat-Server oder Spot-on-Kernel einzurichten bedeutet, einen sogenannten „Listener“ einzurichten, so der technische Begriff.
+
+Wenn der Nutzer sich in der minimalen Ansicht der Benutzeroberfläche befindet, ist ein Chat- & E-Mail-Server bzw. Listener ebenso schnell eingerichtet wie im oben beschriebenen Tabulator eine IP-Verbindung zu einem Server bzw. Nachbarn hergestellt ist. Der Nutzer benötigt keine erweiterten Server-Administrations-Kenntnise um einen GoldBug-Knotenpunkt auf seinem Webserver laufen zu lassen, einen Chat-Server aufzusetzen oder gar ein E-Mail Postfach für sich und seine Freunde einzurichten. In GoldBug muss dazu lediglich ein sogenannter Listener an einem definierten Port bestätigt werden. Und das ist mit wenigen Klicks möglich. Eine wohl der einfachsten Chat-Server-Administrationen im Vergleich zu anderen Server-Setups überhaupt.
 
 ### 13.1 Chat-/E-Mail-Server über einen Listener einrichten
 
-Nochmal zur Erinnering: Im Tabulator "Verbindung herstellen", verbindest Du Deinen GoldBug mit einem anderen Knoten oder Nachbarn, und mit dem Tab "Chat-Server" erstellst Du einen Server bzw. Listener, so dass andere zu Dir verbinden können. Egal welche Methode, Nachrichten kannst Du immer senden, wenn die zweite oder dritte LED in der Statuszeile leuchtet und ein Nachbar verbunden ist.
- 
-Die rechte (dritte) LED in der Statuszeile zeigt also an, dass Du einen eigenen Chat-Server auf Deinem Computer eingerichtet hast.
-
-Dazu musst Du die lokale IP-Adresse Deiner Maschine im Tabulator "Chat Server" eingeben. Es handelt sich hier nicht um die (externe) IP-Adresse des Routers, sondern um die lokale Netz-IP-Adresse des Gerätes, auf dem Du GoldBug Installiert hast. Auch hier erhält man über das Pulldown-Menü eine Auswahl und kann die lokale IP wählen. Als Port wird dann wieder automatisch 4710 definiert.
- 
-Dücke den Knopf „Set“ und der Eintrag Deines Listeners ist erfolgreich, wenn die dritte LED leuchtet.
+Nochmal zur Erinnerung: Im Tabulator "Verbindung herstellen", verbindet der Nutzer seinen GoldBug mit einem anderen Knoten oder Nachbarn, und mit dem Tab "Chat-Server" erstellt der Nutzer einen Server bzw. Listener, so dass andere zu ihm verbinden können. Egal welche Methode, Nachrichten kann man immer senden, wenn die zweite oder dritte LED in der Statuszeile leuchtet und ein Nachbar verbunden ist. Entweder zum Nutzer als Server/Listener oder der Nutzer als Klient zum Nachbarn, der einen Listener anbietet.
 
 
-'''Go-Live-Funktion:''' 
-
-Wenn Du einen zu Deinem Listener verbundenen Klienten hast, oder Du im "Verbinde-Nachbar"-Tabulator von Dir aus zu einem anderen Chat-Server oder Freund verbunden bist, kannst Du sodann auch den Kopf „Go Live“ klicken. Damit wird Dein Chat Server über die bestehenden Verbindungen Deinen verbundenen Freunden bzw. Nachbarn sowie auch deren Freunden mitgeteilt. "Go Live" meint also "Broadcast IP+Port" Deines Chat-Servers an Deine Freunde und Nachbarn. Dann können die Freunde auch zu Deinem Chat-Server automatisch verbinden. Du musst in diesem Fall also keine IP-Adresse mehr mitteilen oder Deine Freunde Deine IP-Adresse manuell eintragen lassen. Alles geht dann automatisch und Dein Server steht Deinen Freunden und deren Freunden als Peer zur Verfügung.
-So einfach kann ein Chat-Server erstellt werden.
-
- 
-'''Abbildung 32: Einen Chat-Server erstellen (Minimale Ansicht)'''
-
-Abbildung: Einrichtung eines Chat-Servers
+Abbildung: Einen Chat-Server erstellen (Minimale Ansicht)
 
 ![Abbildung: Einrichtung eines Chat-Servers](/images/chat_server.png)	
 
 
-Abbildung: Bluetooth Chat Server
+Die rechte (dritte) LED in der Statuszeile zeigt also an, dass der Nutzer einen eigenen Chat-Server auf seinem Computer eingerichtet hat.
 
-![Abbildung: Bluetooth Chat Server] (/images/bluetooth_chatserver.png)	
+Dazu muss der Nutzer die lokale IP-Adresse seiner Maschine im Tabulator "Chat Server" eingeben. Es handelt sich hier nicht um die (externe) IP-Adresse des Routers, sondern um die lokale Netz-IP-Adresse des Gerätes, auf dem GoldBug Installiert ist. Auch hier erhält man über das Pulldown-Menü eine Auswahl, die IP wird direkt angezeigt und man kann dann die lokale IP wählen. Als Port wird dann wieder automatisch 4710 definiert.
+ 
+Sodann ist auf den Knopf „Set“ zu drücken und der Eintrag des Listeners war erfolgreich, wenn die dritte LED leuchtet.
 
 
+#### 13.1.1. Go-Live-Funktion: Server Broadcast
+
+Wenn der Nutzer einen zu seinem Listener verbundenen Klienten hat, oder der Nutzer im "Verbinde-Nachbar"-Tabulator von sich aus zu einem anderen Chat-Server oder Freund verbunden ist, kann der Nutzer sodann auch den Kopf „Go Live“ klicken. Damit wird sein Chat Server über die bestehenden Verbindungen seinen verbundenen Freunden bzw. Nachbarn sowie auch deren Freunden mitgeteilt. "Go Live" meint also "Broadcast IP+Port" des eigenen Chat-Servers an seine Freunde und Nachbarn. Dann können die Freunde auch zu seinem Chat-Server automatisch verbinden. Der Nutzer muss in diesem Fall also keine IP-Adresse mehr mitteilen oder seine Freunde die eigene IP-Adresse manuell eintragen lassen. Alles geht dann automatisch und der Server des Nutzers steht seinen Freunden und deren Freunden als Peer zur Verfügung. So einfach kann ein Chat-Server erstellt und auch an andere im Netzwerk kommuniziert werden.
 
 Abbildung: Chat-Server einrichten
 
 ![Abbildung: Chat-Server einrichten](/images/chat_server_create.gif)
 
 
+Der Listener bzw. Chat-Server wird standardmäßig für das TCP Protokoll eingerichtet, GoldBug ist jedoch auch dafür ausgestattet, einen Listener über das UDP oder drittens auch SCTP Protokoll einzurichten. Beide letztgenannten Protokoll sind ideal für VOIP oder Streams. Viertens ist auch ein Chat-Server/Listener über Bluetooth möglich, siehe dazu den Abschnitt weiter unten.
+
+
+
+Daher kann in den Verbindungsoptionen auch definiert werden, ob der Klient des Nutzers sich über TCP, UDP, SCTP oder Bluetooth zum Nachbarn bzw. einem anderen Server verbinden soll.
+
+Der Nachbar oder Listener des Servers kann auf SSL-Verbindungen verzichten, dann wird die Übertragung nicht über HTTPS, sondern nur über HTTP geregelt. D.h. eine Verschlüsselungsschicht entfällt, die verschlüsselte Echo-Kapsel wird nicht über den HTTPS-Tunnel gesandt, sondern über HTTP – und bleibt dennoch verschlüsselt, weil ja die Echo-Kapsel an sich schon verschlüsselt ist.
+
+
+#### 13.1.2.  Sicherheitsoptionen
+
+Wenn der Nutzer sich den Tabulator in der maximalen Ansicht der Benutzeroberfläche anschaut, bestehen weitere Einstellungsoptionen:
+ 
+Ein Listener kann z.B. die Sicherheitsoption setzen, ein permanentes SSL-Zertifikat zu erzeugen. Damit wird der bei SSL bestehende Diffie-Hellman-Schlüsselaustausch bzw. -Verhandlungsprozess nicht in jeder Sitzung neu verhandelt, sondern ein Angreifer müsste schon einen Aushandlungsprozess in der Vergangenheit kennen, um hier einzugreifen. 
+
+Es kann aber sein, dass der Server bzw. Listener sein SSL-Zertifikat mal erneuert, daher macht es ggf. Sinn, Ausnahmen („Exceptions“) zuzulassen, wenn man eine Verbindung einfacher erstellen will und diese zusätzliche Sicherheitsebene nicht perfektionieren will.
+
+Ebenso kann man seinerseits die Schlüsselgröße für die SSL-Verbindung definieren und auch bestimmen, dass Verbindungen unterhalb einer bestimmten SSL-Schlüsselgröße gar nicht erst aufgebaut werden. Einmal wird also definiert, was der Nachbar an SSL-Schlüsselgröße anbieten sollte und das andere Mal wird definiert, welche Schlüsselgröße der Nutzer von einem Server bzw. Nachbarn erwartet.
+
+Schließlich besteht die Option, dass der Klient bestimmt, ob er zu dem Nachbarn mit vollem oder halbem Echo verbindet. Bei halbem Echo wird das Nachrichtenpacket nur an den Nachbarn einen Hop über die direkte Verbindung gesandt. Angenommen, der Freund des Nutzers hat den Webserver eingerichtet und sitzt auch davor und der Nutzer möchtest nicht, dass seine Echo-Pakete an dritte und seine Freunde gehen, dann kann der Nutzer mit dem Halben Echo definieren, dass seine Pakete nach Erhalt durch den Server nicht weiter verbreitet werden. Damit chatten die beiden Nutzer über eine direkte IP-Verbindung. Beide Teilnehmer sehen beim Halben Echo die IP-Adresse des Freundes und des Chat-Partners. Beim Vollen Echo muss der Chat Freund nicht Administrator des Knotenpunktes sein, sondern kann wie ein zentraler Chat-Server mehrere Klienten miteinander verbinden.
+
+Sicherheitsoptionen erlauben in der erweiterten Ansicht bei der Erstellung eines Chat-Servers/Listeners weiterhin die SSL-Schlüsselgröße zu definieren sowie auch ein permanentes SLL-Zertifikat vorzuhalten.
+
+Auch kann der Nutzer – falls er eine dauerhafte, stabile IP-Adresse hat - diese in das SSL-Zertifikat einbinden.
+
 Abbildung: Chat-Server Optionen
 
 ![Abbildung: Chat-Server Optionen](/images/chat_server_options.gif)
 
+Diese drei Maßnahmen machen es Angreifern schwerer, das SSL-Zertifikat auszutauschen oder zu „faken“ – denn es würde sofort erkannt, wenn ein untergeschobenes anderes Zertifikat sich als das originäre ausgeben wollte: weil z.B. der Klient kein neues, sondern das alte, permanente Zertifikat erwartet oder weil die IP-Adresse darin fehlt oder nicht stimmig ist. Auch die SSL-Schlüsselgröße definiert dieses.
 
 
+#### 13.1.3.  Proxy- und Firewall-Anmerkungen
+
+Wenn der Nutzer GoldBug als Klient über einen Proxy in der Firma, hinter einer Firewall bzw. einem Proxy der Universität oder auch über das Anonymisierungsnetzwerk Tor laufen lassen will, kannst er die Proxy-Details für seinen Nachbarn einfügen.
+
+Als Klient kann der Nutzer Dank des HTTP-Protokolls aus jeder IT-Umgebung verbinden, wenn er in dieser Umgebung auch mit einem Browser surfen kann. 
+
+Das ist der Vorteil der Programms GoldBug, dass überall, wo der Nutzer mit seinem Browser surfen kann, auch mit dem GoldBug Messenger e-mailen und chatten kann aufgrund des verwendeten HTTPS Protokolls. Viele andere Programme können dieses je nach Firewall-Einstellungen - z.B. vom Arbeitsplatz aus oder im Studierendenwohnheim - nicht.
+
+Wenn der Nutzer einen Proxy z.B. in seiner Firma oder Universität mit dem GoldBug-Messenger nutzen oder austesten will, dann ist dieses unkritisch, denn es wird eine SSL/TLS- bzw. HTTPS-Verbindung aufgebaut – was für die Proxy-Administratoren kaum unterschiedlich ist wie eine SSL/HTTPS Verbindung zu einer HTTPS-Webseite beim Banking oder beim Einloggen in ein Web-E-Mail.
+
+Entscheidend ist, einen Knotenpunkt im Web mit seinem GoldBug zu adressieren, der ggf. nicht vom Port her durch eine Firewall bzw. den Proxy limitiert wird. Falls das der Fall ist, kann der Nutzer seinen Freund bitten, den GoldBug-Chat-Server auf dem Port 80 oder dem Port 443 statt 4710 einzurichten und diesen ggf. mit Login-Daten für einen Echo-Account zu versehen und diese dann zur Verfügung zu stellen.
+
+Verschlüsselter Traffic bleibt verschlüsselter Traffic und über die Ports 443 oder 80 kann jeder GoldBug Freund bzw. Chat-Server im Web erreicht werden.
+
+Da das Echo-Protokoll nur eine einfache HTTP-Verbindung zu einem Nachbarn benötigt (und nicht zwingend Stun-Server oder einen DHT etc.), und damit ideal über einen Proxy, durch eine Firewall oder über das Tor-Netzwerk abgebildet werden kann, ist es eine sehr einfache Architektur, Chat sicher über einen Proxy oder ein Proxy-Netzwerk zu betreiben.
 
 
-
-Einen Chat-Server oder Spot-on-Kernel einzurichten bedeutet, einen sogenannten „Listener“ einzurichten, so der technische Begriff.
-
-Dieser wird standardmäßig für das TCP Protokoll eingerichtet, GoldBug ist jedoch auch dafür ausgestattet, einen Listener über das UDP oder drittens auch SCTP Protokoll einzurichten. Beide letztgenannten Protokoll sind ideal für VOIP oder Streams. Viertens ist auch ein Chat-Server/Listener über Bluetooth möglich (seit Version 2.8, in Abhängigkeit von Qt derzeit nur für Linux). Mit Bluetooh besteht die Möglichkeit, auf einer Lan-Party die Geräte kabellos über das Echo-Protokoll zu verbinden. Diese Option kann sehr entscheidend sein, wenn kein Internet oder keine entsprechende Infrastruktur mehr zur Verfügung stehen sollte.
- 
-Daher kann in den Verbindungsoptionen auch definiert werden, ob Dein Klient sich über TCP, UDP, SCTP oder Bluetooth zum Nachbarn bzw. Server verbinden soll.
- 
-Der Nachbar oder Listener des Servers kann auf SSL-Verbindungen verzichten, dann wird die Übertragung nicht über HTTPS, sondern nur über HTTP geregelt.
-
-'''Sicherheitsoptionen:'''
-
-Wenn Du Dir den Tabulator in der maximalen Ansicht anschaust, bestehen weitere Einstellungsoptionen:
- 
-Ein Listener kann z.B. die Sicherheitsoption setzen, ein permanentes SSL-Zertifikat zu erzeugen. Damit wird der bei SSL bestehende Diffie-Hellman-Schlüsselaustausch bzw. -Verhandlungsprozess nicht in jeder Sitzung neu verhandelt, sondern ein Angreifer müsste schon einen Aushandlungsprozess in der Vergangenheit kennen, um hier einzugreifen. Es kann aber sein, dass der Server bzw. Listener sein SSL-Zertifikat mal erneuert, daher macht es ggf. Sinn, Ausnahmen („Exceptions“) zuzulassen, wenn man eine Verbindung einfacher erstellen will und diese zusätzliche Sicherheitsebene nicht perfektionieren will.
-Ebenso kann man seinerseits die Schlüsselgröße für die SSL-Verbindung definieren und auch bestimmen, dass Verbindungen unterhalb einer bestimmten SSL-Schlüsselgröße gar nicht erst aufgebaut werden. Einmal wird also definiert, was der Nachbar an SSL-Schlüsselgröße anbieten sollte und das andere Mal wird definiert, welche Schlüsselgröße Du von einem Server bzw. Nachbarn erwartest.
- 
-Schließlich besteht die Option, dass der Klient bestimmt, ob er zu dem Nachbarn mit vollem oder halbem Echo verbindet. Bei halbem Echo wird das Nachrichtenpacket nur an den Nachbarn einen Hop über die direkte Verbindung gesandt. Angenommen, Dein Freund hat den Webserver eingerichtet und sitzt auch davor und Du möchtest nicht, dass Deine Echo-Pakete an dritte und seine Freunde gehen, dann kannst Du mit dem Halben Echo definieren, dass Deine Pakete nach Erhalt durch den Server nicht weiter verbreitet werden. Damit chattet ihr über eine direkte IP-Verbindung. Beide Teilnehmer sehen beim Halben Echo die IP-Adresse des Freundes und Chat-Partners. Beim Vollen Echo muss der Chat Freund nicht Administrator des Knotenpunktes sein, sondern kann wie ein zentraler Chat-Server mehrere Klienten miteinander verbinden.
- 
-Sicherheitsoptionen erlauben in der erweiterten Ansicht bei der Erstellung eines Chat-Servers/Listeners weiterhin die SSL-Schlüsselgröße zu definieren sowie auch ein permanentes SLL-Zertifikat vorzuhalten.
-Auch kannst Du – falls Du eine dauerhafte, stabile IP-Adresse hast - diese in das SSL-Zertifikat einbinden.
-Diese drei Maßnahmen machen es Angreifern schwerer, das SSL-Zertifikat auszutauschen oder zu faken – denn es würde sofort erkannt, wenn ein untergeschobenes anderes Zertifikat sich als das originäre ausgeben wollte: weil z.B. der Klient kein neues, sondern das alte, permanente Zertifikat erwartet oder weil die IP-Adresse darin fehlt oder nicht stimmig ist. Auch die SSL-Schlüsselgröße definiert dieses.
-
-'''Proxy- und Firewall-Anmerkungen:'''
-
-Wenn Du GoldBug als Klient über einen Proxy in der Firma, hinter einer Firewall bzw. einem Proxy der Universität oder auch über das Anonymisierungsnetzwerk Tor laufen lassen willst, kannst Du die Proxy-Details für einen Nachbarn einfügen.
- 
-Als Klient kannst Du Dank des HTTP-Protokolls aus jeder IT-Umgebung verbinden, wenn Du in dieser Umgebung auch mit einem Browser surfen kannst. Das ist der Vorteil der Programms GoldBug, dass überall, wo Du mit einem Browser surfen kannst, auch mit dem GoldBug Messenger e-mailen und chatten kannst aufgrund des verwendeten HTTPS Protokolls. Viele andere Programme können dieses je nach Firewalleinstellungen - z.B. vom Arbeitsplatz aus oder im Studierendenwohnheim - nicht.
- 
-Wenn Du einen Proxy z.B. in Deiner Firma oder Universität mit dem GoldBug-Messenger nutzen oder austesten willst, dann ist dieses unkritisch, denn es wird eine SSL/TLS- bzw. HTTPS-Verbindung aufgebaut – was für die Proxy-Administratoren kaum unterschiedlich ist wie eine SSL/HTTPS Verbindung zu einer HTTPS-Webseite beim Banking oder dem Einloggen in Dein Web-E-Mail.
-Entscheidend ist, einen Knotenpunkt im Web mit Deinem GoldBug zu adressieren, der ggf. nicht vom Port her durch Deine Firewall bzw. den Proxy limitiert wird. Falls das der Fall ist, bitte doch Deinen Freund, den GoldBug-Chat-Server auf dem Port 80 oder dem Port 443 statt 4710 einzurichten und diesen ggf. mit Login-Daten für einen Echo-Account zu versehen und diese Dir zur Verfügung zu stellen.
-Verschlüsselter Traffic bleibt verschlüsselter Traffic und über die Ports 443 oder 80 kann jeder GoldBug Freund erreicht werden.
- 
+Abbildung: Volle Ansicht bei der Hinzufügung eines Nachbarn (maximale Ansicht)'''
 
 
-Abbildung 33: Volle Ansicht bei der Hinzufügung eines Nachbarn (maximale Ansicht)'''
+Wenn der Nutzer in der nicht-minimalen Ansicht noch zusätzliche Merkmale definieren will, ist eine oft genutzte Funktion die des Echo Accounts.
+
+Dazu markiert der Nutzer in der Tabelle den Listener, den er erstellt hat und gibt dann die Account Credentials ein, also Name und Passwort.
+Der Nutzer teilt dann seinem Freund mit, wie der Accountname und das Passwort dafür lautet und der Freund wird, wenn er den Nachbarkontakt herstellt, über ein Pop-up Fenster gefragt, diese Credentials einzugeben.
+
+Ebenso kann der Nutzer auch wieder zwischen IPV4 und IPV6 wählen, wenn er einen Listener/Chat-Server erstellen will. Auch können mehrere Chat-Server erstellt werden, indem ein anderer Port gewählt wird. Der Nutzer kann verschiedene Listener mit Port 4710 oder 80 oder 443 erstellen und entscheiden, ob er diese Listener für Freunde mit einem Echo Account definieren will (Friend-Modus), oder für einfacher aufzubauende Verbindungen diese im Peer-Modus ohne Account-Login betreibt.
+
+Echo Accounts definieren also, ob der Nutzer ein F2F-Netzwerk oder ein P2P-Netzwerk aufbaut, denn mit den Account Credentials erstellst der Nutzer ein Web-of-Trust, mit dem nur seine vertrauen Freunde mit dem Login-Passwort verbinden können.
+
+#### 13.1.4. GoldBug als Lan Messenger
+
+Wenn der Nutzer einen Peer betreibt, kannst er z.B. auch auf einer LAN-Party eines geschlossen Netzwerkes mit dem Go-Live Knopf allen Teilnehmern mitteilen, dass sein Knotenpunkt einen Listener für die Gäste eröffnet hat. Dank des UDP Protokolls funktioniert der GoldBug Messenger aber auch direkt wie ein Lan-Messenger innerhalb einer geschlossenen Benutzergruppe des LANs.
+
+Dazu ist bereits der LAN-Listener als Nachbar in der Nachbartabelle definiert. Dieser ist lediglich zu aktivieren und andere GoldBug-Installationen im selben Windows-Netzwerk finden sich sodann automatisch für eine Verbindung.
 
 
+### 13.2 Servers/Listener-Erstellung Zuhause hinter einem Router/Nat
 
-Da das Echo-Protokoll nicht zwingend einen DHT benötigt, sondern nur eine einfache HTTP-Verbindung zu einem Nachbarn, die potentiell über das Tor-Netzwerk abgebildet werden kann, ist es eine sehr einfache Architektur, Chat sicher über einen Proxy oder ein Proxy-Netzwerk zu betreiben.
- 
-Das Echo-Protokoll wird für den Messaging Bereich bzw. für die Chat-Server Erstellung ab und an auch als "EMPP" bezeichnet und steht für  "Echoed Messaging and Presence Protocol" - sicherlich auch in Anlehnung zum XMPP Protokoll, das hinsichtlich Verschlüsselung als wenig elaboriert gilt und aufgrund der schlechten Nachrüstbarkeit von Verschlüsselungsmöglichkeiten und -optionen auch bei Kryptologen und Datenschützern auch hinsichtlich der Architektur trotz bestehender Popularität technisch als antiquiert gelten mag.
- 
-Wenn Du in der nicht-minimalen Ansicht noch zusätzliche Merkmale definieren willst, ist eine oft genutzte Funktion die des Echo Accounts.
-Markiere in der Tabelle den Listener, den Du erstellt hast und gebe dann die Account Credentials ein, also Name und Passwort.
-Teile Deinem Freund mit, wie der Accountname und das Passwort dafür lautet und er wird, wenn er den Nachbarkontakt herstellt, über ein Pop-up Fenster gefragt, diese Credentials einzugeben.
- 
-Ebenso kannst Du auch wieder zwischen IPV4 und IPV6 wählen, wenn Du einen Listener/Chat-Server erstellen willst. Auch können mehrere Chat-Server erstellt werden, indem ein anderer Port gewählt wird. Teste verschiedene Listener mit Port 4710 oder 80 oder 443 und entscheide, ob Du diese Listener für Freunde mit einem Echo Account definieren willst, oder für einfacher aufzubauende Verbindungen im Peer-Modus ohne Account-Login betreibst.
-Echo Accounts definieren, ob Du ein F2F-Netzwerk oder ein P2P-Netzwerk aufbaust, denn mit den Account Credentials erstellst Du ein Web-of-Trust, mit dem nur Deine vertrauen Freunde mit dem Login-Passwort verbinden können.
-Wenn Du einen Peer betreibst, kannst Du z.B. auch auf einer LAN-Party eines geschlossen Netzwerkes mit dem Go-Live Knopf allen Teilnehmern mitteilen, dass Dein Knotenpunkt einen Listener für die Gäste eröffnet hat. Dank des UDP Protokolls funktioniert der GoldBug Messenger aber auch direkt wie ein Lan-Messenger innerhalb einer geschlossenen Benutzergruppe des LANs.
 
-### 13.2 Erstellung eines Servers/Listeners Zuhause hinter einem Router / Nat
+Wenn der Nutzer keinen eigenen Server im Web hat oder keinen allgemeinen Nachbarn im Web findet, kann er auch einen eigenen Chat-Server zuhause hinter seinem eigenen Router einrichten und den Port im Router weiterleiten. Sein Freund kann dann direkt als Klient zu seinem Listener verbinden. 
 
-Wenn Du keinen Webserver hast oder keinen allgemeinen Nachbarn im Web findest, kannst du auch einen Chat-Server zuhause hinter Deinem Router einrichten. Dein Freund kann dann direkt als Klient zu Deinem Listener verbinden. Einer von beiden jedoch muss einen Listener erstellen, wenn beide hinter einer Firewall sitzen oder keinen Chat-Server im Web nutzen. Wenn Du also einen Server hinter Deinem Router/Nat zuhause erstellen willst, nimm wie genannt die lokale IP-Adresse der Maschine für den Listener z.B. 192.168.121.1.. Sodann muss Du in Deinem Router auch den Port weiterleiten, d.h. Port 4710 muss vom Router weitergeleitet werden an 192.168.121.1: 4710. Sodann muss der Kernel - Spot-on-Kernel.exe - sowie auch die GoldBug.exe in Deiner Windows Firewall erlaubt sein.
-Wenn Du alles korrekt weitergeleitet hast, kann der Freund an Deiner (externen) IP-Adresse des Routers (siehe z.B. unter www.whatismyip.com) und dem Port 4710 seinen Klienten verbinden.
+Einer von beiden jedoch muss einen Listener erstellen, wenn beide hinter einer Firewall sitzen oder keinen Chat-Server im Web nutzen. Wenn der Nutzer also einen Server hinter seinem Router/Nat zuhause erstellen will, ist wie genannt die lokale IP-Adresse der Maschine für den Listener z.B. 192.168.121.1. zu nehmen. Sodann muss der Nutzer in seinem Router auch den Port weiterleiten, d.h. Port 4710 muss vom Router weitergeleitet werden an 192.168.121.1: 4710. Weiterhin sollte der Kernel - Spot-on-Kernel.exe - sowie auch die GoldBug.exe in der Windows Firewall erlaubt sein.
+Wenn der Nutzer alles korrekt weitergeleitet hat, kann der Freund an der (externen) IP-Adresse des Routers (siehe z.B. unter www.whatismyip.com) und dem Port 4710 seinen Klienten verbinden.
 
-Wichtig ist nur, dass Dein Router den Kontaktversuch aus dem Internet am definierten Port an Deine lokale Maschine weiterleitet.
-Dieses ist ein übliches und sicheres Verfahren und öffnet keinen beliebigen Zugang zu Deinem Rechner, sondern über den Port und die Applikation wird dabei wie bei vielen anderen Programmen definiert, dass auch nur Pakete in diesem Sinne zugelassen werden.
+Wichtig ist nur, dass der Router des Nutzers den Kontaktversuch aus dem Internet am definierten Port an seine lokale Maschine weiterleitet.
+Dieses ist ein übliches und sicheres Verfahren und öffnet keinen beliebigen Zugang zu einem Rechner, sondern über den Port und die Applikation wird dabei wie bei vielen anderen Programmen definiert, dass auch nur Pakete in diesem Sinne zugelassen werden.
 
-Du kannst und musst dieses alles selbst definieren und GoldBug enthält keinen Code, der automatisch Ports im Router weiterleitet, oder öffnet oder gar automatisch einen Listener einrichtet. Somit ist es sicherer und bedarfsgerechter als andere Applikationen, die im Sinne der Nutzerfreundlichkeit sich selbst konfigurieren und diese Mühe zwar abnehmen, jedoch auch vielen Nutzern, die die technischen Details der Portweiterleitung vom Router und Listener-Definiton kennen, eine Automation im Hintergrund anbieten. 
+Der Nutzer kann und muss dieses alles selbst definieren und GoldBug enthält keinen Code, der automatisch Ports im Router weiterleitet, oder öffnet oder gar automatisch einen Listener einrichtet!
+
+Somit ist es in GoldBug sicherer und bedarfsgerechter geregelt als bei anderen Applikationen, die im Sinne der Nutzerfreundlichkeit sich selbst konfigurieren und diese Mühe abnehmen und eine Automation im Hintergrund anbieten, jedoch auch den Nutzern, die die technischen Details der Portweiterleitung vom Router und Listener-Definiton kennen, automatisiert Ports öffnen und weiterleiten.
 
 ### 13.3 Nutzung von GoldBug im TOR-Netzwerk
 
-Wenn Du Deinen GoldBug-Chat über das Tor-Netzwerk betreiben willst, geht dieses ebenso sehr komfortabel, so dass ein Tor-Exit Node nur den Verschlüsselungstext von GoldBug sehen wird. Hierbei liegt der Chat-Server wieder im normalen Web außerhalb des Tor-Netzwerkes.
+Wenn der Nutzer seinen GoldBug-Chat über das Tor-Netzwerk betreiben will, geht dieses ebenso sehr komfortabel, so dass ein Tor-Exit Node nur den Verschlüsselungstext von GoldBug sehen wird. Hierbei liegt der Chat-Server wieder im normalen Web außerhalb des Tor-Netzwerkes.
+
+Bislang kann Tor keine HTTPS-Verbindungen am Exit-Node des Tor-Netzwerkes aufbauen, eine Durchleitung der verschlüsselten Pakete zweier GoldBug-Instanzen sollte jedoch möglich sein: GB -> Tor -> Tor -> Tor -> GB.
+Ein HTTP-Listener kann ebenso eingerichtet werden.
 
 
 ### 13.4 Spot-On Server
 
+Neben GoldBug, das eine alternative Benutzeroberfläche zum Spot-On-Kernel darstellt, besteht auch noch die original Spot-On Benutzeroberfläche unter spot-on.sf.net.
+Auch mit Spot-On kann ein Chat Server Listener eingerichtet werden.
+
+
 ### 13.5 Spot-On Lite Server als Deamon
+
+Wer einen Chat-Server ohne Benutzeroberfläche administieren will, somit als Kernel-Daemon auf einem Webserver einsetzt, kann sich die weitere Server-Software für Echo-Klienten unter github.com/textbrowser/spot-on-lite ansehen.
+
 
 ### 13.6 SmokeStack Server unter Android
 
+Die einfachste Variante zuhause im LAN oder auch mit Port-Weiterleitung im Router einen Chat-Server einzurichten ist, auf einem Android-Gerät die App SmokeStack zu installieren. Auch dieser Android-Server kann die Echo-Pakete der GoldBug-Klienten weiterleiten.
+
+
 ### 13.7 Bluetooth Server
+
+Schließlich ist auch ein Chat-Server/Listener über Bluetooth möglich (seit Version 2.8, in Abhängigkeit von Qt derzeit nur für Linux). Mit Bluetooth besteht die Möglichkeit, z.B. auf einer Lan-Party die Geräte kabellos über das Echo-Protokoll zu verbinden. Diese Option kann sehr entscheidend sein, wenn kein Internet oder keine entsprechende Infrastruktur mehr zur Verfügung stehen sollte.
+
+Abbildung: Bluetooth Chat Server
+
+![Abbildung: Bluetooth Chat Server] (/images/bluetooth_chatserver.png)	
+
 
 ### 13.8 UDP Server
 
+Das User Datagram Protocol, kurz UDP, ist ein minimales, verbindungsloses Netzwerkprotokoll, das zur Transportschicht der Internetprotokollfamilie gehört. 
+
+Die Entwicklung von UDP begann, als man für die Übertragung von Sprache ein einfacheres Protokoll benötigte als das bisherige verbindungsorientierte TCP. Es wurde ein Protokoll benötigt, das nur für die Adressierung zuständig war, ohne die Datenübertragung zu sichern, da dies zu Verzögerungen bei der Sprachübertragung führen würde.
+
+Ein Drei-Wege-Handschlag wie bei TCP (dem Transmission Control Protocol) für den Aufbau der Verbindung würde in diesem Fall unnötigen Overhead erzeugen.
+
+UDP ist daher ein verbindungsloses, nicht-zuverlässiges und ungesichertes wie auch ungeschütztes Übertragungsprotokoll. Das bedeutet, es gibt keine Garantie, dass ein einmal gesendetes Paket auch ankommt, dass Pakete in der gleichen Reihenfolge ankommen, in der sie gesendet wurden, oder dass ein Paket nur einmal beim Empfänger eintrifft. Eine Anwendung, die UDP nutzt, muss daher gegenüber verlorengegangenen und unsortierten Paketen unempfindlich sein oder selbst entsprechende Korrekturmaßnahmen und ggfs. auch Sicherungsmaßnahmen vorsehen.
+
+Für das Echo Protokoll eine interessante Grundlage, da hier die Pakete ja auch im Fluss des Netzwerkes eher ungerichtet sind und durch die Multiplikation verlorene UDP-Pakete ja auch wieder durch die Redundanz ausgeglichen werden. 
+
+
 ### 13.9.SCTP Server
+
+Das Stream Control Transmission Protocol (SCTP) ist ein zuverlässiges, verbindungsorientiertes Netzwerkprotokoll. Als Transportprotokoll steht SCTP auf derselben Stufe des TCP/IP-Referenzmodells wie TCP und UDP.
+
+SCTP realisiert das Konzept einer Association: Hier wird eine Verbindung aufgebaut, in der mehrere Nachrichten-Datenströme in sich reihenfolgenerhaltend (untereinander aber potentiell nicht-reihenfolgenerhaltend) transportiert werden. Zusätzlich können einzelne, zum Beispiel dringende, Datagramme separat und außer der Reihe verschickt werden, die dadurch eventuell die In-Order-Datenströme „überholen“.
+
+Auch dieses Protokoll für die Übertragung der Echo-Pakete zu nutzen ist für die Forschung sehr interesant, da die eher ungerichteten Echo-Pakete ggf. mit diesem Protokoll im Vergleich zu UDP eine abgesichertere Übertragung erfahren. 
+
+Auch mit diesem Protokoll kann ein Chat-Server eingerichtet werden.
 
 ### 13.10 Ncat Verbindung
 
@@ -2252,11 +2306,11 @@ Sodann wird ncat aufgerufen.
 
 >    ncat –broker –ssl –ssl-cert server-cert.pem –ssl-key server-key.pem -k -l 192.168.178.130 4710
 
-Nun besuche den Nachbarn/Server Tabulator in GoldBug und definere unter 192.168.178.130 den remoten Server. 
+Nun besucht der Nutzer den Nachbarn/Server Tabulator in GoldBug und definert unter 192.168.178.130 den remoten Server. 
 
 Wenn die Nachbargeräte aktiviert wurden und die Kernels angeschaltet sind, besteht die Verbindung bereits.
 
-Eine schöne [Übung](https://funkywidget.wordpress.com/2018/04/28/ncat-raspberry-pi-spot-on-love/) und ein Netzwerk und Ncat für verschlüsselte Kommunikation auszutesten.
+Eine schöne [Übung](https://funkywidget.wordpress.com/2018/04/28/ncat-raspberry-pi-spot-on-love/), um ein Netzwerk und Ncat für verschlüsselte Kommunikation auszutesten.
 
 
 Abbildung: Übung Verbindung über Ncat
@@ -2266,38 +2320,45 @@ Abbildung: Übung Verbindung über Ncat
 
 ## 14 Werkzeuge 
 
-Neben den regulären Funktionen bestehen im GoldBug Messenger auch verschiedene Werkzeuge, die nützliche Funktionen anbieten. Zu nennen sind hier im Wesentlichen die Funktionen der Verschlüsselung von Dateien, einem weiteren Werkzeug zum Umwandeln von normalen Text und Cipher-Text (Rosetta-CryptoPad) sowie dem EPKS-Werkzeug, mit dem online die öffentlichen Schlüssel zur Verschlüsselung übertragen werden können.
+Neben den regulären Funktionen bestehen im GoldBug Messenger auch verschiedene Werkzeuge, die nützliche Funktionen anbieten. Zu nennen sind hier im Wesentlichen die Funktionen der Verschlüsselung von Dateien (File-Encryptor), einem weiteren Werkzeug zum Umwandeln von normalen Text und Cipher-Text (Rosetta-CryptoPad) sowie dem EPKS-Werkzeug, mit dem online die öffentlichen Schlüssel zur Verschlüsselung übertragen werden können. Weiterhin ist die Pass-Through Funktionalität und auch die Werkzeuge für Statistiken und Analysen zu nennen.
+
 
 ### 14.1 Werkzeug: Verschlüsselung von Dateien
  
-GoldBug verfügt über zusätzliche Werkzeuge für die Verschlüsselung. Im Hauptmenü unter Werkzeuge findest Du das Werkzeug für die Verschlüsselung von Dateien auf Deiner Festplatte ("File Encryption Tool")
+GoldBug verfügt über zusätzliche Werkzeuge für die Verschlüsselung. Im Hauptmenü unter Werkzeuge findet der Nutzer das Werkzeug für die Verschlüsselung von Dateien auf seiner Festplatte ("File Encryption Tool")
 
- 
 
- 
  Abbildung: File-Encryptor - Werkzeug zur Datei-Verschlüsselung
 
 ![Abbildung: File-Encryptor - Werkzeug zur Datei-Verschlüsselung](/images/file_encryption.png)	
 
+Damit kann der Nutzer eine Datei von der Festplatte bestimmen, sodann den gleichen Pfad angeben und eine beliebige Endung bzw. Änderung des Dateinamens wählen - sodann Passwort und Pin eingeben (beides natürlich wieder mindestens 16 Zeichen) und mit den Radio-Auswahl-Knöpfen definieren, ob die Datei ver- oder ent-schlüsselt werden soll. 
 
-
-Damit kannst Du eine Datei von der Festplatte bestimmen, sodann den gleichen Pfad angeben und eine beliebige Endung bzw. Änderung des Dateinamens wählen - sodann Passwort und Pin eingeben (beides natürlich wieder mindestens 16 Zeichen) und mit den Radio-Auswahl-Knöpfen definieren, ob die Datei ver- oder ent-schlüsselt werden soll. Cipher-  und Hash-Type sind ebenso definierbar wie auch eine Signatur in die Verschlüsselung optional eingebaut werden kann, damit sichergestellt wird, dass die Verschlüsselung auch durch Dich erfolgte (und niemanden anderes).
+Cipher- und Hash-Type sind ebenso definierbar wie auch, dass eine Signatur in die Verschlüsselung optional eingebaut werden kann, damit sichergestellt wird, dass die Verschlüsselung auch nur durch den definierten Nutzer erfolgte (und niemanden anderes).
  
-Das Werkzeug zur Dateiverschlüsselung ist ein Angebot, um z.B. potentiell unsichere Truecrypt Container zu ersetzen bzw. ergänzend zu verschlüsseln oder um einzelne Dateien zu sichern, bevor Du sie transferierst - sei es als E-Mail in GoldBug, über StarBeam in GoldBug oder auch über konventionelle, unsichere Wege - oder einfach, um sie auf Deiner Festplatte oder bei Speicherung in Online-Speichern wie Dropbox oder Megaupload zuvor zu verschlüsseln.
+Das Werkzeug zur Dateiverschlüsselung ist ein Angebot, um z.B. potentiell unsichere Truecrypt Container zu ersetzen bzw. ergänzend zu verschlüsseln oder um einzelne Dateien zu sichern, bevor der Nutzer sie transferiert - sei es als E-Mail in GoldBug, über StarBeam in GoldBug oder auch über konventionelle, unsichere Wege - oder einfach, um sie auf der Festplatte oder bei Speicherung in Online-Speichern wie Dropbox oder Megaupload zuvor zu verschlüsseln.
 
 ### 14.2 Werkzeug: Das Rosetta CryptoPad
 
-Das Werkzeug Rosetta CryptoPad hat seinem Namen vom [Stein von Rosett](), der in London im Museum steht. Er gilt als Übersetzungshilfe für ägyptische Hyroglyphen in weitere Sprachen.
-Das in GoldBug enthaltene Rosetta CryptoPad besteht aus zwei Schüsseln - wie auch Chat und E-Mail und alle anderen Funktionen derartig ihre eigenen Schlüssel haben. Tausche auch hier mit einem Freund den Rosetta-Schlüssel, gebe Text in das CryptoPad ein, wähle den Freund und, ob es sich um Ver- oder Entschlüsselung handelt, - und drücke den Knopf "konverieren".
-Sodann wird unten der Output als chiffrierter Text angezeigt und diesen kannst Du einfach mit der Kopierfunktion auskopieren und über konventionelle Online-Kommunikationswege wie @-E-Mail oder einen anderen Chat versenden. 
-Auch Web-Boards oder Paste-Bins kannst Du so als verschlüsselten Ort für Deine Kommunikation nutzen.
-Es ist Slow-Chat durch Deine manuelle Verschlüsselung Deines Chat-Textes (wobei wohl das Verschlüsseln schneller geht als das Copy Paste in andere Instanzen).
+Das Werkzeug Rosetta CryptoPad hat seinen Namen vom [Stein von Rosett]( https://de.wikipedia.org/wiki/Stein_von_Rosette), der in London im Museum steht. Er gilt als Übersetzungshilfe für ägyptische Hyroglyphen in weitere Sprachen.
 
+Das in GoldBug enthaltene Rosetta CryptoPad hat einen eigenen Schüssel - wie auch Chat und E-Mail und alle anderen Funktionen derartig ihre eigenen Schlüssel haben.
 
+Der Nutzer tauscht auch hier mit einem Freund den Rosetta-Schlüssel, gibt dann Text in das CryptoPad ein, wähle den Freund und, ob es sich um Ver- oder Entschlüsselung handelt, - und drücke den Knopf "konverieren".
 
 Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad
 
 ![Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad](/images/rosetta.png)	
+
+
+Sodann wird unten der Output als chiffrierter Text angezeigt und diesen kann der Nutzer einfach mit der Kopierfunktion auskopieren und über konventionelle Online-Kommunikationswege wie @-E-Mail oder einen anderen Chat versenden. 
+Auch Web-Boards oder Paste-Bins kann der Nutzer so als Ort für seine verschlüsselte Kommunikation nutzen.
+
+Es ist sozusagen „Slow-Chat“ durch eine manuelle Verschlüsselung des Chat-Textes (wobei wohl das Verschlüsseln schneller geht als das Copy Paste in andere Instanzen).
+
+Das Rosetta CryptoPad ist eine Alternative zu GnuPG (bzw. basiert es ja ebenso auf der GnuPG zugrunde liegenden Bibliothek libgcrypt).
+
+Diese Methode des Slow-Chats zeigt ebenso auf, dass Applikationen, die darauf setzten, jedes einzelne E-Mail zu verschlüsseln, eine unbequeme Methode sind. Wer will schon bei jedem E-Mail und jeder Chat-Nachricht den Empfänger auswählen, die Nachricht verschlüsseln, entscheiden, ob der Signatur-Schlüssel noch angefügt werden soll oder nicht, bevor die Nachricht versandt wird? 
 
 
 Abbildung: ROSETTA Crypto Pad 2
@@ -2305,14 +2366,16 @@ Abbildung: ROSETTA Crypto Pad 2
 ![Abbildung: ROSETTA Crypto Pad 2](/images/rosetta_pad_2.jpg)
 
 
-
-Das Rosetta CryptoPad ist eine Alternative zu GnuPG (bzw. basiert es ja ebenso auf der GnuPG zugrunde liegenden Bibliothek libgcrypt).
-Diese Methode des Slow-Chats zeigt aber auf, dass Applikationen, die darauf setzten, jedes einzelne E-Mail zu verschlüsseln, eine unbequeme Methode sind. Wer will schon bei jedem E-Mail und jeder Chat-Nachricht den Empfänger auswählen, die Nachricht verschlüsseln, entscheiden, ob der Signatur-Schlüssel noch angefügt werden soll oder nicht, bevor die Nachricht versandt wird. Bei GoldBug ist der generelle Vorteil gegeben, dass man einmal mit dem Freund beim Setup den Schlüssel tauscht und sodann ist alles jederzeit verschlüsselt und die gesamte Kommunikation bewegt sich innerhalb der gewählten Verschlüsselung, die mit temporären Schlüsseln und Ende-zu-Ende Passphrasen (Geminis der Calling Funktion) jederzeit instant erneuert werden kann.
+Bei GoldBug ist der generelle Vorteil gegeben, dass man einmal mit dem Freund beim Setup den Schlüssel tauscht und sodann ist alles jederzeit verschlüsselt und die gesamte Kommunikation bewegt sich innerhalb der gewählten Verschlüsselung, die mit temporären Schlüsseln und Ende-zu-Ende Passphrasen (Geminis der Calling Funktion) jederzeit instant erneuert werden kann.
 
 ### 14.3 Werkzeug: Echo Public Key Share (EPKS)
 
 Wenn es um Verschlüsselung geht, besteht immer die zentrale Fragestellung, wie man den Schlüssel sicher zum Freund transportieren kann.
-Manche Architekturen nutzen dazu Key-Server, in denen der Nutzer seine öffentliche Schlüssel einstellen kann. Dieses scheint logisch, schließlich ist es ein öffentlicher Schlüssel. Dennoch haben die Key-Server auch massive Nachteile, so weiss man nicht, ob man den richtigen Schlüssel darin gefunden hat bzw. ob dieser gar noch aktuell ist. Mit der Echo Public Key Share Funktion können im GoldBug Messenger Schlüssel sehr einfach übertragen werden.
+
+Manche Architekturen nutzen dazu Key-Server, in denen der Nutzer seine öffentlichen Schlüssel einstellen kann. Dieses scheint logisch, schließlich ist es ein öffentlicher Schlüssel. Dennoch haben die Key-Server auch massive Nachteile, so weiß man nicht, ob man den richtigen Schlüssel darin gefunden hat bzw. ob dieser gar noch aktuell ist. 
+
+
+Mit der Echo Public Key Share Funktion können im GoldBug Messenger Schlüssel sehr einfach übertragen werden.
 
 
 Abbildung: EPKS - Echo Public Key Sharing
@@ -2320,37 +2383,52 @@ Abbildung: EPKS - Echo Public Key Sharing
 ![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS.png)	
 
 
+Dazu wird mit einem Community Namen im p2p-Netzwerk des Echo-Protokolls ein symmetrischer Schlüssel definiert, über den alle Teilnehmer, die den Community-Namen kennen, sodann die öffentlichen Schlüssel tauschen können.
+
+Das Werkzeug ist über das Hauptmenü verlinkt und öffnet ein neues Pop-Up-Fenster.
+
+
 Abbildung: EPKS - Echo Public Key Sharing 2
 
 ![Abbildung: EPKS - Echo Public Key Sharing 2](/images/EPKS_keyshare.png)	
 
 
+Ein Beispiel einer Community ist dort für den Tausch von URL-Schlüsseln bereits standardmäßig vorgegeben.
+Der Nutzer sendet seinen URL-Schlüssel an diese Community und alle weiteren Teilnehmer, die derzeit im p2p Netzwerk online sind, erhalten diesen Schlüssel.
 
-Dazu wird mit einem Community Namen im p2p-Netzwerk des Echo-Protokolls ein symmetrischer Schlüssel definiert, über den alle Teilnehmer, die den Community-namen kennen, sodann die öffentlichen Schlüssel getauscht werden können.
-Das Werkzeug ist über das Hauptmenü verlinkt und öffnet ein neues Pop-Up-Fenster.
-Ein Beispiel einer Community ist dort für den Tausch von URL-Schlüsseln bereits standardmässig vorgegeben.
-Sende Deinen URL-Schlüssel an diese Community und alle weiteren Teilnehmer, die derzeit im p2p Netzwerk online sind, erhalten Deinen Schlüssel.
-Es ist ein Schlüsselaustausch über einen symmetrisch verschlüsselten Kanal, wobei das ende-zu-ende Passwort der Name der Community ist.
-Alle Nutzer, die den Namen der Community kennen, werden dann die Schlüssel, die Du in den Kanal gibst, erhalten und ihrem Programm hinzufügen.
+Es ist ein Schlüsselaustausch über einen symmetrisch verschlüsselten Kanal, wobei das Passwort für die Ende-zu-Ende-Verschlüsselung der Name der Community ist.
+Alle Nutzer, die den Namen der Community kennen, werden dann die Schlüssel, die Nutzer in den Kanal geben, erhalten und ihrem Programm hinzufügen können.
+
 
 ### 14.4 Pass-Through Funktionalität
 
+Wenn zwei GoldBug Klienten über das Internet eine bestehende Verbindung haben, kann diese Verbindung als Tunnel genutzt werden, um die Daten einer anderen Applikation durch diesen Tunnel zu leiten.
+
+Dazu wird der Proxy von GoldBug mit der Pass-Through Funktionalität
+ adressiert.
 
 Abbildung: GoldBug als Proxy: Pass-Through
 
 ![Abbildung: GoldBug als Proxy: Pass-Through](/images/passthrough.png)	
 
+Diese ist insofern eine interessante Funktion, um zwei Klienten eines anderen Programms ohne Verschlüsselung über das Internet mit der verschlüsselten Verbindung über GoldBug zu schützen.
 
+Applikation => GB => GB-Server => GB => Applikation
+
+Es wird für eine andere Applikation sozusagen ein VPN-Tunnel aufgebaut, der sogar mit McEliece oder einen der anderen Verschlüsselungs-Algorithmen ausgestattet sein kann. Solange kein VPN Anbieter eine McEliece-Verschlüsselung von Startpunkt zu Endpunkt anbietet, ist die Pass-Through-Funktionalität, die GoldBug als eine Art VPN-Werkzeug darstellt, die richtige Wahl für einen Test. Bislang ist keine weitere Tunnel-Software bekannt, die McEliece einsetzt.
+
+Die anzubindende Applikation sollte dabei tolerant gegenüber der Reihenfolge der gesandten Pakete sein. Ein interessanter Forschungs-Test mit mehreren möglichen Applikationen, die durch geleitet werden können.
 
 
 ### 14.5 Anzeige Analysen und Statistiken
 
+Neben Statistik-Übersichten sind auch Analyse-Werkzeuge in GoldBug enthalten, wie z.B. der oben angesprochen StarBeam-Analyzer. Auch die Listener und Server Tabellen enthalten zahlreiche Dateninformationen zu gesandten Paketen, ebenso bestehen die Statistiken für die URL-Datenbank.
 
 Abbildung: Anzeige von Statistiken
 
 ![Abbildung: Anzeige von Statistiken](/images/stats.png)	
 
-
+Neben der üblichen Benutzeroberfläche lässt sich GoldBug auch in Konsolenform z.B. auf einem RasperryPi installieren und die Statistik-Übersicht mit einem entsprechenden Befehl abrufen.
 
 Abbildung: Statistik Konsole auf einem Raspberry Pi
 
@@ -2358,83 +2436,76 @@ Abbildung: Statistik Konsole auf einem Raspberry Pi
 
 
 ## 15 BIG SEVEN STUDY: Crypto-Messenger-Audit
-GoldBug wurde in dem Audit von David Adams und Ann-Kathrin Maier über sieben quell-offene Messenger als einer der BIG SEVEN Crypto-Messenger betrachtet, der in einem an internationalen IT-Audit Manualen orientierten Audit sich in mehr als 20 Dimensionen als sehr audit-konform und vertrauenswürdig herausstelle. Auch die zahlreichen Code-Reviews gaben Hinweise auf eine exzellente Programmierung. Die über alle sieben Messenger identifizierten '''10 Trends in Crypto-Messaging''' (vgl. Adams / Maier 2016) betreffen insbesondere die Möglichkeit in GoldBug, dezentrale Chat-Server einzurichten, sowie auch manuelle Definitionen von Ende-zu-Ende verschlüsselnden symmetrischen Passworten zu treffen.
+
+GoldBug wurde in dem Audit von David Adams und Ann-Kathrin Maier über sieben quelloffene Messenger als einer der BIG SEVEN Crypto-Messenger betrachtet, der in einem an internationalen IT-Audit Manualen orientierten Audit sich in mehr als 20 Dimensionen als sehr audit-konform und vertrauenswürdig herausstelle. 
+
+Auch die zahlreichen Code-Reviews gaben Hinweise auf eine exzellente Programmierung. Die über alle sieben Messenger identifizierten '''10 Trends in Crypto-Messaging''' (vgl. Adams / Maier 2016) betreffen insbesondere die Möglichkeit in GoldBug, dezentrale Chat-Server einzurichten, sowie auch manuelle Definitionen von Ende-zu-Ende verschlüsselnden symmetrischen Passworten zu treffen.
 
 
 Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)
 
 ![Abbildung: Trends in Crypto nach der Big-Seven-Crypto-Studie (2016)](/images/trends_in_crypto.png)	
 
+Neben der Auditierung des Quellcodes, der Architektur und Prozesse der Verschlüsselung sowie der Funktionen in GoldBug bestehen zahleiche weitere Themenfelder, an denen eine zukünftige Forschung sich orientieren kann. Exemplarisch wäre für weitere Evaluationen und Forschungsbedarf zu nennen, die insbesondere im Vergleich mit anderen Applikationen eine Rolle spielen:
+
+- Is the Application open source?
+- Is it a tiered application: kernel and user interface processes.
+- Are there proxy capabilities?
+- Is it possible to send E-Mail messages to offline friends?
+- Is it possible to send E-Mail with encrypted attachments?
+- Are there different Keys for different functions in place like Chat, E-Mail, Cryptopad, Filetransfer etc.?
+- Is the key stuck to the IP Address of the user?
+- How is mutual access authentication defined?
+- Are there alternatives to RSA, like Elgamal or NTRU? Can a NTRU-user chat to a RSA-user? Is McEliece given?
+- Are there selectable SSL ciphers?
+- Are there selectable hash algorithms?
+- Just need connectivity, no key exchange, keys are optional?
+- Is trust needed, or can it be added as the user define it?
+- What about technical simplicity?
+- is it possible to determine, who is reading which message?
+- Local databases store all info in encrypted .db’s?
+- Is the authentication of messages optional?
+- Can the user communicate without public keys, using Magnets?
+- Support for TCP and UDP and SCTP communications?
+- Support of multi-layers of encryption
+- Are multiple listeners possible?
+- Is a multi-threaded kernel given?
+- Are there IRC-like group chat channels?
+- What about simple IP-based firewalls?
+- Do scramblers send out fake messages?
+- Is it possible to store messages in friends?
+- Is there the option to use an individually defined and manually inserted end-to-end key for communication?
+- Is there the option to renew the end-to-end key each time user wants (not only session based)?
+- Encrypted file transfer protocol (StarBeam)?
+ -Using a onetime magnet (OTM) for a crypto channel?
+- Having ipv6 support?
+- Having Qt 5 and up deployed?
+- Sending a message to a friend to his dedicated connection and not to all connections?
+- Hiding the key exchange online?
+- Use several encryption keys for one file transfer?
+- Adding a passphrase on a file transfer?
 
 
-'''Liste an möglichen weiteren Kriterien für weitergehende, vergleichende Evaluationen'''
-0.          Is the Application open source?
-1.          Tiered application: kernel and user interface processes.
-2.          Use proxy capabilities?
-3.          Send E-Mail messages to offline friends?
-4.          Send E-Mail with encrypted attachments?
-5.          Having different Keys for Chat, E-Mail, Cryptopad, Filetransfer etc.?
-6.          Is the key stuck to your IP Address?
-7.          Mutual access authentication?
-8.          No hashing of a file and sending it with hash and senders/receivers ID to neighbors, so it is identifyable?
-9.          Are there alternatives to RSA, like Elgamal or NTRU? Can a NTRU-user chat to a RSA-user?
-10.      You can use SSL or not? Selectable SSL ciphers?
-11.      Selectable hash algorithms?
-12.      Just need connectivity, no key exchange, keys are optional?
-13.      You are more autonomous?
-14.      Trust is not needed, or can be added as you define it?
-15.      Technical simplicity?
-16.      Anonymous seeds?
-17.      You cannot determine, who is reading which message (as you have no destination ID or info added)?
-18.      Free of Web of Trust-Graphs and no mapping of connections ?
-19.      Its different, its fun?
-20.      Local database stores all info in encrpyted .db’ s?
-21.      Re-encode support of locally-encrypted data.
-22.      Optional authentication of messages ?
-23.      You can communicate without public keys, using Magnets ?
-24.      Support for TCP and UDP and SCTP communications?
-25.      Support the multi-layer of encryption
-26.      Having multi encryption? e.g. SSL + RSA + AES ? Or even Ciphertext over SSL + RSA + AES  (Rosetta-Cryptopad ciphertext sent over encrypted channels)?
-27.      Multiple listeners are possible?
-28.      A kernel is given? Multi-threaded?.
-29.      IRC-like channels?
-30.      Simple IP-based firewalls?
-31.      You can define many points of connections?
-32.      Do scramblers send out fake messages?.
-33.      You can store messages in friends ?
-34.      You have the option to use an end-to-end key for communication?
-35.      You have the option to renew the end-to-end key each time you want (not only session based)?
-36.      Encrytped file transfer protocol (StarBeam)?
-37.      Using a one time magnet (OTM) for a crypto channel?
-38.      Having ipv6 support?
-39.      Having Qt 5 and up deployed ?
-40.      Hops are not forwarding, no routing, is it always a wrap the message new and send to just to your friend? router-less and forwarding-less protocol?
-41.      Sending a message to a friend to his dedicated connection and not to all connections?
-42.      Hiding the key exchange online?
-43.      Use several encryption keys on one filetransfer?
-44.      Adding a passphrase on a file transfer ?
-45.      Use it as client without a listener?
+## 16 Die digitale Verschlüsselung der privaten Kommunikation im Kontext von… 
 
+Dieses Benutzerhandbuch soll nicht nur technisch die Handhabung von Verschlüsslungen, ihren Prozessen oder die Nutzung der einzelnen Tabs und Knöpfe darstellen, sondern auch den Sinn der Verschlüsselung darstellen, wie er sich im Lichte verschiedener Grundgesetze zum Schutz der privaten Freiheit und Kommunikation darstellt.
+Auf folgende grundlegende Gesetze soll daher hingewiesen werden, die in ihren Originaltexten Referenz dazu nehmen.
  
 
-
-## 16 Die digitale Verschlüsselung Deiner privaten Kommunikation im Kontext von… 
-
-Dieses Benutzerhandbuch soll nicht nur technisch die Handhabung von Verschlüsselungen, ihren Prozessen oder die Nutzung der einzelnen Tabs und Knöpfe darstellen, sondern auch den Sinn der Verschlüsselung darstellen, wie er sich im Lichte verschiedener Grundgesetze zum Schutz der privaten Freiheit und Kommunikation darstellt.
-Auf folgende grundlegende Gesetze soll daher hingewiesen werden, die in ihren Originaltexten einbezogen werden.
- 
 ### 16.1 Principles of the protection of private speech, communication and life: Universal Declaration of Human Rights, 1948 (Art. 12)
 
 No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.
 http://www.un.org/en/documents/udhr/index.shtml#a12
 [Universal Declaration of Human Rights Universal Declaration of Human Rights]()
  
+
 ### 16.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
 1. No one shall be subjected to arbitrary or unlawful interference with his privacy, family, home or correspondence, nor to unlawful attacks on his honour and reputation.
 2. Everyone has the right to the protection of the law against such interference or attacks.
 http://www.ohchr.org/EN/ProfessionalInterest/Pages/CCPR.aspx
 [International Covenant on Civil and Political Rights - International Covenant on Civil and Political Rights]()
  
+
 ### 16.3 European Convention on Human Rights, 1950 (Art. 8)
 1.Everyone has the right to respect for his private and family life, his home and his correspondence.
 2.There shall be no interference by a public authority with the exercise of this right except such as is in accordance with the law and is necessary in a democratic society in the interests of national security, public safety or the economic well-being of the country, for the prevention of disorder or crime, for the protection of health or morals, or for the protection of the rights and freedoms of others.
@@ -2471,6 +2542,7 @@ Art. 1 Human dignity – Human rights: Legally binding force of basic rights
 (2) The German people therefore acknowledge inviolable and inalienable human rights as the basis of every community, of peace and of justice in the world.
 (3) The following basic rights shall bind the legislature, the executive and the judiciary as directly applicable law
 
+
 ### 16.6 Art. 10 - Privacy of correspondence, posts and telecommunications
 
 Secrecy of correspondence - Fernmeldegeheimnis (Art. 10 Abs. 1 Grundgesetz)
@@ -2497,86 +2569,26 @@ eine Sendung, die einem solchen Unternehmen zur Übermittlung anvertraut worden 
 - http://www.gesetze-im-internet.de/tkg_2004/__88.html
 - http://www.gesetze-im-internet.de/stgb/__206.html
  
+
 ### 16.8 United States Constitution: Search and Seizure (Expectation of Privacy, US Supreme Court)
 
 The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.
 http://www.usconstitution.net/const.html
 
 
+
 ## 17 Historie der Veröffentlichungen 
 
 Die Liste der Veröffentlichungen zeigt über mehrere Jahre hinweg kontinuierliche Veröffentlichungen der Applikation. Die erste Veröffentlichung geht auf das Jahr 2013 zurück, zuvor sind zudem in einem anderen Projekt ebenso mehrere Jahre Forschungsarbeit eingeflossen. Die Veröffentlichungsdaten der Versionen zeigt im Durchschnitt fast monatlich eine Release-Veröffentlichung. Die entsprechende Anmerkung verdeutlicht, welche Funktion im Wesentlichen hinzugefügt, verbessert oder neu veröffentlicht wurde.
 
-{| class="wikitable"
-|-
-! Version !! Datum !! Bemerkungen
-|-
-| 3.0 || |2016|08|29 || Threefish-Release.
-|-
-| 2.9 || |2016|02|01 || RSS-/Atom-Newsreader Release.
-|-
-| 2.8 || |2015|12|25 || Pandamonium Webcrawler Release (XMAS-Release).
-|-
-| 2.7 || |2015|09|26 || Forward Secrecy in E-Mail & Chat Release.
-|-
-| 2.6 || |2015|08|01 || Serverless Key Share-Release.
-|-
-| 2.5 || |2015|06|19 || URL-Websearch-Release.
-|-
-| 2.1 || |2015|04|20 || Virtual-Keyboard-Release.
-|-
-| 1.9 || |2015|02|23 || Socialist-Millionaire-Protocoll-(SMP)-Release.
-|-
-| 1.8 || |2015|01|24 || E-Mail-Client-Release: Plaintext-E-Mails over POP3/IMAP.
-|-
-| 1.7 || |2014|12|06 || POPTASTIC-XMAS-Release: Encrypted chat over POP3.
-|-
-| 1.6a || |2014|11|09 || 2-Way-Instant-Perfect-Forward-Secrecy: "2WIPFS"-Release.
-|-
-| 1.5 || |2014|10|10 || Alternative Login-Method Release
-|-
-| 1.3 || |2014|09|30 || NTRU Release
-|-
-| 1.1 || |2014|09|09 || Vector Update Release
-|-
-| 1.0 || |2014|09|07 || File-Encryption Tool Release
-|-
-| 0.9.09 || |2014|08|20 || Smiley Release
-|-
-| 0.9.07 || |2014|07|13 || Adaptive Echo Release
-|-
-| 0.9.05 || |2014|05|31 || Added Example Project Chat Server Release
-|-
-| 0.9.04 || |2014|04|22 || SCTP & Institution Release. 
-|-
-| 0.9.02 || |2014|03|13 || StarBeam Analyzer Release
-|-
-| 0.9.00 || |2014|02|07 || Tablet Gui Release. 
-|-
-| 0.8 || |2013|12|23 || Rosetta CryptoPad Release. 
-|-
-| 0.7 || |2013|12|19 || StarBeam Filesharing Release
-|-
-| 0.6 || |2013|10|24 || El-Gamal Release
-|-
-| 0.5 || |2013|09|16 || Signature-Keys Release
-|-
-| 0.4 || |2013|09|03 || Kernel-Improvement Release
-|-
-| 0.3 || |2013|08|26 || Geo-IP-Release
-|-
-| 0.2 || |2013|08|22 || SSL-Release
-|-
-| 0.1 || |2013|07|27 || based on the release of the same day of the Echo/Chat-Kernel-Servers and Application http://spot-on.sf.net, going back on another previous research project."/>
-|}
+Die Historie der Veröffentlichungen findet sich hier im Wiki der goldbug.sf.net Projektseite.
+
 
 ## 18 Webseite
  
 Weitere Informationen finden sich auf der Webseite:
 
 * http://GoldBug.sf.net
-
-
 
 
 ## 19 Offener Quellcode=
@@ -2588,17 +2600,17 @@ Der offene Quellcode findet sich bei GitHub:
 
 ### 19.1 Informationen zur Kompilierung 
 
-Wer auf der Webseite von GoldBug schaut, findet hier jeweils die aktuelle Veröffentlichung, insbesondere für Windows. Wer jedoch fortgeschrittenere Computer-Kenntnisse hat, ein Programm auch selbst vom Quellcode kompilieren kann oder es an diesem Beispiel erlernen möchte, findet hier die Hinweise, wie dabei vorzugehen ist für das Betriebssystem Windows.
+Wer auf der Webseite von GoldBug schaut, findet hier jeweils die aktuelle Veröffentlichung, insbesondere für Windows. Wer fortgeschrittenere Computer-Kenntnisse hat, ein Programm auch selbst vom Quellcode kompilieren möchte oder es an diesem Beispiel erlernen will, findet hier die Hinweise, wie dabei vorzugehen ist für das Betriebssystem Windows.
 
-Die Kompilierung aus dem Quellcode ermöglicht es Dir, zu sehen, wie der Quelltext sich in eine Binärdatei (.exe) bildet und welche Programmbibliotheken zu ergänzen sind, damit die ausführbare Datei laufen kann.
+Die Kompilierung aus dem Quellcode ermöglicht es dem Nutzer, zu sehen, wie der Quelltext sich in eine Binärdatei (.exe) bildet und welche Programmbibliotheken zu ergänzen sind, damit die ausführbare Datei laufen kann.
 
-1. Lade das Qt-Tool-Kit herunter. Wähle die Offline Installation mit MingGW: z.B. Qt 5.5.1 for Windows 32-bit (MinGW 4.9.2, 1.0 GB) unter der URL: http://www.qt.io/download-open-source/#section-2 
+1. Zunächst ist das Qt-Tool-Kit herunter zu laden. Zu wählen wäre die Offline (oder Online) Installation mit MingGW: z.B. Qt 5.X for Windows 32-bit (MinGW 4.9.2, 1.0 GB) unter der URL: http://www.qt.io/download-open-source/#section-2 
 
-2. Lade sodann den Quelltext herunter. Für Windows sind alle benötigten Abhängigkeiten und Programmbibliotheken bereits integriert im Pfad des Qelltextes. Die GoldBug Gui und den Spot-On Kernel findetst Du bei GitHub unter dieser URL: https://github.com/textbrowser/spot-on 
-Um den Quelltext herunterzuladen kannst Du auf der Webseite den Master-Tree als Zip im Browser herunterladen oder du verwendet einen GIT-Klienten für Windows.
+2. Sodann ist der Quelltext herunterzuladen. Für Windows sind alle benötigten Abhängigkeiten und Programmbibliotheken bereits integriert im Pfad des Qelltextes. Die GoldBug Gui und den Spot-On Kernel findet der Nutzer bei GitHub unter dieser URL: https://github.com/textbrowser/spot-on 
+Um den Quelltext herunterzuladen kann der Nutzer auf der Webseite den Master-Tree als Zip im Browser herunterladen oder einen GIT-Klienten (Windows) für den Source-Download verwenden.
 
-Für Linux lade alle diese Programmbibliotheken: 
-* Qt 4.8.5 oder Qt 5.1.x, 
+Für Linux sind alle diese Programmbibliotheken zu iinstallieren: 
+* Qt 5.x, 
 * libGeoIP 1.5.1, 
 * libcrypto 0.9.8 or later, 
 * libgcrypt 1.5.x, and 
@@ -2608,15 +2620,17 @@ Für Linux lade alle diese Programmbibliotheken:
 * libssl-dev
 * libgeoip-dev
 
-Die libGeoIP Programmbibliothek ist optional und kann auch umgangen werden, wenn die ausgewählte die Qt-PRO-Projektdatei entsprechend konfiguriert wird. Prüfe bitte, ob Du für Linux alle genannten oder aktuellere Versionen dieser Programmbibliotheken auf Deiner Maschine installiert hast.
-Für Windows sind wie gesagt die nötigen Programmbibliotheken dem Quellcode bereits beigefügt (DLL-Dateien). 
+Die libGeoIP Programmbibliothek ist optional und kann auch umgangen werden, wenn die ausgewählte Qt-PRO-Projektdatei entsprechend konfiguriert wird. Es ist zu prüfen, ob für Linux alle genannten oder aktuelleren Versionen dieser Programmbibliotheken auf der Maschine installiert sind.
+Für Windows sind wie gesagt die nötigen Programmbibliotheken dem Quellcode bereits beigefügt (DLL-Dateien).
 
-3. Nachdem Du Qt installiert hast, starte das Programm Qt-Creator aus dem Qt-Verzeichnis.
+3. Nachdem der Nutzer Qt installiert hat, ist das Programm Qt-Creator aus dem Qt-Verzeichnis zu starten.
 
-4. Wähle aus dem entpackten Quellcode-Pfad die relevante .pro Datei aus und kompiliere die GUI und den Kernel mit Qt Creator. Für die Kompilierung von GoldBug installiere also Qt5 und wähle dann die .pro Datei GoldBug.Qt5.win.pro.
-Diese Datei öffnet beide Unter-Pro-Dateien für Kernel und Gui. Klicke dann in QT-Creator einfach den grünen Forward-Pfeil und die Kompilierung startet. Am Ende des Kompilierungsprozesses aus dem Qt-Creator sollte dann die GoldBug.exe startbar sein. Wenn Du die exe.Datei in einen eigenen Pfad auf Deine Festplatte geben willst, musst Du auch alle benötigten DLL-Dateien hinzufügen sowie die Unterpfade z.B. für die Sound- oder Qt-Dateien.
+4. Sodann ist aus dem entpackten Quellcode-Pfad die relevante .pro Datei auszuwählen und die GUI und den Kernel mit Qt Creator zu kompilieren. Für die Kompilierung von GoldBug installiert man also Qt5 und wähle dann die .pro Datei „GoldBug.Qt5.win.pro“.
+Diese Datei öffnet beide Unter-Pro-Dateien für Kernel und Gui. 
 
-Du kannst mit dem Qt-Terminal-Fenster GoldBug natürlich auch mit manuellen DOS-Befehlen kompilieren, ohne Qt-Creator zu nutzen.
+Sodann ist in QT-Creator einfach den grünen Forward-Pfeil zu klicken und die Kompilierung startet. Am Ende des Kompilierungsprozesses aus dem Qt-Creator sollte dann die GoldBug.exe startbar sein. Wenn der Nutzer die exe.Datei in einen eigenen Pfad auf seine Festplatte geben will, muss er auch alle benötigten DLL-Dateien hinzufügen sowie die Unterpfade z.B. für die Sound- oder Qt-Dateien, wie sie eben in dem vorgegeben Installations-Zip für GoldBug Windows bereits vorhanden sind.
+
+Der Nutzer kann mit dem Qt-Terminal-Fenster GoldBug natürlich auch mit manuellen DOS-Befehlen kompilieren, ohne Qt-Creator zu nutzen.
 
 KOMPILING-PROZESS mit C++/Qt:
 
@@ -2627,7 +2641,7 @@ qmake -o Makefile GoldBug.win.qt5.pro <br />
 make or mingw32-make<br />
 or choose in Qt-Creator: GoldBug.win.qt5.pro
 
-GB does not provide checksums for the binary downloads as the source is given for those who want to build on their own. GB has a build date in the gui so the sums might differ for each compile.
+GB does not provide checksums for the binary downloads as the source is given for those who want to build on their own. Please notice: GB has a build date in the gui so the sums might differ for each compile!
 
 '''FURTHER INFO for other .pro files: '''
 
@@ -2676,7 +2690,6 @@ make or mingw32-make<br />
 
 - Generation NT: Sécuriser ses échanges par messagerie: Apportez encore plus de la confidentialité dans votre messagerie, URL: https://www.generation-nt.com/goldbug-messenger-securiser-echanger-communiquer-discuter-messagerie-securite-echange-communication-telecharger-telechargement-1907585.html
 
-
 - Hartshorn, Sarah: 3 New Open Source Secure Communication Projects, May 28, 2015, http://blog.vuze.com/2015/05/28/3-new-open-source-secure-communication-projects/
 
 - Harvey, Cynthia: Datamation: 50 Noteworthy Open Source Projects - Chapter Secure Communication: GoldBug Messenger ranked on first # 1 position, Posted September 19, 2014, http://www.datamation.com/open-source/50-noteworthy-new-open-source-projects-3.html
@@ -2699,12 +2712,10 @@ make or mingw32-make<br />
 
 - Schneier, Bruce / Seidel, Kathleen / Vijayakumar, Saranya: GOLDBUG Multi-Encrypting Messenger – in: A Worldwide Survey of Encryption Products, URL: https://www.schneier.com/cryptography/paperfiles/worldwide-survey-of-encryptionproducts.pdf, February 11, 2016 Version 1.0.
 
-
 - Security Blog: Secure chat communications suite GoldBug. Security Blog, 25. März 2014, http://www.hacker10.com/other-computing/secure-chat-communications-suite-GoldBug/
 
 
 - Spot-On (2014): Documentation of the Spot-On-Application, URL: https://github.com/textbrowser/spot-on/tree/master/branches/trunk/Documentation, Github 2014.
-
 
 - Spot-On (2011): Documentation of the Spot-On-Application, URL: https://sourceforge.net/p/spoton/code/HEAD/tree/, under this URL since 06/2013, Sourceforge, including the Spot-On: Documentation of the project draft paper of the pre-research project since 2010, Project Ne.R.D.D., Registered 2010-06-27, URL: https://sourceforge.net/projects/nerdd/ has evolved into Spot-On. Please see http://spot-on.sf.net and URL: https://github.com/textbrowser/spoton/blob/master/branches/Documentation/RELEASE-NOTES.archived, 08.08.2011.
 
@@ -2717,7 +2728,7 @@ make or mingw32-make<br />
 - Weller, Jan: Testbericht zu GoldBug für Freeware, Freeware-Blog https://www.freeware.de/download/GoldBug/
 
 
-Weitere bibliographsiche Hinweise:
+Weitere bibliographische Hinweise:
 
 - Bernat, V. (2012, January 1). SSL/TLS & Perfect Forward Secrecy. Web article retrieved March 5, 2015, from http://vincent.bernat.im/en/blog/2011-sslperfect-
 forward-secrecy.html; 
