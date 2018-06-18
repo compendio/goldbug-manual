@@ -1,5 +1,5 @@
 ﻿# GoldBug-manual
-Manual of the GoldBug Crypto Messenger (Deutsch / German)
+Manual of the GoldBug Crypto Messenger
 
 
 ![Abbildung: GoldBug Smiley](/images/goldbug-neuland.png)
@@ -10,11 +10,13 @@ Manual of the GoldBug Crypto Messenger (Deutsch / German)
 
 Edited by Scott Edwards (2018, Review at Github).
 
+(A first drafted translation into English by a translation machine).
+
 ```
-Inhaltsverzeichnis
+Content
 
     1 What is GoldBug?
-        1.1 Why is it important for Internet users to encrypt communications 
+        1.1 Why is it important for Internet users to encrypt communication?
         1.2 Where does the name "GoldBug" come from?
 
     2 Encryption: GoldBug has alternatives to RSA – 
@@ -72,7 +74,7 @@ Inhaltsverzeichnis
         9.3 P2P E-Mail: without data retention
         9.4 Setting up C/O & e-mail institutions 
             9.4.1 Care-Of-Method (c/o)
-            9.4.2 Virtuell E-Mail Institution ("VEMI") - Method
+            9.4.2 Virtual E-Mail Institution ("VEMI") - Method
         9.5 Additional Encryption: Put a "GoldBug" on an e-mail 
         9.6 Forward Secrecy
         9.7 Secret Streams
@@ -87,7 +89,7 @@ Inhaltsverzeichnis
         11.1 Creating StarBeam magnets with encryption values
              11.1.1 Option "Nova": Encrypt file before file transfer?
              11.1.2 Using a one-time magnet
-             11.1.3 Overview of Magnet URI Standards for Cryptographic Values
+             11.1.3 Overview of Magnet URIs with Cryptographic Values
              11.1.4 Rewind function
              11.1.5 Comparison with turtle hopping
         11.2 StarBeam-Upload: transfer a file
@@ -117,7 +119,7 @@ Inhaltsverzeichnis
         13.6 SmokeStack Server under Android
         13.7 Bluetooth Server
         13.8 UDP Server
-        13.9.SCTP Server
+        13.9 SCTP Server
         13.10 NCat Connection
 
     14 Tools
@@ -129,7 +131,7 @@ Inhaltsverzeichnis
 
     15 BIG SEVEN STUDY: Crypto-Messenger-Audit
 
-    16 The Digital Encryption of Private Communication in the Context of ... 
+    16 The Digital Encryption of Private Communication in the Context of ...
         16.1 Principles of the protection of private speech, communication and life: 
              Universal Declaration of Human Rights, 1948 (Art. 12)
         16.2 International Covenant on Civil and Political Rights, 1966 (Art. 17)
@@ -151,7 +153,7 @@ Inhaltsverzeichnis
 
 ```
 
-[Manual-Dateien: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
+[Manual-Files: https://github.com/compendio/goldbug-manual](https://github.com/compendio/goldbug-manual)
 
 [Manual Deutsch/German: https://github.com/compendio/goldbug-manual-de](https://github.com/compendio/goldbug-manual-de)
 
@@ -167,29 +169,29 @@ Inhaltsverzeichnis
 
 ## 1 What is GoldBug?
 
-GoldBug is a secure instant chat messenger and encrypting email client that also includes additional features such as group chat, file transfer, and a URL search based on an implemented URL database.
+GoldBug is a secure instant chat messenger and encrypting email client that also include additional features such as group chat, file transfer, and a URL search based on an implemented URL database.
 
-Thus, the three basic functions frequently used by a regular Internet user in the Internet - communication (chat / e-mail), web search and file transfer - are displayed in an encrypted environment safely and comprehensively.
+Thus, the three basic functions frequently used by a regular Internet user in the Internet - communication (chat / e-mail), web search and file transfer - are represented in an encrypted environment safely and comprehensively.
 
-In addition, GoldBug has also implemented a number of useful tools, such as encrypted chat server functionality, proxy-enabled passthroughs, text / ciphertext conversion pads and vice versa, a feedreader and web crawler, or friends' reviews Statistics and analysis, and much more.
+In addition, GoldBug has also implemented a number of useful tools, such as encrypted chat server functionality, proxy-enabled passthroughs, text / ciphertext conversion pads and vice versa, a feedreader and web crawler, or dashboards for the friends of statistics and analysis, and much more.
 
-With the use of GoldBug - GB for short - the user can therefore be relatively sure due to the encryption that no unwanted third party can eavesdrop on the conversations or open emails or file transfers. The URL search also happens on the local machine, so that search queries are protected and secure.
+With the use of GoldBug - GB for short - the user can therefore be relatively sure because of the encryption that no unwanted third party can eavesdrop on the conversations or open emails or file transfers. The URL search also happens on the local machine, so that search queries are protected and secured.
 
 The user-to-user communication should remain with this application via the Internet in private, protected space.
 
-For this GoldBug uses strong multiple encryption, also called hybrid encryption , with different levels of modern encryption technology based on established encryption libraries - such as libgcrypt (known from OpenPGP or GnuPG and OpenSSL ).
+GoldBug uses for this strong and multiple encryption, also called hybrid encryption, with different levels of modern encryption technology based on established encryption libraries - such as libgcrypt (known from OpenPGP or GnuPG and OpenSSL).
 
-For example, this creates separate and different public / private keys for encryption and signatures for each function - based on the encryption algorithms RSA , or alternatively Elgamal and NTRU . In addition to NTRU, the encryption algorithm McEliece is open source implemented.
+For example, it creates separate and different public / private keys for encryption and signatures for each function - based on the encryption algorithms RSA, or alternatively Elgamal and NTRU. In addition to NTRU, the encryption algorithm McEliece is open source implemented.
 
-These latter two algorithms are considered to be particularly secure against attacks that are known from quantum computing and are becoming increasingly relevant in the future due to fast quantum computers. GoldBug is thus one of the first messengers worldwide to implement these two algorithms, thus initiating the departure or alternatives to the RSA algorithm that has been officially broken since 2016 (see NIST cited in Adams / Maier 2016 ). ,
+These latter two algorithms are considered to be particularly secure against attacks that are known from quantum computing and are becoming increasingly relevant in the future due to fast quantum computers. GoldBug is thus one of the first messengers worldwide to implement these two algorithms, thus initiating the renunciation of - or alternatives to - the RSA algorithm - that has been officially considered as broken since 2016 (see NIST cited in Adams / Maier 2016).
 
-Furthermore, the application also offers decentralized and encrypted e-mail as well as decentralized public group chat in IRC style. Finally, there is also the function to implement a URL web search in a decentralized database repository: Users can store URLS and content of the website - as so far Booksmarks in the browser and its cache - in a comfortable searchable database to their thematic RSS feeds or import there, which is based either on SQL or PostGres and p2p is networkable.
+Furthermore, the application also offers decentralized and encrypted e-mail as well as decentralized public group chat in IRC style. Finally, there is also the function to implement a URL web search in a decentralized database repository: Users can store URLS and content of the website - as so far Bookmarks in the browser and its cache - in a comfortable searchable database to their thematic RSS feeds or import them, which is based either on SQL or PostGres and is also p2p networkable.
 
-The email can be IMAP , POP3 and thirdly, P2P e-mail - GoldBug is thus a fully functional e-mail client. As soon as encrypted emails are sent, it is necessary that the friend also uses this client. This has the advantage that the encryption key is only to be exchanged once, but then no longer has to be applied to every single e-mail. This function of transferring the key back encrypted in a direct way is called "Repleo" in GoldBug and later on it was also automatically taken over in other projects under the name Autocrypt or KeySync.
+The email can be IMAP, POP3 and thirdly, P2P e-mail - GoldBug is thus a fully functional e-mail client. As soon as encrypted emails are sent, it is necessary that the friend also uses this (or any other echo) client. This has the advantage that the encryption key is only to be exchanged once, but then no longer has to be applied to every single e-mail. This function of transferring the key encrypted back in a direct way is called "Repleo" in GoldBug and later on this was also taken over in other projects under the name Autocrypt or KeySync (within an automatic process).
 
-As in any news program, files can be shared and sent. The shipping is always encrypted per se. With the tools "Rosetta CryptoPad" and the "File-Encryptor" the user can additionally encrypt text and / or files additionally safely or convert them back. These encryption tools can therefore also be used for other transmission paths (such as unencrypted paths outside of GoldBug).
+As in any messaging program, files can be shared and sent. The transfer is always encrypted per se. With the tools "Rosetta CryptoPad" and the "File-Encryptor" the user can additionally encrypt text and/or files additionally safely or convert them back. These encryption tools can therefore also be used for other transmission paths (such as an unencrypted path outside of GoldBug).
 
-With all its equipment, GoldBug is therefore a so-called "Communication Suite" - a program with numerous functions for secure communication, which realizes the transmission of the encrypted packets with the so-called echo protocol and particularly secures, as will be explained below.
+With all its equipment, GoldBug is therefore a so-called "Communication Suite" - a program with numerous functions for secure communication, which realizes the transmission of the encrypted packets with the so-called echo protocol. This is particularly secure, as it will be explained below.
 
 Figure: Explanation of the tabs in GoldBug Crypto Messenger
 
@@ -199,7 +201,7 @@ Figure: Explanation of the tabs in GoldBug Crypto Messenger
 
 ### 1.1 Why is it important for Internet users to encrypt communications
 
-Today almost all wireless Wifi Internet accesses are password protected ( free -radio activities are currently trying to reverse this over-regulation through password-free and account-free Internet access). In a few years plain text messages or e-mails to friends (in the following all terms always apply to all genders) via the internet must be encrypted as well. In order to consolidate this change, sometimes C-Mail (for crypto-mail) rather than e-mail is used as a new term.
+Today almost all wireless Wifi Internet accesses are password protected (So called “Freifunk”-activities are currently trying to reverse this over-regulation through password-free and account-free wireless Internet access). In a few years plain text messages or e-mails to friends (in the following all terms always apply to all genders) via the internet should be encrypted as well. In order to consolidate this change, sometimes C-Mail (for crypto-mail) rather than e-mail is used as a new term.
 
 Encryption is not a question of having something to hide or not, it is the question of whether we ourselves control our communication - or whether it is controlled by others, third parties.
 
@@ -209,17 +211,17 @@ Democracy requires thinking and discussing alternatives in private as well as in
 
 The communication and data transmission over the Internet should be protected as parents would also protect their loved ones or a mother bird their young against the unknown: Everyone should protect his privacy and human rights with modern encryption functions.
 
-Strong multi-encryption (so-called "hybrid encryption") thus ultimately secures the declarations of human rights in their broadly constituted Konsus and is a digital self-defense that everyone should learn and use - to ultimately contribute to democracy and support them.
+Strong multi-encryption (so-called "hybrid encryption") thus ultimately secures the declarations of human rights in their broadly constituted consensus and is a digital self-defense that everyone should learn and use - to ultimately contribute to democracy and support them.
 
-The GoldBug Messenger tries to be an easy-to-use tool for this claim. Similar to the development of safety in automobiles, the e-mail & chat encryption will also develop: if you initially drove without a seatbelt in the car, today we drive with obligatory safety belts (eg since 1975 in Germany) and additional airbags or thirdly additional electronic security information systems.
+The GoldBug Messenger tries to be an easy-to-use tool for this claim. Similar to the development of safety in automobiles, the e-mail & chat encryption will also develop: if you initially drove without a seatbelt in the car, today we drive with obligatory safety belts (e.g. since 1968 in the U.S.) and additional airbags or thirdly additional electronic security information systems.
 
-GoldBug is an easy-to-use, but to some extent also learnable program; it requires - as with the car driver's license - the knowledge of the various controls and options. GoldBug is thus an already simplified user interface compared to the original user interface, which is also called Spot-on coming from the "Spot-on" project. Similar to a cockpit of an aircraft, there are even more controls available in this original user interface. In GoldBug these are already reduced and also another minimal view is offered for beginners in software for cryptographic processes. In this respect: Learn what is still unknown and note that it is already a reduced scope. This manual can help you to understand the individual functions. And users who first read and then try out are, as always, clearly in the advantage. :-)
+GoldBug is an easy-to-use, but to some extent also learnable program; it requires - as with the car driver's license - the knowledge of the various controls and options. GoldBug is thus an already simplified user interface compared to the original user interface, which is also called Spot-on coming from the "Spot-on" project. Similar to a cockpit of an aircraft, there are even more control buttons available in this original user interface. In GoldBug these are already reduced and also another minimal view is offered for beginners in software for cryptographic processes. In this respect: Learn what is still unknown and note that it is already a reduced scope. This manual can help you to understand the individual functions. And users who first read and then try out are, as always, clearly in the advantage. :-)
 
-The unencrypted Plain Text email or chat message should therefore have actually become obsolete after the 2013 Snowden Papers found that private emails are widely intercepted and systematically collected by many interested parties worldwide and evaluated.
+The unencrypted Plain Text email or chat message should therefore have actually become obsolete after the 2013 Snowden Papers found that private emails are widely intercepted and systematically collected and evaluated by many interested parties worldwide.
 
-Incidentally: The logo of the GoldBug logo is written in the font "Neuland" - a font that was developed in 1923 by the typographer Rudolf Koch . Interestingly enough, the logo logo has been an allusion to the '' set of the year '' 2013, when German Chancellor Angela Merkel - in connection with the surveillance and espionage affair in 2013 and the Listening to her phone - in a conversation with American President Barack Obama coined the phrase: "The Internet is new territory for us all." ..
+Incidentally: The logo of the GoldBug logo is written in the font "Neuland" (which means translated: new territory) - a font that was developed in 1923 by the typographer Rudolf Koch. Interestingly enough, the logo has been an allusion to the German ''sentence of the year'' 2013, when German Chancellor Angela Merkel - in connection with the surveillance and espionage affair in 2013 and the Listening to her personal mobile phone - in a conversation with American President Barack Obama coined the phrase: "The Internet is a new territory for us all." ..
 
-.. - How long encryption for the subsequent student generations '' Neuland '' or literally 'secret science' remains - or a kind of "seat belt" will also convert e-mails to C-mail, decide the learner , Teachers and the media and technicians - but in any case everyone (eg as a reader of this manual) with the friends with whom the encryption software is used.
+.. - How long encryption for the subsequent student generations will remain a new territory (or '' Neuland '') or literally 'secret science' - or a kind of "seat belt", which will also convert e-mails to c-mail, decide the learners, teachers and the media and technicians - but in any case everyone (e.g. the reader of this manual) with the own friends with whom this or other encryption software is used.
 
 Figure: GoldBug logo (smiley face)
 
@@ -228,42 +230,42 @@ Figure: GoldBug logo (smiley face)
 
 ### 1.2 Where does the name "GoldBug" come from?
 
-The Gold Bug is a short story by Edgar Allan Poe : The plot is about William LeGrand, who recently spotted a gold-colored ladybug.
+The Gold Bug is a short story by Edgar Allan Poe: The plot is about William LeGrand, who recently encountered a gold-colored ladybug.
 
-His buddy, Jupiter, now expects LeGrand to evolve in his quest for insight, wealth, and wisdom after being in contact with the Gold Beetle - and thus goes on to another friend of LeGrand, a narrator not mentioned by name who thinks it would be a good idea to visit his old friend again. After LeGrand then encountered a secret message and was able to decrypt it successfully, the three start an adventure as a team.
+His buddy, Jupiter, now expects LeGrand to evolve in his quest for insight, wealth, and wisdom after being in contact with the Golden Bug - and thus goes on to another friend of LeGrand, a narrator not further mentioned by name, who thinks it would be a good idea to visit his old friend again. After LeGrand then encountered a secret message and was able to decrypt it successfully, the three start an adventure as a team.
 
-The Gold Beetle - as one of the few pieces in the literature - integrates cipher text as an element of history. Poe was thus far ahead of the popularity of cipher texts of his time when he wrote "The Gold Bug" in 1843, in which the success of history turned to such a cryptogram and metaphorically to the search for the knowledge of the philosopher's stone ,
+The Gold Bug - as one of the few pieces in the literature - integrates cipher text as an element of the short story. Poe was thus far ahead of the popularity of cipher texts of his time when he wrote "The Gold Bug" in 1843, in which the success of history turned to such a cryptogram and metaphorically to the search for the knowledge of the philosopher's stone.
 
-The Gold Beetle was a much-read story, extremely popular and by the literati the most studied work by Poe during his lifetime. His ideas also helped to promote the writing of encrypted texts and so-called cryptograms (see also Wikipedia).
+The Gold Bug was a much-read story, extremely popular and by the literati the most studied work by Poe during his lifetime. His ideas also helped to promote the writing of encrypted texts and so-called cryptograms (see also Wikipedia).
 
-Over 170 years later, encryption in the Internet age has more weight than ever. Encryption should be a standard when we send communications over the insecure Internet - reason enough to use the name of the application to remember the origins of the encrypted writing.
+Over 170 years later, encryption in the Internet age has more weight than ever. Encryption should be a standard when we send communications over the insecure internet - reason enough to use this name for the application to remember the origins of the encrypted writing.
 
-GoldBug is thus a historical tribute. The possibly requires an adaptation to the term, because "bug" is often understood in the IT language as an error correction. Depending on the person, the idea of ​​valuing a gold beetle as much as another cuddly toy may require a strong cognitive reorganization of a hitherto dominated worldview or the routinized expansion of the appreciation of bug finds as interesting research finds.
+GoldBug is thus a historical tribute, which possibly requires an adaptation to the term, because "bug" is often understood in the IT language as an error correction. Depending on the person, the idea of valuing a golden ladybug as much as another cuddly toy may require a strong cognitive reorganization of a so far dominated worldview or the routinized expansion of the appreciation of bug-finds as interesting research finds.
 
 Those who like exploring new things, openly approaching what is found, will be able to learn and deepen many things in cryptographic processes with the GoldBug application, if so far no access to this "new territory" has been made possible. For teachers, the software is therefore an interesting teaching tool that can introduce and test cryptography in practical implementation and exercises with playful testing, reminiscent of the beginnings of popular cryptography at the time.
 
 
 ## 2 Encryption: GoldBug has alternatives to RSA - The first NTRU & McEliece Messenger 
 
-Encryption is only as good as the mathematical calculations can not be calculated by the automation of computers at lightning speed. Therefore mathematically speaking, the prime factorization is used because it requires years of computational effort.
+Encryption is only as good as the mathematical calculations cannot be calculated by the automation of computers at lightning speed. Therefore mathematically speaking, the prime factorization is used because it requires years of computational effort.
 
-There are basically two methods of encryption. First, the symmetric encryption: Both users use the same password, eg a so-called AES with 32 characters, which will be explained in more detail below, or on the other hand, the a-symmetric encryption. In a-symmetric encryption, each user has two keys, a private and a public key. The users each exchange the public key and can then encrypt data using the private key in combination with the public key. After transmission, the other party is also able to decipher the message with their own private key. The asymmetric method is also called PKI: Pubic Key Infrastructure called, which can build on different algorithms for key generation.
+There are basically two methods of encryption. First, the symmetric encryption: Both users use the same password, e.g. a so-called AES with 32 characters, which will be explained in more detail below, or on the other hand, there is the a-symmetric encryption. In a-symmetric encryption, each user has two keys, a private and a public key. The users each exchange the public key and can then encrypt data using the private key in combination with the public key. After transmission, the other party is also able to decipher the message with their own private key. The asymmetric method is also called PKI: Pubic Key Infrastructure called, which can build on different algorithms for key generation.
 
-However, encryption - be it via AES or PKI - is not unbreakable, and the procedures and libraries must also be well-used to be secure. RSA is considered "today as an essential, widely studied and not yet creakable encryption standard - although the further development of fast computers might bring a different future", - it was still 2014 in this manual noted. In 2016, the official NIST Institute announced that RSA is considered broken in the age of quantum computing (see NIST cited in Adams / Maier 2016 ).
+However, encryption - be it via AES or PKI - is not unbreakable, and the procedures and libraries must also be well-used to be secure. RSA is considered "today as an essential, widely studied and not yet breakable encryption standard - although the further development of fast computers might bring a different future", - it was still 2014 in this manual noted. In 2016, the official NIST Institute announced that RSA is considered broken in the age of quantum computing (see NIST cited in Adams / Maier 2016).
 
-The media has barely picked it up, as everyone will probably agree that you can not buy a quantum computer in the nearest supermarket, so the problem is not relevant. It has the charm of children who hold their hand in front of their eyes and thus do not let the problem or danger endanger their perception of reality. Nevertheless, it is officially confirmed that RSA can be broken - with special funds. The security is gone. This also has an impact on our Internet economy and online banking, because so far, the secure connections to RSA are building and a TLS to secure the connection to online banking or shopping based on McEliece or NTRU is not yet.
+The media has barely picked it up, as everyone will probably agree that you cannot buy a quantum computer in the nearest supermarket, so the problem might be not relevant. It has the charm of children who hold their hand in front of their eyes and thus do not let the problem or risk endanger their perception of reality. Nevertheless, it is officially confirmed that RSA can be broken - with special means. The security is gone. This also has an impact on our Internet economy and online banking, because so far, the secure connections are relying on RSA and a TLS to secure the connection to online banking or shopping based on McEliece or NTRU is not yet developed.
 
 ### 2.1 Asymmetric encryption with PKI: RSA, Elgamal and especially NTRU and McEliece in comparison
 
-Therefore, GoldBug Messenger has already introduced additional alternatives to RSA at an early stage - if this encryption algorithm standard would ever be insecure: RSA with a correspondingly large size of the key (at least 3072 bytes) can still be regarded as a time hurdle by non-specialized technical administrative staff, especially as GoldBug holds more extensive security even with multiple encryption.
+Therefore, GoldBug Messenger has already introduced additional alternatives to RSA at an early stage - if this encryption algorithm standard would ever be insecure: RSA with a correspondingly large size of the key (at least 3072 bytes) can still be regarded as a time hurdle by non-specialized technical administrative staff, especially as GoldBug holds more extensive security even with multiple encryptions.
 
-In addition to RSA GoldBug has yet implemented the encryption algorithms Elgamal and also NTRU and McEliece. The latter two are also considered to be particularly resistant to the attacks known from quantum computing .
+In addition to RSA GoldBug has yet implemented the encryption algorithms Elgamal and also NTRU and McEliece. The latter two are also considered to be particularly resistant to the attacks known from quantum computing.
 
 Figure: McEliece's algorithm for advanced protection against attacks from quantum computing
 
 ![Abbildung: McEliece Algorithmus zukunftsweisender Schutz gegen Angriffe aus dem Quantum Computing](/images/mceliece.png)	
 
-GoldBug uses the libgcrypt, libntru, and McEliece libraries to create persistent private and public key pairs. Currently, the application generates key pairs for each of the ten functions during initialization. Key generation is optional. As a result, GoldBug does not require public key infrastructure. Also downstream, the desired algorithms can be selected and keys generated.
+GoldBug uses the libgcrypt, libntru, and McEliece libraries to create persistent private and public key pairs. Currently, the application generates key pairs for each of the ten functions during initialization. Key generation is optional. As a result, GoldBug does not require public key infrastructure. Of course, the desired algorithms can be selected and keys can be generated.
 
 There is also a comprehensive choice of encryption methods available with encryption: DSA, ECDSA, EdDSA, Elgamal, and RSA. Signature means that the generated encryption key is re-signed with a key to prove that a message is coming from a particular subscriber and nobody else. The OAEP and PSS schemes are used with the RSA encryption and RSA signature respectively.
 
@@ -271,25 +273,25 @@ Figure: RSA and its alternatives in GoldBug
 
 |McEliece-Kryptosystem|
 |---|
-|The McEliece cryptosystem is an asymmetric encryption algorithm. It was founded in 1978 by cryptographer Robert J. McEliece presented. Even with the use of quantum computers, there is no known efficient method by which to break the McEliece cryptosystem, making it a promising algorithm for post-quantum cryptography.|
+|The McEliece cryptosystem is an asymmetric encryption algorithm. It was presented in 1978 by cryptographer and founder Robert J. McEliece. Even with the use of quantum computers, there is no known efficient method by which the McEliece cryptosystem can be broken. This makes it a promising algorithm for post-quantum cryptography.|
 
 
 |NTRU|
 |---|
-| NTRU is an asymmetric encryption technique developed in 1996 by mathematicians Jeffrey Hoffstein, Jill Pipher and Joseph Silverman. It is loosely based on lattice problems that are considered non-cracking even with quantum computers. However, NTRUEncrypt has not been extensively studied so far as more common methods (eg RSA). Ntruencrypt is by IEEE P1363.1 standardized (see. Ntruencrypt )|
+|NTRU is an asymmetric encryption technique developed in 1996 by mathematicians Jeffrey Hoffstein, Jill Pipher and Joseph Silverman. It is loosely based on lattice problems that are considered unbreakable even with quantum computers. However, NTRUEncrypt has not been extensively studied so far as more common methods (e.g. RSA). Ntruencrypt is by IEEE P1363.1 standardized (see Ntruencrypt)|
 
- 
+
 |Elgamal|
 |---|
-| The Elgamal encryption method or Elgamal cryptosystem is a public-key encryption method developed in 1985 by the cryptographer Taher Elgamal, based on the idea of ​​Diffie-Hellman key exchange. The Elgamal encryption method, like the Diffie-Hellman protocol, relies on operations in a finite-order cyclic group. The Elgamal encryption method is provably IND-CPA-safe, assuming that the Decisional-Diffie-Hellman problem is not trivial in the underlying group. Related to the encryption method described here (but not identical with it) is the Elgamal signature method (the Elgamal signature method is not yet implemented in GoldBug). Elgamal is not subject to a patent (cf.Elgamal encryption method ).|
+|The Elgamal encryption method or Elgamal cryptosystem is a public-key encryption method developed in 1985 by the cryptographer Taher Elgamal, based on the idea of Diffie-Hellman key exchange. The Elgamal encryption method, like the Diffie-Hellman protocol, relies on operations in a finite-order cyclic group. The Elgamal encryption method is provably IND-CPA-safe, assuming that the Decisional-Diffie-Hellman problem is not trivial in the underlying group. Related to the encryption method described here (but not identical with it) is the Elgamal signature method (the Elgamal signature method is not yet implemented in GoldBug). Elgamal is not subject to a patent (cf. Elgamal encryption method).|
 
 
 |RSA|
 |---|
-| RSA (after the people Rivest, Shamir and Adleman) is an asymmetric cryptographic procedure that can be used for both encryption and digital signature. It uses a key pair consisting of a private key used to decrypt or sign data and a public key to encrypt or verify signatures. The private key is kept secret and can only be calculated from the public key with extremely high expenditure (see RSA Cryptosystem ).|
+|RSA (after the people Rivest, Shamir and Adleman) is an asymmetric cryptographic procedure that can be used for both encryption and digital signature. It uses a key pair consisting of a private key used to decrypt or sign data and a public key to encrypt or verify signatures. The private key is kept secret and can only be calculated from the public key with extremely high expenditure (see RSA Cryptosystem).|
 
 
-GoldBug encryption is designed so that any user can communicate with any user, no matter what encryption algorithm a user has chosen. Communication between users with different key types is thus well defined when the nodes share common versions of the libgcrypt and libntru libraries: anyone who has chosen an RSA key can also chat and email with an Elgamal key encrypted with a user has chosen. This is because everyone supports each algorithm and the library supports it. If you want to test the program with a friend, it is best to use the latest version of GoldBug.
+GoldBug encryption is designed so that any user can communicate with any user, no matter what encryption algorithm a user has chosen. Communication between users with different key types is thus well defined when the nodes share common versions of the libgcrypt and libntru libraries: anyone who has chosen an RSA key can also chat and email encrypted with an user who has chosen an Elgamal key. This is because everyone supports each algorithm and the library supports it. If you want to test the program with a friend, it is best to use the latest version of GoldBug.
 
 
 Figure: Customizable crypto
@@ -298,16 +300,16 @@ Figure: Customizable crypto
 
 
 
-Of course every user in GoldBug can be his
+Of course every user in GoldBug can set his
 
-set individual key size,
-the " cipher ",
-the " hashtype ",
-furthermore " iteration count ",
-and the cryptographic salt length
-.. there are often typical parameters for key creation and encryption.
+- individual key size,
+- the "cipher",
+- the "hashtype",
+- furthermore "iteration count",
+- and the cryptographic salt length
+.. which are often typical parameters for key creation and encryption.
 
-The advantage is that every user can define this individually for themselves. Other applications - even open-source applications - hardly allow the user to determine these key values ​​for the encryption process itself.
+The advantage is that every user can define this individually for himself. Other applications - even open-source applications - hardly create for the user this choice, to determine these key values for the encryption process itself.
 
 
 
@@ -316,7 +318,7 @@ The advantage is that every user can define this individually for themselves. Ot
 
 GoldBug has not only standardized forward-looking algorithms or numerous details such as the switch from AES-128 to AES-256 or the use of very high, because necessary key sizes, but also implemented the professional integration of established and new encryption processes.
 
-GoldBug uses CBC with CTS to provide confidentiality. The file encryption mechanism supports the Galois / Counter Mode (GCM) algorithm without the authenticity property provided by the algorithm. To provide authenticity, the application uses the methodical approach of " Encrypt-then-MAC " ( ETM). MAC stands for Message Authentication Code - and means that the order is determined: first encrypt, then authenticate the message with a code. The documentation for the source code for the section of encrypted and authenticated containers contains further technical details.
+GoldBug uses CBC with CTS to provide confidentiality. The file encryption mechanism supports the Galois / Counter Mode (GCM) algorithm without the authenticity property provided by the algorithm. To provide authenticity, the application uses the methodical approach of "Encrypt-then-MAC" (ETM). MAC stands for Message Authentication Code - and means that the order is determined: first encrypt, then authenticate the message with a code. The documentation for the source code for the section of encrypted and authenticated containers contains further technical details.
 
 Another example of this innovation is the implementation of the ThreeFish hash, which was available as an alternative to SHA-3 when it was realized that SHA-1 was no longer able to cope with future requirements.
 
@@ -330,15 +332,14 @@ Many more examples - especially compared to other messengers - can be found, whi
 
 
 
-
-
-
-
 ### 2.3 Hybrid encryption system
 
-GoldBug implements a hybrid encryption system, including authenticity and confidentiality. Hybrid means first of all: "both variants are available" and can be combined with each other. Thus, a message can first be a-symmetrically encrypted with PKI shown above and then symmetrically with an AES again. Or the other way around. But there is also another variant conceivable. The PKI transmission path transmits with permanent keys again only temporarily used keys, with which then the further communication takes place over this temporary channel. The temporary channel can then again perform a symmetric encryption with an AES. Thus, not only in the method change from PKI to AES or
+GoldBug implements a hybrid encryption system, including authenticity and confidentiality. Hybrid means first of all: "both variants are available" and can be combined with each other. Thus, a message can first be a-symmetrically encrypted with PKI shown above and then symmetrically with an AES again. Or the other way round, there is also another variant conceivable. The PKI transmission path transmits with permanent keys again only temporarily used keys, with which then the further communication takes place over this temporary channel. The temporary channel can then again transmit a symmetric encryption with an AES. 
 
-Encrypting often and switching between these methods or time-limited keys is a strong competence of GoldBug in this multi, multiple and hybrid encryption. With these possibilities you can now play and apply them in various ways. Is the permanent or the temporary key applied first, or once again the symmetric and then the asymmetrical as the second level of encryption? or vice versa?
+Thus, not only in the method change from PKI to AES respective from asymmetric encryption to symmetric encryption exists one option to build a hybrid system, but also in the switch from permanent PKI keys to temporarily keys.
+
+
+Encrypting often and switching between these methods or time-limited keys is a strong competence of GoldBug in this multiple and hybrid encryption. With these possibilities you can now play and apply them in various ways. Is the permanent or the temporary key applied first, or once again the symmetric and then the asymmetrical as the second level of encryption? or vice versa?
 
 Part of the system in GoldBug generates the key for authentication and encryption per message. These two keys are used to authenticate and encapsulate data (that is, the message). The two keys (for authentication and encryption) are then encapsulated across the public-key part of the system. The application also provides a mechanism for distributing session keys for this data encapsulation (or encryption of the message) as described above, the temporary key. Again, the keys are encapsulated and transmitted via the public key system: an additional mechanism allows the distribution of the session keys over the predetermined keys.
 
@@ -347,13 +348,13 @@ As an example, this format may serve the following message encryption:
 
 ```
 EPUBLIK Key 
-(Chiffrierschlüssel || Hash Key) 
+(Encryption Key || Hash Key) 
 || EEncryption Key (Data) 
 || HHash Key (EEncryption Key (Data)). 
 
 ```
 
-For those who are concerned with encryption for the first time, the above example of encapsulation is a first example to further study and understand the methods; - In any case, you can see how the encryption key is supplemented by the hash key (see MAC) and also the data is embedded in different encryption levels.
+For those who are dealing with encryption for the first time, the above example of encapsulation is a first example to further study and understand the methods; - In any case, you can see how the encryption key is supplemented by the hash key (see MAC) and also the data is embedded in different encryption levels.
 
 Non-NTRU private keys are evaluated for correctness by the gcry_pk_testkey () function. The public key must also meet some basic criteria, such as the inclusion of the public key identifier.
 
@@ -365,39 +366,38 @@ However, let's take a simpler case and go into more detail about symmetric encry
 ### 2.4 Symmetric encryption with AES
 
 
-Symmetric encryption uses AES - a 32-character password generated by random processes. Since all characters and special characters are used in the generation, the possibility set is also sufficiently large that even fast machines can not try out all variants within a short time. While asymmetric encryption uses a public and private key pair, in symmetric encryption it is a secret passphrase that both subscribers need to know (hence called symmetric), or later for GoldBug in the Gemini function (from Greek "Gemini") "Derived"): Both sides have to exchange and know the secret passphrase).
+Symmetric encryption uses AES - a 32-character password generated by random processes. Since all characters and special characters are used in the generation, the set of options is also sufficiently large that even fast machines can not try out all variants within a short time. While asymmetric encryption uses a public and private key pair, in symmetric encryption it is a secret passphrase that both subscribers need to know (hence called symmetric) (- or for GoldBug: in the later discussed Gemini function it is called “Gemini” (from the Greek term for "twin" derived): Both sides have to exchange and know the secret passphrase).
 
-GoldBug thus uses both standards as described above: asymmetric keys and / or symmetrically encrypted messages are sent by SSL / TLS (ie asymmetric) encrypted connections, and the asymmetrically encrypted message can possibly also be secured with symmetric encryption (AES) , Then GoldBug even uses three levels of encryption like this example of encapsulation (simplified, as shown without HASH / MAC or signature):
+GoldBug thus uses both standards as described above: asymmetric keys and/or symmetrically encrypted messages are sent by SSL/TLS (i.e. asymmetric) encrypted connections, and the asymmetrically encrypted message can possibly also be secured with symmetric encryption (AES), Then GoldBug even uses three levels of encryption like this example of encapsulation (simplified, as shown without HASH / MAC or signature):
 
 
 ```
  RSA-SSL/TLS (AES (Elgamal (Message)))
 ```
 
-Translation of this formula: First, the text message is encrypted with the public (asymmetric) key of the friend via the Elgamal algorithm, then the encrypted text is encrypted again (password) with an AES algorithm (symmetric) (a second time) (and secured) and this capsule is then sent to the friend through the existing SSL / TLS (using RSA) encrypted (asymmetric) connection.
+Translation of this formula: First, the text message is encrypted with the public (asymmetric) key of the friend via the Elgamal algorithm, then the encrypted text is encrypted again  with an AES algorithm (symmetric password) (a second time) (and secured) and this capsule is then sent to the friend through the existing SSL/TLS (using RSA) encrypted (asymmetric) connection.
 
-If an HTTP listener is set up and the encrypted message capsule is not sent via HTTPS - ie the third encryption layer, via an SSL / TLS connection - the cipher text of the message capsule can also be viewed in the browser. It turns out that even with two encryption layers only cipher test is sent (see illustration from the practice demo of Adams / Maier 2016).
+If an HTTP listener is set up and the encrypted message capsule is not sent via HTTPS - over the third encryption layer, via an SSL/TLS connection - the cipher text of the message capsule can also be viewed in the browser. It turns out that even with two encryption layers only cipher test is sent (see illustration from the practice demo of Adams / Maier 2016).
 
 Figure: ciphertext
-
 
 ![Abbildung: Ciphertext](/images/ciphertext_scan_goldbug.png)	
 
 
-It is also possible to exchange the symmetric passphrase (the AES) with the remote station using established asymmetric (SSL / TLS) encryption. The passphrase can be automatically generated or manually defined, as we will see later in the Gemini / Call function ("Cryptographic Calling", which was introduced with GoldBug (or the Spot-on Kernel Project)) , There are hardly any other - also open source - applications that include a (end-to-end) end-to-end encryption from one participant to the other participant, in which the user can manually and individually define the passphrase (eg an AES string).
+It is also possible to exchange the symmetric passphrase (the AES) with the remote station using established asymmetric (SSL/TLS) encryption. The passphrase can be automatically generated or manually defined, as we will see later in the Gemini/Call-function ("Cryptographic Calling", which was introduced with GoldBug (and the Spot-on Kernel Project)), There are hardly any other - also open source - applications that include an end-to-end (e2e) encryption from one participant to the other participant, in which the user can manually and individually define the passphrase (e.g. an AES string).
 
-A (symmetric) end-to-end encryption is thus to differentiate from the point-to-point encryption. Therefore, the word "end-to-end" end-to-end encryption is also added (better still: end-to-end symmetric end-to-end encryption) - because it's about that only the participant Alice and the participant Bob the secret passphrase know. Point-to-point encryption would be when Alice connects to the server and then the server connects to Bob. This may mean that the server can read the message, so it unpacks and repackages, especially if there is an asymmetric key between the participants and the server located in the middle.
+A (symmetric) end-to-end encryption is thus to differentiate from the point-to-point encryption. Therefore, the word "continuous" end-to-end encryption is also added (better still: continuous symmetric end-to-end encryption) - because it's about that only the participant Alice and the participant Bob the secret passphrase know. Point-to-point encryption would be when Alice connects to the server and then the server connects to Bob. This may mean that the server can read the message, so it unpacks and repackages the message, especially if there is an asymmetric key between the participants and the server located in the middle.
 
-Instead, GoldBug offers end-to-end symmetric end-to-end encryption that can not only be manually defined, but can also be instantaneously renewed with automation (this is called cryptographic calling, see below).
+Instead, GoldBug offers continuous symmetric end-to-end encryption that can not only be manually defined, but can also be instantaneously renewed with automation (this is called cryptographic calling, see below).
 
-This special way of mixing PKI and AES as well as transfer via an SSL / TLS connection - or a special feature when unpacking the encrypted capsule - is referred to as echo protocol, which is to be deepened in the following section, because it still contains one further characteristics when sending to the network. So what exactly is the specific Echo protocol?
+This special way of mixing PKI and AES as well as having a transfer via a SSL/TLS connection in place  is referred to as echo protocol, which is to be deepened in the following section, because it still contains one further characteristics when sending to the network:  a special feature when unpacking the encrypted capsule. So what exactly is the specific Echo protocol?
 
 
 ## 3 What is the Echo Protocol?
  
-With the Echo-Protokoll is meant - simply put - that 
+With the Echo-Protocol is meant - simply put - that 
  
-* Firstly, every message transmission is encrypted ...
+* Firstly, every message transmission is encrypted...
 
  
  Example:
@@ -406,51 +406,53 @@ With the Echo-Protokoll is meant - simply put - that
 *) instead of RSA you can also use Elgamal or NTRU or McEliece,
   
 * ... and second, in the echo network, each connection node sends each message to each connected neighbor. Point. That's how easy the world is.
-Underlying is the so-called " small-world phenomenon ": Anyone can somehow reach anyone over seven corners in a peer-to-peer or friend-to-friend network - or simply through a shared in the circle of friends echo-chat server the Distribute message.
+Underlying is the so-called "small-world phenomenon": Anyone can somehow reach anyone over seven corners in a peer-to-peer or friend-to-friend network - or simply distribute the message over a shared echo-chat server in the circle of friends.
  
 
-* The third criterion for the echo protocol can be added that a special feature when unpacking the encrypted capsules is: The capsules have neither - and here they are different from TCP packets - a receiver nor a sender. The message is identified by the hash of the unencrypted message as to whether it should be displayed and readable to the recipient in the UI or not. But for this so-called echo match even more detailed below.
-Figure: Format of the used echo protocol 
+* A third criterion for the echo protocol can be added, that is a special feature when unpacking the encrypted capsule: The capsules have neither a receiver nor sender information included - and here they are different from TCP packets. The message is identified by the hash of the unencrypted message as to whether the message should be displayed and readable to the recipient in the UI or not. But for this so-called “echo match” see even more detailed below.
+
 
 
 Figure: Format of the used echo protocol 
 
 ![Abbildung: Format des genutzten Echo-Protokolls](/images/echo_format.png)	
 
-The figure (after Adams / Maier 2016) shows from inside to outside the process of how the encrypted capsule is formed in the context of the Echo protocol:
+The figure (according to Adams / Maier 2016) shows from inside to outside the process of how the encrypted capsule is formed in the context of the Echo protocol:
 
-First level of encryption: The message is encrypted and the ciphertext of the message is hashed and then the asymmetric key (eg the RSA algorithm) can also be used to encrypt the symmetric keys. In an intermediate step, the encrypted text and the hash digest of the message are bundled into a capsule and packed together. It follows the paradigm: Encrypt-then-MAC. To prove to the recipient that the ciphertext has not been corrupted, the hash digest is first formed before the ciphertext is decrypted.
+First level of encryption: The message is encrypted and the ciphertext of the message is hashed and then the asymmetric key (e.g. the RSA algorithm) can also be used to encrypt the symmetric keys. In an intermediate step, the encrypted text and the hash digest of the message are bundled into a capsule and packed together. It follows the paradigm: Encrypt-then-MAC. To prove to the recipient that the ciphertext has not been corrupted, the hash digest is first formed before the ciphertext is decrypted.
 
-Third level of encryption: Then this capsule can be transmitted via a secure SSL / TLS connection to the communication partner.
+Third level of encryption: Then this capsule can be transmitted via a secure SSL/TLS connection to the communication partner.
 
-Second level of encryption: Optionally, there is also the option of symmetrically encrypting the first-level capsule with an AES-256, which is comparable to a shared, 32-character password. Hybrid encryption is then added to multiple encryption (see Adams / Maier 2016: 46).
+Second level of encryption: Optionally, there is also the option of symmetrically encrypting the first-level capsule with an AES-256, which is comparable to a shared, 32-character password. Hybrid encryption is then added to multiple encryption (see Adams / Maier 2016:46).
 
-The "half echo" mode sends a message only one hop, ie from Bob to Alice. Alice then stops sending the message (as is the default at full echo).
+The "half echo" mode sends a message only one hop, i.e. from Bob to Alice. Alice then stops sending the message (as is the default with the full echo).
 
-Thirdly, in addition to Full Echo , Half Echo, there is the Adaptive Echo (AE) . Here, the message is only sent to neighbors or friends, if they know an encryption token, so they have previously stored. If you do not know the token, the message will not be forwarded to.
+Thirdly, in addition to Full Echo and Half Echo, there is the Adaptive Echo (AE). Here, the message is only sent to neighbors or friends, if they know an encryption token, they have previously stored. So if the user does not know the token, the message will not be forwarded to this user.
 
-After all, the echo still knows echo accounts . A kind of firewall. This ensures that only friends who know the account access can connect. So a web-of-trust can be created, so a network exclusively among friends. It is not based on the encryption key but is independent of it. This means that the user does not have to associate his public key with his IP address or even announce it in the network.
+After all, the echo still knows echo accounts. A kind of firewall. This ensures that only friends who know the account access can connect. So a web-of-trust can be created, which is a network exclusively among friends. It is not based on the encryption key but is independent of it. This means that the user does not have to associate his public key with his IP address or even announce it in the network.
 
-Basically, in the echo, each node sends a message to each connected node: If a user should then receive a message a second time, it is compared in a temporary cache (based on the hash value for that message) and, if applicable, when the hash is known again discarded and thus not forwarded. This approach is called "congestion control" and balances the number of messages in the network from multiple nodes or servers.
+Basically, in the echo, each node sends a message to each connected node: If a user should then receive a message a second time, it is compared in a temporary cache (based on the hash value for that message) and, if applicable, when the hash is known again, the message is discarded and thus not forwarded. This approach is called "congestion control" and balances the number of messages in the network from multiple nodes or servers.
 
-A small analogy: The cryptography of the Echo Protocol can be compared with the giving and taking of surprise eggs, a capsule with assemble mini-toy in the famous chocolate egg. Bob gives Alice a surprise egg, Alice opens it and consumes the chocolate and bumps into the plastic capsule inside the surprise egg, trying to open it and assemble the pieces into a toy, a smurf. However, she does not succeed in the assembly, the Smurf can not be formed and therefore she packs the items back into the plastic capsule, pours new chocolate around and passes the egg to the neighbor, who also tries to smuggle some of the pieces Tinker. Alice does not know who can assemble the surprise egg or the smurf successfully, so she copies it (- what a miracle, Alice has an over-egg copying machine -) and gives each a copyall her friends continue. (Unpacking, crafting, watching, packing, giving away and unpacking, crafting, watching, wrapping, giving away, and so on ..
+A small analogy: The cryptography of the Echo Protocol can be compared with the giving and taking of so called “surprise eggs”, a capsule with a to assemble mini-toy in the famous chocolate egg. Bob gives Alice a surprise egg, Alice opens it and consumes the chocolate and bumps inside into the plastic capsule of the surprise egg, trying to open it and assemble the pieces into a toy, a smurf. However, she does not succeed in the assembly, the Smurf cannot be formed and therefore she packs the items back into the plastic capsule, pours new chocolate around and passes the egg to the neighbor, who also tries to assemble some of the pieces. Alice does not know who can assemble the surprise egg or the smurf successfully, so she continues to copy it (- what a miracle, Alice has an surprise-egg copying machine -) and gives each of her friends a copy. (Unpacking, crafting, evaluating, packing, giving away and unpacking, crafting, evaluating, wrapping, giving away, and so on ..
 
-From the point of view of the entities represented in the network (kernels), the network would have become an over-egg paradise in this picture, if the crafting processes were not reduced again with Congestion Control. Once known crafting parts are not built a second time together. Alice tinkers until she recognizes a smurf with a red cap, she has received the figure of the Papa Smurf intended for her or her message.
+From the point of view of the entities represented in the network (kernels), the network would have become an surprise-egg paradise in this analogy, if the crafting processes were not reduced again with Congestion Control. Once known assembling parts are not built a second time together. Alice tinkers many packets until she recognizes a smurf with a red cap, she has received the figure of the Papa Smurf intended for her (or as her message).
+
+
 In order to exclude time and frequency analyzes in the Internet or echo network, there are other functions in GoldBug which increase encryption or make crypto analysis more difficult:
 
-For example: with the GoldBug application you can also send fake messages ("fakes" from the simulacra function) and simulated communication messages ("impersonated messages"). On the one hand, encryption is not encryption, but it is pure random signs that are emitted from time to time, and the other is simulated human conversation, which is also based only on scrambled random characters:
+For example: with the GoldBug application you can also send a kind of “fake” messages (from the simulacra function) and simulated communication messages ("impersonated messages"). On the one hand, encryption is not encryption, but it is pure random characters that are emitted from time to time, and the other is simulated human conversation, which is also based only on scrambled random characters:
 
-**Simulacra:** This feature sends a "simulated" chat message to the echo network when the checkbox is activated. This "fake" message consists of pure random numbers, making it harder for analysts to distinguish encrypted messages with real and random messages. simulacrumis a term that is not unknown from both the movie "[Matrix]" (https://en.wikipedia.org/wiki/Matrix_(Film)) and Baudrillard's philosophy (Neos is the repository for software in his home the book '' Simulacres et Simulation '' by the French media philosopher Jean Baudrillard, which explores the relationship between reality, symbols and society). Several years after the publication of the Echo Protocol, similar donors to the Tor network have developed software called Matrix Dot Org, which sends encrypted capsules to the network similar to the Echo protocol and also addresses a messaging function; an analysis is pending where the echo over the plagiarism architecture offers differences and benefits or offered open source suggestions.
+**Simulacra:** This feature sends a "simulated" chat message to the echo network when the checkbox is activated. This "fake" message consists of pure random numbers, making it harder for analysts to distinguish encrypted messages with real and random messages. Simulacrum is a term that is not unknown from both the movie "[Matrix]" (https://en.wikipedia.org/wiki/Matrix_(Film)) and Baudrillard's philosophy (Neo uses this name for the repository for software in his home and the book ''Simulacres et Simulation'' by the French media philosopher Jean Baudrillard explores the relationship between reality, symbols and society). Several years after the publication of the Echo Protocol, similar donors to the Tor network have developed software called Matrix Dot Org, which sends encrypted capsules to the network similar to the Echo protocol and also addresses a messaging function; an analysis is pending where the echo over the plagiarism-like architecture offers differences and benefits or offered further open source suggestions.
 
-**Impersonator:** In addition to random fake messages, the GoldBug program can also simulate a chat as if a real person chats from time to time and sends out replies. Also these messages are filled with pure random data, but they vary - simulated in a real chat conversation. Thus, analysis of messages can be made more difficult if third-party recorders ("recorders") should temporarily store and record all user communication, which may be assumed. But even more: even the absence of meta-data (see data retention) gives no reason to suspect that a message was for the user. Anyone who has been able to successfully unpack a message normally does not send it back to the echo network. A record of metadata could have increased interest in the unsubmitted messages, assuming that this message could then have been successfully decoded by the user. For this case there is also the option of the SuperEcho:
+**Impersonator:** In addition to random fake messages, the GoldBug program can also simulate a chat as if a real person chats from time to time and sends out replies. Also these messages are filled with pure random data, but they vary - simulated in a real chat conversation. Thus, analysis of messages can be made more difficult if third-party recorders  should temporarily store and record all user communication, which may be assumed. But even more: even the absence of meta-data (see data retention) gives no reason to suspect that a message was for the user. Anyone who has been able to successfully unpack a message normally does not send it back to the echo network. A record of metadata could have increased interest in the un-re-submitted messages, assuming that this message could then have been successfully decoded by the user. For this case there is also the option of the SuperEcho:
 
 **SuperEcho:** This feature also redirects successfully decoded and readable messages back to all friends. Failure to retransmit the message may then no longer indicate to the SuperEcho that the message may have been successfully decoded.
 
-SuperEcho, Simulacra and Impersonation are three options of the GoldBug program, which should make it harder for attackers to understand the messages that are of interest to the nuzer (and apparently others) in the multitude of messages.
+SuperEcho, Simulacra and Impersonation are three options of the GoldBug program, which should make it harder for attackers to understand the messages that are of interest to the user (and apparently others) in the multitude of messages.
 
 Now let's take a closer look at the individual echo modes:
 
- 
+
 ### 3.1 Full echo 
 
 
