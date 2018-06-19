@@ -456,9 +456,9 @@ Now let's take a closer look at the individual echo modes:
 ### 3.1 Full echo 
 
 
-The full echo ("full echo") underlies the assumption, as it is also the so-called "small world phenomenon" is hit: about a few friends everyone can send each a message. Somehow, everyone knows everyone about a maximum of seven corners. This is also accepted in a peer-to-peer or friend-to-friend network. Therefore, you can reach anyone if each node sends each message to all other known nodes (see figure).
+The “full echo” modus underlies an assumption, as it is also in the so-called "small world phenomenon" given: hopping over a few friends everyone can send a message to each of them. Somehow, everyone knows everyone about a maximum of seven corners. This is also applicable in a peer-to-peer or friend-to-friend network. Therefore, a user can reach anyone if each node sends each message to all other known nodes (see figure).
 
-Alternatively, you can support this decentralized claim or abbreviate the message paths by installing a chat server based on the Echo kernel for his friends, so that all encrypted messages can be sent to the participants and the server as an e-mail -Postbox can serve.
+Alternatively, a user can support this decentralized claim or abbreviate the message paths by installing an own chat server based on the Echo kernel for his friends, so that all encrypted messages can be sent to the participants and the server can serve as an e-mail-postbox or intermediate chat server.
 
 The mapping simulates sending the message from a starting point to all network nodes across all connected network nodes.
 
@@ -466,46 +466,45 @@ Figure: Echo Simulation: Each node sends to each connected node
 
 ![Abbildung: Echo-Simulation: Jeder Knotenpunkt sendet an jeden verbundenen Knotenpunkt](/images/echo-simulation.gif)
 
-So basically, in the echo, each node sends each message to each node. This sounds simple, it is on the one hand also: The echo protocol is a very simple protocol, but also has wider implications, that is: There are no routing information at the echo and even metadata can hardly be recorded from the network. The nodes also do not forward the message, the term "forwarding" is incorrect, because each node actively resends the message to the (its) connected friends.
+So basically, in the echo, each node sends each message to each node. This sounds simple: The echo protocol is a very simple protocol, but also has wider implications, that is: There are no routing information within the echo given and even metadata can hardly be recorded from the individual node or even network. The nodes also do not forward the message, the term "forwarding" is incorrect, because each node actively resends the message to the (its) connected friends.
 
-This may result in receiving a message (from multiple connected nodes) multiple times - however, in order to avoid this happening and being kept efficient, the message hash is cached and the message may be rejected for retransmission if it is a doublet was identified. This is called as already indicated above: "Congestion Control".
+This may result in receiving a message (from multiple connected nodes) multiple times - however, in order to avoid this happening and being efficient, the message hash is cached and the message may be rejected for retransmission if it is identified as a doublet. This is called as already indicated above: "Congestion Control".
 
 The message is in a capsule, so to speak, similar to a ZIP file. This capsule is created by asymmetric encryption with the public key. Added is the hash of the plaintext message. When a node tries to decode the ciphertext, a new text comes out - which can either be decoded correctly or incorrectly, that is to say, it is human-readable or, if the decoding key was incorrect, random characters became only random characters. This resulting text after the decoding attempt is thus again hashed.
 
-Now, if the hash of the decoded message is identical to the hash of the original message that the sender already attached to the capsule, it is clear that the deciphering node has used the correct key and this message is in plain text for him: the message is readable and displayed in the user interface. This can be called an echo match . Unsuccessful decoding attempts, in which the hash value between the original message and the message text of the decoding attempt do not match, are not displayed in the user interface, but remain in the kernel of the program for further transmission to the connected neighbors.
+Now, if the hash of the decoded message is identical to the hash of the original message that the sender already attached to the capsule, it is clear that the deciphering node has used the correct key and this message in plain text is for him: hence, the message is readable and displayed in the user interface. This can be called an “echo match”. Unsuccessful decoding attempts, in which the hash value between the original message and the message text of the decoding attempt do not match, are not displayed in the user interface, but remain in the kernel of the program for further transmission to the connected neighbors.
 
-The node must therefore try with all the keys of his friends to unpack the message and compare the hash values. If the hash value is not identical, the node packs the ingredients back together in one capsule and sends them to each of his connected friends, who then try the same.
+The node must therefore try with all the keys of his friends to unpack the message and compare the hash values. If the hash value is not identical, the node packs the ingredients back together in one capsule and sends it to each of the connected friends, who then try the same.
 
-The hash value of a message is not invertible, therefore the encryption can not be broken with the (enclosed) hash of the original message, it still requires the correct key.
+The hash value of a message is not invertible, therefore the encryption cannot be broken with the (enclosed) hash of the original message, it still requires the correct key.
 
-A message that has been successfully unpacked will no longer be sent, unless you use the Super Echo option, which also retransmits the successfully unpacked messages. Thus, no one who records the Internet packets can identify messages that are not forwarded.
+A message that has been successfully unpacked will no longer be sent, unless the user uses the “Super Echo” option, which also retransmits the successfully unpacked messages. Thus, no one who records the Internet packets can identify messages that are not sent again.
 
-Finally, as described above, it is also possible from time to time to send out false messages ("simulacra fake messages") and also simulated impersonated messages, so that it is difficult for network traffic collectors to find out the message capsule would have been interesting for your own readability. Because it is to be noted today that it may be assumed that all communication data of an Internet user somewhere stored and recorded on the Internet and in the case of interest also automated and manually evaluated.
+Finally, as described above, it is also possible from time to time to send out false messages ("simulacra fake messages") and also simulated impersonated messages, so that it is difficult for network traffic collectors to find out the message capsule, which has been of interest for the users own readability. Because it is to be noted that it may be assumed today that all communication data of an Internet user is somewhere stored and recorded on the Internet and in the case of interest also automated and manually evaluated.
 
-Then: This encrypted capsule is again sent over an encrypted SSL / TLS channel that is established between the nodes. This is a decentralized, self-signed p2p connection, a "two-pass mutual authentication protocol". The implementation is precisely defined according to SSL / TLS, but it can also be switched off: The network nodes thus communicate via HTTPS or even HTTP.
+Then: This encrypted capsule is again sent over an encrypted SSL/TLS channel that is established between the nodes. This is a decentralized, self-signed p2p connection, a "two-pass mutual authentication protocol". The implementation is precisely defined according to SSL/TLS, but it can also be switched off: The network nodes thus communicate via HTTPS or even HTTP.
 
-Anyway, of course, the transfer becomes more susceptible if one does not use the multiple encryption. Therefore, one should always establish an HTTPS connection to his friends and send over this encrypted channel his encrypted capsules in which the message waits, kissing awake from the right key and (using the echo match method based on the hash comparison) in readable plaintext to be converted.
+However, of course, the transfer becomes more susceptible if one does not use the multiple encryption. Therefore, one should always establish an HTTPS connection to his friends and send over this encrypted channel his encrypted capsules in which the message waits, to be kissed awake from the right key (using the “echo match” method based on the hash comparison) and to be converted in readable plaintext.
 
 |** Process description of the echo match:**|
 |---|
-| Sender A hashed his original text to a hash 123456789, encrypts the text and packs the crypto-text and hash of the original message into the capsule (before he adds an AES and sends it out via a TLS / SSL connection).
-Recipient 1 converts the received encoded text of the capsule to a (supposed) plain text, but this has the hash 987654321 and is therefore not identical to the supplied original text hash of 123456789. This is repeated with all available keys of all friends of the recipient 1, since all Hash comparisons, however, were unsuccessful, he packs the message again and sends them on. The message is obviously not for him or one of his friends.
-Recipient 2 now also converts the received, encrypted text to a (supposed) plaintext, this has the hash 123456789 and is thus identical to the supplied original text hash of 123456789, the decoding was apparently successful with one of the existing keys of his friends and therefore the message displayed on the screen of this receiver (and if Super-Echo is selected, also packed again and forwarded).|
+|Sender A hashed his original text to a hash 123456789, encrypts the text and packs the crypto-text and hash of the original message into the capsule (before he adds an AES and sends it out via a TLS/SSL connection).
+Recipient 1 converts the received encoded text of the capsule to a (supposed) plain text, but this has the hash 987654321 and is therefore not identical to the supplied original text hash of 123456789. This is repeated with all available keys of all friends of the recipient 1, since all Hash comparisons, however, were unsuccessful, he re-packs the message again and sends it on. The message is obviously not for him or one of his friends.
+Recipient 2 now also converts the received, encrypted text to a (supposed) plaintext, this has the hash 123456789 and is thus identical to the supplied original text hash of 123456789, the decoding was apparently successful with one of the existing keys of his friends and therefore the message is displayed on the screen of this receiver (and if Super-Echo is selected, also re-packed again and sent-out again).|
 
 No one on the net can see what message a user successfully unpacked, because everything happens on the user's local machine.
 
 ### 3.2 Half echo 
 
-The half echo mode sends the user's message only one hop to the next node, eg from Bob to Alice. Alice then does not send the message down the path of her connected friends (as is customary for the Full Echo). The Echo mode is technically defined by the connection to another listener: Bob's Node, when connecting to the node of Alice, notifies that Alice should stop sending the message to her friends. Thus, two friends or nodes can exclude via a direct connection that the message is carried into the wider network via the other, further connections that each node has.
+The half echo mode sends the user's message only one hop to the next node, e.g. from Bob to Alice. Alice then does not send the message down the path of her connected friends (as it is customary for the Full Echo). This Echo mode is technically defined by the connection to another listener: Bob's Node, when connecting to the node of Alice, notifies that Alice should stop sending the message to her friends. Thus, two friends or nodes can exclude via a direct connection that the message is carried into the wider network via the other, further connections that each node has.
 
-In addition to the Full and Half Echo, there is the third Adaptive Echo (AE), Here, as will be described below, the message is sent to connected neighbors or friends only if the node knows a particular cryptographic token - similar to a secret passphrase. Of course, this passphrase must first be defined, shared and stored in the respective nodes. Thus, defined ways of a message in a network configuration can be used. For example, if all nodes in a country use a common Adaptive Echo passphrase, the message will never appear in other nations' nodes if they do not know the passphrase. Thus, a routing can be defined that is not located within the message, but in the nodes. If you do not know the passphrase, does not get the message forwarded! Adaptive Echo turns messages that can not be opened into messages that are not known or exist.
+In addition to the Full and Half Echo, there is the third: Adaptive Echo (AE). Here, as it will be described below, the message is sent to connected neighbors or friends only if the node knows a particular cryptographic token - similar to a secret passphrase. Of course, this passphrase must first be defined, shared and stored in the respective nodes. Thus, defined ways of a message in a network configuration can be used. For example, if all nodes in a country use a common Adaptive Echo passphrase, the message will never appear in other nations' nodes if they do not know the passphrase. Thus, a routing can be defined that is not located within the message, but in the nodes. If you do not know the passphrase, one does not get the message forwarded respective further sent out! Adaptive Echo turns messages that cannot be opened into messages that are not known or even exist.
 
 The section below on the Adaptive Echo (AE) will therefore cover this option in more detail.
 
 ### 3.3 Echo Accounts
 
-
-And in addition: the echo also knows echo accounts . An account or a kind of firewall. It can be used to ensure that only friends who know the credentials to the account connect. Thus, a so-called Web of Trust , a network based on trust, is formed. It is not based on the encryption key like in other applications, it is independent of it. This has the advantage that the encryption public key does not need to be associated with the IP address (as is the case with RetroShare, for example); or the user must announce his IP address in the network of friends, for example in a DHT where users can search for it. The echo accounts provide a peer-to-peer- (P2P) connection to a Friend-to-Friend (F2F) network or allow both types of connection. This makes GoldBug suitable for both paradigms.
+And in addition: the echo also knows Echo Accounts. An account is a kind of firewall. It can be used to ensure that only friends connect who know the credentials to the account. Thus, a so-called Web of Trust, a network based on trust, is formed. It is not based on the encryption key like in other applications, it is independent of it. This has the advantage that the encryption public key does not need to be associated with the IP address (as it is the case with RetroShare, for example); or that the user must announce his IP address in the network of friends, for example in a DHT where users can search for it. The echo accounts provide a peer-to-peer-(P2P)-connection to a Friend-to-Friend-(F2F)-network or allow both types of connection. This makes GoldBug suitable for both paradigms.
 
 Figure: Figure: Account Firewall
 
@@ -514,14 +513,27 @@ Figure: Figure: Account Firewall
 
 The echo accounts work as follows:
 
-Binding endpoints are responsible for defining the account information. During the creation process for an account, this can be defined for one-time use (one-time account or one-time use). Account name and also the passphrase for the account require at least 32 bytes of characters. A long password is required.
-After a network connection has been established, the binding endpoint informs the requesting node with a request for authentication. The binding endpoint will drop the connection if the peer has not identified within a fifteen second time window.
-After the request for authentication has been received, the peer responds to the binding endpoint. The peer then transmits the following information: HHash Key (Salt / Time) // Salt, where the hash key is a concise summary of the account name and also the account password. Currently, the SHA-512 hash algorithm is used to generate this hash result. The time variable has a resolution of a few minutes. The peer retains the value for the cryptographic salt.
-The binding endpoint receives the information of the peer. Consequently, this then processes HHash Key (Salt // Time) for all accounts he has set up. If the endpoint can not identify an account, it will wait one minute and perform another search. If an account matching this hash key was found, the binding endpoint creates a message similar to the one the peer created in the previous step and sends the information to the peer. The authenticated information is stored. After a period of about 120 seconds, the information is deleted again.
-The peer receives the information of the binding endpoint and performs a similar validation process, this time including the analysis of the cryptographic salt value of the binding endpoint. The two salt values ​​must then be clearly consistent. The peer will drop the connection if the endpoint has not identified itself within a fifteen-second time window. It should be noted, by the way, that the account system can be further developed by including a key for encryption. The additional key then allows even more precise time windows to be defined.
-If SSL / TLS is not available during this negotiation, the protocol may become vulnerable as follows: An intermediate station may record the values ​​from the third step and consequently send to the binding endpoint. Then, the binding endpoint could also grant access to the account to an unknown connection. The recording device could then grab the response of the binding endpoint, that is, the values ​​of the fourth step, and forward the information to the peer. If the account information or password is then accurately maintained, the peer would then accept the response from this new binding endpoint. That's why, as always, it's about protecting passwords.
+Binding endpoints are responsible for defining the account information. During the creation process for an account, this can be defined for one-time use (one-time account or one-time use). Account name and also the passphrase for the account require at least 32 bytes of characters. So a long password is required.
 
-In GoldBug, therefore, a server account - if it is specified to be dedicated - therefore requires a password equal to the length of an AES-256: this is a pass phrase of 32 characters.
+After a network connection has been established, the binding endpoint informs the requesting node with a request for authentication. The binding endpoint will drop the connection if the peer has not identified within a fifteen second time window.
+
+After the request for authentication has been received, the peer responds to the binding endpoint. The peer then transmits the following information: HHash Key (Salt / Time) // Salt, where the hash key is a concise summary of the account name and also the account password. 
+
+Currently, the SHA-512 hash algorithm is used to generate this hash result. The time variable has a resolution of a few minutes. The peer retains the value for the cryptographic salt.
+
+The binding endpoint receives the information of the peer. Consequently, this then processes HHash Key (Salt // Time) for all accounts he has set up. If the endpoint cannot identify an account, it will wait one minute and perform another search. If an account matching this hash key was found, the binding endpoint creates a message similar to the one the peer created in the previous step and sends the information to the peer. The authenticated information is stored. After a period of about 120 seconds, the information is deleted again.
+
+
+The peer receives the information of the binding endpoint and performs a similar validation process, this time including the analysis of the cryptographic salt value of the binding endpoint. The two salt values must then be clearly consistent. The peer will drop the connection if the endpoint has not identified itself within a fifteen-second time window. 
+
+
+It should be noted, by the way, that the account system can be further developed by including a key for encryption. The additional key then allows even more precise time windows to be defined.
+
+If SSL/TLS is not available during this negotiation, the protocol may become vulnerable as follows: An intermediate station may record the values from the third step and consequently send to the binding endpoint. 
+
+Then, the binding endpoint could also grant access to the account to an unknown connection. The recording device could then grab the response of the binding endpoint, that is, the values of the fourth step, and forward the information to the peer. If the account information or password is then accurately maintained, the peer would then accept the response from this new binding endpoint. That's why, as always, it's about protecting passwords.
+
+In GoldBug, therefore, a server account - if it is specified to be dedicated - therefore requires a password equal to the length of an AES-256: this is a passphrase of 32 characters.
 
 Figure: Account Passwords
 
@@ -531,7 +543,7 @@ Figure: Account Passwords
 ### 3.4 The echo grid
 
 
-When students or students talk and be taught or taught about the Echo Protocol, they can simply draw an echo grid with the letters E_C_H_O. The nodes from E1 to O4 are numbered and connect the letters with a connecting line on the ground (see figure).
+When students talk or students be taught or taught themselves about the Echo Protocol, they can simply draw an echo grid with the letters E_C_H_O. The nodes from E1 to O4 are numbered and connect the letters with a connecting line on the ground (see figure).
 
 Figure: The Echo Grid Template
 
@@ -543,19 +555,19 @@ For example, then the connection E1-E2 denotes an IP connection to a neighbor.
 
 If the individual nodes now exchange keys, connections are created that arise as a new level at the level of the IP connections of the P2P / F2F network.
 
-With the architecture underlying GoldBug not only the cryptographic routing in a kernel program was elaborated, but - as stated above - the term "cryptographic routing" was paradoxically removed from the routing with the echo protocol. It is therefore necessary to speak in more detail of the "cryptographic echo" instead of "cryptographic routing". One of them to differentiate protocol is that of the "Cryptographic Discovery" which will be discussed below in an extra section.
+With the architecture underlying in GoldBug not only the cryptographic routing in a kernel program was elaborated, also - as stated above - the term "cryptographic routing" was paradoxically removed from the routing with the echo protocol. It is therefore necessary to speak in more detail of the "cryptographic echo" instead of "cryptographic routing". One more of them to differentiate the protocols, is the protocol of the "Cryptographic Discovery" which will be discussed below in an extra section.
 
-Echo is thus "beyond" routing: Firstly, the message packets do not contain routing information (addressees) and the nodes also do not use "forwarding" in the true sense, because they simply send everything to all connections. And secondly: Even the cryptographic key that tries to decode the message is not an address (which would even be attached to the message package), but only a polarizing Bille: it lets us see texts differently and possibly understand. The echo protocol therefore also uses the term "traveling" rather than the term "routing". Or just stop: "cryptographic echo".
+Echo is thus "beyond" routing: Firstly, the message packets do not contain routing information (addressees) and the nodes also do not use "forwarding" in the original sense, because they simply send everything to all connections. And secondly: Even the cryptographic key that tries to decode the message is not an address (which would even be attached to the message package), but only a polarizing glass: it lets us see texts differently and possibly understand. The echo protocol therefore also uses the term "traveling" rather than the term "routing". Or just in short: "cryptographic echo".
 
-From a legal point of view, a different evaluation is then also to be made here, since a node does not forward in the name of an addressee as a middleman, but informs the neighbors independently (see, for example, the forwarding in other routing models such as AntsP2P with its ant algorithm , Mute , AllianceP2P , RetroShare , Onion-Routing or I2P .
+From a legal point of view, a different evaluation is then also to be made here, since a node does not forward in the name of an addressee as a middleman, but informs the neighbors independently (see, for example, the forwarding in other routing models such as AntsP2P with its ant algorithm, Mute, AllianceP2P, RetroShare, Onion-Routing or I2P.
 
-As well as spreading a good reputation in the neighborhood, the message also spreads in the echo - otherwise the echoing protocol allows any cryptographic "stuff" to "swim" past (by not being decoded or becoming).
+As well as spreading a good reputation in the neighborhood, the message also spreads in the echo - otherwise the echoing protocol allows any cryptographic "stuff" to "float" away (by not being decoded or being unreadable).
 
 It is reminiscent of the Star Trek Borg collective paradigm: everyone has access to all the neighbors' messages (unless half or adaptive echo is used and if the message text can be understood (decoded) at all).
 
 In the echo, the node is more of a "sovereign" or "giving and receiving (non-directional) information"; in other networks, a node could be more referred to as a "postman", "dealer", "forwarder" or "intermediary".
 
-The echo grid as a simple network representation is not only used for the analysis of "routing" (or "travel") - ways to represent echo modes and encryption stations, but ultimately can also be found in graph theory application: which Path takes a message, depending on the structure of the network, but also the use of echo accounts, half or full echo and the Adaptive Echo, as the following examples of the graphs between Alice, Bob, Ed and Maria illustrate.
+The echo grid as a simple network representation is not only used for the analysis of "routing" (or "travel"-ways) to represent echo modes and encryption stations, but ultimately can also be found in graph theory application: which path takes a message, depending on the structure of the network, and also can be evaluated the use of echo accounts, half or full echo and the Adaptive Echo, as the following examples of the graphs between Alice, Bob, Ed and Maria illustrate.
 
 
 ### 3.4.1 Examples of key exchanges by Alice, Bob, Ed & Maria
