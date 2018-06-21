@@ -579,7 +579,7 @@ Figure: Alice, Bob, Ed and Mary in the Echo Grid - An example of the echo
 ![Abbildung: Alice, Bob, Ed und Mary im Echo-Grid - Ein Beispiel für das Echo](/images/Echo_Chat_Grid_Example.png)
 
 
-The following examples of the figure can be further discussed - they use a few vocabulary and processes of functions of the GoldBug client, so that the program inexperienced readers can also skip this section and once with the basic functions (installation, chat, e-mail , File transfer or URL search) and then be able to retrieve and understand these technical examples at a later date):
+The following examples of the figure can be further discussed - they use a few vocabulary and processes of functions of the GoldBug client, so that in the program inexperienced readers can also skip this section and refer back once the basic functions (installation, chat, e-mail, File transfer or URL search) have been explained – so that these technical examples are understood at a later date):
 
 Alice (IP = E1) and Bob (IP = C3) have exchanged their public key and are connected via the following IP neighbors: E1-E3-E5-E6-C3.
 
@@ -589,15 +589,15 @@ Finally: Maria (O4) is a friend of Ed (H1). They either communicate via the path
 
 Direct IP connections from neighbors such as E1-E3 can be further secured by the creation of a so-called "echo account": No other IP address than E1 can then connect to the so-called "listener" of the neighbor E3. This method can be used to create a web-of-trust - without relying on keys for encryption - nor does it require a friend as a neighbor to exchange their chat or e-mail key.
 
-So-called " turtle hopping " becomes much more efficient in the echo network: when Ed and Alice start a file transfer (via the StarBeam function via a magnetic URI link), the echo protocol transports the packets via the path H1-H3- H5-C4-C3-E6-E5-E3-E1. Maria is not in the route, but she will also receive the packets over the full echo if she knows the StarBeam magnet. The advantage is that the hopping is not about the keys, but about the IP connections (eg the Web of Trust). Basically, everything is always encrypted, so why not take the shortest route on the net?
+So-called "turtle hopping " becomes much more efficient in the echo network: when Ed and Alice start a file transfer (via the StarBeam function and using a magnetic URI link), the echo protocol transports the packets via the path H1-H3- H5-C4-C3-E6-E5-E3-E1. Maria is not in the route, but she will also receive the packets over the full echo if she knows the StarBeam magnet. The advantage is that the hopping is not done over the keys, but over the IP connections (e.g. the Web of Trust). Basically, everything is always encrypted, so why not take the shortest route on the net?
 
-A so-called "Buzz" or "ge-Echo-ter IRC Channel" (therefore also short: e'IRC) space can be created or "hosted" by the nodes O2, for example. Since only the user Ed knows the buzz space name, all other neighbors and friends are left out. Advantage: The user can talk to unknown friends in a room without having exchanged a public eg RSA key with them. Instead, a one-time magnet is simply used for this "buzz" / "e'IRC" room.
+A so-called "Buzz" or "echo'ed IRC Channel" (therefore also short: e'IRC) space can be created or "hosted" by the nodes O2, for example. Since only the user Ed knows the buzz room name, all other neighbors and friends are left out. Advantage: The user can talk to unknown friends in a room without having exchanged a public e.g. RSA key with them. Instead, a one-time magnet is simply used for this "buzz" / "e'IRC" room.
 
-Maria is a mutual friend of Ed and Bob and she activates the C / O (care of) feature for emails: this allows Ed to send emails to Bob, even though he's offline, because: Maria saves the E -Mails between, until Bob comes online.
+Maria is a mutual friend of Ed and Bob and she activates the C/O (care of) feature for emails: this allows Ed to send emails to Bob, even though he's offline, because: Maria saves the e-mails in her instance, until Bob comes online.
 
-Furthermore: Alice created a so-called virtual "e-mail institution". This is not comparable to a POP3 or IMAP server because the emails are only cached: Ed sends his public email key to Alice - and Ed adds the magnet of Alice's "E-mail Institution" to her his program. Now, emails from Bob and Ed are also cached to Alice (at the email institution), even though Maria should be offline.
+Furthermore: Alice created a so-called virtual "e-mail institution". This is not comparable to a POP3 or IMAP server because the emails are only cached: Ed sends his public email key to Alice - and Ed adds the magnet of Alice's "E-mail Institution" to the program. Now, emails from Bob and Ed are also cached within Alice (at the email institution), even though Maria should be offline.
 
-It is helpful to follow the examples on the above graphic or to come back to this at the end of the manual for further explanations of the functions.
+It is helpful to follow the examples on the above graphic or to come back to this at the end of the manual after further explanations of the functions.
 
 
 
@@ -606,33 +606,33 @@ It is helpful to follow the examples on the above graphic or to come back to thi
 
 For the explanation of the "adaptive echo" another echo-grid with the connected letters A and E can be drawn (see following figure).
 
-Figure: Adaptive Echo (AE): The "Hansel and Gretel" Example of the Adaptive Echo]]
+Figure: Adaptive Echo (AE): The "Hansel and Gretel" Example of the Adaptive Echo
 
 ![Abbildung: Adaptives Echo (AE): Das „Hänsel und Gretel“-Beispiel des Adaptiven Echos](/images/echo_AE_grid.png)
 
 
-If a user, his or her chat friend, and a configured third account point as a chat server insert the same AE token ("Adaptive Echo Token") into the program, then the chat server will only send the user's message to his friend, and not to all other connected neighbors or users as would normally be the case in Full Echo mode.
+If a user, his or her chat friend, and a configured third node as a chat server insert the same AE token ("Adaptive Echo Token") into the program, then the chat server will only send the user's message to his friend, and not to all other connected neighbors (or users), as it would normally be the case in the Full Echo mode.
 
-The AE token, like a passphrase, consists of at least 96 characters. In the case of Adaptive Echo, the information from the sending node of the encrypted capsule is attached - and all other nodes learn that you are only forwarding the message to nodes or connection partners who also know this AE token.
+The AE token consists, like a passphrase, of at least 96 characters. In the case of Adaptive Echo, the information from the sending node of the encrypted capsule is attached - and all other nodes learn that you are only forwarding (sending) the message to nodes or connection partners, who also know this AE token.
 
-With an AE token, no other node that does not know the passphrase will be able to receive or view the user's message. Thus, potential "recorders" can be excluded, that is possible neighbors, the possible and presumptive record all the message traffic and then try to break the multiple encryption to get to the message core of the capsule.
+With an AE token, no other node that does not know the passphrase will be able to receive or view the user's message. Thus, potential "recorders" can be excluded, these are possible neighbors, which presumptive record all the message traffic and then try to break the multiple encryption to get to the message core of the capsule.
 
-In order to be able to determine the graph, the travel route, for the adaptive echo, several nodes must agree with each other and note the passphrase on the way path without any gaps. In the case of the adaptive echo can be spoken of a routing.
+In order to be able to determine the graph, the travel route, for the adaptive echo, several nodes must agree with each other and note the passphrase on the way path without any gaps. In the case of the adaptive echo it can be spoken of a routing.
 
 
-#### 3.5.1 Hansel and Gretel - An example of Adaptive Echo mode 
+#### 3.5.1 Hansel and Gretel - An example of the Adaptive Echo mode 
 
-To illustrate the adaptive echo, a classic example is the tale of Hänsel and Gretel .
+To illustrate the adaptive echo, a classic example is the tale of Hansel and Gretel.
 
-In the AE grid explained above, the characters Hansel, Gretel and the evil witch are drawn as nodes. Now Hansel and Gretel think about how they can communicate with each other without the evil witch noticing this. According to the fairy tale, they are in the woods with the witch and want to find out from this forest again and mark the way with bread crumbs and white pebbles.
+In the AE grid explained above, the characters Hansel, Gretel and the evil witch are drawn as nodes. Now Hansel and Gretel think about how they can communicate with each other without the evil witch noticing this. According to the fairy tale, they are in the woods with the witch and want to find out again of this forest and mark the way with bread crumbs and white pebbles.
 
-These fairy tale contents can now also illustrate the adaptive echo in the above grid pattern and show at which points of the grid or the communication graph a cryptographic token called "white pebbles" can be used:
+These fairy tale contents can now also illustrate the Adaptive Echo in the above grid pattern and show at which points of the grid or the communication graph a cryptographic token called "white pebbles" can be used:
 
-If nodes A2, E5 and E2 use the same AE token, then node E6 will not receive a message that node A2 (Hansel) and node E2 (Gretel) will exchange. Because, the node E5 learns about the known token "white pebbles" ("white_pebbles"), the messages not to the node E6, the "Wicked Witch" to send. A learning, adaptive network.
+If nodes A2, E5 and E2 use the same AE token, then node E6 will not receive a message that node A2 (Hansel) and node E2 (Gretel) will exchange. Because the node E5 learns about the known token "white pebbles", it does not send the messages to the node E6, the "Wicked Witch". It is a learning, adaptive network.
 
-An "adaptive echo" network reveals no target information (compare again above: "Ants Routing"). Because - as a reminder: The mode of "half echo" sends only one hop to the connected neighbor and the "full echo" sends the encrypted message to all connected nodes over an unspecified hop number. While "echo accounts" encourage or hinder other users as a kind of firewall or authorization concept when connecting, "AE tokens" hold graphene or path exclusivity - for messages that are sent via connection nodes that know the AE token ,
+An "adaptive echo" network reveals no target information (compare again above: "Ants Routing"). Because - as a reminder: The mode of "half echo" sends only one hop to the connected neighbor and the "full echo" sends the encrypted message to all connected nodes over an unspecified hop number. While "echo accounts" encourage or hinder other users as a kind of firewall or authorization concept when connecting, "AE tokens" provides graph or path exclusivity - for messages that are sent via connected nodes that know the AE token,
 
-Chat Server Administrators can exchange their tokens with other server administrators if they trust each other (so-called "Ultra-Peering for Trust") and define a Web of Trust. In network labs or at home with three or four computers, the Adaptive Echo is easy to test and document its results:
+Chat Server Administrators can exchange their tokens with other server administrators if they trust each other (so-called "Ultra-Peering for Trust") and define a Web of Trust. In network labs or at home with three or four computers, the Adaptive Echo is easy to test and to document the results:
 
 For an adaptive echo test, simply use a network with three or more computers (or "SPOTON_HOME" as the (endless) file in the binary directory to launch and connect multiple program instances on a single machine) and then implement this example flow:
 
@@ -662,14 +662,13 @@ Illustration: How the echo PROTOCOL works
 
 - A distinction is made between physical IP connections and virtual connections to keys. Keys are therefore not necessarily assigned to an IP connection.
 
-- Users can exchange asymmetric public keys as well as magnetic URIs with symmetric encryption details as well as tokens and account credentials.
+- Users can exchange asymmetric public keys as well as magnet URIs with symmetric encryption details as well as tokens and account credentials.
 
-- Connection nodes can allow and deny connections - as well as send messages addressed (or sent addressed).
+- Connected nodes can allow and deny connections - as well as send messages addressed (or sent addressed).
 
 - Accordingly, different communication scenarios arise.
 
 **Examples:**
-
 
 
 - a. User H4 has an AE token. It does not send messages (via connection node H6) to the O-quadrant if HG does not know the token.
@@ -678,26 +677,26 @@ Illustration: How the echo PROTOCOL works
 
 - c. The user E1 does not let the user connect E2 because he does not know the login for the echo account.
 
-- d. Users O1 and O4 chat with each other and only know their public key for encryption.
+- d. User O1 and O4 chat with each other and only know their public key for encryption.
 
-- e. Users H3 and C5 chat via a URI magnet in the same group chat room (also called buzz or e'IRC).
+- e. User H3 and C5 chat via a URI magnet in the same group chat room (also called buzz or e'IRC).
 
-It turns out that the echo protocol can map a very complex network, although it has a simple structure. With the individual options and terms, users can tap into a lot of network and crypto theory in practice and try it out in practice. An ideal teaching tool, introduction to cryptographic processes, graphene theory, and a hands-on user experience in the group. For example, for a team of three, as in the GoldBug story by Edgar Alan Poe.
+It turns out that the echo protocol can map a very complex network, although it has a simple structure. With the individual options and terms, users can tap into a lot of network and crypto theory in practice and try it out in practice. An ideal teaching tool, introduction to cryptographic processes, graph theory, and a hands-on user experience in the group. For example, for a team of three, as in the GoldBug story by Edgar Alan Poe.
 
 
 ## 4 Cryptographic Discovery
 
 
-Cryptographic Discovery describes the method of an echoing protocol to find nodes in an echo network. The echoing protocol is supplemented with another useful method, if not even more important, than the echo itself. Cryptographic Discovery is available in existing clients such as GoldBug, Spot-on or the chat server for the Android operating system, SmokeStack , implemented on the code base. The source code and its documentation defines the method accordingly. For example, Cryptographic Discovery can replace a Distributed Hash Table (DHT) to find a friend on the network. A further publication especially on this topic as an attachment to the source code of the development is in preparation.
+Cryptographic Discovery describes the method of an echoing protocol to find nodes in an echo network. The echoing protocol is supplemented with another useful method, if not even more important, than the echo itself. Cryptographic Discovery is available in existing clients such as GoldBug, Spot-on or the chat server for the Android operating system, SmokeStack, implemented within the code base. The source code and its documentation define the method accordingly. For example, Cryptographic Discovery can replace a Distributed Hash Table (DHT) to find a friend on the network. A further publication especially on this topic as an attachment to the source code of the development is in preparation.
 
 
-## 5 Set up a first installation - eg with the wizard 
+## 5 Set up a first installation – e.g. with the wizard 
 
 The first initial setup of the software is very simple in a few steps,
 
-- The user unpacks the program from the Zip and starts (under Windows) the GoldBug.exe from the path to which the program was unpacked, eg C: /GoldBug/GoldBug.exe or C: /Programs/GoldBug/GoldBug.exe.
+- The user unpacks the program from the Zip and starts (under Windows) the GoldBug.exe from the path to which the program was unpacked, e.g. C: /GoldBug/GoldBug.exe or C: /Programs/GoldBug/GoldBug.exe.
 
-- The user interface and a wizard appear, with which settings can be implemented step by step. Alternatively, you can close the wizard and make the settings manually in the tab for the settings or for kernel activation. It is recommended to use the wizard.
+- The user interface and a wizard appear, with which settings can be implemented step by step. Alternatively, the user can close the wizard and make the settings manually in the tab for the settings or for kernel activation. It is recommended to use the wizard.
 
 - In the wizard, the necessary cryptographic keys are then generated with the user name and a passphrase to be entered twice.
 
@@ -709,15 +708,16 @@ Figure: Initial Wizard
 
 - After completing the wizard, the kernel must still be activated. So the GoldBug Messenger has a user interface (also called Interface or Graphical User Interface (GUI)) and a kernel. Both are given as a binary file (in Windows called GoldBug.exe and Spot-On-Kernel.exe). Spot-On is the original project for the Echo application and GoldBug merely provides a simplified user interface.
 
-- If the kernel is running, connect to a neighbor or server with the appropriate IP in the Neighbors tab.
+- If the kernel is running, the user connects to a neighbor or server with the appropriate IP in the Neighbors tab.
 
-- Then the user exchanges the key with a friend and the encrypted communication via chat or e-mail can begin ...
+- Then the user exchanges the key with a friend and the encrypted communication via chat or e-mail can begin...
 
-Otherwise, you must activate the kernel via the "Activate" button in this tab for settings or for kernel activation after each start of GoldBug.exe, which then coordinates the connections to friends or to a chat server. So the kernel file Spot-on-Kernel.exe will be turned on or off from GoldBug's program.
+Otherwise, the user must activate the kernel via the "Activate" button in this tab for settings or for kernel activation after each start of GoldBug.exe, which then coordinates the connections to friends or to a chat server. So the kernel file Spot-on-Kernel.exe will be turned on or off from GoldBug's program.
+
 
 ### 5.1 Two login methods
 
-If the user starts GoldBug for the first time, enter a nickname in the corresponding box and define a passphrase for the login into the application (see figure, blue widget box).
+If the user starts GoldBug for the first time, the user enters a nickname in the corresponding box and defines a passphrase for the login into the application (see figure, blue widget box).
 
 Figure: Set password
 
@@ -730,19 +730,18 @@ The password must be at least 16 characters long. If this is too long, you can r
 
 The two methods can be differentiated as follows:
 
-**Passphrase method:** When the password is created, it is not stored locally, just the hash of the input. The hash is supplemented by a supplementary string, the so-called cryptological salt. This complements the hash and makes it safer. The "Salted Hash" is thus defined as follows: hash (passphrase + salt). So that the password is also practiced by the user and typing errors are excluded, a second mail must be entered.
+**Passphrase method:** When the password is created, it is not stored locally, just the hash of the input. The hash is supplemented by a supplementary string, the so-called cryptological salt. This complements the hash and makes it safer. The "Salted Hash" is thus defined as follows: hash (passphrase + salt). To achieve that the password is also trained for the user and typing errors are excluded, it must be entered a second time.
 
-**Question / Answer Method:** This method does not enter a password twice but defines a string as a question and a string as the answer. Both strings will not be checked a second time. Technically, this login method is implemented via an HMAC: Hash (Question, Answer), indicates that an " HMAC(Keyed-Hash Message Authentication Code) is used. And: neither the question nor the answer is stored on the user's machine and no cryptographic salt is randomly generated by the machine. Instead of the question, the user can of course also enter two passwords without a question mark. It should be noted that here the question and the answer must be entered in subsequent logins exactly as they were defined and here at the first definition no second input check ("Confirmation") regarding typing errors as in the password method.
+**Question / Answer Method:** This method does not enter a password twice but defines a string as a question and a string as the answer. Both strings will not be checked a second time. Technically, this login method is implemented via an HMAC: Hash (Question, Answer), indicates that an "HMAC” (Keyed-Hash Message Authentication Code) is used. And: neither the question nor the answer is stored on the user's machine and no cryptographic salt is randomly generated by the machine. Instead of the question, the user can of course also enter two passwords without a question mark. It should be noted that here the question and the answer must be entered in subsequent logins exactly as they were defined and here at the first definition no second input check ("confirmation") regarding typing errors is given as in the password method.
 
 Figure: Login to the application with a password
 
 ![Abbildung: Login in die Applikation mit einem Passwort](/images/login.png)	
 
 
+Since the hash generated from the login passphrase unlocks the encrypted containers that also store the private key for encryption, it is especially important to protect the login process and login password. Therefore, the above two methods have been taken into account to make it more difficult for attackers: they do not know a) which method a user has chosen and b) the question-answer method is safer, as described above, because neither the question, nor the answer can be stored somewhere and a HMAC may be more complex than a password as a "just" salted hash. Only the user knows question and additionally the answer and only the match of both can open the container.
 
-Since the hash generated from the login passphrase unlocks the encrypted containers that also store the private key for encryption, it is especially important to protect the login process and login password. Therefore, the above two methods have been taken into account to make it more difficult for attackers: they do not know a) which method a user chose and b) the question-answer method is safer, as described above, because neither the Question, nor the answer can be stored somewhere and an HMAC may be more complex than a password as a "just" salted hash. Only the user knows question and additionally the answer and only the match of both can open the container.
-
-In order not to give price to keypad loggers, there is the possibility to use a virtual keyboard when logging in (see illustration). The user starts this by double-clicking on the input line for the password. At best, only mouse clicks can be recorded here, but no keystrokes.
+In order not to reveal information to keypad loggers, there is the possibility to use a virtual keyboard when logging in (see image). The user starts this by double-clicking on the input line for the password. At best, only mouse clicks can be recorded here, but no keystrokes.
 
 Figure: Virtual Keyboard
 
@@ -753,19 +752,19 @@ Figure: Virtual Keyboard
 
 In principle, it is important that the private key is kept encrypted in a sufficiently secured container. It is reasonable to suppose that, in particular, access by providers to mobile operating systems would otherwise make it easy to fetch the private key.
 
-This is especially critical for web mail offers to offer the encryption in the browser or with keys that are deposited with the mail provider online. Encryption should always take place on the user's machine and for this purpose, a source-open client and no online web application should be used in the browser, in which the user should - if necessary - also generate self-generated keys online.
+This is especially critical for web mail offers to provide the encryption in the browser or with keys that are deposited at and with the mail provider online. Encryption should always take place on the user's machine and for this purpose, an open-source client and no online web application in the browser should be used, in which the user should - if necessary - also generate self-generated keys online.
 
 The risk of seizing the possibly insufficiently encrypted private key is far too great. Program audits should also pay attention to capturing passwords for the encrypted container in which the private key is located, as well as to remote accessing the private key.
 
-Even the few open-source messengers with encryption that can be counted on one hand for the desktop as well as for mobile devices that have undergone a security audit are hardly sufficient with regard to the security of the encrypted storage of - and secured access processes to - analyzed private key.
+Even the few open-source messengers with encryption that can be counted on one hand for the desktop as well as for mobile devices that have undergone a security audit are hardly sufficient with regard to the security of the encrypted storage of - and secured access processes to - analyzed private keys.
 
 
 ### 5.2 Generation of 10 Keys for Encryption
 
 
-When the user launches the GoldBug Messenger for the first time, the wizard asks if the user wants to generate the encryption keys. For key creation you should choose a key of at least 3072 bits (default) or larger. The user can also choose other options such as algorithm, hashtype, cipher, salt-length or iteration count, for example, if he re-generates the key. The first setup has a presetting based on RSA ready: So if you want to test out NTUR or McEliece as an algorithm, then after the first setup again generate new keys with one of the then selectable algorithms.
+When the user launches the GoldBug Messenger for the first time, the wizard asks if the user wants to generate the encryption keys. For key creation the user should choose a key of at least 3072 bits (default) or larger. The user can also choose other options such as algorithm, hashtype, cipher, salt-length or iteration count, for example, if he re-generates the key. The first setup has a presetting based on RSA ready: So if you want to test out NTUR or McEliece as an algorithm, then after the first setup again generate new keys with one of the then selectable algorithms.
 
-The generated keys are stored in the sub-path "/.spot-on". If the user wants to set up a new login with new keys and all user data should be deleted, then this path is simply deleted and the GoldBug.exe is restarted. For Linux and the other operating systems their adequate path specifications apply. The same can be done in the main menu with "!!! Total_Database Erase !!! ".
+The generated keys are stored in the sub-path "/.spot-on". If the user wants to set up a new login with new keys and all user data should be deleted, then this path can simply be deleted and the GoldBug.exe has to be restarted. For Linux and the other operating systems their adequate path specifications apply accordingly. The same can be done in the main menu with "!!! Total_Database Erase !!! ".
 
 Asymmetric keys are generated for the following functions (a key for the encryption as well as a key for the (optional) signature):
 
@@ -773,58 +772,59 @@ Asymmetric keys are generated for the following functions (a key for the encrypt
 - E-Mail: this is about email to other users of GoldBug or Spot-on
 - POPTASTIC: This is about the chat via e-mail server
 - URLs: This involves searching for URLs in the URL database (web search)
-- Rosetta: With the Rosetta encryption pad, text with asymmetric keys can be converted back and forth from plaintext to ciphertext and vice versa before they are sent. This is recommended when other insecure messengers or e-mail are used or the ciphertext should be posted anywhere on the web - or the plain text, before it is sent in GoldBug, should again receive an additional encryption level.
-That each function uses its own key pair is again a security feature. If the chat key were compromised, the email encryption will not be affected. Furthermore, the user can only pass friends his chat key and not the e-mail key. Thus, the user can decide whom he allows to chat with him or just to e-mail or possibly also to exchange URLs for the function of p2p web search in the integrated URL database.
+- Rosetta: With the Rosetta encryption pad, text with asymmetric keys can be converted back and forth from plaintext to ciphertext and vice versa before the texts are sent. This is recommended when other insecure messengers or e-mail are used or the ciphertext should be posted anywhere on the web - or the plain text, before it is sent in GoldBug, should again receive an additional encryption level.
 
-So far the minimal view on the user interface is described: Via the main menu one can choose between "full view" or "minimal view". If you are not familiar with computers, you should choose the minimal view because it fades out the unnecessary variety of options. Keep it simple! Qt developers, and those who are looking for an exercise project for their own Qt development project, may even minimize the user interface (and like "forking" the GoldBug project).
+That each function uses its own key pair is again a security feature. If the chat key were compromised, the email encryption will not be affected. Furthermore, the user can only pass friends his chat key and not the e-mail key. Thus, the user can decide whom he allows to chat with or just to e-mail or possibly also to exchange URLs for the function of p2p web search in the integrated URL database.
 
-During the first setup, the option of the maximum view is not available, it will only be shown and set in the other logins. The possibility of looking at even more details in the user interface should therefore be addressed briefly here, since many details also refer to the last-mentioned point of the cryptographic values, which is also contained in the tabulator of the kernel activation and encryption key. Generation are to be found (just in the setting of the maximum view). The values ​​can be set individually for a new key generation (without wizard) from the extended user view. However, if you are using the client for the first time, the typical setting values ​​are automatically available, ie the key has a (predefined) size of 3072 bits in the RSA algorithm.
+So far the minimal view on the user interface is described: Via the main menu one can choose between "full view" or "minimal view". If you are not familiar with computers, you should choose the minimal view because it fades out the unnecessary variety of options. Keep it simple! Qt developers, and those who are looking for an exercise project for their own Qt development project, may even minimize the user interface (and are invited to "fork" the GoldBug project).
 
-In the case of a non-minimal view, for example, the tab "Activate Kernel" shows the following elements in the user interface:
+During the first setup, the option of the maximum view is not available, it will only be shown and set in the other logins. The possibility of looking at even more details in the user interface should therefore be addressed briefly here, since many details also refer to the last-mentioned point of the cryptographic values, which is also contained in the tabulator of the kernel activation and encryption key: Key-Generation is there to be found (just in the setting of the maximum view). 
+
+The values can be set individually for a new key generation (without wizard) from the extended user view. However, if you are using the client for the first time, the typical setting values are automatically available, i.e. the key has a (predefined) size of 3072 bits of the RSA algorithm.
+
+In case of a non-minimal view, for example, the tab "Activate Kernel" shows the following elements in the user interface:
 
 Path to kernel: Here the user can enter the path to the kernel. If the kernel with the "spot-on-kernel.exe" in the path specified correctly, then the path is highlighted in green. Otherwise, you have to look at the executable file of the kernel or copy it to the executable file of the GUI (GoldBug.exe) or adjust the path accordingly.
 
 PID: The PID number identifies the process ID that identifies the executable file in Windows. The user also finds the process IDs in the Windows Task Manager.
 
-"Key regeneration" function: With the "regeneration" function, the user can also generate individual keys - with new values ​​and options. For this the check box has to be activated, the values ​​have to be set and the respective keys have to be re-generated. Then the user has to put his new key back to his friends, because the key is the communication ID.
+"Key regeneration" function: With the "re-generation" function, the user can also generate individual keys - with new values and options. For this the check box has to be activated, the values have to be set and the respective keys have to be re-generated. This is the way to get e.g. keys of the McEliece or NTRU algorithm. Then the user has to put his new key back to his friends, because the key is the communication ID.
 
 Another variety of options can also be found under the main menu / options in a pop-up window, which will be explained later. This is the actual options window, which can be neglected for a first start, however.
 
-Figure: Options eg for digital signatures
+Figure: Options e.g. for digital signatures
 
 ![Abbildung: Optionen z.B. für digitale Signaturen](/images/client_options.png)	
 
-Figure: Options eg for the view in the client
+Figure: Options e.g. for the view in the client
 
 ![Abbildung: Optionen z.B. für die Ansicht im Klienten](/images/digital_signatures.png)	
 
 
-It is more important to start the kernel after the first key generation via the wizard.
+It is more important to start now the kernel after the first key generation via the wizard.
 
 
 ### 5.3 Activation of the kernel
 
 
-When the user launches the GoldBug Messenger for the first time, a pop-up window at the end of the wizard asks if the kernel should be activated. Otherwise, the red "Activate Kernel" button should be pressed on all subsequent starts after the login in the settings tab, then you can start: If the button is green, the kernel is running.
+When the user launches the GoldBug Messenger for the first time, a pop-up window at the end of the wizard asks if the kernel should be activated. Otherwise, the red "Activate Kernel" button should be pressed on all subsequent starts after the login in the settings tab, then the user can start: If the button is green, the kernel is running.
 
 When the user closes the program interface, a pop-up window also asks if the kernel should continue running. So it's a good idea to first deactivate the kernel and then close the GUI of GoldBug if you want to completely close the program.
 
-Otherwise, the user runs the kernel without a GUI, which is sometimes desired on a web server, so that nobody can turn on the open user interface. (In addition to the Spot-on kernel, there is also the Spot-on-Lite kernel for this daemon web server purpose, which can be found in the repository of the source code as a standalone repository.)
+Otherwise, the user runs the kernel without a GUI, which is sometimes desired on a web server, so that nobody can manipulate within the open user interface. (In addition to the Spot-on kernel, there is also the Spot-on-Lite kernel for this daemon web server purpose, which can be found in the repository of the source code as a standalone repository.)
 
 Figure: Lock of the user interface in the status bar
 
 ![Abbildung: Lock der Benutzeroberfläche in der Statuszeile](/images/lock.png)	
 
 
-If the user wants to leave the GUI in place, but no one should be able to enter or change anything during the absence, it is also possible to click the "Lock" button on the left in the lower status line, the user interface will close and return to the login tab for the input of the password back, so that the running processes and inputs of other tabs are not visible. To unlock the interface, press the lock button again in the status bar and the user then enters the passphrase (s) in a pop-up window.
+If the user wants to leave the GUI in place, but no one should be able to enter or change anything during the absence, it is also possible to click the "Lock" button on the left in the lower status line, the user interface will close and return to the login tab for the input of the password back, so that the running processes and inputs of other tabs are not visible. To unlock the interface, press the lock button again in the status bar and the user then enters the passphrase(s) in a pop-up window.
 
 Figure: Activation of the kernel
 
-
 ![Abbildung: Aktivierung des Kernels](/images/kernel_activation.png)	
 
-
-The user can also enable / disable the kernel by pressing the first LED in the status line at the bottom left. If it is green, the kernel is active; if it is red, the kernel is off. The middle LED indicates whether the user has set up a listener / chat server and the third LED indicates whether the user has an active and successful connection to a neighbor / server.
+The user can also enable/disable the kernel by pressing the first LED in the status line at the bottom left. If it is green, the kernel is active; if it is red, the kernel is off. The middle LED indicates whether the user has set up a listener / chat server and the third LED indicates whether the user has an active and successful connection to a neighbor / server.
 
 Figure: Encryption between kernel and GUI / UI
 
@@ -835,9 +835,9 @@ The connection of the user interface (goldbug.exe) to the kernel (spot-on-kernel
 ### 5.4 Connect a neighbor with the IP address
 
 
-Upon initial activation, the IP address of the Project Chat Server is automatically added as a neighbor. This serves as a temporary chat server through which the user can chat with his friends test-wise until a separate connection node has been created on a web server or at home (or two users connect directly to each other). The test server will not last, so far, users will need to first set up a server themselves before they can connect two clients.
+Upon initial activation, the IP address of the Project Chat Server is automatically added as a neighbor. This serves as a temporary chat server through which the user can chat with his friends test-wise until a separate connection node has been created on a web server or at home (or two users connect directly to each other). The test server will not last forever, so far, users will need to first set up a server themselves before they can connect two clients.
 
-Up to now, the user has been connected to a chat server directly after activation of the kernel by the previous test server. If the user would like to add another, the tab "Connect neighbor" must be used. Here is an input field for the IP address of the neighbor or the web server, on which a Spot-On Kernel is running or a friend also uses a GoldBug Messenger.
+Up to now, the user has been connected to a chat server directly after activation of the kernel by the previous test server. If the user would like to add another, the tab "Connect neighbor" must be used. Here is an input field for the IP address of the neighbor respective the web server, on which a Spot-On Kernel is running or a friend also uses a GoldBug Messenger.
 
 Figure: Add a neighbor / server
 
@@ -852,17 +852,19 @@ Figure: Connecting neighbor server
 
 ![Abbildung: Nachbar-Server verbinden](/images/connect_neighbor.png)
  
-In the field, enter the IP address of the neighboring node. The points are each separated by three digits of the IP address (according to IP-V4). If a block only contains two digits, eg 37.100.100.100, then the 37 can be placed arbitrarily in the first block or entered as 37 in the first two positions. Then press the "Connect" or "Add" button. The IP address is then stored on the default port 4710 and appears as a link in the neighbors table.
+In the field, enter the IP address of the neighbor node. The points are each separated by three digits of the IP address (according to IP-V4). If a block only contains two digits, e.g. 37.100.100.100, then the 37 can be placed arbitrarily in the first block or entered as 37 in the first two positions. Then press the "Connect" or "Add" button. The IP address is then stored on the default port 4710 and appears as a link in the neighbors table.
 
 If an error message appears, then this IP address has already been entered. In order to delete all neighbors, the button "Delete all neighbors" can be pressed (via the context menu button or via the right mouse button in the table in which the neighbor appears) and the IP address can be entered again. Optionally, you can also delete the file "neighbors.db" in the installation path "./spot-on" on the hard disk. It reforms immediately and is then empty.
 
 When the kernel is activated (left, first LED in the status bar is green) and the neighbor or server is connected (middle LED is green) everything is successfully installed and online. Entering an IP address and pressing the connect button should be quite easy.
 
-If the user wants to connect directly to another user without a server, one of them must create a so-called listener in the tabular chat server (and release the firewall for the port and, if necessary, forward the port in the router to his machine, see below in more detail). Or if both users are on the same Windows network, the existing neighbor "239 .." can be activated, then the GoldBug Messenger is converted into a Lan messenger and finds all other GoldBug participants in the local LAN automatically and connects them as Neighboring. If the users still exchange the keys, the communication can start.
+If the user wants to connect directly to another user without a server, one of them must create a so-called listener in the tab chat server (and release the firewall for the port and, if necessary, forward the port in the router to his machine, see below in more detail). 
 
-If you want to see more details, the minimal view can also change to the full view: In this view, it becomes clear that in addition to the IP address, the port of the IP address can also be individually configured. By default, GoldBug uses the port 4710. Furthermore, the program can also be operated via IPv6 as well as to a listener / server, which is linked via the dynamic DNS. When DNS is then no number sequence in the IP, but a domain name. Further security options can be defined in the box below or the connection server can also be addressed via a proxy (eg if you want to use GoldBug via the TOR network).
+Or: if both users are on the same Windows network, the existing neighbor "239 .." can be activated, then the GoldBug Messenger is converted into a Lan messenger and finds all other GoldBug participants in the local LAN automatically and connects them as a neighbor. If the users then exchange the keys, the communication can start.
 
-Figure: Add a neighbor with IP address (detailed view
+If you want to see more details, the minimal view can also change to the full view: In this view, it becomes clear that in addition to the IP address, the port of the IP address can also be individually configured. By default, GoldBug uses the port 4710. Furthermore, the program can also be operated via IPv6 as well as to a listener/server, which is linked via the dynamic DNS. Then DNS is no number sequence for the IP, but a domain name to be added in a textfield. Further security options can be defined in the box below or the connection server can also be addressed via a proxy (e.g. if the user wants to use GoldBug via the TOR network).
+
+Figure: Add a neighbor with IP address (detailed view)
 
 ![Abbildung: Einen Nachbarn mit IP-Adresse hinzufügen (ausführliche Ansicht)](/images/neighbor_connect.gif)
 
@@ -870,59 +872,61 @@ Figure: Add a neighbor with IP address (detailed view
 ## 6 The chat function
 
 
-
 Figure: Chat Tab
 
 ![Abbildung: Chat Tab](/images/chat_tab.png)	
 
 
-Now if login password defined, key generated, kernel enabled and a neighbor / server connected, so in the status bar two LED lights green, then the user can exchange his key with a friend and the communication can in the chat tab (see figure ) or pop-up windows for a defined participant.
+Now if login password is defined, key generated, kernel enabled and a neighbor-server connected, so in the status bar two LED lights are green, then the user can exchange his key with a friend and the communication can start in the chat tab (see figure) or in the pop-up windows for a defined participant.
 
 The key exchange can be described as follows:
 
-### 6.1 Add a friend by swapping and inserting the keys 
+### 6.1 Add a friend by swapping and inserting the keys
 
-GoldBug uses a public / private key infrastructure, as is well-known in the case of encryption: The public key can be exchanged with friends and the private key remains on the user's hard disk in a re-encrypted container that is used for the application runtime Login password was opened (mounted).
+GoldBug uses a public/private key infrastructure, as it is well-known in the case of encryption: The public key can be exchanged with friends and the private key remains on the user's hard disk in a re-encrypted container that is opened (mounted) by the login password – and used for the application runtime.
 
-The user and his partner, both friends, must first exchange their public key, ie copy it out, and then insert the friend's key in their own tab: Add Friend / Key and confirm (see figure) , The friend can send his key via e-mail or another messenger. The user then copies the key into this tab and press the "Add" button at the bottom.
+The user and his partner, both friends, must first exchange their public key, i.e. copy it out, and then insert the friend's key in their own tab: Add Friend/Key and confirm (see figure). The friend can send his key via e-mail or another messenger. The user then copies the key into this tab and presses the "Add" button at the bottom.
 
-Figure: Add Friend / Key
+Figure: Add Friend/Key
 
 ![Abbildung: Add Friend/Key](/images/add_key.png)	
 
 
-The user also finds his own public key in the tab "Add Friend / Key". The large button ("Copy Key") above allows the user to copy all his (or selected feature) keys to the clipboard. The user copies the full text here and sends it to his friend. Likewise, the friend makes it and the user inserts the friend's key in the text box.
+The user also finds his own public key in the tab "Add Friend/Key". The large button ("Copy Key") above allows the user to copy all his (or selected feature) keys to the clipboard. The user copies the full text here and sends it to his friend. Likewise, the friend does the same and the user inserts the friend's key in the text box.
 
-'' 'Optionally only note:' '' If necessary. It may be necessary to confirm a new friend as friend with the right mouse button in the context menu (make-friend function). This is used when a friend sends his key online to the user in a direct IP connection. This feature is provided in the Spot-on interface, but in the GoldBug interface, this is not available so ideally both will always simply copy, email and paste the key for each other. But if a friend eg the spot-on client with the local user interface and build a direct IP connection to a user of the GoldBug client, then it is also possible to transfer the key via direct IP connection instead of copy / Paste. Then, the friend appears with his nick name in the tab chat or e-mail (with a different icon) and can be confirmed as a friend with the right mouse button or from the context menu. This is a further development of the Repleo, ie the function of encrypting your own key with the friend's public key (upon receipt) as well as the return transfer. The key exchange is thus automated: a synchronization process follows. The user must agree that the key will be displayed after synchronization via the neighbor connection in their own client or their own friend list. So the function of encrypting your own key with the friend's public key (upon receipt) as well before the return transmission. The key exchange is thus automated: a synchronization process follows. The user must agree that the key will be displayed after synchronization via the neighbor connection in their own client or their own friend list. So the function of encrypting your own key with the friend's public key (upon receipt) as well before the return transmission. The key exchange is thus automated: a synchronization process follows. The user must agree that the key will be displayed after synchronization via the neighbor connection in their own client or their own friend list.
+'' 'Optionally only as a note:' '' It may be necessary to confirm a new friend as friend with the right mouse button in the context menu (make-friend function). This is used when a friend sends his key online to the user in a direct IP connection. This feature is provided in the Spot-on interface, but in the GoldBug interface, this is not available so ideally both will always simply copy, email and paste the key for each other. But if a friend uses e.g. the spot-on client with the local user interface and builds a direct IP connection to a user of the GoldBug client, then it is also possible to transfer the key via a direct IP connection instead of copy/paste. Then, the friend appears with his nick name in the tab chat or e-mail (with a different icon) and can be confirmed as a friend with the right mouse button from the context menu. 
 
-'' 'Other option only note:' '' In addition to sending the key online via the direct connection to a friend, the echo public key sharing (EPC) tool described below can also be used. This is used if the friend is not connected to a direct connection (eg both partners use a shared chat server or node in the middle). Both partners then enter a common password secret in EPKS and send their public keys to the echo network via this password. See the more detailed details in the section of this tool, which may be a good alternative to the often uncomfortable and insecure usual key servers. This innovation by Repleo and the synchronization of the keys via the so-called Echo Public Key Share function (EPC) or the existing IP connection has later also been taken up (copied) by other projects under the name AutoCrypt or KeySync. These functions are therefore based on the Repleo, EPKS and the key exchange via IP connection of echo nodes.
+This is a further development of the Repleo, i.e. the function of encrypting your own key with the friend's public key (upon receipt) before the return transmission starts. The key exchange is thus automated: a synchronization process follows. The user must agree that the key will be displayed after synchronization via the neighbor connection in their own client respective their own friend list.
 
- 
+
+'' 'Other option - only as a note:' '' In addition to sending the key online via the direct IP-connection to a friend, the echo public key sharing (EPKS) tool described below can also be used. This is used if the friend is not connected to a direct connection (e.g. both partners use a shared chat server or a node is in the middle). Both partners then enter a common password secret in EPKS and send their public keys to the echo network via this password. See the more detailed information in the section of this tool, which may be a good alternative to the often uncomfortable and insecure usual key servers. This innovation by Repleo and the synchronization of the keys via the so-called Echo Public Key Share function (EPKS) or via a existing IP-connection has later also been taken up (copied) by other projects under the name AutoCrypt or KeySync. These functions are therefore based on the Repleo, EPKS and the key exchange via IP-connection of echo nodes.
+
+
 #### 6.1.1 Special feature: Repleo
 
 
-If the user has already received a key from his friend (eg the chat key) and inserted it into his client, but now does not want to disclose his own public (chat) key to the public, not to him in an e-mail program stored and transferred wants to know (although the public key may actually be public), then the user can also encrypt his own public key with the received key of his friend. This is called REPLEO. The key is transmitted encrypted, as soon as a user has already received a public key of the other party.
+If the user has already received a key from his friend (e.g. the chat key) and inserted it into his client, but now does not want to disclose his own public (chat) key to the public, does not want to transfer and store it in an e-mail program (although the public key may actually be public), then the user can also encrypt his own public key with the received key of his friend. This is called REPLEO. Hence, the key is transmitted encrypted, as soon as a user has already received a public key of the other party.
 
-In Repleo, the public key of the user is already encrypted with the friend's public key. This then has to be carried out for each function or key, ie the user can in each case send back the chat repleno, the email repleno and the URL reppleo. The friend can also insert a Repleo in the box of the "Add Friend / Key" tab. Above the Insert box, just define the Radio Select button, whether it's a key, a Repleo, or an email address you'd like to add. Meanwhile, the K and R radio buttons in GoldBug have disappeared because the client automatically detects if it's a key or a Repleo.
+This process then has to be carried out for each function or key, i.e. the user can in each case send back the chat repleo, the email repleo and the URL repleo. The friend can also insert a Repleo in the box of the "Add Friend/Key" tab. Above the Insert box, just define the Radio Select button, whether it's a Key, a Repleo, or an email address you'd like to add. Meanwhile, the K and R radio buttons in GoldBug have disappeared because the client automatically detects if it's a Key or a Repleo.
 
 The text of a key always starts with a letter "K" or "k" and a Repleo starts with an "R" or "r". You can still recognize it.
 
+
 ### 6.2 Start a first secure chat
 
+The user finds his chat friend in the tab "Chat" after a successful key exchange. For the chat to work, both parties should ideally use the same and most up-to-date version of the program, generate and exchange their keys, and connect to a network node or chat server (neighbor) on the web. When the first two LEDs in the status line below light green and the friend's name appears in the chat tab, it looks good.
 
-The user finds his chat friend in the tab "Chat" after successful key exchange. For the chat to work, both parties should ideally use the same and most up-to-date version of the program, generate and exchange their keys, and connect to a network node or chat server (neighbor) on the web. When the first two LEDs in the status line below light green and the friend's name appears in the chat tab, it looks good.
-
-If the friend's online status turns blue (absent), red (busy), or green (ready to talk), the chat can start. Either the user marks the friend in the table and chats out of the tab, or double-click on the friend and a pop-up chat window opens for that friend.
+If the friend's online status turns blue (absent), red (busy), or green (ready to talk), the chat can start. Either the user marks the friend in the table and chats out of the tab, or he double-clicks on the friend and a pop-up chat window opens for that friend.
 
 The advantage of chatting in the chat tab is that you can mark multiple friends so that the message reaches all friends. If the user uses the pop-up chat (see picture), then the user no longer needs to look at the marker to select their friend from the friends list in the chat tab.
 
-Figure: 1: 1 chat in the pop-up window
+Figure: 1:1 chat in the pop-up window
 
 ![Abbildung: 1:1-Chat im Pop-up Fenster ](/images/chat_pop_up.jpg)
 
-And: In pop-up chat, the user has the options button "Share StarBeam", with which he can select a file from the hard drive and then encrypted and securely transferred to the friend (see also the section below about StarBeam -FileSharing). This feature, which allows a chat friend to simply send a file by mouse-click and is fully encrypted for end-to-end transport, is not included in many applications. Encrypted transmission eg of a ZIP with vacation pictures to its siblings becomes thus quite simple and is possible without the use of a hosting platform in the Web.
+And: In pop-up chat, the user has the options button "Share StarBeam", with which he can select a file from the hard drive, so that it is then encrypted and securely transferred to the friend (see also the section below about StarBeam-FileSharing). This feature, which allows a chat friend to simply send a file by mouse-click and is fully encrypted for end-to-end transport, is not included in many applications. Encrypted transmission e.g. of a ZIP with vacation pictures to own siblings becomes thus quite simple and is possible without the use of a hosting platform in the Web.
 
-In the status line at the top of the pop-up window, the user can see the nickname and online status and, for example, launch the Socialist Millionaire Protocol (SMP) to authenticate a friend and test whether he (a another) knows common secret and enters correctly, as will be described below. Both users will be authentic if they enter the same password with SMP.
+In the status line at the top of the pop-up window, the user can see the nickname and online status and, for example, launch the Socialist Millionaire Protocol (SMP) to authenticate a friend and test whether he knows a common secret and enters it correctly, as it will be described below. Both users will be authentic if they enter the same password with SMP.
 
 Figure: Chat in the pop-up window
 
@@ -933,25 +937,25 @@ Figure: Chat in the pop-up window
 ### 6.3 Additional security feature: MELODICA: Calling with a Gemini
 
  
-MELODICA stands for "Multi-Encrypted LOng DIstance Calling" - translated into English: "Multiple-Encrypted Calls over a Long Distance"
+MELODICA stands for "Multi-Encrypted LOng DIstance Calling" – that means: "Multiple-Encrypted Calls over a Long Distance"
 
 The MELODICA symbol is therefore also a keyboard of a musical instrument.
 
-Illustration: MELODICA symbol
+Picture: MELODICA symbol
 
 ![Abbildung: MELODICA-Symbol](/images/melodica.gif)
 
-The MELODICA button performs the calling function. The Cryptographic Calling has been developed by the Spot-On kernel project and secures the connection via an immediately renewed end-to-end encryption by transmitting the password via the symmetrical connection of the echo protocol. Cryptographic Calling with the MELODICA button means calling a friend like a phone - only that it creates a secure end-to-end encryption.
+The MELODICA button performs the calling function. The Cryptographic Calling has been developed by the Spot-On kernel project and secures the connection via an immediately renewed end-to-end encryption by transmitting the password via the symmetrical connection of the echo protocol. Cryptographic Calling with the MELODICA button means calling a friend like with a phone - only that it creates a secure end-to-end encryption.
 
-The end-to-end passphrase - also known as gemini - is mapped through an AES string and should be kept secret between both parties. Therefore, it is important to secure the electronic transmission always well on other encryption levels (as here in the echo protocol with the asymmetric chat key and the TLS / SSL connection), if the transmission can potentially be eavesdropped.
+The end-to-end passphrase - also known as Gemini - is mapped through an AES string and should be kept secret between both parties. Therefore, it is important to secure the electronic transmission always very secure with further encryption levels (as here in the echo protocol with the asymmetric chat key and the TLS/SSL connection), if the transmission can potentially be eavesdropped.
 
 
 #### 6.3.1 Asymmetric Calling
 
 
-GoldBug has solved this end-to-end password transfer question by encrypting the gemini (string for symmetric encryption to be formed) asymmetrically (using the key for chat) and then encrypting again (asymmetric) SSL / TLS channel is transmitted.
+GoldBug has solved this end-to-end password transfer question by encrypting the Gemini (to be formed string for symmetric encryption) asymmetrically (using the key for chat) and then encrypting again (asymmetric) the SSL/TLS channel, over which it is transmitted.
 
-Gemini is the Greek term for Gemini, meaning it refers to both participants who should then know the passphrase.
+Gemini is the Greek term for Twin, meaning it refers to both participants who should then know the passphrase.
 
 This function thus generates a "call", a call in which the password is transmitted, which then later forms the end-to-end encryption. Strictly speaking, the Gemini consists of two keys or components, because the Gemini is authenticated by another process: This further component is also called MAC-Hash, as explained above.
 
@@ -961,9 +965,9 @@ The "Cryptographic Calling" as an executable protocol with the MELODICA button t
 #### 6.3.2 Instant Perfect Forward Secrecy (IPFS)
 
 
-The user can thus renew the (symmetric) encryption or the Gemini at any time. This means that the paradigm of "perfect forward secrecy" has been extended by two components: on the one hand, one can manually or automatically define the end-to-end passphrase (the gemini) and, on the other hand, renew it immediately, ie "instant" at any time. Therefore, we speak of "Instant Perfect Forward Secrecy" (IPFS).
+The user can thus renew the (symmetric) encryption or the Gemini at any time. This means that the paradigm of "perfect forward secrecy" has been extended by two components: on the one hand, one can manually or automatically define the end-to-end passphrase (the Gemini) and, on the other hand, renew it immediately, i.e. "instant" at any time. Therefore, we speak of "Instant Perfect Forward Secrecy" (IPFS).
 
-By comparison, many other applications offer only one key per online session and you can not manually edit the symmetric end-to-end encryption phrase.
+By comparison, many other applications offer only one key per online session and you cannot manually and individually edit the symmetric end-to-end encryption phrase.
 
 The Instant Perfect Forward Secrecy (IPFS) discussed here uses asymmetric encryption (of the chat key), whereby the temporary key is a symmetric key (just the Gemini, an AES string).
 
@@ -971,20 +975,20 @@ The Instant Perfect Forward Secrecy (IPFS) discussed here uses asymmetric encryp
 #### 6.3.3 Symmetric Calling
 
 
-Another option is GoldBug's innovative ability to send a new Gemini through the channel of an existing Gemini. Here, the end-to-end key (that is, the symmetrically-encrypting gemini) is sent through another end-to-end gemini connection (ie, the new symmetric key is communicated through a channel of an existing symmetric key). The symmetric encryption phrase (the Gemini or the AES password) is therefore not encrypted with asymmetric encryption (the chat key) (eg with RSA, Elgamal, McEliece or NTRU) and then with a secure channel (SSL / TLS) from Sent point-to-point, but is itself encrypted with the existing Gemini and then sent by the described method (again via SSL / TLS).
+Another option is GoldBug's innovative ability to send a new Gemini through the channel of an existing Gemini. Here, the end-to-end key (that is, the symmetrically-encrypting Gemini) is sent through another end-to-end Gemini connection (i.e., the new symmetric key is communicated through a channel of an existing symmetric key). The symmetric encryption phrase (the Gemini or the AES password) is therefore not encrypted with asymmetric encryption (the chat key) (e.g. with RSA, Elgamal, McEliece or NTRU) and then sent over a secure channel (SSL/TLS) from point-to-point, but it is itself encrypted with the existing (symmetric) Gemini and then sent by the described method (again via SSL/TLS).
 
 The double-rachet method, in which the key of the following message is in the encrypted content of the previous packet, may have been ajar or derived from symmetric calling.
 
-Thus, asymmetrical calls and symmetric calls can be fundamentally differentiated. Symmetric calls use an existing gemini. Asymmetric calls send the Gemini over the asymmetrically encrypted connection (namely the permanent chat key) to the friend. Even when calling over an existing Gemini, the sent Gemini can be instantaneously renewed at any time.
+Thus, asymmetrical calls and symmetric calls can be fundamentally differentiated. Symmetric calls use an existing Gemini. Asymmetric calls send the Gemini over the asymmetrically encrypted connection (namely the permanent chat key) to the friend. Even when calling over an existing Gemini, the sent Gemini can be instantaneously renewed at any time.
 
-Secure end-to-end multi-encryption arises when a messenger encodes a manually-defined symmetric key with an existing symmetric key and then encrypts it with an asymmetric key. And then this package is sent through a secure connection.
+In sum: Secure end-to-end multi-encryption arises when a messenger encodes a manually-defined symmetric key with an existing symmetric key and then encrypts it with an asymmetric key. And then this package is sent through a secure connection.
 
 
 #### 6.3.4 Two Way Calling
 
 
 
-Finally, in the context menu (right mouse click on a friend in the friend list), a third method for a so-called "call" is added: Two-way calling. Here, the user sends an AES-256 as a passphrase for the future end-to-end encryption to the friend, and the friend also sends an AES-256 to the first user in response. Now the first half of the AES of the first user and the second half of the AES of the second user are taken, respectively, and assembled into a common AES-256. This names the method of 2-way safety. This ensures that no third party - if he succeeds in compromising his friend's machine - sends a Gemini (or an old Gemini) in his name from a third, strange machine (which is not really possible, since it would mean the unnoticed acquisition of a machine or breaking the existing TLS and RSA (or NTRU or Elgamal) encryption). The bipartisan ping-pong game in two-way calling ensures that both participants are currently doing their part to agree on a secure end-to-end password - Fifty-Fifty.
+Finally, in the context menu (right mouse click on a friend in the friend list), a third method for a so-called "Cryptographic Call" is added: Two-way calling. Here, the user sends an AES-256 as a passphrase for the future end-to-end encryption to the friend, and the friend also sends an AES-256 to the first user in response. Now the first half of the AES of the first user and the second half of the AES of the second user are taken, respectively, and assembled into a common AES-256. This names the method of 2-way safety. This ensures that no third party - if someone succeeds in compromising his friend's machine - sends a Gemini (or an old Gemini) in his name from a third, foreign machine (which is not really possible, since it would mean the unnoticed acquisition of a machine or breaking the existing TLS and RSA (or NTRU or Elgamal) encryption). The two participant’s ping-pong game in two-way calling ensures that both participants are currently doing their part to agree on a secure end-to-end password - Fifty-Fifty.
 
 Figure: 2-Way Calling in the context menu from the friends list
 
@@ -993,38 +997,37 @@ Figure: 2-Way Calling in the context menu from the friends list
 
 The possibility of the password
 
-- first, to edit manually,
-- secondly, to be able to renew every second or every - or within each - call (es)
+- first, to be edited manually,
+- secondly, to be able to renew every second - or within each call
 - third, to send the password through an existing end-to-end encryption,
 - and finally, being able to generate the end-to-end password in a two-way process makes it very difficult for attackers to break the end-to-end encryption of the GoldBug Calling feature.
 
 "Perfect Forward Secrecy" (PFS) has become not only "Instant Perfect Forward Secrey" (IPFS), but (in this feature) even a "2-Way Instant Perfect Forward Secrecy": 2WIPFS. This feature has significantly advanced FS and PFS and the important element of end-to-end encryption with this process implementation. The encryption itself is not new, but only the process is sophisticated implemented to provide more security.
 
-End-to-end encryption in the GoldBug is as simple as making a phone call simply by pressing a button: just pick up or hang up the phone. At any time, the communication remains asymmetrically encrypted and the symmetric end-to-end encryption can be easily added - and also renewed by asymmetric or symmetric encryption (within an SSL channel). This is a new architectural implementation standard established by this method of crypto-calling.
+End-to-end encryption in the GoldBug is as simple as making a phone call simply by pressing a button: just pick up or hang up the phone. At any time, the communication remains asymmetrically encrypted and the symmetric end-to-end encryption can be easily added - and also renewed by asymmetric or symmetric encryption (within an SSL channel). This is a new architectural implementation standard established by this method of Crypto-Calling.
 
 ### 6.4 Additional security feature: Socialist Millionaire Protocol 
 
 While GoldBug encrypts the messages three times -
 
 
-- on the one hand the message is indeed sent in a secure TLS / SSL channel,
-- secondly, every message is encrypted asymmetrically (eg with RSA, NTRU, McEliece or Elgamal, ie with the chat key),
-- and third, yes, it is possible to use the "Call" or "Call" function to send a gemini to set a symmetric end-to-end encryption passphrase (as seen with different methods to perform the "call"). within an existing symmetric encryption or via the two-way call function, where each defines half of the end-to-end password) -
-- Fourth, there is an additional security enhancement mechanism: it is the "SMP" protocol: Socialist Millionaire Protocol (a method also described here for off-the-record messaging (OTR) : https: // otr .cypherpunks.ca / Protocol-v3-4.0.0.html ).
+- on the one hand the message is indeed sent in a secure TLS/SSL channel,
+- secondly, every message is encrypted asymmetrically (e.g. with RSA, NTRU, McEliece or Elgamal, i.e. with the chat key),
+- and third, yes, it is possible to use the "Call" function to send a Gemini to set a symmetric end-to-end encryption passphrase (as seen with different methods to perform the "calling"). E.g. within an existing symmetric encryption or via the two-way call function, where each defines half of the end-to-end password),
+- Fourth, there is an additional security enhancement mechanism: it is the "SMP" protocol: Socialist Millionaire Protocol (a method also described here for off-the-record messaging (OTR): https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html).
 
-The idea behind this is to ask a friend a question like, "What is the name of the city we visited together last year?", Or to ask a question like, "What is the name of the restaurant, in which we met for the first time? "etc. (see illustration).
+The idea behind this is to ask a friend a question like: "What is the name of the city we visited together last year?", Or to ask a question like: "What is the name of the restaurant, in which we met for the first time?" etc. (see figure).
 
 Figure: SMP protocol
-
 
 ![Abbildung: SMP-Protokoll](/images/SMP_socialist_millionaire.png)	
 
 
-Both participants usually sign the messages with an RSA (or other) algorithm to verify that the key used is from the original sender. But for the (possibly unlikely) case that a machine would be hacked, or if the encryption algorithm were broken, the Socialist Millionaire Protocol (SMP) process can simply identify a friend by entering the same password on both sides. It is important to ensure that the password is not to be sent through the chat, instead you should describe a situation that leads to the same password. If the SMP process is tested for the first time, you can also enter the password "test" on both sides (in lower case).
+Both participants usually sign the messages with a RSA (or other) algorithm to verify that the key used is from the original sender. But for the (possibly unlikely) case that a machine would be hacked, or if the encryption algorithm were broken, the Socialist Millionaire Protocol (SMP) process can simply identify a friend by entering the same password on both sides. It is important to ensure that the password is not to be sent through the chat, instead you should describe a situation that leads to the same password. If the SMP process is tested for the first time, you can also enter the password "test" on both sides (in lower case).
 
-It is practically applied as follows: The user opens a personal pop-up chat window to use SMP and clicks the question mark icon next to the user name of the chat friend. Then a password is defined with the menu. Then the chat friend is asked to enter the same password. Third, the first user then finally clicks on the Verify / Verify button.
+It is practically applied as follows: The user opens a personal pop-up chat window to use SMP and clicks the question mark icon next to the user name of the chat friend. Then a password is defined with the menu. Then the chat friend is asked to enter the same password. Third, the first user then finally clicks on the Verify button.
 
-If both participants have set the same password - or the same hash value has been generated by the same password - then the question mark icon changes to a "lock" / "lock" symbol. The chat friend has now been authenticated and the chat remains safe.
+If both participants have set the same password - or the same hash value has been generated by the same password - then the question mark icon changes to a "lock" symbol. The chat friend has now been authenticated and the chat remains safe.
 
 SMP is thus another ideal way to authenticate the chat friend with a shared secret in the live process, so it is not additional encryption!
 
@@ -1033,79 +1036,82 @@ An example illustrates the calculation process of this protocol as follows. Let'
 '' 'Alice' ''
 Records the random exponents a2 and a3
 Send Bob g2a = g1a2 and g3a = g1a3
-'''Bob:'''
 
+'''Bob:'''
 Takes the random exponents b2 and b3
 Calculates g2b = g1b2 and g3b = g1b3
 Calculates g2 = g2ab2 and g3 = g3ab3
 Records the random exponent r
 Calculates Pb = g3r and Qb = g1r g2y
 Sends Alice g2b, g3b, Pb and Qb
-'' 'Alice' ''
 
+'' 'Alice' ''
 Calculates g2 = g2ba2 and g3 = g3ba3
 Records the random exponent s
 Calculates Pa = g3s and Qa = g1s g2x
 Calculates Ra = (Qa / Qb) a3
 Send Bob Pa, Qa and Ra
-'''Bob:'''
 
+'''Bob:'''
 Calculates Rb = (Qa / Qb) b3
 Calculates Rab = Rab3
 Checks if Rab == (Pa / Pb)
 Send Alice Rb
-'' 'Alice' ''
 
+'' 'Alice' ''
 Calculates Rab = Rba3
 Checks if Rab == (Pa / Pb)
+
+
 If everything is done correctly, then Rab should get the value of (Pa / Pb) times (g2a3b3) (x - y), which means that the test at the end of the log will succeed only if x == y. Further, no further information is revealed than that g2a3b3 is a random number that is not known to any page if x is not equal to y! (See also the formulas in the documentation of the source code).
 
-GoldBug describes so-called "zero-knowledge proofs" during SMP's various data exchange processes. GoldBug also uses the SHA-512 of the entered secret passphrase as the x and y components.
+GoldBug describes a so-called "zero-knowledge proofs" during SMP's various data exchange processes. GoldBug also uses the SHA-512 of the entered secret passphrase as the x and y components.
+
 
 Figure: Socialist Millionaire Protocol (SMP) in chat window to authenticate the chat partner
 
 ![Abbildung: Socialist-Millionaire-Protocol (SMP) im Chat Fenster zur Authentifizierung des Chat-Partners](/images/SMP_protocol.png)
 
-SMP therefore requires sharing a common secret with its communication partner. If the SMP password is present, it can also be used as a basis for other functions. The secret streams relevant for forward secrecy (see also the e-mail function below) can be derived from this.
+SMP therefore requires sharing a common secret with its communication partner. If the SMP password is present, it can also be used as a basis for other functions. The secret streams function relevant for forward secrecy (see also explained at the e-mail function below) can be derived from this.
 
 Figure: Implementation of secret streams in the extended SMP protocol
 
-![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokoll](/images/SMP_Secret_Streams.png)	
+![Abbildung: Implementierung von Secret Streams im extendierten SMP Protokoll](/images/SMP_Secret_Streams.png)
 
-The Secret Streams are further explained in the section under E-Mail, we are here in the chat section first in the function of crypto calling, which can also build on the successfully verified SMP password. This is described by SMP Crypto Calling.
-
-
-#### 6.4.1 SMP Calling
+The Secret Streams are further explained in the section under E-Mail, we are here in the chat section first in the function of crypto calling, which can also build on the successfully verified SMP password. This is described by SMP-Crypto-Calling.
 
 
-Above, we explained the call function of how to generate and transfer a gemini. Not only can you define the Gemini manually or through the AES function, but it can also be derived from the password stored in the SMP process as outlined above. Thus, the password input from the SMP process is used (not the SMP process itself). It is another way of "cryptologic calling" and thus securely transmits to its counterpart an end-to-end password that does not originate from an AES generator this time! - if someone doubts the randomness of a machine number generator. Once the basic functions of encryption in GoldBug are clear, you can see, for example, the interconnectedness of the individual processes in the architecture,
+#### 6.4.1 SMP-Calling
+
+
+Above, we explained the call function of how to generate and transfer a Gemini. A User can not only define the Gemini manually or through the AES function, but it can also be derived from the password stored in the SMP process as outlined above. Thus, the password input from the SMP process is used (not the SMP process itself). It is another way of "crypto calling" and thus securely transmits to its counterpart an end-to-end password that does not originate from an AES generator this time! - if someone doubts the randomness of a machine number generator. Once the basic functions of encryption in GoldBug are clear, you can see, for example, the interconnectedness of the individual processes in the architecture.
+
 
 ### 6.5 Additional security feature: Forward Secrecy (asymmetric)
 
+Since version 2.7, GoldBug Messenger has also been supporting Perfect Forward Secrecy for its role as an e-mail client, making it the first e-mail client to offer Forward Secrecy for e-mail, with both symmetrically and asymmetrically Forward Secrecy (see also further down).
 
-Since version 2.7, GoldBug Messenger has also been supporting Perfect Forward Secrecy for its role as an e-mail client, making it the first e-mail client to offer Forward Secrecy for e-mail, both symmetrically and asymmetrically (see also further down).
-
-While crypto calling with a gemini for the chat function has the "instant perfect forward secrecy" and refers to a symmetric key (just the gemini or the AES string), the perfect forward secrecy is in the email with temporary, a-symmetric keys defined.
+While crypto calling with a Gemini for the chat function has the "instant perfect forward secrecy" and refers to a symmetric key (just the Gemini or the AES string), the perfect forward secrecy is in the email with temporary, a-symmetric keys defined.
 
 This variant of the use of temporary asymmetric keys can of course also be transferred to the chat function. And this has just been done since the release 2.7.
 
-While chat with the permanent chat key is always (asymmetrically) encrypted, a temporary asymmetric key is now used with this new layer of end-to-end encryption. This temporary asymmetric key is called an ephemeral key . This key is created by the forward secrecy function in the chat, which is displayed via the context menu (right mouse click) or via the menu button.
+While chat with the permanent chat key is always (asymmetrically) encrypted, a temporary asymmetric key is now used with this new layer of end-to-end encryption. This temporary asymmetric key is called an ephemeral key. This key is created by the forward secrecy function in the chat, which is displayed via the context menu (right mouse click) or via the menu button.
 
-A tooltip on the screen (in the systray) indicates when the chat partner in chat has created a forward secrecy with temporary (ephemeral) asymmetric keys, so that the user can confirm this in his client in a pop-up window , The user looks at the bottom of the status line for the newly appearing icon, click on it and can then confirm the forward-secrecy process in the appearing pop-up window. Then, the (temporary) chat key is no longer used, but the new-temporary a-symmetric keys. The permanent chat key is thus complemented by the temporary chat key.
+A tooltip on the screen (in the systray) indicates when the chat partner in chat has created a forward secrecy with temporary (ephemeral) asymmetric keys, so that the user can confirm this in his client in a pop-up window. The user looks at the bottom of the status line for the newly appearing icon, clicks on it and can then confirm the forward-secrecy process in the appearing pop-up window. Then, the (temporary) chat key is no longer used, but the new, temporary a-symmetric keys. The permanent chat key is thus complemented by the temporary chat key.
 
-Few software applications understand end-to-end encryption as asymmetrical and build forward secrecy via asymmetric encryption.
+Only few software applications understand end-to-end encryption as asymmetrical and build forward secrecy via asymmetric encryption.
 
 
 #### 6.5.1 Forward Secrecy Calling
 
 
-Thus, the calling can be extended again: The symmetric gemini is sent in the Forward Secrecy Calling (FSC) not as described above by the permanent (asymmetric) chat key or by an existing (symmetric) Gemini, but by the ephemeral, temporary and asymmetric chat key.
+Thus, the calling can be extended again: The symmetric Gemini is sent in the Forward Secrecy Calling (FSC) not as described above by the permanent (asymmetric) chat key or by an existing (symmetric) Gemini, but by the ephemeral, temporary and asymmetric chat key.
 
-While sending a gemini over an existing gemini defines a '' symmetric '' "instant perfect forward secrecy", sending a gemini over the ephemeral keys of the initiated "forward secrecy" in the chat function may be considered an "asymmetric" one. "Instant Perfect Forward Secrecy".
+While sending a Gemini over an existing Gemini defines a ''symmetric'' "instant perfect forward secrecy", sending a Gemini over the ephemeral keys of the initiated "forward secrecy" in the chat function may be considered an "asymmetric" one of "Instant Perfect Forward Secrecy".
 
 (But also sending a Gemini via the permanent chat keys is called an asymmetric "Instant Perfect Forward Secrecy").
 
-While "Forward Secrecy Calling" and "Call by a Gemini" already have a "Forward Secrecy" and then define the renewability of the end-to-end key at any time (Instant Perfect Forward Secrecy), the other Calling Types are not Forward Secrecy given in advance, but Instant Perfect Forward Secrecy is generated here only by a call as a result of the call.
+While "Forward Secrecy Calling" and "Call by a Gemini" already have a "Forward Secrecy" and then define the renewability of the end-to-end key at any time (Instant Perfect Forward Secrecy), the other Calling Types are not with Forward Secrecy given in advance, but Instant Perfect Forward Secrecy is generated here only by a call as a result of the call.
 
 The continuation of Forward Secrecy is called Forward Secrecy Calling.
 
@@ -1118,37 +1124,37 @@ From the methods described (see also figure), to transfer an end-to-end key to t
 
 Figure: Overview of the different types of callings with respective criteria
 
-![Abbildung: Übersicht der verschiedenen Calling-Arten mit jeweiligen Kriterien](/images/calling-arten.png)	
+![Abbildung: Übersicht der verschiedenen Calling-Arten mit jeweiligen Kriterien](/images/calling-arten.png)
 
 
 
-The call information - that is the end-to-end encrypting passphrase - can of course also be transmitted manually, eg verbally or by telephone. If one adds the above-mentioned existing five call types, one arrives then in total in six different ways to be able to implement a call. For the first time, the spot-on architecture has spoken in the crypto section of "Calling" for the transmission of end-to-end passwords, and later concepts have borrowed this term.
+The call information - that is the end-to-end encrypting passphrase - can of course also be transmitted manually, e.g. verbally or by telephone. If one adds the above-mentioned existing call types, it concludes then in total in six different ways to be able to implement a call. For the first time, the spot-on architecture has spoken in the crypto discipline of "Crypto Calling" for the transmission of end-to-end passwords, and later concepts have borrowed this term.
 
 Please note the following explanations:
 
 - Each of the presented methods results in Instant Perfect Forward Secrecy (IPFS).
 - Only symmetric and asymmetrical calling requires no action on the part of the other party.
 - Forward Secrecy Calling and Symmetric Calling require an existing status of Forward Secrecy.
-- 'Symmetric Calling' and 'Forward Secrecy Calling' have triple encryption layers (TLS / SSL, Permanent Chat Key, as well as temporary symmetric or asymmetric key through which the new Gemini will then be sent).
-- 'SMP Calling' and '2 Way Calling' break AES generation by replacing parts of the AES phrase or creating a new password string.
+- 'Symmetric Calling' and 'Forward Secrecy Calling' have triple encryption layers (TLS/SSL, Permanent Chat Key, as well as temporary symmetric or asymmetric key through which the new Gemini will then be sent).
+- 'SMP Calling' and '2-Way-Calling' break AES generation by replacing parts of the AES phrase or creating a new password string.
 
 
 The message formats with the encryption levels then look simplified - since signatures, HMACs and hashes are not included - as follows:
 
-- Asymmetric Calling: (TLS / SSL (Permanent Chat Key eg RSA (message is an AES string)))
-- Symmetric Calling: (TLS / SSL (AES (Permanent Chat Key eg RSA (message is an AES string)))
-- Forward Secrecy Calling: (TLS / SSL (Permanent Chat Key eg RSA (ephemeral keys RSA (message is an AES string))))
-- SMP calling: (TLS / SSL (permanent chat key eg RSA (message is a string formed from the SMP)))
-- 2-way calling: (TLS / SSL (Permanent chat key eg RSA (message is an AES string that is 50% modified with friend's AES)))
+- Asymmetric Calling: (TLS/SSL (Permanent Chat Key e.g. RSA (message is an AES string)))
+- Symmetric Calling: (TLS/SSL (AES (Permanent Chat Key e.g. RSA (message is an AES string)))
+- Forward Secrecy Calling: (TLS/SSL (Permanent Chat Key e.g. RSA (ephemeral keys RSA (message is an AES string))))
+- SMP calling: (TLS/SSL (permanent chat key e.g. RSA (message is a string formed from the SMP)))
+- 2-way-calling: (TLS/SSL (Permanent chat key e.g. RSA (message is an AES string that is 50% modified with friend's AES)))
 
 
-From this variety of options in securing end-to-end encryption or even defining and manually entering the end-to-end encryption passphrase, the slogan, claim or headline for GoldBug has emerged: "Your Instant Definition in Decentralized Crypto ". The encryption is thus not only a user-specific, which can be renewed (instant) at any time, but also a decentralized at the user's place by this self defined and designed.
+From this variety of options in securing end-to-end encryption or even defining and manually entering the end-to-end encryption passphrase, the slogan, claim or headline for GoldBug has emerged: "Your Instant Definition in Decentralized Crypto". The encryption is thus not only a user-specific, which can be renewed (instant) at any time, but also a decentralized at the user's place - defined and designed by himself.
 
 Figure: GoldBug Claim: Your Instant Definition in Decentralized Crypto
 
-![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)	
+![Abbildung: GoldBug Claim: Your Instant Definition in Decentralized Crypto](/images/GoldBug_3.0_Your_Instant_Definition_in_Decentralized_Crypto.png)
 
-A simple litmus test compared to other software applications is the simple question of whether the user can enter the end-to-end encrypting password himself. With GoldBug he can do it (as well as with the mobile version of GoldBug: Smoke Chat for Android).
+A simple litmus test compared to other software applications is the simple question of whether the user can enter the end-to-end encrypting password himself. With GoldBug the user can do it (as well as with the mobile version of GoldBug: Smoke Chat for Android).
 
 
 ### 6.7 Emoticon
@@ -1162,7 +1168,7 @@ Figure: Emoticon list in GoldBug Messenger
 
 To use them, the user clicks twice on a friend, so a pop-up chat window opens for private chat. If the user now moves the mouse over the Send button, the smileys are displayed in a tooltip that appears. By entering the ASCI code, the emoticons are then displayed in the chat.
 
-In the chat tab, the options of the right-hand page splitter also allow you to turn off the graphical display of smileys in general.
+In the chat tab, the options of the right-hand page splitter also allows the user to turn off the graphical display of smileys in general.
 
 
 ### 6.8 File transfer in the chat pop-up window
@@ -1175,83 +1181,85 @@ Figure: Tear-off / hook-up of controls
 ![Abbildung: Tear-Off/Hook-Up von Bedienungselementen](/images/tearoff_menu.png)	
 
 
-Likewise, the file-sharing function in particular is integrated in a pop-up menu: In the 1: 1 chat window. So if a user wants to send a file to a specific friend, they can simply click the button in the pop-up chat window with that friend.
+Likewise, the file-sharing function in particular is integrated in a pop-up menu: In the 1:1 chat window. So if a user wants to send a file to a specific friend, they can simply click the button in the pop-up chat window with that friend.
 
 Figure: File transfer in the chat window
 
 ![Abbildung: File Transfer im Chat Fenster](/images/chat_filetransfer.png)	
 
-The file as well as the text is transmitted securely and encrypted to the friend. The file transfer feature is called StarBeam and also has its own tab, but is already built into the chat window for easy and direct usability. Just a little hook-up menu.
+The file as well as the text is transmitted securely and encrypted to the friend. The file transfer feature is called StarBeam and also has its own tab, but is already built into the 1:1-chat-window for easy and direct usability. Just another little hook-up menu.
 
 
-## 7 group chat in IRC style
+## 7 Group chat in IRC style
 
 
-
-In addition to email and chat and file transfers to its communication partners, GoldBug Messenger also has a group chat feature. This works similar to an IRC chat. The transmission of the messages to all group participants is again fully encrypted via the echo protocol. The encryption is symmetrical, similar to a password string. Finally, in the p2p network or via the chat server, all subscribers can read a group chat that knows a particular symmetric end-to-end key that defines the chat room. The group chat is also based on the echo protocol.
+In addition to email and chat and transfer files to the communication partners, GoldBug Messenger also has a group chat feature. This works similar to an IRC chat. The transmission of the messages to all group participants is again fully encrypted via the echo protocol. The encryption is symmetrical, similar to a password string. Finally, in the p2p network or via the chat server, all subscribers can read a group chat that knows a particular symmetric end-to-end key that defines the chat room. The group chat is also based on the echo protocol.
 
 Figure: The e'IRC group chat
-Abbildung: Der e'IRC Gruppenchat
 
 ![Abbildung: E-IRC Gruppenchat](/images/e_irc.png)	
 
 
-It is therefore spoken by ge-echo IRC or e'IRC short that the IRC chat opens up new options, since the transport routes of the e'IRC chat are also encrypted. As normal POP3 or IMAP e-mails today also have at least one transport encryption, eg with TLS 1.3, IRC can also be understood as an encrypted group chat. Also, the traditional IRC chat can therefore learn from such security models improvements: The e'IRC chat can represent to the model of a new group chat generation.
+It is therefore spoken of echo'ed IRC (or in short e'IRC). That opens up new options for the IRC chat, since the transport routes of the e'IRC chat are also encrypted. 
 
-The encryption details of the group chat are again defined via a magnetic URI link (see below) (defined in the link with extension & URN = buzz). Buzz is the technical name in the source code for the e'IRC group chat.
 
-To start the GoldBug program, open the community chat room, which can serve as an example. Here, the user can ask the users present also other application questions about the program or use this channel with a friend.
+As normal POP3 or IMAP e-mails today also have at least one transport encryption, e.g. with TLS 1.3, IRC can also be understood as an encrypted group chat. Also, the traditional IRC chat can therefore learn from such security models and improve: The e'IRC chat can represent a model of a new group chat generation.
 
-To join your own channel, the user simply enters a room or channel name or uses the magnetic link method above. The magnet link has embedded additional values ​​for encryption in addition to the room name, such as key, hash or cipher for the encryption type.
+The encryption details of the group chat are again defined via a magnet URI link (see below) (defined in the link with extension &URN=buzz). Buzz is the technical name in the source code for the e'IRC group chat.
 
-If the user enters only the room name and does not use a magnetic URI, the additional encryption details are set to the value 0000 and the encryption of the room is based on the room name. If the user has entered all the values ​​or the room name or the magnet link, press the "Join" button.
+To start the GoldBug program, open the as preset given community chat room, which can serve as an example. Here, the user can ask the other present users questions about the program or just use this channel with a friend.
 
-If the user has inserted a magnet as link, then in the pull-down menu the command "de-magnetize" should be used first. The magnet is then broken down into its individual components and the space is created and entered based on the encryption values ​​embedded in the magnet link.
+To join an own channel, the user simply enters a room or channel name or uses the magnet link method above. The magnet link has embedded additional values for encryption in addition to the room name, such as key, hash or cipher for the encryption type.
 
-Figure: IRC-style group chat on the e'IRC buzz channel
+If the user enters only the room name and does not use a magnet URI, the additional encryption details are set to the value 0000 and the encryption of the room is based on the room name. If the user has entered all the values or the room name or the magnet link, then the "Join" button is just to be pressed.
+
+If the user has inserted a magnet as link, then in the pull-down menu the command "de-magnetize" should be used first. The magnet is then broken down into its individual components and the room is created and entered based on the encryption values embedded in the magnet link.
+
+Figure: IRC-style group chat within the e'IRC buzz channel
 
 ![Abbildung: Gruppenchat im IRC-Stil im e-irc-Buzz Kanal](/images/e_irc_buzz.png)	
 
 
-If the room is open, the user can also save the room as a bookmark or copy the corresponding Magnet URI at any time from his chat room bookmarks and send them to his friends to invite them to a room.
+If the room is open, the user can also save the room as a bookmark or copy the corresponding Magnet URI at any time from his chat room as a bookmark and send it to his friends to invite them to the room.
 
 In order to send a message, the user then enters a text in the chat room and presses the send button.
 
-The e'IRC chat room can be public or private, depending on how much the user announces the magnet or the individual encryption values. As a public e'IRC chat room, the user can post or link the magnet URI on their website and everyone knows how to get into that chat room: with "de-magnetize".
+The e'IRC chat room can be public or private, depending on how much the user announces the magnet or the individual encryption values. As a public e'IRC chat room, the user can post or link the magnet URI on the own website and everyone knows how to get into that chat room: with "de-magnetize".
 
-Ultimately, it works for the news channel like an IRC chat, only with the difference that the Internet provider and other rooting server can not look into the communication, since it is encrypted - as a connection in online banking too.
+Ultimately, it works for these news channels like an IRC chat, only with the difference that the Internet provider and other rooting server cannot look into the communication, since it is encrypted - as a connection in online banking too.
 
 So it does not make any difference whether a user is talking to friends or his online bank advisor.
 
 If the user wants to use the chat room as a private room, the user can secretly share the Magnet URI only with his friends and one stays on one's own. This is a convenient feature of the GoldBug program: the user can simply chat encrypted without first exchanging asymmetric keys. The user simply tells his friend verbally that he should come in GoldBug in the room "Amber Room" and both participants can very easily and securely encrypted using a common chat server.
 
-Tip: The user can create a one-time magnet for a room and use it to protect his public chat key when exchanging for the communication partner by the user through the (self-defined) IRC channel then known only to his friend gives.
+Tip: The user can create a one-time magnet for a room. This is used to protect his public chat key when exchanging the key with the communication partner through the (self-defined) IRC channel.
+It requires that the magnet URI is only known to the friend.
 
-With the Repleo, with EPCs and the key exchange via a one-time magnet (OTM) for a private e'IRC chat room, GoldBug offers several methods for a secure key transfer. Thus, public keys no longer have to be public.
+
+With the Repleo, with EPKS and the key exchange via a one-time magnet (OTM) for a private e'IRC chat room, GoldBug offers several methods for a secure key transfer. Thus, public keys no longer have to be public!
 
 ## 8 Smoke Mobile Chat Client
 
-
-While GoldBug is a desktop client that is compiled and deployed on numerous operating systems as well as platforms such as Raspberry Pi, the mobile client of the Echo protocol is called "Smoke Chat" in Java 
+While GoldBug is a desktop client that is compiled and deployed on numerous operating systems as well as platforms such as Raspberry Pi, the mobile client of the Echo protocol is called "Smoke Chat" in Java.
 
 ### 8.1. Smoke Android Client
 
-Smoke offers a direct 1: 1 chat to a friend as well as a group chat. This is called FireChat and is similar to the Buzz / e'IRC chat in GoldBug.
+Smoke offers a direct 1:1 chat to a friend as well as a group chat. This is called FireChat and is similar to the Buzz/e'IRC chat in GoldBug.
 
-The 1: 1 chat of Smoke on the mobile device does not use the phone number of the participants as an identifier, but a short string, a so-called SIP hash, is used as an identifier.
+The 1:1 chat of Smoke on the mobile device does not use the phone number of the participants as an identifier, but a short string, a so-called SIP hash, is used as an identifier.
 
-Smoke users connect to a shared server - this can be a GoldBug, Spot-On, Spot-On-Lite, and SomkeStack server listener - and then swap their public key over the SIP hash connection. SmokeStack is a chat server for Android and can serve around 500 users on an Android device - ideal for a workshop group, family or school.
+Smoke users connect to a common server - this can be a GoldBug, Spot-On, Spot-On-Lite, and SomkeStack server listener - and then swap their public key over the SIP hash connection. SmokeStack is a chat server for Android and can serve around 500 users on an Android device - ideal for a workshop group, family or school.
+
 
 ### 8.2. Fire to Buzz Chat
 
 Since Java and C ++ programming do not know common key formats from the crypto libraries, it is usually not possible to use an open source Java client to chat encrypted to a C ++ client.
 
-Smoke, however, has innovated and implemented a way to do so: the so-called fire chat in Smoke can also be used to shadow a user in GoldBug and vice versa. This is based on a symmetrically encrypted chat (similar to a symmetric crypto call).
+Smoke, however, has innovated and implemented a way to do so: the so-called FireChat in Smoke can also be used to reach a user in GoldBug and vice versa. This is based on a symmetrically encrypted chat (similar to a symmetric crypto call).
 
-Other applications mostly use the Java Script Crypto libraries for the browser or connect to the central server, so these methods are generally considered to be less secure.
+Other applications mostly use the Java Script Crypto libraries for the browser or connect to the central server, but these methods are generally considered to be less secure.
 
-So if you want to use a mobile version of GoldBug for the chat, this can be found under Smoke Chat and under the German-language concept description MOMEDO (both at Github: https://github.com/textbrowser/smoke).
-
+So if you want to use a mobile version of GoldBug for the chat, this can be found in Smoke Chat and under the German-language concept description MOMEDO (both at Github: https://github.com/textbrowser/smoke).
 
 
 ## 9 The e-mail function
@@ -1266,45 +1274,46 @@ Figure: E-mail - read view
 ![Abbildung: E-Mail - Lesen Anzeige](/images/email_read.png)
 
 
-Technically uses GOLDBUG the library CURL and supports POP3 SMTP and IMAP. Finally, GoldBug's special feature is that it also supports p2p e-mail.
+Technically uses GoldBug the library CURL and supports POP3, SMTP and IMAP. Finally, GoldBug's special feature is that it also supports p2p e-mail.
 
-Here the e-mail is stored in the distributed network of the participants and not at a central provider. With GoldBug, users can very easily provide an e-mail server and communicate with it. The infrastructure is not only easy to install but can also be created by you.
+Here the e-mail is stored in the distributed network of the participants and not at a central provider. With GoldBug, users can very easily provide an e-mail server and communicate with it. The infrastructure is not only easy to install but can also be created by the user.
 
-Perspectistically, this is also the (necessary) future, that the users of the Internet again organize the Internet itself more strongly and cryptography with their own now encrypted mailboxes that are not deposited with central hosters but in their own network of participants.
+From a future perspective, this is also the (necessary) future, that the users of the Internet organize the Internet again more on their own and use cryptography with their own encrypted mailboxes that are not deposited at central hosters, but on their own network of participants.
 
-After all, centralization is always followed by decentralization, even though the users who recognize and value this freedom will only pay attention to decentralization necessities and remaining opportunities in the future.
+After all, centralization is always followed by decentralization, even though only the users, who recognize and value this freedom, will pay attention to decentralization necessities and such remaining opportunities in the future.
 
 Here's how to set up the three ways to load your emails:
+
 
 ### 9.1 POP3
 
 
 The Post Office Protocol POP3 is a transmission protocol that allows a client to pick up e-mails from an e-mail server.
 
-POP3 allows you to list, retrieve and delete emails on the email server. For sending e-mails, the Simple Mail Transfer Protocol SMTP is usually implemented in clients and servers as a complement to POP3 .
+POP3 allows you to list, retrieve and delete emails on the email server. For sending e-mails, the Simple Mail Transfer Protocol SMTP is usually implemented in clients and servers as a complement to POP3.
 
-The POP3 protocol is thus integrated in all popular e-mail programs, including GoldBug. How it is set up next to IMAP is explained below and further below in the description of the window of POPTASTIC (see the following figure).
+The POP3 protocol is thus integrated in all popular e-mail programs, including GoldBug. How it is set up next to IMAP is explained below and also further below in the description of the window of POPTASTIC (see the following figure).
 
 
 ### 9.2 IMAP 
 
-The Internet Message Access Protocol ( IMAP ) was designed in the 1980s with the emergence of personal computers to resolve the e-mail storage on individual client computers in the mail communication.
+The Internet Message Access Protocol (IMAP) was designed in the 1980s with the emergence of personal computers to resolve the e-mail storage on individual client computers in the mail communication.
 
 That is, the (PC) clients instead access the information online on the servers and, if necessary, receive copies of it.
 
 While a user of POP3 has lost all e-mails after losing his or her PC, a mail client at IMAP only copies the requests to the server for the information currently required.
 
-For example, if a user wants to see the contents of his inbox folder, the client will get an up-to-date copy of the message list from the server. If the content of an e-mail is to be displayed, it is loaded as a copy by the server. As all data remains on the server, a '' local storage of the data '' is unnecessary and extended possibilities such as the search of mails are also performed only on the server side.
+For example, if a user wants to see the contents of his inbox folder, the client will get an up-to-date copy of the message list from the server. If the content of an e-mail is to be displayed, it is loaded as a copy by the server. As all data remains on the server, a ''local storage of the data'' is unnecessary and extended possibilities such as the search of mails are also performed only on the server side.
 
-This also makes local backup of the data - by taking it away from the server - mostly impossible, as the configuration of IMAP by default is not geared to it. At the same time, the issue of confidentiality and security of data that is outsourced to IMAP servers comes to the fore in the case of unencrypted mail. The question arises as to whether the recipient of an e-mail has jurisdiction over the confidentiality and storage of the e-mail itself, eg has the right not to show it to anyone or to delete it in secret, or if he only has one copy, gets a "right of view" of his mail.
+This also makes local backup of the data - by taking it away from the server - mostly impossible, as the configuration of IMAP by default is not geared to it. At the same time, the issue of confidentiality and security of data that is outsourced to IMAP servers comes to the fore in the case of unencrypted mail. The question arises as to whether the recipient of an e-mail has jurisdiction over the confidentiality and storage of the e-mail itself, e.g. has the right not to show it to anyone or to delete it in secret, or if he only has one copy, gets a "right of view" of his mail.
 
-With regard to the findings from 2013 - better encrypting emails fundamentally - IMAP is to be judged particularly critically in this light: The storage of emails is not made at IMAP as in POP3 in the mail client on the machine of the user but the personal data remain unencrypted on the server of the provider. With IMAP, the cloud, which is widely used today, was invented in the field of e-mail in the 1980s. POP3 is more likely to enable on-premises handling of e-mail storage on the local machine.
+With regard to the findings from 2013 – to better encrypt emails fundamentally - IMAP is to be judged particularly critically in this light: The storage of emails is not made at IMAP as in POP3 in the mail client on the machine of the user, but the personal data remain unencrypted on the server of the provider. With IMAP, the cloud, which is widely used today, was invented in the field of e-mail in the 1980s. POP3 is more likely to enable on-premises handling of e-mail storage on the local machine.
 
 GoldBug supports this standard as well as POP3 and makes it possible to receive and send plain text messages via IMAP. Here's how to enter the settings for an email account in GoldBug.
 
 **Detailed description of POP3 / IMAP setup options:**
 
-Via the main menu "View / View" of the GoldBug Messenger the own e-mail address and the POP-3 or IMAP server details are stored. These are the same details that are also entered, for example, in the Thunderbird e-mail client or Outlook, for example:
+Via the main menu "View" of the GoldBug Messenger the own e-mail address and the POP-3 or IMAP server details are stored. These are the same details that are also entered, for example, in the Thunderbird e-mail client or Outlook, for example:
 
 '' 'Incomming Server Server:' '' pop.gmail.com
 Port: 995
@@ -1330,66 +1339,65 @@ Figure: POPTASTIC: chat via email server
 
 According to the above security considerations, a user should always load his emails right from the server onto his own machine and delete them on the server. So, there seems to be much to talk about using POP3 instead of IMAP, as IMAP is more focused on keeping emails on the server.
 
-In general, e-mails in this light do not belong to a remote server, not into the cloud, not into a browser-based web service - they are stored on the user's own machine - or they are in any case too encrypt.
+In general, e-mails in this light do not belong to a remote server, not into the cloud, not into a browser-based web service - they are stored on the user's own machine - or they are in any case to be encrypted.
 
-But the trend today is exactly the same: Central servers that store the messages without encryption without own infrastructure in the hands of users. Until the trend reverses again and users will rediscover their own sovereignty.
+But the trend today is exactly the opposite: Central servers that store the messages, without encryption, without own infrastructure in the hands of users. This will last, until the trend reverses again and users will rediscover their own sovereignty.
 
 
 ### 9.3 P2P E-Mail: without data retention
 
 
-Third, in addition to IMAP and POP3, there is the option of using p2p email in GoldBug. This means that the emails are not stored in a central server, but in the client of a friend.
+Third, in addition to IMAP and POP3, there is the option of using p2p email in GoldBug. This means that the emails are not stored or cached in a central server, but in the client of a friend.
 
-With regard to encryption, it has already been shown that the e-mail function uses a different encryption key than the chat function. So the user can add a friend to the chat, but refuse the email or vice versa. It makes sense, however, to copy all the keys as a whole, then the user has his friend present in all functions (so still the URL key, POPTASTIC key and the Rosetta key - three functions that will be described later) ,
+With regard to encryption, it has already been shown that the e-mail function uses a different encryption key than the chat function. So the user can add a friend to the chat, but refuse the email or vice versa. It makes sense, however, to copy all the keys as a whole, then the user has his friend present in all functions (so in addition the URL key, the POPTASTIC key and the Rosetta key - three functions that will be described later).
 
-Of course, in the key transfer for the e-mail function, the security of a Repleos be used again, if you do not want to reveal his own public e-mail key to the public.
+Of course, in the key transfer for the e-mail function, the security of a Repleo can be used again, if you do not want to reveal your own public e-mail key to the public.
 
-No matter which email method a user chooses, whether POP3, IMAP or P2P, outgoing emails in GoldBug are always encrypted, there is only one exception, that is if the user in the Add Key Tab does not have a Key (or a Repleo), but the selection: Add E-mail adresses. Then the e-mail program sends unencrypted text from @ -mail to @ -mail.
+No matter which e-mail method a user chooses, whether POP3, IMAP or P2P, outgoing emails in GoldBug are always encrypted, there is only one exception, that is if the user in the Add Key Tab does not have a Key (or a Repleo), but chooses the selection: Add E-mail-Adress. Then the e-mail program sends unencrypted text from @ -mail to @ -mail.
 
-**Note:** Anyone entering a POPTASTIC key will also see the @E-mail address in the contact list for email, but it is color-coded and also has a padlock icon, which means it will be POPTASTIC email addresses just as encrypted emailed - and the chat. After all, a key is inserted at POPTASTIC and no @ e-mail address. Only e-mails sent to @ e-mail addresses that do not have a lock symbol remain unencrypted.
-
+**Note:** Anyone entering a POPTASTIC key will also see the @E-mail address in the contact list for email, but it is color-coded and also has a padlock icon, which means it will be POPTASTIC email address – just used for encrypted emailed - and also chat. After all, a key is inserted for POPTASTIC and no @-e-mail address. Only e-mails sent to @-e-mail addresses that do not have a lock symbol remain unencrypted.
 
 
 To clarify again:
 
-- The user can use the following ways by e-mail
+The user can use the following ways by e-mail
 - The e-mail key: This can send e-mails via POP3, IMAP and P2P.
 - The POPTASTIC KEY: This can send chat via POP3 and IMAP
 - The @mail address: This can send unencrypted emails and regular @mail addresses via POP3 and IMAP.
 
 
-Therefore, two GoldBug users can exchange encrypted e-mails with normal @Mail, eg via the major e-mail providers such as Ymail, Gmail, GMX, Outlook etc. without any further technical knowledge: either unencrypted via @ -mail addresses or encrypted as chat over the POPTASTIC key, which will be explained later. And thirdly, you can always use the e-mail key to send encrypted e-mails, including p2p.
+Therefore, two GoldBug users can exchange encrypted e-mails with normal @Mail, e.g. via the major e-mail providers such as Ymail, Gmail, GMX, Outlook etc. without any further technical knowledge: either unencrypted via @-mail addresses or encrypted as chat over the POPTASTIC key, which will be explained later. And thirdly, you can always use the e-mail key to send encrypted e-mails, including p2p.
 
-This is very comfortable in that it is sufficient to exchange the keys once. So it is not every single email that the user writes each time again to encrypt individually (as previously practiced in other procedures practice). Each @ -mail provider can now be exempted from viewing the user's emails by simply pushing encrypted ciphertext over the central server to its communication partner. What is needed is the agreement with the friend that he also uses GoldBug or one of the other Echo clients as an e-mail client to exchange the keys once.
+This is very comfortable in that it is sufficient to exchange the keys once. So it is not every single email that the user writes each time again to encrypt individually (as previously practiced in other procedures practice). Each @ -mail provider can now be exempted from viewing the user's emails by simply pushing encrypted ciphertext over the central server to the communication partner. What is needed is the agreement with the friend that he also uses GoldBug or one of the other Echo clients as an e-mail client to exchange the keys once.
 
 E-mail attachments can also be attached to an e-mail as a file and are automatically encrypted regardless of which encryption e-mail method is chosen. This is also possible with several attachments.
 
-In addition to the encryption of e-mails, the meta-data is still stored in many countries , ie when and how often a user retrieves the messages from his mailbox. Here is the other method of p2p emails interesting:
+In addition to the encryption of e-mails, the meta-data is still stored in many countries, i.e. when and how often a user retrieves the messages from his mailbox. Here is the other method of p2p emails interesting:
 
 GoldBug also makes it possible to store e-mails on the subscriber network or on its own server and decentralize the corresponding e-mail inboxes, which also exclusively and automatically handle the standard of encrypted e-mails.
 
-The e-mail client thus also contains a peer-to-peer-based component, ie the e-mails are sent over the network of the encrypted connections and buffered in the nodes of friends. This network is provided by the integrated architecture of the Spot-on kernel. The advantage of P2P e-mail is that the e-mail inbox does not reside with a central host and public e-mail provider, but can be set up in the decentralized network of the user's own friends.
+The e-mail client thus also contains a peer-to-peer-based component, i.e. the e-mails are sent over the network of the encrypted connections and buffered in the nodes of friends. This network is provided by the integrated architecture of the Spot-on kernel. The advantage of P2P e-mail is that the e-mail inbox does not reside with a central host and public e-mail provider, but can be set up in the decentralized network of the user's own friends.
 
-With GoldBug everyone is able to easily set up an e-mail inbox for their friends. Nobody can then log when and how often a user retrieves their emails. The echo protocol also helps to minimize metadata that reveals who has read which e-mail and who is storing an e-mail for whom (since the opening of the encrypted messages occurs exclusively on the user's machine and each one - according to the Echo protocol - send each message to everyone).
+With GoldBug everyone is able to easily set up an e-mail inbox for their friends. Nobody can then log when and how often a user retrieves own emails. The echo protocol also helps to minimize metadata that reveals who has read which e-mail and who is storing an e-mail for whom (since the opening of the encrypted messages occurs exclusively on the user's machine and each one - according to the Echo protocol - sends each message to everyone).
 
-How to set up a mailbox for his friends is shown in the following section:
+How to set up a mailbox for friends is shown in the following section:
 
-### 9.4 Setting up C / O & e-mail institutions
+### 9.4 Setting up C/O & e-mail institutions
 
 The interesting thing about the GoldBug e-mail feature - and here it may differ from other p2p e-mail implementations - is that it's also possible to send e-mail to friends who are offline.
 
 There are two different methods for doing this:
 
-#### 9.4.1 Care-Of Method (c / o)
+#### 9.4.1 Care-Of Method (c/o)
 
 
 One method is to use a third, common friend to temporarily store the emails there with him. So, if Alice and Bob set up a common chat server on the web on their web server, and all three of them have swapped their keys, the web server acts like an e-mail inbox, as we know it from POP3 or IMAP.
 
-Figure: P2P e-mail from the postbox to a friend: c / o function
+Figure: P2P e-mail from the postbox to a friend: c/o function
 
 ![Abbildung: P2P-E-Mail aus der Postbox bei einem Freund: c/o-Funktion](/images/email_co.png)	
 
-Basically, the e-mails do not need central servers, it can also be a third friend or a small Raspberry Pi computer at home, which remains online. It therefore makes sense to have more than one friend in your list and to network friends with other friends who can act as caching. Since all e-mails are encrypted, the friends who provide a cache function can not read the user's e-mail either.
+Basically, the e-mails do not need central servers; it can also be a third friend or a small Raspberry Pi computer at home, which remains online. It therefore makes sense to have more than one friend in your list and to network friends with other friends who can act for a caching. Since all e-mails are encrypted, the friends who provide a cache function cannot read the user's e-mail either.
 
 Also, the emails are stored in encrypted databases. The figure shows that even ciphertext is displayed even when viewing the structure of the database file.
 
@@ -1398,48 +1406,48 @@ Figure: Database encryption
 ![Abbildung: Datenbank Verschlüsselung](/images/database_encryption.png)	
 
 
-In order to activate this delivery instruction Care-Of (c / o) caching function, the check-box "Care-Of" must be activated in the sub-tab "E-mail Settings", if two friends are the third friend want to enable the caching of e-mails in their own client and also insert both in the e-mail contact list.
+In order to activate this Care-Of (c/o) caching function, the check-box "Care-Of" must be activated in the sub-tab "E-mail Settings". If two friends are then connected to each other and the third friend and want to enable the caching of e-mails in their own clients, then all have to insert the other two friends in the own e-mail contact list.
 
 The GoldBug user can also choose to have the emails sent authenticated or unauthenticated in the p2p email, so they can simply be sent encrypted without evidence that the key belongs to a particular user.
 
-The Care-of-P2P e-mail feature is one of the simplest in the software landscape for P2P e-mail at all. If three users share a common echo server and have saved each other, only the C / O feature needs to be activated, and the e-mails are stored in the Friends of Friends page, in case they are offline. It's not simpler than this architecture, you only need a few friends who want to participate in this process for internal communication within a group.
+The Care-of-P2P e-mail feature is one of the simplest in the software landscape for P2P e-mail at all. If three users share a common echo server and have added each other as a friend, only the C/O feature needs to be activated, and the e-mails are stored in the Friends of Friends cache, in case they are offline. Nothing is simpler than this architecture: you only need a few friends who want to participate in this process for internal communication within a group.
 
 The second method is the establishment of a virtual e-mail institution. This is great for people who like to equip an entire community of friends with an email inbox.
 
 #### 9.4.2 Virtual E-Mail Institution ("VEMI") method
 
-For this it is also necessary to activate the C / O function with the check box as described above.
+For this it is also necessary to activate the C/O function with the check box as described above.
 
 Then the user can create a virtual e-mail institution.
 
 For the input and definition fields "Name" and "Address" of the institution, the user can freely get creative and choose any name. Then the public e-mail keys of the friends who want to save in this institution are still to be copied into this node.
 
-Finally, the user can then copy out the created Magnetic URI link and make it available to friends who then temporarily store in that mailbox. (For the magnetic URI standard and what that is, see also below in the file transfer section with "StarBeam"). In addition, the node that sets up the e-mail institution must always also add the public e-mail key of the one for which it is to save.
+Finally, the user can then copy out the created Magnet-URI-link and make it available to friends who then temporarily store in that mailbox. (For the Magnet-URI standard and what that is, see also below in the file transfer section with "StarBeam"). In addition, the node that sets up the e-mail institution must always also add the public e-mail key of the one for which it is to save.
 
-The advantage over the first method is that the public e-mail key of the node setting up the institution need not be disclosed to anyone. With the c / o method, however, the public e-mail key has to be exchanged. Therefore, one can easily say that in the small Friends network a common node with the c / o function is ideal and the VEMI method of setting up Virtual E-mail institutions tends to focus on vendors who want to set up mailboxes for a larger number of subscribers ,
+The advantage over the first method is that the public e-mail key of the node setting up the institution need not be disclosed to anyone. With the c/o method, however, the public e-mail key has to be exchanged. Therefore, one can easily say that in the small Friends network a common node with the c/o function is ideal and the VEMI method of setting up virtual E-mail institutions tends to focus on vendors who want to set up mailboxes for a larger number of subscribers.
 
 **Settings example:**
 
-Here is an example of how the c / o function and the VEMI function, ie the creation of a virtual e-mail institution, are implemented step by step:
+Here is an example of how the c/o function and the VEMI function, i.e. the creation of a virtual e-mail institution, are implemented step by step:
 
-- The user activates the c / o function in the e-mail settings tab.
+- The user activates the c/o function in the e-mail settings tab.
 - The user creates an institution and chooses a name and address for the institution.
 - Example: Name = "GB mailbox" and address = "Dotcom"
-- The user inserts the email key of a friend into their client. He then copies the available e-mail magnet from his e-mail institution and has the friends paste it into their program. The magnet will look similar to this one:
+- The user inserts the email key of a friend into the own client. He then copies the available e-mail magnet from his e-mail institution and has the friends to paste it into their program. The magnet will look similar to this one:
 
 magnet: in = GB mailbox & ct = aes256 & pa = Dotcom & ht = sha512 & xt = urn: institution
 
-The user recognizes an e-mail magnet at his ending: URN = institution. Then you know that the magnet is not a buzz-group chat magnet nor a StarBeam magnet for file sharing - they would have the suffix "URN = buzz" or "URN = starbeam". So then the own node will cache the emails of the friends in the established institution - also for addressees, which should be offline if necessary.
+The user recognizes an e-mail magnet at his ending: URN = institution. Then you know that the magnet is not a buzz-group chat magnet nor a StarBeam magnet for file sharing - they would have the suffix "URN = buzz" or "URN = starbeam". So then the own node will cache the emails of the friends in the established institution - also for addresses, which should be offline if necessary.
 
-The user (as creator of an e-mail institution) does not need to exchange his own e-mail key with the friends or "subscribers" of his institution. The user can also exchange the e-mail keys of the friends in a group chat room via e'IRC / Buzz with the creator of an e-mail institution. The exchange process of key & email magnet does not have to impart any further identities.
+The user (as creator of an e-mail institution) does not need to exchange his own e-mail key with the friends or "subscribers" of his institution. The user can also exchange the e-mail keys of the friends in a group chat room via e'IRC/Buzz with the creator of an e-mail institution. The exchange process of key & email magnet does not have to impart any further identities.
 
 ### 9.5 Additional Encryption: Put a "GoldBug" on an e-mail
 
 Regardless of which transmission method a user chooses, whether POP3, IMAP or P2P, the e-mails are always encrypted using the public (asymmetric) e-mail key and the echo protocol for transmission.
 
-This is also the case if they are cached in a way station such as a provider mailbox or a virtual institution or an intermediate node of a friend. Transport encryption and end-to-end encryption are consistent throughout.
+This is also the case if they are cached in an intermediate station such as a provider mailbox or a virtual institution or an intermediate node of a friend. Transport encryption and end-to-end encryption are consistent throughout.
 
-As additional security for the e-mail function is similar to the chat in the so-called "Gemini" , now for e-mails the option to set a password on the e-mail: Not only the software is called GoldBug, but also the function in the e-mail client to set an additional password on the e-mail is called "GoldBug" .
+As additional security for the e-mail function is similar to the chat in the so-called "Gemini", now for e-mails the option to set a password on the e-mail: Not only the software is called GoldBug, but also the function in the e-mail client to set an additional password on the e-mail is called "GoldBug".
 
 Emails that have a "GoldBug" password set (see below the description of the file transfer function "StarBeam", here the additional password is "Nova") can only be read by the recipient if they have the appropriate "GoldBug "- so know the golden key for the password. The user should therefore inform his friends about the password to be entered if the user sends them e-mails that still require an additional password in order to be opened.
 
