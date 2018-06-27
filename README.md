@@ -1447,22 +1447,24 @@ Regardless of which transmission method a user chooses, whether POP3, IMAP or P2
 
 This is also the case if they are cached in an intermediate station such as a provider mailbox or a virtual institution or an intermediate node of a friend. Transport encryption and end-to-end encryption are consistent throughout.
 
-As additional security for the e-mail function is similar to the chat in the so-called "Gemini", now for e-mails the option to set a password on the e-mail: Not only the software is called GoldBug, but also the function in the e-mail client to set an additional password on the e-mail is called "GoldBug".
+As additional security for the e-mail function there is - similar to the so-called "Gemini" in chat-, now for e-mails the option to set a password on the e-mail: Not only the software is called GoldBug, but also the function in the e-mail client to set an additional password on the e-mail is called "GoldBug".
 
-Emails that have a "GoldBug" password set (see below the description of the file transfer function "StarBeam", here the additional password is "Nova") can only be read by the recipient if they have the appropriate "GoldBug "- so know the golden key for the password. The user should therefore inform his friends about the password to be entered if the user sends them e-mails that still require an additional password in order to be opened.
+Emails that have a "GoldBug" password set (see below the description of the file transfer function "StarBeam", here the additional password is "Nova") can only be read by the recipient if they have the appropriate "GoldBug "- so the user needs to know the golden key as a password. The user should therefore inform his friends about the password to be entered if the user sends them e-mails that still require an additional password in order to be opened.
 
 This can be, for example, in the e-mails to your own wife, that the user always encrypts the e-mails with the name of the city in which the wedding or the wedding holiday took place.
 
-Again, as with the chat with the Gemini, it is an important feature of symmetric and end-to-end encryption that the user can manually and manually create the end-to-end encrypting password.
+Again, as with the chat with the Gemini, it is an important feature of symmetric and end-to-end encryption that the user can individually and manually create the end-to-end encrypting password.
 
-In addition to the memory of the short story by Edgar Allen Poe about a cryptogram and his work for cryptography in the early years of the beginning of industrialization - the GoldBug on an e-mail is a new idea, not always automated e-mail by key exchange. Symmetrically encrypted, but also with a symmetric encryption - the GoldBug on an e-mail - even further and encrypted per single e-mail, as it (elsewhere by PGP) so far the standard (but symmetrical). This is done without additional encryption software must be installed as a plugin.
+In addition to the reminiscence of the short story by Edgar Allen Poe about a cryptogram and his work for cryptography in the early years of the beginning of industrialization - the GoldBug on an e-mail is a new idea, in addition to automatically encrypted e-mail created by the key exchange. It is asymmetrically encrypted e-mail, but also with a symmetric encryption - the GoldBug on an e-mail - even further encrypted in another layer per single e-mail, as this process, to touch each individual e-mail, is so far the standard (elsewhere by PGP, but symmetrical).
+
+This process is done without additional encryption software, which elsewhere must be additionally installed e.g. as a plugin.
 
 
 ### 9.6 Forward Secrecy
 
-Using the included architecture of the Spot-on kernel, GoldBug is the first e-mail program in the world to offer Forward Secrecy encryption, which can be both asymmetric and symmetric for e-mail - both methods within one e-mail Program supports.
+Using the included architecture of the Spot-on kernel, GoldBug is one of the first e-mail programs in the world to offer Forward Secrecy encryption, which can be both, asymmetric and symmetric for e-mail – so both methods within one e-mail Program are supported.
 
-Forward Secrecy means yes that temporary keys are used to transmit the end-to-end encrypting password, so that if later on analysis should be made to the communication and their encryption, not the regular (permanent) key for the Communication is affected.
+Forward Secrecy means – just to remember - that temporary keys are used to transmit the end-to-end encrypting password, so that if later on analysis should be made in regard of the communication and the encryption, not the regular (permanent) key for the Communication is affected.
 
 The user now sends his e-mail partner a session-based, symmetric (forward secrecy) key via the usual asymmetrical encryption of the e-mail key (see figure).
 
@@ -1472,7 +1474,7 @@ Figure: E-mail with forward secrecy
 
 If the partner confirms the request and returns his temporary key, then both parties can use session-based asymmetric keys to further secure the email communication. Incidentally, this method of asymmetrical end-to-end backup was not only integrated for e-mail, but also for the chat function (see above: Forward Secrecy (FS) Calling).
 
-The permanent public key is then used only to transport the session-based keys - not to transport the message (or becomes the new key to the message). That is, the ephemeral (temporary) key is shared with the partner via the permanent public key. Then, if the ephemeral public key was correctly accepted by a recipient, said recipient also generates an ephemeral session key (symmetric), which is then sent back to the user via the user's public key as well.
+The permanent public key is then used only to transport the session-based keys - not to transport the message (or: the previous message becomes the new key to the following message). That is, the ephemeral (temporary) key is shared with the partner via the permanent public key. Then, if the ephemeral public key was correctly accepted by a recipient, said recipient also generates an ephemeral session key (symmetric), which is then sent back to the user via the user's public key as well.
 
 The initiator then deletes its asymmetric ephemeral keys as soon as the temporary session has ended.
 
@@ -1486,38 +1488,37 @@ So, when a user writes an email, GoldBug has four forward-secrecy modes availabl
 
 - Forward Secrecy Encrypted: Regular encryption uses session-based forward secrecy keys - that is, the user sends session-based keys over the permanent e-mail key channel and then encrypts his message with the temporary keys. So this adds to the message another asymmetrically encrypted level to the already existing email encryption.
 
-- Pure Forward Secrecy-keyed ("Pure FS"): The message is encrypted and sent only through the user's session-based (ephemeral) e-mail key. The permanent e-mail key is thus not used in the "Pure FS": This can therefore also be called the option within the p2p e-mail "instant", ie immediate (in the sense of volatile) and one-time e-mail. Generate mail addresses and mailboxes - which can be deleted again after the session. This creates one-time email accounts thanks to Pure Forward Secrecy.
+- Pure Forward Secrecy Encrypted ("Pure FS"): The message is encrypted and sent only through the user's session-based (ephemeral) e-mail key. The permanent e-mail key is thus not used in the "Pure FS": This can therefore also be called the "instant" option within the e-mail process, that means it is immediate (in the sense of volatile) and a kind of one-time e-mail. This generates mail-addresses and mail-boxes - which can be deleted after the session. This creates one-time email accounts thanks to Pure Forward Secrecy.
 
-- GoldBug encrypted: GoldBug sets as described above a password on the e-mail (eg with an AES, symmetric encryption) and the user must inform his e-mail partner about the password ideally verbally. The thus symmetrically encrypted message is then also sent via the asymmetric e-mail encryption (permanent e-mail key).
+- GoldBug encrypted: A GoldBug sets as described above a password on the e-mail (e.g. with an AES, symmetric encryption) and the user must inform his e-mail partner about the password, ideally verbally. The thus symmetrically encrypted message is then also sent via the asymmetric e-mail encryption (permanent e-mail key).
 
-If the user selects the checkbox option "Plain" next to the e-mail text, the e-mail is not written in HTML rich text mode, but in plain text mode. Word Plain has nothing to do here in terms of an antonym to ciphertext.
+If the user selects the checkbox option "Plain" next to the e-mail text, the e-mail is not written in HTML rich text mode, but in plain text mode. Word plain text has nothing to do here in terms of an antonym to ciphertext.
 
-Again with the following attention to understanding: through the permanent (asymmetric) key (for e-mail (or so in chat) ephemeris (as asymmetrical keys) are exchanged, which then the basis for the use of end-to-end encrypting Thus, the ephemeral keys can be deleted at any time after use and the communication is not tied to the identities.
+Again with the following attention to understanding: through the permanent (asymmetric) key (for e-mail (or so in chat) ephemeral keys (as asymmetrical keys) are exchanged, which are then the basis for the use of end-to-end encryption. That means, the ephemeral keys can be deleted at any time after use and the communication is not tied to the identities.
 
-One should not be confused here, because even the end-to-end encrypting symmetric passphrases are actually ephemeral keys, but it becomes more apparent if only the asymmetric temporary keys are pushed through the permanent asymmetric e-mail keys , initially referred to as ephemeral keys (so that they are not confused to those who are dealing with the forward-secrecy process or the word " ephemeral key " for the first time ).
+One should not be confused here, because even the end-to-end encrypting symmetric passphrases are actually ephemeral keys. But it becomes more apparent if only the asymmetric temporary keys which are pushed through the permanent asymmetric e-mail keys are initially referred to as ephemeral keys (so that this is not confusing to those who are dealing with the forward-secrecy process or the word "ephemeral key" for the first time).
 
 The encryption levels in Forward Secrecy in the GoldBug e-mail program can be described as simplified as follows:
 
-- External encryption level: SSL / TSL connection
+- External encryption level: SSL/TSL connection
 - Possible, additional encryption level: permanent asymmetric e-mail key (not with "Pure FS" - otherwise: first-ephemeral-then-permanent)
 - Further level, which may later be deleted: Ephemeral, temporary asymmetric key (used only to transfer symmetric keys)
 - First encryption level via Forward Secrecy: Symmetric key
-- Alternative first encryption level via a GoldBug: Symmetric key via a manually defined GoldBug on the e-mail. The message format is thus (TLS / SSL (AES-GoldBug (e-mail message)).) According to Encrypt-then-Mac, this can be called "GoldBug-then-Permanent." The GoldBug on an email encrypts the text in the envelope.
+- Alternative first encryption level via a GoldBug: Symmetric key via a manually defined GoldBug on the e-mail. The message format is thus (TLS/SSL (AES-GoldBug (e-mail message)).) According to Encrypt-then-Mac, this can be called "GoldBug-then-Permanent." The GoldBug on an email encrypts the text in the envelope.
 
-Temporary keys are not derived from permanent keys and have no relation to them in the generation. Session periods are defined manually by the user. This means that unlike other programs, the session is automatically defined by the online coming and going back offline, but the user himself determines when he wants to use new session-based keys. Again this can be anytime and "instant" again. (See above: IPFS).
+Temporary keys are not derived from permanent keys and have no relation to them in the generation. Session periods are defined manually by the user. This means that unlike other programs, the session is automatically defined by the online coming and going back offline, but the user himself determines when he wants to use new session-based keys. Again this can be anytime and "instant". (See above: IPFS).
 
 The process or protocol for forward secrecy can be described as follows with this example:
 
 1. I send you my postal address. This is public.
 2. You also send me your postal address. This is public.
 2. Our addresses are permanent. These addresses change only when we move.
-- Days later -
 
+- Days later -
 1. I make a unique envelope, an ephemeral envelope.
-2. I send you, and only you, my unique envelope. Of course, I use your postal address to send you this. We assume, only you can read the written. I could also sign the draft with my signature.
+2. I send you, and only you, my unique envelope. Of course, I use your postal address to send you this. We assume, only you can read the written sentences. I could also sign the draft with my signature.
 
 - On the same day -
-
 1. You will receive my unique envelope and you will also verify it by my signature, if you like.
 2. You create a special letter.
 3. You bundle the special letter into the unique envelope I sent you. 
@@ -1525,12 +1526,11 @@ The process or protocol for forward secrecy can be described as follows with thi
 5. You send the unique envelope back to my postal address. Optionally you can of course also sign the created bundle again.
 
 - Still the same day -
-
 1. I receive your bundle. In this bundle is my unique envelope.
 2. In my unique envelope that only I can open is your special letter.
-
 3. We use the special letter as often as we want ... Once, twice. Etc.
-A set of session-based keys is sent back via the ephemeral key. The first bundle is transported via the permanent keys. Permanent bowls do not have to be, but they do exist (because the SSL / TLS connection is still there). That is, the user sends the ephemeral key (one way) over the permanent key, and the partner returns the set of session-based (symmetric keys) via the ephemeral key.
+
+A set of session-based keys is sent back via the ephemeral key. The first bundle is transported via the permanent keys. Permanent bowls do not have to be, but they do exist (because the SSL/TLS connection is still there). That is, the user sends the ephemeral key (one way) over the permanent key, and the partner returns the set of session-based (symmetric keys) via the ephemeral key.
 
 At the end - after the log is completed - the ephemeral keys are deleted and only the set of session-based keys remains.
 
@@ -1538,13 +1538,13 @@ At the end - after the log is completed - the ephemeral keys are deleted and onl
 
 ### 9.7 Secret Streams
 
-It has already been described as innovative in an e-mail client, offering both asymmetric and symmetric forward secrecy. The new and so far uniquely implemented function of the Secret Streams can be further appreciated as even more innovative : Secret Streams are, so to speak, a list of temporary keys generated by the password in SMP authentication in the Socialist Millionaire Protocol. The SMP process has been extensively described above in the chat section and can also be used for cryptographic calling.
+It has already been described as innovative in an e-mail client, offering both asymmetric and symmetric forward secrecy. The new and so far uniquely implemented function of the Secret Streams can be further appreciated as even more innovative: Secret Streams are, so to speak, a list of temporary keys generated by the password in the SMP authentication in the Socialist Millionaire Protocol. The SMP process has been extensively described above in the chat section and can also be used for cryptographic calling.
 
-And now, this breathtaking new feature of the Secret Streams has not seen the world like this yet, satisfying users and getting used to landscape companions - if that phrase is allowed - because it solves the key transfer problem fundamentally: both Users receive a password known only to them in the SMP process through reciprocal contextual cues or just two known secrets. Once this authentication has taken place, this password can also be used to derive numerous temporary, ephemeral keys that are the same in both clients, without them having to be transmitted - because SMP authentication is the responsibility of a so-called zero-knowledge process.
+And now, this breathtaking new feature of the Secret Streams has not seen the world like this yet, is satisfying users and getting used to companions within the market - if that phrase is allowed - because it solves the key transfer problem fundamentally: both users receive a password known only to them in the SMP process through reciprocal contextual cues or just on commonly known secret. Once this authentication has taken place, this password can also be used to derive numerous temporary, ephemeral keys that are the same in both clients, without them having to be transmitted - because SMP authentication is the responsibility of a so-called zero-knowledge process.
 
 The purpose of the SMP filter is to generate key streams from a secret. The secret is mathematically negotiated through the SMP process without it being transmitted as such. Thus, the keys of the secret stream function are derived from a zero-knowledge proof!
 
-The function of the Secret Streams is available for chat, e-mail and also POPTASTIC: Temporary keys that do not have to be transmitted anymore. And should represent a small revolution in cryptography, because the password transmission problem would be partially solved. Only the SMP secret that was previously used for authentication, not encryption, is required.
+The function of the Secret Streams is available for chat, e-mail and also POPTASTIC: Temporary keys, which do not have to be transmitted anymore! Secret Streams should represent a small revolution in cryptography, because the password transmission problem would be partially solved. Only the SMP secret that was previously used for authentication, not yet for encryption, is required.
 
 Figure: Implementation of secret streams in the extended SMP protocol
 
@@ -1555,23 +1555,24 @@ Figure: Implementation of secret streams in the extended SMP protocol
 
 - It should be remembered that one transforms the permanent keys into transport keys. If these are compromised, the encryption becomes recognizable with the other encryption authorities. This concept creates a creative research area within the echo protocol environment. Here are some concepts suggestions that could be further incorporated:
 
-- Participants could consistently generate ephemeral (asymmetric) key pairs and exchange session-based (symmetric) keys over the ephemeral keys. Attendees would be notified if there were not enough keys left. Replacement (from ephemeral keys to permanent key or session-based (symmetric) to (session-based) ephemeral (asymmetric) keys would then be automatically regulated ... similar to exchanging status messages via online status in chat exchanged only over session-based keys in the Echo or POPTASTIC protocol.
+- Participants could consistently generate ephemeral (asymmetric) key pairs and exchange session-based (symmetric) keys over the ephemeral keys. Attendees would be notified if there were not enough keys left. Replacement (from ephemeral keys to permanent key or session-based (symmetric)keys to (session-based) ephemeral (asymmetric) keys would then be automatically regulated ... similar to exchanging status messages via online status in chat exchanged only over session-based keys in the Echo or POPTASTIC protocol.
 
 - Instead of exchanging one set of private session keys, multiple sets of private session bowls could be exchanged for supplies. Retaining data differently for a variety of anonymous email addresses with session-based keys.
 
-- The OTR concept (so far for chat) could be applied within the permanent keys and also for e-mail. POPTASTIC in a different way, if chat goes via e-mail, then the chat key OTR can also be sent via e-mail.
+- The OTR concept (so far for chat) could be applied within the permanent keys and also for e-mail. POPTASTIC in a different way, if chat goes via e-mail, then the chat key with OTR can also be sent via e-mail.
 
 By using unique keys, information transfers in a session can be ideally protected - even if there are attempts to compromise.
 
-So forward secrecy offers a substantial improvement in the protection of encrypted transmissions for little effort and no cost.
+That means, forward secrecy offers a substantial improvement in the protection of encrypted transmissions for little effort and no cost.
 
 After describing e-mail and its numerous options for improved and innovated encryption, we come to the already announced term POPTASTIC - the function of chat over e-mail servers.
+
 
 ## 10 POPTASTIC - Encrypted chat and email via POP3 & IMAP
 
 POPTASTIC is an innovation in messaging - encrypted chat over email servers.
 
-With the POPTASTIC function all e-mail accounts, eg from Gmail, Outlook.com or Yahoo! -Mail with GoldBug end-to-end can be encrypted asymmetrically - and hybrids additionally symmetrically. The trick: every POP3 or IMAP server can now also be used for encrypted chat. And that also through firewalls when e-mail is given.
+With the POPTASTIC function all e-mail accounts, e.g. from Gmail, Outlook or Yahoo! -Mail can be encrypted asymmetrically end-to-end with GoldBug - and additionally hybrid symmetrically. The clou: every POP3 or IMAP server can now also be used for encrypted chat. And that also through firewalls when e-mail is given and going out.
 
 Figure: POPTASTIC
 
@@ -1582,31 +1583,31 @@ Let's take a closer look at POPTASTIC here at desktop client GoldBug.
 
 
 ### 10.1 Chat over POPTASTIC
- 
-So why should you still use a dedicated chat server or secure chat protocols with plug-ins for encryption, if you can just use his e-mail address for e-mail and chat at the same time? The multi-decade old POP3 protocol and numerous email servers can now be used for encrypted chat with GoldBug. The e-mail server is simply converted as a chat server.
 
-For this, the chat message is converted into an encrypted email, sent via POP3 or IMAP, and the recipient is converted back into a chat message. Since the GoldBug Messenger is also an e-mail client at the same time, the encrypted message exchange also works via e-mail. The program will automatically detect if it is an email via POP3 or a chat message.
+So why should you still use a dedicated chat server or secure chat protocols with plug-ins for encryption, if you can just use the own e-mail address for e-mail and chat at the same time? The multi-decade old POP3 protocol and numerous email servers can now be used for encrypted chat with GoldBug. The e-mail server is simply converted as a chat server.
+
+For this, the chat message is converted into an encrypted email, sent via POP3 or IMAP, and the recipient is converting it back into a chat message. Since the GoldBug Messenger is also an e-mail client at the same time, the encrypted message exchange also works via e-mail. The program will automatically detect if it is an email via POP3 or a chat message.
 
 Chat and email through POPTASTIC are proxy enabled and can therefore be operated from work, the university or behind a firewall, even through the Tor network. If you log in to your e-mail account with a web browser, you can see what the encrypted message looks like.
 
-The additional symmetrical end-to-end encryption via POP3 can - as with the echo protocol - not only be used as forward secrecy, but can also be renewed "instantaneously" every second. Therefore, here too (as above) of Instant Perfect Forward Secrecy (IPFS) is spoken, which is now possible via POP3 and IMAP for the POPTASTIC chat! Finally, there is also the option in POPTASTIC of making a call for the transmission of a gemini using the methods differentiated above.
+The additional symmetrical end-to-end encryption via POP3 can - as with the echo protocol - not only be used as forward secrecy, but can also be renewed "instantaneously" every second. Therefore, here too (as above) of Instant Perfect Forward Secrecy (IPFS) is spoken, which is now possible via POP3 and IMAP for the POPTASTIC chat! Finally, there is also the option in POPTASTIC of making a call for the transmission of a Gemini using the methods differentiated above.
 
-This option variety of the chat encryption with POPTASTIC is not given so far also with the architectural derivatives for mobile terminals.
+This option variety of the chat encryption with POPTASTIC is not given so far also with the architectural derivatives for mobile devices.
 
 Anyway, for users surely an interesting and easy way to chat encrypted via this email protocol.
 
 
 ### 10.2 E-mail via POPTASTIC
 
-Just as there is e-mail about the e-mail key and how to chat over the POPTASTIC key, it is also possible to e-mail via POPTASTIC. Since POPTASTIC is a key with which the friend is entered (via the friend-add tab), the POPTASTIC contact or the e-mail address is provided with a lock symbol and additionally marked with a background color to indicate that the message exchange here always happens only encrypted.
+Just as there is e-mail utilizing the e-mail key and as to chat over the POPTASTIC key, it is also possible to e-mail via POPTASTIC. Since POPTASTIC is a key which the friend is adding to the own client (via the friend-add tab), the POPTASTIC contact or the e-mail address is provided with a lock symbol and additionally marked with a background color to indicate that the message exchange here always happens only encrypted.
 
-If you add an e-mail address in the friend-add-tab, that contact will also be added to the contact list in the e-mail - but without the locked icon and background color. This indicates that the e-mail messages are unencrypted with this contact. This is the case if someone does not use the GoldBug client. Then POPTASTIC will send the email unencrypted to the @mail address.
+If you add an e-mail address in the add-friend tab, that contact will also be added to the contact list in the e-mail - but without the locked icon and background color. This indicates that the e-mail messages are unencrypted with this contact. This is the case if someone does not use the GoldBug client. Then POPTASTIC will send the email unencrypted to the @mail address.
 
-The program knows: if you mail from the POPTASTIC key to a POPTASITC key, then this is always encrypted and can also be chat. And if you mail from the POPTASTIC key to an @mail address, then the message is unencrypted. This is the only and rare case that the message leaves the client unencrypted, since it does not use the echo protocol, but the regular e-mail protocol SMTP.
+The program knows: if you mail from the POPTASTIC key to a POPTASITC key, then this is always encrypted and can also be chat. And if you mail from the POPTASTIC key to an @mail address, then the message is unencrypted. This is the only and rare case that the client leaves the message unencrypted, since it does not use the echo protocol, but the regular e-mail protocol SMTP.
 
 However, if the contact also uses GoldBug, both can permanently email encrypted when the POPTASTIC key is entered in the Add Friend tab.
 
-E-mail via POPTASTIC is so simple permanent encrypted e-mailing by simply swapping once at the beginning of the POPTASTIC key.
+E-mail via POPTASTIC is then a simple permanent encrypted e-mailing, by simply swapping once the POPTASTIC key at the beginning.
 
 
 ### 10.3 Setting up POPTASTIC
@@ -1614,38 +1615,38 @@ E-mail via POPTASTIC is so simple permanent encrypted e-mailing by simply swappi
 
 A detailed description of the configuration options of the e-mail server can be found above in the section on POP3 and IMAP (see also figure).
 
-Figure: POPTASTIC Settings: Encrypted Chat and Encrypted Email Over for POP3 and IMAP
+Figure: POPTASTIC Settings: Encrypted Chat and Encrypted Email over POP3 and IMAP
 
-![Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über für POP3 und IMAP ](/images/poptasticsettings.png)
+![Abbildung: POPTASTIC Settings: Verschlüsselter Chat und verschlüsseltes E-Mail über POP3 und IMAP ](/images/poptasticsettings.png)
 
 
-**Note:** In Gmail you should set the option on the Web that retrieved POP3 messages are deleted from the INBOX. To connect, it's also a good idea to set the security setting in Gmail so that you can connect to all your local email clients (Gmail allows unknown clients):
+**Note:** In Gmail you should set the option on the Web that retrieved POP3 messages are deleted from the INBOX. To connect, it's also a good idea to set the security setting in Gmail so that you can connect to all your local email clients (Gmail should allow unknown clients):
 
 - Settings / Forward and POP & IMAP / POP Download: Enable POP for all mail
 
 - Settings / Accounts & Import / Change Account Settings: Other Settings / [New window] / Security / Access for less secure / unknown Apps: Enabled.
 
-It may be advisable to set up an extra e-mail account for a first test and further use: It may be important to note that new e-mail accounts, eg for Gmail, may be limited to the first 30 days for the sending of e-mails (eg Gmail for 500 chat messages or e-mails per day). This should be sufficient for a test or normal need if necessary. Otherwise you can set up your own e-mail server with GoldBug and is no longer dependent on the @Mail accounts of the major providers, if it is small internal user groups that use the echo mail presented here internally with its own server want.
+It may be advisable to set up an extra e-mail account for a first test and further use: It may be important to note that new e-mail accounts, e.g. for Gmail, may be limited to the first 30 days for the sending of e-mails (e.g. Gmail for 500 chat messages or e-mails per day). This should be sufficient for a test or normal need if necessary. Otherwise you can set up your own e-mail server with GoldBug and you are no longer dependent on the @Mail accounts of the major providers, if it is a small internal user groups that use the echo mail - represented here with its own server need.
 
 
 ### 10.4 Further development of POPTASTIC
 
 
-This idea of ​​architecture has been developed by the GoldBug development team, published and described in the study Big 7 by the auditors of the program. Then this idea has been taken over by the mobile application Delta-Chat, although the encryption there also runs via PGP and exclusively via IMAP server. The original commits and publication data show the historical origins to which references and credits should be made in order not to seek the proximity of any meaning of plagiarizing the architecture of this encrypted communication. 
+This idea of the POPTASTIC architecture has been developed by the GoldBug development team, published and described also in the study Big 7 by the auditors of the program. Then this idea has been taken over by the mobile application Delta-Chat, although the encryption there also runs via PGP and exclusively only via IMAP server. The original commits and publication data show the historical origins to which references and credits should be made in order not to seek the proximity of any meaning of plagiarizing the architecture of this encrypted communication. 
 
-A fork and a progression of the POPTASTIC idea that is to be welcomed (and referenced) is in a mobile chat client with an appealing user interface. (See the release of POPTASTIC in 2014 and popular in mid-2016 and its derivatives with first commits a few years later: https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf (p134, 2016), https://sourceforge.net/p/goldbug/wiki/release-history/ (2014), https://delta.chat/en/blog (2016)).
+A fork and a progression of the POPTASTIC idea that is to be welcomed (and referenced) is in a mobile chat client with an appealing user interface. (See the release of POPTASTIC in 2014 and further publication in mid-2016 and its derivatives with first commits a few years later: https://sf.net/projects/goldbug/files/bigseven-crypto-audit.pdf (p134, 2016), https://sourceforge.net/p/goldbug/wiki/release-history/ (2014), https://delta.chat/en/blog (2016)).
 
 
 
 ## 11 FileSharing: with StarBeam
 
-As in any messenger, GoldBug FileSharing can be encrypted and encrypted between multiple people or a file transfer between two defined friends. This happens in the tab "StarBeam". The term StarBeam (SB) implies that FileSharing should be as simple as the light of the stars projected or "beamed" through the galaxies.
+As in any messenger, a file transfer in GoldBug is also possible and in general this FileSharing function is always encrypted between two defined friends or even multiple people. This happens in the tab "StarBeam". The term StarBeam (SB) implies that FileSharing should be as simple as the light of the stars projected or "beamed" through the galaxies.
 
-While traditional file-sharing programs such as EMule or BitTorrent have initially relied on specific links such as the ed2k link or the torrent link, file transfers now have to do with both torrents and nearly all of the more advanced Gnutella clients The Edonkey network in the Shareaza client established the linking of files using the Magnetic URI standard .
+While traditional file-sharing programs such as EMule or BitTorrent have initially relied on specific links such as the ed2k link or the torrent link, file transfers now have to do with the linking of files using the Magnet URI standard, which is known from both, torrents and nearly all of the more advanced Gnutella clients, even for the Edonkey network it is established in the Shareaza client.
 
-The elaboration of GoldBug and the Spot On kernel has further developed the architecture of this Magnet URI standard and added cryptographic values.
+The elaboration of GoldBug and the Spot-On-kernel has developed the architecture of this Magnet URI standard further and added cryptographic values.
 
-If the user now wants to download a file via GoldBug from others, he has to copy a magnet URI link into the program. And accordingly: If the user wants to prepare an upload of a file, a magnetic URI has to be created for this file.
+If the user now wants to download a file via GoldBug from others, the user has to copy a magnet URI link into the program. And accordingly: If the user wants to prepare an upload of a file, a Magnet-URI has to be created for this file.
 
 This process is considered as simple as possible: If the user is chatting with a friend in a pop-up chat window (see illustration), there is a button "Share StarBeam". The user can simply click this, then select the file to be sent and it is already securely encrypted transmitted over the echo connection to the friend.
 
@@ -1656,11 +1657,11 @@ Figure: GoldBug messenger chat pop-up window with file transfer
 
 So the user can easily and securely transfer a ZIP with holiday pictures to family members via the chat or the StarBeam tab.
 
-In order to send a file to an entire group, the user can also post his magnet in the group chat. This will then be automatically added to the downloads (see Checkbox in the menu Options: Buzz / e'IRC-Chat: accept split magnets).
+In order to send a file to an entire group, the user can also post his magnet in the group chat. This will then be automatically added to the downloads (see Checkbox in the menu Options: Buzz / e'IRC-Chat: accept magnets).
 
-Due to the echo protocol, the individual packages are also "geswarmed", ie the encrypted packets that pass by the user, even with his friends and neighbors over.
+Due to the echo protocol, the individual packages are also "swarmed", i.e. the encrypted packets that pass by the user, are even shared with his friends and neighbors.
 
-The File Sharing StarBeam Tab consists of three sub-tabs: one for uploading, one for downloading, and one for creating or adding SB magnets.
+The File-Sharing StarBeam Tab consists of three sub-tabs: one for uploading, one for downloading, and one for creating or adding SB Magnets.
 
 Figure: StarBeam with its three sub-tabs
 
@@ -1670,74 +1671,75 @@ Figure: StarBeam with its three sub-tabs
 
 ### 11.1 Creating StarBeam magnets with encryption values
 
- 
-A magnetic URI is a standard known from many file-sharing programs (many in the Gnutella network) and also corresponds to eDonkey / Emule ed2k links or torrent links.
 
-The further development of the magnetic URI standard by the GoldBug Messenger underlying Spot-On library lies in the design of the magnetic URI with encryption values. Magnets are used to create or hold together a bundle of cryptological information.
+A Magnet-URI is a standard known from many file-sharing programs (many in the Gnutella network) or torrent links and also corresponds to eDonkey / Emule ed2k links.
 
-Between the nodes in the echo network is thus created an end-to-end encrypted channel through which a file can then be sent. However, any other file can be sent as well. The magnet is thus not associated with a particular file. The SB magnet is like a channel through which an instance can continuously and permanently send files - or it creates a one-time magnet, which is deleted immediately after the single use.
+The further development of the Magnet-URI standard by the GoldBug Messenger underlying Spot-On library lies in the design of the Magnet URI with encryption values. Magnets are used to create or hold together a bundle of cryptological information.
 
-This dual-use effect does not allow a magnet to be associated with a single file or IP address. Also, a filename does not appear in the SB magnet (as is the case even with the more advanced links, for example, from OFFSystem or RetroShare compared to Gnutella, Emule, and Torrent links ). Thus, it becomes clear that no specific file is exchanged in StarBeam, but only encrypted channels are exchanged. A "wormhole", so to speak, to stick to the concept of "stars". And this channel is defined by a magnetic URI link and its cryptological values.
+Between the nodes in the echo network is thus created an end-to-end encrypted channel through which a file can then be sent. However, any further file can be sent as well. The Magnet is thus not associated with a particular file. The SB magnet is like a channel through which an instance can continuously and permanently send files - or there is a one-time magnet created, which is deleted immediately after the single use.
 
-While many opinions see the linking of Gnutella, Edonkey, and torrent links on the Web as critical, there is no reason to scrutinize those values ​​in a collection of encryption values. A homepage or independent portals with StarBeam and the Magnet-URIs present an advanced concept. In addition to the conceptual choices of selecting a link standard, the usage aspect is also about the security of the file transfer between two private users.
+This dual-use effect does not allow a magnet to be associated with a single file or IP address. Also, a filename does not appear in the SB magnet (as is the case even with the also more advanced links, for example, from OFFSystem or RetroShare compared to Gnutella, Emule, and Torrent links). Thus, it becomes clear that no specific file is exchanged in StarBeam, but only encrypted channels are exchanged. A "wormhole", so to speak, to stick to the concept of the "star trek" movie. And this channel is defined by a Magnet URI link and its cryptological values.
 
-Figure: Magnet URI standard with crypto values ​​for file transfer
+While many opinions see the linking of Gnutella, Edonkey, and Torrent links on the Web as critical, there is no reason to scrutinize those values in a collection of encryption values. A homepage or independent portal with StarBeam and the Magnet-URIs present an advanced concept. In addition to the conceptual choices of selecting a link standard, the usage aspect is also about the security of the file transfer between two private users.
+
+Figure: Magnet URI standard with crypto values for file transfer
 
 ![Abbildung: Magnet URI-Standard mit Crypto-Werten für den Dateitransfer](/images/starbeam_magnet_links.png)	
 
 
-In summary: To send a file, an encrypted channel must be created. This works with the creation of a magnet - marked at the end by URN = StarBeam.
+In summary: To send a file, an encrypted channel must be created. This works with the creation of a Magnet - marked at the end by URN=StarBeam.
 
-Then the file is transmitted encrypted packet by packet over this channel using the HTTPS protocol (which can be based on TCP , UDP and also SCTP connections). It is therefore an interesting question for a practical test, whether a transfer of a large, encrypted file via StarBeam via the Echo protocol based on SCTP, TCP or UDP connections ceteris paribus is transmitted error-free and fastest?
+Then the file is transmitted encrypted - packet by packet - over this channel using the HTTPS protocol (which can be based on TCP, UDP and also SCTP or even Bluetooth connections). It is therefore an interesting question for a practical test, whether a transfer of a large, encrypted file via StarBeam via the Echo protocol based on SCTP, TCP or UDP connections is ceteris paribus transmitted error-free and fastest?
 
 For the process of private file transfer from friend to friend some more notes:
 
-#### 11.1.1 '' 'Option "Nova": Encrypt file before file transfer?' ''
+#### 11.1.1 '' 'Option "Nova": Encrypt the file before transferring the file?' ''
 
- 
-Before the user sends a file, he can consider whether he simply attaches it to an e-mail within GoldBug by e-mail. This is the variant of choice if the file is smaller than 10 MB. Larger files should only be transferred to a friend via the StarBeam feature or in the chat window.
 
-Before shipping, the user may also consider encrypting the file on the hard disk. To do this, the GoldBug Messenger provides a tool for file encryption in the Tools / Tools main menu (see the section below: GoldBug-File-Encryptor). A double passphrase encodes the file in it.
+Before the user sends a file, he can consider whether he simply attaches it to an e-mail within the GoldBug e-mail function. This is the variant of choice if the file is smaller than 10 MB. Larger files should only be transferred to a friend via the StarBeam feature or in the chat window.
+
+Before transferring, the user may also consider encrypting the file on the hard disk. To do this, the GoldBug Messenger provides a tool for file encryption, found in the main menu under tools (see the section below: GoldBug-File-Encryptor). A double passphrase encodes the file in it.
 
 Of course, this tool of the GoldBug File Encryptor can also be used if you want to upload a file somewhere to an online hoster of the cloud or transfer it via another path, another messenger or e-mail.
 
-However, as these online hosting sites like Dropbox may control files and encrypted files with a question mark, even though it should be an exclamation mark, it makes sense to transfer the encrypted file from point to point, from friend to friend, via GoldBug and to use no external or foreign cache as a host.
+However, as these online hosting sites like Dropbox may control files and mark encrypted files with a question mark, even though it should be an exclamation mark, it makes sense to transfer the encrypted file from point to point, from friend to friend, directly via GoldBug and to use no external or foreign intermediate cache as a host.
 
-Some pack the files in a zip and encrypt it before sending or uploading. However, Zip encryption is very easy to crack with 96 bits, so you should use a key recommended for RSA today for RSA with at least 2048 bits, better 3072 bits (as defined for GoldBug as default). Or you can use McEliece instead of RSA.
+Some pack the files in a zip and encrypt it before sending or uploading. However, Zip encryption is very easy to crack with 96 bits, so you should use a key recommended for RSA - today for RSA with at least 2048 bits, better 3072 bits (as defined for GoldBug as default). Or you can use better McEliece instead of RSA.
 
-No matter how the user prepares their file as it is: (1) as a plain binary file, or (2) encrypted with the GoldBug tool via StarBeam or (3) as a file with an additional nova password ( see below) is protected in the Star Beam process - in any case, it will in turn be encrypted several times using the Echo Protocol. An optimum of encryption and option variety that covers numerous wishes.
+No matter how the user prepares and transfers the file: (1) as a plain binary file, or (2) encrypted with the GoldBug tool via StarBeam or (3) as a file with an additional Nova password (see below) as a protection method in the Star Beam process - in any case, it will in turn be encrypted several times using the Echo Protocol. An optimum of encryption and a variety of options, which cover numerous wishes.
 
-Just like you can put an additional password on an e-mail ("GoldBug" in the e-mail function, see above), you can also on the file - or on the used magnetic URI for file transfer - set another password. This is called "Nova".
+Just like you can put an additional password on an e-mail (see above, called "GoldBug" in the e-mail function), you can also set another password on the file - respective on the used magnet-URI for the file transfer. This is called "Nova".
 
-Even if the file transfer is successful or even a third unknown could crack the previous multiple encryption (which is not to be assumed), the nova password introduces end-to-end encryption, which is secure as long as the shared password is exclusive to both partners.
+Even if the file transfer is successful or even a third unknown party could crack the previous multiple encryption (which is not to be assumed), the nova password introduces end-to-end encryption, which is secure as long as the shared password is exclusive to both partners.
 
 Because, if the transmission of the SB magnet should be intercepted - the user somehow has to transfer the magnet online to his friend - then anyone who knows the magnet can also receive the file as well. Therefore, it makes sense to protect the file with a "nova" - a password that both friends have exchanged, possibly orally, in the past or via a second channel.
 
-The Nova also builds on the end-to-end encryption standard AES (if the user does not think up their own passphrase).
+The Nova also builds on the end-to-end encryption standard AES (that means the password string is generated by the computer, if the user does not think up his own passphrase).
 
-As mentioned, the ability to create your own end-to-end encrypting passwords yourself and manually enter them - known in the art as "Customer Supplied Encryption Keys" (#CEKS) - is so far only a very few applications such as GoldBug Messenger or Smoke Chat implemented.
+As mentioned, the ability to create your own end-to-end encrypting passwords yourself and manually enter them - known in the science as "Customer Supplied Encryption Keys" (#CEKS) - is so far implemented only in a very few applications such as GoldBug Messenger or Smoke Chat.
 
-And: The nova must - before - the file transfer begins, have been deposited in the node of the recipient!
+And: The Nova must have been deposited in the node of the recipient - before - the file transfer begins!
 
 
 #### 11.1.2 Using a one-time magnet 
-Ideally, the user has their own magnetic URI for each file. That would then be a one-time magnet (OTM), a magnet that is used only once for a file. (OTM is the same as the idea of ​​an OTP - a one-time pad : a string that is used only once.) OTP is often considered critical in cryptological processes to provide security.)
 
-The user can also use a magnet permanently, then it is like a subscribed video channel in which, for example, a file is sent every Monday.
+Ideally, the user has his own Magnet-URI for each file. That would then be a one-time magnet (OTM), a magnet that is used only once for a file. (OTM is the same as the idea of an OTP - a one-time pad: a string that is used only once.) OTP is often considered essential in cryptological processes to provide security.)
 
-This also opens up completely new possibilities for torrent portals, for example: there does not even have to be a web portal in which thousands of links are linked! The portal itself needs only a single magnet in the decentralized echo log, then consecutively, one by one, to send one file after the other through the wormhole .
+The user can also use a magnet permanently, then it is like a subscribed video channel in which, for example, a new file is sent every Monday.
 
-As soon as the user has transferred a file via the magnet, the user can delete or retain the magnetic URI. If the user creates the magnet as an OTM and activates the checkbox for OTM, it deletes itself after file transfer. This is similar to the movie Mission Impossible or apps for pictures where messages and pictures destroy themselves - The magnet is, so to speak, a StarBeam wormhole that closes again after a single use.
+This also opens up completely new possibilities for torrent portals, for example: there does not even have to be a web portal in which thousands of links are linked! The portal itself needs only a single magnet in the decentralized echo network, then consecutively, one by one, it is possible to send one file after the other through the wormhole.
 
-
-#### 11.1.3 Overview of Magnetic URI Standards for Cryptographic Values
+As soon as the user has transferred a file via the magnet, the user can delete or retain the Magnet-URI. If the user creates the Magnet as an OTM and activates the checkbox for OTM, it deletes itself after file transfer. This is similar to the movie Mission Impossible or apps for pictures where messages and pictures destroy themselves - The magnet is, so to speak, a StarBeam wormhole that closes again after a single use.
 
 
-Folgende Übersicht erläutert die gebräuchlichen kryptologischen Werte im Magnet-URI-Standard.
+#### 11.1.3 Overview of Magnet-URI Standards for Cryptographic Values
 
-| Kürzel  | Beispiel  | Bezeichnung  |
+
+The following overview explains the usual cryptological values in the Magnet-URI standard.
+
+| Abbreviation  | Example  | Description  |
 |---|---|---|
-| Kürzel  | Beispiel  | Bezeichnung  |
+| Abbreviation  | Example  | Description  |
 | rn  | &rn=Spot-On_Developer_Channel_Key  | Raumname  |
 | xf  | &xf=10000  | Exact Frequency  |
 | xs  | &xs=Spot-On_Developer_Channel_Salt  | Exact Salt  |
@@ -1749,39 +1751,39 @@ Folgende Übersicht erläutert die gebräuchlichen kryptologischen Werte im Magn
 | xt=urn:institution | &xt=urn:institution | Magnet zum E-Mail-Postfach |
 
 
+This standard is used to exchange symmetric keys for group chat or e-mail institutions or even file transfers with StarBeam.
 
-The following overview explains the usual cryptological values ​​in the Magnet-URI standard.
 
  magnet:?rn=Spot-On_Developer_Channel_Key&xf=10000&xs=Spot-On_Developer_Channel_Salt&ct=aes256&hk=Spot-On_Developer_Channel_Hash_Key&ht=sha512&xt=urn:buzz
 
-This standard is used to exchange symmetric keys for group chat or e-mail institutions or even file transfers with StarBeam.
 
-The Magnetic URI standard has been further developed into a format to pass on encryption values ​​similar to a blood count sheet.
+The Magnet-URI standard has been further developed into a format to pass on encryption values similar to a blood count sheet.
 
-Encryption with very individual DNA values ​​gives the greatest possible security.
+Encryption with very individual DNA-values provide the highest possible security.
+
 
 #### 11.1.4 Rewind function
 
 
-If a recipient has received a file packet, a chunk (or in the spot-on kernel also called "link"), he is able to upload it again - even in other magnetic URI channels - or it again to give in the same channel. This is similar to a rewind function: the file is simply played again on a cassette recorder or MP3 player via the echo network. The file can also be sent many hours or days later. Anyone who has received a copy via the Magnetic URI channel becomes a satellite, and can re-import the data into the defined channel, or better, via the or a StarBeam magnet.
+If a recipient has received a file packet, a chunk (or in the spot-on kernel also called "link"), he is able to upload it again - even in other magnet URI channels. - Or it can be sent again into the same channel. This is similar to a rewind function: the file is simply played again via the echo network - like on a cassette recorder or MP3 player. The file can also be sent many hours or days later. Anyone who has received a copy via the Magnet URI channel becomes a satellite, and can re-import the data into the defined channel, or better, via the or a StarBeam magnet.
 
 
 #### 11.1.5 Comparison with turtle hopping
 
 Turtle hopping will pass the file packages from friend to friend until they reach a defined destination. It is a transformation of a peer-to-peer (P2P) network into a friend-to-friend (F2F) network. However, it has the disadvantage that friends with little upload speed to the next friend in the chain form a bottleneck and slow down the transport:
 
-The turtle-hopping protocol is firstly connected only to nodes that have been defined as friends and in this chain of friends can be a friend here, which implements only a small bandwidth. This then acts as a bottleneck and senders and recipients of the file must necessarily through this bottleneck.
+The turtle-hopping protocol is firstly connected only to nodes that have been defined as friends and here in this chain of friends can be a friend, which performs only a small bandwidth. This then acts as a bottleneck and senders and recipients of the file must necessarily send through this bottleneck.
 
-The transmission of a file in the StarBeam function via the echo protocol is therefore also more effective than using a protocol similar to " turtle hopping " (currently only implemented in the RetroShare program), because here, depending on the design of the echo Network (full echo, half echo, adaptive echo) and the basic encryption nodes with low bandwidth do not have to act as a bottleneck, but to optimize the desired download speed via other echo paths.
+The transmission of a file in the StarBeam function via the echo protocol is therefore also more effective than using a protocol similar to "turtle hopping" (currently only implemented in the RetroShare program), because here, depending on the design of the echo network (full echo, half echo, adaptive echo) the basic encryption nodes with low bandwidth do not have to act as a bottleneck, they optimize the desired download speed via other echo paths.
 
-When sending files via the echo protocol, therefore, other nodes such as peers or paths via other graph options can be included in the intermediate stations if there is a faster route somewhere:
+When sending files via the echo protocol, therefore, other nodes such as peers or paths via other graph-options can be included in the hopping over intermediate stations if there is a faster route somewhere:
 
 The echo protocol automatically creates the flow in the network of nodes (simply by allowing each node to send encrypted file packets to each linked node) and therefore also chooses the fastest path of all possible graphs to the desired node.
 
 
 ### 11.2 StarBeam upload: transfer a file
 
-As described above, sending a file from the chat window to a single friend is very simple: with the Share-StarBeam button you can only choose one file and it will be transferred to your friend.
+As described above, sending a file from the chat window to a single friend is very simple: with the Share-StarBeam button you just have to choose one file and it will be transferred to your friend.
 
 In the following, we now look at the upload process with its technical details in the sub-tabulator "Uploads" of the StarBeam tabulator.
 
@@ -1790,17 +1792,17 @@ Figure: Starbeam file transfer: uploading files
 ![Abbildung: Starbeam-Dateitransfer: Upload von Dateien](/images/starbeam_uploads.png)
 
 
-If the user has defined and generated a Magnet URI, it will appear not only in the sub-tab for the magnets, but also in the table in the sub tab for the upload / seed.
+If the user has defined and generated a Magnet URI, it will appear not only in the sub-tab for the magnets, but also in the table in the sub tab for the upload/seed.
 
-Also from here the upload of a file can be started. To do this, the user selects a self-service magnet in this sub-tab for the upload in the check box. Likewise the file is selected.
+Also from here the upload of a file can be started. To do this, the user selects with the check box a Magnet in this sub-tab for the upload. Likewise the file is selected.
 
-**Optional:** A nova password for the additional encryption of the file: Finally, the user can still decide whether he wants to put on the transfer an additional password - as described above "nova". The file can open the friend so only if he enters the nova password. It is an additional symmetric encryption to secure a file transfer.
+**Optional:** A nova password for the additional encryption of the file: Finally, the user can still decide whether he wants to put on the transfer an additional password - as described above: a "Nova". The friend can open the file only if he enters the Nova password. It is an additional symmetric encryption to secure a file transfer.
 
 Then press the "Transmit" button.
 
-(Tech Note: Since the echo is transmitted as HTTPS Post or HTTPS Get, the transfer is the same as a web page.) The chunk size can be left as predefined, so it is in the minimum view GoldBug interface is hidden, so as the pulse size is made larger, the web page being transferred becomes longer, so to speak.)
+(Tech Note: Since the echo is transmitted as HTTPS Post or HTTPS Get, the transfer is the same as a web page. The chunk size can be left as predefined, as it is in the minimum view GoldBug interface hidden. In case the pulse size is made larger, the web page being transferred becomes longer, so to speak.)
 
-Finally, the user copies the Magnet URI and sends it to his friend. You can copy the magnet URI via the context menu button.
+Finally, the user copies the Magnet URI and sends it to his friend. The user can copy the magnet URI via the context menu button.
 
 If the friend has copied the magnet, the user can start the transfer by deactivating the pause function (check box "Pause" in the table).
 
@@ -1809,11 +1811,11 @@ Then the file is transferred to the friend.
 
 ### 11.3 StarBeam downloads
 
-To load a file with StarBeam, the user needs the StarBeam magnet of the file. The user receives this from his friend, who wants to send a file.
+To load a file with StarBeam, the user needs the StarBeam Magnet of the file. The user receives this from his friend, who wants to send a file.
 
 The user then simply copies the magnetic URI into the sub-tab for the magnetic URIs. Before that, the user should activate the checkbox "Receiving" in the download sub-tab. This is deactivated in advance by default, so that no unwanted files are received.
 
-The user then tells his friend that he has inserted the magnet URI and then the friend can start the transmission. The download starts as soon as a transmitter sends the file via the echo and through the crypto channel of the magnet.
+The user then tells his friend that he has inserted the magnet URI and then the friend can start the transmission. The download starts as soon as a transmitter sends the file via the echo and through the crypto channel of the Magnet.
 
 Figure: StarBeam File Transfer - Incoming Files
 
@@ -1822,14 +1824,14 @@ Figure: StarBeam File Transfer - Incoming Files
 
 With the additional settings on this tab page for the upload, the user can still define the size and the path for the download area.
 
-The successfully downloaded parts are called "Mosaics" at the StarBeam and stored in the same path of the installation on the hard disk. Similar to a puzzle, the mosaic pieces are assembled into a full mosaic, the resulting file.
+Successfully downloaded parts are called "Mosaics" within StarBeam and stored in the same path of the installation on the hard disk. Similar to a puzzle, the mosaic pieces are assembled into a full mosaic, the resulting file.
 
-The still-to-be-transferred file parts are called "links" in StarBeam (see also the term "chunks" in the old EDonkey network or the term "blocks" in the Gnutella network, by the use of the then used there Tiger -Tree hashes was coined).
+The still-to-be-transferred file parts are called "links" in StarBeam (see also the term "chunks" in the old EDonkey network or the term "blocks" in the Gnutella network, which was coined by the use of the then there used Tiger–Tree-Hashes).
 
 
 ### 11.3.1 Tool: Star Beam Analyzer
 
-If a file was not successfully transferred 100%, it can be checked with the StarBeam Analyzer tool. This determines if all mosaic parts are present or if any links / chunks / blocks or packages still to be transferred are missing. If any links are missing, the SB Analyzer will create a magnetic URI that the friend can reenter in his upload tab. Then only the missing links or mosaics are sent again.
+If a file was not successfully transferred 100%, it can be checked with the StarBeam Analyzer tool. This determines if all mosaic parts are present or if any links / chunks / blocks or packages still to be transferred are missing. If any links are missing, the SB Analyzer will create a magnet URI that the friend can re-enter in his upload tab. Then only the missing links or mosaics are sent again.
 
 Figure: File transfer using Starbeam: analysis tool for the chunks
 
@@ -1842,25 +1844,27 @@ It should be noted that a magnet is a channel, and existing files in the local m
 
 ### 11.3.2 Outlook for Crypto Torrents
 
-Because of encryption, nobody can see what file a user is downloading, because nobody knows if the user was able to successfully decrypt the package - and even if nobody knows if the user created or saved the file from it.
+Because of encryption, nobody can see what file a user is downloading, because nobody knows if the user was able to successfully decrypt the package - and even if, nobody knows if the user created or saved the file in total from it.
 
-The upload is similar. The upload is only visible from a neighbor IP, if this neighbor knows the magnet of the file. In this case, if you want to load public Starbeam magnets, it is best to connect only to neighbors or chat servers that you trust or define as friend through account access.
+The upload is similar. The upload is only visible from a neighbor IP, if this neighbor knows the Magnet of the file. In this case, if you want to load public Starbeam magnets, it is best to connect only to neighbors or chat servers that you trust or define as friend through account access.
 
-Also, the above-mentioned variant of setting a nova password on the file and the distribution of the physical blocks in time before granting the access rights to the nova password in a second process can offer new perspectives in technical, procedural or even legal considerations.
+Also, the above-mentioned variant of setting a Nova password on the file and the distribution of the physical blocks in time before granting the access rights to the nova password in a second process can offer new perspectives in technical, procedural or even legal considerations.
 
-This means that the transfer of the file takes place in the past and the transfer of the decryption option takes place in a future, separate and downstream process.
+This means e.g. that the transfer of the file takes place in the past and the transfer of the decryption option takes place in a future, separate and downstream process.
 
-Then, using the Echo protocol, StarBeam Magnetic URIs can play a role in new ways of thinking about developing and using the "crypto-torrents" discussed in the file-sharing community.
+Then, using the Echo protocol, StarBeam Magnet-URIs can play a role in new ways of thinking about developing and using the "crypto-torrents" discussed in the file-sharing community.
 
 Encryption basically means that unauthorized persons do not know what is in the encrypted packet and that the owner of the key decides himself when to perform the decryption. That is, encryption has been logically applied to the file transfer and the sovereignty of the user.
+
+
 
 ## 12 Web search engine with URL database
 
 With the integrated function of a web search GoldBug is also an open source p2p web search engine due to its used architecture of the kernel.
 
-GoldBug is the only (and so far) one of the few handiest p2p distributed search engines like YaCy , Faroo.com, Arado.sf.net or Grub (which was known by Wikia-Search ), which is able to handle the transfer of the Make URLs over encrypted connections into a distributed F2F or P2P network.
+GoldBug is the only (and so far) one of the few handiest p2p distributed search engines like YaCy, Faroo.com, Arado.sf.net or Grub (which was once known by Wikia-Search), which is able to handle the transfer of the URLs over encrypted connections into a distributed F2F or P2P network.
 
-The claim of the web search function in GoldBug is not only to offer a source-open programming of the search engine or the sorting algorithm, but also to handle the source of source URLs so that each participant can download the URLs. Third, finally, transfers and database storage take place in an encrypted environment. An innovative and exemplary model to search in encrypted databases.
+The claim of the web search function in GoldBug is not only to offer an open-source programming of the search engine or the sorting algorithm, but also to handle the repository of URLs open source, so that each participant can download the entire URL-Database. Third, finally, transfers and database storage take place in an encrypted environment. An innovative and exemplary model to search in encrypted databases.
 
 Website titles, keywords and the URL itself are stored encrypted in a SQLite or PostgreSQL database and linked together via the Echo protocol.
 
@@ -1874,37 +1878,37 @@ Figure: Web search with GoldBug in the URL database
 
 The user can design his own search engine: for example, with 15 GB of URLs in the database on his machine, the user can certainly achieve interesting search results for new websites that his friends find interesting and entered into the p2p network.
 
-But also as a local database for your own bookmarks or your own crawl of a dedicated domain, the URL database can be used.
+But also as a local database for own bookmarks or an own crawl of a dedicated domain, the URL database can be used.
 
-The web search in the URL repository remains anonymous, because the GoldBug URL search generates in other nodes no announcement of the search words, so-called query hits.
+The web search in the URL repository remains anonymous, because the GoldBug URL search generates in other nodes no announcement of the search words, so-called “query hits”.
 
 GoldBug converts the search words into a hash and searches the local databases to see if they contain this hash. Then there is also the hash of the URLs that contain this keyword. The URL database is then searched for the hash of the URL.
 
-The databases are also encrypted, so that after the search process also a decryption process is connected. Finally, the search results are displayed and displayed to the user. The UI currently sorts the results for one or more search words for simplicity, such that the most recent URLs are displayed first at the top.
+The databases are also encrypted, so that after the search process also a decryption process is connected. Finally, the search results are generated and shown to the user. The UI currently sorts the results for one or more search words for simplicity, such that the most recent URLs are displayed first at the top.
 
-If you want to create an open-source search algorithm for sorting URL results, GoldBug will find the open source code base for this function in order not only to develop its algorithm model, but also to subject it to a practical test.
+If you want to create an open-source search algorithm for sorting URL results, GoldBug will provide the open source code base for this function in order not only to develop an own algorithm model, but also to subject it to a practical test.
 
 The distribution of website URLs does not happen via central servers, but is organized via the encrypted echo protocol decentralized between the participants: Two or more users exchange their URL keys and then take on the p2p exchange to website URLs, such as own bookmarks, with all their friends. The online exchanged URLs are first collected in main memory and then written to the local database every 10 seconds.
 
 There is also the option of manually importing new URLs into your own local database. This requires the web browser Dooble.sf.net . The first icon in the URL line of the browser allows storing a single URL in an intermediate database: Shared.db. This is then imported by GoldBug with just one click. The Shared.db must be in the installation path of GoldBug and both programs, GoldBug and Dooble, must define in the settings the path of this file.
 
-In order to import a URL of the web page that a user is currently reading from the Web Browser Dooble into GoldBug's own URL database, simply click on the first icon in the URL line of the browser to start the URL in the URL To store Shared.db. Then, in GoldBug, click on the tab "Import" in the tab of the web search.
+In order to import a URL of the web page that a user is currently reading from the Web Browser Dooble into GoldBug's own URL database, simply click on the first icon in the URL line of the browser to start the URL to be stored in the URL-DB: Shared.db. Then, in GoldBug, click on the tab "Import" in the tab of the web search.
 
-However, the newer version of the browser Dooble no longer supports this import function of a single URL in GoldBug. Because the new version of the browser Dooble represents a complete reprogramming and became necessary due to the change in Qt regarding the Webkit module.
+However, the newer version of the browser Dooble no longer supports this import function of a single URL in GoldBug. Because the new version of the browser Dooble represents a complete reprogramming. which became necessary due to the change in Qt regarding the Webkit module.
 
-In the still available source code of the old Dooble Browser, however, this option can be reactivated with its own compilation. This option should only be mentioned here for a short time, since other developers may also want to import an URL from a (any) browser into an encrypted bookmark database and look at this model.
+In the still available source code of the old Dooble Browser, however, this option can be reactivated with an own compilation. This option should only be mentioned here for a short time, since other developers may also want to import an URL from a (any) browser into an encrypted bookmark database and look at this model.
 
-The idea of ​​making bookmarks shared with friends searchable and locally storable for their own history thus remains current.
+The idea of making bookmarks shared with friends searchable and locally storable for own history thus remains current.
 
 More efficient, however, are the other methods to import numerous URLs using a crawler or the RSS feed in GoldBug.
 
-But first to setup the URL database in GoldBug.
+But first let’s look how to setup the URL database in GoldBug.
 
 
 ### 12.1 Database Setup
 
 
-The URLs can optionally be stored in a SQLite or PostgreSQL database. SQLite is the automatically configured database that is also recommended for users with less experience in setting up databases. More advanced users can also contact a PostgreSQL database facility. This has advantages in the network access, the administration of user rights and the handling of large URL data stocks. GoldBug is therefore suitable for creating your own web search, even for teaching purposes, so that learners are interested in setting up databases.
+The URLs can optionally be stored in a SQLite or PostgreSQL database. SQLite is the automatically configured database that is also recommended for users with less experience in setting up databases. More advanced users can also contact a PostgreSQL database facility. This has advantages in the network access, the administration of user rights and the handling of large URL data stocks. GoldBug is therefore suitable for creating your own web search, even for teaching purposes, in case those learners are interested in setting up databases.
 
 The URLs are stored in 26x26 or 36x36 databases (2 (16 ^ 2) = 512 tables), which are encrypted. This means that the search takes place in an encrypted database (URLs.db). Searching in encrypted databases is a field of research that has so far received little attention.
 
@@ -1912,7 +1916,7 @@ The URLs are stored in 26x26 or 36x36 databases (2 (16 ^ 2) = 512 tables), which
 
 SQLite is a program library that contains a relational database system. The entire database is in a single file. A client-server architecture is therefore not available.
 
-Figure: Installing the URL database for the URL / Web search
+Figure: Installing the URL database for the URL/Web search
 
 ![Abbildung: Installation der URL-Datenbank für die URL/Websuche](/images/websearch_settings.png)
 
@@ -1940,26 +1944,27 @@ Figure: URL Options: Import and Export Filters: URL Distiller
 
 URL filters - so-called distillers - can filter incoming, outgoing and imported data with a blacklist or whitelist. For example, the user can define that only URLs from the domain www.wikipedia.org are allowed or that uploads to URLs to friends only take place from the domain of his university. Also, the user can specify that he does not want to receive URLs of a particular country domain.
 
-In case the user does not want to receive URLs, he just sets the distiller filter to "http: //" with the value "Deny" for the downloads. URLs will not be accepted.
+In case the user does not want to receive URLs, he just sets the distiller filter to "http: //" with the value "Deny" for the downloads, then these URLs will not be accepted.
 
 Very important: in order for the filter to be active, the filter should be set to "Active" at the top of the check box.
+
 
 ### 12.3 URL-Community
 
 So that the user can happily exchange URLs and his database grows for web search, he can either manually paste the URL key into the tab "URL Filter" in the participant table; Or, the second option is to send its URL key to a community.
 
-If the user's friend is also online, and the user uses the "EPKS" tool - Echo Public Key Share - to send his URL key to the "Spot-On URL Community" community defined there, his friend receives the URL key of the User automatically transferred online.
+If the user's friend is also online, and the user uses the "EPKS" tool - Echo Public Key Share - to send his URL key to the "Spot-On URL Community" defined there, his friend receives the URL key of the User automatically transferred online.
 
-This transfer is encrypted using the echo protocol and uses the name of the URL community as symmetric encryption. It is similar to a group chat room (e'IRC / Buzz function) where the URL keys are then sent out and automatically integrated. How EPC works is described in more detail below.
+This transfer is encrypted using the echo protocol and uses the name of the URL community as symmetric encryption. It is similar to a group chat room (e'IRC/Buzz function) where the URL keys are then sent out and automatically integrated. How EPKS works is described in more detail below.
 
 
 ### 12.4 Pandamonium Webcrawler
 
-Another import option is to use the Cawler "Pandamonium".
+Another import option for URLs is to use the Cawler "Pandamonium".
 
 The release of GoldBug Version 2.8 (Christmas-Release 2015) is named "Pandamonium Webcrawler Release" and refers to the web crawler named Pandamonium, which has been added as a tool to the URL database feature.
 
-The web crawler scans a domain for all linked URLs and can then index new URLs on the discovered websites and add them to the crawl or index. Pandamonium works as well as the import from the Dooble Web Browser via an intermediate Shared.db. The web crawler Pandamonium is also open source and can be downloaded from this URL:
+The web crawler scans a domain for all linked URLs and can then index new URLs on the discovered websites and add them to the crawl or index. Pandamonium works (as well as the import from the Dooble Web Browser) via an intermediate Shared.db. The web crawler Pandamonium is also open source and can be downloaded from this URL:
 
 https://github.com/textbrowser/pandamonium
 
@@ -1971,11 +1976,11 @@ The URLs added in this way are then also shared with the friends via encrypted c
 
 For example, the Pandamonium crawler offers the possibility of importing large amounts of web pages of desired domains for a web search in the client GoldBug.
 
-In addition to the URL, Pandamonium also stores the website as rich text (ie without images) in the database and this database can also be shared with friends. Web browsing in GoldBug allows you to browse web pages locally without having to contact the Internet or the domain to reveal their IP information.
+In addition to the URL, Pandamonium also stores the website as rich text (that means without images) in the database and this database can also be shared with friends. Web browsing in GoldBug allows you to browse web pages locally without having to contact the Internet or the domain to reveal own IP information.
 
-It is almost a new kind and advanced idea of ​​the anonymization network Tor: No longer the website is contacted live via a p2p proxy network, but the URL is searched in a p2p web search or database and the website is the same as rich text and can be loaded, browsed and read locally, such as from a browser cache or proxy.
+It is almost a new kind and advanced idea of the anonymization network Tor: No longer the website is contacted live via a p2p proxy network, but the URL is searched in a p2p web search or database and the same website can be loaded as rich text, browsed and read locally, such as from a browser cache or proxy.
 
-Java scripts, images and referral URLs as well as IP information are not included. The user is thus protected from the disclosure of his data and can still read the desired web page of a URL if it is present in his or her shared data. While web pages can also call additional links or leave traces on the anonymization tool Tor due to Javascript, it is preferable for the web crawler Pandamonium to avoid such security risks.
+Java scripts, images and referral URLs as well as IP information are not included. The user is thus protected from the disclosure of his data and can still read the desired web page of an URL if it is present in the shared data. While web pages can also call additional links or leave traces on the anonymization tool Tor due to Javascript, it is preferable for the web crawler Pandamonium to avoid such security risks.
 
 Various revisions of web pages at different call times of the website (Memento) are also supported - both in the crawler as well as in the web search in the GoldBug client. The page viewer of the web search in GoldBug displays various revisions of the web page, if they exist.
 
@@ -1987,75 +1992,81 @@ The setup of the SQLite database for importing the URLs from the Pandamonium Web
 
 - Then the user verifies all inputs and starts the import from shared.db, into which he has previously stored the URLs collected by the Pandamonium Webcraler: The import process retrieves the URLs from this file and adds them to the URL database in the GoldBug client (URLs.db).
 
-- Any imported URLs may be shared with the user's friends online p2p. To do this, the friend's url dish should be entered by the user in the URL Filter tab, or he should use the URL sharing community as described above to swap the URL key.
+- Any imported URLs may be shared with the user's friends online p2p. To do this, the friend's URL Key should be entered by the user in the Add Friend tab, or he should use the URL sharing community as described above to swap the URL key.
+
 
 ### 12.5 RSS reader and URL import
 
 The RSS function extends the GoldBug client to an RSS reader. RSS 2.0 feeds are supported. The news URLs are displayed in a timeline so that the most recent message is always on top.
 
-In addition, the news URLs are indexed, ie prepared for local web search in GoldBug. The import of the encrypted RSS database into the encrypted URL database can be done automatically periodically, or even via a manual import button only on action of the user.
+In addition, the news URLs are indexed, i.e. prepared for local web search in GoldBug. The import of the encrypted RSS database into the encrypted URL database can be done automatically periodically, or even via a manual import button only on action of the user.
 
-The RSS feature not only makes it easy to read its selected news portals on a news page, but also manually or automatically imports the news URLs into its local URL database.
+The RSS feature not only makes it easy to read selected news portals on a news page, but also manually or automatically import the new URLs into an own local URL database.
 
-Figure: RSS feed reader for importing URLs into the URL database / web search
+Figure: RSS feed reader for importing URLs into the URL database/web search
 
 ![Abbildung: RSS-Feed-Reader zur Importierung von URLs in die URL-Datenbank/Websuche](/images/rss_reader.png)	
 
 
 The indexing of the website uses the 50 longest words of the message (or even more after the user's setting) to prepare them for the search index of the URL database during import.
 
-For the timeline, the titles of the messages are provided with a hyperlink only when indexing has taken place. The status line shows statistics on how many RSS feeds are subscribed, how many URLs are already indexed, how many URLs from the RSS database were imported into the web search URL database - as well as the RSS window total readable messages or URLs.
+For the timeline, the titles of the messages are provided with a hyperlink only when indexing has taken place. The status line shows statistics on how many RSS feeds are subscribed, how many URLs are already indexed, how many URLs from the RSS database were imported into the web search URL database - as well as the total readable messages or URLs in the RSS window.
 
-The messages are read in a Page Viewer, which does not display the messages in a browser, but for reasons of safety only in text form. This also Javascripte, images and advertising are removed from the pages, it will be displayed only the ASCII characters of the website and the hyperlinks to other websites. With the context menu, URLs and hyperlinks can be manually copied out for a view in the (external) browser.
+The messages are read in a Page Viewer, which does not display the messages in a browser, but for reasons of safety only in text form. Java scripts, images and advertising are removed from the pages, it will be displayed only the ASCII characters of the website and the hyperlinks to other websites. With the context menu, URLs and hyperlinks can be manually copied out for a view in the (external) browser.
 
 The RSS reader is proxy-capable and can therefore also preserve the content of the websites behind restrictive environments and then make them available for storage and searching in GoldBug.
 
-A feature that today certainly also offers some browsers, web pages from the cache of the user to call out or offer the URL history searchable.
+A feature that today certainly is also offered by some browsers: to call out or offer the URL history and web pages searchable from the cache of the user.
 
 GoldBug allows this in an encrypted and p2p environment for local storage in a dedicated URL repository.
 
 
+
 ## 13 Set up chat / email server
 
+Setting up a chat server or spot-on kernel means setting up a so-called "listener", according to this technical term.
 
-Setting up a chat server or spot-on kernel means setting up a so-called "listener", according to the technical term.
+If the user is in the minimal view of the user interface, a chat & email server or listener is set up as quickly as the tab further above shown establishes an IP connection to a server or neighbor. 
 
-If the user is in the minimal view of the user interface, a chat & email server or listener is set up as quickly as the tab above establishes an IP connection to a server or neighbor. The user does not need advanced server administration skills to run a GoldBug node on their web server, set up a chat server, or even set up an e-mail inbox for themselves and their friends. In GoldBug only a so-called listener at a defined port must be confirmed. And that's possible with just a few clicks. Probably the simplest chat server administration compared to other server setups ever.
+The user does not need advanced server administration skills to run a GoldBug node on their web server, set up a chat server, or even set up an e-mail inbox for themselves and their friends. 
+
+In GoldBug only a so-called listener at a defined port must be defined. And that's possible with just a few clicks. Probably the simplest chat server administration ever compared to other server setups.
 
 
 ### 13.1 Set up the chat / email server via a listener
 
-As a reminder, on the Connect tab, the user connects their GoldBug to another node or neighbor, and with the Chat Server tab, the user creates a server or listener so that others can connect to it. No matter which method, messages can always be sent if the second or third LED in the status line is lit and a neighbor is connected. Either to the user as a server / listener or the user as a client to the neighbor who offers a listener.
+As a reminder, on the Connect tab, the user connects their GoldBug to another node or neighbor, and with the Chat Server tab, the user creates a server or listener so that others can connect to it. No matter which method, messages can always be sent if the second or third LED in the status line is green and a neighbor is connected: Either to the other user as a server/listener or the user as a client to the neighbor who offers a listener.
 
 Figure: Creating a Chat Server (Minimal View)
 
 
 ![Abbildung: Chat-Server einrichten](/images/chat_server_create.gif)
-	
+
+
 The right (third) LED in the status bar thus indicates that the user has set up his own chat server on his computer.
 
-To do this, the user must enter the local IP address of his machine in the "Chat Server" tab. This is not the (external) IP address of the router, but the local network IP address of the device where GoldBug is installed. Again, you get over the pulldown menu a selection, the IP is displayed directly and you can then select the local IP. The port is then automatically 4710 defined again.
+To do this, the user must enter the local IP address of his machine in the "Chat Server" tab. This is not the (external) IP address of the router, but the local network IP address of the device where GoldBug is installed. Again, you get over the pull-down menu a selection, the IP is displayed directly and you can then select the local IP. The port 4710 is then automatically defined again.
 
-Then press the button "Set" and the entry of the listener was successful when the third LED is lit.
+Then press the button "Set" and the entry of the listener was successful when the third LED of the status bar is green.
 
 
 #### 13.1.1. Server broadcast
 
 
-If the user has a client connected to his listener, or the user in the "connect-neighbor" tab is connected to another chat server or friend on his own, then the user can also right-click the command in the table " Publish information ". Thus, his chat server is communicated over the existing connections to his friends and neighbors as well as their friends. "Publish server" means "Broadcast IP + Port" of the own chat server to its (connected) friends and neighbors. Then the friends can also automatically connect to his chat server. In this case, the user no longer has to communicate an IP address or let his friends enter their own IP address manually. Everything goes automatically and the user's server is available as a peer to his friends and their friends. It's that easy to create a chat server and communicate to others on the network.
+If the user has a client connected to his listener, or the user in the "connect-neighbor" tab is connected to another chat server or friend on his own, then the user can also right-click the command in the table "Publish information". Thus, his chat server is communicated over the existing connections to his friends and neighbors as well as their friends. "Publish server" means "Broadcast IP + Port" of the own chat server to its (connected) friends and neighbors. Then the friends can also automatically connect to this chat server. In this case, the user no longer has to communicate an IP address or let his friends enter their own IP address manually. Everything runs automatically and the user's server is available as a peer to his friends and their friends. It's that easy to create a chat server and communicate to others on the network.
 
 Figure: Setting up a chat server
 
 ![Abbildung: Einrichtung eines Chat-Servers](/images/chat_server.png)
 
-The listener or chat server is set up by default for the TCP protocol, but GoldBug is also equipped to set up a listener via the UDP or, thirdly, the SCTP protocol. Both of these latter protocols are ideal for VOIP or streams. Fourth, a chat server / listener via Bluetooth is possible, see the section below.
+The listener or chat server is set up by default for the TCP protocol, but GoldBug is also equipped to set up a listener via the UDP or, thirdly, the SCTP protocol. Both of these latter protocols are ideal for VOIP or streams. Fourth, a chat server/listener via Bluetooth is possible, see the section below.
 
 Therefore, the connection options can also be used to define whether the user's client should connect to the neighbor or another server via TCP, UDP, SCTP or Bluetooth.
 
-The neighbor or listener of the server can do without SSL connections, then the transmission is regulated not over HTTPS, but only over HTTP. This means that an encrypted layer is not required, the encrypted echo capsule is not sent through the HTTPS tunnel but via HTTP - and still remains encrypted because the echo capsule itself is already encrypted.
+The neighbor or listener of the server can do without SSL connections, then the transmission is regulated not over HTTPS, but only over HTTP. This means that an encrypted layer is not required, the encrypted echo capsule is not sent through the HTTPS tunnel, but via HTTP - and still remains encrypted because the echo capsule itself is already encrypted.
 
 
-#### 13.1.2. security options
+#### 13.1.2. Security options
 
 If the user looks at the tab in the maximum view of the user interface, there are further setting options:
 
@@ -2063,13 +2074,13 @@ For example, a listener may set the security option to generate a permanent SSL 
 
 However, it may be that the server or listener renews its SSL certificate, so it may make sense to allow exceptions if you want to make a connection easier and do not want to perfect that extra level of security.
 
-Likewise, one can define the key size for the SSL connection and also determine that connections below a certain SSL key size are not established at all. Once defined, what the neighbor should offer to SSL key size and the other time is defined, which key size the user expects from a server or neighbor.
+Likewise, one can define the key size for the SSL connection and also determine that connections below a certain SSL key size are not established at all. One time it is defined, what the neighbor should offer in regard of the SSL key size, and the other time is defined, which key size the user expects from a server or neighbor.
 
-Finally, there is the option that the client determines if he connects to the neighbor with full or half echo. At half echo, the message packet is only sent to the neighbor one hop over the direct connection. Assuming the user's friend has the web server set up and sitting in front of it and the user does not want his echo packets to go to third parties and his friends, then the user can define with the half echo that his packets are received by the server not be distributed. The two users chat via a direct IP connection. Both participants see the IP address of the friend and the chat partner at Half Echo. In the Full Echo, the chat friend does not have to be an administrator of the node, but can connect multiple clients like a central chat server.
+Finally, there is the option that the client determines if he connects to the neighbor with full or half echo. At half echo, the message packet is only sent to the neighbor one hop over the direct connection. Assuming the user's friend has the web server set up and sitting in front of it and the user does not want his echo packets to go to third parties and his friends, then the user can define with the half echo that his packets received by the server are not be distributed further. The two users chat via a direct IP connection. Both participants see the IP address of the friend and the chat partner at Half Echo. In the Full Echo, the chat friend does not have to be an administrator of the node, but can connect multiple clients like a central chat server.
 
-Security options allow you to continue defining the SSL key size when creating a chat server / listener in Advanced View, as well as maintaining a permanent SLL certificate.
+Security options allow you to define the SSL key size when creating a chat server/listener in Advanced View, as well as maintaining a permanent SLL certificate.
 
-Also, the user - if he has a permanent, stable IP address - integrate this in the SSL certificate.
+Also, the user - if he has a permanent, stable IP address – can integrate this into the SSL certificate.
 
 These three measures make it harder for attackers to exchange or "fake" the SSL certificate - because it would be immediately recognized if a different certificate was to be used as the original one: for example, the client would not be a new, but the old, permanent certificate expected or because the IP address is missing or inconsistent. The SSL key size also defines this.
 
@@ -2081,21 +2092,21 @@ If the user wants to run GoldBug as a client via a proxy in the company, behind 
 
 As a client, the user can connect to any IT environment thanks to the HTTP protocol, even if he can surf in that environment with a browser.
 
-That's the advantage of the GoldBug program, which means that wherever users can surf their browsers, they can also email and chat with GoldBug Messenger because of the HTTPS protocol they use. Many other programs can not do this, depending on the firewall settings - eg from the workplace or in the student residence.
+That's the advantage of the GoldBug program, which means that wherever users can surf with their browsers, they can also email and chat with GoldBug Messenger because of the HTTPS or POPTASTIC protocol they use. Many other programs cannot do this, depending on the firewall settings – e.g. from the workplace or in the student residence.
 
-If the user wants to use or test out a proxy eg in his company or university with the GoldBug messenger, then this is uncritical, because an SSL / TLS or HTTPS connection is established - which is hardly different for the proxy administrators like an SSL / HTTPS connection to an HTTPS website when banking or logging in to a web e-mail.
+If the user wants to use or test out a proxy e.g. in his company or university with the GoldBug messenger, then this is uncritical, because an SSL/TLS or HTTPS connection is established - which is hardly different for the proxy administrators like an SSL/HTTPS connection to an HTTPS website when doing banking or logging into a web e-mail provider.
 
-It is crucial to address a node in the web with its GoldBug, which may not be limited by the port through a firewall or the proxy. If so, the user may ask their friend to set up the GoldBug chat server on port 80 or port 443 instead of 4710 and provide it with login information for an echo account, if available deliver.
+It is essential to address a node in the web with the own GoldBug, which may not be limited by the port through a firewall or the proxy. If so, the user may ask their friend to set up the GoldBug chat server on port 80 or port 443 instead of 4710 and provide it with login information for an echo account, if available and deliverable. 
 
-Encrypted traffic remains encrypted traffic, and any GoldBug friend or chat server can be reached on the web through ports 443 or 80.
+Encrypted traffic remains encrypted traffic, and any GoldBug friend or chat server can be reached on the web through ports 443 or 80 or ports, which are regularly opened in the firewall.
 
-Since the echo protocol only requires a simple HTTP connection to a neighbor (and not necessarily Stun server or a DHT etc.), and thus ideally can be mapped through a proxy, through a firewall or over the Tor network It's a very simple architecture to operate chat securely through a proxy or a proxy network.
+Since the echo protocol only requires a simple HTTP connection to a neighbor (and not necessarily a Stun server or a DHT etc.), and thus ideally can be mapped through a proxy, through a firewall or over the Tor network, it's a very simple architecture to operate chat securely through a proxy or a proxy network.
 
-If the user wants to define additional features in the non-minimal view, an often-used function is that of the echo account.
+If the user wants to define additional features in the non-minimal view, a further often-used function is that of the echo account.
 
-To do this, the user in the table marks the listener that he has created and then enters the account credentials, ie the name and password. The user then tells his friend what the account name and password are for, and when the friend establishes the neighbor contact, the friend will be asked via a pop-up window to enter these credentials.
+To do this, the user in the table marks the listener that he has created and then enters the account credentials, i.e. the name and password. The user then tells his friend what the account name and password are, and when the friend establishes the neighbor contact, the friend will be asked via a pop-up window to enter these credentials.
 
-Similarly, the user can also choose between IPV4 and IPV6 again, if he wants to create a listener / chat server. Also, multiple chat servers can be created by choosing a different port. The user can create different listeners with port 4710 or 80 or 443 and decide whether he wants to define these listeners for friends with an echo account (Friend mode), or for easier to build connections that runs in peer mode without account login.
+Similarly, the user can also choose between IPV4 and IPV6 again, if he wants to create a listener/chat server. Also, multiple chat servers can be created by choosing a different port. The user can create different listeners with port 4710 or 80 or 443 and decide whether he wants to define these listeners for friends with an echo account (Friend mode), or for easier to build connections that runs in peer mode without account login.
 
 Echo accounts thus define whether the user builds an F2F network or a P2P network, because with the account credentials the user creates a web-of-trust with which only his trusted friends can connect with the login password.
 
@@ -2113,26 +2124,26 @@ For this, the LAN listener is already defined as a neighbor in the neighbor tabl
 
 If the user does not have his own server on the web or does not find a general neighbor on the web, he can also set up his own chat server at home behind his own router and forward the port in the router. His friend can then connect directly to his listener as a client.
 
-However, one of them has to create a listener if they both sit behind a firewall or do not use a chat server on the web. So if the user wants to create a server behind his router / Nat at home, as mentioned the local IP address of the machine for the listener is eg 192.168.121.1. to take. Then the user must also forward the port in his router, ie port 4710 must be forwarded by the router to 192.168.121.1: 4710. Furthermore, the kernel should - Spot-on-Kernel.exe - as well as the GoldBug.exe in the Windows Firewall be allowed. If the user has forwarded everything correctly, the friend can connect to the client's (external) IP address (see, for example, www.whatismyip.com) and port 4710.
+However, one of them has to create a listener if they both sit behind a firewall or do not use a chat server on the web. So if the user wants to create a server behind his router / Nat at home, as mentioned the local IP address of the machine for the listener is to take, e.g. 192.168.121.1. Then the user must also forward the port in his router, i.e. port 4710 must be forwarded by the router to 192.168.121.1: 4710. Furthermore, the kernel - Spot-on-Kernel.exe - as well as the GoldBug.exe should be allowed as an exception in the Windows Firewall. If the user has forwarded everything correctly, the friend can connect to the client's (external) IP address (see, for example, www.whatismyip.com) and port 4710.
 
 It is only important that the router of the user forwards the contact attempt from the Internet at the defined port to his local machine. This is a common and secure procedure and does not open any access to a computer, but over the port and the application is defined as with many other programs that only packages in this sense are allowed.
 
-The user can and must define this himself and GoldBug does not contain any code that automatically forwards ports in the router, or opens or even automatically sets up a listener!
+The user can and must define this by himself and GoldBug does not contain any code that automatically forwards ports in the router, or opens or even automatically sets up a listener!
 
-Thus, in GoldBug it is more secure and needs-based regulated than other applications that configure themselves in the interest of user-friendliness and reduce the effort and provide background automation, but also to users who need to know the technical details of port forwarding from the router and listener. Know Definiton, automatically open and forward ports.
+Thus, in GoldBug it is more secure and requirement regulated than in other applications that configure themselves in the interest of user-friendliness and reduce the effort and provision of background automation. - But do this also for users who know the technical details of port forwarding within the router and for the creation of a listener, and need no automatic definition, opening and forwarding of ports.
 
 
 ### 13.3 Use of GoldBug in the TOR network
 
 If the user wants to operate his GoldBug chat through the Tor network, this will also be very comfortable, so a Tor Exit Node will only see the encryption text of GoldBug. Here, the chat server is again in the normal web outside the Tor network.
 
-So far, Tor can not establish HTTPS connections at the exit node of the Tor network, but pass-through of encrypted packets from two GoldBug instances should be possible: GB -> Goal -> Goal -> Goal -> GB. An HTTP listener can also be set up.
+So far, Tor cannot establish HTTPS connections at the exit node of the Tor network, but pass-through of encrypted packets from two GoldBug instances should be possible: GB -> Tor -> Tor -> Tor -> GB. An HTTP listener can also be set up for the TOR network. This is an ideal integration of both applications.
 
 
 ### 13.4 Spot-On Server
 
 
-In addition to GoldBug, which is an alternative user interface to the Spot-On kernel, there is also the original Spot-On user interface under spot-on.sf.net. A chat server listener can also be set up with Spot-On.
+In addition to GoldBug, which is an alternative user interface to the Spot-On kernel, there is also the original Spot-On user interface under spot-on.sf.net. A chat server listener can also be set up with that server software called “Spot-On”.
 
 
 ### 13.5 Spot-On Lite Server as Deamon
@@ -2149,7 +2160,7 @@ The simplest option at home in the LAN or even with port forwarding in the route
 
 ### 13.7 Bluetooth server
 
-Finally, a chat server / listener via Bluetooth is possible (since version 2.8, depending on Qt currently only for Linux). With Bluetooth, it is possible, for example, to connect the devices wirelessly via the echo protocol at a LAN party. This option can be very crucial if there is no Internet or infrastructure left.
+Finally, a chat server/listener via Bluetooth is possible (since version 2.8, depending on Qt currently only for Linux). With Bluetooth, it is possible, for example, to connect the devices BT-wirelessly via the echo protocol at a LAN party. This option can be very crucial if there is no Internet or infrastructure left.
 
 Figure: Bluetooth chat server
 
@@ -2168,6 +2179,7 @@ UDP is therefore a connectionless, non-reliable and unsecured as well as unprote
 
 For the Echo Protocol an interesting basis, since the packets are indeed rather undirected in the flow of the network and lost by the multiplication lost UDP packets so again through the redundancy.
 
+
 ### 13.9. SCTP Server
 
 The Stream Control Transmission Protocol (SCTP) is a reliable, connection-oriented network protocol. As a transport protocol, SCTP is at the same level of the TCP / IP reference model as TCP and UDP.
@@ -2177,6 +2189,7 @@ SCTP realizes the concept of an association: Here, a connection is set up in whi
 Also, to use this protocol for the transmission of echo packets is very interesting for the research, since the rather undirected echo packets may experience a more secure transmission with this protocol compared to UDP.
 
 This protocol can also be used to set up a chat server for GoldBug.
+
 
 ### 13.10 Ncat connection
 
@@ -2206,12 +2219,12 @@ Figure: Exercise connection via Ncat
 
 ## 14 Tools
 
-In addition to the regular functions, GoldBug Messenger also has several tools that offer useful features. These include, in particular, the functions of file encryption (File Encryptor), another tool for converting normal text and cipher text (Rosetta-CryptoPad), and the EPCS tool, with which the public keys for encryption are transmitted online can be. Furthermore, the pass-through functionality as well as the tools for statistics and analyzes should be mentioned.
+In addition to the regular functions, GoldBug Messenger also has several tools that offer useful features. These include, in particular, the functions of file encryption (File Encryptor), another tool for converting normal text and cipher text (Rosetta-CryptoPad), and the EPKS tool, with which the public keys for encryption are transmitted online can be. Furthermore, the pass-through functionality as well as the tools for statistics and analyzes should be mentioned.
 
 
 ### 14.1 Tool: Encryption of files
 
- 
+
 GoldBug has additional encryption tools. In the main menu under tools the user finds the tool for encrypting files on his hard disk ("File Encryption Tool").
 
 Figure: File Encryptor - file encryption tool
@@ -2222,13 +2235,13 @@ This allows the user to specify a file from the hard drive, then specify the sam
 
 Cipher and hash-type are also definable as well as that a signature in the encryption can optionally be installed to ensure that the encryption was made only by the defined user (and nobody else).
 
-The file encryption tool is an offer to replace potentially insecure Truecrypt containers, or to encrypt them or to back up individual files before the user transfers them - whether as an email in GoldBug, via StarBeam in GoldBug or over conventional, insecure ways - or simply to encrypt them on disk or when stored in online stores like Dropbox or Megaupload.
+The file encryption tool is an offer to replace potentially insecure Truecrypt containers, or to encrypt them or to back up individual files before the user transfers them - whether as an email in GoldBug, via StarBeam in GoldBug or over conventional, insecure ways - or simply to encrypt them on disk or when stored in online cloud stores like Dropbox or Megaupload.
 
 
 ### 14.2 Tool: The Rosetta CryptoPad
 
 
-The tool Rosetta CryptoPad takes its name from the stone of Rosett , which stands in the museum in London. It is considered a translation tool for Egyptian hyroglyphs in other languages.
+The tool Rosetta CryptoPad takes its name from the stone of Rosette, which stands in the museum in London. It is considered a translation tool for Egyptian hieroglyphs in other languages.
 
 The Rosetta CryptoPad included in GoldBug has its own key - as well as chat and e-mail, and all other functions have their own keys like this.
 
@@ -2238,11 +2251,11 @@ Figure: Encryption of text with the Rosetta Crypto Pad
 
 ![Abbildung: Verschlüsselung vom Text mit dem Rosetta Crypto Pad](/images/rosetta.png)	
 
-Then the bottom of the output is displayed as ciphertext and this the user can easily copy with the copy function and send via conventional online communication channels such as @ e-mail or another chat. Web boards or paste bins can also be used by the user as a place for encrypted communication.
+Then the bottom of the output is displayed as ciphertext and this the user can easily copy with the copy function and send via conventional online communication channels such as @-e-mail or another chat. Web boards or paste bins can also be used by the user as a place for encrypted communication.
 
 It is, so to speak, "slow chat" by a manual encryption of the chat text (although the encryption is faster than the copy paste in other instances).
 
-The Rosetta CryptoPad is an alternative to GnuPG (or it is also based on the GnuPG library libgcrypt).
+The Rosetta CryptoPad is an alternative to GnuPG (though it is also based on the GnuPG library libgcrypt).
 
 This method of slow chat also shows that applications that rely on encrypting each individual email are an inconvenient method. Who wants to select the recipient for every e-mail and chat message, encrypt the message, decide whether the signature key should still be added or not before the message is sent?
 
@@ -2251,7 +2264,7 @@ Figure: ROSETTA crypto pad conversion
 ![Abbildung: ROSETTA Crypto Pad Konversion](/images/rosetta_pad_2.jpg)
 
 
-GoldBug has the general advantage of exchanging the key once with the friend during set up and then everything is encrypted at all times and the entire communication moves within the chosen encryption, with temporary keys and end-to-end passphrases (Geminis der Calling function) can be renewed instantaneously at any time.
+GoldBug has the general advantage of exchanging the key once with the friend during set up and then everything is encrypted at all times and the entire communication is transferred within the chosen encryption, with temporary keys and end-to-end passphrases (Geminis der Calling function) can be renewed instantaneously at any time.
 
 
 ### 14.3 Tool: Echo Public Key Share (EPKS)
@@ -2262,7 +2275,7 @@ Some architectures use key servers in which the user can set their public keys. 
 
 The Echo Public Key Share function makes it very easy to transfer keys in the GoldBug Messenger.
 
-Figure: EPCs - Echo Public Key Sharing
+Figure: EPKS - Echo Public Key Sharing
 
 ![Abbildung: EPKS - Echo Public Key Sharing](/images/EPKS.png)	
 
@@ -2289,9 +2302,9 @@ This is an interesting feature to protect two clients of another program without
 
 Application => GB => GB-Server => GB => Application
 
-For another application, so to speak, a VPN tunnel is set up, which can even be equipped with McEliece or one of the other encryption algorithms. As long as no VPN provider offers McEliece encryption from start to end, the pass-through functionality, which GoldBug represents as a kind of VPN tool, is the right choice for a test. So far no further tunnel software is known which McEliece uses.
+For another application, so to speak, a VPN tunnel is set up, which can even be equipped with McEliece or one of the other encryption algorithms. As long as no VPN provider offers McEliece encryption from start to end, the pass-through functionality, which GoldBug represents as a kind of VPN tool, is the right choice for a test. So far no further tunnel software is known which applies McEliece.
 
-The application to be connected should be tolerant to the order of the sent packets. An interesting research test with several possible applications that can be conducted.
+The application to be connected should be tolerant to the order of the sent packets. It is an interesting research test that can be conducted with several possible applications.
 
 
 ### 14.5 Display analyzes and statistics
@@ -2304,7 +2317,7 @@ Figure: Display of statistics
 
 ![Abbildung: Anzeige von Statistiken](/images/stats.png)	
 
-In addition to the usual user interface, GoldBug can also be installed in console form eg on a RasperryPi and retrieve the statistics overview with a corresponding command.
+In addition to the usual user interface, GoldBug can also be installed in console form e.g. on a RasperryPi and retrieve the statistics overview with a corresponding command.
 
 Figure: Statistics console on a Raspberry Pi
 
@@ -2320,9 +2333,9 @@ Figure: Pandamonium Web Crawler Stats
 
 ## 15 BIG SEVEN STUDY: Crypto-Messenger-Audit
 
-GoldBug was considered by David Adams and Ann-Kathrin Maier as one of the BIG SEVEN crypto messengers via seven open-source messengers, which in a audit-oriented international IT audit manual is more than audit-compliant in more than 20 dimensions trustworthy.
+GoldBug was considered by David Adams and Ann-Kathrin Maier as one of the BIG SEVEN crypto messengers among seven open-source messengers, which in an international IT audit-oriented evaluation is regarded more than audit-compliant in more than 20 dimensions and overall trustworthy.
 
-Also the numerous code reviews gave hints at an excellent programming. The '' '10 Trends in Crypto-Messaging '' (see Adams / Maier 2016) identified by all seven messengers concern in particular the possibility in GoldBug to set up remote chat servers as well as manual definitions of end-to-end encrypting to make symmetrical passwords.
+Also the numerous code reviews gave hints in regard of an excellent programming. The ''10 Trends in Crypto-Messaging'' (see Adams / Maier 2016) identified by all seven messengers core competencies in particular the possibility in GoldBug to set up remote chat servers as well as manual definitions of end-to-end encrypting to make symmetrical passwords.
 
 Figure: Trends in Crypto after the Big Seven Crypto Study (2016)
 
@@ -2464,9 +2477,9 @@ http://www.usconstitution.net/const.html
 ## 17 History of Program Publications
 
 
-The list of publications shows continuous releases of the application over several years. The first publication dates back to 2013, and before that, another project also involved several years of research work. The release dates of the versions show on average almost a month a release release. The note makes it clear which feature has been added, improved, or republished.
+The list of publications shows continuous releases of the application over several years. The first publication dates back to 2013, and before that, another project also involved several years of research work. The release dates of the versions show on average almost a month a release. The note makes it clear which feature has been added, improved, or published.
 
-The history of the publications since 2013 and earlier can be found with approx. 40 Program Publishing here in the wiki of the project page: https://sourceforge.net/p/goldbug/wiki/release-history/
+The history of the publications since 2013 and earlier can be found with approx. 40 Program Releases here in the wiki of the project page: https://sourceforge.net/p/goldbug/wiki/release-history/
 
 ## 18 Website
  
@@ -2526,7 +2539,7 @@ For Linux, all these libraries are to be installed:
 
 Then select the relevant .pro file from the unpacked source code path and compile the GUI and the kernel with Qt Creator. For the compilation of GoldBug you install Qt5 and then select the .pro file "GoldBug.Qt5.win.pro". This file opens both kernel and gui sub-pro files.
 
-Then in QT-Creator simply click on the green forward arrow and start compiling. At the end of the compilation process from the Qt Creator GoldBug.exe should then be bootable. If the user wants to put the exe.file in a separate path on his harddisk, he has to add all needed DLL files (from the selected Qt version and from all current libraries) as well as the subpaths eg for the sound or Qt files , as they already exist in the default installation zip for GoldBug Windows. The library DLL files for Window are also stored in the source code of the respective library paths for convenient and easy use.
+Then in QT-Creator simply click on the green forward arrow and start compiling. At the end of the compilation process from the Qt Creator GoldBug.exe should then be bootable. If the user wants to put the exe.file in a separate path on his harddisk, he has to add all needed DLL files (from the selected Qt version and from all current libraries) as well as the subpaths e.g. for the sound or Qt files , as they already exist in the default installation zip for GoldBug Windows. The library DLL files for Window are also stored in the source code of the respective library paths for convenient and easy use.
 
 The user can of course compile with the Qt terminal window GoldBug also with manual DOS commands, without using Qt-Creator.
 
