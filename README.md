@@ -1132,7 +1132,7 @@ The call information - that is the end-to-end encrypting passphrase - can of cou
 
 Please note the following explanations:
 
-- Each of the presented methods results in Instant Perfect Forward Secrecy (IPFS).
+- Each of the presented methods results in Instant Perfect Forward Secrecy (IPFS). 
 - Only symmetric and asymmetrical calling requires no action on the part of the other party.
 - Forward Secrecy Calling and Symmetric Calling require an existing status of Forward Secrecy.
 - 'Symmetric Calling' and 'Forward Secrecy Calling' have triple encryption layers (TLS/SSL, Permanent Chat Key, as well as temporary symmetric or asymmetric key through which the new Gemini will then be sent).
