@@ -689,6 +689,8 @@ It turns out that the echo protocol can map a very complex network, although it 
 
 Cryptographic Discovery describes the method of an echoing protocol to find nodes in an echo network. The echoing protocol is supplemented with another useful method, if not even more important, than the echo itself. Cryptographic Discovery is available in existing clients such as GoldBug, Spot-on or the chat server for the Android operating system, SmokeStack, implemented within the code base. The source code and its documentation define the method accordingly. For example, Cryptographic Discovery can replace a Distributed Hash Table (DHT) to find a friend on the network. A further publication especially on this topic as an attachment to the source code of the development is in preparation.
 
+If a user sends a message to a regular echo server, it does not know where to send it to andso it sends it to everyone. One of those everyones is the correct one. The correct one will then send the message to the other user. The alternative is to have the peer knowing my peer in a virtual cryptographic software structure. These peers are separate processes. Then the peer of the user could send the message to peer A and peer Z instead of peers: A through Z. Peers would be aware of other peers based on on a cryptographic discovery with cryptographic identities. Complex stuff - but already coded in into the mobile client of GoldBug: Smoke Messenger. 
+
 
 ## 5 Set up a first installation – e.g. with the wizard 
 
